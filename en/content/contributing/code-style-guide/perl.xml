@@ -6,11 +6,15 @@
 
     <section id="formatting">
         <title>Formatting</title>
-        <para>
-            TAB: We use 4 spaces. Examples for braces:
-        </para>
-        <para>
-        <programlisting format="linespecific"><![CDATA[
+
+
+        <section id="whitespace">
+            <title>Whitespace</title>
+            <para>
+                TAB: We use 4 spaces. Examples for braces:
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
 if ($Condition) {
     Foo();
 }
@@ -21,48 +25,78 @@ else {
 while ($Condition == 1) {
     Foo();
 }
-        ]]></programlisting>
-        </para>
-    </section>
-    <section id="naming">
-        <title>Naming</title>
-        <para>
-            Names and comments are written in English. Variables, Objects and Methods
-            must be descriptive nouns or noun phrases with the first letter set upper case.
-        </para>
-        <para>
-        <programlisting format="linespecific"><![CDATA[
-e. g. @TicktIDs or $Output or BuildQueueView()
-        ]]></programlisting>
-        </para>
-    </section>
-    <section id="source-code-header">
-        <title>Source Code Header and Charset</title>
-        <para>
-            Attach the following header to every source file.
-            Source files are saved in UTF-8 charset.
-        </para>
-        <para>
-        <programlisting format="linespecific"><![CDATA[
+            ]]></programlisting>
+            </para>
+        </section>
+
+        <section id="line-length">
+            <title>Length of lines</title>
+            <para>
+                Lines should not be longer than 100 characters.
+            </para>
+        </section>
+
+        <section id="parentheses">
+            <title>Spaces and parentheses</title>
+            <para>
+                To gain more readability, we use spaces between keywords and opening parenthesis.
+
+                <programlisting format="linespecific"><![CDATA[
+if ()...
+for ()...
+                ]]></programlisting>
+
+                If there is just one single variable, the parenthesis enclose the variable with no spaces inside.
+                <programlisting format="linespecific"><![CDATA[
+if ($Condition) { ... }
+
+# instead of
+
+if ( $Condition ) { ... }
+                ]]></programlisting>
+
+                If the condition is not just one single variable, we use spaces between the parenthesis and the condition.
+                And there is still the space between the keyword (e.g. if) and the opening parens.
+                <programlisting format="linespecific"><![CDATA[
+if ( $Condition && $ABC ) { ... }
+                ]]></programlisting>
+
+                Note that for Perl builtin functions, we do not use parentheses:
+                <programlisting format="linespecific"><![CDATA[
+chomp $Variable;
+                ]]>
+                </programlisting>
+            </para>
+        </section>
+
+
+        <section id="source-code-header">
+            <title>Source code header and charset</title>
+            <para>
+                Attach the following header to every source file.
+                Source files are saved in UTF-8 charset.
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
 # --
 # (file name) - a short description what it does
-# Copyright (C) 2001-2013 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2014 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
-        ]]></programlisting>
-        </para>
-        <para>
-            Executable files (*.pl) have a special header.
-        </para>
-        <para>
-        <programlisting format="linespecific"><![CDATA[
+            ]]></programlisting>
+            </para>
+            <para>
+                Executable files (*.pl) have a special header.
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
 #!/usr/bin/perl
 # --
 # (file name) - a short description what it does
-# Copyright (C) 2001-2013 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2014 OTRS AG, http://otrs.com/
 # --
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU AFFERO General Public License as published by
@@ -79,196 +113,572 @@ e. g. @TicktIDs or $Output or BuildQueueView()
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # or see http://www.gnu.org/licenses/agpl.txt.
 # --
-        ]]></programlisting>
-        </para>
-    </section>
-    <section id="version-comments">
-        <title>Version Comments</title>
-        <para>
-            Some functions may not be available in the current framework version. Thus, sometimes
-            settings have to be changed when a new module and framework version will be released.
-            If you use version comments, you can search for information (e.g. using grep) on what must be changed when
-            a new version is published. The keyword for version comments is 'FRAMEWORK'
-            For perl use '#' and for xml use the xml comments.
-        </para>
-        <para>
-        <programlisting format="linespecific"><![CDATA[
-e.g. for perl-code
-# FRAMEWORK-2.1: the function ID2UserName is first available in OTRS 2.1
-        ]]></programlisting>
-        </para>
-    </section>
-    <section id="special-comments">
-        <title>Special comments</title>
-        <para>
-    The only ways to create special comments are the following ways.
-
-    Example 1 - especially for subactions of frontend modules
-
-        </para>
-        <para>
-            <programlisting format="linespecific"><![CDATA[
-    # -----------------------------------#
-    # here is the start of a special area
-    # -----------------------------------#
             ]]></programlisting>
-        </para>
-        <para>
-    Example 2 - especially for customizing standard OTRS files
-        </para>
-        <para>
+            </para>
+        </section>
+    </section> <!-- formatting -->
+
+    <section id="using-perl-language">
+        <title>Using the Perl language</title>
+
+        <section id="control-flow">
+            <title>Control flow</title>
+
+            <section id="conditions">
+                <title>Conditions</title>
+                <para>
+                    Conditions can be quite complex and there can be "chained" conditions (linked with logical 'or' or 'and' operations).
+                    When coding for OTRS, you have to be aware of several situations.
+                </para>
+                <para>
+                    Perl Best Practices says, that high precedence operators ('&amp;&amp;' and '||') shouldn't mixed up with low precedence operators ('and' and 'or').
+                    To avoid confusion, we always use the high precedence operators.
+                    <programlisting format="linespecific"><![CDATA[
+if ( $Condition1 && $Condition2 ) { ... }
+
+# instead of
+
+if ( $Condition and $Condition2 ) { ... }
+                    ]]>
+                    </programlisting>
+
+                    This means that you have to be aware of traps. Sometimes you need to use parenthesis to make clear what you want.
+                </para>
+                <para>
+                    If you have long conditions (line is longer than 120 characters over all), you have to break it in several lines.
+                    And the start of the conditions is in a new line ( not in the line of the 'if').
+                    <programlisting format="linespecific"><![CDATA[
+if (
+    $Condition1
+    && $Condition2
+    )
+{ ... }
+
+# instead of
+
+if ( $Condition1
+    && $Condition2
+    )
+{ ... }
+                    ]]>
+                    </programlisting>
+
+                    Also note, that the right parenthesis is in a line on its own and the left curly bracket
+                    is also in a new line an with the same indentation as the 'if'.
+                    The operators are at the beginning of a new line! The subsequent examples show how to do it...
+                    <programlisting format="linespecific"><![CDATA[
+if (
+    $XMLHash[0]->{otrs_stats}[1]{StatType}[1]{Content}
+    && $XMLHash[0]->{otrs_stats}[1]{StatType}[1]{Content} eq 'static'
+    )
+{ ... }
+
+if ( $TemplateName eq 'AgentTicketCustomer' ) { ... }
+
+if (
+    ( $Param{Section} eq 'Xaxis' || $Param{Section} eq 'All' )
+    && $StatData{StatType} eq 'dynamic'
+    )
+{ ... }
+
+if (
+    $Self->{TimeObject}->TimeStamp2SystemTime( String => $Cell->{TimeStop} )
+    > $Self->{TimeObject}->TimeStamp2SystemTime(
+        String => $ValueSeries{$Row}{$TimeStop}
+    )
+    || $Self->{TimeObject}->TimeStamp2SystemTime( String => $Cell->{TimeStart} )
+    < $Self->{TimeObject}->TimeStamp2SystemTime(
+        String => $ValueSeries{$Row}{$TimeStart}
+    )
+    )
+{ ... }
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+
+            <section id="postfix-if">
+                <title>Postfix "if"</title>
+                <para>
+                    Generally we use "postfix if" statements to reduce the number of levels.
+                    But we don't use it for multiline statments and is only allowed when involves return statements in functions or to end a loop or to go next iteration.
+                </para>
+                <para>
+                    Ok:
+                    <programlisting format="linespecific"><![CDATA[
+next ITEM if !$ItemId;
+                    ]]>
+                    </programlisting>
+
+                    Not ok:
+                    <programlisting format="linespecific"><![CDATA[
+return $Self->{LogObject}->Log(
+    Priority => 'error',
+    Message  => 'ItemID needed!',
+) if !$ItemId;
+                    ]]>
+                    </programlisting>
+
+                    This is less maintainable than
+                    <programlisting format="linespecific"><![CDATA[
+if( !$ItemId ) {
+    $Self->{LogObject}->Log( ... );
+    return;
+}
+                    ]]>
+                    </programlisting>
+
+                    Ok:
+                    <programlisting format="linespecific"><![CDATA[
+for my $Needed (1..10) {
+    next if $Needed == 5;
+    last  if $Needed == 9;
+}
+                    ]]>
+                    </programlisting>
+
+                    Not ok:
+                    <programlisting format="linespecific"><![CDATA[
+my $Var = 1 if $Something == 'Yes';
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+        </section>
+
+        <section id="builtin-sub-restrictions">
+            <title>Restrictions for the use of some Perl builtins</title>
+            <para>
+                Some builtin subroutines of Perl may not be used in every place:
+            <itemizedlist>
+                <listitem>
+                    <para>Don't use "die" and "exit" in .pm-files.</para>
+                </listitem>
+                <listitem>
+                    <para>Don't use the "Dumper" function in released files.</para>
+                </listitem>
+                <listitem>
+                    <para>Don't use "print" in .pm files.</para>
+                </listitem>
+                <listitem>
+                    <para>Don't use "require", use Main::Require() instead.</para>
+                </listitem>
+                <listitem>
+                    <para>Use the functions of the TimeObject instead of the builtin functions like time(), localtime() etc.</para>
+                </listitem>
+            </itemizedlist>
+            </para>
+        </section>
+
+        <section id="regular-expressions">
+            <title>Regular Expressions</title>
+            <para>
+                For regular expressions we always use the m// operator with curly braces as delimiters. We also use the modifiers x, m and s.
+                The x modifiers allows you to comment your regex and use spaces to "group" logical groups.
+                <programlisting format="linespecific"><![CDATA[
+$Date =~ m{ \A \d{4} - \d{2} - \d{2} \z }xms
+$Date =~ m{
+    \A    # beginning of the string
+    \d{4} - # year
+    \d{2} - # month
+    [^\n]   # everything but newline
+    #..
+}xms;
+    ]]>
+                </programlisting>
+            </para>
+            <para>
+                As the space no longer has a special meaning, you have to use a single character class to match a single space ( [ ]).
+                If you want to match any whitespace you can use \s.
+            </para>
+            <para>
+                In the regex, the dot ('.') includes the newline (whereas in regex without s modifier the dot means 'everything but newline').
+                If you want to match anything but newline, you have to use the negated single character class ([^\n]).
+            </para>
+            <para>
             <programlisting format="linespecific"><![CDATA[
-    # --- customizing for some project
+$Text =~ m{
+    Test
+    [ ]    # there must be a space between 'Test' and 'Regex'
+    Regex
+}xms;
+    ]]></programlisting>
+            </para>
+        </section>
+
+        <section id="naming">
+            <title>Naming</title>
+            <para>
+                Names and comments are written in English. Variables, objects and methods
+                must be descriptive nouns or noun phrases with the first letter set upper case (CamelCase).
+            </para>
+            <para>
+                Names should be as descriptive as possible.
+                A reader should be able to say what is meant by a name without digging too deep into the code. E.g. use $ConfigItemID instead of $ID.
+            <programlisting format="linespecific"><![CDATA[
+e. g. @TicktIDs or $Output or StateSet()
             ]]></programlisting>
-        </para>
-    </section>
-    <section id="function-restrictions">
-        <title>Restrictions for some functions</title>
-        <para>
-    Some functions are not useful in every script. Please pay attention
-    to the following restrictions.
-        </para>
-        <para>
-        <itemizedlist mark="round">
-            <listitem>
-                <para>don't use "die" and "exit" in .pm-files</para>
-            </listitem>
-            <listitem>
-                <para>don't use the "Dumper" function in released files</para>
-            </listitem>
-            <listitem>
-                <para>don't use "print" in .pm files</para>
-            </listitem>
-            <listitem>
-                <para>use OTRS specific function "SystemTime2Date" instead of "localtime"</para>
-            </listitem>
-        </itemizedlist>
-        </para>
-    </section>
-    <section id="perldoc">
-        <title>Perldoc</title>
-        <para>
-    Every function which could be used outside of its package must have a
-    perldoc. It should look like the following example.
-        </para>
-        <para>
-            <programlisting format="linespecific"><![CDATA[
-=item SystemTime2TimeStamp()
+            </para>
+        </section>
 
-returns a time stamp in "yyyy-mm-dd 23:59:59" format.
 
-    my $TimeStamp = $TimeObject->SystemTime2TimeStamp(
-        SystemTime => $SystemTime,
+        <section id="variables">
+            <title>Variables</title>
+
+            <section id="variable-declaration">
+                <title>Declaration</title>
+
+                <para>
+                    If you have several variables, you can declare them in on line if the "belong together":
+                    <programlisting format="linespecific"><![CDATA[
+my ($Minute, $Hour, $Year);
+]]>
+                    </programlisting>
+
+                    and break it into seperate lines otherwise:
+
+                    <programlisting format="linespecific"><![CDATA[
+
+my $Minute;
+my $ID;
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Do not set to "undef" or '' in the declaration as this might hide mistakes in code.
+
+                    <programlisting format="linespecific"><![CDATA[
+my $Variable = undef;
+
+#is the same as
+
+my $Variable;
+                    ]]>
+                    </programlisting>
+
+                    You can set a variable to '' if you want to concatenate strings:
+
+                    <programlisting format="linespecific"><![CDATA[
+my $SqlStatement = '';
+for my $Part ( @Parts ) {
+    $SqlStatement .= $Part;
+}
+                    ]]>
+                    </programlisting>
+
+                    Otherwise you would get an "uninitialized" warning.
+                </para>
+            </section>
+        </section>
+
+        <section id="subroutines">
+            <title>Subroutines</title>
+
+            <section id="subroutines-parameters">
+                <title>Handling of parameters</title>
+
+                <para>
+                    To fetch the parameters passed to subroutines, OTRS normally uses the hash %Param (not %Params).
+                    This leads to more readable code as every time we use %Param in the subroutine code we know it is the parameter hash passed to the subroutine.
+                </para>
+                <para>
+                    Just in some exceptions a regular list of parameters should be used.
+                    So we want to avoid something like this:
+
+                    <programlisting format="linespecific"><![CDATA[
+sub TestSub {
+    my ( $Self, $Param1, $Param2 ) = @_;
+}
+                    ]]>
+                    </programlisting>
+
+                    We want to use this instead:
+
+                    <programlisting format="linespecific"><![CDATA[
+sub TestSub {
+    my ( $Self, %Param ) = @_;
+}
+                    ]]>
+                    </programlisting>
+
+                    This has several advantages: We do not have to change the code in the subroutine when a new parameter should be passed,
+                    and calling a function with named parameters is much more readable.
+                </para>
+            </section>
+
+            <section id="multiple-named-parameters">
+                <title>Multiple named parameters</title>
+                <para>
+                    If a function call requires more than one named parameter, split them into multiple lines:
+                    <programlisting format="linespecific"><![CDATA[
+    $Self->{LogObject}->Log(
+        Priority => 'error',
+        Message  => "Need $Needed!",
     );
+                    ]]></programlisting>
 
-If you need the short format "23:59:59" for dates that are "today",
-pass the Type parameter like this:
+                    instead of:
+                    <programlisting format="linespecific"><![CDATA[
+    $Self->{LogObject}->Log( Priority => 'error', Message  => "Need $Needed!", );
+                    ]]></programlisting>
+                </para>
+            </section>
 
-    my $TimeStamp = $TimeObject->SystemTime2TimeStamp(
-        SystemTime => $SystemTime,
-        Type       => 'Short',
-    );
+            <section id="return-statements">
+                <title>return statements</title>
+                <para>
+                    Subroutines have to have a return statement.
+                    The explicit return statement is preferred over the implicit way (result of last statement in subroutine) as this clarifies what the subroutine returns.
 
-=cut
-            ]]></programlisting>
-        </para>
-    </section>
-    <section id="line-length">
-        <title>Length of lines</title>
-        <para>
-    Make sure that a line of code is not longer than 100 charactars.
-        </para>
-    </section>
-    <section id="core-objects">
-        <title>Core-Objects</title>
-        <section id="objects-allocation">
-            <title>Objects and their allocation</title>
+                    <programlisting format="linespecific"><![CDATA[
+sub TestSub {
+    ...
+    return; # return undef, but not the result of the last statement
+}
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+            <section id="explicit-return-values">
+                <title>Explicit return values</title>
+                <para>
+
+                    Explicit return values means that you should not have a return statement followed by a subroutine call.
+                    <programlisting format="linespecific"><![CDATA[
+return $Self->{DBObject}->Do( ... );
+                    ]]>
+                    </programlisting>
+
+                    The following example is better as this says explicitly what is returned. With the example above the reader doesn't know what the return value is as he might not know what Do() returns.
+
+                    <programlisting format="linespecific"><![CDATA[
+return if !$Self->{DBObject}->Do( ... );
+return 1;
+                    ]]>
+                    </programlisting>
+
+                    If you assign the result of a subroutine to a variable, a "good" variable name indicates what was returned:
+
+                    <programlisting format="linespecific"><![CDATA[
+my $SuccessfulInsert = $Self->{DBObject}->Do( ... );
+return $SuccessfulInsert;
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+        </section>
+
+        <section id="packages">
+            <title>Packages</title>
+
+            <section id="packages-use">
+                <title>"use" statements</title>
+                <para>
+                    use strict and use warnings have to be the first two "use"s in a module. This is correct:
+                    <programlisting format="linespecific"><![CDATA[
+package Kernel::System::ITSMConfigItem::History;
+
+use strict;
+use warnings;
+
+use Kernel::System::User;
+use Kernel::System::Time;
+                    ]]>
+                    </programlisting>
+
+                    This is wrong:
+                    <programlisting format="linespecific"><![CDATA[
+package Kernel::System::ITSMConfigItem::History;
+
+use Kernel::System::User;
+use Kernel::System::Time;
+
+use strict;
+use warnings;
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+
+            <section id="passing-of-required-objects">
+                <title>Passing of required objects</title>
+
+                <para>
+                    In core modules we use $Self to create instances of other classes, because it is more safe.
+                    For example:
+                    <programlisting format="linespecific"><![CDATA[
+$Self->{TimeObject} = Kernel::System::Time->new( %{$Self} );
+                    ]]>
+                    </programlisting>
+
+                </para>
+                <para>
+                    In frontend modules we use the %Param hash to create the new instances as there are
+                    more variables and other information stored in the hash:
+                    <programlisting format="linespecific"><![CDATA[
+$Self->{TimeObject} = Kernel::System::Time->new( %Param );
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+
+            <section id="objects-allocation">
+                <title>Objects and their allocation</title>
+                <para>
+                    In OTRS many objects are available. But you should not use every object in every file
+                    to keep the frontend/backend separation.
+                </para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Don't use the LayoutObject in core modules (Kernel/System).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Don't use the ParamObject in core modules (Kernel/System).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Don't use the DBObject in frontend modules (Kernel/Modules).</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </section>
+
+        </section>
+
+    </section> <!-- using-perl-language -->
+
+    <section id="documentation">
+        <title>Writing good documentation</title>
+
+        <section id="perldoc">
+            <title>Perldoc</title>
+
+            <section id="documenting-subroutines">
+                <title>Documenting subroutines</title>
+
+                <para>
+                    Subroutines should always be documented. The documentation contains a general description about what the subroutine does, a sample subroutine call and what the subroutine returns. It should be in this order. A sample documentation looks like this:
+
+                    <programlisting format="linespecific"><![CDATA[
+    =item LastTimeObjectChanged()
+
+    calculates the last time the object was changed. It returns a hash reference with
+        information about the object and the time.
+
+        my $Info = $Object->LastTimeObjectChanged(
+            Param => 'Value',
+        );
+
+    This returns something like:
+
+        my $Info = {
+            ConfigItemID    => 1234,
+            HistoryType     => 'foo',
+            LastTimeChanged => '08.10.2009',
+        };
+
+    =cut
+                    ]]></programlisting>
+
+                    You can copy and paste a Data::Dumper output for the return values.
+                </para>
+            </section>
+        </section>
+
+        <section id="commenting">
+            <title>Commenting</title>
+
             <para>
-        In OTRS many objects are available. But you should not use every object in every file.
-        This is also because of the split between frontend and backend code.
+                In general, you should try to write your code as readable and self-explaining as possible.
+                Don't write a comment to explain what obvious code does, this is unneccessary duplication.
+                Good comments should explain WHY there is some code, possible side effects and anything that might be special or
+                unusually complicated about the code.
+            </para>
+
+            <section id="special-comments">
+                <title>Special comments</title>
+                <para>
+                    There are two special kinds of comments.
+                </para>
+                <para>
+                    Example 1 - comment for a longer block of code
+
+                    <programlisting format="linespecific"><![CDATA[
+# -----------------------------------#
+# here is the start of a special area
+# -----------------------------------#
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Example 2 - comment for customizing standard OTRS files
+                    <programlisting format="linespecific"><![CDATA[
+# --- customizing for some project
+                    ]]></programlisting>
+                </para>
+            </section>
+        </section>
+    </section>
+
+
+    <section id="database-interaction">
+        <title>Database interaction</title>
+
+        <section id="database-sql-statements">
+            <title>Declaration of SQL statements</title>
+            <para>
+                If there is no chance for changing the SQL statement, it should be used in the Prepare function.
+                The reason for this is, that the SQL statement and the bind parameters are closer to each other.
             </para>
             <para>
-            <itemizedlist mark="round">
-                <listitem>
-                    <para>don't use the LayoutObject in core modules</para>
-                </listitem>
-                <listitem>
-                    <para>don't use the ParamObject in core modules</para>
-                </listitem>
-                <listitem>
-                    <para>don't use the DBObject in frontend modules</para>
-                </listitem>
-            </itemizedlist>
+                The SQL statement should be written as one nicely indented string without concatenation like this:
+
+                <programlisting format="linespecific"><![CDATA[
+return if !$Self->{DBObject}->Prepare(
+    SQL => '
+        SELECT art.id
+        FROM article art, article_sender_type ast
+        WHERE art.ticket_id = ?
+            AND art.article_sender_type_id = ast.id
+            AND ast.name = ?
+        ORDER BY art.id',
+    Bind => [ \$Param{TicketID}, \$Param{SenderType} ],
+);
+                ]]></programlisting>
+
+                This is easy to read and modify, and the whitespace can be handled well by our supported DBMSs.
+                For auto-generated SQL code (like in TicketSearch), this indentation is not neccessary.
             </para>
         </section>
-        <section id="mainobject-using">
-            <title>Using of the MainObject</title>
+        <section id="database-returning-on-errors">
+            <title>Returning on errors</title>
             <para>
-        Information about the MainObject
-            </para>
-            <para>
-            <itemizedlist mark="round">
-                <listitem>
-                    <para>initialize the MainObject in the basic .pl-file</para>
-                </listitem>
-                <listitem>
-                    <para>in .pm files only pass it to the next Object you initialize</para>
-                </listitem>
-                <listitem>
-                    <para>don't use the Perl "require" function, use the MainObject</para>
-                </listitem>
-            </itemizedlist>
+                Whenever you use database functions you should handle errors. If anything goes wrong, return from subroutine:
+                <programlisting format="linespecific"><![CDATA[
+return if !$Self->{DBObject}->Prepare( ... );
+                ]]></programlisting>
             </para>
         </section>
-        <section id="encodeobject-using">
-            <title>Using of the EncodeObject</title>
+        <section id="database-using-limit">
+            <title>using Limit</title>
             <para>
-        Information about the EncodeObject
-            </para>
-            <para>
-            <itemizedlist mark="round">
-                <listitem>
-                    <para>initialize the EncodeObject in the basic .pl-file</para>
-                </listitem>
-                <listitem>
-                    <para>in .pm files only pass it to the next Object you initialize</para>
-                </listitem>
-            </itemizedlist>
+                Use Limit => 1 if you expect just one row to be returned.
+                <programlisting format="linespecific"><![CDATA[
+$Self->{DBObject}->Prepare(
+    SQL   => 'SELECT id FROM users WHERE username = ?',
+    Bind  => [ \$Username ],
+    Limit => 1,
+);
+                ]]></programlisting>
             </para>
         </section>
-    </section>
-        <section id="regexes">
-        <title>Regular Expressions</title>
-        <para>
-            For regular expressions we always use the m// operator with curly braces as delimiters. We also use the modifiers x, m and s.
-            The x modifiers allows you to comment your regex and use spaces to "group" logical groups.
-        </para>
-        <para>
-        <programlisting format="linespecific"><![CDATA[
-    $Date =~ m{ \A \d{4} - \d{2} - \d{2} \z }xms
-    $Date =~ m{
-        \A    # beginning of the string
-        \d{4} - # year
-        \d{2} - # month
-        [^\n]   # everything but newline
-        #..
-    }xms;
-]]></programlisting>
-        </para>
-        <para>
-            As the space no longer has a special meaning, you have to use a single character class to match a single space ( [ ]). If you want to match any whitespace you can use \s.
-
-In the regex, the dot ('.') includes the newline (whereas in regex without s modifier the dot means 'everything but newline'). If you want to match anything but newline, you have to use the negated single character class ([^\n]).
-        </para>
-        <para>
-        <programlisting format="linespecific"><![CDATA[
-    $Text =~ m{
-        Test
-        [ ]    # there must be a space between 'Test' and 'Regex'
-        Regex
-    }xms;
-]]></programlisting>
-        </para>
+        <section id="database-using-while-loop">
+            <title>Using the while loop</title>
+            <para>
+                Always use the while loop, even when you expect one row to be returned,
+                as some databases do not release the statement handle and this can lead to weird bugs.
+            </para>
+        </section>
 
     </section>
+
 </section>
