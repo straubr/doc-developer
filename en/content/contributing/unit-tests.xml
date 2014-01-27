@@ -56,6 +56,15 @@ $Self->True(
         </para>
     </section>
     <section>
+        <title>Prerequesites for testing</title>
+        <para>
+To be able to run the unit tests, you need to have all optional Perl modules installed,  except those for different database backends than what you are using. Run bin/otrs.CheckModules.pl to verify your module installation.
+        </para>
+        <para>
+You also need to have an instance of the OTRS web frontend running on the FQDN that is configured in your local OTRS's Config.pm file. This OTRS instance must use the same database that is configured for the unit tests.
+        </para>
+    </section>
+    <section>
         <title>Testing</title>
         <para>
 To check your tests, just use "bin/otrs.UnitTest.pl -n Calendar" to use /scripts/test/Calendar.t.
