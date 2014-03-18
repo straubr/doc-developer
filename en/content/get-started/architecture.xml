@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
 <section id="architecture-overview">
     <title>Architecture Overview</title>
@@ -146,7 +146,7 @@
         <title>Files</title>
         <para>.pl = Perl</para>
         <para>.pm = Perl Module</para>
-        <para>.dtl = Dynamic Template Language (html template files</para>
+        <para>.tt = Template::Toolkit template files</para>
         <para>.dist = Default templates of files</para>
         <para>.yaml or .yml = YAML files, used for Web Service configuration</para>
     </section>

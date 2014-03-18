@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='ISO-8859-1'?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <section id="module-stats">
     <title>Stats Module</title>
     <para>
@@ -190,7 +190,7 @@ Then the list of attributes is created. Each attribute is defined via a hashrefe
                     </listitem>
                     <listitem>
                         <para>Block</para>
-                        <para>the block name in the template file (e.g. &lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.dtl)</para>
+                        <para>the block name in the template file (e.g. &lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.tt)</para>
                     </listitem>
                     <listitem>
                         <para>Values</para>

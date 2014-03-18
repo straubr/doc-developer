@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
 <section id="code-style-guide-javascript">
     <title>JavaScript</title>
@@ -7,7 +7,7 @@
     <section>
         <title>Browser Handling</title>
         <para>
-            All JavaScript is loaded in all browsers (no browser hacks in the .dtl files).
+            All JavaScript is loaded in all browsers (no browser hacks in the template files).
             The code is responsible to decide if it has to skip or execute certain parts of itself only in certain browsers.
         </para>
     </section>

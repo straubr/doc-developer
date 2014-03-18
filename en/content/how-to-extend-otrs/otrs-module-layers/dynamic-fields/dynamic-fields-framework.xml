@@ -137,7 +137,7 @@
         </para>
         <note>
             <para>
-                Each Admin Dialog needs its corresponding HTML template file (.dtl).
+                Each Admin Dialog needs its corresponding HTML template file (.tt).
             </para>
         </note>
     </section>

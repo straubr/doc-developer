@@ -18,7 +18,7 @@
     <para>
         To create this new Dynamic Field we will create 4 files: a Configuration File (XML),
         to register the modules, an Admin Dialog Module (perl), to setup the field options, a
-        Template Module (DTL), for the Admin Dialog and a Dynamic Field Driver (perl).
+        template module, for the Admin Dialog and a Dynamic Field Driver (perl).
     </para>
     <para>
         File Structure:
@@ -38,7 +38,7 @@ $HOME (e. g. /opt/otrs/)
 |   |--/Output/
 |   |   |--/HTML/
 |   |   |   |--/Standard/
-|   |   |   |   |AdminDynamicFieldPassword.dtl
+|   |   |   |   |AdminDynamicFieldPassword.tt
 ...
 |   |--/System/
 |   |   |--/DynamicField/

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
 <section id="package-building">
     <title>Package Building</title>
@@ -237,7 +237,7 @@ To show a "pre" or "post" install introduction in installation dialog.
             <para>
             <programlisting><![CDATA[
 <IntroInstall Type="post" Lang="en" Title="Some Title"><![CDATA[
-Some Info formatted in dtl/html....
+Some Info formatted in html....
 ]]]]><![CDATA[></IntroInstall>
             ]]></programlisting>
             </para>
@@ -253,7 +253,7 @@ To show a "pre" or "post" uninstall introduction in uninstallation dialog.
             <para>
             <programlisting><![CDATA[
 <IntroUninstall Type="post" Lang="en" Title="Some Title"><![CDATA[
-Some Info formatted in dtl/html....
+Some Info formatted in html....
 ]]]]><![CDATA[></IntroUninstall>
             ]]></programlisting>
             </para>
@@ -269,7 +269,7 @@ To show a "pre" or "post" reinstall introduction in reinstallation dialog.
             <para>
             <programlisting><![CDATA[
 <IntroReinstall Type="post" Lang="en" Title="Some Title"><![CDATA[
-Some Info formatted in dtl/html....
+Some Info formatted in html....
 ]]]]><![CDATA[></IntroReinstall>
             ]]></programlisting>
             </para>
@@ -285,7 +285,7 @@ To show a "pre" or "post" upgrade introduction in upgrading dialog.
             <para>
             <programlisting><![CDATA[
 <IntroUpgrade Type="post" Lang="en" Title="Some Title"><![CDATA[
-Some Info formatted in dtl/html....
+Some Info formatted in html....
 ]]]]><![CDATA[></IntroUpgrade>
             ]]></programlisting>
             </para>
@@ -400,7 +400,7 @@ This is a whole example spec file.
         <File Permission="644" Location="Kernel/System/CalendarEvent.pm"></File>
         <File Permission="644" Location="Kernel/Modules/AgentCalendar.pm"></File>
         <File Permission="644" Location="Kernel/Language/de_AgentCalendar.pm"></File>
-        <File Permission="644" Location="Kernel/Output/HTML/Standard/AgentCalendar.dtl"></File>
+        <File Permission="644" Location="Kernel/Output/HTML/Standard/AgentCalendar.tt"></File>
         <File Permission="644" Location="Kernel/Output/HTML/NotificationCalendar.pm"></File>
         <File Permission="644" Location="var/httpd/htdocs/images/Standard/calendar.png"></File>
     </Filelist>

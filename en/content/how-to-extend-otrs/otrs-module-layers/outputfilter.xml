@@ -1,13 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <section id="outputfilter">
     <title>Output Filter</title>
     <para>
         Output filters allow to modify HTML on the fly. It is best practice to use output filters
-        instead of modifying <filename>.dtl</filename> files directly.
+        instead of modifying <filename>.tt</filename> files directly.
         There are three good reasons for that.
-        When the same adaption has to be applied to several frontend modules
-        then the adaption only has to be implemented once.
+        When the same adaption has to be applied to several frontend modules then the adaption only has to be implemented once.
         The second advantage is that when OTRS is upgraded
         there is a chance that the filter doesn't have to be updated, when the relevant pattern has not changed.
         When two extensions modify the same file there is a conflict during the installation of the second package.
@@ -22,8 +21,8 @@
         <para>
             The content of a template can be changed by the filter before any processing by the Layout module takes place.
             This kind of filter should be used in most cases.
-            Processing instructions like $Text{"..."}, $QData{"..."} can be inserted
-            into the template content and they will be honored by the subsequent DTL processing.
+            Processing instructions like [% Translate() %], [% Data.Name | html %] can be inserted
+            into the template content and they will be honored by the subsequent template processing.
         </para>
     </section>
     <section id="outputfilter_filterelement_post">
@@ -81,7 +80,7 @@
             <title>Add an additional CSS file.</title>
             <para>
                 An additional CSS file can be added to all agent frontends with an FilterElementPre filter
-                that only modifies <filename>Header.dtl</filename>.
+                that only modifies <filename>Header.tt</filename>.
                 Therefore it suffices to insert e.g. the instruction $QData{"Title"} into the content.
                 This can be achieved with a FilterElementPre output filter.
             </para>

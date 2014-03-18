@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section>
+    <title>Package Porting</title>
+    <para>
+With every new minor or major version of OTRS, you need to port your package(s) and make sure they
+still work with the OTRS API.
+    </para>
+    <section>
+        <title>From OTRS 3.3 to 3.4</title>
+        <para>
+            This section lists changes that you need to examine when porting your package from
+            OTRS 3.3 to 3.4.
+        </para>
+
+        <section>
+            <title>New Template Engine</title>
+            <para>
+                With OTRS 3.4, the DTL template engine was replaced by Template::Toolkit.
+                Please refer to the <link linkend="TemplatingMechanism">Templating section</link>
+                for details on how the new template syntax looks like.
+            </para>
+            <para>
+                These are the changes that you need to apply when converting existing DTL templates
+                to the new Template::Toolkit syntax:
+            </para>
+
+            <table>
+                <caption>Template Changes from OTRS 3.3 to 3.4</caption>
+                <thead>
+                     <tr>
+                         <td>DTL Tag</td>
+                         <td>Template::Toolkit tag</td>
+                     </tr>
+                 </thead>
+                 <tbody>
+                    <tr>
+                        <td><literal>$Data{"Name"}</literal></td>
+                        <td><literal>[% Data.Name %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Data{"Complex-Name"}</literal></td>
+                        <td><literal>[% Data.item("Complex-Name") %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$QData{"Name"}</literal></td>
+                        <td><literal>[% Data.Name | html %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$QData{"Name", "$Length"}</literal></td>
+                        <td><literal>[% Data.Name | truncate($Length) | html %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$LQData{"Name"}</literal></td>
+                        <td><literal>[% Data.Name | uri %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Quote{"Text", "$Length"}</literal></td>
+                        <td>cannot be replaced directly, see examples below</td></tr>
+                    <tr>
+                        <td><literal>$Quote{"$Config{"Name"}"}</literal></td>
+                        <td><literal>[% Config("Name") | html %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Quote{"$Data{"Name"}", "$Length"}</literal></td>
+                        <td><literal>[% Data.Name | truncate($Length) | html  %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Quote{"$Data{"Content"}","$QData{"MaxLength"}"}</literal></td>
+                        <td><literal>[% Data.Name | truncate(Data.MaxLength) | html  %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Quote{"$Text{"$Data{"Content"}"}","$QData{"MaxLength"}"}</literal></td>
+                        <td><literal>[% Data.Content  | Translate | truncate(Data.MaxLength) | html  %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Config{"Name"}</literal></td>
+                        <td><literal>[% Config("Name") %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Env{"Name"}</literal></td>
+                        <td><literal>[% Env("Name") %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$QEnv{"Name"}</literal></td>
+                        <td><literal>[% Env("Name") | html %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Text{"Text with %s placeholders", "String"}</literal></td>
+                        <td><literal>[% Translate("Text with %s placeholders", "String") | html %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Text{"Text with dynamic %s placeholders", "$QData{Name}"}</literal></td>
+                        <td><literal>[% Translate("Text with dynamic %s placeholders", Data.Name) | html %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>'$JSText{"Text with dynamic %s placeholders", "$QData{Name}"}'</literal></td>
+                        <td><literal>[% Translate("Text with dynamic %s placeholders", Data.Name) | JSON %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>"$JSText{"Text with dynamic %s placeholders", "$QData{Name}"}"</literal></td>
+                        <td><literal>[% Translate("Text with dynamic %s placeholders", Data.Name) | JSON %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$TimeLong{"$Data{"CreateTime"}"}</literal></td>
+                        <td><literal>[% Data.CreateTime | Localize("TimeLong") %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$TimeShort{"$Data{"CreateTime"}"}</literal></td>
+                        <td><literal>[% Data.CreateTime | Localize("TimeShort") %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Date{"$Data{"CreateTime"}"}</literal></td>
+                        <td><literal>[% Data.CreateTime | Localize("Date") %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>&lt;-- dtl:block:Name --&gt;...&lt;-- dtl:block:Name --&gt;</literal></td>
+                        <td><literal>[% RenderBlockStart("Name") %]...[% RenderBlockEnd("Name") %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>&lt;-- dtl:js_on_document_complete --&gt;...&lt;-- dtl:js_on_document_complete --&gt;</literal></td>
+                        <td><literal>[% WRAPPER JSOnDocumentComplete %]...[% END %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>&lt;-- dtl:js_on_document_complete_placeholder --&gt;</literal></td>
+                        <td><literal>[% PROCESS JSOnDocumentCompleteInsert %]</literal></td>
+                    </tr>
+                    <tr>
+                        <td><literal>$Include{"Copyright"}</literal></td>
+                        <td><literal>[% InsertTemplate("Copyright") %]</literal></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>

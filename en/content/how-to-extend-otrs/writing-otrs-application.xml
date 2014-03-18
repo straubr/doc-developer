@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
 <section id="writing-new-otrs-frontend-module">
     <title>Writing a new OTRS frontend module</title>
@@ -161,15 +161,15 @@ sub new {
 sub GetHelloWorldText {
     my ( $Self, %Param ) = @_;
 
-    return 'Hello World';
+    return 'Hello World!';
 }
 
 1;
         ]]></programlisting>
         </para>
     </section>
-    <section id="dtl-template-file">
-        <title>dtl Template File</title>
+    <section id="template-file">
+        <title>Template File</title>
         <para>
 The last thing missing before the new module can run is the relevant HTML template.
 Thus, we create the following file:
@@ -177,30 +177,17 @@ Thus, we create the following file:
         <para>
         <programlisting><![CDATA[
 # --
-# Kernel/Output/HTML/Standard/AgentHelloWorld.dtl - overview
+# Kernel/Output/HTML/Standard/AgentHelloWorld.tt - overview
 # Copyright (C) (year) (name of author) (email of author)
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
-<!-- start form -->
-<table border="0" width="100%" cellspacing="0" cellpadding="3">
-    <tr>
-        <td class="mainhead">
-            $Env{"Box0"}$Text{"Overview"}: $Text{"HelloWorld"}$Env{"Box1"}
-        </td>
-    </tr>
-    <tr>
-        <td class="mainbody">
-            <br>
-            $Text{"$QData{"HelloWorldText"}"}!<br>
-            <br>
-            <br>
-        </td>
-    </tr>
-</table>
-<!-- end form -->
+<h1>[% Translate("Overview") | html %]: [% Translate("HelloWorld") %]</h1>
+<p>
+    [% Data.HelloWorldText | Translate() | html %]
+</p>
         ]]></programlisting>
         </para>
         <para>
@@ -210,9 +197,8 @@ The module is working now and displays the text 'Hello World' when called.
     <section id="language-file">
         <title>Language File</title>
         <para>
-If the text 'Hello World' is to be translated into for instance German, you can create a translation file for this language:
-'/HelloWorld/Kernel/Language/de_AgentHelloWorld.pm'.
-Example:
+If the text 'Hello World!' is to be translated into for instance German, you can create a translation file for this language:
+'/HelloWorld/Kernel/Language/de_AgentHelloWorld.pm'. Example:
         </para>
         <para>
         <programlisting><![CDATA[
@@ -224,7 +210,7 @@ use warnings;
 sub Data {
     my $Self = shift;
 
-    $Self->{Translation}->{'Hello World'} = 'Hallo Welt';
+    $Self->{Translation}->{'Hello World!'} = 'Hallo Welt!';
 
     return 1;
 }

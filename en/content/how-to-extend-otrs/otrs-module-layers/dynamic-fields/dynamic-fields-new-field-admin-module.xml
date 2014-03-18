@@ -588,7 +588,7 @@ sub _ShowScreen {
         </para>
         <para>
             The <emphasis>_ShowScreen</emphasis> function is used to set and define the HTML
-            elements and blocks from a DTL template to generate the Admin Dialog HTML code.
+            elements and blocks from a template to generate the Admin Dialog HTML code.
         </para>
     </section>
 </section>
