@@ -132,6 +132,41 @@ still work with the OTRS API.
                     </tr>
                 </tbody>
             </table>
+
+            <para>
+                There are a few more things to note when porting your code to the new template engine:
+
+                <itemizedlist>
+                    <listitem>
+                        <para>
+                            All language files must now have the <literal>use utf8;</literal> pragma.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            <literal>Layout::Get()</literal> is now deprecated. Please use <literal>Layout::Translate()</literal> instead.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            All occurrences of <literal>$Text{""}</literal> in Perl code must now be replaced by calls to <literal>Layout::Translate()</literal>.
+                        </para>
+                        <para>This is becase in DTL there was no separation between template and data. If DTL-Tags were inserted as part of some data, the engine would still parse them. This is no longer the case in Template::Toolkit, there is a strict separation of template and data.
+                        </para>
+                        <para>
+                            Hint: should you ever need to interpolate tags in data, you can use the <literal>Interpolate</literal> filter for this (<literal>[% Data.Name | Interpolate %]</literal>). This is not recommended for security and performance reasons!
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            For the same reason, dynamically injected JavaScript that was enclosed by <literal>dtl:js_on_document_complete</literal> will not work any more. Please use <literal>Layout::AddJSOnDocumentComplete()</literal> instead of injecting this as template data.
+                        </para>
+                        <para>
+                            You can find an example for this in <filename>Kernel/System/DynamicField/Driver/BaseSelect.pm</filename>.
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     </section>
 </section>
