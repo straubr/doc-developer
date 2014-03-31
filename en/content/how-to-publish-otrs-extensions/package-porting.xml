@@ -168,5 +168,15 @@ still work with the OTRS API.
                 </itemizedlist>
             </para>
         </section>
+
+        <section>
+            <title>New FontAwesome version</title>
+            <para>
+                With OTRS 3.4, we've also updated FontAwesome to a new version. As a consequence, the icons css classes have changed. While previously icons were defined by using a schema like <literal>icon-{iconname}</literal>, it is now <literal>fa fa-{iconname}</literal>.
+            </para>
+            <para>
+                Due to this change, you need to make sure to update all custom frontend module registrations which make use of icons (e.g. for the top navigation bar) to use the new schema. This is also true for templates where you're using icon elements like <literal>&lt;i class="icon-{iconname}"&gt;&lt;/i&gt;</literal>.
+            </para>
+        </section>
     </section>
 </section>
