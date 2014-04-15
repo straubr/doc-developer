@@ -449,7 +449,7 @@ else {
                 </para>
                 <para>
                     For details, please refer to the documentation of <literal>Kernel::Output::HTML::Layout</literal>
-                    on <ulink url="http://dev.otrs.org">dev.otrs.org</ulink>.
+                    on <ulink url="http://otrs.github.io/doc">otrs.github.io/doc</ulink>.
                 </para>
             </section>
         </section>
