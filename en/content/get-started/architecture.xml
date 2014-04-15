@@ -184,7 +184,7 @@
         </para>
         <para>
             For more information, see:
-            <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+            <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
         </para>
     </section>
     <section id="frontend-handle">
@@ -215,7 +215,7 @@
         </para>
         <para>
             For more information on core modules see:
-            <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+            <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
         </para>
     </section>
     <section id="cmd-frontend">
@@ -276,7 +276,7 @@
         </para>
         <para>
             For more information, see:
-            <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+            <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
         </para>
         <section id="Generic-Interface-Invoker">
             <title>Generic Interface Invoker Modules</title>
@@ -294,7 +294,7 @@
             </para>
             <para>
                 For more information, see:
-                <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+                <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
             </para>
         </section>
         <section id="Generic-Interface-Mapping">
@@ -306,7 +306,7 @@
             </para>
             <para>
                 For more information, see:
-                <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+                <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
             </para>
         </section>
         <section id="Generic-Interface-Operation">
@@ -325,7 +325,7 @@
             </para>
             <para>
                 For more information, see:
-                <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+                <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
             </para>
         </section>
         <section id="Generic-Interface-Transport">
@@ -343,7 +343,7 @@
             </para>
             <para>
                 For more information, see:
-                <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+                <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
             </para>
         </section>
     </section>
@@ -358,7 +358,7 @@
         </para>
         <para>
             For more information, see:
-            <ulink url="http://dev.otrs.org/">http://dev.otrs.org/</ulink>
+            <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
         </para>
     </section>
     <section id="database">
