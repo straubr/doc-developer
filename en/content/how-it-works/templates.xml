@@ -112,8 +112,16 @@ The first 20 characters of the author's name: [% Data.Name | truncate(20) | html
                     This command outputs a string or another data structure as a JavaScript JSON string.
 
                     <programlisting><![CDATA[
-var TreeData = [% Data.TreeData | JSON %];
+var Text = [% Data.Text | JSON %];
                     ]]></programlisting>
+
+                    Please note that the filter notation will only work for simple strings.
+                    To output complex data as JSON, please use it as a function:
+
+                    <programlisting><![CDATA[
+var TreeData = [% JSON(Data.TreeData) %];
+                    ]]></programlisting>
+
                 </para>
             </section>
 
@@ -309,7 +317,7 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
             </section>
 
             <section id="block">
-                <title><literal></literal></title>
+                <title><literal>[% RenderBlockStart %]</literal> / <literal>[% RenderBlockEnd %]</literal></title>
                 <para>
                     With this command, one can specify parts of a template file as a block. This block
                     needs to be explicitly filled with a function call from the application, to be
