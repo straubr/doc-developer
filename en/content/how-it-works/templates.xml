@@ -131,19 +131,19 @@ var TreeData = [% JSON(Data.TreeData) %];
                     Inserts environment variables provided by the LayoutObject. Some examples:
 
                     <programlisting><![CDATA[
-The current user name is: $Env{"UserFirstname"}
+The current user name is: [% Env("UserFullname") %]
 
 Some other common predefined variables are:
 
+[% Env("Action") %] --> the current action
+[% Env("Baselink") %] --> the baselink --> index.pl?SessionID=...
+[% Env("CGIHandle") %] --> the current CGI handle e. g.  index.pl
 [% Env("SessionID") %] --> the current session id
 [% Env("Time") %] --> the current time e. g.  Thu Dec 27 16:00:55 2001
-[% Env("CGIHandle") %] --> the current CGI handle e. g.  index.pl
-[% Env("UserCharset") %] --> the current site charset e. g.  iso-8859-1
-[% Env("Baselink") %] --> the baselink --> index.pl?SessionID=...
-[% Env("UserFirstname") %] --> e. g. Dirk [% Env("UserFirstname") %]
+[% Env("UserFullname") %] --> e. g. Dirk Seiffert
+[% Env("UserIsGroup[admin]") %] = Yes
+[% Env("UserIsGroup[users]") %] = Yes --> user groups (useful for own links)
 [% Env("UserLogin") %] --> e. g. mgg@x11.org
-[% Env("UserIsGroup[) %]sers]"} = Yes --> user groups (useful for own links)
-[% Env("UserIsGroup[) %]dmin]"} = Yes $Env{"Action"} --> the current action
                     ]]></programlisting>
                 </para>
                 <warning>
