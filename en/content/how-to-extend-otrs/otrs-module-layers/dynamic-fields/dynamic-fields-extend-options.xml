@@ -65,7 +65,7 @@
                 </para>
                 <para>
                     Take a look in the current Object Type Delegates to implement the same
-                    functions, event if they just return a successful value for the "other object".
+                    functions, even if they just return a successful value for the "other object".
                 </para>
             </listitem>
             <listitem>
