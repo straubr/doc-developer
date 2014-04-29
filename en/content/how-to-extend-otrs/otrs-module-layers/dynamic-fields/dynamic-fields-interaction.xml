@@ -48,8 +48,8 @@
     </note>
     <para>
         To store the value of the Dynamic Field is necessary to get the Object ID, for this example
-        if the Dynamic Field is liked to a ticket object, the screen should already have the
-        TicketID, otherwise if the field is liked to an article object in order to set the value of
+        if the Dynamic Field is linked to a ticket object, the screen should already have the
+        TicketID, otherwise if the field is linked to an article object in order to set the value of
         the field is necessary to create the article first. <emphasis>ValueSet()</emphasis> from
         the BackendObject can be used to set the Dynamic Field value.
     </para>
