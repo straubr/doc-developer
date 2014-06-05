@@ -17,9 +17,9 @@ or the git master by using the following command:
         <para>
         <screen>
 # for git master
-shell> git clone git://github.com/OTRS/otrs.git -b master
+shell> git clone git@github.com:OTRS/otrs.git -b master
 # for a specific branch
-shell> git clone git://github.com/OTRS/otrs.git -b rel-3_1
+shell> git clone git@github.com:OTRS/otrs.git -b rel-3_3
         </screen>
 Check out the "module-tools" module (from github) too, for your development environment. It contains a number of useful tools.
         </para>
