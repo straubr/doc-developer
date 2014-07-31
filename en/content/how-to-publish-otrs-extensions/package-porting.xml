@@ -254,7 +254,7 @@ sub ValidList {
                 Since <literal>Kernel::System::Cache</literal> is now also able to cache in-memory,
                 <literal>Kernel::System::CacheInternal</literal> was dropped. Please see the previous example
                 for how to migrate your code: you need to use the global Cache object and pass the <literal>Type</literal>
-                and <literal>TTL</literal> (only for <literal>Set()</literal>) settings with every call.
+                and <literal>TTL</literal> (<literal>TTL</literal>only for <literal>Set()</literal>) settings with every call.
             </para>
         </section>
 
