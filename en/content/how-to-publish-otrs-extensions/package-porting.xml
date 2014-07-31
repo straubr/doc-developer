@@ -15,6 +15,250 @@ still work with the OTRS API.
         </para>
 
         <section>
+            <title>New Object Handling</title>
+            <para>
+                Up to OTRS 3.4, objects used to be created both centrally and also locally and
+                then handed down to all objects by passing them to the contructors.
+                With OTRS 3.4 and later versions, there is now an ObjectManager that centralizes
+                singleton object creation and access.
+            </para>
+            <para>
+                This will require you first of all to change all toplevel Perl scripts (.pl files only!)
+                to load and provide the ObjectManager to all OTRS objects. Let's look at otrs.CheckDB.pl from
+                OTRS 3.3 as an example:
+
+                <screen>
+use strict;
+use warnings;
+
+use File::Basename;
+use FindBin qw($RealBin);
+use lib dirname($RealBin);
+use lib dirname($RealBin) . '/Kernel/cpan-lib';
+use lib dirname($RealBin) . '/Custom';
+
+use Kernel::Config;
+use Kernel::System::Encode;
+use Kernel::System::Log;
+use Kernel::System::Main;
+use Kernel::System::DB;
+
+# create common objects
+my %CommonObject = ();
+$CommonObject{ConfigObject} = Kernel::Config->new();
+$CommonObject{EncodeObject} = Kernel::System::Encode->new(%CommonObject);
+$CommonObject{LogObject}    = Kernel::System::Log->new(
+    LogPrefix    => 'OTRS-otrs.CheckDB.pl',
+    ConfigObject => $CommonObject{ConfigObject},
+);
+$CommonObject{MainObject} = Kernel::System::Main->new(%CommonObject);
+$CommonObject{DBObject}   = Kernel::System::DB->new(%CommonObject);
+                </screen>
+
+                We can see that a lot of code is used to load the packages and create the common
+                objects that must be passed to OTRS objects to be used in the script. With OTRS 3.4,
+                this looks quite different:
+
+                <screen>
+use strict;
+use warnings;
+
+use File::Basename;
+use FindBin qw($RealBin);
+use lib dirname($RealBin);
+use lib dirname($RealBin) . '/Kernel/cpan-lib';
+use lib dirname($RealBin) . '/Custom';
+
+use Kernel::System::ObjectManager;
+
+# create common objects
+local $Kernel::OM = Kernel::System::ObjectManager->new(
+    'Kernel::System::Log' => {
+        LogPrefix => 'OTRS-otrs.CheckDB.pl',
+    },
+);
+
+# get database object
+my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
+                </screen>
+
+                The new code is a bit shorter than the old. It is no longer necessary to load all the
+                packages, just the ObjectManager. Subsequently <literal>$Kernel::OM->Get('My::Perl::Package')</literal>
+                can be used to get instances of Objects which only have to be created once. The <literal>LogPrefix</literal> setting
+                controls the log messages that Kernel::System::Log writes, it could also be omitted.
+            </para>
+            <para>
+                From this example you can also deduce the general porting guide when it comes to accessing
+                objects: don't store them in $Self any more (unless needed for specific reasons). Just fetch and use
+                the objects on demand like <literal>$Kernel::OM->Get('Kernel::System::Log')->Log(...)</literal>. This also has
+                the benefit that the Log object will only be created if something must be logged.
+                Sometimes it could also be useful to create local variables if an object is used many times in a function,
+                like <literal>$DBObject</literal> in the example above.
+            </para>
+            <para>
+                There's not much more to know when porting packages that should be loadable by the ObjectManager.
+                They should declare the modules they use (via <literal>$Kernel::OM->Get()</literal>) like this:
+
+                <screen>
+our @ObjectDependencies = (
+    'Kernel::Config',
+    'Kernel::System::Log',
+    'Kernel::System::Main',
+);
+our $ObjectManagerAware = 1;
+                </screen>
+
+                The @ObjectDependencies declaration is needed for the ObjectManager to know how to create
+                the object (for objects that are not yet ObjectManagerAware, i. e. don't use $Kernel::OM
+                to get their dependencies), and to keep the correct order when destroying the objects.
+            </para>
+            <para>
+                You can also see the new flag $ObjectManagerAware. This is just a signal to the ObjectManager
+                that it doesn't have to create and pass the dependencies to the constructor of your object,
+                because your object uses <literal>$Kernel::OM->Get()</literal> to fetch the dependencies
+                on demand only.
+            </para>
+            <para>
+                Let's look at <filename>Valid.pm</filename> from OTRS 3.3 and 3.4 to see the difference. Old:
+
+                <screen>
+package Kernel::System::Valid;
+
+use strict;
+use warnings;
+
+use Kernel::System::CacheInternal;
+
+...
+
+sub new {
+    my ( $Type, %Param ) = @_;
+
+    # allocate new hash for object
+    my $Self = {};
+    bless( $Self, $Type );
+
+    # check needed objects
+    for my $Object (qw(DBObject ConfigObject LogObject EncodeObject MainObject)) {
+        $Self->{$Object} = $Param{$Object} || die "Got no $Object!";
+    }
+
+    $Self->{CacheInternalObject} = Kernel::System::CacheInternal->new(
+        %{$Self},
+        Type => 'Valid',
+        TTL  => 60 * 60 * 24 * 20,
+    );
+
+    return $Self;
+}
+
+...
+
+sub ValidList {
+    my ( $Self, %Param ) = @_;
+
+    # read cache
+    my $CacheKey = 'ValidList';
+    my $Cache = $Self->{CacheInternalObject}->Get( Key => $CacheKey );
+    return %{$Cache} if $Cache;
+
+    # get list from database
+    return if !$Self->{DBObject}->Prepare( SQL => 'SELECT id, name FROM valid' );
+
+    # fetch the result
+    my %Data;
+    while ( my @Row = $Self->{DBObject}->FetchrowArray() ) {
+        $Data{ $Row[0] } = $Row[1];
+    }
+
+    # set cache
+    $Self->{CacheInternalObject}->Set( Key => $CacheKey, Value => \%Data );
+
+    return %Data;
+}
+                </screen>
+
+                New:
+
+                <screen>
+package Kernel::System::Valid;
+
+use strict;
+use warnings;
+
+our @ObjectDependencies = (
+    'Kernel::System::Cache',
+    'Kernel::System::DB',
+    'Kernel::System::Log',
+);
+our $ObjectManagerAware = 1;
+
+...
+
+sub new {
+    my ( $Type, %Param ) = @_;
+
+    # allocate new hash for object
+    my $Self = {};
+    bless( $Self, $Type );
+
+    return $Self;
+}
+
+...
+
+sub ValidList {
+    my ( $Self, %Param ) = @_;
+
+    # read cache
+    my $CacheKey = 'ValidList';
+    my $Cache = $Kernel::OM->Get('Kernel::System::Cache')->Get(
+        Type => 'Valid',
+        Key => $CacheKey
+    );
+    return %{$Cache} if $Cache;
+
+    # get database object
+    my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
+
+    # get list from database
+    return if !$DBObject->Prepare( SQL => 'SELECT id, name FROM valid' );
+
+    # fetch the result
+    my %Data;
+    while ( my @Row = $DBObject->FetchrowArray() ) {
+        $Data{ $Row[0] } = $Row[1];
+    }
+
+    # set cache
+    $Kernel::OM->Get('Kernel::System::Cache')->Set(
+        Type => 'Valid',
+        TTL  => 60 * 60 * 24 * 20,
+        Key => $CacheKey,
+        Value => \%Data
+    );
+
+    return %Data;
+}
+                </screen>
+
+                You can see that the dependencies are declared, the ObjectManagerAware flag is set,
+                and the objects are only fetched on demand. We'll talk about the CacheInternalObject
+                in the next section.
+            </para>
+        </section>
+
+        <section>
+            <title>CacheInternalObject removed</title>
+            <para>
+                Since <literal>Kernel::System::Cache</literal> is now also able to cache in-memory,
+                <literal>Kernel::System::CacheInternal</literal> was dropped. Please see the previous example
+                for how to migrate your code: you need to use the global Cache object and pass the <literal>Type</literal>
+                and <literal>TTL</literal> (only for <literal>Set()</literal>) settings with every call.
+            </para>
+        </section>
+
+        <section>
             <title>New Template Engine</title>
             <para>
                 With OTRS 3.4, the DTL template engine was replaced by Template::Toolkit.
