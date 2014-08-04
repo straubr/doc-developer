@@ -202,6 +202,9 @@ sub new {
     my $Self = {};
     bless( $Self, $Type );
 
+    $Self->{CacheType} = 'Valid';
+    $Self->{CacheTTL}  = 60 * 60 * 24 * 20;
+
     return $Self;
 }
 
@@ -212,9 +215,9 @@ sub ValidList {
 
     # read cache
     my $CacheKey = 'ValidList';
-    my $Cache = $Kernel::OM->Get('Kernel::System::Cache')->Get(
-        Type => 'Valid',
-        Key => $CacheKey
+    my $Cache    = $Kernel::OM->Get('Kernel::System::Cache')->Get(
+        Type => $Self->{CacheType},
+        Key  => $CacheKey,
     );
     return %{$Cache} if $Cache;
 
@@ -232,9 +235,9 @@ sub ValidList {
 
     # set cache
     $Kernel::OM->Get('Kernel::System::Cache')->Set(
-        Type => 'Valid',
-        TTL  => 60 * 60 * 24 * 20,
-        Key => $CacheKey,
+        Type  => $Self->{CacheType},
+        TTL   => $Self->{CacheTTL},
+        Key   => $CacheKey,
         Value => \%Data
     );
 
