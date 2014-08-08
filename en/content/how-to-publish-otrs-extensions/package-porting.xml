@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
-<section>
+<section id="package-porting">
     <title>Package Porting</title>
     <para>
 With every new minor or major version of OTRS, you need to port your package(s) and make sure they
@@ -14,7 +14,7 @@ still work with the OTRS API.
             OTRS 3.3 to 3.4.
         </para>
 
-        <section>
+        <section id="package-porting-objectmanager">
             <title>New Object Handling</title>
             <para>
                 Up to OTRS 3.4, objects used to be created both centrally and also locally and
@@ -251,7 +251,7 @@ sub ValidList {
             </para>
         </section>
 
-        <section>
+        <section id="package-porting-cache">
             <title>CacheInternalObject removed</title>
             <para>
                 Since <literal>Kernel::System::Cache</literal> is now also able to cache in-memory,
@@ -261,7 +261,7 @@ sub ValidList {
             </para>
         </section>
 
-        <section>
+        <section id="package-porting-template-engine">
             <title>New Template Engine</title>
             <para>
                 With OTRS 3.4, the DTL template engine was replaced by Template::Toolkit.
@@ -416,7 +416,7 @@ sub ValidList {
             </para>
         </section>
 
-        <section>
+        <section id="package-porting-fontawesome">
             <title>New FontAwesome version</title>
             <para>
                 With OTRS 3.4, we've also updated FontAwesome to a new version. As a consequence, the icons css classes have changed. While previously icons were defined by using a schema like <literal>icon-{iconname}</literal>, it is now <literal>fa fa-{iconname}</literal>.
