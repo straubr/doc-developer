@@ -378,6 +378,11 @@ sub ValidList {
                     </tr>
                 </tbody>
             </table>
+            <para>
+                There is also a helper script <filename>bin/otrs.MigrateDTLtoTT.pl</filename> that will
+                automatically port the DTL files to Template::Toolkit syntax for you. It might fail if you have
+                errors in your DTL, please correct these first and re-run the script afterwards.
+            </para>
 
             <para>
                 There are a few more things to note when porting your code to the new template engine:
@@ -409,6 +414,13 @@ sub ValidList {
                         </para>
                         <para>
                             You can find an example for this in <filename>Kernel/System/DynamicField/Driver/BaseSelect.pm</filename>.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            Please be careful with "<literal>pre</literal>" output filters (the ones configured in
+                            <literal>Frontend::Output::FilterElementPre</literal>). They still work, but they will prevent the template
+                            from being cached. This could lead to serious performance issues. You should definitely not have any pre output filters that operate on all templates, but limit them to certain templates via configuration setting.
                         </para>
                     </listitem>
                 </itemizedlist>
