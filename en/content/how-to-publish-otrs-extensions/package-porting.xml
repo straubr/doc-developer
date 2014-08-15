@@ -85,7 +85,7 @@ my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
                 The new code is a bit shorter than the old. It is no longer necessary to load all the
                 packages, just the ObjectManager. Subsequently <literal>$Kernel::OM->Get('My::Perl::Package')</literal>
                 can be used to get instances of Objects which only have to be created once. The <literal>LogPrefix</literal> setting
-                controls the log messages that Kernel::System::Log writes, it could also be omitted.
+                controls the log messages that <literal>Kernel::System::Log</literal> writes, it could also be omitted.
             </para>
             <para>
                 From this example you can also deduce the general porting guide when it comes to accessing
@@ -105,18 +105,10 @@ our @ObjectDependencies = (
     'Kernel::System::Log',
     'Kernel::System::Main',
 );
-our $ObjectManagerAware = 1;
                 </screen>
 
-                The @ObjectDependencies declaration is needed for the ObjectManager to know how to create
-                the object (for objects that are not yet ObjectManagerAware, i. e. don't use $Kernel::OM
-                to get their dependencies), and to keep the correct order when destroying the objects.
-            </para>
-            <para>
-                You can also see the new flag $ObjectManagerAware. This is just a signal to the ObjectManager
-                that it doesn't have to create and pass the dependencies to the constructor of your object,
-                because your object uses <literal>$Kernel::OM->Get()</literal> to fetch the dependencies
-                on demand only.
+                The @ObjectDependencies declaration is needed for the ObjectManager to keep the correct
+                order when destroying the objects.
             </para>
             <para>
                 Let's look at <filename>Valid.pm</filename> from OTRS 3.3 and 3.4 to see the difference. Old:
@@ -191,7 +183,6 @@ our @ObjectDependencies = (
     'Kernel::System::DB',
     'Kernel::System::Log',
 );
-our $ObjectManagerAware = 1;
 
 ...
 
@@ -245,9 +236,8 @@ sub ValidList {
 }
                 </screen>
 
-                You can see that the dependencies are declared, the ObjectManagerAware flag is set,
-                and the objects are only fetched on demand. We'll talk about the CacheInternalObject
-                in the next section.
+                You can see that the dependencies are declared and the objects are only fetched on demand.
+                We'll talk about the CacheInternalObject in the next section.
             </para>
         </section>
 
