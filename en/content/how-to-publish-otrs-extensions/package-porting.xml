@@ -261,6 +261,15 @@ sub ValidList {
             </para>
         </section>
 
+        <section id="package-porting-scheduler-location">
+            <title>Scheduler backend files moved</title>
+            <para>
+                The backend files of the scheduler moved from <filename>Kernel/Scheduler</filename> to
+                <filename>Kernel/System/Scheduler</filename>. If you have any custom TaskHandler modules,
+                you need to move them also.
+            </para>
+        </section>
+
         <section id="package-porting-template-engine">
             <title>New Template Engine</title>
             <para>
