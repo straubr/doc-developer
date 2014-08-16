@@ -11,7 +11,7 @@
     <section id="adding_invoker">
         <title>Invoker backend</title>
         <para>
-            Next we will see how to develop a new Invoker, each invoker has to implement these
+            Next we will show how to develop a new Invoker, each invoker has to implement these
             subroutines:
         </para>
         <para>
@@ -54,12 +54,16 @@ use warnings;
 
 use Kernel::System::VariableCheck qw(IsString IsStringWithData);
 
-use vars qw(@ISA $VERSION);
+# prevent 'Used once' warning for Kernel::OM
+use Kernel::System::ObjectManager;
+
+our $ObjectManagerDisabled = 1;
                 ]]></programlisting>
             </para>
             <para>
-This is common header that can be found in common OTRS modules. The class/package name is declared
-via the package keyword.
+                This is common header that can be found in common OTRS modules. The class/package
+                name is declared via the package keyword. Invokers can not be instantiated by the
+                Object Manager.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -71,24 +75,23 @@ sub new {
     bless( $Self, $Type );
 
     # check needed params
-    for my $Needed (qw(DebuggerObject MainObject TimeObject)) {
-        if ( !$Param{$Needed} ) {
-            return {
-                Success      => 0,
-                ErrorMessage => "Got no $Needed!"
-            };
-        }
-
-        $Self->{$Needed} = $Param{$Needed};
+    if ( !$Param{DebuggerObject} ) {
+        return {
+            Success      => 0,
+            ErrorMessage => "Got no DebuggerObject!"
+        };
     }
+
+    $Self->{DebuggerObject} = $Param{DebuggerObject};
 
     return $Self;
 }
                 ]]></programlisting>
             </para>
             <para>
-The constructor 'new' creates a new instance of the class. According to the coding guidelines
-objects of other classes that are needed in this module have to be created in "new".
+                The constructor 'new' creates a new instance of the class. According to the coding
+                guidelines only objects of other classes not handled by the object manager that are
+                needed in this module have to be created in "new".
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -111,7 +114,7 @@ sub PrepareRequest {
 
     # check request for system time
     if ( IsStringWithData( $Param{Data}->{GetSystemTime} ) && $Param{Data}->{GetSystemTime} ) {
-        $ReturnData{SystemTime} = $Self->{TimeObject}->SystemTime();
+        $ReturnData{SystemTime} = $Kernel::OM->Get('Kernel::System::Time')->SystemTime();
     }
 
     return {
@@ -122,15 +125,16 @@ sub PrepareRequest {
                 ]]></programlisting>
             </para>
             <para>
-            The 'PrepareRequest' function is used to handle and collect all needed data to be sent
-            into the request, here we can receive data from the request handler, use it, extend it,
-            generate new data, and after that, we can transfer the results to the mapping layer.
+                The 'PrepareRequest' function is used to handle and collect all needed data to be
+                sent into the request, here we can receive data from the request handler, use it,
+                extend it, generate new data, and after that, we can transfer the results to the
+                mapping layer.
             </para>
             <para>
-            For this example we are expecting to receive a ticket number, if there isn't then we
-            use the debugger method "Error()" that creates an entry in the debug log and also
-            returns a structure with the parameter Success as 0 and Error Message as the passed
-            summary.
+                For this example we are expecting to receive a ticket number, if there isn't then we
+                use the debugger method "Error()" that creates an entry in the debug log and also
+                returns a structure with the parameter Success as 0 and Error Message as the passed
+                summary.
             </para>
             <para>
                 Also this example appends the word "Test" to the parameter "Action" and if
@@ -166,10 +170,12 @@ sub HandleResponse {
     # if there was an error in the response, forward it
     if ( !$Param{ResponseSuccess} ) {
         if ( !IsStringWithData( $Param{ResponseErrorMessage} ) ) {
+
             return $Self->{DebuggerObject}->Error(
                 Summary => 'Got response error, but no response error message!',
             );
         }
+
         return {
             Success      => 0,
             ErrorMessage => $Param{ResponseErrorMessage},
@@ -178,6 +184,7 @@ sub HandleResponse {
 
     # we need a TicketNumber
     if ( !IsStringWithData( $Param{Data}->{TicketNumber} ) ) {
+
         return $Self->{DebuggerObject}->Error( Summary => 'Got no TicketNumber!' );
     }
 
@@ -189,6 +196,7 @@ sub HandleResponse {
     # check Action
     if ( IsStringWithData( $Param{Data}->{Action} ) ) {
         if ( $Param{Data}->{Action} !~ m{ \A ( .*? ) Test \z }xms ) {
+
             return $Self->{DebuggerObject}->Error(
                 Summary => 'Got Action but it is not in required format!',
             );
@@ -222,8 +230,6 @@ sub HandleResponse {
             </para>
             <para>
                 <programlisting><![CDATA[
-1;
-
 =back
 
 =head1 TERMS AND CONDITIONS
@@ -235,8 +241,6 @@ the enclosed file COPYING for license information (AGPL). If you
 did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
 
 =cut
-
-=cut
                 ]]></programlisting>
             </para>
         </section>
@@ -244,7 +248,7 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
             <title>Configuration Example</title>
             <para>
                 There is the need to register this invoker module to be accessible in the OTRS GUI.
-                This can be done using the xml configuration below.
+                This can be done using the XML configuration below.
             </para>
             <para>
                 <programlisting linenumbering="numbered"><![CDATA[

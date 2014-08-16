@@ -28,12 +28,14 @@
     <para>
         In both ways network transport modules deals with the data in the Remote System format. it
         is not recommended to do any data transformation in this modules, the Mapping layer is the
-        responsible to perform any data transformation needed during the communication.
+        responsible to perform any data transformation needed during the communication. An exception
+        of this is the data conversion that is required specifically by for the transport e.g. XML
+        or JSON from / to Perl conversions.
     </para>
     <section id="adding_transport">
         <title>Transport backend</title>
         <para>
-            Next will see how to develop a new transport backend, each transport backend has to
+            Next will show how to develop a new transport backend, each transport backend has to
             implement these subroutines:
         </para>
         <para>
@@ -58,10 +60,11 @@
             handled by the transport module (Kernel/GenericInterface/Transport.pm).
         </para>
         <para>
-            Currently Generic Interface implements the HTTP SOAP transport, if the planned web
-            service can use HTTP SOAP there is no need to create a new network transport
-            module, instead we recommend to take a look into HTTP SOAP configuration to check
-            the settings and how it can be tuned.
+            Currently Generic Interface implements the HTTP SOAP and HTTP REST transports, if the
+            planned web service can use HTTP SOAP or HTTP SOAP there is no need to create a new
+            network transport module, instead we recommend to take a look into HTTP SOAP or HTTP
+            REST configurations to check their settings and how it can be tuned according to the
+            remote system.
         </para>
         <section id="transport_code_example">
             <title>Code example</title>
@@ -73,7 +76,7 @@
             </para>
             <para>
                 For this example a custom package is used to return the data without doing a real
-                network request to a Remote System, instead this custom module acts as a loopback
+                network request to a Remote System, instead this custom module acts as a loop-back
                 interface.
             </para>
             <para>
@@ -92,19 +95,24 @@ package Kernel::GenericInterface::Transport::HTTP::Test;
 use strict;
 use warnings;
 
+use HTTP::Request::Common;
 use LWP::UserAgent;
 use LWP::Protocol;
-use HTTP::Request::Common;
 
-use Kernel::System::Web::Request;
+# prevent 'Used once' warning for Kernel::OM
+use Kernel::System::ObjectManager;
 
-use vars qw(@ISA $VERSION);
+our $ObjectManagerDisabled = 1;
                 ]]></programlisting>
             </para>
             <para>
                 This is common header that can be found in common OTRS modules. The class/package
                 name is declared via the package keyword.
             </para>
+            <para>
+                transports can not be instantiated by the Object Manager.
+            </para>
+
             <para>
                 <programlisting><![CDATA[
 sub new {
@@ -113,10 +121,7 @@ sub new {
     my $Self = {};
     bless( $Self, $Type );
 
-    for my $Needed (
-        qw(LogObject EncodeObject ConfigObject MainObject DebuggerObject TransportConfig)
-        )
-    {
+    for my $Needed (qw( DebuggerObject TransportConfig)) {
         $Self->{$Needed} = $Param{$Needed} || return {
             Success      => 0,
             ErrorMessage => "Got no $Needed!"
@@ -125,12 +130,13 @@ sub new {
 
     return $Self;
 }
+
                 ]]></programlisting>
             </para>
             <para>
                 The constructor 'new' creates a new instance of the class. According to the coding
-                guidelines objects of other classes that are needed in this module have to be
-                created in "new".
+                guidelines only objects of other classes not handled by the object manager that are
+                needed in this module have to be created in "new".
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -138,6 +144,7 @@ sub ProviderProcessRequest {
     my ( $Self, %Param ) = @_;
 
     if ( $Self->{TransportConfig}->{Config}->{Fail} ) {
+
         return {
             Success      => 0,
             ErrorMessage => "HTTP status code: 500",
@@ -145,20 +152,20 @@ sub ProviderProcessRequest {
         };
     }
 
-    my $ParamObject = Kernel::System::Web::Request->new( %{$Self} );
+    my $ParamObject = $Kernel::OM->Get('Kernel::System::Web::Request');
 
     my %Result;
-
     for my $ParamName ( $ParamObject->GetParamNames() ) {
         $Result{$ParamName} = $ParamObject->GetParam( Param => $ParamName );
     }
 
     # special handling for empty post request
-    if ( keys %Result == 1 && exists $Result{POSTDATA} && !$Result{POSTDATA} ) {
+    if ( scalar keys %Result == 1 && exists $Result{POSTDATA} && !$Result{POSTDATA} ) {
         %Result = ();
     }
 
     if ( !%Result ) {
+
         return $Self->{DebuggerObject}->Error(
             Summary => 'No request data found.',
         );
@@ -169,7 +176,6 @@ sub ProviderProcessRequest {
         Data      => \%Result,
         Operation => 'test_operation',
     };
-
 }
                 ]]></programlisting>
             </para>
@@ -189,6 +195,7 @@ sub ProviderGenerateResponse {
     my ( $Self, %Param ) = @_;
 
     if ( $Self->{TransportConfig}->{Config}->{Fail} ) {
+
         return {
             Success      => 0,
             ErrorMessage => 'Test response generation failed',
@@ -213,7 +220,7 @@ sub ProviderGenerateResponse {
         $Response = HTTP::Response->new( 200 => "OK" );
         $Response->protocol('HTTP/1.0');
         $Response->content_type("text/plain; charset=UTF-8");
-        $Response->add_content_utf8( $Request->content );
+        $Response->add_content_utf8( $Request->content() );
         $Response->date(time);
     }
 
@@ -245,6 +252,7 @@ sub RequesterPerformRequest {
     my ( $Self, %Param ) = @_;
 
     if ( $Self->{TransportConfig}->{Config}->{Fail} ) {
+
         return {
             Success      => 0,
             ErrorMessage => "HTTP status code: 500",
@@ -262,7 +270,7 @@ sub RequesterPerformRequest {
     return {
         Success => 1,
         Data    => {
-            ResponseContent => $Response->content,
+            ResponseContent => $Response->content(),
         },
     };
 }
@@ -284,21 +292,27 @@ use base qw(LWP::Protocol);
 
 sub new {
     my $Class = shift;
+
     return $Class->SUPER::new(@_);
 }
 
-sub request {
+sub request {    ## no critic
     my $Self = shift;
+
     my ( $Request, $Proxy, $Arg, $Size, $Timeout ) = @_;
 
     my $Response = HTTP::Response->new( 200 => "OK" );
     $Response->protocol('HTTP/1.0');
     $Response->content_type("text/plain; charset=UTF-8");
-    $Response->add_content_utf8( $Request->content );
+    $Response->add_content_utf8( $Request->content() );
     $Response->date(time);
+
+    #print $Request->as_string();
+    #print $Response->as_string();
 
     return $Response;
 }
+
                 ]]></programlisting>
             </para>
             <para>
@@ -313,8 +327,6 @@ sub request {
                 <programlisting><![CDATA[
 1;
 
-=end Internal:
-
 =head1 TERMS AND CONDITIONS
 
 This software is part of the OTRS project (L<http://otrs.org/>).
@@ -324,8 +336,6 @@ the enclosed file COPYING for license information (AGPL). If you
 did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
 
 =cut
-
-=cut
                 ]]></programlisting>
             </para>
         </section>
@@ -333,7 +343,7 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
             <title>Configuration Example</title>
             <para>
                 There is the need to register this network transport module to be accessible in the
-                OTRS GUI. This can be done using the xml configuration below.
+                OTRS GUI. This can be done using the XML configuration below.
             </para>
             <para>
                 <programlisting linenumbering="numbered"><![CDATA[

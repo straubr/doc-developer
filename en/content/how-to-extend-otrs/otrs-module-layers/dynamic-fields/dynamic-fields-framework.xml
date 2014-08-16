@@ -26,7 +26,7 @@
                 the responsibility to implement the middle API for the specific needs for the field.
             </para>
             <para>
-                The Dynamic Field Banckend is the master controller of all the Drivers, each
+                The Dynamic Field Backend is the master controller of all the Drivers, each
                 function in this module is responsible to check the required parameters and call
                 the same function in the specific Driver according to the Dynamic Field
                 Configuration parameter received.

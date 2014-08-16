@@ -4,15 +4,14 @@
 <section id="operation">
     <title>Operation</title>
     <para>
-        The operation is used to perform an action within OTRS,
-        this action is requested by the external system and can include special parameters in order
-        that OTRS receives to correctly execute the action. After the action is performed, OTRS
-        sends a defined confirmation the external system.
+        The operation is used to perform an action within OTRS, this action is requested by the
+        external system and can include special parameters in order to correctly execute the action.
+        After the action is performed, OTRS sends a defined confirmation to the external system.
     </para>
     <section id="adding_operation">
         <title>Operation backend</title>
         <para>
-            Next we will see how to develop a new Operation, each operation has to implement these
+            Next we will show how to develop a new Operation, each operation has to implement these
             subroutines
         </para>
         <para>
@@ -52,7 +51,7 @@ use warnings;
 
 use Kernel::System::VariableCheck qw(IsHashRefWithData);
 
-use vars qw(@ISA $VERSION);
+our $ObjectManagerDisabled = 1;
                 ]]></programlisting>
             </para>
             <para>
@@ -61,7 +60,7 @@ use vars qw(@ISA $VERSION);
             </para>
             <para>
                 We also include VariableCheck module to perform certain validation over some
-                variables.
+                variables. Operations can not be instantiated by the Object Manager.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -89,8 +88,8 @@ sub new {
             </para>
             <para>
                 The constructor 'new' creates a new instance of the class. According to the coding
-                guidelines objects of other classes that are needed in this module have to be
-                created in "new".
+                guidelines only objects of other classes not handled by the object manager that are
+                needed in this module have to be created in "new".
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -99,12 +98,14 @@ sub Run {
 
     # check data - only accept undef or hash ref
     if ( defined $Param{Data} && ref $Param{Data} ne 'HASH' ) {
+
         return $Self->{DebuggerObject}->Error(
             Summary => 'Got Data but it is not a hash ref in Operation Test backend)!'
         );
     }
 
     if ( defined $Param{Data} && $Param{Data}->{TestError} ) {
+
         return {
             Success      => 0,
             ErrorMessage => "Error message for error code: $Param{Data}->{TestError}",
@@ -134,8 +135,8 @@ sub Run {
             </para>
             <para>
                 The 'Run' function is the main part of each operation, it receives all internal
-                mapped data from remote system needed by the provider to execute the action,
-                it performs the action and returns the result to the provider to be external mapped
+                mapped data from remote system needed by the provider to execute the action, it
+                performs the action and returns the result to the provider to be external mapped
                 and deliver back to the remote system.
             </para>
             <para>
@@ -146,8 +147,6 @@ sub Run {
                 <programlisting><![CDATA[
 1;
 
-=back
-
 =head1 TERMS AND CONDITIONS
 
 This software is part of the OTRS project (L<http://otrs.org/>).
@@ -157,8 +156,6 @@ the enclosed file COPYING for license information (AGPL). If you
 did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
 
 =cut
-
-=cut
                 ]]></programlisting>
             </para>
         </section>
@@ -166,7 +163,7 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
             <title>Configuration Example</title>
             <para>
                 There is the need to register this operation module to be accessible in the OTRS
-                GUI. This can be done using the xml configuration below.
+                GUI. This can be done using the XML configuration below.
             </para>
             <para>
                 <programlisting linenumbering="numbered"><![CDATA[
