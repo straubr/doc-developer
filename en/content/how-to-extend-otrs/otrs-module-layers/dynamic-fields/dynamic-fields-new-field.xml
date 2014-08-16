@@ -17,8 +17,8 @@
     </note>
     <para>
         To create this new Dynamic Field we will create 4 files: a Configuration File (XML),
-        to register the modules, an Admin Dialog Module (perl), to setup the field options, a
-        template module, for the Admin Dialog and a Dynamic Field Driver (perl).
+        to register the modules, an Admin Dialog Module (Perl), to setup the field options, a
+        template module, for the Admin Dialog and a Dynamic Field Driver (Perl).
     </para>
     <para>
         File Structure:

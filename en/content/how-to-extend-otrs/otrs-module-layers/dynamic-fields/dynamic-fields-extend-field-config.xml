@@ -15,10 +15,9 @@
     </note>
     <section id="dynamic-fields-extend-field-config-code">
         <title>Code Example:</title>
-            <para>
-                In this section a configuration file for Foo Extension is shown and
-                explained.
-            </para>
+        <para>
+            In this section a configuration file for Foo Extension is shown and explained.
+        </para>
         <para>
             <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8"?>
@@ -43,7 +42,7 @@
             ]]></programlisting>
         </para>
         <para>
-            This setting registers the extension in the Backend Object, The module will be loaded
+            This setting registers the extension in the Backend Object. The module will be loaded
             from Backend as a base class.
         </para>
         <para>

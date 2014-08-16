@@ -5,13 +5,13 @@
     <title>Creating a Dynamic Field Functionality Extension</title>
     <para>
         To illustrate this process a new Dynamic Field functionality extension for the function
-        <emphasis>Foo</emphasis> will be added to the Bakend Object as well as in in the Text
+        <emphasis>Foo</emphasis> will be added to the Backend Object as well as in in the Text
         field driver.
     </para>
     <para>
         To create this extension we will create 3 files: a Configuration File (XML),
-        to register the modules, a Backend extension (perl), to define the new function, and a
-        Text field Driver extension (perl), that implements the new funtion for Text fields.
+        to register the modules, a Backend extension (Perl), to define the new function, and a
+        Text field Driver extension (Perl), that implements the new function for Text fields.
     </para>
     <para>
         File Structure:

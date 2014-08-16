@@ -34,6 +34,7 @@ package Kernel::System::DynamicField::Driver::FooExtensionText;
 
 use strict;
 use warnings;
+
 =head1 NAME
 
 Kernel::System::DynamicField::Driver::FooExtensionText
@@ -50,7 +51,6 @@ Please look there for a detailed reference of the functions.
 =over 4
 
 =cut
-
             ]]></programlisting>
         </para>
         <para>

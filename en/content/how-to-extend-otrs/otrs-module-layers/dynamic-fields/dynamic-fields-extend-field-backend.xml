@@ -54,7 +54,7 @@ DynamicFields Extension for Backend
         </para>
         <para>
             This is the common header that can be found in common OTRS modules. The class/package
-            name is declared via the package keyword. Notice that BaseText is used as base class.
+            name is declared via the package keyword.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -77,27 +77,33 @@ sub Foo {
     # check needed stuff
     for my $Needed (qw(DynamicFieldConfig)) {
         if ( !$Param{$Needed} ) {
-            $Self->{LogObject}->Log( Priority => 'error', Message => "Need $Needed!" );
+            $Kernel::OM->Get('Kernel::System::Log')->Log(
+                Priority => 'error',
+                Message  => "Need $Needed!",
+            );
+
             return;
         }
     }
 
     # check DynamicFieldConfig (general)
     if ( !IsHashRefWithData( $Param{DynamicFieldConfig} ) ) {
-        $Self->{LogObject}->Log(
+        $Kernel::OM->Get('Kernel::System::Log')->Log(
             Priority => 'error',
             Message  => "The field configuration is invalid",
         );
+
         return;
     }
 
     # check DynamicFieldConfig (internally)
     for my $Needed (qw(ID FieldType ObjectType)) {
         if ( !$Param{DynamicFieldConfig}->{$Needed} ) {
-            $Self->{LogObject}->Log(
+            $Kernel::OM->Get('Kernel::System::Log')->Log(
                 Priority => 'error',
-                Message  => "Need $Needed in DynamicFieldConfig!"
+                Message  => "Need $Needed in DynamicFieldConfig!",
             );
+
             return;
         }
     }
@@ -106,10 +112,11 @@ sub Foo {
     my $DynamicFieldBackend = 'DynamicField' . $Param{DynamicFieldConfig}->{FieldType} . 'Object';
 
     if ( !$Self->{$DynamicFieldBackend} ) {
-        $Self->{LogObject}->Log(
+        $Kernel::OM->Get('Kernel::System::Log')->Log(
             Priority => 'error',
-            Message  => "Backend $Param{DynamicFieldConfig}->{FieldType} is invalid!"
+            Message  => "Backend $Param{DynamicFieldConfig}->{FieldType} is invalid!",
         );
+
         return;
     }
 
@@ -131,7 +138,7 @@ sub Foo {
         <note>
             <para>
                 It is also possible to skip the step that test if the Driver can execute the
-                function to do that is necessary to implement a mechanism in the Frontend module
+                function, to do that is necessary to implement a mechanism in the Frontend module
                 to require a special behavior on the Dynamic Field, and only after call the function
                 in the Backend object.
             </para>
@@ -149,8 +156,6 @@ This software is part of the OTRS project (L<http://otrs.org/>).
 This software comes with ABSOLUTELY NO WARRANTY. For details, see
 the enclosed file COPYING for license information (AGPL). If you
 did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
-
-=cut
 
 =cut
             ]]></programlisting>

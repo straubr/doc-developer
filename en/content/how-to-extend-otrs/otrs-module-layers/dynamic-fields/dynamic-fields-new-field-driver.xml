@@ -13,7 +13,7 @@
     </para>
     <note>
         <para>
-            Please refer to the Perl Online Documentation (POD) of the module
+            Please refer to the Perl On-line Documentation (POD) of the module
             /Kernel/System/DynmicField/Backend.pm to have the list of all attributes and possible
             return data for each function.
         </para>
@@ -45,6 +45,12 @@ use Kernel::System::VariableCheck qw(:all);
 use Kernel::System::DynamicFieldValue;
 
 use base qw(Kernel::System::DynamicField::Driver::BaseText);
+
+our @ObjectDependencies = (
+    'Kernel::Config',
+    'Kernel::System::DynamicFieldValue',
+    'Kernel::System::Main',
+);
             ]]></programlisting>
         </para>
         <para>
@@ -60,16 +66,6 @@ sub new {
     my $Self = {};
     bless( $Self, $Type );
 
-    # get needed objects
-    for my $Needed (qw(ConfigObject EncodeObject LogObject MainObject DBObject)) {
-        die "Got no $Needed!" if !$Param{$Needed};
-
-        $Self->{$Needed} = $Param{$Needed};
-    }
-
-    # create additional objects
-    $Self->{DynamicFieldValueObject} = Kernel::System::DynamicFieldValue->new( %{$Self} );
-
     # set field behaviors
     $Self->{Behaviors} = {
         'IsACLReducible'               => 0,
@@ -79,6 +75,42 @@ sub new {
         'IsStatsCondition'             => 1,
         'IsCustomerInterfaceCapable'   => 1,
     };
+
+    # get the Dynamic Field Backend custom extensions
+    my $DynamicFieldDriverExtensions
+        = $Kernel::OM->Get('Kernel::Config')->Get('DynamicFields::Extension::Driver::Password');
+
+    EXTENSION:
+    for my $ExtensionKey ( sort keys %{$DynamicFieldDriverExtensions} ) {
+
+        # skip invalid extensions
+        next EXTENSION if !IsHashRefWithData( $DynamicFieldDriverExtensions->{$ExtensionKey} );
+
+        # create a extension config shortcut
+        my $Extension = $DynamicFieldDriverExtensions->{$ExtensionKey};
+
+        # check if extension has a new module
+        if ( $Extension->{Module} ) {
+
+            # check if module can be loaded
+            if (
+                !$Kernel::OM->Get('Kernel::System::Main')->RequireBaseClass( $Extension->{Module} )
+                )
+            {
+                die "Can't load dynamic fields backend module"
+                    . " $Extension->{Module}! $@";
+            }
+        }
+
+        # check if extension contains more behaviors
+        if ( IsHashRefWithData( $Extension->{Behaviors} ) ) {
+
+            %{ $Self->{Behaviors} } = (
+                %{ $Self->{Behaviors} },
+                %{ $Extension->{Behaviors} }
+            );
+        }
+    }
 
     return $Self;
 }
@@ -174,6 +206,7 @@ EOF
 
     # call EditLabelRender on the common Driver
     my $LabelString = $Self->EditLabelRender(
+        %Param,
         DynamicFieldConfig => $Param{DynamicFieldConfig},
         Mandatory          => $Param{Mandatory} || '0',
         FieldName          => $FieldName,
@@ -276,7 +309,7 @@ sub ReadableValueRender {
     {
 
         # get raw Title and Value strings from field value
-        $Value = defined $Param{Value} ? $Param{Value} : '';
+        $Value = $Param{Value} // '';
         $Title = $Value;
     }
     else {
@@ -321,8 +354,6 @@ This software is part of the OTRS project (L<http://otrs.org/>).
 This software comes with ABSOLUTELY NO WARRANTY. For details, see
 the enclosed file COPYING for license information (AGPL). If you
 did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
-
-=cut
 
 =cut
             ]]></programlisting>

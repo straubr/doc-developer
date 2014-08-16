@@ -93,6 +93,7 @@ sub Run {
         );
     }
     if ( $Self->{Subaction} eq 'Change' ) {
+
         return $Self->_Change(
             %Param,
         );
@@ -106,6 +107,7 @@ sub Run {
             %Param,
         );
     }
+
     return $Self->{LayoutObject}->ErrorScreen(
         Message => "Undefined subaction.",
     );
@@ -126,6 +128,7 @@ sub _Add {
     for my $Needed (qw(ObjectType FieldType FieldOrder)) {
         $GetParam{$Needed} = $Self->{ParamObject}->GetParam( Param => $Needed );
         if ( !$Needed ) {
+
             return $Self->{LayoutObject}->ErrorScreen(
                 Message => "Need $Needed",
             );
@@ -219,6 +222,7 @@ sub _AddAction {
 
     # uncorrectable errors
     if ( !$GetParam{ValidID} ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Need ValidID",
         );
@@ -226,6 +230,7 @@ sub _AddAction {
 
     # return to add screen if errors
     if (%Errors) {
+
         return $Self->_ShowScreen(
             %Param,
             %Errors,
@@ -254,6 +259,7 @@ sub _AddAction {
     );
 
     if ( !$FieldID ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Could not create the new field",
         );
@@ -296,6 +302,7 @@ sub _Change {
     for my $Needed (qw(ObjectType FieldType)) {
         $GetParam{$Needed} = $Self->{ParamObject}->GetParam( Param => $Needed );
         if ( !$Needed ) {
+
             return $Self->{LayoutObject}->ErrorScreen(
                 Message => "Need $Needed",
             );
@@ -309,6 +316,7 @@ sub _Change {
     my $FieldID = $Self->{ParamObject}->GetParam( Param => 'ID' );
 
     if ( !$FieldID ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Need ID",
         );
@@ -321,6 +329,7 @@ sub _Change {
 
     # check for valid dynamic field configuration
     if ( !IsHashRefWithData($DynamicFieldData) ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Could not get data for dynamic field $FieldID",
         );
@@ -369,6 +378,7 @@ sub _ChangeAction {
 
     my $FieldID = $Self->{ParamObject}->GetParam( Param => 'ID' );
     if ( !$FieldID ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Need ID",
         );
@@ -430,6 +440,7 @@ sub _ChangeAction {
 
     # uncorrectable errors
     if ( !$GetParam{ValidID} ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Need ValidID",
         );
@@ -442,6 +453,7 @@ sub _ChangeAction {
 
     # check for valid dynamic field configuration
     if ( !IsHashRefWithData($DynamicFieldData) ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Could not get data for dynamic field $FieldID",
         );
@@ -449,6 +461,7 @@ sub _ChangeAction {
 
     # return to change screen if errors
     if (%Errors) {
+
         return $Self->_ShowScreen(
             %Param,
             %Errors,
@@ -479,6 +492,7 @@ sub _ChangeAction {
     );
 
     if ( !$UpdateSuccess ) {
+
         return $Self->{LayoutObject}->ErrorScreen(
             Message => "Could not update the field $GetParam{Name}",
         );
@@ -583,6 +597,7 @@ sub _ShowScreen {
 
     return $Output;
 }
+
 1;
             ]]></programlisting>
         </para>

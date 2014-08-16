@@ -61,7 +61,7 @@
                 <para>
                     This is necessary, even if the "other object" does not require any specific
                     data handling in its functions (e.g. after a value is set). All Object Type
-                    Delates must implement the functions that the Backend requires.
+                    Delegates must implement the functions that the Backend requires.
                 </para>
                 <para>
                     Take a look in the current Object Type Delegates to implement the same
