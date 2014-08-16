@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
-<section id="dynamic-fields-new-field-backend">
+<section id="dynamic-fields-extend-field-backend">
     <title>Dynamic Field Backend Extension Example</title>
     <para>
         Backend extensions will be loaded transparently into the Backed itself as a base class, all
@@ -13,7 +13,7 @@
             extension.
         </para>
     </note>
-    <section id="dynamic-fields-Extend-field-backend-code">
+    <section id="dynamic-fields-extend-field-backend-code">
         <title>Code Example:</title>
         <para>
             In this section the Foo extension for Backend is shown and explained. The

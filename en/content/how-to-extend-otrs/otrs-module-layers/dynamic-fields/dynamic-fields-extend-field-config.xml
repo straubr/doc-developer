@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
-<section id="dynamic-fields-extension-field-config">
+<section id="dynamic-fields-extend-field-config">
     <title>Dynamic Field Extension Configuration File Example</title>
     <para>
         The configuration files are used to register the extensions for the Backend and Drivers as
@@ -13,7 +13,7 @@
             that function.
         </para>
     </note>
-    <section id="dynamic-fields-extension-field-config-code">
+    <section id="dynamic-fields-extend-field-config-code">
         <title>Code Example:</title>
             <para>
                 In this section a configuration file for Foo Extension is shown and
