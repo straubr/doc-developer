@@ -4,166 +4,166 @@
 <section id="package-building">
     <title>Package Building</title>
     <para>
-If you want to create an OPM package (.opm) you need to create a spec file (.sopm)
-which includes the properties of the package.
+        If you want to create an OPM package (.opm) you need to create a spec file (.sopm) which
+        includes the properties of the package.
     </para>
     <section id="package-spec-file">
         <title>Package Spec File</title>
         <para>
-The OPM package is XML based. You can create/edit the .sopm via a text or xml
-editor. It contains meta data, a file list and database options.
+            The OPM package is XML based. You can create/edit the .sopm via a text or XML editor.
+            It contains meta data, a file list and database options.
         </para>
         <section id="package-name">
             <title>Name</title>
             <para>
-The package name (required).
-            <programlisting><![CDATA[
+                The package name (required).
+                <programlisting><![CDATA[
 <Name>Calendar</Name>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-version">
             <title>Version</title>
             <para>
-The package version (required).
-            <programlisting><![CDATA[
+                The package version (required).
+                <programlisting><![CDATA[
 <Version>1.2.3</Version>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-framework">
             <title>Framework</title>
             <para>
-The targeted framework version (3.2.x means e.g. 3.2.1 or 3.2.2) (required).
-            <programlisting><![CDATA[
+                The targeted framework version (3.2.x means e.g. 3.2.1 or 3.2.2) (required).
+                <programlisting><![CDATA[
 <Framework>3.2.x</Framework>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-Can also be used several times.
-            <programlisting><![CDATA[
+                Can also be used several times.
+                <programlisting><![CDATA[
 <Framework>3.0.x</Framework>
 <Framework>3.1.x</Framework>
 <Framework>3.2.x</Framework>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-vendor">
             <title>Vendor</title>
             <para>
-The package vendor (required).
-            <programlisting><![CDATA[
+                The package vendor (required).
+                <programlisting><![CDATA[
 <Vendor>OTRS AG</Vendor>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-url">
             <title>URL</title>
             <para>
-The vendor URL (required).
-            <programlisting><![CDATA[
+                The vendor URL (required).
+                <programlisting><![CDATA[
 <URL>http://otrs.org/</URL>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-license">
             <title>License</title>
             <para>
-The license of the package (required).
-            <programlisting><![CDATA[
+                The license of the package (required).
+                <programlisting><![CDATA[
 <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-changelog">
             <title>ChangeLog</title>
             <para>
-The package change log (optional).
-            <programlisting><![CDATA[
+                The package change log (optional).
+                <programlisting><![CDATA[
 <ChangeLog Version="1.1.2" Date="2013-02-15 18:45:21">Added some feature.</ChangeLog>
 <ChangeLog Version="1.1.1" Date="2013-02-15 16:17:51">New package.</ChangeLog>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-description">
             <title>Description</title>
             <para>
-The package description in different languages (required).
-            <programlisting><![CDATA[
+                The package description in different languages (required).
+                <programlisting><![CDATA[
 <Description Lang="en">A web calendar.</Description>
 <Description Lang="de">Ein Web Kalender.</Description>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-buildhost">
             <title>BuildHost</title>
             <para>
-This will be filled in automatically by OPM (auto).
-            <programlisting><![CDATA[
+                This will be filled in automatically by OPM (auto).
+                <programlisting><![CDATA[
 <BuildHost>?</BuildHost>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-builddate">
             <title>BuildDate</title>
             <para>
-This will be filled in automatically by OPM (auto).
-            <programlisting><![CDATA[
+                This will be filled in automatically by OPM (auto).
+                <programlisting><![CDATA[
 <BuildDate>?</BuildDate>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-package-required">
             <title>PackageRequired</title>
             <para>
-Packages that must be installed beforehand (optional).
-If PackageRequired is used, a version of the required package must be specified.
-            <programlisting><![CDATA[
+                Packages that must be installed beforehand (optional). If PackageRequired is used,
+                a version of the required package must be specified.
+                <programlisting><![CDATA[
 <PackageRequired Version="1.0.3">SomeOtherPackage</PackageRequired>
 <PackageRequired Version="5.3.2">SomeotherPackage2</PackageRequired>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-module-required">
             <title>ModuleRequired</title>
             <para>
-Perl modules that must be installed beforehand (optional).
-            <programlisting><![CDATA[
+                Perl modules that must be installed beforehand (optional).
+                <programlisting><![CDATA[
 <ModuleRequired Version="1.03">Encode</ModuleRequired>
 <ModuleRequired Version="5.32">MIME::Tools</ModuleRequired>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-os">
             <title>OS (^M)</title>
             <para>
-Required OS (optional).
-            <programlisting><![CDATA[
+                Required OS (optional).
+                <programlisting><![CDATA[
 <OS>linux</OS>
 <OS>darwin</OS>
 <OS>mswin32</OS>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-filelist">
             <title>Filelist</title>
             <para>
-This is a list of files included in the package (optional).
-            <programlisting><![CDATA[
+                This is a list of files included in the package (optional).
+                <programlisting><![CDATA[
 <Filelist>
     <File Permission="644" Location="Kernel/Config/Files/Calendar.pm"/>
     <File Permission="644" Location="Kernel/System/CalendarEvent.pm"/>
     <File Permission="644" Location="Kernel/Modules/AgentCalendar.pm"/>
     <File Permission="644" Location="Kernel/Language/de_AgentCalendar.pm"/>
 </Filelist>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section id="package-database-install">
             <title>DatabaseInstall</title>
             <para>
-Database entries that have to be created when a package is installed (optional).
-            <programlisting><![CDATA[
+                Database entries that have to be created when a package is installed (optional).
+                <programlisting><![CDATA[
 <DatabaseInstall>
     <TableCreate Name="calendar_event">
     <Column Name="id" Required="true" PrimaryKey="true" AutoIncrement="true" Type="BIGINT"/>
@@ -175,129 +175,143 @@ Database entries that have to be created when a package is installed (optional).
     <Column Name="event_status" Required="true" Size="50" Type="VARCHAR"/>
     </TableCreate>
 </DatabaseInstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;DatabaseInstall Type="post"&gt; or &lt;DatabaseInstall Type="pre"&gt; to define the time of execution separately  (post is default).
-For more info see chapter "Package Life Cycle".
+                You also can choose &lt;DatabaseInstall Type="post"&gt; or &lt;DatabaseInstall
+                Type="pre"&gt; to define the time of execution separately  (post is default). For
+                more info see chapter "Package Life Cycle".
             </para>
         </section>
         <section id="package-database-upgrade">
             <title>DatabaseUpgrade</title>
             <para>
-Information on which actions have to be performed in case of an upgrade (subject to version tag), (optional).
-Example (if already installed package version is below 1.3.4 (e. g. 1.2.6), defined action will be performed):
-            <programlisting><![CDATA[
+                Information on which actions have to be performed in case of an upgrade (subject to
+                version tag), (optional). Example (if already installed package version is below
+                1.3.4 (e. g. 1.2.6), defined action will be performed):
+                <programlisting><![CDATA[
 <DatabaseUpgrade>
     <TableCreate Name="calendar_event_involved" Version="1.3.4">
         <Column Name="event_id" Required="true" Type="BIGINT"/>
         <Column Name="user_id" Required="true" Type="INTEGER"/>
     </TableCreate>
 </DatabaseUpgrade>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;DatabaseUpgrade Type="post"&gt; or &lt;DatabaseUpgrade Type="pre"&gt; to define the time of execution separately (post is default).
-For more info see chapter "Package Life Cycle".
+                You also can choose &lt;DatabaseUpgrade Type="post"&gt; or &lt;DatabaseUpgrade
+                Type="pre"&gt; to define the time of execution separately (post is default). For
+                more info see chapter "Package Life Cycle".
             </para>
         </section>
         <section id="package-database-reinstall">
             <title>DatabaseReinstall</title>
             <para>
-Information on what actions have to be performed if  the package is reinstalled, (optional).
-            <programlisting><![CDATA[
+                Information on what actions have to be performed if  the package is reinstalled,
+                (optional).
+                <programlisting><![CDATA[
 <DatabaseReinstall></DatabaseReinstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;DatabaseReinstall Type="post"&gt; or &lt;DatabaseReinstall Type="pre"&gt; to define the time of execution separately (post is default).
-For more info see chapter "Package Life Cycle".
+                You also can choose &lt;DatabaseReinstall Type="post"&gt; or &lt;DatabaseReinstall
+                Type="pre"&gt; to define the time of execution separately (post is default). For
+                more info see chapter "Package Life Cycle".
             </para>
         </section>
         <section id="package-database-uninstall">
             <title>DatabaseUninstall</title>
             <para>
-Uninstall (if a package gets uninstalled), (optional).
-            <programlisting><![CDATA[
+                Uninstall (if a package gets uninstalled), (optional).
+                <programlisting><![CDATA[
 <DatabaseUninstall>
     <TableDrop Name="calendar_event" />
 </DatabaseUninstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;DatabaseUninstall Type="post"&gt; or &lt;DatabaseUninstall Type="pre"&gt; to define the time of execution separately (post is default).
-For more info see chapter "Package Life Cycle".
+                You also can choose &lt;DatabaseUninstall Type="post"&gt; or &lt;DatabaseUninstall
+                Type="pre"&gt; to define the time of execution separately (post is default). For
+                more info see chapter "Package Life Cycle".
             </para>
         </section>
         <section id="package-intro-install">
             <title>IntroInstall</title>
             <para>
-To show a "pre" or "post" install introduction in installation dialog.
+                To show a "pre" or "post" install introduction in installation dialog.
             </para>
             <para>
-            <programlisting><![CDATA[
+                <programlisting><![CDATA[
 <IntroInstall Type="post" Lang="en" Title="Some Title"><![CDATA[
-Some Info formatted in html....
+Some Info formatted in HTML....
 ]]]]><![CDATA[></IntroInstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You can also use the "Format" attribute to define if you want to use "html" (which is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when intro is shown (to use the new lines and spaces of the content).
+                You can also use the "Format" attribute to define if you want to use "html" (which
+                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
+                intro is shown (to use the new lines and spaces of the content).
             </para>
         </section>
         <section id="package-intro-uninstall">
             <title>IntroUninstall</title>
             <para>
-To show a "pre" or "post" uninstall introduction in uninstallation dialog.
+                To show a "pre" or "post" uninstall introduction in uninstallation dialog.
             </para>
             <para>
-            <programlisting><![CDATA[
+                <programlisting><![CDATA[
 <IntroUninstall Type="post" Lang="en" Title="Some Title"><![CDATA[
 Some Info formatted in html....
 ]]]]><![CDATA[></IntroUninstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You can also use the "Format" attribute to define if you want to use "html" (which is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when intro is shown (to use the new lines and spaces of the content).
+                You can also use the "Format" attribute to define if you want to use "html" (which
+                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
+                intro is shown (to use the new lines and spaces of the content).
             </para>
         </section>
         <section id="package-intro-reinstall">
             <title>IntroReinstall</title>
             <para>
-To show a "pre" or "post" reinstall introduction in reinstallation dialog.
+                To show a "pre" or "post" reinstall introduction in re-installation dialog.
             </para>
             <para>
-            <programlisting><![CDATA[
+                <programlisting><![CDATA[
 <IntroReinstall Type="post" Lang="en" Title="Some Title"><![CDATA[
 Some Info formatted in html....
 ]]]]><![CDATA[></IntroReinstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You can also use the "Format" attribute to define if you want to use "html" (which is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when intro is shown (to use the new lines and spaces of the content).
+                You can also use the "Format" attribute to define if you want to use "html" (which
+                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
+                intro is shown (to use the new lines and spaces of the content).
             </para>
         </section>
         <section id="package-intro-upgrade">
             <title>IntroUpgrade</title>
             <para>
-To show a "pre" or "post" upgrade introduction in upgrading dialog.
+                To show a "pre" or "post" upgrade introduction in upgrading dialog.
             </para>
             <para>
-            <programlisting><![CDATA[
+                <programlisting><![CDATA[
 <IntroUpgrade Type="post" Lang="en" Title="Some Title"><![CDATA[
 Some Info formatted in html....
 ]]]]><![CDATA[></IntroUpgrade>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You can also use the "Format" attribute to define if you want to use "html" (which is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when intro is shown (to use the new lines and spaces of the content).
+                You can also use the "Format" attribute to define if you want to use "html" (which
+                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
+                intro is shown (to use the new lines and spaces of the content).
             </para>
         </section>
         <section id="package-code-install">
             <title>CodeInstall</title>
             <para>
-To execute perl code when the package is installed (optional).
-            <programlisting><![CDATA[
+                To execute Perl code when the package is installed (optional).
+                <programlisting><![CDATA[
 <CodeInstall><![CDATA[
     # example
     if (1) {
@@ -311,74 +325,134 @@ To execute perl code when the package is installed (optional).
     # database example
     $Self->{DBObject}->Do(SQL => "SOME SQL");
 ]]]]><![CDATA[></CodeInstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;CodeInstall Type="post"&gt; or &lt;CodeInstall Type="pre"&gt; to define the time of execution separately (post is default).
-For more info see chapter "Package Life Cycle".
+                You also can choose &lt;CodeInstall Type="post"&gt; or &lt;CodeInstall
+                Type="pre"&gt; to define the time of execution separately (post is default). For
+                more info see chapter "Package Life Cycle".
             </para>
         </section>
         <section id="package-code-uninstall">
             <title>CodeUninstall</title>
             <para>
-To execute perl code if the package is uninstalled (optional).
-On "pre" or "post" time of package uninstallation.
-            <programlisting><![CDATA[
+                To execute Perl code if the package is uninstalled (optional). On "pre" or "post"
+                time of package uninstallation.
+                <programlisting><![CDATA[
 <CodeUninstall><![CDATA[
     # example
     if (1) {
         print STDERR "Some info to STDERR\n";
     }
 ]]]]><![CDATA[></CodeUninstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;CodeUninstall Type="post"&gt; or &lt;CodeUninstall Type="pre"&gt; to define the time of execution separately (post is default).
-For more info see chapter "Package Life Cycle".
+                You also can choose &lt;CodeUninstall Type="post"&gt; or &lt;CodeUninstall
+                Type="pre"&gt; to define the time of execution separately (post is default). For
+                more info see chapter "Package Life Cycle".
             </para>
         </section>
         <section id="package-code-reinstall">
             <title>CodeReinstall</title>
             <para>
-To execute perl code if the package is reinstalled (optional).
-            <programlisting><![CDATA[
+                To execute Perl code if the package is reinstalled (optional).
+                <programlisting><![CDATA[
 <CodeReinstall><![CDATA[
     # example
     if (1) {
         print STDERR "Some info to STDERR\n";
     }
 ]]]]><![CDATA[></CodeReinstall>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;CodeReinstall Type="post"&gt; or &lt;CodeReinstall Type="pre"&gt; to define the time of execution separately (post is default).
-For more info see chapter "Package Life Cycle".
+                You also can choose &lt;CodeReinstall Type="post"&gt; or &lt;CodeReinstall
+                Type="pre"&gt; to define the time of execution separately (post is default). For
+                more info see chapter "Package Life Cycle".
             </para>
         </section>
+
         <section id="package-code-upgrade">
             <title>CodeUpgrade</title>
             <para>
-To execute perl code if the package is upgraded (subject to version tag), (optional).
-Example (if already installed package version is below 1.3.4 (e. g. 1.2.6), defined action will be performed):
-            <programlisting><![CDATA[
+                To execute Perl code if the package is upgraded (subject to version tag),
+                (optional). Example (if already installed package version is below 1.3.4 (e. g.
+                1.2.6), defined action will be performed):
+                <programlisting><![CDATA[
 <CodeUpgrade Version="1.3.4"><![CDATA[
     # example
     if (1) {
         print STDERR "Some info to STDERR\n";
     }
 ]]]]><![CDATA[></CodeUpgrade>
-            ]]></programlisting>
+                ]]></programlisting>
             </para>
             <para>
-You also can choose &lt;CodeUpgrade Type="post"&gt; or &lt;CodeUpgrade Type="pre"gt; to define the time of execution separately (post is default).
+                You also can choose &lt;CodeUpgrade Type="post"&gt; or &lt;CodeUpgrade Type="pre"gt;
+                to define the time of execution separately (post is default).
+            </para>
+        </section>
+
+        <section id="package-merge-upgrade">
+            <title>PackageMerge</title>
+            <para>
+                Some times is needed to rename a package or merge an existing package into another,
+                on those cases this tag is useful to remove the merged or renamed package from local
+                repository while keeping the database structure and data without changes.
+                <programlisting><![CDATA[
+<PackageMerge Name="MergeOne" TargetVersion="2.0.0">
+  <DatabaseUpgrade Type="merge">
+      <TableCreate Name="merge_package">
+          <Column Name="id" Required="true" PrimaryKey="true" AutoIncrement="true" Type="INTEGER"/>
+          <Column Name="description" Required="true" Size="200" Type="VARCHAR"/>
+      </TableCreate>
+  </DatabaseUpgrade>
+</PackageMerge>
+                ]]></programlisting>
+            </para>
+            <para>
+                For the PackageMerge tag, you must define a name for the package will be merged,
+                and a target version, if the version of the installed package is higher, the
+                installation will not be possible.
+            </para>
+            <para>
+                Inside PackageMerge is possible to define special DatabaseUpgrade and CodeUpgrade
+                sections that must include the attribute "Type" with "merge" value, this sections
+                will be execute just in case package merge is possible.
+            </para>
+        </section>
+
+        <section id="package-ifpackage-ifnotpackage">
+            <title>IfPackage and IfNotPackage</title>
+            <para>
+                This couple of attributes for regular DatabaseInstall, DatabaseUpgrade, CodeInstall
+                and CodeUpgrade sections defines if they should be executed based on the existence
+                (or not) of a specific package in the local repository.
+                <programlisting><![CDATA[
+<DatabaseInstall IfPackage="AnyPackage">
+    ...
+</DatabaseInstall>
+                ]]></programlisting>
+                or
+                <programlisting><![CDATA[
+<CodeUpgrade IfNotPackage="OtherPackage">
+    ...
+</CodeUpgrade>
+                ]]></programlisting>
+            </para>
+            <para>
+                This attributes can be also set in the Database and Code sections inside the
+                PackageMerge tags.
             </para>
         </section>
     </section>
+
     <section id="package-example-sopm">
         <title>Example .sopm</title>
         <para>
-This is a whole example spec file.
-        <programlisting><![CDATA[
+            This is an example spec file looks with some of the above tags.
+            <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
     <Name>Calendar</Name>
@@ -419,27 +493,28 @@ This is a whole example spec file.
         <TableDrop Name="calendar_event"/>
     </DatabaseUninstall>
 </otrs_package>
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
     </section>
     <section id="package-build">
         <title>Package Build</title>
         <para>
-To build an .opm package from the spec opm.
-        <screen>
+            To build an .opm package from the spec opm.
+            <screen>
 shell> bin/otrs.PackageManager.pl -a build -p /path/to/example.sopm
 writing /tmp/example-0.0.1.opm
 shell>
-        </screen>
+            </screen>
         </para>
     </section>
     <section id="package-life-cycle">
         <title>Package Life Cycle - Install/Upgrade/Uninstall</title>
         <para>
-The following image shows you how the life cycle of a package instalation/upgrade/uninstallation works in the backend step by step.
-        <screenshot>
-            <graphic srccredit="" scale="60" fileref="screenshots/package-life-cycle.png"></graphic>
-        </screenshot>
+            The following image shows you how the life cycle of a package
+            installation/upgrade/uninstallation works in the backend step by step.
+            <screenshot>
+                <graphic srccredit="" scale="60" fileref="screenshots/package-life-cycle.png"></graphic>
+            </screenshot>
         </para>
     </section>
 </section>
