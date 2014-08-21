@@ -8,18 +8,18 @@ With every new minor or major version of OTRS, you need to port your package(s) 
 still work with the OTRS API.
     </para>
     <section>
-        <title>From OTRS 3.3 to 3.4</title>
+        <title>From OTRS 3.3 to 4</title>
         <para>
             This section lists changes that you need to examine when porting your package from
-            OTRS 3.3 to 3.4.
+            OTRS 3.3 to 4.
         </para>
 
         <section id="package-porting-objectmanager">
             <title>New Object Handling</title>
             <para>
-                Up to OTRS 3.4, objects used to be created both centrally and also locally and
+                Up to OTRS 4, objects used to be created both centrally and also locally and
                 then handed down to all objects by passing them to the contructors.
-                With OTRS 3.4 and later versions, there is now an ObjectManager that centralizes
+                With OTRS 4 and later versions, there is now an ObjectManager that centralizes
                 singleton object creation and access.
             </para>
             <para>
@@ -56,7 +56,7 @@ $CommonObject{DBObject}   = Kernel::System::DB->new(%CommonObject);
                 </programlisting>
 
                 We can see that a lot of code is used to load the packages and create the common
-                objects that must be passed to OTRS objects to be used in the script. With OTRS 3.4,
+                objects that must be passed to OTRS objects to be used in the script. With OTRS 4,
                 this looks quite different:
 
                 <programlisting>
@@ -111,7 +111,7 @@ our @ObjectDependencies = (
                 order when destroying the objects.
             </para>
             <para>
-                Let's look at <filename>Valid.pm</filename> from OTRS 3.3 and 3.4 to see the difference. Old:
+                Let's look at <filename>Valid.pm</filename> from OTRS 3.3 and 4 to see the difference. Old:
 
                 <programlisting>
 package Kernel::System::Valid;
@@ -263,7 +263,7 @@ sub ValidList {
         <section id="package-porting-template-engine">
             <title>New Template Engine</title>
             <para>
-                With OTRS 3.4, the DTL template engine was replaced by Template::Toolkit.
+                With OTRS 4, the DTL template engine was replaced by Template::Toolkit.
                 Please refer to the <link linkend="TemplatingMechanism">Templating section</link>
                 for details on how the new template syntax looks like.
             </para>
@@ -273,7 +273,7 @@ sub ValidList {
             </para>
 
             <table>
-                <caption>Template Changes from OTRS 3.3 to 3.4</caption>
+                <caption>Template Changes from OTRS 3.3 to 4</caption>
                 <thead>
                      <tr>
                          <td>DTL Tag</td>
@@ -430,7 +430,7 @@ sub ValidList {
         <section id="package-porting-fontawesome">
             <title>New FontAwesome version</title>
             <para>
-                With OTRS 3.4, we've also updated FontAwesome to a new version. As a consequence, the icons css classes have changed. While previously icons were defined by using a schema like <literal>icon-{iconname}</literal>, it is now <literal>fa fa-{iconname}</literal>.
+                With OTRS 4, we've also updated FontAwesome to a new version. As a consequence, the icons css classes have changed. While previously icons were defined by using a schema like <literal>icon-{iconname}</literal>, it is now <literal>fa fa-{iconname}</literal>.
             </para>
             <para>
                 Due to this change, you need to make sure to update all custom frontend module registrations which make use of icons (e.g. for the top navigation bar) to use the new schema. This is also true for templates where you're using icon elements like <literal>&lt;i class="icon-{iconname}"&gt;&lt;/i&gt;</literal>.
