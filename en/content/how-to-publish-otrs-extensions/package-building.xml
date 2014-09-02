@@ -95,6 +95,18 @@
                 ]]></programlisting>
             </para>
         </section>
+        <section id="package-possible-actions-installed">
+            <title>PackageIsPossible</title>
+            <para>
+                The possible actions for the package ones it's installed. If one of this actions is
+                not defined, the package will take it as a possible.
+                <programlisting><![CDATA[
+<PackageIsVisible>1</PackageIsVisible>
+<PackageIsDownloadable>0</PackageIsDownloadable>
+<PackageIsRemovable>1</PackageIsRemovable>
+                ]]></programlisting>
+            </para>
+        </section>
         <section id="package-buildhost">
             <title>BuildHost</title>
             <para>
