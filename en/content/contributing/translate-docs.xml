@@ -5,78 +5,15 @@
     <title>Translating the Documentation</title>
 
     <para>
-        The OTRS admin manual can be translated. The workflow is like this:
-        <orderedlist>
-            <listitem>
-                <para>
-                    The original documentation is written in English, in docbook XML format.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    The tool <ulink url="http://po4a.alioth.debian.org/">po4a</ulink>
-                    extracts gettext translation files from that (.po). These files can be
-                    edited with existing helpful tools like <ulink url="http://www.poedit.net/">Poedit</ulink>.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    These files can be translated and will be updated on changes in the
-                    English source files without loosing existing translations.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    From the translation files, translated docbook XML filed can be generated
-                    for the different languages (again with po4a).
-                </para>
-            </listitem>
-        </orderedlist>
-
-        This process has the benefit of keeping track of updates in the original source files.
-        Only additions and updates have to be retranslated.
-    </para>
-
-    <para>
-        The git repository for the admin documentation can be found
-        <ulink url="https://github.com/OTRS/doc-admin">on github</ulink>.
-        Inside of this repository, there is the
-        <ulink url="https://github.com/OTRS/doc-admin/tree/master/i18n">directory with the translation files</ulink>.
-    </para>
-
-    <para>
-        To start a new translation, download the translation template file
-        <ulink url="https://github.com/OTRS/doc-admin/blob/master/i18n/doc-admin.pot">doc-admin.pot</ulink>
-        from git, save it and rename the file to <literal>doc-admin.$Lanugage.po</literal>
-        (e. g. <literal>doc-admin.de.po</literal> for German).
-    </para>
-    <para>
-        To improve an existing translation, you can download the <literal>doc-admin.$Lanugage.po</literal> file
-        for this lanugage and work on this. If there are questions on how the translation should be made, you can use
-        <literal>doc-admin.de.po</literal> as a reference.
+        The OTRS admin manual can be translated via transifex as described in <link linkend="translate">
+        the section on translating OTRS</link>. You can join a language team on transifex to improve an existing
+        translation or even suggest a new language to translate the admin manual to.
     </para>
     <para>
         It is important that the structure of the generated XML stays intact.
-        So if the original string is "Edit &lt;filename&gt;Kernel/Config.pm&lt;/filename&gt;",
-        then the German translation has to be "&lt;filename&gt;Kernel/Config.pm&lt;/filename&gt; bearbeiten",
-        keeping the the XML tags. Scripts and examples usually do not have to be translated (so you can just copy
-        the source text to the translation text field in this case).
-    </para>
-    <para>
-        To coordinate translation efforts and to send in your translated .po files, please use the
-        <ulink url="http://lists.otrs.org/cgi-bin/listinfo/i18n">i18n mailing list</ulink> of OTRS.
-        The OTRS team will take care of regenerating the XML documenation for your language.
-    </para>
-    <important>
-        <para>
-            Especially if you add a new translation, it is recommended to send in snapshots of your file regularly
-            to make sure that your translation has the correct structure and that the docbook documentation
-            can be successfully generated from it, producing valid XML documents.
-        </para>
-    </important>
-    <para>
-        If you want to test your translation file locally, you can checkout the doc-admin repository
-        and use po4a directly to generate the translation files. Please see the file <literal>po4a.conf</literal>
-        in the top directory of that module for usage hints. For additional questions, please use the i18n mailing list.
+        So if the original string is <code><![CDATA[Edit <filename>Kernel/Config.pm</filename>]]></code>,
+        then the German translation has to be <code><![CDATA[<filename>Kernel/Config.pm</filename> bearbeiten]]></code>,
+        keeping the the XML tags intact. Regular &lt; and &gt; signs that are escaped in the source text must also be escaped in the traslations (like <literal><![CDATA[&lt;someone@example.com&gt;]]></literal>).
+        Scripts and examples usually do not have to be translated (so you can just copy the source text to the translation text field in this case).
     </para>
 </section>
