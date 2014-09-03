@@ -11,9 +11,9 @@
     </para>
     <para>
         It is important that the structure of the generated XML stays intact.
-        So if the original string is <code><![CDATA[Edit <filename>Kernel/Config.pm</filename>]]></code>,
-        then the German translation has to be <code><![CDATA[<filename>Kernel/Config.pm</filename> bearbeiten]]></code>,
-        keeping the the XML tags intact. Regular &lt; and &gt; signs that are escaped in the source text must also be escaped in the traslations (like <literal><![CDATA[&lt;someone@example.com&gt;]]></literal>).
+        So if the original string is "<code><![CDATA[Edit <filename>Kernel/Config.pm</filename>]]></code>",
+        then the German translation has to be "<code><![CDATA[<filename>Kernel/Config.pm</filename> bearbeiten]]></code>",
+        keeping the the XML tags intact. Regular &lt; and &gt; signs that are escaped in the source text must also be escaped in the traslations (like "<code><![CDATA[&lt;someone@example.com&gt;]]></code>").
         Scripts and examples usually do not have to be translated (so you can just copy the source text to the translation text field in this case).
     </para>
 </section>
