@@ -6,25 +6,17 @@
     <section id="default-config">
         <title>Default Config</title>
         <para>
-There are different default config files. The main one, which comes with the
-framework, is:
+            There are different default config files. The main one, which comes with the
+            framework, is <filename>Kernel/Config/Defaults.pm</filename>
         </para>
         <para>
-            <filename>Kernel/Config/Defaults.pm</filename>
+            This file should be left untouched as it is automatically updated on framework updates.
+            There is also a sub directory where you can store the default config files
+            for your own modules. These files are used automatically.
         </para>
         <para>
-This file should be left untouched as it is automatically updated on framework updates.
-There is also a sub directory where you can store the default config files
-for your own modules. These files are used automatically.
-        </para>
-        <para>
-The directory is located under:
-        </para>
-        <para>
-            <filename>$OTRS_HOME/Kernel/Config/Files/*.pm</filename>
-        </para>
-        <para>
-And could look as follows:
+            The directory is located at <filename>$OTRS_HOME/Kernel/Config/Files/*.pm</filename>
+            and could look as follows:
         </para>
         <para>
             <filename>Kernel/config/Files/Calendar.pm</filename>
@@ -55,60 +47,32 @@ $Self->{'Frontend::NotifyModule'}->{'80-ShowCalendarEvents'} = {
         ]]></programlisting>
         </para>
     </section>
-    <section id="custom-config">
-        <title>Custom Config</title>
-        <para>
-If you want to change a config option, copy it to
-        </para>
-        <para>
-            <filename>Kernel/Config.pm</filename>
-        </para>
-        <para>
-and set the new option. This file will be read out last and so all default config
-options are overwritten with your settings.
-        </para>
-        <para>
-This way it is easy to handle updates -  you just need the Kernel/Config.pm.
-        </para>
-    </section>
+
     <section id="accessing-config-options">
-        <title>Accessing Config Options</title>
+        <title>Accessing Config Options at Runtime</title>
         <para>
-You can read and write (for one request) the config options via the core module "Kernel::Config".
-The config object is a base object and thus available in each Frontend Module.
+            You can read and write (for one request) the config options via the core module "Kernel::Config".
         </para>
         <para>
-If you want to access a config option:
-        </para>
-        <para>
+            If you want to read a config option:
         <programlisting><![CDATA[
-my $ConfigOption = $Self->{ConfigObject}->Get('Prefix::Option');
+my $ConfigOption = Kernel::OM->Get('Kernel::Config')->Get('Prefix::Option');
         ]]></programlisting>
-        </para>
-        <para>
-If you want to change a config option at runtime and just for this one request/process:
-        </para>
-        <para>
+            If you want to change a config option at runtime and just for this one request/process:
         <programlisting><![CDATA[
-$Self->{ConfigObject}->Set(
+Kernel::OM->Get('Kernel::Config')->Set(
     Key => 'Prefix::Option'
     Value => 'SomeNewValue',
 );
         ]]></programlisting>
         </para>
     </section>
-        <section id="xml-config">
+
+    <section id="xml-config">
         <title>XML Config Options</title>
         <para>
-XML config files are located under:
-        </para>
-        <para>
-            <filename>$OTRS_HOME/Kernel/Config/Files/*.xml</filename>
-        </para>
-        <para>
-Each config file has the following layout:
-        </para>
-        <para>
+            XML config files are located at <filename>$OTRS_HOME/Kernel/Config/Files/*.xml</filename>.
+            Each config file has the following layout:
         <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_config version="1.0" init="Changes">
@@ -119,12 +83,10 @@ Each config file has the following layout:
         ]]></programlisting>
         </para>
         <para>
-The "init" attribute describes where the config options should be loaded. There are different levels available and will be loaded/overloaded in the following order: "Framework" (for framework settings e. g. session option), "Application" (for application settings e. g. ticket options), "Config" (for extensions to existing applications e. g. ITSM options) and "Changes" (for custom development e. g. to overwrite framework or ticket options).
+            The "init" attribute describes where the config options should be loaded. There are different levels available and will be loaded/overloaded in the following order: "Framework" (for framework settings e. g. session option), "Application" (for application settings e. g. ticket options), "Config" (for extensions to existing applications e. g. ITSM options) and "Changes" (for custom development e. g. to overwrite framework or ticket options).
         </para>
         <para>
-If you want to add config options, here is an example:
-        </para>
-        <para>
+            If you want to add config options, here is an example:
         <programlisting><![CDATA[
 <ConfigItem Name="Ticket::Hook" Required="1" Valid="1" ConfigLevel="300">
     <Description Lang="en">The identifyer for a ticket. The default is Ticket#.</Description>
@@ -138,112 +100,100 @@ If you want to add config options, here is an example:
         ]]></programlisting>
         </para>
         <para>
-If "required" is set to "1", the config variable is included and cannot be disabled.
+            If "required" is set to "1", the config variable is included and cannot be disabled.
         </para>
         <para>
-If "valid" is set to "1", the config variable is active. If it is set to "0", the config variable is inactive.
+            If "valid" is set to "1", the config variable is active. If it is set to "0", the config variable is inactive.
         </para>
         <para>
-If the optional attribute "ConfigLevel" is set, the config variable might not be edited by the administrator,
-depending on his own config level. The config variable "ConfigLevel" sets the level of technical experience
-of the administrator. It can be 100 (Expert), 200 (Advanced) or 300 (Beginner).
-As a guideline which config level should be given to an option, it is recommended that all options
-having to do with the configuration of externel interaction, like Sendmail, LDAP, SOAP,
-and others should get a config level of at least 200 (Advanced).
+            If the optional attribute "ConfigLevel" is set, the config variable might not be edited by the administrator,
+            depending on his own config level. The config variable "ConfigLevel" sets the level of technical experience
+            of the administrator. It can be 100 (Expert), 200 (Advanced) or 300 (Beginner).
+            As a guideline which config level should be given to an option, it is recommended that all options
+            having to do with the configuration of externel interaction, like Sendmail, LDAP, SOAP,
+            and others should get a config level of at least 200 (Advanced).
         </para>
         <para>
-The config variable is defined in the "setting" element.
+            The config variable is defined in the "setting" element.
         </para>
+
         <section id="xml-config-variable">
             <title>Types of XML Config Variables</title>
             <para>
-The XML config settings support various types of variables.
+                The XML config settings support various types of variables.
             </para>
-        </section>
-        <section id="xml-config-string">
-            <title>String</title>
-            <para>
-A config element for numbers and single-line strings.
-Checking the validity with a regex is possible.
-The check attribute checks elements on the file system.
-This contains files and directories.
-            </para>
-            <para>
-            <programlisting><![CDATA[
+            <section id="xml-config-string">
+                <title>String</title>
+                <para>
+                    A config element for numbers and single-line strings.
+                    Checking the validity with a regex is possible.
+                    The check attribute checks elements on the file system.
+                    This contains files and directories.
+                <programlisting><![CDATA[
 <Setting>
     <String Regex="" Check="File"></String>
 </Setting>
-            ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-config-textarea">
-            <title>Textarea</title>
-            <para>
-A config element for multiline text.
-            </para>
-            <para>
-            <programlisting><![CDATA[
+                ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-textarea">
+                <title>Textarea</title>
+                <para>
+                    A config element for multiline text.
+                <programlisting><![CDATA[
 <Setting>
     <TextArea Regex=""></TextArea>
 </Setting>
-            ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-config-option">
-            <title>Options</title>
-            <para>
-This config element offers preset values as a pull-down menu.
-            </para>
-            <para>
-            <programlisting><![CDATA[
+                ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-option">
+                <title>Options</title>
+                <para>
+                    This config element offers preset values as a pull-down menu.
+                <programlisting><![CDATA[
 <Setting>
     <Option SelectedID="Key">
         <Item Key=""></Item>
         <Item Key=""></Item>
     </Option>
 </Setting>
-            ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-config-array">
-            <title>Array</title>
-            <para>
-With this config element arrays can be displayed.
-            </para>
-            <para>
-            <programlisting><![CDATA[
+                ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-array">
+                <title>Array</title>
+                <para>
+                    With this config element arrays can be displayed.
+                <programlisting><![CDATA[
 <Setting>
     <Array>
         <Item></Item>
         <Item></Item>
     </Array>
 </Setting>
-            ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-config-hash">
-            <title>Hash</title>
-            <para>
-With this config element hashes can be displayed.
-            </para>
-            <para>
-            <programlisting><![CDATA[
+                ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-hash">
+                <title>Hash</title>
+                <para>
+                    With this config element hashes can be displayed.
+                <programlisting><![CDATA[
 <Setting>
     <Hash>
         <Item Key=""></Item>
         <Item Key=""></Item>
     </Hash>
 </Setting>
-            ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-config-subhash">
-            <title>Hash with SubArray, SubHash</title>
-            <para>
-A hash can contain content, arrays or hashes.
-            </para>
-            <para>
-            <programlisting><![CDATA[
+                ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-subhash">
+                <title>Hash with SubArray, SubHash</title>
+                <para>
+                    A hash can contain content, arrays or hashes.
+                <programlisting><![CDATA[
 <Setting>
     <Hash>
         <Item Key=""></Item>
@@ -262,16 +212,14 @@ A hash can contain content, arrays or hashes.
         <Item Key=""></Item>
     </Hash>
 </Setting>
-            ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-config-navbar">
-            <title>FrontendModuleReg (NavBar)</title>
-            <para>
-Module registration for Agent Interface.
-            </para>
-            <para>
-            <programlisting><![CDATA[
+                ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-navbar">
+                <title>FrontendModuleReg (NavBar)</title>
+                <para>
+                    Module registration for Agent Interface.
+                <programlisting><![CDATA[
 <Setting>
     <FrontendModuleReg>
         <Group>group1</Group>
@@ -292,16 +240,14 @@ Module registration for Agent Interface.
         </NavBar>
     </FrontendModuleReg>
 </Setting>
-            ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-config-navbarmodule">
-            <title>FrontendModuleReg (NavBarModule)</title>
-            <para>
-Module registration for Admin Interface
-            </para>
-            <para>
-            <programlisting><![CDATA[
+                ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-navbarmodule">
+                <title>FrontendModuleReg (NavBarModule)</title>
+                <para>
+                    Module registration for Admin Interface
+                <programlisting><![CDATA[
 <Setting>
     <FrontendModuleReg>
         <Group>admin</Group>
@@ -317,8 +263,9 @@ Module registration for Admin Interface
         </NavBarModule>
     </FrontendModuleReg>
 </Setting>
-            ]]></programlisting>
-            </para>
+                ]]></programlisting>
+                </para>
+            </section>
         </section>
     </section>
 </section>
