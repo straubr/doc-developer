@@ -42,8 +42,8 @@
             which cause the CSS files to be loaded by the browser. Let's see an example of this:
 
             <programlisting><![CDATA[
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css-cache/CommonCSS_179376764084443c181048401ae0e2ad.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/ivory/css-cache/CommonCSS_e0783e0c2445ad9cc59c35d6e4629684.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css-cache/CommonCSS_179376764084443c181048401ae0e2ad.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/ivory/css-cache/CommonCSS_e0783e0c2445ad9cc59c35d6e4629684.css" />
             ]]></programlisting>
 
             Here it can clearly be seen that the default skin is loaded first, and then the custom skin specified
@@ -53,26 +53,26 @@
             Loader turned off:
 
             <programlisting><![CDATA[
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Reset.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Default.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Header.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewControl.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewSmall.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewMedium.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewLarge.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Footer.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Grid.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Form.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Table.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Widget.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.WidgetMenu.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.TicketDetail.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Tooltip.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Dialog.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Print.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Agent.CustomerUser.GoogleMaps.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Agent.CustomerUser.OpenTicket.css" />
-    <link rel="stylesheet" href="/otrs-web/skins/Agent/ivory/css/Core.Dialog.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Reset.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Default.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Header.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewControl.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewSmall.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewMedium.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.OverviewLarge.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Footer.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Grid.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Form.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Table.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Widget.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.WidgetMenu.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.TicketDetail.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Tooltip.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Dialog.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Print.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Agent.CustomerUser.GoogleMaps.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Agent.CustomerUser.OpenTicket.css" />
+<link rel="stylesheet" href="/otrs-web/skins/Agent/ivory/css/Core.Dialog.css" />
             ]]></programlisting>
 
             Here we can better see the individual files that come from the skins.
@@ -218,11 +218,11 @@ body {
         <para>
             In conclusion: to create a new skin in OTRS, we had to place the new logo file, and create one CSS and one XML file, resulting
             in three new files:
-            <screen>
+            <screen><![CDATA[
 $OTRS_HOME/Kernel/Config/Files/CustomSkin.xml
 $OTRS_HOME/var/httpd/htdocs/skins/Agent/custom/img/custom-logo.png
 $OTRS_HOME/var/httpd/htdocs/skins/Agent/custom/css/Core.Header.css
-            </screen>
+]]></screen>
         </para>
     </section>
 </section>

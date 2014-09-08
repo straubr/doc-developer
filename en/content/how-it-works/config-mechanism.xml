@@ -56,11 +56,11 @@ $Self->{'Frontend::NotifyModule'}->{'80-ShowCalendarEvents'} = {
         <para>
             If you want to read a config option:
         <programlisting><![CDATA[
-my $ConfigOption = Kernel::OM->Get('Kernel::Config')->Get('Prefix::Option');
+my $ConfigOption = $Kernel::OM->Get('Kernel::Config')->Get('Prefix::Option');
         ]]></programlisting>
             If you want to change a config option at runtime and just for this one request/process:
         <programlisting><![CDATA[
-Kernel::OM->Get('Kernel::Config')->Set(
+$Kernel::OM->Get('Kernel::Config')->Set(
     Key => 'Prefix::Option'
     Value => 'SomeNewValue',
 );
