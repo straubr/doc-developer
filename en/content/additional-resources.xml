@@ -2,31 +2,34 @@
 <!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
 <appendix id="additional-ressources">
+
     <title>Additional Resources</title>
 
-    <section id="additional-resources-hompepage">
-        <title>otrs.com</title>
-        <para>
-            The OTRS website with source code, documentation and news is available at
-            <ulink url="http://otrs.org/">http://www.otrs.com/</ulink>.
-            Here you can also find information about commercial services and trainings from OTRS Group,
-            the creator of OTRS.
-        </para>
-    </section>
+    <itemizedlist>
+        <listitem>
+            <para>otrs.com</para>
+            <para>
+                The OTRS website with source code, documentation and news is available at
+                <ulink url="http://otrs.org/">http://www.otrs.com/</ulink>.
+                Here you can also find information about commercial services and trainings from OTRS Group,
+                the creator of OTRS.
+            </para>
+        </listitem>
 
-    <section id="additional-resources-online-library">
-        <title>Online API Library</title>
-        <para>
-            The OTRS developer API documentation is available at
-            <ulink url="http://otrs.github.io/doc/api/otrs/stable/">http://otrs.github.io/doc/api/otrs/stable/</ulink>.
-        </para>
-    </section>
+        <listitem>
+            <para>Online API Library</para>
+            <para>
+                The OTRS developer API documentation is available at
+                <ulink url="http://otrs.github.io/doc/api/otrs/stable/">http://otrs.github.io/doc/api/otrs/stable/</ulink>.
+            </para>
+        </listitem>
 
-    <section id="additional-resources-developer-mailing-list">
-        <title>Developer Mailing List</title>
-        <para>
-            The OTRS developer mailing list is available at
-            <ulink url="http://lists.otrs.org/">http://lists.otrs.org/</ulink>.
-        </para>
-    </section>
+        <listitem>
+            <para>Developer Mailing List</para>
+            <para>
+                The OTRS developer mailing list is available at
+                <ulink url="http://lists.otrs.org/">http://lists.otrs.org/</ulink>.
+            </para>
+        </listitem>
+    </itemizedlist>
 </appendix>
