@@ -4,127 +4,116 @@
 <section>
     <title>Package Management</title>
     <para>
-The OPM (OTRS Package Manager) is a mechanism to distribute software packages for
-the OTRS framework via http, ftp or file upload.
+        The OPM (OTRS Package Manager) is a mechanism to distribute software packages for
+        the OTRS framework via http, ftp or file upload.
     </para>
     <para>
-For example, the OTRS project offers OTRS modules like a calendar, a file manager
-or web mail in OTRS packages via online repositories on our ftp servers.
-The packages can be managed (install/upgrade/uninstall) via the admin interface.
+        For example, the OTRS project offers OTRS modules like a calendar, a file manager
+        or web mail in OTRS packages via online repositories on our ftp servers.
+        The packages can be managed (install/upgrade/uninstall) via the admin interface.
     </para>
+
     <section id="package-distribution">
         <title>Package Distribution</title>
         <para>
-If you want to create an OPM online repositiory, just tell the OTRS framework
-where the location is. Then you will have a new select option in the admin interface.
-        <programlisting><![CDATA[
-[Kernel/Config.pm]
-
-# Package::RepositoryList
-# (repository list)
-$Self->{'Package::RepositoryList'} = {
-    'ftp://ftp.example.com/packages/' => '[Example-Repository]',
-};
-
-[...]
-        ]]></programlisting>
+            If you want to create an OPM online repositiory, just tell the OTRS framework
+            where the location is by activating the SysConfig setting <literal>Package::RepositoryList</literal>
+            and adding the new location there. Then you will have a new select option in the package manager.
         </para>
-        <section id="package-repositiory-index">
-            <title>Package Repository Index</title>
-            <para>
-In your repository, create an index file for your OPM packages.
-OTRS just reads this index file and knows what packages are available.
-            <screen>
+
+        <para>
+            In your repository, create an index file for your OPM packages.
+            OTRS just reads this index file and knows what packages are available.
+        <screen><![CDATA[
 shell> bin/otrs.PackageManager.pl -a index -d /path/to/repository/ > /path/to/repository/otrs.xml
-shell>
-            </screen>
-            </para>
-        </section>
+]]></screen>
+        </para>
     </section>
+
     <section id="package-commands">
         <title>Package Commands</title>
         <para>
-You can use the following OPM commands over the admin interface or over bin/otrs.PackageManager.pl
-to manage admin jobs for OPM packages.
+            You can use the following OPM commands over the admin interface or over bin/otrs.PackageManager.pl
+            to manage admin jobs for OPM packages.
         </para>
+
         <section id="install">
             <title>Install</title>
             <para>
-Install OPM packages.
-            <itemizedlist mark="round" >
-                <listitem>
-                    <para>Web:
-<ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
-                    </para>
-                </listitem>
-                <listitem>
-                    <para>CMD:
-                    <screen>
+                Install OPM packages.
+                <itemizedlist mark="round" >
+                    <listitem>
+                        <para>
+                            Web: <ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>CMD:
+                        <screen><![CDATA[
 shell> bin/otrs.PackageManager.pl -a install -p /path/to/package.opm
-                    </screen>
-                    </para>
-                </listitem>
-            </itemizedlist>
+]]></screen>
+                        </para>
+                    </listitem>
+                </itemizedlist>
             </para>
         </section>
+
         <section id="uninstall">
             <title>Uninstall</title>
             <para>
-Uninstall OPM packages.
-            <itemizedlist mark="round" >
-                <listitem>
-                    <para>Web:
-<ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
-                    </para>
-                </listitem>
-                <listitem>
-                    <para>CMD:
-                    <screen>
+                Uninstall OPM packages.
+                <itemizedlist mark="round" >
+                    <listitem>
+                        <para>Web: <ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>CMD:
+                        <screen><![CDATA[
 shell> bin/otrs.PackageManager.pl -a uninstall -p /path/to/package.opm
-                    </screen>
-                    </para>
-                </listitem>
-            </itemizedlist>
+]]></screen>
+                        </para>
+                    </listitem>
+                </itemizedlist>
             </para>
         </section>
         <section id="upgrade">
             <title>Upgrade</title>
             <para>
                 Upgrade OPM packages.
-            <itemizedlist mark="round" >
-                <listitem>
-                    <para>Web:
-<ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
-                    </para>
-                </listitem>
-                <listitem>
-                    <para>CMD:
-                    <screen>
+                <itemizedlist mark="round" >
+                    <listitem>
+                        <para>Web: <ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>CMD:
+                        <screen><![CDATA[
 shell> bin/otrs.PackageManager.pl -a upgrade -p /path/to/package.opm
-                    </screen>
-                    </para>
-                </listitem>
-            </itemizedlist>
+]]></screen>
+                        </para>
+                    </listitem>
+                </itemizedlist>
             </para>
         </section>
         <section id="list">
             <title>List</title>
             <para>
-List all OPM packages.
-            <itemizedlist mark="round">
-                <listitem>
-                    <para>Web:
-<ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
-                    </para>
-                </listitem>
-                <listitem>
-                    <para>CMD:
-                    <screen>
+                List all OPM packages.
+                <itemizedlist mark="round">
+                    <listitem>
+                        <para>Web:
+    <ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>CMD:
+                        <screen><![CDATA[
 shell> bin/otrs.PackageManager.pl -a list
-                    </screen>
-                    </para>
-                </listitem>
-            </itemizedlist>
+]]></screen>
+                        </para>
+                    </listitem>
+                </itemizedlist>
             </para>
         </section>
     </section>

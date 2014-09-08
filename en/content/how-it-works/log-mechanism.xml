@@ -10,8 +10,8 @@
         The Log object can be accessed and used via the ObjectManager like this:
     <programlisting><![CDATA[
 $Kernel::OM->Get('Kernel::System::Log')->Log(
-Priority => 'error',
-Message => 'Need something!',
+    Priority => 'error',
+    Message => 'Need something!',
 );
     ]]></programlisting>
     </para>

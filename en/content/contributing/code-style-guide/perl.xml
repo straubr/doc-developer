@@ -173,7 +173,9 @@ if (
     )
 { ... }
 
-if ( $TemplateName eq 'AgentTicketCustomer' ) { ... }
+if ( $TemplateName eq 'AgentTicketCustomer' ) {
+    ...
+}
 
 if (
     ( $Param{Section} eq 'Xaxis' || $Param{Section} eq 'All' )
@@ -500,28 +502,6 @@ use warnings;
                 </para>
             </section>
 
-            <section id="passing-of-required-objects">
-                <title>Passing of required objects</title>
-
-                <para>
-                    In core modules we use $Self to create instances of other classes, because it is more safe.
-                    For example:
-                    <programlisting format="linespecific"><![CDATA[
-$Self->{TimeObject} = Kernel::System::Time->new( %{$Self} );
-                    ]]>
-                    </programlisting>
-
-                </para>
-                <para>
-                    In frontend modules we use the %Param hash to create the new instances as there are
-                    more variables and other information stored in the hash:
-                    <programlisting format="linespecific"><![CDATA[
-$Self->{TimeObject} = Kernel::System::Time->new( %Param );
-                    ]]>
-                    </programlisting>
-                </para>
-            </section>
-
             <section id="objects-allocation">
                 <title>Objects and their allocation</title>
                 <para>
@@ -560,24 +540,24 @@ $Self->{TimeObject} = Kernel::System::Time->new( %Param );
                     Subroutines should always be documented. The documentation contains a general description about what the subroutine does, a sample subroutine call and what the subroutine returns. It should be in this order. A sample documentation looks like this:
 
                     <programlisting format="linespecific"><![CDATA[
-    =item LastTimeObjectChanged()
+=item LastTimeObjectChanged()
 
-    calculates the last time the object was changed. It returns a hash reference with
-        information about the object and the time.
+calculates the last time the object was changed. It returns a hash reference with
+    information about the object and the time.
 
-        my $Info = $Object->LastTimeObjectChanged(
-            Param => 'Value',
-        );
+    my $Info = $Object->LastTimeObjectChanged(
+        Param => 'Value',
+    );
 
-    This returns something like:
+This returns something like:
 
-        my $Info = {
-            ConfigItemID    => 1234,
-            HistoryType     => 'foo',
-            LastTimeChanged => '08.10.2009',
-        };
+    my $Info = {
+        ConfigItemID    => 1234,
+        HistoryType     => 'foo',
+        LastTimeChanged => '08.10.2009',
+    };
 
-    =cut
+=cut
                     ]]></programlisting>
 
                     You can copy and paste a Data::Dumper output for the return values.

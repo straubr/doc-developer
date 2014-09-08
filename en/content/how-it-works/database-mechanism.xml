@@ -108,7 +108,7 @@ you write applications that can be used in all of them.
             </para>
             <note>
                 <para>
-The &lt;Insert&gt; has changed in >=2.2. Values are now used in content area (not longer in attribut Value).
+The &lt;Insert&gt; syntax has changed in >=2.2. Values are now used in the tag content (not longer in an attribute).
                 </para>
             </note>
             <section id="database-xml-insert">

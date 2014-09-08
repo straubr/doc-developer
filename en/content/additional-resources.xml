@@ -3,37 +3,30 @@
 
 <appendix id="additional-ressources">
     <title>Additional Resources</title>
+
     <section id="additional-resources-hompepage">
-        <title>OTRS.org</title>
+        <title>otrs.com</title>
         <para>
-The OTRS project website with source code, documentation and news is available at:
-        </para>
-        <para>
-            <ulink url="http://otrs.org/">http://otrs.org/</ulink>
+            The OTRS website with source code, documentation and news is available at
+            <ulink url="http://otrs.org/">http://www.otrs.com/</ulink>.
+            Here you can also find information about commercial services and trainings from OTRS Group,
+            the creator of OTRS.
         </para>
     </section>
+
     <section id="additional-resources-online-library">
         <title>Online API Library</title>
         <para>
-The OTRS developer API documentation is available at:
-        </para>
-        <para>
-            <ulink url="http://otrs.github.io/doc/">http://otrs.github.io/doc/</ulink>
+            The OTRS developer API documentation is available at
+            <ulink url="http://otrs.github.io/doc/api/otrs/stable/">http://otrs.github.io/doc/api/otrs/stable/</ulink>.
         </para>
     </section>
+
     <section id="additional-resources-developer-mailing-list">
         <title>Developer Mailing List</title>
         <para>
-The OTRS developer mailing list is available at:
-        </para>
-        <para>
-            <ulink url="http://lists.otrs.org/">http://lists.otrs.org/</ulink>
-        </para>
-    </section>
-    <section id="additional-resources-commercial-support">
-        <title>Commercial Support</title>
-        <para>
-For services (support, consulting, development, and training) you can contact the company behind OTRS, OTRS AG. They have offices in Germany, USA, Mexico, the Netherlands and other countries. Look at their website for contact information: <ulink url="http://www.otrs.com/en/corporate-navigation/contact/"><citetitle>http://www.otrs.com/en/corporate-navigation/contact/</citetitle></ulink>
+            The OTRS developer mailing list is available at
+            <ulink url="http://lists.otrs.org/">http://lists.otrs.org/</ulink>.
         </para>
     </section>
 </appendix>

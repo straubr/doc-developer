@@ -4,32 +4,36 @@
 <section id="writing-new-otrs-frontend-module">
     <title>Writing a new OTRS frontend module</title>
     <para>
-In this chapter, the writing of a new OTRS module is illustrated on the basis of a simple small program.
-Necessary prerequisite is an OTRS development environment as specified in the chapter of the same name.
+        In this chapter, the writing of a new OTRS module is illustrated on the basis of a simple small program.
+        Necessary prerequisite is an OTRS development environment as specified in the chapter of the same name.
     </para>
+
     <section id="what-we-want-to-write">
         <title>What we want to write</title>
         <para>
-We want to write a little OTRS module that displays the text 'Hello World' when called up.
-First of all we must build the directory /Hello World for the module in the developer directory.
-In this directory, all directories existent in OTRS can be created.
-Each module should at least contain the following directories:
+            We want to write a little OTRS module that displays the text 'Hello World' when called up.
+            First of all we must build the directory /Hello World for the module in the developer directory.
+            In this directory, all directories existent in OTRS can be created.
+            Each module should at least contain the following directories:
+<screen><![CDATA[
+Kernel
+Kernel/System
+Kernel/Modules
+Kernel/Output/HTML/Standard
+Kernel/Config
+Kernel/Config/Files
+Kernel/Language
+]]></screen>
         </para>
-        <para>Kernel/</para>
-        <para>Kernel/System/</para>
-        <para>Kernel/Modules/</para>
-        <para>Kernel/Output/HTML/Standard/</para>
-        <para>Kernel/Config/</para>
-        <para>Kernel/Config/Files/</para>
-        <para>Kernel/Language/</para>
     </section>
+
     <section id="default-config-file">
         <title>Default Config File</title>
         <para>
-The creation of a module registration facilitates the display of the new module in OTRS.
-Therefore we create a file '/Kernel/Config/Files/HelloWorld.xml'.
-In this file, we create a new config element.
-The impact of the various settings is described in the chapter 'Config Mechanism'.
+            The creation of a module registration facilitates the display of the new module in OTRS.
+            Therefore we create a file '/Kernel/Config/Files/HelloWorld.xml'.
+            In this file, we create a new config element.
+            The impact of the various settings is described in the chapter 'Config Mechanism'.
         </para>
         <para>
         <programlisting><![CDATA[
@@ -61,14 +65,13 @@ The impact of the various settings is described in the chapter 'Config Mechanism
         ]]></programlisting>
         </para>
     </section>
+
     <section id="writing-frontend-module">
         <title>Frontend Module</title>
         <para>
-After creating the links and executing the Sysconfig, a new module with the name 'HelloWorld' is displayed.
-When calling it up, an error message is displayed as OTRS cannot find the matching frontend module yet.
-This is the next thing to be created. To do so, we create the following file:
-        </para>
-        <para>
+            After creating the links and executing the Sysconfig, a new module with the name 'HelloWorld' is displayed.
+            When calling it up, an error message is displayed as OTRS cannot find the matching frontend module yet.
+            This is the next thing to be created. To do so, we create the following file:
         <programlisting><![CDATA[
 # --
 # Kernel/Modules/AgentHelloWorld.pm - frontend module
@@ -127,12 +130,11 @@ sub Run {
         ]]></programlisting>
         </para>
     </section>
+
     <section id="writing-core-module">
         <title>Core Module</title>
         <para>
-Next, we create the file for the core module "/HelloWorld/Kernel/System/HelloWorld.pm" with the following content:
-        </para>
-        <para>
+            Next, we create the file for the core module "/HelloWorld/Kernel/System/HelloWorld.pm" with the following content:
         <programlisting><![CDATA[
 # --
 # Kernel/System/HelloWorld.pm - core module
@@ -168,13 +170,12 @@ sub GetHelloWorldText {
         ]]></programlisting>
         </para>
     </section>
+
     <section id="template-file">
         <title>Template File</title>
         <para>
-The last thing missing before the new module can run is the relevant HTML template.
-Thus, we create the following file:
-        </para>
-        <para>
+            The last thing missing before the new module can run is the relevant HTML template.
+            Thus, we create the following file:
         <programlisting><![CDATA[
 # --
 # Kernel/Output/HTML/Standard/AgentHelloWorld.tt - overview
@@ -194,13 +195,14 @@ Thus, we create the following file:
 The module is working now and displays the text 'Hello World' when called.
         </para>
     </section>
+
     <section id="language-file">
         <title>Language File</title>
         <para>
-If the text 'Hello World!' is to be translated into for instance German, you can create a translation file for this language:
-'/HelloWorld/Kernel/Language/de_AgentHelloWorld.pm'. Example:
-        </para>
-        <para>
+            If the text 'Hello World!' is to be translated into for instance German, you can create a
+            translation file for this language in
+            <filename>HelloWorld/Kernel/Language/de_AgentHelloWorld.pm</filename>.
+            Example:
         <programlisting><![CDATA[
 package Kernel::Language::de_AgentHelloWorld;
 
@@ -218,14 +220,15 @@ sub Data {
         ]]></programlisting>
         </para>
     </section>
+
     <section id="summary">
         <title>Summary</title>
         <para>
-The example given above shows that it is not too difficult to write a new module for OTRS.
-It is important, though, to make sure that the module and file name are unique and thus
-do not interfere with the framework or other expansion modules.
-When a module is finished, an OPM package must be generated from it (see chapter
-<link linkend="package-building">Package Building</link>).
+            The example given above shows that it is not too difficult to write a new module for OTRS.
+            It is important, though, to make sure that the module and file name are unique and thus
+            do not interfere with the framework or other expansion modules.
+            When a module is finished, an OPM package must be generated from it (see chapter
+            <link linkend="package-building">Package Building</link>).
         </para>
     </section>
 </section>

@@ -4,17 +4,18 @@
 <section id="unit-tests">
     <title>Unit Tests</title>
     <para>
-OTRS provides unit tests for core modules.
+        OTRS provides unit tests for core modules.
     </para>
+
     <section id="testing">
         <title>Creating a test file</title>
         <para>
-The test files are stored in .t files under /scripts/test/*.t.
-For example the file /scripts/test/Calendar.t for the Calendar Module.
+            The test files are stored in .t files under /scripts/test/*.t.
+            For example the file /scripts/test/Calendar.t for the Calendar Module.
         </para>
         <para>
-A test file consists of the function call of the function to be tested and the analysis of the return value.
-Example (/scripts/test/Calendar.t):
+            A test file consists of the function call of the function to be tested and the analysis of the return value.
+            Example (/scripts/test/Calendar.t):
         <programlisting><![CDATA[
 # --
 # Calendar.t - Calendar
@@ -31,14 +32,12 @@ use utf8;
 
 use vars qw($Self);
 
-use Kernel::System::User;
 use Kernel::System::CalendarEvent;
 
-$Self->{UserObject} = Kernel::System::User->new(%{$Self});
-$Self->{EventObject} = Kernel::System::CalendarEvent->new(%{$Self}, UserID => 1);
+my $EventObject = $Kernel::OM->Get('Kernel::System::CalendarEvent');
 
 
-my $EventID = $Self->{EventObject}->EventAdd(
+my $EventID = $EventObject->EventAdd(
     Title => 'Some Test',
     StartTime => '1977-10-27 20:15',
     EndTime => '1977-10-27 21:00',
@@ -55,19 +54,21 @@ $Self->True(
         ]]></programlisting>
         </para>
     </section>
+
     <section>
-        <title>Prerequesites for testing</title>
+        <title>Prerequisites for testing</title>
         <para>
-To be able to run the unit tests, you need to have all optional Perl modules installed,  except those for different database backends than what you are using. Run bin/otrs.CheckModules.pl to verify your module installation.
+            To be able to run the unit tests, you need to have all optional Perl modules installed,  except those for different database backends than what you are using. Run bin/otrs.CheckModules.pl to verify your module installation.
         </para>
         <para>
-You also need to have an instance of the OTRS web frontend running on the FQDN that is configured in your local OTRS's Config.pm file. This OTRS instance must use the same database that is configured for the unit tests.
+            You also need to have an instance of the OTRS web frontend running on the FQDN that is configured in your local OTRS's Config.pm file. This OTRS instance must use the same database that is configured for the unit tests.
         </para>
     </section>
+
     <section>
         <title>Testing</title>
         <para>
-To check your tests, just use "bin/otrs.UnitTest.pl -n Calendar" to use /scripts/test/Calendar.t.
+            To check your tests, just use "bin/otrs.UnitTest.pl -n Calendar" to use /scripts/test/Calendar.t.
         <programlisting><![CDATA[
 shell:/opt/otrs> bin/otrs.UnitTest.pl -n Calendar
 +-------------------------------------------------------------------+
@@ -88,41 +89,95 @@ shell:/opt/otrs>
         ]]></programlisting>
         </para>
     </section>
+
     <section>
-        <title>True()</title>
+        <title>UnitTest API</title>
         <para>
-This function tests whether the return value of the function 'EventAdd()' in the variable $EventID is valid.
-        <programlisting><![CDATA[
+            OTRS provides a small and simple API for unit testing that was used in the previous example.
+            Here we'll list the most important functions, please also see the online API reference of
+            <ulink url="http://otrs.github.io/doc/api/otrs/stable/Kernel/System/UnitTest.pm.html">
+                <literal>Kernel::System::UnitTest</literal>
+            </ulink>.
+        </para>
+
+        <section>
+            <title>True()</title>
+            <para>
+                This function tests whether given scalar value is a true value in Perl.
+                <programlisting><![CDATA[
 $Self->True(
     $EventID,
     'EventAdd()',
 );
-        ]]></programlisting>
-        </para>
-    </section>
-    <section>
-        <title>False()</title>
-        <para>
-This function tests whether the return value of the function 'EventAdd()' in the variable $EventID is invalid.
-        <programlisting><![CDATA[
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>False()</title>
+            <para>
+                This function tests whether given scalar value is a false value in Perl.
+                <programlisting><![CDATA[
 $Self->False(
     $EventID,
     'EventAdd()',
 );
-        ]]></programlisting>
-        </para>
-    </section>
-    <section>
-        <title>Is()</title>
-        <para>
-This function tests whether the variables $A and $B are equal.
-        <programlisting><![CDATA[
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>Is()</title>
+            <para>
+                This function tests whether the given scalar variables are equal.
+                <programlisting><![CDATA[
 $Self->Is(
     $A,
     $B,
     'Test Name',
 );
-        ]]></programlisting>
-        </para>
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>IsNot()</title>
+            <para>
+                This function tests whether the given scalar variables are inequal.
+                <programlisting><![CDATA[
+$Self->IsNot(
+    $A,
+    $B,
+    'Test Name',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>IsDeeply()</title>
+            <para>
+                This function compares complex data structures for equality. <literal>$A</literal>
+                and <literal>$B</literal> have to be references.
+                <programlisting><![CDATA[
+$Self->IsDeeply(
+    $A,
+    $B,
+    'Test Name',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>IsNotDeeply()</title>
+            <para>
+                This function compares complex data structures for inequality. <literal>$A</literal>
+                and <literal>$B</literal> have to be references.
+                <programlisting><![CDATA[
+$Self->IsNotDeeply(
+    $A,
+    $B,
+    'Test Name',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+
     </section>
 </section>
