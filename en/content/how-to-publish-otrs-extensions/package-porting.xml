@@ -492,7 +492,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
         <section id="package-porting-33-to-4-unit-tests">
             <title>UnitTests</title>
             <para>
-                With OTRS 4, <literal>$Self</literal> no longer provides common objects like the <literal>MainObject</literal>, for example. Please always use <literal>$Kernel::OM->Get('...')</literal> to fetch these objects.
+                With OTRS 4, in UnitTests <literal>$Self</literal> no longer provides common objects like the <literal>MainObject</literal>, for example. Please always use <literal>$Kernel::OM->Get('...')</literal> to fetch these objects.
             </para>
         </section>
 
