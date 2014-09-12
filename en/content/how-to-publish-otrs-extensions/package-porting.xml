@@ -7,14 +7,14 @@
 With every new minor or major version of OTRS, you need to port your package(s) and make sure they
 still work with the OTRS API.
     </para>
-    <section>
+    <section id="package-porting-33-to-4">
         <title>From OTRS 3.3 to 4</title>
         <para>
             This section lists changes that you need to examine when porting your package from
             OTRS 3.3 to 4.
         </para>
 
-        <section id="package-porting-objectmanager">
+        <section id="package-porting-33-to-4-objectmanager">
             <title>New Object Handling</title>
             <para>
                 Up to OTRS 4, objects used to be created both centrally and also locally and
@@ -241,7 +241,7 @@ sub ValidList {
             </para>
         </section>
 
-        <section id="package-porting-cache">
+        <section id="package-porting-33-to-4-cache">
             <title>CacheInternalObject removed</title>
             <para>
                 Since <literal>Kernel::System::Cache</literal> is now also able to cache in-memory,
@@ -251,7 +251,7 @@ sub ValidList {
             </para>
         </section>
 
-        <section id="package-porting-scheduler-location">
+        <section id="package-porting-33-to-4-scheduler-location">
             <title>Scheduler backend files moved</title>
             <para>
                 The backend files of the scheduler moved from <filename>Kernel/Scheduler</filename> to
@@ -260,7 +260,7 @@ sub ValidList {
             </para>
         </section>
 
-        <section id="package-porting-sopm-code-tags">
+        <section id="package-porting-33-to-4-sopm-code-tags">
             <title>Update <link linkend="package-code-install">code sections</link> in SOPM files</title>
             <para>
                 Code tags in SOPM files have to be updated. Please do not use <literal>$Self</literal> any more.
@@ -312,7 +312,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
             </para>
         </section>
 
-        <section id="package-porting-template-engine">
+        <section id="package-porting-33-to-4-template-engine">
             <title>New Template Engine</title>
             <para>
                 With OTRS 4, the DTL template engine was replaced by Template::Toolkit.
@@ -479,7 +479,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
             </para>
         </section>
 
-        <section id="package-porting-fontawesome">
+        <section id="package-porting-33-to-4-fontawesome">
             <title>New FontAwesome version</title>
             <para>
                 With OTRS 4, we've also updated FontAwesome to a new version. As a consequence, the icons css classes have changed. While previously icons were defined by using a schema like <literal>icon-{iconname}</literal>, it is now <literal>fa fa-{iconname}</literal>.
@@ -488,5 +488,13 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
                 Due to this change, you need to make sure to update all custom frontend module registrations which make use of icons (e.g. for the top navigation bar) to use the new schema. This is also true for templates where you're using icon elements like <literal>&lt;i class="icon-{iconname}"&gt;&lt;/i&gt;</literal>.
             </para>
         </section>
+
+        <section id="package-porting-33-to-4-unit-tests">
+            <title>UnitTests</title>
+            <para>
+                With OTRS 4, <literal>$Self</literal> no longer provides common objects like the <literal>MainObject</literal>, for example. Please always use <literal>$Kernel::OM->Get('...')</literal> to fetch these objects.
+            </para>
+        </section>
+
     </section>
 </section>
