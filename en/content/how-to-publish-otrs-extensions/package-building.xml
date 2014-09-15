@@ -96,7 +96,7 @@
             </para>
         </section>
         <section id="package-possible-actions-installed">
-            <title><literal>&lt;Package&gt;</literal> Actions</title>
+            <title>Package Actions</title>
             <para>
                 The possible actions for the package ones it's installed. If one of this actions is
                 not defined on the package, it will be considered as possible.
