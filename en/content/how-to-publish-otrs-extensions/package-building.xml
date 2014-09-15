@@ -14,7 +14,7 @@
             It contains meta data, a file list and database options.
         </para>
         <section id="package-name">
-            <title>Name</title>
+            <title><literal>&lt;Name&gt;</literal></title>
             <para>
                 The package name (required).
                 <programlisting><![CDATA[
@@ -23,7 +23,7 @@
             </para>
         </section>
         <section id="package-version">
-            <title>Version</title>
+            <title><literal>&lt;Version&gt;</literal></title>
             <para>
                 The package version (required).
                 <programlisting><![CDATA[
@@ -32,7 +32,7 @@
             </para>
         </section>
         <section id="package-framework">
-            <title>Framework</title>
+            <title><literal>&lt;Framework&gt;</literal></title>
             <para>
                 The targeted framework version (3.2.x means e.g. 3.2.1 or 3.2.2) (required).
                 <programlisting><![CDATA[
@@ -49,7 +49,7 @@
             </para>
         </section>
         <section id="package-vendor">
-            <title>Vendor</title>
+            <title><literal>&lt;Vendor&gt;</literal></title>
             <para>
                 The package vendor (required).
                 <programlisting><![CDATA[
@@ -58,7 +58,7 @@
             </para>
         </section>
         <section id="package-url">
-            <title>URL</title>
+            <title><literal>&lt;URL&gt;</literal></title>
             <para>
                 The vendor URL (required).
                 <programlisting><![CDATA[
@@ -67,7 +67,7 @@
             </para>
         </section>
         <section id="package-license">
-            <title>License</title>
+            <title><literal>&lt;License&gt;</literal></title>
             <para>
                 The license of the package (required).
                 <programlisting><![CDATA[
@@ -76,7 +76,7 @@
             </para>
         </section>
         <section id="package-changelog">
-            <title>ChangeLog</title>
+            <title><literal>&lt;ChangeLog&gt;</literal></title>
             <para>
                 The package change log (optional).
                 <programlisting><![CDATA[
@@ -86,7 +86,7 @@
             </para>
         </section>
         <section id="package-description">
-            <title>Description</title>
+            <title><literal>&lt;Description&gt;</literal></title>
             <para>
                 The package description in different languages (required).
                 <programlisting><![CDATA[
@@ -96,7 +96,7 @@
             </para>
         </section>
         <section id="package-possible-actions-installed">
-            <title>Package Actions</title>
+            <title><literal>&lt;Package&gt;</literal> Actions</title>
             <para>
                 The possible actions for the package ones it's installed. If one of this actions is
                 not defined on the package, it will be considered as possible.
@@ -108,7 +108,7 @@
             </para>
         </section>
         <section id="package-buildhost">
-            <title>BuildHost</title>
+            <title><literal>&lt;BuildHost&gt;</literal></title>
             <para>
                 This will be filled in automatically by OPM (auto).
                 <programlisting><![CDATA[
@@ -117,7 +117,7 @@
             </para>
         </section>
         <section id="package-builddate">
-            <title>BuildDate</title>
+            <title><literal>&lt;BuildDate&gt;</literal></title>
             <para>
                 This will be filled in automatically by OPM (auto).
                 <programlisting><![CDATA[
@@ -126,7 +126,7 @@
             </para>
         </section>
         <section id="package-package-required">
-            <title>PackageRequired</title>
+            <title><literal>&lt;PackageRequired&gt;</literal></title>
             <para>
                 Packages that must be installed beforehand (optional). If PackageRequired is used,
                 a version of the required package must be specified.
@@ -137,7 +137,7 @@
             </para>
         </section>
         <section id="package-module-required">
-            <title>ModuleRequired</title>
+            <title><literal>&lt;ModuleRequired&gt;</literal></title>
             <para>
                 Perl modules that must be installed beforehand (optional).
                 <programlisting><![CDATA[
@@ -147,7 +147,7 @@
             </para>
         </section>
         <section id="package-os">
-            <title>OS (^M)</title>
+            <title><literal>&lt;OS&gt;</literal></title>
             <para>
                 Required OS (optional).
                 <programlisting><![CDATA[
@@ -158,7 +158,7 @@
             </para>
         </section>
         <section id="package-filelist">
-            <title>Filelist</title>
+            <title><literal>&lt;Filelist&gt;</literal></title>
             <para>
                 This is a list of files included in the package (optional).
                 <programlisting><![CDATA[
@@ -172,7 +172,7 @@
             </para>
         </section>
         <section id="package-database-install">
-            <title>DatabaseInstall</title>
+            <title><literal>&lt;DatabaseInstall&gt;</literal></title>
             <para>
                 Database entries that have to be created when a package is installed (optional).
                 <programlisting><![CDATA[
@@ -196,7 +196,7 @@
             </para>
         </section>
         <section id="package-database-upgrade">
-            <title>DatabaseUpgrade</title>
+            <title><literal>&lt;DatabaseUpgrade&gt;</literal></title>
             <para>
                 Information on which actions have to be performed in case of an upgrade (subject to
                 version tag), (optional). Example (if already installed package version is below
@@ -217,7 +217,7 @@
             </para>
         </section>
         <section id="package-database-reinstall">
-            <title>DatabaseReinstall</title>
+            <title><literal>&lt;DatabaseReinstall&gt;</literal></title>
             <para>
                 Information on what actions have to be performed if  the package is reinstalled,
                 (optional).
@@ -232,7 +232,7 @@
             </para>
         </section>
         <section id="package-database-uninstall">
-            <title>DatabaseUninstall</title>
+            <title><literal>&lt;DatabaseUninstall&gt;</literal></title>
             <para>
                 Uninstall (if a package gets uninstalled), (optional).
                 <programlisting><![CDATA[
@@ -248,7 +248,7 @@
             </para>
         </section>
         <section id="package-intro-install">
-            <title>IntroInstall</title>
+            <title><literal>&lt;IntroInstall&gt;</literal></title>
             <para>
                 To show a "pre" or "post" install introduction in installation dialog.
             </para>
@@ -266,7 +266,7 @@ Some Info formatted in HTML....
             </para>
         </section>
         <section id="package-intro-uninstall">
-            <title>IntroUninstall</title>
+            <title><literal>&lt;IntroUninstall&gt;</literal></title>
             <para>
                 To show a "pre" or "post" uninstall introduction in uninstallation dialog.
             </para>
@@ -284,7 +284,7 @@ Some Info formatted in html....
             </para>
         </section>
         <section id="package-intro-reinstall">
-            <title>IntroReinstall</title>
+            <title><literal>&lt;IntroReinstall&gt;</literal></title>
             <para>
                 To show a "pre" or "post" reinstall introduction in re-installation dialog.
             </para>
@@ -302,7 +302,7 @@ Some Info formatted in html....
             </para>
         </section>
         <section id="package-intro-upgrade">
-            <title>IntroUpgrade</title>
+            <title><literal>&lt;IntroUpgrade&gt;</literal></title>
             <para>
                 To show a "pre" or "post" upgrade introduction in upgrading dialog.
             </para>
@@ -320,7 +320,7 @@ Some Info formatted in html....
             </para>
         </section>
         <section id="package-code-install">
-            <title>CodeInstall</title>
+            <title><literal>&lt;CodeInstall&gt;</literal></title>
             <para>
                 To execute Perl code when the package is installed (optional).
                 <programlisting><![CDATA[
@@ -342,7 +342,7 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
             </para>
         </section>
         <section id="package-code-uninstall">
-            <title>CodeUninstall</title>
+            <title><literal>&lt;CodeUninstall&gt;</literal></title>
             <para>
                 To execute Perl code if the package is uninstalled (optional). On "pre" or "post"
                 time of package uninstallation.
@@ -359,7 +359,7 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
             </para>
         </section>
         <section id="package-code-reinstall">
-            <title>CodeReinstall</title>
+            <title><literal>&lt;CodeReinstall&gt;</literal></title>
             <para>
                 To execute Perl code if the package is reinstalled (optional).
                 <programlisting><![CDATA[
@@ -376,7 +376,7 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
         </section>
 
         <section id="package-code-upgrade">
-            <title>CodeUpgrade</title>
+            <title><literal>&lt;CodeUpgrade&gt;</literal></title>
             <para>
                 To execute Perl code if the package is upgraded (subject to version tag),
                 (optional). Example (if already installed package version is below 1.3.4 (e. g.
@@ -394,11 +394,33 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
         </section>
 
         <section id="package-merge-upgrade">
-            <title>PackageMerge</title>
+            <title><literal>&lt;PackageMerge&gt;</literal></title>
             <para>
-                Some times is needed to rename a package or merge an existing package into another,
-                on those cases this tag is useful to remove the merged or renamed package from local
-                repository while keeping the database structure and data without changes.
+                This tag singals that a package has been merged into another package. In this case
+                the original package needs to be removed from the filesystem and the packages database,
+                but all data must be kept. Let's assume that <filename>PackageOne</filename> was merged
+                into <filename>PackageTwo</filename>. Then <filename>PackageTwo.sopm</filename>
+                should contain this:
+
+                <programlisting><![CDATA[
+<PackageMerge Name="MergeOne" TargetVersion="2.0.0"></PackageMerge>
+                ]]></programlisting>
+
+                If <filename>PackageOne</filename> also contained database structures, we need to be
+                sure that it was at the latest available version of the package to have a consistent
+                state in the database after merging the package. The attribute <literal>TargetVersion</literal>
+                does just this: it signifies the last known version of <filename>PackageOne</filename>
+                at the time <filename>PackageTwo</filename> was created. This is mainly to stop the upgrade process
+                if in the user's system a version of <filename>PackageOne</filename> was found that is
+                <emphasis>newer</emphasis> than the one specified in <literal>TargetVersion</literal> as this
+                could lead to problems.
+            </para>
+            <para>
+                Additionally it is possible to add required database and code upgrade tags for
+                <filename>PackageOne</filename> to make sure that it gets properly upgraded to the
+                <literal>TargetVersion</literal> <emphasis>before</emphasis> merging it - to avoid
+                inconsistency problems. Here's how this could look like:
+
                 <programlisting><![CDATA[
 <PackageMerge Name="MergeOne" TargetVersion="2.0.0">
   <DatabaseUpgrade Type="merge">
@@ -409,25 +431,18 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
   </DatabaseUpgrade>
 </PackageMerge>
                 ]]></programlisting>
-            </para>
-            <para>
-                For the PackageMerge tag, you must define a name for the package will be merged,
-                and a target version, if the version of the installed package is higher, the
-                installation will not be possible.
-            </para>
-            <para>
-                Inside PackageMerge is possible to define special DatabaseUpgrade and CodeUpgrade
-                sections that must include the attribute "Type" with "merge" value, this sections
-                will be execute just in case package merge is possible.
+
+                As you can see the atribute <literal>Type="merge"</literal> needs to be set in this case.
+                These sections will only be executed if a package merge is possible.
             </para>
         </section>
 
         <section id="package-ifpackage-ifnotpackage">
-            <title>IfPackage and IfNotPackage</title>
+            <title>Conditions: <literal>&lt;IfPackage&gt;</literal> and <literal>&lt;IfNotPackage&gt;</literal></title>
             <para>
-                This couple of attributes for regular DatabaseInstall, DatabaseUpgrade, CodeInstall
-                and CodeUpgrade sections defines if they should be executed based on the existence
-                (or not) of a specific package in the local repository.
+                This attributes can be added to the regular <literal>DatabaseInstall</literal>, <literal>DatabaseUpgrade</literal>, <literal>CodeInstall</literal> and <literal>CodeUpgrade</literal> sections.
+                If they are present, the section will only be executed if anoter package is or is not
+                in the local package repository.
                 <programlisting><![CDATA[
 <DatabaseInstall IfPackage="AnyPackage">
     ...
@@ -441,8 +456,8 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
                 ]]></programlisting>
             </para>
             <para>
-                This attributes can be also set in the Database and Code sections inside the
-                PackageMerge tags.
+                Thease attributes can be also set in the Database and Code sections inside the
+                <literal>PackageMerge</literal> tags.
             </para>
         </section>
     </section>
