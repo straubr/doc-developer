@@ -438,9 +438,9 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
         </section>
 
         <section id="package-ifpackage-ifnotpackage">
-            <title>Conditions: <literal>&lt;IfPackage&gt;</literal> and <literal>&lt;IfNotPackage&gt;</literal></title>
+            <title>Conditions: <literal>IfPackage</literal> and <literal>IfNotPackage</literal></title>
             <para>
-                This attributes can be added to the regular <literal>DatabaseInstall</literal>, <literal>DatabaseUpgrade</literal>, <literal>CodeInstall</literal> and <literal>CodeUpgrade</literal> sections.
+                These attributes can be added to the regular <literal>Database*</literal> and <literal>Code*</literal> sections.
                 If they are present, the section will only be executed if anoter package is or is not
                 in the local package repository.
                 <programlisting><![CDATA[
