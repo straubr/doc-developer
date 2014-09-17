@@ -496,5 +496,35 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
             </para>
         </section>
 
+        <section id="package-porting-33-to-4-custom-ticket-history-types">
+            <title>Custom TicketHistory types</title>
+            <para>
+                If you use any custom ticket history types, you have to take two steps for them to be displayed correctly
+                in AgentTicketHistory of OTRS 4+.
+            </para>
+            <para>
+                Firstly, you have to register your custom ticket history types via SysConfig. This could look like:
+                <programlisting><![CDATA[
+<ConfigItem Name="Ticket::Frontend::HistoryTypes###100-MyCustomModule" Required="1" Valid="1">
+    <Description Translatable="1">Controls how to display the ticket history entries as readable values.</Description>
+    <Group>Ticket</Group>
+    <SubGroup>Frontend::Agent::Ticket::ViewHistory</SubGroup>
+    <Setting>
+        <Hash>
+            <Item Key="MyCustomType" Translatable="1">Added information (%s)</Item>
+        </Hash>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+                The second step is to translate the english text that you provided for the custom ticket history type
+                in your translation files, if needed. That's it!
+            </para>
+            <para>
+                If you are interested in the details, please refer to
+                <ulink url="https://github.com/OTRS/otrs/commit/454dfac6d4eb85652a267e5e65514e386d3cf275">this commit</ulink>
+                for additional information about the changes that happened in OTRS.
+            </para>
+        </section>
+
     </section>
 </section>
