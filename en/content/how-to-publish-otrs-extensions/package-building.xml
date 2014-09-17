@@ -98,7 +98,7 @@
         <section id="package-possible-actions-installed">
             <title>Package Actions</title>
             <para>
-                The possible actions for the package ones it's installed. If one of this actions is
+                The possible actions for the package after installation. If one of these actions is
                 not defined on the package, it will be considered as possible.
                 <programlisting><![CDATA[
 <PackageIsVisible>1</PackageIsVisible>
@@ -110,7 +110,7 @@
         <section id="package-buildhost">
             <title><literal>&lt;BuildHost&gt;</literal></title>
             <para>
-                This will be filled in automatically by OPM (auto).
+                This will be filled in automatically by OPM.
                 <programlisting><![CDATA[
 <BuildHost>?</BuildHost>
                 ]]></programlisting>
@@ -119,7 +119,7 @@
         <section id="package-builddate">
             <title><literal>&lt;BuildDate&gt;</literal></title>
             <para>
-                This will be filled in automatically by OPM (auto).
+                This will be filled in automatically by OPM.
                 <programlisting><![CDATA[
 <BuildDate>?</BuildDate>
                 ]]></programlisting>
@@ -190,17 +190,17 @@
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;DatabaseInstall Type="post"&gt; or &lt;DatabaseInstall
-                Type="pre"&gt; to define the time of execution separately  (post is default). For
-                more info see chapter "Package Life Cycle".
+                You also can choose <literal>&lt;DatabaseInstall Type="post"&gt;</literal> or <literal>&lt;DatabaseInstall
+                Type="pre"&gt;</literal> to define the time of execution separately (post is default). For
+                more info see <link linkend="package-life-cycle">Package Life Cycle</link>.
             </para>
         </section>
         <section id="package-database-upgrade">
             <title><literal>&lt;DatabaseUpgrade&gt;</literal></title>
             <para>
-                Information on which actions have to be performed in case of an upgrade (subject to
-                version tag), (optional). Example (if already installed package version is below
-                1.3.4 (e. g. 1.2.6), defined action will be performed):
+                Information on which actions have to be performed in case of an upgrade (optional).
+                Example (if already installed package version is below 1.3.4 (e. g. 1.2.6), the
+                defined action will be performed):
                 <programlisting><![CDATA[
 <DatabaseUpgrade>
     <TableCreate Name="calendar_event_involved" Version="1.3.4">
@@ -211,30 +211,29 @@
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;DatabaseUpgrade Type="post"&gt; or &lt;DatabaseUpgrade
-                Type="pre"&gt; to define the time of execution separately (post is default). For
-                more info see chapter "Package Life Cycle".
+                You also can choose <literal>&lt;DatabaseUpgrade Type="post"&gt;</literal> or <literal>&lt;DatabaseUpgrade
+                Type="pre"&gt;</literal> to define the time of execution separately (post is default). For
+                more info see <link linkend="package-life-cycle">Package Life Cycle</link>.
             </para>
         </section>
         <section id="package-database-reinstall">
             <title><literal>&lt;DatabaseReinstall&gt;</literal></title>
             <para>
-                Information on what actions have to be performed if  the package is reinstalled,
-                (optional).
+                Information on what actions have to be performed if the package is reinstalled (optional).
                 <programlisting><![CDATA[
 <DatabaseReinstall></DatabaseReinstall>
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;DatabaseReinstall Type="post"&gt; or &lt;DatabaseReinstall
-                Type="pre"&gt; to define the time of execution separately (post is default). For
-                more info see chapter "Package Life Cycle".
+                You also can choose <literal>&lt;DatabaseReinstall Type="post"&gt;</literal> or <literal>&lt;DatabaseReinstall
+                Type="pre"&gt;</literal> to define the time of execution separately (post is default). For
+                more info see <link linkend="package-life-cycle">Package Life Cycle</link>.
             </para>
         </section>
         <section id="package-database-uninstall">
             <title><literal>&lt;DatabaseUninstall&gt;</literal></title>
             <para>
-                Uninstall (if a package gets uninstalled), (optional).
+                Actions to be performed on package uninstall (optional).
                 <programlisting><![CDATA[
 <DatabaseUninstall>
     <TableDrop Name="calendar_event" />
@@ -242,9 +241,9 @@
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;DatabaseUninstall Type="post"&gt; or &lt;DatabaseUninstall
-                Type="pre"&gt; to define the time of execution separately (post is default). For
-                more info see chapter "Package Life Cycle".
+                You also can choose <literal>&lt;DatabaseUninstall Type="post"&gt;</literal> or <literal>&lt;DatabaseUninstall
+                Type="pre"&gt;</literal> to define the time of execution separately (post is default). For
+                more info see <link linkend="package-life-cycle">Package Life Cycle</link>.
             </para>
         </section>
         <section id="package-intro-install">
@@ -261,8 +260,8 @@ Some Info formatted in HTML....
             </para>
             <para>
                 You can also use the "Format" attribute to define if you want to use "html" (which
-                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
-                intro is shown (to use the new lines and spaces of the content).
+                is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
+                intro is shown (to keep the newlines and whitespace of the content).
             </para>
         </section>
         <section id="package-intro-uninstall">
@@ -279,8 +278,8 @@ Some Info formatted in html....
             </para>
             <para>
                 You can also use the "Format" attribute to define if you want to use "html" (which
-                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
-                intro is shown (to use the new lines and spaces of the content).
+                is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
+                intro is shown (to keep the newlines and whitespace of the content).
             </para>
         </section>
         <section id="package-intro-reinstall">
@@ -297,8 +296,8 @@ Some Info formatted in html....
             </para>
             <para>
                 You can also use the "Format" attribute to define if you want to use "html" (which
-                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
-                intro is shown (to use the new lines and spaces of the content).
+                is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
+                intro is shown (to keep the newlines and whitespace of the content).
             </para>
         </section>
         <section id="package-intro-upgrade">
@@ -315,14 +314,14 @@ Some Info formatted in html....
             </para>
             <para>
                 You can also use the "Format" attribute to define if you want to use "html" (which
-                is default) or "plain" to use automatically a "&lt;pre&gt;&lt;/pre&gt;" tag when
-                intro is shown (to use the new lines and spaces of the content).
+                is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
+                intro is shown (to keep the newlines and whitespace of the content).
             </para>
         </section>
         <section id="package-code-install">
             <title><literal>&lt;CodeInstall&gt;</literal></title>
             <para>
-                To execute Perl code when the package is installed (optional).
+                Perl code to be executed when the package is installed (optional).
                 <programlisting><![CDATA[
 <CodeInstall><![CDATA[
 # log example
@@ -336,15 +335,15 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;CodeInstall Type="post"&gt; or &lt;CodeInstall
-                Type="pre"&gt; to define the time of execution separately (post is default). For
-                more info see chapter "Package Life Cycle".
+                You also can choose <literal>&lt;CodeInstall Type="post"&gt;</literal> or <literal>&lt;CodeInstall
+                Type="pre"&gt;</literal> to define the time of execution separately (post is default). For
+                more info see <link linkend="package-life-cycle">Package Life Cycle</link>.
             </para>
         </section>
         <section id="package-code-uninstall">
             <title><literal>&lt;CodeUninstall&gt;</literal></title>
             <para>
-                To execute Perl code if the package is uninstalled (optional). On "pre" or "post"
+                Perl code to be executed when the package is uninstalled (optional). On "pre" or "post"
                 time of package uninstallation.
                 <programlisting><![CDATA[
 <CodeUninstall><![CDATA[
@@ -353,15 +352,15 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;CodeUninstall Type="post"&gt; or &lt;CodeUninstall
-                Type="pre"&gt; to define the time of execution separately (post is default). For
-                more info see chapter "Package Life Cycle".
+                You also can choose <literal>&lt;CodeUninstall Type="post"&gt;</literal> or <literal>&lt;CodeUninstall
+                Type="pre"&gt;</literal> to define the time of execution separately (post is default). For
+                more info see <link linkend="package-life-cycle">Package Life Cycle</link>.
             </para>
         </section>
         <section id="package-code-reinstall">
             <title><literal>&lt;CodeReinstall&gt;</literal></title>
             <para>
-                To execute Perl code if the package is reinstalled (optional).
+                Perl code to be executed when the package is reinstalled (optional).
                 <programlisting><![CDATA[
 <CodeReinstall><![CDATA[
 ...
@@ -369,16 +368,16 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;CodeReinstall Type="post"&gt; or &lt;CodeReinstall
-                Type="pre"&gt; to define the time of execution separately (post is default). For
-                more info see chapter "Package Life Cycle".
+                You also can choose <literal>&lt;CodeReinstall Type="post"&gt;</literal> or <literal>&lt;CodeReinstall
+                Type="pre"&gt;</literal> to define the time of execution separately (post is default). For
+                more info see <link linkend="package-life-cycle">Package Life Cycle</link>.
             </para>
         </section>
 
         <section id="package-code-upgrade">
             <title><literal>&lt;CodeUpgrade&gt;</literal></title>
             <para>
-                To execute Perl code if the package is upgraded (subject to version tag),
+                Perl code to be executed when the package is upgraded (subject to version tag),
                 (optional). Example (if already installed package version is below 1.3.4 (e. g.
                 1.2.6), defined action will be performed):
                 <programlisting><![CDATA[
@@ -388,7 +387,7 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
                 ]]></programlisting>
             </para>
             <para>
-                You also can choose &lt;CodeUpgrade Type="post"&gt; or &lt;CodeUpgrade Type="pre"gt;
+                You also can choose <literal>&lt;CodeUpgrade Type="post"&gt;</literal> or <literal>&lt;CodeUpgrade Type="pre"&gt;</literal>
                 to define the time of execution separately (post is default).
             </para>
         </section>
