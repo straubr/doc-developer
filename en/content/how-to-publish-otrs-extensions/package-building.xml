@@ -392,7 +392,7 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
             </para>
         </section>
 
-        <section id="package-merge-upgrade">
+        <section id="package-packagemerge">
             <title><literal>&lt;PackageMerge&gt;</literal></title>
             <para>
                 This tag singals that a package has been merged into another package. In this case
@@ -436,7 +436,7 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
             </para>
         </section>
 
-        <section id="package-ifpackage-ifnotpackage">
+        <section id="package-conditions-ifpackage-ifnotpackage">
             <title>Conditions: <literal>IfPackage</literal> and <literal>IfNotPackage</literal></title>
             <para>
                 These attributes can be added to the regular <literal>Database*</literal> and <literal>Code*</literal> sections.
