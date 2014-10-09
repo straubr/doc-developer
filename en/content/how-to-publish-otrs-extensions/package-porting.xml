@@ -247,7 +247,11 @@ sub ValidList {
                 Since <literal>Kernel::System::Cache</literal> is now also able to cache in-memory,
                 <literal>Kernel::System::CacheInternal</literal> was dropped. Please see the previous example
                 for how to migrate your code: you need to use the global Cache object and pass the <literal>Type</literal>
-                and <literal>TTL</literal> (<literal>TTL</literal>only for <literal>Set()</literal>) settings with every call.
+                and <literal>TTL</literal> (<literal>TTL</literal>only for <literal>Set()</literal>) settings with every call
+                to <literal>Get()</literal>, <literal>Set()</literal>, <literal>Delete()</literal> and <literal>CleanUp()</literal>.
+                <warning>
+                    It is especially important to add this to <literal>CleanUp()</literal> as otherwise not just the current cache type but the entire cache would be deleted.
+                </warning>
             </para>
         </section>
 
