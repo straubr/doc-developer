@@ -328,7 +328,7 @@ Some Info formatted in html....
 $Kernel::OM->Get('Kernel::System::Log')->Log(
     Priority => 'notice',
     Message => "Some Message!",
-)
+);
 # database example
 $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
 ]]]]><![CDATA[></CodeInstall>
