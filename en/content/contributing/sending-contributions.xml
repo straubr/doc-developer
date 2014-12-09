@@ -7,6 +7,11 @@
         The source code of OTRS and additional public modules can be found on <ulink url="http://otrs.github.io">github</ulink>. From there you can get to the listing of all available repositories. It also describes the currently active branches and where contributions should go to (stable vs. development branches).
     </para>
     <para>
+        It is highly recommended that you use the OTRS code quality checker OTRSCodePolicy as described in
+        <link linkend="useful-tools">the development environment chapter</link> even before sending in your contributions.
+        If your code does not validate against this tool, it will likely not be accepted.
+    </para>
+    <para>
         The easiest way to send in your contributions to the OTRS developer's team is by creating a "pull request"
         in github. Please take a look at the instructions on <ulink url="https://help.github.com">github</ulink>,
         specifically about <ulink url="https://help.github.com/articles/fork-a-repo">forking a repository and

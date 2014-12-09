@@ -33,6 +33,30 @@ shell> git clone git@github.com:OTRS/module-tools.git
         </para>
     </section>
 
+    <section id="useful-tools">
+        <title>Useful Tools</title>
+        <para>
+            There are two modules that are highly recommended for OTRS development:
+            <ulink url="https://github.com/OTRS/otrscodepolicy">OTRSCodePolicy</ulink> and
+            <ulink url="https://github.com/OTRS/Fred">Fred</ulink>.
+        </para>
+        <para>
+            OTRSCodePolicy is a code quality checker that enforces the use of common coding standards
+            also for the OTRS development team. It is highly recommended to use it if you plan to make
+            contributions. You can use it as a standalone test script or even register it as a git commit
+            hook that runs every time that you create a commit. Please see
+            <ulink url="https://github.com/OTRS/otrscodepolicy/blob/master/doc/en/OTRSCodePolicy.xml">
+                the module documentation
+            </ulink> for details.
+        </para>
+        <para>
+            Fred is a little development helper module that you can actually install or link (as described below)
+            into your development system. It features several helpful modules that you can activate, such as an
+            SQL logger or an STDERR console. You can find some more details in its
+            <ulink url="https://github.com/OTRS/Fred/blob/master/doc/en/Fred.xml">module documentation</ulink>.
+        </para>
+    </section>
+
     <section id="environment-link-modules">
         <title>Linking Expansion Modules</title>
         <para>
@@ -47,16 +71,6 @@ shell> ~/src/module-tools/link.pl ~/src/Calendar/ ~/src/otrs/
             Whenever new files are added, they must be linked as described above.
         </para>
         <para>
-            To remove links from OTRS enter the following command:
-        <screen><![CDATA[
-shell> ~/src/module-tools/remove_links.pl ~/src/otrs/
-]]></screen>
-        </para>
-    </section>
-
-    <section id="environment-after-link">
-        <title>Necessary Actions after Linking</title>
-        <para>
             As soon as the linking is completed, the SysConfig must be rebuilt to register the module in OTRS.
             Additional SQL or Perl code from the module must also be executed:
             Example:
@@ -64,6 +78,12 @@ shell> ~/src/module-tools/remove_links.pl ~/src/otrs/
 shell> ~/src/otrs/bin/otrs.RebuildConfig.pl
 shell> ~/src/module-tools/DatabaseInstall.pl -m Calendar.sopm -a install
 shell> ~/src/module-tools/CodeInstall.pl -m Calendar.sopm -a install
+]]></screen>
+        </para>
+        <para>
+            To remove links from OTRS enter the following command:
+        <screen><![CDATA[
+shell> ~/src/module-tools/remove_links.pl ~/src/otrs/
 ]]></screen>
         </para>
     </section>
