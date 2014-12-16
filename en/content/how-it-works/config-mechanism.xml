@@ -3,76 +3,46 @@
 
 <section>
     <title>Config Mechanism</title>
-    <section id="default-config">
-        <title>Default Config</title>
-        <para>
-            There are different default config files. The main one, which comes with the
-            framework, is <filename>Kernel/Config/Defaults.pm</filename>
-        </para>
-        <para>
-            This file should be left untouched as it is automatically updated on framework updates.
-            There is also a sub directory where you can store the default config files
-            for your own modules. These files are used automatically.
-        </para>
-        <para>
-            The directory is located at <filename>$OTRS_HOME/Kernel/Config/Files/*.pm</filename>
-            and could look as follows:
-        </para>
-        <para>
-            <filename>Kernel/config/Files/Calendar.pm</filename>
-        </para>
-        <para>
-        <programlisting><![CDATA[
-# module reg and nav bar
-$Self->{'Frontend::Module'}->{'AgentCalendar'} = {
-    Description => 'Calendar',
-    NavBarName => 'Ticket',
-    NavBar => [
-        {
-            Description => 'Calendar',
-            Name => 'Calendar',
-            Image => 'calendar.png',
-            Link => 'Action=AgentCalendar',
-            NavBar => 'Ticket',
-            Prio => 5000,
-            AccessKey => 'c',
-        },
-    ],
-};
+    <para>
+        OTRS comes with a dedicated mechanism to manage configuration options via a graphical interface (SysConfig).
+        This section describes how it works internally and how you can provide new configuration options or change
+        existing default values.
+    </para>
 
-# show online customers
-$Self->{'Frontend::NotifyModule'}->{'80-ShowCalendarEvents'} = {
-    Module => 'Kernel::Output::HTML::NotificationCalendar',
-};
-        ]]></programlisting>
+    <section id="default-config">
+        <title><filename>Defaults.pm</filename>: OTRS Default Configuration</title>
+        <para>
+            The default configuration file of OTRS is <filename>Kernel/Config/Defaults.pm</filename>.
+            This file should be left untouched as it is automatically updated on framework updates.
         </para>
     </section>
 
-    <section id="accessing-config-options">
-        <title>Accessing Config Options at Runtime</title>
+    <section id="auto-generated-config-files">
+        <title>Automatically Generated Configuration Files</title>
         <para>
-            You can read and write (for one request) the config options via the core module "Kernel::Config".
-        </para>
-        <para>
-            If you want to read a config option:
-        <programlisting><![CDATA[
-my $ConfigOption = $Kernel::OM->Get('Kernel::Config')->Get('Prefix::Option');
-        ]]></programlisting>
-            If you want to change a config option at runtime and just for this one request/process:
-        <programlisting><![CDATA[
-$Kernel::OM->Get('Kernel::Config')->Set(
-    Key => 'Prefix::Option'
-    Value => 'SomeNewValue',
-);
-        ]]></programlisting>
+            In <filename>Kernel/Config/Files</filename> you can find some automatically generated configuration files:
+<screen><![CDATA[
+ZZZAAuto.pm                 # Perl cache of the XML configuration's default values
+ZZZACL.pm                   # Perl cache of ACL configuration from database
+ZZZAuto.pm                  # Contains all the settings the user changed in their SysConfig
+ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from database
+]]></screen>
+            These files should never be manually changed as they are overwritten by OTRS.
         </para>
     </section>
 
     <section id="xml-config">
         <title>XML Config Options</title>
         <para>
+            In OTRS, configuration options that the administrator can configure via SysConfig are provided via
+            XML files with a special format.
             XML config files are located at <filename>$OTRS_HOME/Kernel/Config/Files/*.xml</filename>.
-            Each config file has the following layout:
+            The file <filename>Kernel/Config/Files/ZZZAAuto.pm</filename> is a cached Perl version of the XML that contains
+            all settings with their default value. It can be (re-)generated with <filename>bin/otrs.RebuildConfig.pl</filename>.
+            All changes the administrator makes are stored in <filename>Kernel/Config/Files/ZZZAuto.pm</filename>.
+        </para>
+        <para>
+            Each XML config file has the following layout:
         <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_config version="1.0" init="Changes">
@@ -83,13 +53,13 @@ $Kernel::OM->Get('Kernel::Config')->Set(
         ]]></programlisting>
         </para>
         <para>
-            The "init" attribute describes where the config options should be loaded. There are different levels available and will be loaded/overloaded in the following order: "Framework" (for framework settings e. g. session option), "Application" (for application settings e. g. ticket options), "Config" (for extensions to existing applications e. g. ITSM options) and "Changes" (for custom development e. g. to overwrite framework or ticket options).
+            The <literal>init</literal> attribute describes where the config options should be loaded. There are different levels available and will be loaded/overloaded in the following order: <literal>Framework</literal> (for framework settings e. g. session option), <literal>Application</literal> (for application settings e. g. ticket options), <literal>Config</literal> (for extensions to existing applications e. g. ITSM options) and <literal>Changes</literal> (for custom development e. g. to overwrite framework or ticket options).
         </para>
         <para>
             If you want to add config options, here is an example:
         <programlisting><![CDATA[
 <ConfigItem Name="Ticket::Hook" Required="1" Valid="1" ConfigLevel="300">
-    <Description Lang="en">The identifyer for a ticket. The default is Ticket#.</Description>
+    <Description Lang="en">The identifier for a ticket. The default is Ticket#.</Description>
     <Description Lang="de">Ticket-Identifikator. Als Standard wird Ticket# verwendet.</Description>
     <Group>Ticket</Group>
     <SubGroup>Core::Ticket</SubGroup>
@@ -100,10 +70,11 @@ $Kernel::OM->Get('Kernel::Config')->Set(
         ]]></programlisting>
         </para>
         <para>
-            If "required" is set to "1", the config variable is included and cannot be disabled.
+            If <literal>required</literal> is set to <literal>1</literal>, the config variable is included and cannot be disabled.
         </para>
         <para>
-            If "valid" is set to "1", the config variable is active. If it is set to "0", the config variable is inactive.
+            If <literal>valid</literal> is set to <literal>1</literal>, the config variable is active.
+            If it is set to <literal>0</literal>, the config variable is inactive.
         </para>
         <para>
             If the optional attribute "ConfigLevel" is set, the config variable might not be edited by the administrator,
@@ -114,7 +85,7 @@ $Kernel::OM->Get('Kernel::Config')->Set(
             and others should get a config level of at least 200 (Advanced).
         </para>
         <para>
-            The config variable is defined in the "setting" element.
+            The config variable is defined in the <literal>Setting</literal> element.
         </para>
 
         <section id="xml-config-variable">
@@ -125,75 +96,93 @@ $Kernel::OM->Get('Kernel::Config')->Set(
             <section id="xml-config-string">
                 <title>String</title>
                 <para>
-                    A config element for numbers and single-line strings.
-                    Checking the validity with a regex is possible.
-                    The check attribute checks elements on the file system.
-                    This contains files and directories.
-                <programlisting><![CDATA[
+                    <programlisting><![CDATA[
 <Setting>
     <String Regex="" Check="File"></String>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
+
+                    A config element for numbers and single-line strings.
+                    Checking the validity with a regular is possible (optional).
+                    The optional <literal>Check</literal> attribute checks elements on the file system.
+
+                    <programlisting><![CDATA[
+<Setting>
+    <String Translatable="1">My Setting</String>
+</Setting>
+                    ]]></programlisting>
+
+                    The optional <literal>Translatable</literal> attribute marks this setting as translatable, which
+                    will cause it to be included in the OTRS translation files.
+                    This attribute can be placed on any tag (see also below).
                 </para>
             </section>
             <section id="xml-config-textarea">
                 <title>Textarea</title>
                 <para>
                     A config element for multiline text.
-                <programlisting><![CDATA[
+                    <programlisting><![CDATA[
 <Setting>
-    <TextArea Regex=""></TextArea>
+    <TextArea></TextArea>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
                 </para>
             </section>
             <section id="xml-config-option">
                 <title>Options</title>
                 <para>
                     This config element offers preset values as a pull-down menu.
-                <programlisting><![CDATA[
+                    <programlisting><![CDATA[
 <Setting>
-    <Option SelectedID="Key">
-        <Item Key=""></Item>
-        <Item Key=""></Item>
+    <Option SelectedID="0">
+        <Item Key="0" Translatable="1">No</Item>
+        <Item Key="1" Translatable="1">Yes</Item>
     </Option>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
+
+                    You can also choose the default value by "Value":
+
+                    <programlisting><![CDATA[
+<Setting>
+    <Option SelectedValue="No">
+        <Item Key="0" Translatable="1">No</Item>
+        <Item Key="1" Translatable="1">Yes</Item>
+    </Option>
+</Setting>
+                    ]]></programlisting>
                 </para>
             </section>
             <section id="xml-config-array">
                 <title>Array</title>
                 <para>
                     With this config element arrays can be displayed.
-                <programlisting><![CDATA[
+                    <programlisting><![CDATA[
 <Setting>
     <Array>
-        <Item></Item>
-        <Item></Item>
+        <Item>First item</Item>
+        <Item>Second item</Item>
     </Array>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
                 </para>
             </section>
             <section id="xml-config-hash">
                 <title>Hash</title>
                 <para>
                     With this config element hashes can be displayed.
-                <programlisting><![CDATA[
+                    <programlisting><![CDATA[
 <Setting>
     <Hash>
-        <Item Key=""></Item>
-        <Item Key=""></Item>
+        <Item Key="1" Translatable="1">Value 1</Item>
+        <Item Key="2" Translatable="1">Value 2</Item>
     </Hash>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
                 </para>
-            </section>
-            <section id="xml-config-subhash">
-                <title>Hash with SubArray, SubHash</title>
                 <para>
-                    A hash can contain content, arrays or hashes.
-                <programlisting><![CDATA[
+                    A hash can also contain nested arrays or hashes.
+                    <programlisting><![CDATA[
 <Setting>
     <Hash>
         <Item Key=""></Item>
@@ -212,60 +201,96 @@ $Kernel::OM->Get('Kernel::Config')->Set(
         <Item Key=""></Item>
     </Hash>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
                 </para>
             </section>
             <section id="xml-config-navbar">
                 <title>FrontendModuleReg (NavBar)</title>
                 <para>
-                    Module registration for Agent Interface.
-                <programlisting><![CDATA[
+                    Module registration for Agent Interface:
+                    <programlisting><![CDATA[
 <Setting>
     <FrontendModuleReg>
-        <Group>group1</Group>
-        <Group>group2</Group>
-        <Description>Logout</Description>
+        <Description>Agent Dashboard</Description>
         <Title></Title>
-        <NavBarName></NavBarName>
+        <NavBarName>Dashboard</NavBarName>
         <NavBar>
-            <Description>Logout</Description>
-            <Name>Logout</Name>
-            <Image>exit.png</Image>
-            <Link>Action=Logout</Link>
-            <NavBar></NavBar>
-            <Type></Type>
-            <Block>ItemPre</Block>
-            <AccessKey>l</AccessKey>
-            <Prio>100</Prio>
+            <Description Translatable="1"></Description>
+            <Name Translatable="1">Dashboard</Name>
+            <Link>Action=AgentDashboard</Link>
+            <LinkOption></LinkOption>
+            <NavBar>Dashboard</NavBar>
+            <Type>Menu</Type>
+            <Block>ItemArea</Block>
+            <AccessKey>d</AccessKey>
+            <Prio>50</Prio>
         </NavBar>
+        <Loader>
+            <CSS>Core.Agent.Dashboard.css</CSS>
+            <CSS>Core.AllocationList.css</CSS>
+            <CSS>thirdparty/fullcalendar-1.6.1/fullcalendar.css</CSS>
+            <CSS>thirdparty/d3js/nv.d3.css</CSS>
+            <JavaScript>thirdparty/flot-0.8.3/excanvas.js</JavaScript>
+            <JavaScript>thirdparty/flot-0.8.3/jquery.flot.js</JavaScript>
+            <JavaScript>thirdparty/fullcalendar-1.6.1/fullcalendar.min.js</JavaScript>
+            <JavaScript>thirdparty/d3js/d3.v3.min.js</JavaScript>
+            <JavaScript>thirdparty/d3js/nv.d3.min.js</JavaScript>
+            <JavaScript>thirdparty/d3js/models/OTRSmultiBarChart.js</JavaScript>
+            <JavaScript>thirdparty/d3js/models/OTRSstackedAreaChart.js</JavaScript>
+            <JavaScript>Core.UI.Chart.js</JavaScript>
+            <JavaScript>Core.UI.AdvancedChart.js</JavaScript>
+            <JavaScript>Core.UI.AllocationList.js</JavaScript>
+            <JavaScript>Core.Agent.TableFilters.js</JavaScript>
+            <JavaScript>Core.Agent.Dashboard.js</JavaScript>
+        </Loader>
     </FrontendModuleReg>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
                 </para>
             </section>
             <section id="xml-config-navbarmodule">
                 <title>FrontendModuleReg (NavBarModule)</title>
                 <para>
-                    Module registration for Admin Interface
-                <programlisting><![CDATA[
+                    Module registration for Admin Interface:
+                    <programlisting><![CDATA[
 <Setting>
     <FrontendModuleReg>
         <Group>admin</Group>
-        <Group>admin2</Group>
         <Description>Admin</Description>
-        <Title>User</Title>
+        <Title Translatable="1">Customers &lt;-&gt; Groups</Title>
         <NavBarName>Admin</NavBarName>
         <NavBarModule>
             <Module>Kernel::Output::HTML::NavBarModuleAdmin</Module>
-            <Name>Users</Name>
-            <Block>Block1</Block>
-            <Prio>100</Prio>
+            <Name Translatable="1">Customer User &lt;-&gt; Groups</Name>
+            <Description Translatable="1">Link customer user to groups.</Description>
+            <Block>Customer</Block>
+            <Prio>400</Prio>
         </NavBarModule>
     </FrontendModuleReg>
 </Setting>
-                ]]></programlisting>
+                    ]]></programlisting>
                 </para>
             </section>
         </section>
+    </section>
+
+    <section id="accessing-config-options">
+        <title>Accessing Config Options at Runtime</title>
+        <para>
+            You can read and write (for one request) the config options via the core module "Kernel::Config".
+        </para>
+        <para>
+            If you want to read a config option:
+            <programlisting><![CDATA[
+my $ConfigOption = $Kernel::OM->Get('Kernel::Config')->Get('Prefix::Option');
+            ]]></programlisting>
+            If you want to change a config option at runtime and just for this one request/process:
+            <programlisting><![CDATA[
+$Kernel::OM->Get('Kernel::Config')->Set(
+    Key => 'Prefix::Option'
+    Value => 'SomeNewValue',
+);
+            ]]></programlisting>
+        </para>
     </section>
 </section>
