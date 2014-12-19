@@ -477,6 +477,10 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
                             <literal>Frontend::Output::FilterElementPre</literal>). They still work, but they will prevent the template
                             from being cached. This could lead to serious performance issues. You should definitely not have any pre output filters that operate on all templates, but limit them to certain templates via configuration setting.
                         </para>
+                        <para>
+                            Post output filters (<literal>Frontend::Output::FilterElementPost</literal> don't have such strong negative performance effects.
+                            However, they should also be used carefully, and not for all templates.
+                        </para>
                     </listitem>
                 </itemizedlist>
             </para>
