@@ -7,6 +7,24 @@
 With every new minor or major version of OTRS, you need to port your package(s) and make sure they
 still work with the OTRS API.
     </para>
+        <section id="package-porting-4-to-5">
+        <title>From OTRS 4 to 5</title>
+        <para>
+            This section lists changes that you need to examine when porting your package from
+            OTRS 4 to 5.
+        </para>
+
+        <section>
+            <title>Pre-Output-Filters</title>
+            <para>
+                With OTRS 5 there is no support for "pre" output filters any more. These filters changed the template content before it was parsed, and that could potentially lead to bad performance issues.
+            </para>
+            <para>
+                Just switch from "pre" to "post" output filters. To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions.
+            </para>
+        </section>
+    </section>
+
     <section id="package-porting-33-to-4">
         <title>From OTRS 3.3 to 4</title>
         <para>
