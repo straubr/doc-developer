@@ -23,6 +23,13 @@ still work with the OTRS API.
                 Just switch from "pre" to "post" output filters. To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions.
             </para>
         </section>
+
+        <section>
+            <title>IE 8 and IE 9</title>
+            <para>
+                Support for IE 8 and 9 <ulink url="https://github.com/OTRS/otrs/commit/3b1aff21984d7b32f626df95e072337245615b36">was dropped</ulink>. You can remove any workarounds in your code for these platforms, as well as any old <literal>&lt;CSS_IE7&gt;</literal> or <literal>&lt;CSS_IE8&gt;</literal> loader tags that might still lurk in your XML config files.
+            </para>
+        </section>
     </section>
 
     <section id="package-porting-33-to-4">
