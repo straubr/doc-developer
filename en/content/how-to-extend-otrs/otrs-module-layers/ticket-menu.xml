@@ -25,7 +25,7 @@
         <programlisting linenumbering="numbered"><![CDATA[
 # --
 # Kernel/Output/HTML/TicketMenuCustom.pm
-# Copyright (C) 2001-2014 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
 # --
 # Id: TicketMenuCustom.pm,v 1.17 2010/04/12 21:34:06 martin Exp $
 # --

@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+ <section id="ticket-postmaster-module">
+    <title>Ticket PostMaster Module</title>
+    <para>
+        PostMaster modules are used during the PostMaster process.
+        There are two kinds of PostMaster modules. PostMasterPre (used after parsing an email)
+        and PostMasterPost (used after an email is processed and in the database) modules.
+    </para>
+    <para>
+        If you want to create your own postmaster filter, just create your own module.
+        These modules are located under "Kernel/System/PostMaster/Filter/*.pm".
+        For default modules see the admin manual. You just need two functions:
+        new() and Run():
+    </para>
+    <para>
+        The following is an examplary module to match emails and set X-OTRS-Headers
+        (see doc/X-OTRS-Headers.txt for more info).
+    </para>
+    <para>
+        <filename>Kernel/Config/Files/MyModule.xml</filename>:
+        <programlisting><![CDATA[
+<ConfigItem Name="PostMaster::PreFilterModule###1-Example" Required="0" Valid="1">
+    <Description Translatable="1">Example module to filter and manipulate incoming messages.</Description>
+    <Group>Ticket</Group>
+    <SubGroup>Core::PostMaster</SubGroup>
+    <Setting>
+        <Hash>
+            <Item Key="Module">Kernel::System::PostMaster::Filter::Example</Item>
+            <Item Key="Match">
+                <Hash>
+                    <Item Key="From">noreply@</Item>
+                </Hash>
+            </Item>
+            <Item Key="Set">
+                <Hash>
+                    <Item Key="X-OTRS-Ignore">yes</Item>
+                </Hash>
+            </Item>
+        </Hash>
+    </Setting>
+</ConfigItem>
+        ]]></programlisting>
+    </para>
+    <para>
+        And the actual filter code in <filename>Kernel/System/PostMaster/Filter/Example.pm</filename>:
+        <programlisting><![CDATA[
+# --
+# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+package Kernel::System::PostMaster::Filter::Example;
+
+use strict;
+use warnings;
+
+our @ObjectDependencies = (
+    'Kernel::System::Log',
+);
+
+sub new {
+    my ( $Type, %Param ) = @_;
+
+    # allocate new hash for object
+    my $Self = {};
+    bless ($Self, $Type);
+
+    $Self->{Debug} = $Param{Debug} || 0;
+
+    return $Self;
+}
+
+sub Run {
+    my ( $Self, %Param ) = @_;
+    # get config options
+    my %Config = ();
+    my %Match = ();
+    my %Set = ();
+    if ($Param{JobConfig} && ref($Param{JobConfig}) eq 'HASH') {
+        %Config = %{$Param{JobConfig}};
+        if ($Config{Match}) {
+            %Match = %{$Config{Match}};
+        }
+        if ($Config{Set}) {
+            %Set = %{$Config{Set}};
+        }
+        }
+        # match 'Match => ???' stuff
+        my $Matched = '';
+        my $MatchedNot = 0;
+        for (sort keys %Match) {
+        if ($Param{GetParam}->{$_} && $Param{GetParam}->{$_} =~ /$Match{$_}/i) {
+            $Matched = $1 || '1';
+            if ($Self->{Debug} > 1) {
+                $Kernel::OM->Get('Kernel::System::Log')->Log(
+                    Priority => 'debug',
+                    Message => "'$Param{GetParam}->{$_}' =~ /$Match{$_}/i matched!",
+                );
+            }
+        }
+        else {
+            $MatchedNot = 1;
+            if ($Self->{Debug} > 1) {
+                $Kernel::OM->Get('Kernel::System::Log')->Log(
+                    Priority => 'debug',
+                    Message => "'$Param{GetParam}->{$_}' =~ /$Match{$_}/i matched NOT!",
+                );
+            }
+        }
+        }
+        # should I ignore the incoming mail?
+        if ($Matched && !$MatchedNot) {
+        for (keys %Set) {
+            if ($Set{$_} =~ /\[\*\*\*\]/i) {
+                $Set{$_} = $Matched;
+            }
+            $Param{GetParam}->{$_} = $Set{$_};
+            $Kernel::OM->Get('Kernel::System::Log')->Log(
+                Priority => 'notice',
+                Message => "Set param '$_' to '$Set{$_}' (Message-ID: $Param{GetParam}->{'Message-ID'}) ",
+            );
+        }
+    }
+
+    return 1;
+}
+
+1;
+    ]]></programlisting>
+    </para>
+    <para>
+        The following image shows you the email processing flow.
+        <screenshot>
+        <graphic srccredit="" scale="60" fileref="screenshots/email-processing.png"></graphic>
+        </screenshot>
+    </para>
+</section>
