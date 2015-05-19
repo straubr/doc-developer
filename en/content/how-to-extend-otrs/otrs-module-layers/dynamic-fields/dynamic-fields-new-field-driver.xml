@@ -373,11 +373,7 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
         </para>
         <para>
             <programlisting><![CDATA[
-sub ValueGet {
-.
-.
-.
-}
+sub ValueGet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -386,11 +382,7 @@ sub ValueGet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub ValueSet {
-.
-.
-.
-}
+sub ValueSet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -400,11 +392,7 @@ sub ValueSet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub ValueDelete {
-.
-.
-.
-}
+sub ValueDelete { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -414,11 +402,7 @@ sub ValueDelete {
         </para>
         <para>
             <programlisting><![CDATA[
-sub AllValuesDelete {
-.
-.
-.
-}
+sub AllValuesDelete { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -428,11 +412,7 @@ sub AllValuesDelete {
         </para>
         <para>
             <programlisting><![CDATA[
-sub ValueValidate {
-.
-.
-.
-}
+sub ValueValidate { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -441,11 +421,7 @@ sub ValueValidate {
         </para>
         <para>
             <programlisting><![CDATA[
-sub SearchSQLGet {
-.
-.
-.
-}
+sub SearchSQLGet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -454,11 +430,7 @@ sub SearchSQLGet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub SearchSQLOrderFieldGet {
-.
-.
-.
-}
+sub SearchSQLOrderFieldGet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -468,11 +440,7 @@ sub SearchSQLOrderFieldGet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub EditFieldValueGet {
-.
-.
-.
-}
+sub EditFieldValueGet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -495,11 +463,7 @@ sub EditFieldValueGet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub EditFieldValueValidate {
-.
-.
-.
-}
+sub EditFieldValueValidate { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -510,11 +474,7 @@ sub EditFieldValueValidate {
         </para>
         <para>
             <programlisting><![CDATA[
-sub SearchFieldRender {
-.
-.
-.
-}
+sub SearchFieldRender { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -526,11 +486,7 @@ sub SearchFieldRender {
         </para>
         <para>
             <programlisting><![CDATA[
-sub SearchFieldValueGet {
-.
-.
-.
-}
+sub SearchFieldValueGet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -539,11 +495,7 @@ sub SearchFieldValueGet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub SearchFieldParameterBuild {
-.
-.
-.
-}
+sub SearchFieldParameterBuild { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -554,11 +506,7 @@ sub SearchFieldParameterBuild {
         </para>
         <para>
             <programlisting><![CDATA[
-sub StatsFieldParameterBuild {
-.
-.
-.
-}
+sub StatsFieldParameterBuild { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -569,11 +517,7 @@ sub StatsFieldParameterBuild {
         </para>
         <para>
             <programlisting><![CDATA[
-sub StatsSearchFieldParameterBuild {
- .
- .
- .
- }
+sub StatsSearchFieldParameterBuild { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -587,11 +531,7 @@ sub StatsSearchFieldParameterBuild {
         </para>
         <para>
             <programlisting><![CDATA[
-sub TemplateValueTypeGet {
-.
-.
-.
-}
+sub TemplateValueTypeGet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -601,11 +541,7 @@ sub TemplateValueTypeGet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub RandomValueSet {
-.
-.
-.
-}
+sub RandomValueSet { ... }
             ]]></programlisting>
         </para>
         <para>
@@ -615,11 +551,7 @@ sub RandomValueSet {
         </para>
         <para>
             <programlisting><![CDATA[
-sub ObjectMatch {
-.
-.
-.
-}
+sub ObjectMatch { ... }
             ]]></programlisting>
         </para>
         <para>
