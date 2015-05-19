@@ -13,37 +13,62 @@
         This conflict can be resolved by using two output filters that modify the same frontend module.
     </para>
     <para>
-        There are four different kinds of output filters. They are active at different stages of the
+        There are three different kinds of output filters. They are active at different stages of the
         generation of HTML content.
     </para>
-    <section id="outputfilter_filterelement_pre">
-        <title>FilterElementPre</title>
-        <para>
-            The content of a template can be changed by the filter before any processing by the Layout module takes place.
-            This kind of filter should be used in most cases.
-            Processing instructions like [% Translate() %], [% Data.Name | html %] can be inserted
-            into the template content and they will be honored by the subsequent template processing.
-        </para>
-    </section>
     <section id="outputfilter_filterelement_post">
-        <title>FilterElementPost</title>
+        <title><literal>FilterElementPost</literal></title>
         <para>
-            The content of a template can be changed after variable substitution and translation.
-            The kind of filter should only be used when the filter needs access to translated strings
-            or to substituted variables.
+            These filters allow to modify the output of a template after it was rendered.
+        </para>
+        <para>
+            To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions. In this case you would inject the new code somewhere in the page as invisible content (e. g. with the class <literal>Hidden</literal>), and then move it with jQuery to the correct location in the DOM and show it.
+        </para>
+        <para>
+            To make using post output filters easier, there is also a mechanism to request HTML comment hooks for certain templates/blocks. You can add in your module config XML like:
+            <programlisting><![CDATA[
+<ConfigItem
+Name="Frontend::Template::GenerateBlockHooks###100-OTRSBusiness-ContactWithData"
+Required="1" Valid="1">
+    <Description Translatable="1">Generate HTML comment hooks for
+the specified blocks so that filters can use them.</Description>
+    <Group>OTRSBusiness</Group>
+    <SubGroup>Core</SubGroup>
+    <Setting>
+        <Hash>
+            <Item Key="AgentTicketZoom">
+                <Array>
+                    <Item>CustomerTable</Item>
+                </Array>
+            </Item>
+        </Hash>
+    </Setting>
+</ConfigItem>
+            ]]></programlisting>
+
+            This will cause the block <literal>CustomerTable</literal> in <filename>AgentTicketZoom.tt</filename> to be
+            wrapped in HTML comments each time it is rendered:
+
+            <programlisting><![CDATA[
+<!--HookStartCustomerTable-->
+... block output ...
+<!--HookEndCustomerTable-->
+            ]]></programlisting>
+
+            With this mechanism every package can request just the block hooks it
+            needs, and they are consistently rendered. These HTML comments can then be used in your
+            output filter for easy regular expression matching.
         </para>
     </section>
     <section id="outputfilter_filtercontent">
-        <title>FilterContent</title>
+        <title><literal>FilterContent</literal></title>
         <para>
             This kind of filter allows to process the complete HTML output for the request
-            right before it is sent to the browser.
-            This can be used for global transformations.
-            But in real life there is rarely a need to use this kind of filter.
+            right before it is sent to the browser. This can be used for global transformations.
         </para>
     </section>
-    <section id="outputfilter_filtertest">
-        <title>FilterText</title>
+    <section id="outputfilter_filtertext">
+        <title><literal>FilterText</literal></title>
         <para>
             This kind of output filter is a plugin for the method
             Kernel::Output::HTML::Layout::Ascii2HTML()
@@ -71,18 +96,7 @@
         <section id="outputfilter-usecase-10">
             <title>Show additional ticket attributes in AgentTicketZoom.</title>
             <para>
-                All ticket attributes are passed to the AgentTicketZoom template.
-                Therefore it suffices to insert e.g. the instruction $QData{"Title"} into the content.
-                This can be achieved with a FilterElementPre output filter.
-            </para>
-        </section>
-        <section id="outputfilter-usecase-20">
-            <title>Add an additional CSS file.</title>
-            <para>
-                An additional CSS file can be added to all agent frontends with an FilterElementPre filter
-                that only modifies <filename>Header.tt</filename>.
-                Therefore it suffices to insert e.g. the instruction $QData{"Title"} into the content.
-                This can be achieved with a FilterElementPre output filter.
+                This can be achieved with a FilterElementPost output filter.
             </para>
         </section>
         <section id="outputfilter-usecase-30">
@@ -114,26 +128,24 @@
     <section id="outputfilter-caveats">
         <title>Caveats and Warnings</title>
         <para>
-            Every ElementPre and ElementPost output filter is constructed and run
-            for every Template that is needed for the current request.
+            Every FilterElementPost output filter is constructed and run
+            for every configured Template that is needed for the current request.
             Thus low performance of the output filter or a large number of filters can
             severely degrade performance.
-            When that becomes an issue, the construction of
-            needed objects can be done in the Run-method after the checks.
-            Thus the expensive code is run only in the relevant cases.
         </para>
     </section>
     <section id="outputfilter-bestpractice">
         <title>Best Practices</title>
         <para>
             In order to increase flexibility the list of affected templates should be
-            configurable in SysConfig.
+            configured in SysConfig.
         </para>
     </section>
     <section id="outputfilter-releases">
         <title>Release Availability</title>
         <para>
-            The four kinds of output filters are available in OTRS 2.4.
+            The output filters are available since OTRS 2.4. The type <literal>FilterElementPre</literal>
+            was dropped with OTRS 5.
         </para>
     </section>
 </section>

@@ -17,7 +17,7 @@ still work with the OTRS API.
         <section>
             <title>Pre-Output-Filters</title>
             <para>
-                With OTRS 5 there is no support for "pre" output filters any more. These filters changed the template content before it was parsed, and that could potentially lead to bad performance issues.
+                With OTRS 5 there is no support for "pre" output filters any more. These filters changed the template content before it was parsed, and that could potentially lead to bad performance issues because the templates could not be cached any more and had to be parsed and compiled every time.
             </para>
             <para>
                 Just switch from "pre" to "post" output filters. To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions. In this case you would inject the new code somewhere in the page as invisible content (e. g. with the class <literal>Hidden</literal>), and then move it with jQuery to the correct location in the DOM and show it.
@@ -54,7 +54,7 @@ the specified blocks so that filters can use them.</Description>
                 ]]></programlisting>
 
                 With this mechanism every package can request just the block hooks it
-                needs, and they are consistently rendered. These HTML comments can then be used in our
+                needs, and they are consistently rendered. These HTML comments can then be used in your
                 output filter for easy regular expression matching.
             </para>
         </section>
