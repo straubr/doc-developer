@@ -20,7 +20,42 @@ still work with the OTRS API.
                 With OTRS 5 there is no support for "pre" output filters any more. These filters changed the template content before it was parsed, and that could potentially lead to bad performance issues.
             </para>
             <para>
-                Just switch from "pre" to "post" output filters. To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions.
+                Just switch from "pre" to "post" output filters. To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions. In this case you would inject the new code somewhere in the page as invisible content (e. g. with the class <literal>Hidden</literal>), and then move it with jQuery to the correct location in the DOM and show it.
+            </para>
+            <para>
+                To make using post output filters easier, there is also a new mechanism to request HTML comment hooks for certain templates/blocks. You can add in your module config XML like:
+                <programlisting><![CDATA[
+<ConfigItem
+Name="Frontend::Template::GenerateBlockHooks###100-OTRSBusiness-ContactWithData"
+Required="1" Valid="1">
+    <Description Translatable="1">Generate HTML comment hooks for
+the specified blocks so that filters can use them.</Description>
+    <Group>OTRSBusiness</Group>
+    <SubGroup>Core</SubGroup>
+    <Setting>
+        <Hash>
+            <Item Key="AgentTicketZoom">
+                <Array>
+                    <Item>CustomerTable</Item>
+                </Array>
+            </Item>
+        </Hash>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+
+                This will cause the block <literal>CustomerTable</literal> in <filename>AgentTicketZoom.tt</filename> to be
+                wrapped in HTML comments each time it is rendered:
+
+                <programlisting><![CDATA[
+<!--HookStartCustomerTable-->
+... block output ...
+<!--HookEndCustomerTable-->
+                ]]></programlisting>
+
+                With this mechanism every package can request just the block hooks it
+                needs, and they are consistently rendered. These HTML comments can then be used in our
+                output filter for easy regular expression matching.
             </para>
         </section>
 
