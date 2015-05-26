@@ -368,9 +368,9 @@
         </para>
         <para>
             For the OTRS data model please refer to the files in your /doc directory. Alternatively
-            you can look at the data model on github:
-            <ulink url="https://github.com/OTRS/otrs/blob/master/doc/OTRSDatabaseDiagram.png">
-                https://github.com/OTRS/otrs/blob/master/doc/OTRSDatabaseDiagram.png
+            you can look at the data model
+            <ulink url="https://github.com/OTRS/otrs/blob/master/development/diagrams/Database/OTRSDatabaseDiagram.png">
+                on github
             </ulink>.
         </para>
     </section>
