@@ -15,6 +15,13 @@ still work with the OTRS API.
         </para>
 
         <section>
+            <title><filename>Kernel/Output/HTML</filename> restructured</title>
+            <para>
+                In OTRS 5, <filename>Kernel/Output/HTML</filename> was restructured. All perl modules (except <filename>Layout.pm</filename>) were moved to subdirectories (one for every module layer). Template (theme) files were also moved from <filename>Kernel/Output/HTML/Standard</filename> to <filename>Kernel/Output/HTML/Templates/Standard</filename>. Please perform this migration also in your code.
+            </para>
+        </section>
+
+        <section>
             <title>Pre-Output-Filters</title>
             <para>
                 With OTRS 5 there is no support for "pre" output filters any more. These filters changed the template content before it was parsed, and that could potentially lead to bad performance issues because the templates could not be cached any more and had to be parsed and compiled every time.
