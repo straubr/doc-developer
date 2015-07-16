@@ -72,6 +72,43 @@ the specified blocks so that filters can use them.</Description>
                 Support for IE 8 and 9 <ulink url="https://github.com/OTRS/otrs/commit/3b1aff21984d7b32f626df95e072337245615b36">was dropped</ulink>. You can remove any workarounds in your code for these platforms, as well as any old <literal>&lt;CSS_IE7&gt;</literal> or <literal>&lt;CSS_IE8&gt;</literal> loader tags that might still lurk in your XML config files.
             </para>
         </section>
+
+        <section>
+            <title>GenericInterface API change in "Ticket" connector</title>
+            <para>
+                   The operation <code>TicketGet()</code> returns dynamic field data from ticket and articles differently than in OTRS 4.
+                   Now they are cleanly  separated from the rest of the static ticket and article fields - they are now grouped in a list called DynamicField. Please adapt any applications using this operation accordingly.
+
+                    <programlisting><![CDATA[
+# changed from:
+
+Ticket => [
+    {
+        TicketNumber       => '20101027000001',
+        Title              => 'some title',
+        ...
+        DynamicField_X     => 'value_x',
+    },
+]
+
+# to:
+
+Ticket => [
+    {
+        TicketNumber       => '20101027000001',
+        Title              => 'some title',
+        ...
+        DynamicField => [
+            {
+                Name  => 'some name',
+                Value => 'some value',
+            },
+        ],
+    },
+]
+                    ]]></programlisting>
+            </para>
+        </section>
     </section>
 
     <section id="package-porting-33-to-4">
