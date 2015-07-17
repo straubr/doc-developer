@@ -10,5 +10,6 @@
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/skins.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/loader.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/templates.xml" />
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/translations.xml" />
 
 </chapter>
