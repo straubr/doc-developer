@@ -121,6 +121,15 @@ Ticket => [
                 implementations in the default OTRS statistics.
             </para>
         </section>
+        <section>
+            <title>HTML print discarded</title>
+            <para>
+                Until OTRS 5, the Perl module <literal>PDF::API2</literal> was not present on all systems. Therefore
+                a fallback HTML print mode existed. With OTRS 5, the module is now bundled and HTML print was dropped.
+                <code>$LayoutObject->PrintHeader()</code> and <code>PrintFooter()</code> are not available any more.
+                Please remove the HTML print fallback from your code and change it to generate PDF if neccessary.
+            </para>
+        </section>
     </section>
 
     <section id="package-porting-33-to-4">
