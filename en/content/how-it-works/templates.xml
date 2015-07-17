@@ -196,7 +196,7 @@ The admin email address is '[% Config("AdminEmail") %]'
 
         <section>
             <title>Localization Commands</title>
-            <section id="text">
+            <section id="translate-tag">
                 <title><literal>[% Translate() %]</literal></title>
                 <para>
                     Translates a string into the current user's selected language.
@@ -230,7 +230,7 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
                 </para>
             </section>
 
-            <section id="localize">
+            <section id="localize-tag">
                 <title><literal>[% Localize() %]</literal></title>
                 <para>
                     Inserts a localized date/time stamp (including a possible time zone
