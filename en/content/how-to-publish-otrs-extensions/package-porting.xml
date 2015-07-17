@@ -130,6 +130,14 @@ Ticket => [
                 Please remove the HTML print fallback from your code and change it to generate PDF if neccessary.
             </para>
         </section>
+        <section>
+            <title>Translation string extraction improved</title>
+            <para>
+                Until OTRS 5, translatable strings could not be extracted from Perl code and Database XML definitions.
+                This is now possible and makes dummy templates like <filename>AAA*.tt</filename> obsolete.
+                Please see <link linkend="localization-translation-mechanism">this section</link> for details.
+            </para>
+        </section>
     </section>
 
     <section id="package-porting-33-to-4">
