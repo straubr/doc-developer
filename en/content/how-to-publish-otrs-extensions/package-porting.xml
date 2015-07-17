@@ -109,6 +109,18 @@ Ticket => [
                     ]]></programlisting>
             </para>
         </section>
+        <section>
+            <title>Preview functions in dynamic statistics</title>
+            <para>
+                The new statistics GUI provides a preview for the current configuration. This must be implemented
+                in the statistic modules and usually returns fake / random data for speed reasons. So for any
+                dynamic (matrix) statistic that provides the method <code>GetStatElement()</code> you should also add a method
+                <code>GetStatElementPreview()</code>, and for every dynamic (table) statistic that provides
+                <code>GetStatTable()</code> you should accordingly add <code>GetStatTablePreview()</code>. Otherwise
+                the preview in the new statistics GUI will not work for your statistics. You can find example
+                implementations in the default OTRS statistics.
+            </para>
+        </section>
     </section>
 
     <section id="package-porting-33-to-4">
