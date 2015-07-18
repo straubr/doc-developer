@@ -300,10 +300,12 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
             <section id="include">
                 <title><literal>[% InsertTemplate("Copyright.tt") %]</literal></title>
                 <warning>
-                    Please note that the <literal>InsertTemplate</literal> command was added to provide better backwards compatibility
-                    to the old DTL system. It might be deprecated in a future version of OTRS and removed later.
-                    If you don't use <link linkend="block">block commands</link> in your included template, you don't need
-                    <literal>InsertTemplate</literal> and can use standard Template::Toolkit syntax like <literal>INCLUDE/PROCESS</literal> instead.
+                    <para>
+                        Please note that the <literal>InsertTemplate</literal> command was added to provide better backwards compatibility
+                        to the old DTL system. It might be deprecated in a future version of OTRS and removed later.
+                        If you don't use <link linkend="block">block commands</link> in your included template, you don't need
+                        <literal>InsertTemplate</literal> and can use standard Template::Toolkit syntax like <literal>INCLUDE/PROCESS</literal> instead.
+                    </para>
                 </warning>
                 <para>
                     Includes another template file into the current one. The included file may also contain
@@ -325,10 +327,12 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
             <section id="block">
                 <title><literal>[% RenderBlockStart %]</literal> / <literal>[% RenderBlockEnd %]</literal></title>
                 <warning>
-                    Please note that the blocks commands were added to provide better backwards compatibility
-                    to the old DTL system. They might be deprecated in a future version of OTRS and removed later.
-                    We advise you to develop any new code without using the blocks commands.
-                    You can use standard Template::Toolkit syntax like <literal>IF/ELSE</literal>, <literal>LOOP</literal>s and other helpful things for conditional template output.
+                    <para>
+                        Please note that the blocks commands were added to provide better backwards compatibility
+                        to the old DTL system. They might be deprecated in a future version of OTRS and removed later.
+                        We advise you to develop any new code without using the blocks commands.
+                        You can use standard Template::Toolkit syntax like <literal>IF/ELSE</literal>, <literal>LOOP</literal>s and other helpful things for conditional template output.
+                    </para>
                 </warning>
                 <para>
                     With this command, one can specify parts of a template file as a block. This block

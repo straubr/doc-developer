@@ -382,7 +382,9 @@ sub ValidList {
                 for how to migrate your code: you need to use the global Cache object and pass the <literal>Type</literal>
                 settings with every call to <literal>Get()</literal>, <literal>Set()</literal>, <literal>Delete()</literal> and <literal>CleanUp()</literal>. The <literal>TTL</literal> parameter is now optional and defaults to 20 days, so you only have to specify it in <literal>Get()</literal> if you require a different TTL value.
                 <warning>
-                    It is especially important to add the <literal>Type</literal> to <literal>CleanUp()</literal> as otherwise not just the current cache type but the entire cache would be deleted.
+                    <para>
+                        It is especially important to add the <literal>Type</literal> to <literal>CleanUp()</literal> as otherwise not just the current cache type but the entire cache would be deleted.
+                    </para>
                 </warning>
             </para>
         </section>
