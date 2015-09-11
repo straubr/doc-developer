@@ -9,10 +9,13 @@
     </para>
     <para>
         The following picture shows the architecture of the Dynamic Fields framework.
+        <figure>
+            <title>Dynamic Fields Architecture</title>
+            <screenshot>
+                <graphic scale="50" fileref="screenshots/dfframework.png"></graphic>
+            </screenshot>
+        </figure>
     </para>
-    <screenshot>
-        <graphic srccredit="" scale="50" fileref="screenshots/dfframework.png"></graphic>
-    </screenshot>
 
     <section id="dynamic-fields-framework-backends">
         <title>Dynamic Field Backend Modules</title>

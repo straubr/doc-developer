@@ -13,10 +13,13 @@
     <para>
         The following picture shows a simple example of how the Dynamic Fields interact with other
         OTRS framework parts.
+        <figure>
+            <title>Dynamic Field Interaction</title>
+            <screenshot>
+                <graphic scale="50" fileref="screenshots/dfInteraction.png"></graphic>
+            </screenshot>
+        </figure>
     </para>
-    <screenshot>
-        <graphic srccredit="" scale="50" fileref="screenshots/dfInteraction.png"></graphic>
-    </screenshot>
     <para>
         The first step is that the Frontend module reads the configured Dynamic Fields for example
         <emphasis>AgentTicketNote</emphasis> should read

@@ -7,9 +7,12 @@
 Dashboard module to display statistics in the form of a line graph.
         </para>
         <para>
-            <screenshot>
-                <graphic srccredit="" scale="100" fileref="screenshots/dashboard.png"></graphic>
-            </screenshot>
+            <figure>
+                <title>Dashboard Widget</title>
+                <screenshot>
+                    <graphic scale="100" fileref="screenshots/dashboard.png"></graphic>
+                </screenshot>
+            </figure>
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[
