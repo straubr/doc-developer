@@ -103,7 +103,7 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                     ]]></programlisting>
 
                     A config element for numbers and single-line strings.
-                    Checking the validity with a regular is possible (optional).
+                    Checking the validity with a regular expression is possible (optional).
                     The optional <literal>Check</literal> attribute checks elements on the file system.
 
                     <programlisting><![CDATA[

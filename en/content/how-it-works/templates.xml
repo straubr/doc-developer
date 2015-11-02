@@ -101,7 +101,7 @@ The first 20 characters of the author's name: [% Data.Name | truncate(20) | html
                     it will also mask <literal>=</literal>, for example.
 
                     <programlisting><![CDATA[
-<a href="[% Env("Baselink") %];Location=[% Data.File | uri %]">[% Data.File | truncate(110 | html %]</a>
+<a href="[% Env("Baselink") %];Location=[% Data.File | uri %]">[% Data.File | truncate(110) | html %]</a>
                     ]]></programlisting>
                 </para>
             </section>
@@ -473,7 +473,7 @@ else {
                 &lt;select&gt; element which triggers an AJAX based form update.
             </para>
             <para>
-                Why is it neccessary to enclose the JavaScript code in
+                Why is it necessary to enclose the JavaScript code in
                 <literal>[% WRAPPER JSOnDocumentComplete %]...[% END %]</literal>?
                 Starting with OTRS 3.0, JavaScript loading was
                 moved to the footer part of the page for performance reasons. This means that

@@ -76,7 +76,7 @@ shell> ~/src/module-tools/link.pl ~/src/Calendar/ ~/src/otrs/
         </para>
         <para>
             As soon as the linking is completed, the SysConfig must be rebuilt to register the module in OTRS.
-            Additional SQL or Perl code from the module must also be executed:
+            Additional SQL or Perl code from the module must also be executed.
             Example:
         <screen><![CDATA[
 shell> ~/src/otrs/bin/otrs.RebuildConfig.pl

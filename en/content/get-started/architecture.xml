@@ -290,7 +290,7 @@
                 Generic Interface Invoker modules are located under
                 $OTRS_HOME/Kernel/GenericInterface/Invoker/*. Each Invoker is contained in a folder
                 called "Controller". This approach helps to define a name space not only for
-                internal classes and methods but for filenames too. for example:
+                internal classes and methods but for filenames too. For example:
                 $OTRS_HOME/Kernel/GenericInterface/Invoker<emphasis>/Test/</emphasis> is the
                 Controller for all Test-type invokers.
             </para>
@@ -321,13 +321,13 @@
                 Generic Interface Operation modules are located under
                 $OTRS_HOME/Kernel/GenericInterface/Operation/*. Each Operation is contained in a
                 folder called "Controller". This approach help to define a name space not only for
-                internal classes and methods but for filenames too. for example:
+                internal classes and methods but for filenames too. For example:
                 $OTRS_HOME/Kernel/GenericInterface/Operation<emphasis>/Ticket/</emphasis> is the
                 Controller for all Ticket-type operations.
             </para>
             <para>
-                Generic Interface operation modules are used as a backend to create perform
-                actions requester by a remote system.
+                Generic Interface operation modules are used as a backend to perform actions
+                requested by a remote system.
             </para>
             <para>
                 For more information, see:
@@ -339,12 +339,12 @@
             <para>
                 Generic Interface Network Transport modules are located under
                 $OTRS_HOME/Kernel/GenericInterface/Operation/*. Each transport module should be
-                placed in a diretory named as the Network Protocol used. for example: The "HTTP
+                placed in a directory named as the Network Protocol used. For example: The "HTTP
                 SOAP" transport module, located in $OTRS_HOME/Kernel/GenericInterface/Transport
                 <emphasis>/HTTP/SOAP.pm</emphasis>.
             </para>
             <para>
-                Generic Interface transport modules are used send data to, and recieve data from a
+                Generic Interface transport modules are used send data to, and receive data from a
                 Remote System.
             </para>
             <para>
@@ -359,7 +359,7 @@
             Scheduler Task Handler modules are located under
             $OTRS_HOME/Kernel/Scheduler/TaskHandler/*. These modules are used to perform asynchronous
             tasks. For example, the GenericInterface task handler perform Generic Interface Requests to
-            Remote Systems outside the apache process, this helps the system to be more responsive,
+            Remote Systems outside the apache process. This helps the system to be more responsive,
             preventing possible performance issues.
         </para>
         <para>
