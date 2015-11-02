@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[OTRS.doc-developer]
+file_filter = i18n/doc-developer.<lang>.po
+source_file = i18n/doc-developer.pot
+source_lang = en
+type = PO
