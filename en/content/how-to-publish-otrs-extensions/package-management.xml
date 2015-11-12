@@ -25,7 +25,7 @@
             In your repository, create an index file for your OPM packages.
             OTRS just reads this index file and knows what packages are available.
         <screen><![CDATA[
-shell> bin/otrs.PackageManager.pl -a index -d /path/to/repository/ > /path/to/repository/otrs.xml
+shell> bin/otrs.Console.pl Dev::Package::RepositoryIndex /path/to/repository/ > /path/to/repository/otrs.xml
 ]]></screen>
         </para>
     </section>
@@ -50,7 +50,7 @@ shell> bin/otrs.PackageManager.pl -a index -d /path/to/repository/ > /path/to/re
                     <listitem>
                         <para>CMD:
                         <screen><![CDATA[
-shell> bin/otrs.PackageManager.pl -a install -p /path/to/package.opm
+shell> bin/otrsConsole.pl Admin::Package::Install /path/to/package.opm
 ]]></screen>
                         </para>
                     </listitem>
@@ -70,7 +70,7 @@ shell> bin/otrs.PackageManager.pl -a install -p /path/to/package.opm
                     <listitem>
                         <para>CMD:
                         <screen><![CDATA[
-shell> bin/otrs.PackageManager.pl -a uninstall -p /path/to/package.opm
+shell> bin/otrsConsole.pl Admin::Package::Uninstall /path/to/package.opm
 ]]></screen>
                         </para>
                     </listitem>
@@ -89,7 +89,7 @@ shell> bin/otrs.PackageManager.pl -a uninstall -p /path/to/package.opm
                     <listitem>
                         <para>CMD:
                         <screen><![CDATA[
-shell> bin/otrs.PackageManager.pl -a upgrade -p /path/to/package.opm
+shell> bin/otrsConsole.pl Admin::Package::Upgrade /path/to/package.opm
 ]]></screen>
                         </para>
                     </listitem>
@@ -109,7 +109,7 @@ shell> bin/otrs.PackageManager.pl -a upgrade -p /path/to/package.opm
                     <listitem>
                         <para>CMD:
                         <screen><![CDATA[
-shell> bin/otrs.PackageManager.pl -a list
+shell> bin/otrsConsole.pl Admin::Package::List
 ]]></screen>
                         </para>
                     </listitem>

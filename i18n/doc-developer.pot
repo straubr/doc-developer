@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-11-02 09:58+0100\n"
+"POT-Creation-Date: 2015-11-12 13:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1038,7 +1038,8 @@ msgstr ""
 msgid ""
 "To be able to run the unit tests, you need to have all optional Perl modules "
 "installed, except those for different database backends than what you are "
-"using. Run bin/otrs.CheckModules.pl to verify your module installation."
+"using. Run <filename>bin/otrs.CheckModules.pl</filename> to verify your "
+"module installation."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -1058,13 +1059,13 @@ msgstr ""
 #: en/content/contributing/unit-tests.xml:72
 #, no-wrap
 msgid ""
-"shell:/opt/otrs> bin/otrs.UnitTest.pl -n Calendar\n"
+"shell:/opt/otrs> bin/otrs.Console.pl Dev::UnitTest::Run --test Calendar\n"
 "+-------------------------------------------------------------------+\n"
 "/opt/otrs/scripts/test/Calendar.t:\n"
 "+-------------------------------------------------------------------+\n"
 "ok 1 - EventAdd()\n"
 "=====================================================================\n"
-"Product:   OTRS 3.2.x git\n"
+"Product:   OTRS 5.0.x git\n"
 "Test Time: 0 s\n"
 "Time:      2010-04-02 12:58:37\n"
 "Host:      yourhost.example.com\n"
@@ -1079,8 +1080,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/contributing/unit-tests.xml:71
 msgid ""
-"To check your tests, just use \"bin/otrs.UnitTest.pl -n Calendar\" to use "
-"/scripts/test/Calendar.t.  <placeholder type=\"programlisting\" id=\"0\"/>"
+"To check your tests, just use <filename>bin/otrs.Console.pl "
+"Dev::UnitTest::Run --test Calendar</filename> to use "
+"<filename>/scripts/test/Calendar.t</filename>.  <placeholder "
+"type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -2471,7 +2474,7 @@ msgid "<graphic scale=\"60\" fileref=\"screenshots/architecture.png\"></graphic>
 msgstr ""
 
 #. type: Content of: <section><section><para><figure>
-#: en/content/get-started/architecture.xml:11 en/content/get-started/architecture.xml:21 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:12 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:14 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:140 en/content/how-to-publish-otrs-extensions/package-building.xml:530
+#: en/content/get-started/architecture.xml:11 en/content/get-started/architecture.xml:21 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:12 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:14 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:140 en/content/how-to-publish-otrs-extensions/package-building.xml:531
 msgid "<placeholder type=\"screenshot\" id=\"0\"/>"
 msgstr ""
 
@@ -3227,7 +3230,7 @@ msgstr ""
 #: en/content/get-started/development-environment.xml:81
 #, no-wrap
 msgid ""
-"shell> ~/src/otrs/bin/otrs.RebuildConfig.pl\n"
+"shell> ~/src/otrs/bin/otrs.Console.pl Maint::Config::Rebuild\n"
 "shell> ~/src/module-tools/DatabaseInstall.pl -m Calendar.sopm -a install\n"
 "shell> ~/src/module-tools/CodeInstall.pl -m Calendar.sopm -a install\n"
 msgstr ""
@@ -3321,9 +3324,9 @@ msgid ""
 "<filename>$OTRS_HOME/Kernel/Config/Files/*.xml</filename>.  The file "
 "<filename>Kernel/Config/Files/ZZZAAuto.pm</filename> is a cached Perl "
 "version of the XML that contains all settings with their default value. It "
-"can be (re-)generated with <filename>bin/otrs.RebuildConfig.pl</filename>.  "
-"All changes the administrator makes are stored in "
-"<filename>Kernel/Config/Files/ZZZAuto.pm</filename>."
+"can be (re-)generated with <filename>bin/otrs.Console.pl "
+"Maint::Config::Rebuild</filename>.  All changes the administrator makes are "
+"stored in <filename>Kernel/Config/Files/ZZZAuto.pm</filename>."
 msgstr ""
 
 #. type: CDATA
@@ -4976,12 +4979,12 @@ msgid ""
 "type=\"programlisting\" id=\"0\"/> To make this configuration active, we "
 "need to navigate to the SysConfig module in the admin area of OTRS "
 "(alternatively, you can run the script "
-"<filename>$OTRS_HOME/bin/otrs.RebuildConfig.pl</filename>).  This will "
-"regenerate the Perl cache of the XML configuration files, so that our new "
-"skin is now known and can be selected in the system. To make it the default "
-"skin that new agents see before they made their own skin selection, edit the "
-"SysConfig setting \"Loader::Agent::DefaultSelectedSkin\" and set it to "
-"\"custom\"."
+"<filename>$OTRS_HOME/bin/otrs.Console.pl "
+"Maint::Config::Rebuild</filename>).  This will regenerate the Perl cache of "
+"the XML configuration files, so that our new skin is now known and can be "
+"selected in the system. To make it the default skin that new agents see "
+"before they made their own skin selection, edit the SysConfig setting "
+"\"Loader::Agent::DefaultSelectedSkin\" and set it to \"custom\"."
 msgstr ""
 
 #. type: CDATA
@@ -5064,23 +5067,14 @@ msgid ""
 "processing."
 msgstr ""
 
-#. type: Content of: <section><section><section><section><warning><para><literal>
+#. type: Content of: <section><section><section><section><warning><para>
 #: en/content/how-it-works/templates.xml:44 en/content/how-it-works/templates.xml:151
 msgid ""
 "Because of the missing HTML quoting, this can result in security problems.  "
 "Never output data that was input by a user without quoting in HTML context.  "
-"The user could - for example - just insert a <literal>"
-msgstr ""
-
-#. type: CDATA
-#: en/content/how-it-works/templates.xml:46 en/content/how-it-works/templates.xml:153
-#, no-wrap
-msgid "<script>"
-msgstr ""
-
-#. type: Content of: <section><section><section><section><warning><para>
-#: en/content/how-it-works/templates.xml:46 en/content/how-it-works/templates.xml:153
-msgid "</literal> tag, and it would be output on the HTML page generated by OTRS."
+"The user could - for example - just insert a "
+"<literal>&lt;script&gt;</literal> tag, and it would be output on the HTML "
+"page generated by OTRS."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><warning><para>
@@ -5089,19 +5083,6 @@ msgid ""
 "Whenever possible, use <link linkend=\"data-html\"><literal>[% Data.Name | "
 "html %]</literal></link> (in HTML) or <link linkend=\"data-uri\"><literal>[% "
 "Data.Name | uri %]</literal></link> (in Links) instead."
-msgstr ""
-
-#. type: Content of: <section><section><section><section><para><literal>
-#: en/content/how-it-works/templates.xml:56
-msgid ""
-"Example: Whenever we generate HTML in the application, we need to output it "
-"to the template without HTML quoting, like <literal>"
-msgstr ""
-
-#. type: CDATA
-#: en/content/how-it-works/templates.xml:57
-#, no-wrap
-msgid "<select>"
 msgstr ""
 
 #. type: CDATA
@@ -5113,9 +5094,11 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/how-it-works/templates.xml:57
+#: en/content/how-it-works/templates.xml:56
 msgid ""
-"</literal> elements, which are generated by the function "
+"Example: Whenever we generate HTML in the application, we need to output it "
+"to the template without HTML quoting, like <literal>&lt;select&gt;</literal> "
+"elements, which are generated by the function "
 "<literal>Layout::BuildSelection()</literal> in OTRS.  <placeholder "
 "type=\"programlisting\" id=\"0\"/>"
 msgstr ""
@@ -15975,8 +15958,9 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:516
 #, no-wrap
 msgid ""
-"shell> bin/otrs.PackageManager.pl -a build -p /path/to/example.sopm\n"
-"writing /tmp/example-0.0.1.opm\n"
+"shell> bin/otrs.Console.pl Dev::Package::Build /path/to/example.sopm /tmp\n"
+"Building package...\n"
+"Done.\n"
 "shell>\n"
 msgstr ""
 
@@ -15988,24 +15972,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:524
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:525
 msgid "Package Life Cycle - Install/Upgrade/Uninstall"
 msgstr ""
 
 #. type: Content of: <section><section><para><figure><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:529
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:530
 msgid "Package Life Cycle"
 msgstr ""
 
 #. type: Content of: <section><section><para><figure><screenshot>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:531
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:532
 msgid ""
 "<graphic scale=\"60\" "
 "fileref=\"screenshots/package-life-cycle.png\"></graphic>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:526
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:527
 msgid ""
 "The following image shows you how the life cycle of a package "
 "installation/upgrade/uninstallation works in the backend step by step.  "
@@ -16051,8 +16035,8 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-management.xml:27
 #, no-wrap
 msgid ""
-"shell> bin/otrs.PackageManager.pl -a index -d /path/to/repository/ > "
-"/path/to/repository/otrs.xml\n"
+"shell> bin/otrs.Console.pl Dev::Package::RepositoryIndex "
+"/path/to/repository/ > /path/to/repository/otrs.xml\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -16095,7 +16079,7 @@ msgstr ""
 #. type: CDATA
 #: en/content/how-to-publish-otrs-extensions/package-management.xml:52
 #, no-wrap
-msgid "shell> bin/otrs.PackageManager.pl -a install -p /path/to/package.opm\n"
+msgid "shell> bin/otrsConsole.pl Admin::Package::Install /path/to/package.opm\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
@@ -16116,7 +16100,7 @@ msgstr ""
 #. type: CDATA
 #: en/content/how-to-publish-otrs-extensions/package-management.xml:72
 #, no-wrap
-msgid "shell> bin/otrs.PackageManager.pl -a uninstall -p /path/to/package.opm\n"
+msgid "shell> bin/otrsConsole.pl Admin::Package::Uninstall /path/to/package.opm\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -16132,7 +16116,7 @@ msgstr ""
 #. type: CDATA
 #: en/content/how-to-publish-otrs-extensions/package-management.xml:91
 #, no-wrap
-msgid "shell> bin/otrs.PackageManager.pl -a upgrade -p /path/to/package.opm\n"
+msgid "shell> bin/otrsConsole.pl Admin::Package::Upgrade /path/to/package.opm\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -16148,7 +16132,7 @@ msgstr ""
 #. type: CDATA
 #: en/content/how-to-publish-otrs-extensions/package-management.xml:111
 #, no-wrap
-msgid "shell> bin/otrs.PackageManager.pl -a list\n"
+msgid "shell> bin/otrsConsole.pl Admin::Package::List\n"
 msgstr ""
 
 #. type: Content of: <section><title>

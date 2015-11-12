@@ -38,7 +38,7 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
             XML files with a special format.
             XML config files are located at <filename>$OTRS_HOME/Kernel/Config/Files/*.xml</filename>.
             The file <filename>Kernel/Config/Files/ZZZAAuto.pm</filename> is a cached Perl version of the XML that contains
-            all settings with their default value. It can be (re-)generated with <filename>bin/otrs.RebuildConfig.pl</filename>.
+            all settings with their default value. It can be (re-)generated with <filename>bin/otrs.Console.pl Maint::Config::Rebuild</filename>.
             All changes the administrator makes are stored in <filename>Kernel/Config/Files/ZZZAuto.pm</filename>.
         </para>
         <para>

@@ -514,8 +514,9 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
         <para>
             To build an .opm package from the spec opm.
             <screen><![CDATA[
-shell> bin/otrs.PackageManager.pl -a build -p /path/to/example.sopm
-writing /tmp/example-0.0.1.opm
+shell> bin/otrs.Console.pl Dev::Package::Build /path/to/example.sopm /tmp
+Building package...
+Done.
 shell>
 ]]></screen>
         </para>
