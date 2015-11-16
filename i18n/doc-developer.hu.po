@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2015-11-12 13:04+0100\n"
-"PO-Revision-Date: 2015-11-12 12:04+0000\n"
+"POT-Creation-Date: 2015-11-16 10:05+0100\n"
+"PO-Revision-Date: 2015-11-16 09:06+0000\n"
 "Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/otrs/OTRS/language/hu/)\n"
 "Language: hu\n"
@@ -813,50 +813,18 @@ msgid ""
 "suggest a new language to translate the admin manual to."
 msgstr ""
 
-#. type: Content of: <section><para><code>
+#. type: Content of: <section><para>
 #: en/content/contributing/translate-docs.xml:13
 msgid ""
 "It is important that the structure of the generated XML stays intact.  So if "
-"the original string is \"<code>"
-msgstr ""
-
-#. type: CDATA
-#: en/content/contributing/translate-docs.xml:14
-#, no-wrap
-msgid "Edit <filename>Kernel/Config.pm</filename>"
-msgstr ""
-
-#. type: Content of: <section><para><code>
-#: en/content/contributing/translate-docs.xml:14
-msgid "</code>\", then the German translation has to be \"<code>"
-msgstr ""
-
-#. type: CDATA
-#: en/content/contributing/translate-docs.xml:15
-#, no-wrap
-msgid "<filename>Kernel/Config.pm</filename> bearbeiten"
-msgstr ""
-
-#. type: Content of: <section><para><code>
-#: en/content/contributing/translate-docs.xml:15
-msgid ""
-"</code>\", keeping the the XML tags intact. Regular &lt; and &gt; signs that "
-"are escaped in the source text must also be escaped in the traslations (like "
-"\"<code>"
-msgstr ""
-
-#. type: CDATA
-#: en/content/contributing/translate-docs.xml:16
-#, no-wrap
-msgid "&lt;someone@example.com&gt;"
-msgstr ""
-
-#. type: Content of: <section><para>
-#: en/content/contributing/translate-docs.xml:16
-msgid ""
-"</code>\").  Scripts and examples usually do not have to be translated (so "
-"you can just copy the source text to the translation text field in this "
-"case)."
+"the original string is \"<literal>Edit &lt;filename&gt;Kernel/Config.pm&lt;/"
+"filename&gt;</literal>\", then the German translation has to be "
+"\"<literal>&lt;filename&gt;Kernel/Config.pm&lt;/filename&gt; bearbeiten</"
+"literal>\", keeping the the XML tags intact. Regular &lt; and &gt; signs "
+"that are escaped in the source text must also be escaped in the traslations "
+"(like \"<literal>&amp;lt;someone@example.com&amp;gt;</literal>\").  Scripts "
+"and examples usually do not have to be translated (so you can just copy the "
+"source text to the translation text field in this case)."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -12783,7 +12751,7 @@ msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:790
-msgid "Frontent"
+msgid "Frontend"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>

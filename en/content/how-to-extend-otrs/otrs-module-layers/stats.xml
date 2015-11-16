@@ -787,7 +787,7 @@ The parameters/attributes have to be hashreferences with these key-value-pairs.
             <para>
                 <itemizedlist mark="round" >
                     <listitem>
-                        <para>Frontent</para>
+                        <para>Frontend</para>
                         <para>the label in the web interface</para>
                     </listitem>
                     <listitem>
