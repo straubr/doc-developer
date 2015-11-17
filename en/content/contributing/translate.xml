@@ -20,16 +20,12 @@
             Then you can join your language team and start updating your translation. No additional software or files required.
             The OTRS developers will download the translations from time to time into the OTRS source code repositories, you don't have to submit them anywhere.
         </para>
-        <para>
-            To coordinate translation efforts you can use the
-            <ulink url="http://lists.otrs.org/cgi-bin/listinfo/i18n">i18n mailing list</ulink> of OTRS.
-        </para>
     </section>
 
     <section id="add-new-translation">
         <title>Adding a new frontend translation</title>
         <para>
-            If you want to translate the OTRS framework into a new language, you have can propose a new language translation on
+            If you want to translate the OTRS framework into a new language, you can propose a new language translation on
             <ulink url="https://www.transifex.com/projects/p/OTRS/">the transifex OTRS project page</ulink>. After it is approved, you can just start translating.
         </para>
     </section>
