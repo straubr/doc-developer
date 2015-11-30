@@ -11,7 +11,7 @@
             <listitem>
                 <para>
                     The OTRS website with source code, documentation and news is available at
-                    <ulink url="http://otrs.org/">http://www.otrs.com/</ulink>.
+                    <ulink url="https://www.otrs.com/">http://www.otrs.com/</ulink>.
                     Here you can also find information about professional services and OTRS Administrator training seminars from OTRS Group,
                     the creator of OTRS.
                 </para>
@@ -21,8 +21,9 @@
             <term>Online API Library</term>
             <listitem>
                 <para>
-                    The OTRS developer API documentation is available at
-                    <ulink url="http://otrs.github.io/doc/api/otrs/stable/">http://otrs.github.io/doc/api/otrs/stable/</ulink>.
+                    The OTRS developer API documentation is available for
+                    <ulink url="http://otrs.github.io/doc/api/otrs/stable/Perl/index.html">Perl</ulink> and
+                    <ulink url="http://otrs.github.io/doc/api/otrs/stable/JavaScript/index.html">JavaScript</ulink>.
                 </para>
             </listitem>
         </varlistentry>

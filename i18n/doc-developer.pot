@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-11-30 13:42+0100\n"
+"POT-Creation-Date: 2015-11-30 13:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,8 +97,8 @@ msgstr ""
 #: en/content/additional-resources.xml:13
 msgid ""
 "The OTRS website with source code, documentation and news is available at "
-"<ulink url=\"http://otrs.org/\">http://www.otrs.com/</ulink>.  Here you can "
-"also find information about professional services and OTRS Administrator "
+"<ulink url=\"https://www.otrs.com/\">http://www.otrs.com/</ulink>.  Here you "
+"can also find information about professional services and OTRS Administrator "
 "training seminars from OTRS Group, the creator of OTRS."
 msgstr ""
 
@@ -110,17 +110,19 @@ msgstr ""
 #. type: Content of: <appendix><variablelist><varlistentry><listitem><para>
 #: en/content/additional-resources.xml:24
 msgid ""
-"The OTRS developer API documentation is available at <ulink "
-"url=\"http://otrs.github.io/doc/api/otrs/stable/\">http://otrs.github.io/doc/api/otrs/stable/</ulink>."
+"The OTRS developer API documentation is available for <ulink "
+"url=\"http://otrs.github.io/doc/api/otrs/stable/Perl/index.html\">Perl</ulink> "
+"and <ulink "
+"url=\"http://otrs.github.io/doc/api/otrs/stable/JavaScript/index.html\">JavaScript</ulink>."
 msgstr ""
 
 #. type: Content of: <appendix><variablelist><varlistentry><term>
-#: en/content/additional-resources.xml:30
+#: en/content/additional-resources.xml:31
 msgid "Developer Mailing List"
 msgstr ""
 
 #. type: Content of: <appendix><variablelist><varlistentry><listitem><para>
-#: en/content/additional-resources.xml:33
+#: en/content/additional-resources.xml:34
 msgid ""
 "The OTRS developer mailing list is available at <ulink "
 "url=\"http://lists.otrs.org/\">http://lists.otrs.org/</ulink>."
