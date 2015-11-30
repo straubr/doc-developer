@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-11-30 13:46+0100\n"
+"POT-Creation-Date: 2015-11-30 13:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,9 +111,9 @@ msgstr ""
 #: en/content/additional-resources.xml:24
 msgid ""
 "The OTRS developer API documentation is available for <ulink "
-"url=\"http://otrs.github.io/doc/api/otrs/stable/Perl/index.html\">Perl</ulink> "
+"url=\"https://otrs.github.io/doc/api/otrs/stable/Perl/index.html\">Perl</ulink> "
 "and <ulink "
-"url=\"http://otrs.github.io/doc/api/otrs/stable/JavaScript/index.html\">JavaScript</ulink>."
+"url=\"https://otrs.github.io/doc/api/otrs/stable/JavaScript/index.html\">JavaScript</ulink>."
 msgstr ""
 
 #. type: Content of: <appendix><variablelist><varlistentry><term>

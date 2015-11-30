@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2015-11-30 13:46+0100\n"
-"PO-Revision-Date: 2015-11-30 12:47+0000\n"
+"POT-Creation-Date: 2015-11-30 13:48+0100\n"
+"PO-Revision-Date: 2015-11-30 12:49+0000\n"
 "Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/otrs/OTRS/language/hu/)\n"
 "Language: hu\n"
@@ -129,9 +129,9 @@ msgstr "Internetes API könyvtár"
 #. type: Content of: <appendix><variablelist><varlistentry><listitem><para>
 #: en/content/additional-resources.xml:24
 msgid ""
-"The OTRS developer API documentation is available for <ulink url=\"http://"
+"The OTRS developer API documentation is available for <ulink url=\"https://"
 "otrs.github.io/doc/api/otrs/stable/Perl/index.html\">Perl</ulink> and <ulink "
-"url=\"http://otrs.github.io/doc/api/otrs/stable/JavaScript/index.html"
+"url=\"https://otrs.github.io/doc/api/otrs/stable/JavaScript/index.html"
 "\">JavaScript</ulink>."
 msgstr ""
 
