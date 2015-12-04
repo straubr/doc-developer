@@ -138,7 +138,7 @@ sub Run {
         <figure>
             <title>Email Processing Flow</title>
             <screenshot>
-                <graphic scale="60" fileref="screenshots/email-processing.png"></graphic>
+                <graphic fileref="screenshots/email-processing.png" scalefit="1" width="100%" contentdepth="100%"></graphic>
             </screenshot>
         </figure>
     </para>

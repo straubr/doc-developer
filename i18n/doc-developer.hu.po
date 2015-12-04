@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2015-11-30 13:50+0100\n"
-"PO-Revision-Date: 2015-11-30 12:50+0000\n"
+"POT-Creation-Date: 2015-12-04 14:35+0100\n"
+"PO-Revision-Date: 2015-12-04 13:37+0000\n"
 "Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/otrs/OTRS/language/hu/)\n"
 "Language: hu\n"
@@ -2579,9 +2579,11 @@ msgstr "Az OTRS szerkezete"
 #. type: Content of: <section><para><figure><screenshot>
 #: en/content/get-started/architecture.xml:12
 msgid ""
-"<graphic scale=\"60\" fileref=\"screenshots/architecture.png\"></graphic>"
+"<graphic fileref=\"screenshots/architecture.png\" scalefit=\"1\" width=\"100%"
+"\" contentdepth=\"100%\"></graphic>"
 msgstr ""
-"<graphic scale=\"60\" fileref=\"screenshots/architecture.png\"></graphic>"
+"<graphic fileref=\"screenshots/architecture.png\" scalefit=\"1\" width=\"100%"
+"\" contentdepth=\"100%\"></graphic>"
 
 #. type: Content of: <section><section><para><figure>
 #: en/content/get-started/architecture.xml:11
@@ -2611,9 +2613,11 @@ msgstr "Az általános felület szerkezete"
 #. type: Content of: <section><para><figure><screenshot>
 #: en/content/get-started/architecture.xml:22
 msgid ""
-"<graphic scale=\"60\" fileref=\"screenshots/giarchitecture.png\"></graphic>"
+"<graphic fileref=\"screenshots/giarchitecture.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 msgstr ""
-"<graphic scale=\"60\" fileref=\"screenshots/giarchitecture.png\"></graphic>"
+"<graphic fileref=\"screenshots/giarchitecture.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 
 #. type: Content of: <section><para>
 #: en/content/get-started/architecture.xml:17
@@ -8863,9 +8867,12 @@ msgstr ""
 
 #. type: Content of: <section><para><figure><screenshot>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:13
-msgid "<graphic scale=\"100\" fileref=\"screenshots/dashboard.png\"></graphic>"
+msgid ""
+"<graphic fileref=\"screenshots/dashboard.png\" scalefit=\"1\" width=\"100%\" "
+"contentdepth=\"100%\"></graphic>"
 msgstr ""
-"<graphic scale=\"100\" fileref=\"screenshots/dashboard.png\"></graphic>"
+"<graphic fileref=\"screenshots/dashboard.png\" scalefit=\"1\" width=\"100%\" "
+"contentdepth=\"100%\"></graphic>"
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:10
@@ -14151,9 +14158,11 @@ msgstr ""
 #. type: Content of: <section><para><figure><screenshot>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:15
 msgid ""
-"<graphic scale=\"50\" fileref=\"screenshots/dfframework.png\"></graphic>"
+"<graphic fileref=\"screenshots/dfframework.png\" scalefit=\"1\" width=\"100%"
+"\" contentdepth=\"100%\"></graphic>"
 msgstr ""
-"<graphic scale=\"50\" fileref=\"screenshots/dfframework.png\"></graphic>"
+"<graphic fileref=\"screenshots/dfframework.png\" scalefit=\"1\" width=\"100%"
+"\" contentdepth=\"100%\"></graphic>"
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:11
@@ -14490,9 +14499,11 @@ msgstr ""
 #. type: Content of: <section><para><figure><screenshot>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:19
 msgid ""
-"<graphic scale=\"50\" fileref=\"screenshots/dfInteraction.png\"></graphic>"
+"<graphic fileref=\"screenshots/dfInteraction.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 msgstr ""
-"<graphic scale=\"50\" fileref=\"screenshots/dfInteraction.png\"></graphic>"
+"<graphic fileref=\"screenshots/dfInteraction.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:14
@@ -16532,9 +16543,11 @@ msgstr ""
 #. type: Content of: <section><para><figure><screenshot>
 #: en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:141
 msgid ""
-"<graphic scale=\"60\" fileref=\"screenshots/email-processing.png\"></graphic>"
+"<graphic fileref=\"screenshots/email-processing.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 msgstr ""
-"<graphic scale=\"60\" fileref=\"screenshots/email-processing.png\"></graphic>"
+"<graphic fileref=\"screenshots/email-processing.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:137
@@ -17457,11 +17470,11 @@ msgstr ""
 #. type: Content of: <section><section><para><figure><screenshot>
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:532
 msgid ""
-"<graphic scale=\"60\" fileref=\"screenshots/package-life-cycle.png\"></"
-"graphic>"
+"<graphic fileref=\"screenshots/package-life-cycle.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 msgstr ""
-"<graphic scale=\"60\" fileref=\"screenshots/package-life-cycle.png\"></"
-"graphic>"
+"<graphic fileref=\"screenshots/package-life-cycle.png\" scalefit=\"1\" width="
+"\"100%\" contentdepth=\"100%\"></graphic>"
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:527

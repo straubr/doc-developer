@@ -10,7 +10,7 @@ Dashboard module to display statistics in the form of a line graph.
             <figure>
                 <title>Dashboard Widget</title>
                 <screenshot>
-                    <graphic scale="100" fileref="screenshots/dashboard.png"></graphic>
+                    <graphic fileref="screenshots/dashboard.png" scalefit="1" width="100%" contentdepth="100%"></graphic>
                 </screenshot>
             </figure>
         </para>

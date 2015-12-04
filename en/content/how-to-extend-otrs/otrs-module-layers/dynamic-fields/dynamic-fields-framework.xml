@@ -12,7 +12,7 @@
         <figure>
             <title>Dynamic Fields Architecture</title>
             <screenshot>
-                <graphic scale="50" fileref="screenshots/dfframework.png"></graphic>
+                <graphic fileref="screenshots/dfframework.png" scalefit="1" width="100%" contentdepth="100%"></graphic>
             </screenshot>
         </figure>
     </para>
