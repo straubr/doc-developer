@@ -143,8 +143,8 @@
         </para>
         <para>
             Put the new Backend extension into the DynamicField directory (e.g.
-             /$OTRS_HOME/Kernel/System/DynamicField/NewPackageBackend.pm and its Drivers in
-             /$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm
+            <filename>/$OTRS_HOME/Kernel/System/DynamicField/NewPackageBackend.pm</filename> and its Drivers in
+            <filename>/$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm</filename>
         </para>
         <para>
             New behaviors only need a small setting in the extensions configuration file.
@@ -155,7 +155,7 @@
         <itemizedlist mark='round'>
             <listitem>
                 <para>
-                    Create a New Backend extension module.
+                    Create a New Backend extension module
                 </para>
                 <para>
                     To define only the new functions.
@@ -163,7 +163,7 @@
             </listitem>
             <listitem>
                 <para>
-                    Create the Dynamic Fields Driver extensions.
+                    Create the Dynamic Fields Driver extensions
                 </para>
                 <para>
                     To implement only the new functions.

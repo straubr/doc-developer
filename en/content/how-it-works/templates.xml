@@ -162,7 +162,7 @@ Some other common predefined variables are:
             <section id="config">
                 <title><literal>[% Config() %]</literal></title>
                 <para>
-                    Inserts config variables into the template. Let's see an example Kernel/Config.pm:
+                    Inserts config variables into the template. Let's see an example <filename>Kernel/Config.pm</filename>:
 
                     <programlisting><![CDATA[
 [Kernel/Config.pm]

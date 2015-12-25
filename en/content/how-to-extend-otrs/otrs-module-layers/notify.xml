@@ -33,9 +33,9 @@
         <title>Code Example</title>
         <para>
             The notification modules are located under
-            Kernel/Output/HTML/TicketNotification*.pm.
+            <filename>Kernel/Output/HTML/TicketNotification*.pm</filename>.
             There is an example of a notify module below.
-            Save it under Kernel/Output/HTML/TicketNotificationCustom.pm.
+            Save it under <filename>Kernel/Output/HTML/TicketNotificationCustom.pm</filename>.
             You just need 2 functions: new() and Run().
         </para>
         <para>

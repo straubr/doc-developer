@@ -39,7 +39,7 @@
                 Delegate (like Ticket or Article) e.g. to add a history entry or fire an event.
             </para>
             <para>
-                This module is located in $OTRS_HOME/Kernel/System/DynamicField/Backend.pm.
+                This module is located in <filename>$OTRS_HOME/Kernel/System/DynamicField/Backend.pm</filename>.
             </para>
         </section>
 
@@ -58,7 +58,7 @@
                 stats module, among other functions.
             </para>
             <para>
-                This modules are located in $OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm.
+                This modules are located in <filename>$OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm</filename>.
             </para>
             <para>
                 It exists some base drivers like Base.pm BaseText.pm, BaseSelect.pm and
@@ -109,7 +109,7 @@
                 BackendObject as they are needed.
             </para>
             <para>
-                This modules are located in $OTRS_HOME/Kernel/System/DynamicField/ObjectType/*.pm.
+                This modules are located in <filename>$OTRS_HOME/Kernel/System/DynamicField/ObjectType/*.pm</filename>.
             </para>
         </section>
     </section>
@@ -136,11 +136,11 @@
             same look and feel among all Admin Dialogs.
         </para>
         <para>
-            This modules are located in $OTRS_HOME/Kernel/Modules/*.pm.
+            This modules are located in <filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>.
         </para>
         <note>
             <para>
-                Each Admin Dialog needs its corresponding HTML template file (.tt).
+                Each Admin Dialog needs its corresponding HTML template file (<filename>.tt</filename>).
             </para>
         </note>
     </section>
@@ -155,7 +155,7 @@
             <para>
                 This module is responsible to manage the Dynamic Field definitions, it provides the
                 basic API for add, change, delete, list and get Dynamic Fields and is located
-                in $OTRS_HOME/Kernel/System/DynamicField.pm.
+                in <filename>$OTRS_HOME/Kernel/System/DynamicField.pm</filename>.
             </para>
         </section>
         <section id="dynamic-fields-framework-core-dynamicfieldvalue">
@@ -163,7 +163,7 @@
             <para>
                 This module is responsible to read and write Dynamic Field values into the from and
                 into the database this module is highly use by the Drivers and is located in
-                $OTRS_HOME/Kernel/System/DynamicFieldValue.pm.
+                <filename>$OTRS_HOME/Kernel/System/DynamicFieldValue.pm</filename>.
             </para>
         </section>
     </section>
@@ -197,7 +197,7 @@
         <para>
             Frontend modules needs to read the system configuration to know which Dynamic Fields
             are active for each screen and which ones are also mandatory. for example:
-            Ticket::Frontend::AgentTicketPhone###DynamicField stores the active, mandatory and
+            <literal>Ticket::Frontend::AgentTicketPhone###DynamicField</literal> stores the active, mandatory and
             inactive Dynamic Fields for New Phone Ticket Screen.
         </para>
     </section>

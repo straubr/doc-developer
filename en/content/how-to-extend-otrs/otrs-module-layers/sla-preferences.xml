@@ -8,17 +8,17 @@
         There is a DB SLA preferences module which come with the OTRS framework.
         It is also possible to develop your own SLA preferences modules.
         The SLA preferences modules are located under
-        Kernel/System/SLA/*.pm. For more information about their configuration see the admin manual.
+        <filename>Kernel/System/SLA/*.pm</filename>. For more information about their configuration see the admin manual.
         Here we'll show an example of an SLA preferences module.
-        Save it under Kernel/System/SLA/PreferencesCustom.pm.
+        Save it under <filename>Kernel/System/SLA/PreferencesCustom.pm</filename>.
         You just need 3 functions: new(), SLAPreferencesSet() and SLAPreferencesGet().
         Make sure the function returns 1.
     </para>
     <section id="sla-preferences-module-code">
         <title>Code Example</title>
         <para>
-            The interface class is called Kernel::System::SLA. The example SLA preferences
-            may be called Kernel::System::SLA::PreferencesCustom. You can find an example below.
+            The interface class is called <literal>Kernel::System::SLA</literal>. The example SLA preferences
+            may be called <literal>Kernel::System::SLA::PreferencesCustom</literal>. You can find an example below.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[

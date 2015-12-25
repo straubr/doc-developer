@@ -8,17 +8,17 @@
         There is a LDAP authentication synchronisation module
         which come with the OTRS framework. It is also possible to develop your own
         authentication modules. The authentication synchronisation modules are located under
-        Kernel/System/Auth/Sync/*.pm. For more information about their configuration see the admin manual.
+        <filename>Kernel/System/Auth/Sync/*.pm</filename>. For more information about their configuration see the admin manual.
         Following, there is an example of an authentication synchronisation module.
-        Save it under Kernel/System/Auth/Sync/CustomAuthSync.pm.
+        Save it under <filename>Kernel/System/Auth/Sync/CustomAuthSync.pm</filename>.
         You just need 2 functions: new() and Sync(). Return 1, then the
         synchronisation is ok.
     </para>
     <section id="auth-sync-module-code">
         <title>Code Example</title>
         <para>
-            The interface class is called Kernel::System::Auth. The example agent authentication
-            may be called Kernel::System::Auth::Sync::CustomAuthSync. You can find an example below.
+            The interface class is called <literal>Kernel::System::Auth</literal>. The example agent authentication
+            may be called <literal>Kernel::System::Auth::Sync::CustomAuthSync</literal>. You can find an example below.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[
@@ -120,7 +120,7 @@ sub Sync {
     <section id="auth-sync-module-caveats">
         <title>Caveats and Warnings</title>
         <para>
-        Please note that the synchronisation was part of the authentication class Kernel::System::Auth before framework 2.4.
+        Please note that the synchronization was part of the authentication class <literal>Kernel::System::Auth</literal> before framework 2.4.
         </para>
     </section>
 </section>

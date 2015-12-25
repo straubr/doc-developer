@@ -8,16 +8,16 @@
         There are several customer authentication modules (DB, LDAP and HTTPBasicAuth)
         which come with the OTRS framework. It is also possible to develop your own
         authentication modules. The customer authentication modules are located under
-        Kernel/System/CustomerAuth/*.pm. For more information about their configuration see the admin manual.
-        Following, there is an example of a simple customer auth module. Save it under Kernel/System/CustomerAuth/Simple.pm.
+        <filename>Kernel/System/CustomerAuth/*.pm</filename>. For more information about their configuration see the admin manual.
+        Following, there is an example of a simple customer auth module. Save it under <filename>Kernel/System/CustomerAuth/Simple.pm</filename>.
         You just need 3 functions: new(), GetOption() and Auth(). Return the uid, then the
         authentication is ok.
     </para>
     <section id="customer-auth-module-code">
         <title>Code Example</title>
         <para>
-            The interface class is called Kernel::System::CustomerAuth. The example customer authentication
-            may be called Kernel::System::CustomerAuth::CustomAuth. You can find an example below.
+            The interface class is called <literal>Kernel::System::CustomerAuth</literal>. The example customer authentication
+            may be called <literal>Kernel::System::CustomerAuth::CustomAuth</literal>. You can find an example below.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[

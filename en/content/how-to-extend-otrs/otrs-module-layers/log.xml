@@ -10,13 +10,13 @@
 There is a gobal log interface for OTRS that provides the possibility to create own log backends.
     </para>
     <para>
-Writing an own logging backend is as easy as reimplementing the Kernel::System::Log::Log() method.
+Writing an own logging backend is as easy as reimplementing the <literal>Kernel::System::Log::Log()</literal> method.
     </para>
     <section id="log-module-code">
         <title>Code example: Kernel::System::Log::CustomFile</title>
         <para>
             In this small example, we'll write a little file logging backend which works similar to
-            Kernel::System::Log::File, but prepends a string to each logging entry.
+            <literal>Kernel::System::Log::File</literal>, but prepends a string to each logging entry.
         </para>
 
         <para>
@@ -125,7 +125,7 @@ sub Log {
         <title>Configuration example</title>
         <para>
             To activate our custom logging module, the administrator can either set the existing
-            configuration item "LogModule" manually to "Kernel::System::Log::CustomFile". To realize
+            configuration item "LogModule" manually to <literal>Kernel::System::Log::CustomFile</literal>. To realize
             this automatically, you can provide an XML configuration file which overrides the default
             setting.
         </para>
@@ -151,7 +151,7 @@ Useful logging backends could be logging to a web service or to encrypted files.
     <section id="log-module-caveats">
         <title>Caveats and Warnings</title>
         <para>
-Please note that Kernel::System::Log has other methods than Log() which cannot be reimplemented,
+Please note that <literal>Kernel::System::Log</literal> has other methods than Log() which cannot be reimplemented,
 for example code for working with shared memory segments and log data caching.
         </para>
     </section>

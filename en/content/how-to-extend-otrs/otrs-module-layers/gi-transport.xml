@@ -57,7 +57,7 @@
         <para>
             We should implement each one of this methods in order to be able to communicate
             correctly with a Remote System in both ways. All network transport backends are
-            handled by the transport module (Kernel/GenericInterface/Transport.pm).
+            handled by the transport module (<filename>Kernel/GenericInterface/Transport.pm</filename>).
         </para>
         <para>
             Currently Generic Interface implements the HTTP SOAP and HTTP REST transports, if the
@@ -72,7 +72,7 @@
                 In case that the provided network transports does not match the web service needs,
                 then in this section a sample network transport module is shown and each subroutine
                 is explained. Normally transport modules uses CPAN modules as backends for example
-                the HTTP SOAP transport modules uses SOAP::Lite module as backend.
+                the HTTP SOAP transport modules uses <literal>SOAP::Lite</literal> module as backend.
             </para>
             <para>
                 For this example a custom package is used to return the data without doing a real

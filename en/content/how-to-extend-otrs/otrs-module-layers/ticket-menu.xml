@@ -16,9 +16,9 @@
         <title>Code Example</title>
         <para>
             The ticket menu modules are located under
-            Kernel/Output/HTML/TicketMenu*.pm.
+            <filename>Kernel/Output/HTML/TicketMenu*.pm</filename>.
             There is an example of a ticket-menu module below.
-            Save it under Kernel/Output/HTML/TicketMenuCustom.pm.
+            Save it under <filename>Kernel/Output/HTML/TicketMenuCustom.pm</filename>.
             You just need 2 functions: new() and Run().
         </para>
         <para>

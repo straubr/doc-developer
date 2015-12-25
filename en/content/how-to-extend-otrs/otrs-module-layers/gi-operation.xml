@@ -26,7 +26,7 @@
         </para>
         <para>
             We should implement each one of this methods in order to be able to execute the action
-            handled by the provider ('Kernel/GenericInterface/Provider.pm').
+            handled by the provider (<filename>Kernel/GenericInterface/Provider.pm</filename>).
         </para>
         <section id="operation_code_example">
             <title>Code example</title>

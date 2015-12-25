@@ -159,7 +159,7 @@
     <section id="core-module">
         <title>Core Modules</title>
         <para>
-            Core modules are located under $OTRS_HOME/Kernel/System/*. This layer is for the
+            Core modules are located under <filename>$OTRS_HOME/Kernel/System/*</filename>. This layer is for the
             logical work. Core modules are used to handle system routines like "lock ticket" and
             "create ticket". A few main core modules are:
         </para>
@@ -206,7 +206,7 @@
     <section id="frontend-module">
         <title>Frontend Modules</title>
         <para>
-            Frontend modules are located under "$OTRS_HOME/Kernel/Modules/*.pm". There are two
+            Frontend modules are located under <filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>. There are two
             public functions in there - "new()" and "run()" - which are accessed from the Frontend
             Handle (e.g. index.pl).
         </para>
@@ -235,7 +235,7 @@
     <section id="Generic-Interface">
         <title>Generic Interface Modules</title>
         <para>
-            Generic Interface modules are located under $OTRS_HOME/Kernel/GenericInterface/*.
+            Generic Interface modules are located under <filename>$OTRS_HOME/Kernel/GenericInterface/*</filename>.
             Generic Interface modules are used to handle each part of an web service execution on
             the system. The main modules for the Generic Interface are:
         </para>
@@ -288,10 +288,10 @@
             <title>Generic Interface Invoker Modules</title>
             <para>
                 Generic Interface Invoker modules are located under
-                $OTRS_HOME/Kernel/GenericInterface/Invoker/*. Each Invoker is contained in a folder
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/*</filename>. Each Invoker is contained in a folder
                 called "Controller". This approach helps to define a name space not only for
                 internal classes and methods but for filenames too. For example:
-                $OTRS_HOME/Kernel/GenericInterface/Invoker<emphasis>/Test/</emphasis> is the
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker<emphasis>/Test/</emphasis></filename> is the
                 Controller for all Test-type invokers.
             </para>
             <para>
@@ -307,7 +307,7 @@
             <title>Generic Interface Mapping Modules</title>
             <para>
                 Generic Interface Mapping modules are located under
-                $OTRS_HOME/Kernel/GenericInterface/Mapping/*. These modules are used to transform
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Mapping/*</filename>. These modules are used to transform
                 data (keys and values) from one format to another.
             </para>
             <para>
@@ -319,10 +319,10 @@
             <title>Generic Interface Operation Modules</title>
             <para>
                 Generic Interface Operation modules are located under
-                $OTRS_HOME/Kernel/GenericInterface/Operation/*. Each Operation is contained in a
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each Operation is contained in a
                 folder called "Controller". This approach help to define a name space not only for
                 internal classes and methods but for filenames too. For example:
-                $OTRS_HOME/Kernel/GenericInterface/Operation<emphasis>/Ticket/</emphasis> is the
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Operation<emphasis>/Ticket/</emphasis></filename> is the
                 Controller for all Ticket-type operations.
             </para>
             <para>
@@ -338,10 +338,10 @@
             <title>Generic Interface Transport Modules</title>
             <para>
                 Generic Interface Network Transport modules are located under
-                $OTRS_HOME/Kernel/GenericInterface/Operation/*. Each transport module should be
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each transport module should be
                 placed in a directory named as the Network Protocol used. For example: The "HTTP
-                SOAP" transport module, located in $OTRS_HOME/Kernel/GenericInterface/Transport
-                <emphasis>/HTTP/SOAP.pm</emphasis>.
+                SOAP" transport module, located in <filename>$OTRS_HOME/Kernel/GenericInterface/Transport
+                <emphasis>/HTTP/SOAP.pm</emphasis></filename>.
             </para>
             <para>
                 Generic Interface transport modules are used send data to, and receive data from a
@@ -357,7 +357,7 @@
         <title>Scheduler Task Handler Modules</title>
         <para>
             Scheduler Task Handler modules are located under
-            $OTRS_HOME/Kernel/Scheduler/TaskHandler/*. These modules are used to perform asynchronous
+            <filename>$OTRS_HOME/Kernel/Scheduler/TaskHandler/*</filename>. These modules are used to perform asynchronous
             tasks. For example, the GenericInterface task handler perform Generic Interface Requests to
             Remote Systems outside the apache process. This helps the system to be more responsive,
             preventing possible performance issues.
@@ -373,7 +373,7 @@
             The database interface supports different databases.
         </para>
         <para>
-            For the OTRS data model please refer to the files in your /doc directory. Alternatively
+            For the OTRS data model please refer to the files in your <filename>/doc</filename> directory. Alternatively
             you can look at the data model
             <ulink url="https://github.com/OTRS/otrs/blob/master/development/diagrams/Database/OTRSDatabaseDiagram.png">
                 on github

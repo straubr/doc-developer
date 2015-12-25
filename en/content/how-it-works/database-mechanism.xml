@@ -9,7 +9,7 @@ OTRS comes with a database layer that supports different databases.
     <section id="database-how-it-works">
         <title>How it works</title>
         <para>
-The database layer (Kernel::System::DB) has two input options: SQL and XML.
+The database layer (<literal>Kernel::System::DB</literal>) has two input options: SQL and XML.
         </para>
         <section id="database-sql">
             <title>SQL</title>

@@ -4,7 +4,7 @@
     <title>Ticket Event Module</title>
     <para>
         Ticket event modules are running right after a ticket action takes place.
-        Per convention these modules are located in the directory "Kernel/System/Ticket/Event".
+        Per convention these modules are located in the directory <filename>Kernel/System/Ticket/Event</filename>.
         An ticket event module needs only the two functions new() and Run().
         The method Run() receives at least the parameters Event, UserID, and Data.
         Data is a hash ref containing data of the ticket, and in case of Article-related events also
@@ -13,13 +13,13 @@
     <section id="ticketevent-code">
         <title>Code example</title>
         <para>
-            See Kernel/System/Ticket/Event/EventModulePostTemplate.pm in the package TemplateModule.
+            See <filename>Kernel/System/Ticket/Event/EventModulePostTemplate.pm</filename> in the package TemplateModule.
         </para>
     </section>
     <section id="ticketevent-configuration">
         <title>Configuration example</title>
         <para>
-            See Kernel/Config/Files/EventModulePostTemplate.xml in the package TemplateModule.
+            See <filename>Kernel/Config/Files/EventModulePostTemplate.xml</filename> in the package TemplateModule.
         </para>
     </section>
     <section id="ticketevent-usecases">
@@ -28,9 +28,9 @@
             <title>A ticket should be unlocked after a move action.</title>
             <para>
                 This standard feature has been implemented with the ticket event module
-                Kernel::System::Ticket::Event::ForceUnlock.
+                <literal>Kernel::System::Ticket::Event::ForceUnlock</literal>.
                 When this feature is not wanted, then it can be turned off by
-                unsetting the SysConfig entry Ticket::EventModulePost###910-ForceUnlockOnMove.
+                unsetting the SysConfig entry <literal>Ticket::EventModulePost###910-ForceUnlockOnMove</literal>.
             </para>
         </section>
         <section id="ticketevent-usecase-20">

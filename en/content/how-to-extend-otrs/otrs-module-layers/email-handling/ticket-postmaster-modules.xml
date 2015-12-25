@@ -10,13 +10,13 @@
     </para>
     <para>
         If you want to create your own postmaster filter, just create your own module.
-        These modules are located under "Kernel/System/PostMaster/Filter/*.pm".
+        These modules are located under <filename>Kernel/System/PostMaster/Filter/*.pm</filename>.
         For default modules see the admin manual. You just need two functions:
         new() and Run():
     </para>
     <para>
         The following is an examplary module to match emails and set X-OTRS-Headers
-        (see doc/X-OTRS-Headers.txt for more info).
+        (see <filename>doc/X-OTRS-Headers.txt</filename> for more info).
     </para>
     <para>
         <filename>Kernel/Config/Files/MyModule.xml</filename>:

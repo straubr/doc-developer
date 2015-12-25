@@ -14,7 +14,7 @@
     <note>
         <para>
             Please refer to the Perl On-line Documentation (POD) of the module
-            /Kernel/System/DynmicField/Backend.pm to have the list of all attributes and possible
+            <filename>/Kernel/System/DynmicField/Backend.pm</filename> to have the list of all attributes and possible
             return data for each function.
         </para>
     </note>
@@ -368,8 +368,8 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
         <para>
             The following are other functions that are might needed if the new Dynamic Field does
             not inherit from other classes, To see the complete code of this functions please take a
-            look directly into the files Kernel::System::DynamicField::Driver::Base.pm and
-            Kernel::System::DynamicField::Driver::BaseText.pm
+            look directly into the files <filename>Kernel/System/DynamicField/Driver/Base.pm</filename> and
+            <filename>Kernel/System/DynamicField/Driver/BaseText.pm</filename>
         </para>
         <para>
             <programlisting><![CDATA[
@@ -451,7 +451,7 @@ sub EditFieldValueGet { ... }
         </para>
         <para>
             There are two return formats for this function, the normal: that is just the raw value
-            or a structure: that is the pair field name => field value. for example a Date Dynamic
+            or a structure: that is the pair field name =&gt; field value. for example a Date Dynamic
             Field returns normally the date as string, and if it should return the an structure it
             returns a pair for each part of the the date in the hash.
         </para>

@@ -29,7 +29,7 @@
         </para>
         <para>
             We should implement each one of this methods in order to be able to execute a request
-            using the request handler ('Kernel/GenericInterface/Requester.pm').
+            using the request handler (<filename>Kernel/GenericInterface/Requester.pm</filename>).
         </para>
         <section id="invoker_code_example">
             <title>Code example</title>
@@ -140,7 +140,7 @@ sub PrepareRequest {
                 Also this example appends the word "Test" to the parameter "Action" and if
                 GetSystemTime is requested, it will fill the SystemTime parameter with the current
                 system time. This part of the code is to prepare the data to be sent, on a real
-                invoker some calls to core modules (Kernel/System/*.pm) should be made here.
+                invoker some calls to core modules (<filename>Kernel/System/*.pm</filename>) should be made here.
             </para>
             <para>
                 If during any part of the 'PrepareRequest' function the request need to be stop
@@ -222,7 +222,7 @@ sub HandleResponse {
                 action ends with the word 'Test' (as was done in the 'PrepareRequest' function).
             </para>
             <para>
-                <emphasis>Remember </emphasis>
+                <emphasis>Remember</emphasis>
                 This invoker is only used for tests, a real invoker will check if the response
                 was on the format described by the Remote System and can perform some actions
                 like: call another invoker, perform an call to a Core Module, update the database,

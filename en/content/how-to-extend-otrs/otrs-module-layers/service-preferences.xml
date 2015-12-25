@@ -8,17 +8,17 @@
         There is a DB service preferences module which come with the OTRS framework.
         It is also possible to develop your own service preferences modules.
         The service preferences modules are located under
-        Kernel/System/Service/*.pm. For more information about their configuration see the admin manual.
+        <filename>Kernel/System/Service/*.pm</filename>. For more information about their configuration see the admin manual.
         Following, there is an example of a service preferences module.
-        Save it under Kernel/System/Service/PreferencesCustom.pm.
+        Save it under <filename>Kernel/System/Service/PreferencesCustom.pm</filename>.
         You just need 3 functions: new(), ServicePreferencesSet() and ServicePreferencesGet(). Return 1, then the
         synchronisation is ok.
     </para>
     <section id="service-preferences-module-code">
         <title>Code Example</title>
         <para>
-            The interface class is called Kernel::System::Service. The example service preferences
-            may be called Kernel::System::Service::PreferencesCustom. You can find an example below.
+            The interface class is called <literal>Kernel::System::Service</literal>. The example service preferences
+            may be called <literal>Kernel::System::Service::PreferencesCustom</literal>. You can find an example below.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[

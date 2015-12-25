@@ -12,7 +12,7 @@
         <title>What we want to write</title>
         <para>
             We want to write a little OTRS module that displays the text 'Hello World' when called up.
-            First of all we must build the directory /Hello World for the module in the developer directory.
+            First of all we must build the directory <filename>/Hello World</filename> for the module in the developer directory.
             In this directory, all directories existent in OTRS can be created.
             Each module should at least contain the following directories:
 <screen><![CDATA[
@@ -31,7 +31,7 @@ Kernel/Language
         <title>Default Config File</title>
         <para>
             The creation of a module registration facilitates the display of the new module in OTRS.
-            Therefore we create a file '/Kernel/Config/Files/HelloWorld.xml'.
+            Therefore we create a file <filename>/Kernel/Config/Files/HelloWorld.xml</filename>.
             In this file, we create a new config element.
             The impact of the various settings is described in the chapter 'Config Mechanism'.
         </para>
@@ -134,7 +134,7 @@ sub Run {
     <section id="writing-core-module">
         <title>Core Module</title>
         <para>
-            Next, we create the file for the core module "/HelloWorld/Kernel/System/HelloWorld.pm" with the following content:
+            Next, we create the file for the core module <filename>/HelloWorld/Kernel/System/HelloWorld.pm</filename> with the following content:
         <programlisting><![CDATA[
 # --
 # Kernel/System/HelloWorld.pm - core module

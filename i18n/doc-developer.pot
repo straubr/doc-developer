@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-04 14:35+0100\n"
+"POT-Creation-Date: 2015-12-25 12:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,9 +97,9 @@ msgstr ""
 #: en/content/additional-resources.xml:13
 msgid ""
 "The OTRS website with source code, documentation and news is available at "
-"<ulink url=\"https://www.otrs.com/\">otrs.com/</ulink>.  Here you can also "
-"find information about professional services and OTRS Administrator training "
-"seminars from OTRS Group, the creator of OTRS."
+"<ulink url=\"https://www.otrs.com/\">www.otrs.com</ulink>.  Here you can "
+"also find information about professional services and OTRS Administrator "
+"training seminars from OTRS Group, the creator of OTRS."
 msgstr ""
 
 #. type: Content of: <appendix><variablelist><varlistentry><term>
@@ -2793,9 +2793,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/get-started/architecture.xml:162
 msgid ""
-"Core modules are located under $OTRS_HOME/Kernel/System/*. This layer is for "
-"the logical work. Core modules are used to handle system routines like "
-"\"lock ticket\" and \"create ticket\". A few main core modules are:"
+"Core modules are located under "
+"<filename>$OTRS_HOME/Kernel/System/*</filename>. This layer is for the "
+"logical work. Core modules are used to handle system routines like \"lock "
+"ticket\" and \"create ticket\". A few main core modules are:"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
@@ -2865,9 +2866,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/get-started/architecture.xml:209
 msgid ""
-"Frontend modules are located under \"$OTRS_HOME/Kernel/Modules/*.pm\". There "
-"are two public functions in there - \"new()\" and \"run()\" - which are "
-"accessed from the Frontend Handle (e.g. index.pl)."
+"Frontend modules are located under "
+"<filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>. There are two public "
+"functions in there - \"new()\" and \"run()\" - which are accessed from the "
+"Frontend Handle (e.g. index.pl)."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -2911,9 +2913,9 @@ msgstr ""
 #: en/content/get-started/architecture.xml:238
 msgid ""
 "Generic Interface modules are located under "
-"$OTRS_HOME/Kernel/GenericInterface/*.  Generic Interface modules are used to "
-"handle each part of an web service execution on the system. The main modules "
-"for the Generic Interface are:"
+"<filename>$OTRS_HOME/Kernel/GenericInterface/*</filename>.  Generic "
+"Interface modules are used to handle each part of an web service execution "
+"on the system. The main modules for the Generic Interface are:"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
@@ -2964,11 +2966,12 @@ msgstr ""
 #: en/content/get-started/architecture.xml:290
 msgid ""
 "Generic Interface Invoker modules are located under "
-"$OTRS_HOME/Kernel/GenericInterface/Invoker/*. Each Invoker is contained in a "
-"folder called \"Controller\". This approach helps to define a name space not "
-"only for internal classes and methods but for filenames too. For example: "
-"$OTRS_HOME/Kernel/GenericInterface/Invoker<emphasis>/Test/</emphasis> is the "
-"Controller for all Test-type invokers."
+"<filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/*</filename>. Each "
+"Invoker is contained in a folder called \"Controller\". This approach helps "
+"to define a name space not only for internal classes and methods but for "
+"filenames too. For example: "
+"<filename>$OTRS_HOME/Kernel/GenericInterface/Invoker<emphasis>/Test/</emphasis></filename> "
+"is the Controller for all Test-type invokers."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -2987,8 +2990,9 @@ msgstr ""
 #: en/content/get-started/architecture.xml:309
 msgid ""
 "Generic Interface Mapping modules are located under "
-"$OTRS_HOME/Kernel/GenericInterface/Mapping/*. These modules are used to "
-"transform data (keys and values) from one format to another."
+"<filename>$OTRS_HOME/Kernel/GenericInterface/Mapping/*</filename>. These "
+"modules are used to transform data (keys and values) from one format to "
+"another."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -3000,12 +3004,12 @@ msgstr ""
 #: en/content/get-started/architecture.xml:321
 msgid ""
 "Generic Interface Operation modules are located under "
-"$OTRS_HOME/Kernel/GenericInterface/Operation/*. Each Operation is contained "
-"in a folder called \"Controller\". This approach help to define a name space "
-"not only for internal classes and methods but for filenames too. For "
-"example: "
-"$OTRS_HOME/Kernel/GenericInterface/Operation<emphasis>/Ticket/</emphasis> is "
-"the Controller for all Ticket-type operations."
+"<filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each "
+"Operation is contained in a folder called \"Controller\". This approach help "
+"to define a name space not only for internal classes and methods but for "
+"filenames too. For example: "
+"<filename>$OTRS_HOME/Kernel/GenericInterface/Operation<emphasis>/Ticket/</emphasis></filename> "
+"is the Controller for all Ticket-type operations."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -3024,11 +3028,11 @@ msgstr ""
 #: en/content/get-started/architecture.xml:340
 msgid ""
 "Generic Interface Network Transport modules are located under "
-"$OTRS_HOME/Kernel/GenericInterface/Operation/*. Each transport module should "
-"be placed in a directory named as the Network Protocol used. For example: "
-"The \"HTTP SOAP\" transport module, located in "
-"$OTRS_HOME/Kernel/GenericInterface/Transport "
-"<emphasis>/HTTP/SOAP.pm</emphasis>."
+"<filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each "
+"transport module should be placed in a directory named as the Network "
+"Protocol used. For example: The \"HTTP SOAP\" transport module, located in "
+"<filename>$OTRS_HOME/Kernel/GenericInterface/Transport "
+"<emphasis>/HTTP/SOAP.pm</emphasis></filename>."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -3047,11 +3051,11 @@ msgstr ""
 #: en/content/get-started/architecture.xml:359
 msgid ""
 "Scheduler Task Handler modules are located under "
-"$OTRS_HOME/Kernel/Scheduler/TaskHandler/*. These modules are used to perform "
-"asynchronous tasks. For example, the GenericInterface task handler perform "
-"Generic Interface Requests to Remote Systems outside the apache "
-"process. This helps the system to be more responsive, preventing possible "
-"performance issues."
+"<filename>$OTRS_HOME/Kernel/Scheduler/TaskHandler/*</filename>. These "
+"modules are used to perform asynchronous tasks. For example, the "
+"GenericInterface task handler perform Generic Interface Requests to Remote "
+"Systems outside the apache process. This helps the system to be more "
+"responsive, preventing possible performance issues."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -3067,8 +3071,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/get-started/architecture.xml:376
 msgid ""
-"For the OTRS data model please refer to the files in your /doc "
-"directory. Alternatively you can look at the data model <ulink "
+"For the OTRS data model please refer to the files in your "
+"<filename>/doc</filename> directory. Alternatively you can look at the data "
+"model <ulink "
 "url=\"https://github.com/OTRS/otrs/blob/master/development/diagrams/Database/OTRSDatabaseDiagram.png\"> "
 "on github </ulink>."
 msgstr ""
@@ -3674,7 +3679,7 @@ msgstr ""
 #: en/content/how-it-works/config-mechanism.xml:280
 msgid ""
 "You can read and write (for one request) the config options via the core "
-"module \"Kernel::Config\"."
+"module <literal>Kernel::Config</literal>."
 msgstr ""
 
 #. type: CDATA
@@ -3720,7 +3725,9 @@ msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-it-works/database-mechanism.xml:12
-msgid "The database layer (Kernel::System::DB) has two input options: SQL and XML."
+msgid ""
+"The database layer (<literal>Kernel::System::DB</literal>) has two input "
+"options: SQL and XML."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -4956,7 +4963,8 @@ msgid ""
 "the XML configuration files, so that our new skin is now known and can be "
 "selected in the system. To make it the default skin that new agents see "
 "before they made their own skin selection, edit the SysConfig setting "
-"\"Loader::Agent::DefaultSelectedSkin\" and set it to \"custom\"."
+"<literal>Loader::Agent::DefaultSelectedSkin</literal> and set it to "
+"\"custom\"."
 msgstr ""
 
 #. type: CDATA
@@ -5234,9 +5242,9 @@ msgstr ""
 #: en/content/how-it-works/templates.xml:165
 msgid ""
 "Inserts config variables into the template. Let's see an example "
-"Kernel/Config.pm: <placeholder type=\"programlisting\" id=\"0\"/> To output "
-"values from it in the template, use: <placeholder type=\"programlisting\" "
-"id=\"1\"/>"
+"<filename>Kernel/Config.pm</filename>: <placeholder type=\"programlisting\" "
+"id=\"0\"/> To output values from it in the template, use: <placeholder "
+"type=\"programlisting\" id=\"1\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><warning><para>
@@ -6008,10 +6016,11 @@ msgstr ""
 #: en/content/how-to-extend-otrs/writing-otrs-application.xml:14
 msgid ""
 "We want to write a little OTRS module that displays the text 'Hello World' "
-"when called up.  First of all we must build the directory /Hello World for "
-"the module in the developer directory.  In this directory, all directories "
-"existent in OTRS can be created.  Each module should at least contain the "
-"following directories: <placeholder type=\"screen\" id=\"0\"/>"
+"when called up.  First of all we must build the directory <filename>/Hello "
+"World</filename> for the module in the developer directory.  In this "
+"directory, all directories existent in OTRS can be created.  Each module "
+"should at least contain the following directories: <placeholder "
+"type=\"screen\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -6024,9 +6033,9 @@ msgstr ""
 msgid ""
 "The creation of a module registration facilitates the display of the new "
 "module in OTRS.  Therefore we create a file "
-"'/Kernel/Config/Files/HelloWorld.xml'.  In this file, we create a new config "
-"element.  The impact of the various settings is described in the chapter "
-"'Config Mechanism'."
+"<filename>/Kernel/Config/Files/HelloWorld.xml</filename>.  In this file, we "
+"create a new config element.  The impact of the various settings is "
+"described in the chapter 'Config Mechanism'."
 msgstr ""
 
 #. type: CDATA
@@ -6186,8 +6195,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/writing-otrs-application.xml:137
 msgid ""
 "Next, we create the file for the core module "
-"\"/HelloWorld/Kernel/System/HelloWorld.pm\" with the following content: "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
+"<filename>/HelloWorld/Kernel/System/HelloWorld.pm</filename> with the "
+"following content: <placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -6287,9 +6296,10 @@ msgid ""
 "There are several agent authentication modules (DB, LDAP and HTTPBasicAuth)  "
 "which come with the OTRS framework. It is also possible to develop your own "
 "authentication modules. The agent authentication modules are located under "
-"Kernel/System/Auth/*.pm. For more information about their configuration see "
-"the admin manual.  Following, there is an example of a simple agent auth "
-"module. Save it under Kernel/System/Auth/Simple.pm.  You just need 3 "
+"<filename>Kernel/System/Auth/*.pm</filename>. For more information about "
+"their configuration see the admin manual.  Following, there is an example of "
+"a simple agent auth module. Save it under "
+"<filename>Kernel/System/Auth/Simple.pm</filename>.  You just need 3 "
 "functions: new(), GetOption() and Auth(). Return the uid, then the "
 "authentication is ok."
 msgstr ""
@@ -6302,9 +6312,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:19
 msgid ""
-"The interface class is called Kernel::System::Auth. The example agent "
-"authentication may be called Kernel::System::Auth::CustomAuth. You can find "
-"an example below."
+"The interface class is called <literal>Kernel::System::Auth</literal>. The "
+"example agent authentication may be called "
+"<literal>Kernel::System::Auth::CustomAuth</literal>. You can find an example "
+"below."
 msgstr ""
 
 #. type: CDATA
@@ -6478,7 +6489,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:175
 msgid ""
 "There is the need to activate your custom agent authenticate module.  This "
-"can be done using the perl configuration below.  It is not recommended to "
+"can be done using the Perl configuration below.  It is not recommended to "
 "use the xml configuration because you can lock you out via the sysconfig."
 msgstr ""
 
@@ -6496,7 +6507,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:189
 msgid ""
-"A useful example of an authentication implementation could be a soap "
+"A useful example of an authentication implementation could be a SOAP "
 "backend."
 msgstr ""
 
@@ -6561,19 +6572,21 @@ msgid ""
 "There is a LDAP authentication synchronisation module which come with the "
 "OTRS framework. It is also possible to develop your own authentication "
 "modules. The authentication synchronisation modules are located under "
-"Kernel/System/Auth/Sync/*.pm. For more information about their configuration "
-"see the admin manual.  Following, there is an example of an authentication "
-"synchronisation module.  Save it under "
-"Kernel/System/Auth/Sync/CustomAuthSync.pm.  You just need 2 functions: new() "
-"and Sync(). Return 1, then the synchronisation is ok."
+"<filename>Kernel/System/Auth/Sync/*.pm</filename>. For more information "
+"about their configuration see the admin manual.  Following, there is an "
+"example of an authentication synchronisation module.  Save it under "
+"<filename>Kernel/System/Auth/Sync/CustomAuthSync.pm</filename>.  You just "
+"need 2 functions: new() and Sync(). Return 1, then the synchronisation is "
+"ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:20
 msgid ""
-"The interface class is called Kernel::System::Auth. The example agent "
-"authentication may be called Kernel::System::Auth::Sync::CustomAuthSync. You "
-"can find an example below."
+"The interface class is called <literal>Kernel::System::Auth</literal>. The "
+"example agent authentication may be called "
+"<literal>Kernel::System::Auth::Sync::CustomAuthSync</literal>. You can find "
+"an example below."
 msgstr ""
 
 #. type: CDATA
@@ -6675,8 +6688,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:123
 msgid ""
-"Please note that the synchronisation was part of the authentication class "
-"Kernel::System::Auth before framework 2.4."
+"Please note that the synchronization was part of the authentication class "
+"<literal>Kernel::System::Auth</literal> before framework 2.4."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -6690,19 +6703,22 @@ msgid ""
 "There are several customer authentication modules (DB, LDAP and "
 "HTTPBasicAuth)  which come with the OTRS framework. It is also possible to "
 "develop your own authentication modules. The customer authentication modules "
-"are located under Kernel/System/CustomerAuth/*.pm. For more information "
-"about their configuration see the admin manual.  Following, there is an "
-"example of a simple customer auth module. Save it under "
-"Kernel/System/CustomerAuth/Simple.pm.  You just need 3 functions: new(), "
-"GetOption() and Auth(). Return the uid, then the authentication is ok."
+"are located under <filename>Kernel/System/CustomerAuth/*.pm</filename>. For "
+"more information about their configuration see the admin manual.  Following, "
+"there is an example of a simple customer auth module. Save it under "
+"<filename>Kernel/System/CustomerAuth/Simple.pm</filename>.  You just need 3 "
+"functions: new(), GetOption() and Auth(). Return the uid, then the "
+"authentication is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:19
 msgid ""
-"The interface class is called Kernel::System::CustomerAuth. The example "
-"customer authentication may be called "
-"Kernel::System::CustomerAuth::CustomAuth. You can find an example below."
+"The interface class is called "
+"<literal>Kernel::System::CustomerAuth</literal>. The example customer "
+"authentication may be called "
+"<literal>Kernel::System::CustomerAuth::CustomAuth</literal>. You can find an "
+"example below."
 msgstr ""
 
 #. type: CDATA
@@ -6913,21 +6929,22 @@ msgid ""
 "There is a DB customer-user preferences module which come with the OTRS "
 "framework.  It is also possible to develop your own customer-user "
 "preferences modules.  The customer-user preferences modules are located "
-"under Kernel/System/CustomerUser/Preferences/*.pm. For more information "
-"about their configuration see the admin manual.  There is an example of a "
-"customer-user preferences module below.  Save it under "
-"Kernel/System/CustomerUser/Preferences/Custom.pm.  You just need 4 "
-"functions: new(), SearchPreferences(), SetPreferences() and "
+"under <filename>Kernel/System/CustomerUser/Preferences/*.pm</filename>. For "
+"more information about their configuration see the admin manual.  There is "
+"an example of a customer-user preferences module below.  Save it under "
+"<filename>Kernel/System/CustomerUser/Preferences/Custom.pm</filename>.  You "
+"just need 4 functions: new(), SearchPreferences(), SetPreferences() and "
 "GetPreferences()."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:19
 msgid ""
-"The interface class is called Kernel::System::CustomerUser. The example "
-"customer-user preferences may be called "
-"Kernel::System::CustomerUser::Preferences::Custom. You can find an example "
-"below."
+"The interface class is called "
+"<literal>Kernel::System::CustomerUser</literal>. The example customer-user "
+"preferences may be called "
+"<literal>Kernel::System::CustomerUser::Preferences::Custom</literal>. You "
+"can find an example below."
 msgstr ""
 
 #. type: CDATA
@@ -7106,7 +7123,7 @@ msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:182
-msgid "Useful preferences implementation could be a soap or ldap backend."
+msgid "Useful preferences implementation could be a SOAP or LDAP backend."
 msgstr ""
 
 #. type: Content of: <section><section><para><informaltable><tgroup><tbody><row><entry>
@@ -7400,7 +7417,7 @@ msgstr ""
 msgid ""
 "We should implement each one of this methods in order to be able to execute "
 "a request using the request handler "
-"('Kernel/GenericInterface/Requester.pm')."
+"(<filename>Kernel/GenericInterface/Requester.pm</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -7543,8 +7560,8 @@ msgid ""
 "Also this example appends the word \"Test\" to the parameter \"Action\" and "
 "if GetSystemTime is requested, it will fill the SystemTime parameter with "
 "the current system time. This part of the code is to prepare the data to be "
-"sent, on a real invoker some calls to core modules (Kernel/System/*.pm) "
-"should be made here."
+"sent, on a real invoker some calls to core modules "
+"(<filename>Kernel/System/*.pm</filename>) should be made here."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -7648,7 +7665,7 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:225
 msgid ""
-"<emphasis>Remember </emphasis> This invoker is only used for tests, a real "
+"<emphasis>Remember</emphasis> This invoker is only used for tests, a real "
 "invoker will check if the response was on the format described by the Remote "
 "System and can perform some actions like: call another invoker, perform an "
 "call to a Core Module, update the database, send an error, etc."
@@ -7845,8 +7862,8 @@ msgstr ""
 msgid ""
 "So it is highly provable that you don't need to develop a custom mapping "
 "module.  Please check Mapping Simple module "
-"(Kernel/GenericInterface/Mapping/Simple.pm)  and its on-line documentation "
-"before continue."
+"(<filename>Kernel/GenericInterface/Mapping/Simple.pm</filename>)  and its "
+"on-line documentation before continue."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -7868,7 +7885,7 @@ msgid ""
 "We should implement each one of this methods in order to be able to map the "
 "data in the communication, handled either by the requester or provider. All "
 "mapping backends are handled by the mapping module "
-"(Kernel/GenericInterface/Mapping.pm)."
+"(<filename>Kernel/GenericInterface/Mapping.pm</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -8194,7 +8211,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:28
 msgid ""
 "We should implement each one of this methods in order to be able to execute "
-"the action handled by the provider ('Kernel/GenericInterface/Provider.pm')."
+"the action handled by the provider "
+"(<filename>Kernel/GenericInterface/Provider.pm</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -8437,7 +8455,7 @@ msgid ""
 "We should implement each one of this methods in order to be able to "
 "communicate correctly with a Remote System in both ways. All network "
 "transport backends are handled by the transport module "
-"(Kernel/GenericInterface/Transport.pm)."
+"(<filename>Kernel/GenericInterface/Transport.pm</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -8456,8 +8474,8 @@ msgid ""
 "In case that the provided network transports does not match the web service "
 "needs, then in this section a sample network transport module is shown and "
 "each subroutine is explained. Normally transport modules uses CPAN modules "
-"as backends for example the HTTP SOAP transport modules uses SOAP::Lite "
-"module as backend."
+"as backends for example the HTTP SOAP transport modules uses "
+"<literal>SOAP::Lite</literal> module as backend."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -8795,7 +8813,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/log.xml:13
 msgid ""
 "Writing an own logging backend is as easy as reimplementing the "
-"Kernel::System::Log::Log() method."
+"<literal>Kernel::System::Log::Log()</literal> method."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -8807,8 +8825,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/log.xml:18
 msgid ""
 "In this small example, we'll write a little file logging backend which works "
-"similar to Kernel::System::Log::File, but prepends a string to each logging "
-"entry."
+"similar to <literal>Kernel::System::Log::File</literal>, but prepends a "
+"string to each logging entry."
 msgstr ""
 
 #. type: CDATA
@@ -8932,8 +8950,9 @@ msgstr ""
 msgid ""
 "To activate our custom logging module, the administrator can either set the "
 "existing configuration item \"LogModule\" manually to "
-"\"Kernel::System::Log::CustomFile\". To realize this automatically, you can "
-"provide an XML configuration file which overrides the default setting."
+"<literal>Kernel::System::Log::CustomFile</literal>. To realize this "
+"automatically, you can provide an XML configuration file which overrides the "
+"default setting."
 msgstr ""
 
 #. type: CDATA
@@ -8967,9 +8986,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/log.xml:154
 msgid ""
-"Please note that Kernel::System::Log has other methods than Log() which "
-"cannot be reimplemented, for example code for working with shared memory "
-"segments and log data caching."
+"Please note that <literal>Kernel::System::Log</literal> has other methods "
+"than Log() which cannot be reimplemented, for example code for working with "
+"shared memory segments and log data caching."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -9014,10 +9033,10 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:35
 msgid ""
 "The notification modules are located under "
-"Kernel/Output/HTML/TicketNotification*.pm.  There is an example of a notify "
-"module below.  Save it under "
-"Kernel/Output/HTML/TicketNotificationCustom.pm.  You just need 2 functions: "
-"new() and Run()."
+"<filename>Kernel/Output/HTML/TicketNotification*.pm</filename>.  There is an "
+"example of a notify module below.  Save it under "
+"<filename>Kernel/Output/HTML/TicketNotificationCustom.pm</filename>.  You "
+"just need 2 functions: new() and Run()."
 msgstr ""
 
 #. type: CDATA
@@ -9292,11 +9311,12 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:73
 msgid ""
 "This kind of output filter is a plugin for the method "
-"Kernel::Output::HTML::Layout::Ascii2HTML()  and is only active when the "
-"parameter LinkFeature is set to 1.  Thus the FilterText output filters are "
-"currently only active for the display of the body of plain text articles.  "
-"Plain text articles are generated by incoming non-HTML mails and when OTRS "
-"is configured to not use the rich text feature in the frontend."
+"<literal>Kernel::Output::HTML::Layout::Ascii2HTML()</literal> and is only "
+"active when the parameter LinkFeature is set to 1.  Thus the FilterText "
+"output filters are currently only active for the display of the body of "
+"plain text articles.  Plain text articles are generated by incoming non-HTML "
+"mails and when OTRS is configured to not use the rich text feature in the "
+"frontend."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -9400,20 +9420,22 @@ msgstr ""
 msgid ""
 "There is a DB queue preferences module which come with the OTRS framework.  "
 "It is also possible to develop your own queue preferences modules.  The "
-"queue preferences modules are located under Kernel/System/Queue/*.pm. For "
-"more information about their configuration see the admin manual.  Following, "
-"there is an example of a queue preferences module.  Save it under "
-"Kernel/System/Queue/PreferencesCustom.pm.  You just need 3 functions: new(), "
-"QueuePreferencesSet() and QueuePreferencesGet(). Return 1, then the "
-"synchronisation is ok."
+"queue preferences modules are located under "
+"<filename>Kernel/System/Queue/*.pm</filename>. For more information about "
+"their configuration see the admin manual.  Following, there is an example of "
+"a queue preferences module.  Save it under "
+"<filename>Kernel/System/Queue/PreferencesCustom.pm</filename>.  You just "
+"need 3 functions: new(), QueuePreferencesSet() and "
+"QueuePreferencesGet(). Return 1, then the synchronisation is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:20
 msgid ""
-"The interface class is called Kernel::System::Queue. The example queue "
-"preferences may be called Kernel::System::Queue::PreferencesCustom. You can "
-"find an example below."
+"The interface class is called <literal>Kernel::System::Queue</literal>. The "
+"example queue preferences may be called "
+"<literal>Kernel::System::Queue::PreferencesCustom</literal>. You can find an "
+"example below."
 msgstr ""
 
 #. type: CDATA
@@ -9595,7 +9617,7 @@ msgstr ""
 msgid ""
 "We should implement each one of this methods in order to be able to execute "
 "tasks.  All task handler backends are used by main scheduler task handler "
-"module (Kernel/scheduler/TaskHandler.pm)."
+"module (<filename>Kernel/scheduler/TaskHandler.pm</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -9778,20 +9800,22 @@ msgid ""
 "There is a DB service preferences module which come with the OTRS "
 "framework.  It is also possible to develop your own service preferences "
 "modules.  The service preferences modules are located under "
-"Kernel/System/Service/*.pm. For more information about their configuration "
-"see the admin manual.  Following, there is an example of a service "
-"preferences module.  Save it under "
-"Kernel/System/Service/PreferencesCustom.pm.  You just need 3 functions: "
-"new(), ServicePreferencesSet() and ServicePreferencesGet(). Return 1, then "
-"the synchronisation is ok."
+"<filename>Kernel/System/Service/*.pm</filename>. For more information about "
+"their configuration see the admin manual.  Following, there is an example of "
+"a service preferences module.  Save it under "
+"<filename>Kernel/System/Service/PreferencesCustom.pm</filename>.  You just "
+"need 3 functions: new(), ServicePreferencesSet() and "
+"ServicePreferencesGet(). Return 1, then the synchronisation is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:20
 msgid ""
-"The interface class is called Kernel::System::Service. The example service "
-"preferences may be called Kernel::System::Service::PreferencesCustom. You "
-"can find an example below."
+"The interface class is called "
+"<literal>Kernel::System::Service</literal>. The example service preferences "
+"may be called "
+"<literal>Kernel::System::Service::PreferencesCustom</literal>. You can find "
+"an example below."
 msgstr ""
 
 #. type: CDATA
@@ -9944,20 +9968,22 @@ msgstr ""
 msgid ""
 "There is a DB SLA preferences module which come with the OTRS framework.  It "
 "is also possible to develop your own SLA preferences modules.  The SLA "
-"preferences modules are located under Kernel/System/SLA/*.pm. For more "
-"information about their configuration see the admin manual.  Here we'll show "
-"an example of an SLA preferences module.  Save it under "
-"Kernel/System/SLA/PreferencesCustom.pm.  You just need 3 functions: new(), "
-"SLAPreferencesSet() and SLAPreferencesGet().  Make sure the function returns "
-"1."
+"preferences modules are located under "
+"<filename>Kernel/System/SLA/*.pm</filename>. For more information about "
+"their configuration see the admin manual.  Here we'll show an example of an "
+"SLA preferences module.  Save it under "
+"<filename>Kernel/System/SLA/PreferencesCustom.pm</filename>.  You just need "
+"3 functions: new(), SLAPreferencesSet() and SLAPreferencesGet().  Make sure "
+"the function returns 1."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:20
 msgid ""
-"The interface class is called Kernel::System::SLA. The example SLA "
-"preferences may be called Kernel::System::SLA::PreferencesCustom. You can "
-"find an example below."
+"The interface class is called <literal>Kernel::System::SLA</literal>. The "
+"example SLA preferences may be called "
+"<literal>Kernel::System::SLA::PreferencesCustom</literal>. You can find an "
+"example below."
 msgstr ""
 
 #. type: CDATA
@@ -10383,7 +10409,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:193
 msgid ""
 "the block name in the template file "
-"(e.g. &lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.tt)"
+"(e.g. "
+"<filename>&lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.tt</filename>)"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
@@ -11447,25 +11474,26 @@ msgstr ""
 msgid ""
 "Ticket event modules are running right after a ticket action takes place.  "
 "Per convention these modules are located in the directory "
-"\"Kernel/System/Ticket/Event\".  An ticket event module needs only the two "
-"functions new() and Run().  The method Run() receives at least the "
-"parameters Event, UserID, and Data.  Data is a hash ref containing data of "
-"the ticket, and in case of Article-related events also containing Article "
-"data."
+"<filename>Kernel/System/Ticket/Event</filename>.  An ticket event module "
+"needs only the two functions new() and Run().  The method Run() receives at "
+"least the parameters Event, UserID, and Data.  Data is a hash ref containing "
+"data of the ticket, and in case of Article-related events also containing "
+"Article data."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:16
 msgid ""
-"See Kernel/System/Ticket/Event/EventModulePostTemplate.pm in the package "
-"TemplateModule."
+"See "
+"<filename>Kernel/System/Ticket/Event/EventModulePostTemplate.pm</filename> "
+"in the package TemplateModule."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:22
 msgid ""
-"See Kernel/Config/Files/EventModulePostTemplate.xml in the package "
-"TemplateModule."
+"See <filename>Kernel/Config/Files/EventModulePostTemplate.xml</filename> in "
+"the package TemplateModule."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -11477,9 +11505,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:30
 msgid ""
 "This standard feature has been implemented with the ticket event module "
-"Kernel::System::Ticket::Event::ForceUnlock.  When this feature is not "
-"wanted, then it can be turned off by unsetting the SysConfig entry "
-"Ticket::EventModulePost###910-ForceUnlockOnMove."
+"<literal>Kernel::System::Ticket::Event::ForceUnlock</literal>.  When this "
+"feature is not wanted, then it can be turned off by unsetting the SysConfig "
+"entry <literal>Ticket::EventModulePost###910-ForceUnlockOnMove</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -11583,9 +11611,10 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:18
 msgid ""
 "The ticket menu modules are located under "
-"Kernel/Output/HTML/TicketMenu*.pm.  There is an example of a ticket-menu "
-"module below.  Save it under Kernel/Output/HTML/TicketMenuCustom.pm.  You "
-"just need 2 functions: new() and Run()."
+"<filename>Kernel/Output/HTML/TicketMenu*.pm</filename>.  There is an example "
+"of a ticket-menu module below.  Save it under "
+"<filename>Kernel/Output/HTML/TicketMenuCustom.pm</filename>.  You just need "
+"2 functions: new() and Run()."
 msgstr ""
 
 #. type: CDATA
@@ -11788,14 +11817,16 @@ msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:22
-msgid "See Kernel/System/Ticket/Number/UserRandom.pm in the package TemplateModule."
+msgid ""
+"See <filename>Kernel/System/Ticket/Number/UserRandom.pm</filename> in the "
+"package TemplateModule."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:28
 msgid ""
-"See Kernel/Config/Files/TicketNumberGenerator.xml in the package "
-"TemplateModule."
+"See <filename>Kernel/Config/Files/TicketNumberGenerator.xml</filename> in "
+"the package TemplateModule."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -12375,8 +12406,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:145
 msgid ""
 "Put the new Backend extension into the DynamicField directory (e.g.  "
-"/$OTRS_HOME/Kernel/System/DynamicField/NewPackageBackend.pm and its Drivers "
-"in /$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm"
+"<filename>/$OTRS_HOME/Kernel/System/DynamicField/NewPackageBackend.pm</filename> "
+"and its Drivers in "
+"<filename>/$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm</filename>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -12393,7 +12425,7 @@ msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:158
-msgid "Create a New Backend extension module."
+msgid "Create a New Backend extension module"
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
@@ -12403,7 +12435,7 @@ msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:166
-msgid "Create the Dynamic Fields Driver extensions."
+msgid "Create the Dynamic Fields Driver extensions"
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
@@ -12558,7 +12590,9 @@ msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:42
-msgid "This module is located in $OTRS_HOME/Kernel/System/DynamicField/Backend.pm."
+msgid ""
+"This module is located in "
+"<filename>$OTRS_HOME/Kernel/System/DynamicField/Backend.pm</filename>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -12589,7 +12623,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:61
 msgid ""
 "This modules are located in "
-"$OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm."
+"<filename>$OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm</filename>."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -12679,7 +12713,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:112
 msgid ""
 "This modules are located in "
-"$OTRS_HOME/Kernel/System/DynamicField/ObjectType/*.pm."
+"<filename>$OTRS_HOME/Kernel/System/DynamicField/ObjectType/*.pm</filename>."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -12720,12 +12754,16 @@ msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:139
-msgid "This modules are located in $OTRS_HOME/Kernel/Modules/*.pm."
+msgid ""
+"This modules are located in "
+"<filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>."
 msgstr ""
 
 #. type: Content of: <section><section><note><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:143
-msgid "Each Admin Dialog needs its corresponding HTML template file (.tt)."
+msgid ""
+"Each Admin Dialog needs its corresponding HTML template file "
+"(<filename>.tt</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -12750,7 +12788,8 @@ msgstr ""
 msgid ""
 "This module is responsible to manage the Dynamic Field definitions, it "
 "provides the basic API for add, change, delete, list and get Dynamic Fields "
-"and is located in $OTRS_HOME/Kernel/System/DynamicField.pm."
+"and is located in "
+"<filename>$OTRS_HOME/Kernel/System/DynamicField.pm</filename>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -12763,7 +12802,8 @@ msgstr ""
 msgid ""
 "This module is responsible to read and write Dynamic Field values into the "
 "from and into the database this module is highly use by the Drivers and is "
-"located in $OTRS_HOME/Kernel/System/DynamicFieldValue.pm."
+"located in "
+"<filename>$OTRS_HOME/Kernel/System/DynamicFieldValue.pm</filename>."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -12818,9 +12858,10 @@ msgstr ""
 msgid ""
 "Frontend modules needs to read the system configuration to know which "
 "Dynamic Fields are active for each screen and which ones are also "
-"mandatory. for example: Ticket::Frontend::AgentTicketPhone###DynamicField "
-"stores the active, mandatory and inactive Dynamic Fields for New Phone "
-"Ticket Screen."
+"mandatory. for example: "
+"<literal>Ticket::Frontend::AgentTicketPhone###DynamicField</literal> stores "
+"the active, mandatory and inactive Dynamic Fields for New Phone Ticket "
+"Screen."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -14040,8 +14081,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:16
 msgid ""
 "Please refer to the Perl On-line Documentation (POD) of the module "
-"/Kernel/System/DynmicField/Backend.pm to have the list of all attributes and "
-"possible return data for each function."
+"<filename>/Kernel/System/DynmicField/Backend.pm</filename> to have the list "
+"of all attributes and possible return data for each function."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -14423,8 +14464,8 @@ msgid ""
 "The following are other functions that are might needed if the new Dynamic "
 "Field does not inherit from other classes, To see the complete code of this "
 "functions please take a look directly into the files "
-"Kernel::System::DynamicField::Driver::Base.pm and "
-"Kernel::System::DynamicField::Driver::BaseText.pm"
+"<filename>Kernel/System/DynamicField/Driver/Base.pm</filename> and "
+"<filename>Kernel/System/DynamicField/Driver/BaseText.pm</filename>"
 msgstr ""
 
 #. type: CDATA
@@ -14546,7 +14587,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:453
 msgid ""
 "There are two return formats for this function, the normal: that is just the "
-"raw value or a structure: that is the pair field name => field value. for "
+"raw value or a structure: that is the pair field name =&gt; field value. for "
 "example a Date Dynamic Field returns normally the date as string, and if it "
 "should return the an structure it returns a pair for each part of the the "
 "date in the hash."
@@ -14855,15 +14896,15 @@ msgstr ""
 msgid ""
 "If you want to create your own postmaster filter, just create your own "
 "module.  These modules are located under "
-"\"Kernel/System/PostMaster/Filter/*.pm\".  For default modules see the admin "
-"manual. You just need two functions: new() and Run():"
+"<filename>Kernel/System/PostMaster/Filter/*.pm</filename>.  For default "
+"modules see the admin manual. You just need two functions: new() and Run():"
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:18
 msgid ""
 "The following is an examplary module to match emails and set X-OTRS-Headers "
-"(see doc/X-OTRS-Headers.txt for more info)."
+"(see <filename>doc/X-OTRS-Headers.txt</filename> for more info)."
 msgstr ""
 
 #. type: CDATA

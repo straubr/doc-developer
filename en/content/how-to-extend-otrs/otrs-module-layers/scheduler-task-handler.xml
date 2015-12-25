@@ -27,7 +27,7 @@
         <para>
             We should implement each one of this methods in order to be able to execute tasks.
             All task handler backends are used by main scheduler task handler module
-            (Kernel/scheduler/TaskHandler.pm).
+            (<filename>Kernel/scheduler/TaskHandler.pm</filename>).
         </para>
         <para>
             Currently the scheduler only has one working task handler backend named

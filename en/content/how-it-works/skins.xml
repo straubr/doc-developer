@@ -213,7 +213,7 @@ body {
             of OTRS (alternatively, you can run the script <filename>$OTRS_HOME/bin/otrs.Console.pl Maint::Config::Rebuild</filename>).
             This will regenerate the Perl cache of the XML configuration files, so that our new skin is now known
             and can be selected in the system. To make it the default skin that new agents see before they made their
-            own skin selection, edit the SysConfig setting "Loader::Agent::DefaultSelectedSkin" and set it to "custom".
+            own skin selection, edit the SysConfig setting <literal>Loader::Agent::DefaultSelectedSkin</literal> and set it to "custom".
         </para>
         <para>
             In conclusion: to create a new skin in OTRS, we had to place the new logo file, and create one CSS and one XML file, resulting

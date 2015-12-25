@@ -113,7 +113,7 @@
         </para>
         <para>
             So it is highly provable that you don't need to develop a custom mapping module.
-            Please check Mapping Simple module (Kernel/GenericInterface/Mapping/Simple.pm)
+            Please check Mapping Simple module (<filename>Kernel/GenericInterface/Mapping/Simple.pm</filename>)
             and its on-line documentation before continue.
         </para>
         <para>
@@ -133,7 +133,7 @@
         <para>
             We should implement each one of this methods in order to be able to map the data in the
             communication, handled either by the requester or provider. All mapping backends are
-            handled by the mapping module (Kernel/GenericInterface/Mapping.pm).
+            handled by the mapping module (<filename>Kernel/GenericInterface/Mapping.pm</filename>).
         </para>
         <section id="mapping_code_example">
             <title>Code example</title>

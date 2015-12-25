@@ -71,7 +71,7 @@ the specified blocks so that filters can use them.</Description>
         <title><literal>FilterText</literal></title>
         <para>
             This kind of output filter is a plugin for the method
-            Kernel::Output::HTML::Layout::Ascii2HTML()
+            <literal>Kernel::Output::HTML::Layout::Ascii2HTML()</literal>
             and is only active when the parameter LinkFeature is set to 1.
             Thus the FilterText output filters are currently only active for the display of
             the body of plain text articles.

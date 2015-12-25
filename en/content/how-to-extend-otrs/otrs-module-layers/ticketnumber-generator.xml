@@ -19,13 +19,13 @@
     <section id="ticketnumber-generator-code">
         <title>Code example</title>
         <para>
-            See Kernel/System/Ticket/Number/UserRandom.pm in the package TemplateModule.
+            See <filename>Kernel/System/Ticket/Number/UserRandom.pm</filename> in the package TemplateModule.
         </para>
     </section>
     <section id="ticketnumber-generator-configuration">
         <title>Configuration example</title>
         <para>
-            See Kernel/Config/Files/TicketNumberGenerator.xml in the package TemplateModule.
+            See <filename>Kernel/Config/Files/TicketNumberGenerator.xml</filename> in the package TemplateModule.
         </para>
     </section>
     <section id="ticketnumber-generator-usecases">

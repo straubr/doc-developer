@@ -8,16 +8,16 @@
         There is a DB customer-user preferences module which come with the OTRS framework.
         It is also possible to develop your own customer-user preferences modules.
         The customer-user preferences modules are located under
-        Kernel/System/CustomerUser/Preferences/*.pm. For more information about their configuration see the admin manual.
+        <filename>Kernel/System/CustomerUser/Preferences/*.pm</filename>. For more information about their configuration see the admin manual.
         There is an example of a customer-user preferences module below.
-        Save it under Kernel/System/CustomerUser/Preferences/Custom.pm.
+        Save it under <filename>Kernel/System/CustomerUser/Preferences/Custom.pm</filename>.
         You just need 4 functions: new(), SearchPreferences(), SetPreferences() and GetPreferences().
     </para>
     <section id="customer-user-preferences-module-code">
         <title>Code Example</title>
         <para>
-            The interface class is called Kernel::System::CustomerUser. The example customer-user preferences
-            may be called Kernel::System::CustomerUser::Preferences::Custom. You can find an example below.
+            The interface class is called <literal>Kernel::System::CustomerUser</literal>. The example customer-user preferences
+            may be called <literal>Kernel::System::CustomerUser::Preferences::Custom</literal>. You can find an example below.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[
@@ -179,7 +179,7 @@ sub SearchPreferences {
     <section id="customer-user-preferences-module-use_cases">
         <title>Use Case Example</title>
         <para>
-            Useful preferences implementation could be a soap or ldap backend.
+            Useful preferences implementation could be a SOAP or LDAP backend.
         </para>
     </section>
     <section id="customer-user-preferences-module-releases">
