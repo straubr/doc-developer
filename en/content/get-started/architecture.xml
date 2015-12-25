@@ -291,7 +291,7 @@
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/*</filename>. Each Invoker is contained in a folder
                 called "Controller". This approach helps to define a name space not only for
                 internal classes and methods but for filenames too. For example:
-                <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker<emphasis>/Test/</emphasis></filename> is the
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/Test/</filename> is the
                 Controller for all Test-type invokers.
             </para>
             <para>
@@ -322,7 +322,7 @@
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each Operation is contained in a
                 folder called "Controller". This approach help to define a name space not only for
                 internal classes and methods but for filenames too. For example:
-                <filename>$OTRS_HOME/Kernel/GenericInterface/Operation<emphasis>/Ticket/</emphasis></filename> is the
+                <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/Ticket/</filename> is the
                 Controller for all Ticket-type operations.
             </para>
             <para>
@@ -341,7 +341,7 @@
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each transport module should be
                 placed in a directory named as the Network Protocol used. For example: The "HTTP
                 SOAP" transport module, located in <filename>$OTRS_HOME/Kernel/GenericInterface/Transport
-                <emphasis>/HTTP/SOAP.pm</emphasis></filename>.
+                /HTTP/SOAP.pm</filename>.
             </para>
             <para>
                 Generic Interface transport modules are used send data to, and receive data from a
