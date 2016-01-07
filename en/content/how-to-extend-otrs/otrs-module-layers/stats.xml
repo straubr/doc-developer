@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='ISO-8859-1'?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 <section id="module-stats">
     <title>Stats Module</title>
@@ -8,7 +8,7 @@ There are two different types of internal stats modules - dynamic and static. Th
     <section id="module-stats-dynamic">
         <title>Dynamic Stats</title>
         <para>
-In contrast to static stats modules, dynamic statistics can be configured via the OTRS web interface. In this section a simple statistic module is developed. Each dynamic stats module has to implement these subroutines
+In contrast to static stats modules, dynamic statistics can be configured via the OTRS web interface. In this section a simple statistic module is developed. Each dynamic stats module has to implement these subroutines:
         </para>
         <para>
             <itemizedlist mark="round">
@@ -30,7 +30,7 @@ In contrast to static stats modules, dynamic statistics can be configured via th
             </itemizedlist>
         </para>
         <para>
-Furthermore the module has to implement either GetStatElement or GetStatTable. And if the header line of the result table should be changed, a sub called GetHeaderLine has to be developed.
+Furthermore the module has to implement either <literal>GetStatElement</literal> or <literal>GetStatTable</literal>. And if the header line of the result table should be changed, a sub called <literal>GetHeaderLine</literal> has to be developed.
         </para>
         <section id="module-stats-dynamic-subroutines">
             <title>Code example</title>
@@ -41,7 +41,7 @@ In this section a sample stats module is shown and each subroutine is explained.
                 <programlisting><![CDATA[
 # --
 # Kernel/System/Stats/Dynamic/DynamicStatsTemplate.pm - all advice functions
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -59,7 +59,7 @@ use Kernel::System::Ticket;
                 ]]></programlisting>
             </para>
             <para>
-This is common boilerplate that can be found in common OTRS modules. The class/package name is declared via the package keyword. Then the needed modules are 'use'd.
+This is a common boilerplate that can be found in common OTRS modules. The class/package name is declared via the <literal>package</literal> keyword. Then the needed modules are used via the <literal>use</literal> keyword.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -88,7 +88,7 @@ sub new {
                 ]]></programlisting>
             </para>
             <para>
-new is the constructor for this statistic module. It creates a new instance of the class. According to the coding guidelines objects of other classes that are needed in this module have to be created in "new". In lines 27 to 29 the object of the stats module is created. Lines 31 to 37 check if objects that are needed in this code - either for creating other objects or in this module - are passed. After that the other objects are created.
+The <literal>new</literal> is the constructor for this statistic module. It creates a new instance of the class. According to the coding guidelines objects of other classes that are needed in this module have to be created in <literal>new</literal>. In lines 27 to 29 the object of the stats module is created. Lines 31 to 37 check if objects that are needed in this code - either for creating other objects or in this module - are passed. After that the other objects are created.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -100,7 +100,7 @@ sub GetObjectName {
                 ]]></programlisting>
             </para>
             <para>
-GetObjectName returns a Name for the Statistics module. This is the label that is shown in the drop down in the configuration as well as in the list of existing statistics (column "object").
+<literal>GetObjectName</literal> returns a name for the statistics module. This is the label that is shown in the drop down in the configuration as well as in the list of existing statistics (column "object").
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -161,7 +161,7 @@ sub GetObjectAttributes {
                 ]]></programlisting>
             </para>
             <para>
-In this sample stats module, we want to provide three attributes the user can chose from: A list of queues, a list of states an a time drop down. To get the values shown in the drop down, some operations are needed. In this case call StateList and GetAllQueues.
+In this sample stats module, we want to provide three attributes the user can chose from: a list of queues, a list of states and a time drop down. To get the values shown in the drop down, some operations are needed. In this case <literal>StateList</literal> and <literal>GetAllQueues</literal> are called.
             </para>
             <para>
 Then the list of attributes is created. Each attribute is defined via a hashreference. You can use these keys:
@@ -169,37 +169,37 @@ Then the list of attributes is created. Each attribute is defined via a hashrefe
             <para>
                 <itemizedlist mark="round" >
                     <listitem>
-                        <para>Name</para>
-                        <para>the label in the web interface</para>
+                        <para><literal>Name</literal></para>
+                        <para>The label in the web interface.</para>
                     </listitem>
                     <listitem>
-                        <para>UseAsXvalue</para>
-                        <para>Can this attribute be used on the x-axis</para>
+                        <para><literal>UseAsXvalue</literal></para>
+                        <para>This attribute can be used on the x-axis.</para>
                     </listitem>
                     <listitem>
-                        <para>UseAsValueSeries</para>
-                        <para>Can this attribute be used on the y-axis</para>
+                        <para><literal>UseAsValueSeries</literal></para>
+                        <para>This attribute can be used on the y-axis.</para>
                     </listitem>
                     <listitem>
-                        <para>UseAsRestriction</para>
-                        <para>Can this attribute be used for restrictions.</para>
+                        <para><literal>UseAsRestriction</literal></para>
+                        <para>This attribute can be used for restrictions.</para>
                     </listitem>
                     <listitem>
-                        <para>Element</para>
-                        <para>the HTML fieldname</para>
+                        <para><literal>Element</literal></para>
+                        <para>The HTML field name.</para>
                     </listitem>
                     <listitem>
-                        <para>Block</para>
-                        <para>the block name in the template file (e.g. <filename>&lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.tt</filename>)</para>
+                        <para><literal>Block</literal></para>
+                        <para>The block name in the template file (e.g. <filename>&lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.tt</filename>).</para>
                     </listitem>
                     <listitem>
-                        <para>Values</para>
-                        <para>the values shown in the attribute</para>
+                        <para><literal>Values</literal></para>
+                        <para>The values shown in the attribute.</para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
-Hint: If you install this sample an you configured a statistic with some queues - lets say 'queue A' and 'queue B' - then these queues are the only ones that are shown to the user when he starts the statistic. Sometimes a dynamic drop down or multiselect field is needed. In this case, you can set "SelectedValues" in the definition of the attribute:
+Hint: If you install this sample an you configured a statistic with some queues - lets say 'queue A' and 'queue B' - then these queues are the only ones that are shown to the user when he starts the statistic. Sometimes a dynamic drop down or multiselect field is needed. In this case, you can set <literal>SelectedValues</literal> in the definition of the attribute:
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -233,7 +233,7 @@ sub GetStatElement {
                 ]]></programlisting>
             </para>
             <para>
-GetStatElement gets called for each cell in the result table. So it should be a numeric value. In this sample it does a simple ticket search. The hash %Param contains information about the "current" x-value and the y-value as well as any restrictions. So, for a cell that should count the created tickets for queue 'Misc' with state 'open' the passed parameter hash looks something like this:
+<literal>GetStatElement</literal> gets called for each cell in the result table. So it should be a numeric value. In this sample it does a simple ticket search. The hash <literal>%Param</literal> contains information about the "current" x-value and the y-value as well as any restrictions. So, for a cell that should count the created tickets for queue 'Misc' with state 'open' the passed parameter hash looks something like this:
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -246,7 +246,7 @@ GetStatElement gets called for each cell in the result table. So it should be a 
                 ]]></programlisting>
             </para>
             <para>
-If the "per cell" calculation should be avoided, GetStatTable is an alternative. GetStatTable returns a list of rows, hence an array of arrayreferences. This leads to the same result as using GetStatElement
+If the "per cell" calculation should be avoided, <literal>GetStatTable</literal> is an alternative. <literal>GetStatTable</literal> returns a list of rows, hence an array of arrayreferences. This leads to the same result as using <literal>GetStatElement</literal>.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -277,7 +277,7 @@ sub GetStatTable {
                 ]]></programlisting>
             </para>
             <para>
-GetStatTable gets all information about the stats query that is needed. The passed parameters contains information about the attributes (Restrictions, attributes that are used for x/y-axis) and the table structure. The table structure is a hash reference where the keys are the values of the y-axis and their values are hashreferences with the parameters used for GetStatElement subroutines.
+<literal>GetStatTable</literal> gets all information about the stats query that is needed. The passed parameters contains information about the attributes (<literal>Restrictions</literal>, attributes that are used for x/y-axis) and the table structure. The table structure is a hash reference where the keys are the values of the y-axis and their values are hashreferences with the parameters used for <literal>GetStatElement</literal> subroutines.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -352,7 +352,7 @@ GetStatTable gets all information about the stats query that is needed. The pass
                 ]]></programlisting>
             </para>
             <para>
-Sometimes the headers of the table have to be changed. In that case, a subroutine called GetHeaderLine has to be implemented. That subroutine has to return an arrayreference with the column headers as elements. It gets information about the x-values passed.
+Sometimes the headers of the table have to be changed. In that case, a subroutine called <literal>GetHeaderLine</literal> has to be implemented. That subroutine has to return an arrayreference with the column headers as elements. It gets information about the x-values passed.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -406,7 +406,7 @@ sub ExportWrapper {
 Configured statistics can be exported into XML format. But as queues with the same queue names can have different IDs on different OTRS instances it would be quite painful to export the IDs (the statistics would calculate the wrong numbers then). So an export wrapper should be written to use the names instead of ids. This should be done for each "dimension" of the stats module (x-axis, y-axis and restrictions).
             </para>
             <para>
-ImportWrapper works the other way around - it converts the name to the ID in the instance the configuration is imported to.
+<literal>ImportWrapper</literal> works the other way around - it converts the name to the ID in the instance the configuration is imported to.
             </para>
             <para>
 This is a sample export:
@@ -453,7 +453,7 @@ Now, that all subroutines are explained, this is the complete sample stats modul
                 <programlisting><![CDATA[
 # --
 # Kernel/System/Stats/Dynamic/DynamicStatsTemplate.pm - all advice functions
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -659,7 +659,7 @@ sub ImportWrapper {
             <title>Configuration example</title>
             <para>
                 <programlisting><![CDATA[
-<?xml version="1.0" encoding="iso-8859-1" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <otrs_config version="1.0" init="Config">
     <ConfigItem Name="Stats::DynamicObjectRegistration###DynamicStatsTemplate" Required="0" Valid="1">
         <Description Lang="en">Here you can decide if the common stats module may generate stats about the number of default tickets a requester created.</Description>
@@ -702,13 +702,13 @@ The subsequent paragraphs describe the static stats. Static stats are very easy 
         <para>
             <itemizedlist mark="round">
                 <listitem>
-                    <para>new</para>
+                    <para><literal>new</literal></para>
                 </listitem>
                 <listitem>
-                    <para>Param</para>
+                    <para><literal>Param</literal></para>
                 </listitem>
                 <listitem>
-                    <para>Run</para>
+                    <para><literal>Run</literal></para>
                 </listitem>
             </itemizedlist>
         </para>
@@ -745,7 +745,7 @@ sub new {
                 ]]></programlisting>
             </para>
             <para>
-new creates a new instance of the static stats class. First it creates a new object and then it checks for the needed objects.
+The <literal>new</literal> creates a new instance of the static stats class. First it creates a new object and then it checks for the needed objects.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -779,7 +779,7 @@ sub Param {
                 ]]></programlisting>
             </para>
             <para>
-The Param method provides the list of all parameters/attributes that can be selected to create a static stat. It gets some parameters passed: The values for the stats attributes provided in a request, the format of the stats and the name of the object (name of the module).
+The <literal>Param</literal> method provides the list of all parameters/attributes that can be selected to create a static stat. It gets some parameters passed: The values for the stats attributes provided in a request, the format of the stats and the name of the object (name of the module).
             </para>
             <para>
 The parameters/attributes have to be hashreferences with these key-value-pairs.
@@ -787,21 +787,21 @@ The parameters/attributes have to be hashreferences with these key-value-pairs.
             <para>
                 <itemizedlist mark="round" >
                     <listitem>
-                        <para>Frontend</para>
-                        <para>the label in the web interface</para>
+                        <para><literal>Frontend</literal></para>
+                        <para>The label in the web interface.</para>
                     </listitem>
                     <listitem>
-                        <para>Name</para>
-                        <para>the HTML fieldname</para>
+                        <para><literal>Name</literal></para>
+                        <para>The HTML field name.</para>
                     </listitem>
                     <listitem>
-                        <para>Data</para>
-                        <para>the values shown in the attribute</para>
+                        <para><literal>Data</literal></para>
+                        <para>The values shown in the attribute.</para>
                     </listitem>
                 </itemizedlist>
             </para>
             <para>
-Other parameter for the BuildSelection method of the LayoutObject can be used, as it is done with "Size" and "Multiple" in this sample module.
+Other parameter for the <literal>BuildSelection</literal> method of the <literal>LayoutObject</literal> can be used, as it is done with <literal>Size</literal> and <literal>Multiple</literal> in this sample module.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -850,13 +850,13 @@ sub Run {
                 ]]></programlisting>
             </para>
             <para>
-The Run method actually generates the table data for the stats. It gets the attributes for this stats passed. In this sample it in %Param a key 'TypeIDs' and a key 'QueueIDs' exist (see attributes in Param method) and their values are arrayreferences. The returned data consists of three parts: Two arrayreferences and an array. In the first arrayreference the title for the statistic is stored, the second arrayreference contains the headlines for the columns in the table. And then the data for the table body follow.
+The <literal>Run</literal> method actually generates the table data for the stats. It gets the attributes for this stats passed. In this sample it in <literal>%Param</literal> a key <literal>TypeIDs</literal> and a key <literal>QueueIDs</literal> exist (see attributes in <literal>Param</literal> method) and their values are array references. The returned data consists of three parts: Two array references and an array. In the first array reference the title for the statistic is stored, the second array reference contains the headlines for the columns in the table. And then the data for the table body follow.
             </para>
             <para>
                 <programlisting><![CDATA[
 # --
 # Kernel/System/Stats/Static/StaticStatsTemplate.pm
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -1099,7 +1099,7 @@ The files must merely be moved from the
 <filename>Kernel/System/Stats/</filename> path to
 <filename>Kernel/System/Stats/Static/</filename>. Additionally
 the package name of the respective script must be amended by
-"::Static".
+<literal>::Static</literal>.
             </para>
             <para>
 The following example shows how the first path is amended.

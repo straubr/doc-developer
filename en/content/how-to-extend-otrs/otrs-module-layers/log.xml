@@ -7,13 +7,13 @@
     <title>Log Module</title>
 
     <para>
-There is a gobal log interface for OTRS that provides the possibility to create own log backends.
+There is a global log interface for OTRS that provides the possibility to create own log backends.
     </para>
     <para>
 Writing an own logging backend is as easy as reimplementing the <literal>Kernel::System::Log::Log()</literal> method.
     </para>
     <section id="log-module-code">
-        <title>Code example: Kernel::System::Log::CustomFile</title>
+        <title>Code example: <literal>Kernel::System::Log::CustomFile</literal></title>
         <para>
             In this small example, we'll write a little file logging backend which works similar to
             <literal>Kernel::System::Log::File</literal>, but prepends a string to each logging entry.
@@ -23,7 +23,7 @@ Writing an own logging backend is as easy as reimplementing the <literal>Kernel:
         <programlisting linenumbering="numbered"><![CDATA[
 # --
 # Kernel/System/Log/CustomFile.pm - file log backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -61,7 +61,7 @@ sub new {
     $Self->{CustomPrefix} = 'CustomFileExample';
 
     # Fixed bug# 2265 - For IIS we need to create a own error log file.
-    # Bind stderr to log file, because iis do print stderr to web page.
+    # Bind stderr to log file, because IIS do print stderr to web page.
     if ( $ENV{SERVER_SOFTWARE} && $ENV{SERVER_SOFTWARE} =~ /^microsoft\-iis/i ) {
         if ( !open STDERR, '>>', $Self->{LogFile} . '.error' ) {
             print STDERR "ERROR: Can't write $Self->{LogFile}.error: $!";

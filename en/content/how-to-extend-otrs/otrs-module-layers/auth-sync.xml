@@ -3,16 +3,16 @@
 
 
 <section id="auth-sync-module">
-    <title>Authentication Synchronisation Module</title>
+    <title>Authentication Synchronization Module</title>
     <para>
-        There is a LDAP authentication synchronisation module
+        There is an LDAP authentication synchronization module
         which come with the OTRS framework. It is also possible to develop your own
-        authentication modules. The authentication synchronisation modules are located under
+        authentication modules. The authentication synchronization modules are located under
         <filename>Kernel/System/Auth/Sync/*.pm</filename>. For more information about their configuration see the admin manual.
-        Following, there is an example of an authentication synchronisation module.
+        Following, there is an example of an authentication synchronization module.
         Save it under <filename>Kernel/System/Auth/Sync/CustomAuthSync.pm</filename>.
         You just need 2 functions: new() and Sync(). Return 1, then the
-        synchronisation is ok.
+        synchronization is ok.
     </para>
     <section id="auth-sync-module-code">
         <title>Code Example</title>
@@ -24,7 +24,7 @@
         <programlisting linenumbering="numbered"><![CDATA[
 # --
 # Kernel/System/Auth/Sync/CustomAuthSync.pm - provides the CustomAuthSync
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # Id: CustomAuthSync.pm,v 1.9 2010/03/25 14:42:45 martin Exp $
 # --
@@ -79,9 +79,9 @@ sub Sync {
     <section id="auth-sync-module-configuration">
         <title>Configuration Example</title>
         <para>
-            You should activate your custom synchronisation module.
-            This can be done using the perl configuration below.
-            It is not recommended to use the xml configuration because this
+            You should activate your custom synchronization module.
+            This can be done using the Perl configuration below.
+            It is not recommended to use the XML configuration because this
             would allow you to lock yourself out via SysConfig.
         </para>
         <para>
@@ -93,7 +93,7 @@ sub Sync {
     <section id="auth-sync-module-use_cases">
         <title>Use Case Examples</title>
         <para>
-            Useful synchronisation implementation could be a soap or radius backend.
+            Useful synchronization implementation could be a SOAP or RADIUS backend.
         </para>
     </section>
     <section id="auth-sync-module-releases">

@@ -9,7 +9,7 @@
         It is also possible to develop your own customer-user preferences modules.
         The customer-user preferences modules are located under
         <filename>Kernel/System/CustomerUser/Preferences/*.pm</filename>. For more information about their configuration see the admin manual.
-        There is an example of a customer-user preferences module below.
+        Following, there is an example of a customer-user preferences module.
         Save it under <filename>Kernel/System/CustomerUser/Preferences/Custom.pm</filename>.
         You just need 4 functions: new(), SearchPreferences(), SetPreferences() and GetPreferences().
     </para>
@@ -23,7 +23,7 @@
         <programlisting linenumbering="numbered"><![CDATA[
 # --
 # Kernel/System/CustomerUser/Preferences/Custom.pm - some customer user functions
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # Id: Custom.pm,v 1.20 2009/10/07 20:41:50 martin Exp $
 # --
@@ -150,7 +150,7 @@ sub SearchPreferences {
         <title>Configuration Example</title>
         <para>
             There is the need to activate your custom customer-user preferences module.
-            This can be done using the xml configuration below.
+            This can be done using the XML configuration below.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-12-25 12:48+0100\n"
+"POT-Creation-Date: 2016-01-07 09:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -6435,7 +6435,7 @@ msgid ""
 "        return;\n"
 "    }\n"
 "\n"
-"    # Create a radius object\n"
+"    # Create a RADIUS object\n"
 "    my $CustomAuth = Authen::CustomAuth->new(\n"
 "        Host   => $Self->{CustomAuthHost},\n"
 "        Secret => $Self->{CustomAuthecret},\n"
@@ -6490,7 +6490,7 @@ msgstr ""
 msgid ""
 "There is the need to activate your custom agent authenticate module.  This "
 "can be done using the Perl configuration below.  It is not recommended to "
-"use the xml configuration because you can lock you out via the sysconfig."
+"use the XML configuration because you can lock you out via the sysconfig."
 msgstr ""
 
 #. type: CDATA
@@ -6512,12 +6512,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:193 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:100 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:201 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:186 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:200 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:153 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:691 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1085 en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:51
+#: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:193 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:100 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:201 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:186 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:200 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:153 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:691 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1085 en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:51
 msgid "Release Availability"
 msgstr ""
 
 #. type: Content of: <section><section><para><informaltable><tgroup><thead><row><entry>
-#: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:199 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:207 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:192 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:162 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:162 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:159 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:172 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:794 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:179
+#: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:199 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:207 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:192 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:162 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:162 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:159 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:179
 msgid "Name"
 msgstr ""
 
@@ -6553,7 +6553,7 @@ msgstr ""
 
 #. type: Content of: <section><section><para><informaltable><tgroup><tbody><row><entry>
 #: en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:217 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:225
-msgid "Radius"
+msgid "RADIUS"
 msgstr ""
 
 #. type: Content of: <section><section><para><informaltable><tgroup><tbody><row><entry>
@@ -6563,20 +6563,20 @@ msgstr ""
 
 #. type: Content of: <section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:6
-msgid "Authentication Synchronisation Module"
+msgid "Authentication Synchronization Module"
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:8
 msgid ""
-"There is a LDAP authentication synchronisation module which come with the "
+"There is an LDAP authentication synchronization module which come with the "
 "OTRS framework. It is also possible to develop your own authentication "
-"modules. The authentication synchronisation modules are located under "
+"modules. The authentication synchronization modules are located under "
 "<filename>Kernel/System/Auth/Sync/*.pm</filename>. For more information "
 "about their configuration see the admin manual.  Following, there is an "
-"example of an authentication synchronisation module.  Save it under "
+"example of an authentication synchronization module.  Save it under "
 "<filename>Kernel/System/Auth/Sync/CustomAuthSync.pm</filename>.  You just "
-"need 2 functions: new() and Sync(). Return 1, then the synchronisation is "
+"need 2 functions: new() and Sync(). Return 1, then the synchronization is "
 "ok."
 msgstr ""
 
@@ -6651,8 +6651,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:82
 msgid ""
-"You should activate your custom synchronisation module.  This can be done "
-"using the perl configuration below.  It is not recommended to use the xml "
+"You should activate your custom synchronization module.  This can be done "
+"using the Perl configuration below.  It is not recommended to use the XML "
 "configuration because this would allow you to lock yourself out via "
 "SysConfig."
 msgstr ""
@@ -6672,7 +6672,7 @@ msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:96
-msgid "Useful synchronisation implementation could be a soap or radius backend."
+msgid "Useful synchronization implementation could be a SOAP or RADIUS backend."
 msgstr ""
 
 #. type: Content of: <section><section><para><informaltable><tgroup><tbody><row><entry>
@@ -6681,7 +6681,7 @@ msgid "2.4"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:121 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:194 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:152 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:129 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:685 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1079 en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:52 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:165 en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:42
+#: en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:121 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:194 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:152 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:131 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:685 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1079 en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:52 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:165 en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:42
 msgid "Caveats and Warnings"
 msgstr ""
 
@@ -6892,7 +6892,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:177
 msgid ""
 "There is the need to activate your custom customer authenticate module.  "
-"This can be done using the xml configuration below."
+"This can be done using the XML configuration below."
 msgstr ""
 
 #. type: CDATA
@@ -6915,7 +6915,7 @@ msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:197
-msgid "Useful authentification implementation could be a soap backend."
+msgid "Useful authentication implementation could be a SOAP backend."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -6930,8 +6930,8 @@ msgid ""
 "framework.  It is also possible to develop your own customer-user "
 "preferences modules.  The customer-user preferences modules are located "
 "under <filename>Kernel/System/CustomerUser/Preferences/*.pm</filename>. For "
-"more information about their configuration see the admin manual.  There is "
-"an example of a customer-user preferences module below.  Save it under "
+"more information about their configuration see the admin manual.  Following, "
+"there is an example of a customer-user preferences module.  Save it under "
 "<filename>Kernel/System/CustomerUser/Preferences/Custom.pm</filename>.  You "
 "just need 4 functions: new(), SearchPreferences(), SetPreferences() and "
 "GetPreferences()."
@@ -7090,7 +7090,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:152
 msgid ""
 "There is the need to activate your custom customer-user preferences module.  "
-"This can be done using the xml configuration below."
+"This can be done using the XML configuration below."
 msgstr ""
 
 #. type: CDATA
@@ -7398,7 +7398,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:44 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:705
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:44 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:16
 msgid "new"
 msgstr ""
 
@@ -8203,7 +8203,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:711
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:23
 msgid "Run"
 msgstr ""
 
@@ -8805,7 +8805,7 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/log.xml:10
 msgid ""
-"There is a gobal log interface for OTRS that provides the possibility to "
+"There is a global log interface for OTRS that provides the possibility to "
 "create own log backends."
 msgstr ""
 
@@ -8818,7 +8818,7 @@ msgstr ""
 
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/log.xml:16
-msgid "Code example: Kernel::System::Log::CustomFile"
+msgid "Code example: <literal>Kernel::System::Log::CustomFile</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -8873,7 +8873,7 @@ msgid ""
 "    $Self->{CustomPrefix} = 'CustomFileExample';\n"
 "\n"
 "    # Fixed bug# 2265 - For IIS we need to create a own error log file.\n"
-"    # Bind stderr to log file, because iis do print stderr to web page.\n"
+"    # Bind stderr to log file, because IIS do print stderr to web page.\n"
 "    if ( $ENV{SERVER_SOFTWARE} && $ENV{SERVER_SOFTWARE} =~ "
 "/^microsoft\\-iis/i ) {\n"
 "        if ( !open STDERR, '>>', $Self->{LogFile} . '.error' ) {\n"
@@ -9200,7 +9200,7 @@ msgstr ""
 msgid ""
 "Output filters allow to modify HTML on the fly. It is best practice to use "
 "output filters instead of modifying <filename>.tt</filename> files "
-"directly.  There are three good reasons for that.  When the same adaption "
+"directly.  There are three good reasons for that.  When the same adaptation "
 "has to be applied to several frontend modules then the adaption only has to "
 "be implemented once.  The second advantage is that when OTRS is upgraded "
 "there is a chance that the filter doesn't have to be updated, when the "
@@ -9312,16 +9312,16 @@ msgstr ""
 msgid ""
 "This kind of output filter is a plugin for the method "
 "<literal>Kernel::Output::HTML::Layout::Ascii2HTML()</literal> and is only "
-"active when the parameter LinkFeature is set to 1.  Thus the FilterText "
-"output filters are currently only active for the display of the body of "
-"plain text articles.  Plain text articles are generated by incoming non-HTML "
-"mails and when OTRS is configured to not use the rich text feature in the "
-"frontend."
+"active when the parameter <literal>LinkFeature</literal> is set to 1.  Thus "
+"the <literal>FilterText</literal> output filters are currently only active "
+"for the display of the body of plain text articles.  Plain text articles are "
+"generated by incoming non-HTML mails and when OTRS is configured to not use "
+"the Rich Text feature in the frontend."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:85 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:91
-msgid "See package TemplateModule."
+msgid "See package <literal>TemplateModule</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -9331,80 +9331,83 @@ msgstr ""
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:97
-msgid "Show additional ticket attributes in AgentTicketZoom."
+msgid "Show additional ticket attributes in <literal>AgentTicketZoom</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:99
-msgid "This can be achieved with a FilterElementPost output filter."
+msgid ""
+"This can be achieved with a <literal>FilterElementPost</literal> output "
+"filter."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:103
-msgid "Show the service selection as a multi level menu."
+msgid "Show the service selection as a multi level menu"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:105
 msgid ""
-"Use a FilterElementPost for this feature.  The list of selectable services "
-"can be parsed from the processed template output. The multi level selection "
-"can be constructed from the service list and inserted into the template "
-"content. A FilterElementPost output filter must be used for that."
+"Use a <literal>FilterElementPost</literal> for this feature.  The list of "
+"selectable services can be parsed from the processed template output. The "
+"multi level selection can be constructed from the service list and inserted "
+"into the template content. A <literal>FilterElementPost</literal> output "
+"filter must be used for that."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:112
-msgid "Create links within plain text article bodies."
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:113
+msgid "Create links within plain text article bodies"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:114
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:115
 msgid ""
 "A biotech company uses gene names like IPI00217472 in plain text articles.  "
-"A FilterText output filter can be used to create links to a sequence "
-"database, "
+"A <literal>FilterText</literal> output filter can be used to create links to "
+"a sequence database, "
 "e.g. "
 "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-e+[IPI-acc:IPI00217472]+-vn+2, "
 "for the gene names."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:121
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:122
 msgid "Prohibit active content"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:123
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:124
 msgid ""
 "There is firewall rule that disallows all active content. In order to avoid "
-"rejection by the firewall the HTML tag &lt;applet&gt; can be filtered with "
-"an FilterContent output filter."
+"rejection by the firewall, the HTML tag <literal>&lt;applet&gt;</literal> "
+"can be filtered with a <literal>FilterContent</literal> output filter."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:131
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:133
 msgid ""
-"Every FilterElementPost output filter is constructed and run for every "
-"configured Template that is needed for the current request.  Thus low "
-"performance of the output filter or a large number of filters can severely "
-"degrade performance."
+"Every <literal>FilterElementPost</literal> output filter is constructed and "
+"run for every configured Template that is needed for the current request.  "
+"Thus low performance of the output filter or a large number of filters can "
+"severely degrade performance."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:138
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:140
 msgid "Best Practices"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:140
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:142
 msgid ""
 "In order to increase flexibility the list of affected templates should be "
 "configured in SysConfig."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:147
+#: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:149
 msgid ""
 "The output filters are available since OTRS 2.4. The type "
 "<literal>FilterElementPre</literal> was dropped with OTRS 5."
@@ -9426,7 +9429,7 @@ msgid ""
 "a queue preferences module.  Save it under "
 "<filename>Kernel/System/Queue/PreferencesCustom.pm</filename>.  You just "
 "need 3 functions: new(), QueuePreferencesSet() and "
-"QueuePreferencesGet(). Return 1, then the synchronisation is ok."
+"QueuePreferencesGet(). Return 1, then the synchronization is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -9556,7 +9559,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:132
 msgid ""
 "There is the need to activate your custom queue preferences module.  This "
-"can be done using the xml configuration below."
+"can be done using the XML configuration below."
 msgstr ""
 
 #. type: CDATA
@@ -9579,7 +9582,7 @@ msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:152 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:152
-msgid "Useful preferences implementation could be a soap or radius backend."
+msgid "Useful preferences implementation could be a SOAP or RADIUS backend."
 msgstr ""
 
 #. type: Content of: <section><section><para><informaltable><tgroup><tbody><row><entry>
@@ -9805,7 +9808,7 @@ msgid ""
 "a service preferences module.  Save it under "
 "<filename>Kernel/System/Service/PreferencesCustom.pm</filename>.  You just "
 "need 3 functions: new(), ServicePreferencesSet() and "
-"ServicePreferencesGet(). Return 1, then the synchronisation is ok."
+"ServicePreferencesGet(). Return 1, then the synchronization is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -9936,7 +9939,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:132
 msgid ""
 "There is the need to activate your custom service preferences module.  This "
-"can be done using the xml configuration below."
+"can be done using the XML configuration below."
 msgstr ""
 
 #. type: CDATA
@@ -9970,8 +9973,8 @@ msgid ""
 "is also possible to develop your own SLA preferences modules.  The SLA "
 "preferences modules are located under "
 "<filename>Kernel/System/SLA/*.pm</filename>. For more information about "
-"their configuration see the admin manual.  Here we'll show an example of an "
-"SLA preferences module.  Save it under "
+"their configuration see the admin manual.  Following, there is an example of "
+"an SLA preferences module.  Save it under "
 "<filename>Kernel/System/SLA/PreferencesCustom.pm</filename>.  You just need "
 "3 functions: new(), SLAPreferencesSet() and SLAPreferencesGet().  Make sure "
 "the function returns 1."
@@ -10072,7 +10075,7 @@ msgid ""
 "        }\n"
 "    }\n"
 "\n"
-"    # check if service preferences are available\n"
+"    # check if SLA preferences are available\n"
 "    if ( !$Self->{ConfigObject}->Get('SLAPreferences') ) {\n"
 "        return;\n"
 "    }\n"
@@ -10101,8 +10104,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:130
 msgid ""
-"You need to register your custom SLA preferences module.  This can be done "
-"using the xml configuration below."
+"There is the need to activate your custom SLA preferences module.  This can "
+"be done using the XML configuration below."
 msgstr ""
 
 #. type: CDATA
@@ -10149,7 +10152,7 @@ msgstr ""
 msgid ""
 "In contrast to static stats modules, dynamic statistics can be configured "
 "via the OTRS web interface. In this section a simple statistic module is "
-"developed. Each dynamic stats module has to implement these subroutines"
+"developed. Each dynamic stats module has to implement these subroutines:"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
@@ -10175,9 +10178,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:33
 msgid ""
-"Furthermore the module has to implement either GetStatElement or "
-"GetStatTable. And if the header line of the result table should be changed, "
-"a sub called GetHeaderLine has to be developed."
+"Furthermore the module has to implement either "
+"<literal>GetStatElement</literal> or <literal>GetStatTable</literal>. And if "
+"the header line of the result table should be changed, a sub called "
+"<literal>GetHeaderLine</literal> has to be developed."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -10214,9 +10218,10 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:62
 msgid ""
-"This is common boilerplate that can be found in common OTRS modules. The "
-"class/package name is declared via the package keyword. Then the needed "
-"modules are 'use'd."
+"This is a common boilerplate that can be found in common OTRS modules. The "
+"class/package name is declared via the <literal>package</literal> "
+"keyword. Then the needed modules are used via the <literal>use</literal> "
+"keyword."
 msgstr ""
 
 #. type: CDATA
@@ -10251,12 +10256,13 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:91
 msgid ""
-"new is the constructor for this statistic module. It creates a new instance "
-"of the class. According to the coding guidelines objects of other classes "
-"that are needed in this module have to be created in \"new\". In lines 27 to "
-"29 the object of the stats module is created. Lines 31 to 37 check if "
-"objects that are needed in this code - either for creating other objects or "
-"in this module - are passed. After that the other objects are created."
+"The <literal>new</literal> is the constructor for this statistic module. It "
+"creates a new instance of the class. According to the coding guidelines "
+"objects of other classes that are needed in this module have to be created "
+"in <literal>new</literal>. In lines 27 to 29 the object of the stats module "
+"is created. Lines 31 to 37 check if objects that are needed in this code - "
+"either for creating other objects or in this module - are passed. After that "
+"the other objects are created."
 msgstr ""
 
 #. type: CDATA
@@ -10273,9 +10279,10 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:103
 msgid ""
-"GetObjectName returns a Name for the Statistics module. This is the label "
-"that is shown in the drop down in the configuration as well as in the list "
-"of existing statistics (column \"object\")."
+"<literal>GetObjectName</literal> returns a name for the statistics "
+"module. This is the label that is shown in the drop down in the "
+"configuration as well as in the list of existing statistics (column "
+"\"object\")."
 msgstr ""
 
 #. type: CDATA
@@ -10343,9 +10350,10 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:164
 msgid ""
 "In this sample stats module, we want to provide three attributes the user "
-"can chose from: A list of queues, a list of states an a time drop down. To "
+"can chose from: a list of queues, a list of states and a time drop down. To "
 "get the values shown in the drop down, some operations are needed. In this "
-"case call StateList and GetAllQueues."
+"case <literal>StateList</literal> and <literal>GetAllQueues</literal> are "
+"called."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -10356,71 +10364,76 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:172 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:794
+msgid "<literal>Name</literal>"
+msgstr ""
+
+#. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:791
-msgid "the label in the web interface"
+msgid "The label in the web interface."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:176
-msgid "UseAsXvalue"
+msgid "<literal>UseAsXvalue</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:177
-msgid "Can this attribute be used on the x-axis"
+msgid "This attribute can be used on the x-axis."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:180
-msgid "UseAsValueSeries"
+msgid "<literal>UseAsValueSeries</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:181
-msgid "Can this attribute be used on the y-axis"
+msgid "This attribute can be used on the y-axis."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:184
-msgid "UseAsRestriction"
+msgid "<literal>UseAsRestriction</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:185
-msgid "Can this attribute be used for restrictions."
+msgid "This attribute can be used for restrictions."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:188
-msgid "Element"
+msgid "<literal>Element</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:795
-msgid "the HTML fieldname"
+msgid "The HTML field name."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:192
-msgid "Block"
+msgid "<literal>Block</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:193
 msgid ""
-"the block name in the template file "
+"The block name in the template file "
 "(e.g. "
-"<filename>&lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.tt</filename>)"
+"<filename>&lt;OTRS_HOME&gt;/Kernel/Output/HTML/Standard/AgentStatsEditXaxis.tt</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:196
-msgid "Values"
+msgid "<literal>Values</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:197 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:799
-msgid "the values shown in the attribute"
+msgid "The values shown in the attribute."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -10430,7 +10443,7 @@ msgid ""
 "queues - lets say 'queue A' and 'queue B' - then these queues are the only "
 "ones that are shown to the user when he starts the statistic. Sometimes a "
 "dynamic drop down or multiselect field is needed. In this case, you can set "
-"\"SelectedValues\" in the definition of the attribute:"
+"<literal>SelectedValues</literal> in the definition of the attribute:"
 msgstr ""
 
 #. type: CDATA
@@ -10471,12 +10484,12 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:236
 msgid ""
-"GetStatElement gets called for each cell in the result table. So it should "
-"be a numeric value. In this sample it does a simple ticket search. The hash "
-"%Param contains information about the \"current\" x-value and the y-value as "
-"well as any restrictions. So, for a cell that should count the created "
-"tickets for queue 'Misc' with state 'open' the passed parameter hash looks "
-"something like this:"
+"<literal>GetStatElement</literal> gets called for each cell in the result "
+"table. So it should be a numeric value. In this sample it does a simple "
+"ticket search. The hash <literal>%Param</literal> contains information about "
+"the \"current\" x-value and the y-value as well as any restrictions. So, for "
+"a cell that should count the created tickets for queue 'Misc' with state "
+"'open' the passed parameter hash looks something like this:"
 msgstr ""
 
 #. type: CDATA
@@ -10494,9 +10507,11 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:249
 msgid ""
-"If the \"per cell\" calculation should be avoided, GetStatTable is an "
-"alternative. GetStatTable returns a list of rows, hence an array of "
-"arrayreferences. This leads to the same result as using GetStatElement"
+"If the \"per cell\" calculation should be avoided, "
+"<literal>GetStatTable</literal> is an "
+"alternative. <literal>GetStatTable</literal> returns a list of rows, hence "
+"an array of arrayreferences. This leads to the same result as using "
+"<literal>GetStatElement</literal>."
 msgstr ""
 
 #. type: CDATA
@@ -10532,12 +10547,13 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:280
 msgid ""
-"GetStatTable gets all information about the stats query that is needed. The "
-"passed parameters contains information about the attributes (Restrictions, "
-"attributes that are used for x/y-axis) and the table structure. The table "
-"structure is a hash reference where the keys are the values of the y-axis "
-"and their values are hashreferences with the parameters used for "
-"GetStatElement subroutines."
+"<literal>GetStatTable</literal> gets all information about the stats query "
+"that is needed. The passed parameters contains information about the "
+"attributes (<literal>Restrictions</literal>, attributes that are used for "
+"x/y-axis) and the table structure. The table structure is a hash reference "
+"where the keys are the values of the y-axis and their values are "
+"hashreferences with the parameters used for "
+"<literal>GetStatElement</literal> subroutines."
 msgstr ""
 
 #. type: CDATA
@@ -10618,9 +10634,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:355
 msgid ""
 "Sometimes the headers of the table have to be changed. In that case, a "
-"subroutine called GetHeaderLine has to be implemented. That subroutine has "
-"to return an arrayreference with the column headers as elements. It gets "
-"information about the x-values passed."
+"subroutine called <literal>GetHeaderLine</literal> has to be "
+"implemented. That subroutine has to return an arrayreference with the column "
+"headers as elements. It gets information about the x-values passed."
 msgstr ""
 
 #. type: CDATA
@@ -10693,8 +10709,8 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:409
 msgid ""
-"ImportWrapper works the other way around - it converts the name to the ID in "
-"the instance the configuration is imported to."
+"<literal>ImportWrapper</literal> works the other way around - it converts "
+"the name to the ID in the instance the configuration is imported to."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -10970,7 +10986,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661
 #, no-wrap
 msgid ""
-"<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>\n"
+"<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
 "<otrs_config version=\"1.0\" init=\"Config\">\n"
 "    <ConfigItem "
 "Name=\"Stats::DynamicObjectRegistration###DynamicStatsTemplate\" "
@@ -11020,8 +11036,18 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:705
+msgid "<literal>new</literal>"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:708
-msgid "Param"
+msgid "<literal>Param</literal>"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:711
+msgid "<literal>Run</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -11061,8 +11087,9 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:748
 msgid ""
-"new creates a new instance of the static stats class. First it creates a new "
-"object and then it checks for the needed objects."
+"The <literal>new</literal> creates a new instance of the static stats "
+"class. First it creates a new object and then it checks for the needed "
+"objects."
 msgstr ""
 
 #. type: CDATA
@@ -11101,10 +11128,11 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:782
 msgid ""
-"The Param method provides the list of all parameters/attributes that can be "
-"selected to create a static stat. It gets some parameters passed: The values "
-"for the stats attributes provided in a request, the format of the stats and "
-"the name of the object (name of the module)."
+"The <literal>Param</literal> method provides the list of all "
+"parameters/attributes that can be selected to create a static stat. It gets "
+"some parameters passed: The values for the stats attributes provided in a "
+"request, the format of the stats and the name of the object (name of the "
+"module)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -11116,19 +11144,21 @@ msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:790
-msgid "Frontend"
+msgid "<literal>Frontend</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:798
-msgid "Data"
+msgid "<literal>Data</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:804
 msgid ""
-"Other parameter for the BuildSelection method of the LayoutObject can be "
-"used, as it is done with \"Size\" and \"Multiple\" in this sample module."
+"Other parameter for the <literal>BuildSelection</literal> method of the "
+"<literal>LayoutObject</literal> can be used, as it is done with "
+"<literal>Size</literal> and <literal>Multiple</literal> in this sample "
+"module."
 msgstr ""
 
 #. type: CDATA
@@ -11183,13 +11213,15 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:853
 msgid ""
-"The Run method actually generates the table data for the stats. It gets the "
-"attributes for this stats passed. In this sample it in %Param a key "
-"'TypeIDs' and a key 'QueueIDs' exist (see attributes in Param method) and "
-"their values are arrayreferences. The returned data consists of three parts: "
-"Two arrayreferences and an array. In the first arrayreference the title for "
-"the statistic is stored, the second arrayreference contains the headlines "
-"for the columns in the table. And then the data for the table body follow."
+"The <literal>Run</literal> method actually generates the table data for the "
+"stats. It gets the attributes for this stats passed. In this sample it in "
+"<literal>%Param</literal> a key <literal>TypeIDs</literal> and a key "
+"<literal>QueueIDs</literal> exist (see attributes in "
+"<literal>Param</literal> method) and their values are array references. The "
+"returned data consists of three parts: Two array references and an array. In "
+"the first array reference the title for the statistic is stored, the second "
+"array reference contains the headlines for the columns in the table. And "
+"then the data for the table body follow."
 msgstr ""
 
 #. type: CDATA
@@ -11444,7 +11476,8 @@ msgid ""
 "The files must merely be moved from the "
 "<filename>Kernel/System/Stats/</filename> path to "
 "<filename>Kernel/System/Stats/Static/</filename>. Additionally the package "
-"name of the respective script must be amended by \"::Static\"."
+"name of the respective script must be amended by "
+"<literal>::Static</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
