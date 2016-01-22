@@ -5,7 +5,7 @@
     <title>Dynamic Field Configuration File Example</title>
     <para>
         The configuration files are used to register the Dynamic Field Types (Driver) and
-        the Object Type Drivers for the BackendObject. They also store standard registrations for
+        the Object Type Drivers for the <literal>BackendObject</literal>. They also store standard registrations for
         Admin Modules in the framework.
     </para>
     <section id="dynamic-fields-new-field-config-code">
@@ -42,7 +42,7 @@
         <para>
             This setting registers the Password Dynamic Field Driver for the Backend module so it
             can be included in the list of available Dynamic Fields Types, it also specify its own
-            Admin Dialog in the key "ConfigDialog", this key is used by the Master Dynamic Field
+            Admin Dialog in the key <literal>ConfigDialog</literal>, this key is used by the Master Dynamic Field
             Admin Module to manage this new Dynamic Field Type.
         </para>
         <para>

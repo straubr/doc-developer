@@ -41,16 +41,16 @@
         <para>
             <itemizedlist mark="round">
                 <listitem>
-                    <para>new</para>
+                    <para><literal>new</literal></para>
                 </listitem>
                 <listitem>
-                    <para>ProviderProcessRequest</para>
+                    <para><literal>ProviderProcessRequest</literal></para>
                 </listitem>
                 <listitem>
-                    <para>ProviderGenerateResponse</para>
+                    <para><literal>ProviderGenerateResponse</literal></para>
                 </listitem>
                 <listitem>
-                    <para>RequesterPerformRequest</para>
+                    <para><literal>RequesterPerformRequest</literal></para>
                 </listitem>
             </itemizedlist>
         </para>
@@ -83,7 +83,7 @@
                 <programlisting><![CDATA[
 # --
 # Kernel/GenericInterface/Transport/HTTP/Test.pm - GenericInterface network transport interface for testing
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -134,9 +134,9 @@ sub new {
                 ]]></programlisting>
             </para>
             <para>
-                The constructor 'new' creates a new instance of the class. According to the coding
+                The constructor <literal>new</literal> creates a new instance of the class. According to the coding
                 guidelines only objects of other classes not handled by the object manager that are
-                needed in this module have to be created in "new".
+                needed in this module have to be created in <literal>new</literal>.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -180,9 +180,9 @@ sub ProviderProcessRequest {
                 ]]></programlisting>
             </para>
             <para>
-                The 'ProviderProcessRequest' function gets the request form the Remote System (in
+                The <literal>ProviderProcessRequest</literal> function gets the request form the Remote System (in
                 this case the same OTRS) and extracts the data and the operation to perform from
-                the request. For this example the operation is always 'test_operation'.
+                the request. For this example the operation is always <literal>test_operation</literal>.
             </para>
             <para>
                 The way this function parse the request to get the data and the operation name,

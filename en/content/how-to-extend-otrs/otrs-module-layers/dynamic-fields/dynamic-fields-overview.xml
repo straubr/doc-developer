@@ -9,8 +9,10 @@
     </para>
     <para>
         The Dynamic Fields are the evolution of the ticket and article Free Fields
-        ( "TikcetFreeText", "TicketFreeKey", "TicketFreeTime", "ArticleFreeText", "ArticleFreeKey"
-        and "ArticleFreeTime" ) from older versions of OTRS.
+        (<literal>TikcetFreeText</literal>, <literal>TicketFreeKey</literal>,
+        <literal>TicketFreeTime</literal>, <literal>ArticleFreeText</literal>,
+        <literal>ArticleFreeKey</literal> and <literal>ArticleFreeTime</literal>) from older
+        versions of OTRS.
     </para>
     <para>
         From OTRS version 3.1 the old Free Fields has been replaced with the new Dynamic Fields,

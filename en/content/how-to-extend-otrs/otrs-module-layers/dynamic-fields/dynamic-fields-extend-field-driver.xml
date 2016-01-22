@@ -17,13 +17,13 @@
         <title>Code Example:</title>
         <para>
             In this section the Foo extension for Text field driver is shown and explained. The
-            extension only implements the function Foo().
+            extension only implements the function <code>Foo()</code>.
          </para>
          <para>
             <programlisting><![CDATA[
 # --
 # Kernel/System/DynamicField/Driver/FooExtensionText.pm - Extension for DynamicField Text Driver
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -66,7 +66,7 @@ sub Foo {
             ]]></programlisting>
         </para>
         <para>
-            The function <emphasis>Foo()</emphasis> has no special logic it is only for testing and
+            The function <code>Foo()</code> has no special logic it is only for testing and
             it always returns 1.
         </para>
         <para>

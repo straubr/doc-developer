@@ -11,7 +11,7 @@
         <filename>Kernel/System/CustomerUser/Preferences/*.pm</filename>. For more information about their configuration see the admin manual.
         Following, there is an example of a customer-user preferences module.
         Save it under <filename>Kernel/System/CustomerUser/Preferences/Custom.pm</filename>.
-        You just need 4 functions: new(), SearchPreferences(), SetPreferences() and GetPreferences().
+        You just need 4 functions: <code>new()</code>, <code>SearchPreferences()</code>, <code>SetPreferences()</code> and <code>GetPreferences()</code>.
     </para>
     <section id="customer-user-preferences-module-code">
         <title>Code Example</title>

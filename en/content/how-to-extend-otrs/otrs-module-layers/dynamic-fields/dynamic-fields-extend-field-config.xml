@@ -68,7 +68,7 @@
             This is the registration for a extension in the "Text" Dynamic Field Driver the module
             will be loaded as a base class in the Driver. Notice also that new behaviors can be
             specified, this extended behaviors will be added to the behaviors that the Driver has
-            out of the box, therefore a call to HasBehavior() to check for this new behaviors will
+            out of the box, therefore a call to <code>HasBehavior()</code> to check for this new behaviors will
             be totally transparent.
         </para>
         <para>

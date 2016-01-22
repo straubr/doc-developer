@@ -144,7 +144,7 @@
                 <programlisting><![CDATA[
 # --
 # Kernel/GenericInterface/Mapping/Test.pm - GenericInterface test data mapping backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -163,10 +163,10 @@ our $ObjectManagerDisabled = 1;
             </para>
             <para>
                 This is common header that can be found in common OTRS modules. The class/package
-                name is declared via the package keyword.
+                name is declared via the <literal>package</literal> keyword.
             </para>
             <para>
-                We also include VariableCheck module to perform certain validation over some
+                We also include <literal>VariableCheck</literal> module to perform certain validation over some
                 variables. Mappings can not be instantiated by the Object Manager.
             </para>
             <para>
@@ -215,9 +215,9 @@ sub new {
                 ]]></programlisting>
             </para>
             <para>
-                The constructor 'new' creates a new instance of the class. According to the coding
+                The constructor <literal>new</literal> creates a new instance of the class. According to the coding
                 guidelines only objects of other classes not handled by the object manager that are
-                needed in this module have to be created in "new".
+                needed in this module have to be created in <literal>new</literal>.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -286,30 +286,30 @@ sub Map {
                 ]]></programlisting>
             </para>
             <para>
-                The 'map' function is the main part of each mapping module, it receives the mapping
+                The <literal>map</literal> function is the main part of each mapping module, it receives the mapping
                 configuration (rules) and the data in the original format (either OTRS or remote
                 system format) and converts it to a new format, even the structure of the data can
                 be changed during the mapping process.
             </para>
             <para>
                 In this particular example there are three rules to map the values this rules are
-                set in the mapping configuration key "TestOption" and they are ToUpper, ToLower and
-                Empty.
+                set in the mapping configuration key <literal>TestOption</literal> and they are <literal>ToUpper</literal>, <literal>ToLower</literal> and
+                <literal>Empty</literal>.
             </para>
             <itemizedlist mark="round">
                 <listitem>
                     <para>
-                        ToUpper: converts each data value to upper case.
+                        <literal>ToUpper</literal>: converts each data value to upper case.
                     </para>
                 </listitem>
                 <listitem>
                     <para>
-                        ToLower: converts each data value to lower case.
+                        <literal>ToLower</literal>: converts each data value to lower case.
                     </para>
                 </listitem>
                 <listitem>
                     <para>
-                        Empty: converts each data value into an empty string.
+                        <literal>Empty</literal>: converts each data value into an empty string.
                     </para>
                 </listitem>
             </itemizedlist>
@@ -354,7 +354,7 @@ sub _Empty {
                 ]]></programlisting>
             </para>
             <para>
-                This are the helper functions that actually performs the string conversions
+                This are the helper functions that actually performs the string conversions.
             </para>
             <para>
                 <programlisting><![CDATA[

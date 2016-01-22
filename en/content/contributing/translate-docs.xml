@@ -5,15 +5,15 @@
     <title>Translating the Documentation</title>
 
     <para>
-        The OTRS admin manual can be translated via transifex as described in <link linkend="translate">
-        the section on translating OTRS</link>. You can join a language team on transifex to improve an existing
+        The OTRS admin manual can be translated via Transifex as described in <link linkend="translate">
+        the section on translating OTRS</link>. You can join a language team on Transifex to improve an existing
         translation or even suggest a new language to translate the admin manual to.
     </para>
     <para>
         It is important that the structure of the generated XML stays intact.
-        So if the original string is "<literal>Edit &lt;filename&gt;Kernel/Config.pm&lt;/filename&gt;</literal>",
-        then the German translation has to be "<literal>&lt;filename&gt;Kernel/Config.pm&lt;/filename&gt; bearbeiten</literal>",
-        keeping the the XML tags intact. Regular &lt; and &gt; signs that are escaped in the source text must also be escaped in the traslations (like "<literal>&amp;lt;someone@example.com&amp;gt;</literal>").
+        So if the original string is <literal>Edit &lt;filename&gt;Kernel/Config.pm&lt;/filename&gt;</literal>,
+        then the German translation has to be <literal>&lt;filename&gt;Kernel/Config.pm&lt;/filename&gt; bearbeiten</literal>,
+        keeping the the XML tags intact. Regular &lt; and &gt; signs that are escaped in the source text must also be escaped in the traslations (like <literal>&amp;lt;someone@example.com&amp;gt;</literal>).
         Scripts and examples usually do not have to be translated (so you can just copy the source text to the translation text field in this case).
     </para>
 </section>

@@ -11,7 +11,7 @@
         <filename>Kernel/System/Service/*.pm</filename>. For more information about their configuration see the admin manual.
         Following, there is an example of a service preferences module.
         Save it under <filename>Kernel/System/Service/PreferencesCustom.pm</filename>.
-        You just need 3 functions: new(), ServicePreferencesSet() and ServicePreferencesGet(). Return 1, then the
+        You just need 3 functions: <code>new()</code>, <code>ServicePreferencesSet()</code> and <code>ServicePreferencesGet()</code>. Return 1, then the
         synchronization is ok.
     </para>
     <section id="service-preferences-module-code">

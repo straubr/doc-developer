@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2016-01-07 09:53+0100\n"
-"PO-Revision-Date: 2016-01-07 10:09+0000\n"
+"POT-Creation-Date: 2016-01-22 15:21+0100\n"
+"PO-Revision-Date: 2016-01-22 14:22+0000\n"
 "Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/otrs/OTRS/language/hu/)\n"
 "Language: hu\n"
@@ -807,9 +807,9 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/contributing/translate-docs.xml:8
 msgid ""
-"The OTRS admin manual can be translated via transifex as described in <link "
+"The OTRS admin manual can be translated via Transifex as described in <link "
 "linkend=\"translate\"> the section on translating OTRS</link>. You can join "
-"a language team on transifex to improve an existing translation or even "
+"a language team on Transifex to improve an existing translation or even "
 "suggest a new language to translate the admin manual to."
 msgstr ""
 
@@ -817,14 +817,14 @@ msgstr ""
 #: en/content/contributing/translate-docs.xml:13
 msgid ""
 "It is important that the structure of the generated XML stays intact.  So if "
-"the original string is \"<literal>Edit &lt;filename&gt;Kernel/Config.pm&lt;/"
-"filename&gt;</literal>\", then the German translation has to be "
-"\"<literal>&lt;filename&gt;Kernel/Config.pm&lt;/filename&gt; bearbeiten</"
-"literal>\", keeping the the XML tags intact. Regular &lt; and &gt; signs "
-"that are escaped in the source text must also be escaped in the traslations "
-"(like \"<literal>&amp;lt;someone@example.com&amp;gt;</literal>\").  Scripts "
-"and examples usually do not have to be translated (so you can just copy the "
-"source text to the translation text field in this case)."
+"the original string is <literal>Edit &lt;filename&gt;Kernel/Config.pm&lt;/"
+"filename&gt;</literal>, then the German translation has to be <literal>&lt;"
+"filename&gt;Kernel/Config.pm&lt;/filename&gt; bearbeiten</literal>, keeping "
+"the the XML tags intact. Regular &lt; and &gt; signs that are escaped in the "
+"source text must also be escaped in the traslations (like <literal>&amp;lt;"
+"someone@example.com&amp;gt;</literal>).  Scripts and examples usually do not "
+"have to be translated (so you can just copy the source text to the "
+"translation text field in this case)."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -850,7 +850,7 @@ msgstr ""
 msgid ""
 "Starting with OTRS 4, all translations of the OTRS GUI and the public "
 "extension modules are managed via <ulink url=\"http://www.transifex.com"
-"\">transifex</ulink>.  The OTRS project on transifex can be found at <ulink "
+"\">transifex</ulink>.  The OTRS project on Transifex can be found at <ulink "
 "url=\"https://www.transifex.com/otrs/OTRS/\">https://www.transifex.com/otrs/"
 "OTRS/</ulink>."
 msgstr ""
@@ -877,7 +877,7 @@ msgstr ""
 msgid ""
 "If you want to translate the OTRS framework into a new language, you can "
 "propose a new language translation on <ulink url=\"https://www.transifex.com/"
-"otrs/OTRS/\">the transifex OTRS project page</ulink>. After it is approved, "
+"otrs/OTRS/\">the Transifex OTRS project page</ulink>. After it is approved, "
 "you can just start translating."
 msgstr ""
 
@@ -968,8 +968,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/contributing/unit-tests.xml:13
 msgid ""
-"The test files are stored in .t files under /scripts/test/*.t.  For example "
-"the file /scripts/test/Calendar.t for the Calendar Module."
+"The test files are stored in .t files under <filename>/scripts/test/*.t</"
+"filename>.  For example the file <filename>/scripts/test/Calendar.t</"
+"filename> for the Calendar Module."
 msgstr ""
 
 #. type: CDATA
@@ -1016,8 +1017,8 @@ msgstr ""
 #: en/content/contributing/unit-tests.xml:17
 msgid ""
 "A test file consists of the function call of the function to be tested and "
-"the analysis of the return value.  Example (/scripts/test/Calendar.t): "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
+"the analysis of the return value.  Example (<filename>/scripts/test/Calendar."
+"t</filename>): <placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -1038,8 +1039,9 @@ msgstr ""
 #: en/content/contributing/unit-tests.xml:64
 msgid ""
 "You also need to have an instance of the OTRS web frontend running on the "
-"FQDN that is configured in your local OTRS's Config.pm file. This OTRS "
-"instance must use the same database that is configured for the unit tests."
+"FQDN that is configured in your local OTRS's <filename>Config.pm</filename> "
+"file. This OTRS instance must use the same database that is configured for "
+"the unit tests."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -1988,29 +1990,34 @@ msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:257
-msgid "Don't use \"die\" and \"exit\" in .pm-files."
+msgid ""
+"Don't use <literal>die</literal> and <literal>exit</literal> in <filename>."
+"pm</filename> files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:260
-msgid "Don't use the \"Dumper\" function in released files."
+msgid "Don't use the <literal>Dumper</literal> function in released files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:263
-msgid "Don't use \"print\" in .pm files."
+msgid "Don't use <literal>print</literal> in <filename>.pm</filename> files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:266
-msgid "Don't use \"require\", use Main::Require() instead."
+msgid ""
+"Don't use <literal>require</literal>, use <literal>Main::Require()</literal> "
+"instead."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:269
 msgid ""
-"Use the functions of the TimeObject instead of the builtin functions like "
-"time(), localtime() etc."
+"Use the functions of the <literal>TimeObject</literal> instead of the "
+"builtin functions like <literal>time()</literal>, <literal>localtime()</"
+"literal> etc."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -2093,8 +2100,8 @@ msgstr ""
 msgid ""
 "Names should be as descriptive as possible.  A reader should be able to say "
 "what is meant by a name without digging too deep into the code. E.g. use "
-"$ConfigItemID instead of $ID.  <placeholder type=\"programlisting\" id=\"0\"/"
-">"
+"<literal>$ConfigItemID</literal> instead of <literal>$ID</literal>.  "
+"<placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
@@ -2150,9 +2157,10 @@ msgstr ""
 #. type: Content of: <section><section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:350
 msgid ""
-"Do not set to \"undef\" or '' in the declaration as this might hide mistakes "
-"in code.  <placeholder type=\"programlisting\" id=\"0\"/> You can set a "
-"variable to '' if you want to concatenate strings: <placeholder type="
+"Do not set to <literal>undef</literal> or <literal>''</literal> in the "
+"declaration as this might hide mistakes in code.  <placeholder type="
+"\"programlisting\" id=\"0\"/> You can set a variable to <literal>''</"
+"literal> if you want to concatenate strings: <placeholder type="
 "\"programlisting\" id=\"1\"/> Otherwise you would get an \"uninitialized\" "
 "warning."
 msgstr ""
@@ -2171,9 +2179,9 @@ msgstr ""
 #: en/content/contributing/code-style-guide/perl.xml:383
 msgid ""
 "To fetch the parameters passed to subroutines, OTRS normally uses the hash "
-"%Param (not %Params).  This leads to more readable code as every time we use "
-"%Param in the subroutine code we know it is the parameter hash passed to the "
-"subroutine."
+"<literal>%Param</literal> (not <literal>%Params</literal>).  This leads to "
+"more readable code as every time we use <literal>%Param</literal> in the "
+"subroutine code we know it is the parameter hash passed to the subroutine."
 msgstr ""
 
 #. type: CDATA
@@ -2292,10 +2300,10 @@ msgid ""
 "followed by a subroutine call.  <placeholder type=\"programlisting\" id="
 "\"0\"/> The following example is better as this says explicitly what is "
 "returned. With the example above the reader doesn't know what the return "
-"value is as he might not know what Do() returns.  <placeholder type="
-"\"programlisting\" id=\"1\"/> If you assign the result of a subroutine to a "
-"variable, a \"good\" variable name indicates what was returned: <placeholder "
-"type=\"programlisting\" id=\"2\"/>"
+"value is as he might not know what <literal>Do()</literal> returns.  "
+"<placeholder type=\"programlisting\" id=\"1\"/> If you assign the result of "
+"a subroutine to a variable, a \"good\" variable name indicates what was "
+"returned: <placeholder type=\"programlisting\" id=\"2\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -2337,9 +2345,10 @@ msgstr ""
 #. type: Content of: <section><section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:479
 msgid ""
-"use strict and use warnings have to be the first two \"use\"s in a module. "
-"This is correct: <placeholder type=\"programlisting\" id=\"0\"/> This is "
-"wrong: <placeholder type=\"programlisting\" id=\"1\"/>"
+"<literal>use strict</literal> and <literal>use warnings</literal> have to be "
+"the first two \"use\"s in a module. This is correct: <placeholder type="
+"\"programlisting\" id=\"0\"/> This is wrong: <placeholder type="
+"\"programlisting\" id=\"1\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
@@ -2356,17 +2365,23 @@ msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:514
-msgid "Don't use the LayoutObject in core modules (Kernel/System)."
+msgid ""
+"Don't use the <literal>LayoutObject</literal> in core modules "
+"(<filename>Kernel/System</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:517
-msgid "Don't use the ParamObject in core modules (Kernel/System)."
+msgid ""
+"Don't use the <literal>ParamObject</literal> in core modules "
+"(<filename>Kernel/System</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:520
-msgid "Don't use the DBObject in frontend modules (Kernel/Modules)."
+msgid ""
+"Don't use the <literal>DBObject</literal> in frontend modules "
+"(<filename>Kernel/Modules</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -2415,7 +2430,8 @@ msgid ""
 "general description about what the subroutine does, a sample subroutine call "
 "and what the subroutine returns. It should be in this order. A sample "
 "documentation looks like this: <placeholder type=\"programlisting\" id=\"0\"/"
-"> You can copy and paste a Data::Dumper output for the return values."
+"> You can copy and paste a <literal>Data::Dumper</literal> output for the "
+"return values."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -2512,8 +2528,8 @@ msgid ""
 "The SQL statement should be written as one nicely indented string without "
 "concatenation like this: <placeholder type=\"programlisting\" id=\"0\"/> "
 "This is easy to read and modify, and the whitespace can be handled well by "
-"our supported DBMSs.  For auto-generated SQL code (like in TicketSearch), "
-"this indentation is not neccessary."
+"our supported DBMSs.  For auto-generated SQL code (like in "
+"<literal>TicketSearch</literal>), this indentation is not neccessary."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -2554,8 +2570,8 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:644
 msgid ""
-"Use Limit => 1 if you expect just one row to be returned.  <placeholder type="
-"\"programlisting\" id=\"0\"/>"
+"Use <literal>Limit => 1</literal> if you expect just one row to be "
+"returned.  <placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -2963,38 +2979,38 @@ msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:169
-msgid "Kernel::System::Config (to access config options)"
-msgstr "Kernel::System::Config (beállítási lehetőségek hozzáféréséhez)"
+msgid "<literal>Kernel::System::Config</literal> (to access config options)"
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:172
-msgid "Kernel::System::Log (to log into OTRS log backend)"
-msgstr "Kernel::System::Log (naplózáshoz az OTRS naplózó háttérprogramjába)"
+msgid "<literal>Kernel::System::Log</literal> (to log into OTRS log backend)"
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:175
-msgid "Kernel::System::DB (to access the database backend)"
-msgstr "Kernel::System::DB (az adatbázis háttérprogram hozzáféréséhez)"
+msgid "<literal>Kernel::System::DB</literal> (to access the database backend)"
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:178
-msgid "Kernel::System::Auth (to check user authentication)"
-msgstr "Kernel::System::Auth (felhasználói hitelesítés ellenőrzéséhez)"
+msgid "<literal>Kernel::System::Auth</literal> (to check user authentication)"
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:181
-msgid "Kernel::System::User (to manage users)"
-msgstr "Kernel::System::User (felhasználók kezeléséhez)"
+msgid "<literal>Kernel::System::User</literal> (to manage users)"
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:184
-msgid "Kernel::System::Group (to manage groups)"
-msgstr "Kernel::System::Group (csoportok kezeléséhez)"
+msgid "<literal>Kernel::System::Group</literal> (to manage groups)"
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:187
-msgid "Kernel::System::Email (for sending emails)"
-msgstr "Kernel::System::Email (e-mailek küldéséhez)"
+msgid "<literal>Kernel::System::Email</literal> (for sending emails)"
+msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/get-started/architecture.xml:192
@@ -3040,30 +3056,24 @@ msgstr "Előtétprogram modulok"
 #: en/content/get-started/architecture.xml:209
 msgid ""
 "Frontend modules are located under <filename>$OTRS_HOME/Kernel/Modules/*.pm</"
-"filename>. There are two public functions in there - \"new()\" and \"run()\" "
-"- which are accessed from the Frontend Handle (e.g. index.pl)."
+"filename>. There are two public functions in there - <code>new()</code> and "
+"<code>run()</code> - which are accessed from the Frontend Handle (e.g. "
+"<filename>index.pl</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/get-started/architecture.xml:214
 msgid ""
-"\"new()\" is used to create a frontend module object. The Frontend Handle "
-"provides the used frontend module with the basic framework objects. These "
-"are, for example: ParamObject (to get web form params), DBObject (to use "
-"existing database connections), LayoutObject (to use templates and other "
-"html layout functions), ConfigObject (to access config settings), LogObject "
-"(to use the framework log system), UserObject (to get the user functions "
-"from the current user), GroupObject (to get the group functions)."
+"<code>new()</code> is used to create a frontend module object. The Frontend "
+"Handle provides the used frontend module with the basic framework objects. "
+"These are, for example: <literal>ParamObject</literal> (to get web form "
+"params), <literal>DBObject</literal> (to use existing database connections), "
+"<literal>LayoutObject</literal> (to use templates and other html layout "
+"functions), <literal>ConfigObject</literal> (to access config settings), "
+"<literal>LogObject</literal> (to use the framework log system), "
+"<literal>UserObject</literal> (to get the user functions from the current "
+"user), <literal>GroupObject</literal> (to get the group functions)."
 msgstr ""
-"A „new()” előtétprogram modul objektumok létrehozásához használható. Az "
-"előtétprogram kezelés biztosítja a használt előtétprogram modulokat az "
-"alapvető keretrendszer objektumokkal. Ezek például a következők: ParamObject "
-"(webes űrlapparaméterek lekéréséhez), DBObject (meglévő adatbázis-"
-"kapcsolatok használatához), LayoutObject (sablonok és egyéb HTML elrendezés "
-"függvények használatához), ConfigObject (konfigurációs beállítások "
-"hozzáféréséhez), LogObject (a keretrendszer naplózó rendszerének "
-"használatához), UserObject (a felhasználói függvények lekéréséhez a "
-"jelenlegi felhasználótól), GroupObject (a csoportfüggvények lekéréséhez)."
 
 #. type: Content of: <section><section><para>
 #: en/content/get-started/architecture.xml:223
@@ -3083,12 +3093,9 @@ msgstr "CMD előtétprogram"
 #: en/content/get-started/architecture.xml:230
 msgid ""
 "The CMD (Command) Frontend is like the Web Frontend Handle and the Web "
-"Frontend Module in one (just without the LayoutObject) and uses the core "
-"modules for some actions in the system."
+"Frontend Module in one (just without the <literal>LayoutObject</literal>) "
+"and uses the core modules for some actions in the system."
 msgstr ""
-"A CMD (Command - Parancs) előtétprogram a webes előtétprogram kezeléshez és "
-"a webes előtétprogram modulokhoz együtt hasonló (csak a LayoutObject "
-"nélkül), és az alapvető modulokat használja néhány műveletnél a rendszeren."
 
 #. type: Content of: <section><section><title>
 #: en/content/get-started/architecture.xml:236
@@ -3107,56 +3114,52 @@ msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:246
-msgid "Kernel::GenericInterface::Transport (to interact with remote systems)"
+msgid ""
+"<literal>Kernel::GenericInterface::Transport</literal> (to interact with "
+"remote systems)"
 msgstr ""
-"Kernel::GenericInterface::Transport (kölcsönhatásba lépéshez távoli "
-"rendszerekkel)"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:251
 msgid ""
-"Kernel::GenericInterface::Mapping (to transform data into a required format)"
+"<literal>Kernel::GenericInterface::Mapping</literal> (to transform data into "
+"a required format)"
 msgstr ""
-"Kernel::GenericInterface::Mapping (adatok átalakításához egy szükséges "
-"formátumba)"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:256
 msgid ""
-"Kernel::GenericInterface::Requester (to use OTRS as a client for the web "
-"service)"
+"<literal>Kernel::GenericInterface::Requester</literal> (to use OTRS as a "
+"client for the web service)"
 msgstr ""
-"Kernel::GenericInterface::Requester (az OTRS mint kérelmezőként való "
-"használatához a webszolgáltatásnál)"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:262
 msgid ""
-"Kernel::GenericInterface::Provider (to use OTRS as a server for web service)"
+"<literal>Kernel::GenericInterface::Provider</literal> (to use OTRS as a "
+"server for web service)"
 msgstr ""
-"Kernel::GenericInterface::Provider (az OTRS mint kiszolgálóként való "
-"használatához a webszolgáltatásnál)"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:267
-msgid "Kernel::GenericInterface::Operation (to execute Provider actions)"
+msgid ""
+"<literal>Kernel::GenericInterface::Operation</literal> (to execute Provider "
+"actions)"
 msgstr ""
-"Kernel::GenericInterface::Operation (szolgáltató műveletek végrehajtásához)"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:272
-msgid "Kernel::GenericInterface::Invoker (to execute Requester actions)"
+msgid ""
+"<literal>Kernel::GenericInterface::Invoker</literal> (to execute Requester "
+"actions)"
 msgstr ""
-"Kernel::GenericInterface::Invoker (kérelmező műveletek végrehajtásához)"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:277
 msgid ""
-"Kernel::GenericInterface::Debugger (to track web service communication, "
-"using log entries)"
+"<literal>Kernel::GenericInterface::Debugger</literal> (to track web service "
+"communication, using log entries)"
 msgstr ""
-"Kernel::GenericInterface::Debugger (webszolgáltatás kommunikációjának "
-"követéséhez naplóbejegyzések használatával)"
 
 #. type: Content of: <section><section><section><title>
 #: en/content/get-started/architecture.xml:288
@@ -3168,10 +3171,10 @@ msgstr "Általános felület meghívó modulok"
 msgid ""
 "Generic Interface Invoker modules are located under <filename>$OTRS_HOME/"
 "Kernel/GenericInterface/Invoker/*</filename>. Each Invoker is contained in a "
-"folder called \"Controller\". This approach helps to define a name space not "
-"only for internal classes and methods but for filenames too. For example: "
-"<filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/Test/</filename> is the "
-"Controller for all Test-type invokers."
+"folder called <literal>Controller</literal>. This approach helps to define a "
+"name space not only for internal classes and methods but for filenames too. "
+"For example: <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/Test/</"
+"filename> is the Controller for all Test-type invokers."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -3206,10 +3209,11 @@ msgstr "Általános felület műveleti modulok"
 msgid ""
 "Generic Interface Operation modules are located under <filename>$OTRS_HOME/"
 "Kernel/GenericInterface/Operation/*</filename>. Each Operation is contained "
-"in a folder called \"Controller\". This approach help to define a name space "
-"not only for internal classes and methods but for filenames too. For "
-"example: <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/Ticket/</"
-"filename> is the Controller for all Ticket-type operations."
+"in a folder called <literal>Controller</literal>. This approach help to "
+"define a name space not only for internal classes and methods but for "
+"filenames too. For example: <filename>$OTRS_HOME/Kernel/GenericInterface/"
+"Operation/Ticket/</filename> is the Controller for all Ticket-type "
+"operations."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -3256,10 +3260,10 @@ msgstr "Ütemező feladatkezelő modulok"
 msgid ""
 "Scheduler Task Handler modules are located under <filename>$OTRS_HOME/Kernel/"
 "Scheduler/TaskHandler/*</filename>. These modules are used to perform "
-"asynchronous tasks. For example, the GenericInterface task handler perform "
-"Generic Interface Requests to Remote Systems outside the apache process. "
-"This helps the system to be more responsive, preventing possible performance "
-"issues."
+"asynchronous tasks. For example, the <literal>GenericInterface</literal> "
+"task handler perform Generic Interface Requests to Remote Systems outside "
+"the apache process. This helps the system to be more responsive, preventing "
+"possible performance issues."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -3337,13 +3341,10 @@ msgstr "shell> git clone git@github.com:OTRS/module-tools.git\n"
 #. type: Content of: <section><section><para>
 #: en/content/get-started/development-environment.xml:18
 msgid ""
-"<placeholder type=\"screen\" id=\"0\"/> Check out the \"module-tools\" "
-"module (from github) too, for your development environment. It contains a "
-"number of useful tools: <placeholder type=\"screen\" id=\"1\"/>"
+"<placeholder type=\"screen\" id=\"0\"/> Check out the <literal>module-tools</"
+"literal> module (from github) too, for your development environment. It "
+"contains a number of useful tools: <placeholder type=\"screen\" id=\"1\"/>"
 msgstr ""
-"<placeholder type=\"screen\" id=\"0\"/> Töltse le a „module-tools” modult is "
-"(a githubról) a fejlesztői környezetéhez. Ez számos hasznos eszközt "
-"tartalmaz: <placeholder type=\"screen\" id=\"1\"/>"
 
 #. type: Content of: <section><section><para>
 #: en/content/get-started/development-environment.xml:30
@@ -3674,24 +3675,15 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-it-works/config-mechanism.xml:80
 msgid ""
-"If the optional attribute \"ConfigLevel\" is set, the config variable might "
-"not be edited by the administrator, depending on his own config level. The "
-"config variable \"ConfigLevel\" sets the level of technical experience of "
-"the administrator. It can be 100 (Expert), 200 (Advanced) or 300 "
-"(Beginner).  As a guideline which config level should be given to an option, "
-"it is recommended that all options having to do with the configuration of "
-"externel interaction, like Sendmail, LDAP, SOAP, and others should get a "
-"config level of at least 200 (Advanced)."
+"If the optional attribute <literal>ConfigLevel</literal> is set, the config "
+"variable might not be edited by the administrator, depending on his own "
+"config level. The config variable <literal>ConfigLevel</literal> sets the "
+"level of technical experience of the administrator. It can be 100 (Expert), "
+"200 (Advanced) or 300 (Beginner).  As a guideline which config level should "
+"be given to an option, it is recommended that all options having to do with "
+"the configuration of externel interaction, like Sendmail, LDAP, SOAP, and "
+"others should get a config level of at least 200 (Advanced)."
 msgstr ""
-"Ha az opcionális „ConfigLevel” attribútum be van állítva, akkor a beállítási "
-"változót esetleg nem szerkesztheti az adminisztrátor a saját beállítási "
-"szintjétől függően. A „ConfigLevel” beállítási változó állítja be az "
-"adminisztrátor szakmai tapasztalatának szintjét. Lehet 100 (Szakértő), 200 "
-"(Speciális) vagy 300 (Kezdő). Iránymutatásként, hogy mely beállítási szintet "
-"kell egy lehetőséghez megadni, az az ajánlott, hogy az összes olyan "
-"lehetőségnek, amelyet külső interakció beállításával kell megtenni (mint "
-"például Sendmail, LDAP, SOAP és egyebek), legalább 200 (Speciális) "
-"beállítási szintet kell kapnia."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-it-works/config-mechanism.xml:88
@@ -4283,11 +4275,8 @@ msgstr ""
 #: en/content/how-it-works/database-mechanism.xml:70
 msgid ""
 "Use the Bind attribute where ever you can, especially for long statements. "
-"If you use Bind you do not need the function Quote()."
+"If you use Bind you do not need the function <code>Quote()</code>."
 msgstr ""
-"Használja a Bind attribútumot, ahol csak tudja, különösen a hosszú "
-"utasításoknál. Ha a Bind attribútumot használja, akkor nincs szükség a "
-"Quote() függvényre."
 
 #. type: Content of: <section><section><section><section><title>
 #: en/content/how-it-works/database-mechanism.xml:76
@@ -4329,9 +4318,10 @@ msgstr "Szám: <placeholder type=\"programlisting\" id=\"0\"/>"
 
 #. type: Content of: <section><section><section><section><note><para>
 #: en/content/how-it-works/database-mechanism.xml:97
-msgid "Please use the Bind attribute instead of Quote() where ever you can."
+msgid ""
+"Please use the Bind attribute instead of <code>Quote()</code> where ever you "
+"can."
 msgstr ""
-"A Bind attribútumot használja a Quote() függvény helyett, ahol csak tudja."
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-it-works/database-mechanism.xml:103
@@ -4585,8 +4575,8 @@ msgstr "Oracle"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-it-works/database-mechanism.xml:227
-msgid "Microsoft SQL Server (mssql)"
-msgstr "Microsoft SQL Server (mssql)"
+msgid "Microsoft SQL Server (MSSQL)"
+msgstr ""
 
 #. type: Content of: <section><title>
 #: en/content/how-it-works/loader.xml:5
@@ -5401,11 +5391,9 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/how-it-works/log-mechanism.xml:10
 msgid ""
-"The Log object can be accessed and used via the ObjectManager like this: "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
+"The Log object can be accessed and used via the <literal>ObjectManager</"
+"literal> like this: <placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
-"A Log objektum az ObjectManager modulon keresztül érhető el és használható "
-"ehhez hasonlóan: <placeholder type=\"programlisting\" id=\"0\"/>"
 
 #. type: Content of: <section><title>
 #: en/content/how-it-works/skins.xml:5
@@ -7776,8 +7764,9 @@ msgid ""
 "<filename>Kernel/System/Auth/*.pm</filename>. For more information about "
 "their configuration see the admin manual.  Following, there is an example of "
 "a simple agent auth module. Save it under <filename>Kernel/System/Auth/"
-"Simple.pm</filename>.  You just need 3 functions: new(), GetOption() and "
-"Auth(). Return the uid, then the authentication is ok."
+"Simple.pm</filename>.  You just need 3 functions: <code>new()</code>, "
+"<code>GetOption()</code> and <code>Auth()</code>. Return the uid, then the "
+"authentication is ok."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -7808,7 +7797,7 @@ msgid ""
 "# --\n"
 "# Kernel/System/Auth/CustomAuth.pm - provides the CustomAuth authentication\n"
 "# based on Martin Edenhofer's Kernel::System::Auth::DB\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# ID: CustomAuth.pm,v 1.1 2010/05/10 15:30:34 fk Exp $\n"
 "# --\n"
@@ -8015,7 +8004,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1085
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:58
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:173
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:51
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:57
 msgid "Release Availability"
 msgstr "Kiadási elérhetőség"
 
@@ -8108,7 +8097,8 @@ msgid ""
 "about their configuration see the admin manual.  Following, there is an "
 "example of an authentication synchronization module.  Save it under "
 "<filename>Kernel/System/Auth/Sync/CustomAuthSync.pm</filename>.  You just "
-"need 2 functions: new() and Sync(). Return 1, then the synchronization is ok."
+"need 2 functions: <code>new()</code> and <code>Sync()</code>. Return 1, then "
+"the synchronization is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -8125,7 +8115,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/Auth/Sync/CustomAuthSync.pm - provides the CustomAuthSync\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# Id: CustomAuthSync.pm,v 1.9 2010/03/25 14:42:45 martin Exp $\n"
 "# --\n"
@@ -8220,7 +8210,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1079
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:52
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:165
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:42
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:48
 msgid "Caveats and Warnings"
 msgstr ""
 
@@ -8246,8 +8236,8 @@ msgid ""
 "more information about their configuration see the admin manual.  Following, "
 "there is an example of a simple customer auth module. Save it under "
 "<filename>Kernel/System/CustomerAuth/Simple.pm</filename>.  You just need 3 "
-"functions: new(), GetOption() and Auth(). Return the uid, then the "
-"authentication is ok."
+"functions: <code>new()</code>, <code>GetOption()</code> and <code>Auth()</"
+"code>. Return the uid, then the authentication is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -8265,7 +8255,7 @@ msgid ""
 "# --\n"
 "# Kernel/System/CustomerAuth/CustomAuth.pm - provides the custom Authentication\n"
 "# based on Martin Edenhofer's Kernel::System::Auth::DB\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# Id: CustomAuth.pm,v 1.11 2009/09/22 15:16:05 mb Exp $\n"
 "# --\n"
@@ -8453,8 +8443,8 @@ msgid ""
 "more information about their configuration see the admin manual.  Following, "
 "there is an example of a customer-user preferences module.  Save it under "
 "<filename>Kernel/System/CustomerUser/Preferences/Custom.pm</filename>.  You "
-"just need 4 functions: new(), SearchPreferences(), SetPreferences() and "
-"GetPreferences()."
+"just need 4 functions: <code>new()</code>, <code>SearchPreferences()</code>, "
+"<code>SetPreferences()</code> and <code>GetPreferences()</code>."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -8472,7 +8462,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/CustomerUser/Preferences/Custom.pm - some customer user functions\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# Id: Custom.pm,v 1.20 2009/10/07 20:41:50 martin Exp $\n"
 "# --\n"
@@ -8891,22 +8881,20 @@ msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:20
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:126
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:20
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:44
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:20
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:16
-msgid "new"
-msgstr "új"
+#: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:705
+msgid "<literal>new</literal>"
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:23
-msgid "PrepareRequest"
+msgid "<literal>PrepareRequest</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:26
-msgid "HandleResponse"
+msgid "<literal>HandleResponse</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -8927,7 +8915,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:36
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:716
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:14
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:20
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:26
 msgid "Code example"
 msgstr ""
 
@@ -9003,9 +8991,10 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:90
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:137
 msgid ""
-"The constructor 'new' creates a new instance of the class. According to the "
-"coding guidelines only objects of other classes not handled by the object "
-"manager that are needed in this module have to be created in \"new\"."
+"The constructor <literal>new</literal> creates a new instance of the class. "
+"According to the coding guidelines only objects of other classes not handled "
+"by the object manager that are needed in this module have to be created in "
+"<literal>new</literal>."
 msgstr ""
 
 #. type: CDATA
@@ -9044,37 +9033,38 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:128
 msgid ""
-"The 'PrepareRequest' function is used to handle and collect all needed data "
-"to be sent into the request, here we can receive data from the request "
-"handler, use it, extend it, generate new data, and after that, we can "
-"transfer the results to the mapping layer."
+"The <literal>PrepareRequest</literal> function is used to handle and collect "
+"all needed data to be sent into the request, here we can receive data from "
+"the request handler, use it, extend it, generate new data, and after that, "
+"we can transfer the results to the mapping layer."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:134
 msgid ""
 "For this example we are expecting to receive a ticket number, if there isn't "
-"then we use the debugger method \"Error()\" that creates an entry in the "
-"debug log and also returns a structure with the parameter Success as 0 and "
-"Error Message as the passed summary."
+"then we use the debugger method <code>Error()</code> that creates an entry "
+"in the debug log and also returns a structure with the parameter Success as "
+"0 and Error Message as the passed summary."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:140
 msgid ""
 "Also this example appends the word \"Test\" to the parameter \"Action\" and "
-"if GetSystemTime is requested, it will fill the SystemTime parameter with "
-"the current system time. This part of the code is to prepare the data to be "
-"sent, on a real invoker some calls to core modules (<filename>Kernel/System/"
-"*.pm</filename>) should be made here."
+"if <literal>GetSystemTime</literal> is requested, it will fill the "
+"<literal>SystemTime</literal> parameter with the current system time. This "
+"part of the code is to prepare the data to be sent, on a real invoker some "
+"calls to core modules (<filename>Kernel/System/*.pm</filename>) should be "
+"made here."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:146
 msgid ""
-"If during any part of the 'PrepareRequest' function the request need to be "
-"stop without generating and error an entry in the debug log the following "
-"code can be used:"
+"If during any part of the <literal>PrepareRequest</literal> function the "
+"request need to be stop without generating and error an entry in the debug "
+"log the following code can be used:"
 msgstr ""
 
 #. type: CDATA
@@ -9151,18 +9141,18 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:215
 msgid ""
-"The 'HandleResponse' function is used to receive and process the data from "
-"the previous request, that was made to the Remote System this data already "
-"passed by Mapping layer, to transform it from Remote System format to OTRS "
-"format (if needed)."
+"The <literal>HandleResponse</literal> function is used to receive and "
+"process the data from the previous request, that was made to the Remote "
+"System this data already passed by Mapping layer, to transform it from "
+"Remote System format to OTRS format (if needed)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:221
 msgid ""
 "For this particular example it checks the ticket number again and check if "
-"the action ends with the word 'Test' (as was done in the 'PrepareRequest' "
-"function)."
+"the action ends with the word 'Test' (as was done in the "
+"<literal>PrepareRequest</literal> function)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -9376,6 +9366,13 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:126
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:20
+#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:20
+msgid "new"
+msgstr "új"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:129
 msgid "Map"
 msgstr ""
@@ -9421,19 +9418,17 @@ msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:165
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:58
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:109
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:78
 msgid ""
 "This is common header that can be found in common OTRS modules. The class/"
-"package name is declared via the package keyword."
+"package name is declared via the <literal>package</literal> keyword."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:169
 msgid ""
-"We also include VariableCheck module to perform certain validation over some "
-"variables. Mappings can not be instantiated by the Object Manager."
+"We also include <literal>VariableCheck</literal> module to perform certain "
+"validation over some variables. Mappings can not be instantiated by the "
+"Object Manager."
 msgstr ""
 
 #. type: CDATA
@@ -9554,33 +9549,36 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:289
 msgid ""
-"The 'map' function is the main part of each mapping module, it receives the "
-"mapping configuration (rules) and the data in the original format (either "
-"OTRS or remote system format) and converts it to a new format, even the "
-"structure of the data can be changed during the mapping process."
+"The <literal>map</literal> function is the main part of each mapping module, "
+"it receives the mapping configuration (rules) and the data in the original "
+"format (either OTRS or remote system format) and converts it to a new "
+"format, even the structure of the data can be changed during the mapping "
+"process."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:295
 msgid ""
 "In this particular example there are three rules to map the values this "
-"rules are set in the mapping configuration key \"TestOption\" and they are "
-"ToUpper, ToLower and Empty."
+"rules are set in the mapping configuration key <literal>TestOption</literal> "
+"and they are <literal>ToUpper</literal>, <literal>ToLower</literal> and "
+"<literal>Empty</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:302
-msgid "ToUpper: converts each data value to upper case."
+msgid "<literal>ToUpper</literal>: converts each data value to upper case."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:307
-msgid "ToLower: converts each data value to lower case."
+msgid "<literal>ToLower</literal>: converts each data value to lower case."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:312
-msgid "Empty: converts each data value into an empty string."
+msgid ""
+"<literal>Empty</literal>: converts each data value into an empty string."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -9630,7 +9628,7 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:357
 msgid ""
-"This are the helper functions that actually performs the string conversions"
+"This are the helper functions that actually performs the string conversions."
 msgstr ""
 
 #. type: CDATA
@@ -9746,6 +9744,15 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:58
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:109
+#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:78
+msgid ""
+"This is common header that can be found in common OTRS modules. The class/"
+"package name is declared via the package keyword."
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:62
 msgid ""
 "We also include VariableCheck module to perform certain validation over some "
@@ -9825,18 +9832,18 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:137
 msgid ""
-"The 'Run' function is the main part of each operation, it receives all "
-"internal mapped data from remote system needed by the provider to execute "
-"the action, it performs the action and returns the result to the provider to "
-"be external mapped and deliver back to the remote system."
+"The <literal>Run</literal> function is the main part of each operation, it "
+"receives all internal mapped data from remote system needed by the provider "
+"to execute the action, it performs the action and returns the result to the "
+"provider to be external mapped and deliver back to the remote system."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:143
 msgid ""
 "This particular example returns the same data as came from the remote "
-"system, unless \"TestError\" parameter is passed in this case it returns an "
-"error."
+"system, unless <literal>TestError</literal> parameter is passed in this case "
+"it returns an error."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -9930,17 +9937,17 @@ msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:47
-msgid "ProviderProcessRequest"
+msgid "<literal>ProviderProcessRequest</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:50
-msgid "ProviderGenerateResponse"
+msgid "<literal>ProviderGenerateResponse</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:53
-msgid "RequesterPerformRequest"
+msgid "<literal>RequesterPerformRequest</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -10081,10 +10088,10 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:183
 msgid ""
-"The 'ProviderProcessRequest' function gets the request form the Remote "
-"System (in this case the same OTRS) and extracts the data and the operation "
-"to perform from the request. For this example the operation is always "
-"'test_operation'."
+"The <literal>ProviderProcessRequest</literal> function gets the request form "
+"the Remote System (in this case the same OTRS) and extracts the data and the "
+"operation to perform from the request. For this example the operation is "
+"always <literal>test_operation</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -10317,7 +10324,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/Log/CustomFile.pm - file log backend\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -10420,7 +10427,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:659
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1067
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:20
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:26
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:32
 msgid "Configuration example"
 msgstr ""
 
@@ -10428,9 +10435,10 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/log.xml:127
 msgid ""
 "To activate our custom logging module, the administrator can either set the "
-"existing configuration item \"LogModule\" manually to <literal>Kernel::"
-"System::Log::CustomFile</literal>. To realize this automatically, you can "
-"provide an XML configuration file which overrides the default setting."
+"existing configuration item <literal>LogModule</literal> manually to "
+"<literal>Kernel::System::Log::CustomFile</literal>. To realize this "
+"automatically, you can provide an XML configuration file which overrides the "
+"default setting."
 msgstr ""
 
 #. type: CDATA
@@ -10484,27 +10492,27 @@ msgstr ""
 
 #. type: Content of: <section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:16
-msgid "AgentOnline"
+msgid "<literal>AgentOnline</literal>"
 msgstr ""
 
 #. type: Content of: <section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:19
-msgid "AgentTicketEscalation"
+msgid "<literal>AgentTicketEscalation</literal>"
 msgstr ""
 
 #. type: Content of: <section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:22
-msgid "CharsetCheck"
+msgid "<literal>CharsetCheck</literal>"
 msgstr ""
 
 #. type: Content of: <section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:25
-msgid "CustomerOnline"
+msgid "<literal>CustomerOnline</literal>"
 msgstr ""
 
 #. type: Content of: <section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:28
-msgid "UIDCheck"
+msgid "<literal>UIDCheck</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -10513,7 +10521,8 @@ msgid ""
 "The notification modules are located under <filename>Kernel/Output/HTML/"
 "TicketNotification*.pm</filename>.  There is an example of a notify module "
 "below.  Save it under <filename>Kernel/Output/HTML/TicketNotificationCustom."
-"pm</filename>.  You just need 2 functions: new() and Run()."
+"pm</filename>.  You just need 2 functions: <code>new()</code> and "
+"<code>Run()</code>."
 msgstr ""
 
 #. type: CDATA
@@ -10597,7 +10606,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:120
 msgid ""
 "There is the need to activate your custom notification module.  This can be "
-"done using the xml configuration below. There may be additional parameters "
+"done using the XML configuration below. There may be additional parameters "
 "in the config hash for your notification module."
 msgstr ""
 
@@ -10625,7 +10634,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:160
 msgid ""
 "Useful ticket menu implementation could be a link to a external tool if "
-"parameters (e.g. FreeTextField) have been set."
+"parameters (e.g. <literal>FreeTextField</literal>) have been set."
 msgstr ""
 
 #. type: Content of: <section><section><para><informaltable><tgroup><tbody><row><entry>
@@ -10801,7 +10810,7 @@ msgstr ""
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:95
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:26
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:32
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:38
 msgid "Use Cases"
 msgstr ""
 
@@ -10901,8 +10910,9 @@ msgid ""
 "pm</filename>. For more information about their configuration see the admin "
 "manual.  Following, there is an example of a queue preferences module.  Save "
 "it under <filename>Kernel/System/Queue/PreferencesCustom.pm</filename>.  You "
-"just need 3 functions: new(), QueuePreferencesSet() and "
-"QueuePreferencesGet(). Return 1, then the synchronization is ok."
+"just need 3 functions: <code>new()</code>, <code>QueuePreferencesSet()</"
+"code> and <code>QueuePreferencesGet()</code>. Return 1, then the "
+"synchronization is ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -10919,7 +10929,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/Queue/PreferencesCustom.pm - some user functions\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# Id: PreferencesCustom.pm,v 1.5 2009/02/16 11:47:34 tr Exp $\n"
 "# --\n"
@@ -11092,8 +11102,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:33
 msgid ""
 "Currently the scheduler only has one working task handler backend named "
-"\"GenericInterface\". This task handler backend executes Generic Interface "
-"Invoker modules in the background."
+"<literal>GenericInterface</literal>. This task handler backend executes "
+"Generic Interface Invoker modules in the background."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -11102,8 +11112,8 @@ msgid ""
 "By using the OTRS Scheduler combined with the Generic Interface a user does "
 "not need to wait in the New phone ticket screen after creating a ticket "
 "until a Remote System responds to a web service request triggered by an "
-"event like \"TicketCreate\", instead this task can be delegated to the OTRS "
-"scheduler to run it on the background."
+"event like <literal>TicketCreate</literal>, instead this task can be "
+"delegated to the OTRS scheduler to run it on the background."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -11165,9 +11175,9 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:99
 msgid ""
-"The constructor 'new' creates a new instance of the class. According to the "
-"coding guidelines objects of other classes that are needed in this module "
-"have to be created in \"new\"."
+"The constructor <literal>new</literal> creates a new instance of the class. "
+"According to the coding guidelines objects of other classes that are needed "
+"in this module have to be created in <literal>new</literal>."
 msgstr ""
 
 #. type: CDATA
@@ -11211,21 +11221,21 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:140
 msgid ""
-"The 'Run' function is the main part of the module it checks the incoming "
-"data, make calls to other OTRS modules to execute the tasks, waits for the "
-"task result and based on the result information it determines if the task "
-"was successfully executed or not and if the task needs to be re-schedule "
-"itself, when and with which data."
+"The <literal>Run</literal> function is the main part of the module it checks "
+"the incoming data, make calls to other OTRS modules to execute the tasks, "
+"waits for the task result and based on the result information it determines "
+"if the task was successfully executed or not and if the task needs to be re-"
+"schedule itself, when and with which data."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:146
 msgid ""
-"For this testing example if the parameter \"File\" exists in the incoming "
-"data, a new file is to be created on the file system by the task handler, "
-"depending of the success of this, the task handler will continue to the rest "
-"part of the code where base it decisions for the returning structure on the "
-"previously provided data."
+"For this testing example if the parameter <literal>File</literal> exists in "
+"the incoming data, a new file is to be created on the file system by the "
+"task handler, depending of the success of this, the task handler will "
+"continue to the rest part of the code where base it decisions for the "
+"returning structure on the previously provided data."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -11272,9 +11282,10 @@ msgid ""
 "System/Service/*.pm</filename>. For more information about their "
 "configuration see the admin manual.  Following, there is an example of a "
 "service preferences module.  Save it under <filename>Kernel/System/Service/"
-"PreferencesCustom.pm</filename>.  You just need 3 functions: new(), "
-"ServicePreferencesSet() and ServicePreferencesGet(). Return 1, then the "
-"synchronization is ok."
+"PreferencesCustom.pm</filename>.  You just need 3 functions: <code>new()</"
+"code>, <code>ServicePreferencesSet()</code> and "
+"<code>ServicePreferencesGet()</code>. Return 1, then the synchronization is "
+"ok."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -11291,7 +11302,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/Service/PreferencesCustom - some user functions\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# Id: PreferencesCustom.pm,v 1.2 2009/02/16 11:47:34 tr Exp $\n"
 "# --\n"
@@ -11428,8 +11439,8 @@ msgid ""
 "filename>. For more information about their configuration see the admin "
 "manual.  Following, there is an example of an SLA preferences module.  Save "
 "it under <filename>Kernel/System/SLA/PreferencesCustom.pm</filename>.  You "
-"just need 3 functions: new(), SLAPreferencesSet() and SLAPreferencesGet().  "
-"Make sure the function returns 1."
+"just need 3 functions: <code>new()</code>, <code>SLAPreferencesSet()</code> "
+"and <code>SLAPreferencesGet()</code>.  Make sure the function returns 1."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -11446,7 +11457,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/SLA/PreferencesCustom.pm - some user functions\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -11600,22 +11611,22 @@ msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:19
-msgid "GetObjectName"
+msgid "<literal>GetObjectName</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:22
-msgid "GetObjectAttributes"
+msgid "<literal>GetObjectAttributes</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:25
-msgid "ExportWrapper"
+msgid "<literal>ExportWrapper</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:28
-msgid "ImportWrapper"
+msgid "<literal>ImportWrapper</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -11640,7 +11651,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/Stats/Dynamic/DynamicStatsTemplate.pm - all advice functions\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -12204,7 +12215,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/Stats/Dynamic/DynamicStatsTemplate.pm - all advice functions\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -12455,11 +12466,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:705
-msgid "<literal>new</literal>"
-msgstr ""
-
-#. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:708
 msgid "<literal>Param</literal>"
 msgstr ""
@@ -12648,7 +12654,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/System/Stats/Static/StaticStatsTemplate.pm\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -12922,24 +12928,25 @@ msgid ""
 "Ticket event modules are running right after a ticket action takes place.  "
 "Per convention these modules are located in the directory <filename>Kernel/"
 "System/Ticket/Event</filename>.  An ticket event module needs only the two "
-"functions new() and Run().  The method Run() receives at least the "
-"parameters Event, UserID, and Data.  Data is a hash ref containing data of "
-"the ticket, and in case of Article-related events also containing Article "
-"data."
+"functions new() and Run().  The method <code>Run()</code> receives at least "
+"the parameters <literal>Event</literal>, <literal>UserID</literal>, and "
+"<literal>Data</literal>.  <literal>Data</literal> is a hash ref containing "
+"data of the ticket, and in case of Article-related events also containing "
+"Article data."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:16
 msgid ""
 "See <filename>Kernel/System/Ticket/Event/EventModulePostTemplate.pm</"
-"filename> in the package TemplateModule."
+"filename> in the package <literal>TemplateModule</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:22
 msgid ""
 "See <filename>Kernel/Config/Files/EventModulePostTemplate.xml</filename> in "
-"the package TemplateModule."
+"the package <literal>TemplateModule</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -12967,7 +12974,7 @@ msgid ""
 "A customized OTRS might hold non-standard data in additional database "
 "tables.  When a ticket is deleted then this additional data needs to be "
 "deleted.  This functionality can be achieved with a ticket event module "
-"listening to 'TicketDelete' events."
+"listening to <literal>TicketDelete</literal> events."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -12977,7 +12984,9 @@ msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:47
-msgid "A ticket event module listening to 'TicketCreate' can send out tweets."
+msgid ""
+"A ticket event module listening to <literal>TicketCreate</literal> can send "
+"out tweets."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -13174,7 +13183,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:134
 msgid ""
 "There is the need to activate your custom ticket menu module.  This can be "
-"done using the xml configuration below. There may be additional parameters "
+"done using the XML configuration below. There may be additional parameters "
 "in the config hash for your ticket menu module."
 msgstr ""
 
@@ -13241,53 +13250,71 @@ msgid ""
 "Ticket number generators are used to create distinct identifiers aka "
 "TicketNumber for new tickets.  Any method of creating a string of numbers is "
 "possible, you should use common sense about the length of the resulting "
-"string (guideline: 5-10).  When creating a ticket number, make sure the "
-"result is prefixed by the SysConfig-Variable SystemID in order to enable the "
-"detection of ticket numbers on inbound email responses.  A ticket number "
-"generator module needs the two functions TicketCreateNumber() and "
-"GetTNByString().  The method TicketCreateNumber() is called without "
-"parameters and returns the new ticket number.  The method GetTNByString() is "
-"called with the param String which contains the string to be parsed for a "
-"ticket number and returns the ticket number if found."
+"string (guideline: 5-10)."
 msgstr ""
 
-#. type: Content of: <section><section><para>
+#. type: Content of: <section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:12
+msgid ""
+"When creating a ticket number, make sure the result is prefixed by the "
+"SysConfig-Variable SystemID in order to enable the detection of ticket "
+"numbers on inbound email responses.  A ticket number generator module needs "
+"the two functions <code>TicketCreateNumber()</code> and "
+"<code>GetTNByString()</code>."
+msgstr ""
+
+#. type: Content of: <section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:18
+msgid ""
+"The method <code>TicketCreateNumber()</code> is called without parameters "
+"and returns the new ticket number."
+msgstr ""
+
+#. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:22
 msgid ""
-"See <filename>Kernel/System/Ticket/Number/UserRandom.pm</filename> in the "
-"package TemplateModule."
+"The method <code>GetTNByString()</code> is called with the param String "
+"which contains the string to be parsed for a ticket number and returns the "
+"ticket number if found."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:28
 msgid ""
+"See <filename>Kernel/System/Ticket/Number/UserRandom.pm</filename> in the "
+"package <literal>TemplateModule</literal>."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:34
+msgid ""
 "See <filename>Kernel/Config/Files/TicketNumberGenerator.xml</filename> in "
-"the package TemplateModule."
+"the package <literal>TemplateModule</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:34
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:40
 msgid "Ticket numbers should follow a specific scheme."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:36
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:42
 msgid ""
 "You will need to create a new ticket number generator if the default modules "
 "don't provide the ticket number scheme you'd like to use."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:44
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:50
 msgid ""
-"You should stick to the code of GetTNByString() as used in existing ticket "
-"number generators to prevent problems with ticket number parsing.  Also the "
-"routine to detect a loop in TicketCreateNumber() should be kept intact to "
-"prevent duplicate ticket numbers."
+"You should stick to the code of <code>GetTNByString()</code> as used in "
+"existing ticket number generators to prevent problems with ticket number "
+"parsing.  Also the routine to detect a loop in <code>TicketCreateNumber()</"
+"code> should be kept intact to prevent duplicate ticket numbers."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:53
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:59
 msgid "Ticket number generators have been available in OTRS since OTRS 1.1."
 msgstr ""
 
@@ -13326,7 +13353,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:19
 msgid ""
 "In this section the Foo extension for Backend is shown and explained. The "
-"extension only defines the function Foo()."
+"extension only defines the function <code>Foo()</code>."
 msgstr ""
 
 #. type: CDATA
@@ -13450,12 +13477,12 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:132
 msgid ""
-"The function <emphasis>Foo()</emphasis> is only used for test purposes, "
-"first it checks the Dynamic Field configuration, then it checks if the "
-"Dynamic Field Driver (type)  exists and was already loaded. To prevent the "
-"function call on a driver where is not defined it first check if the driver "
-"can execute the function, then executes the function in the driver passing "
-"all parameters."
+"The function <code>Foo()</code> is only used for test purposes, first it "
+"checks the Dynamic Field configuration, then it checks if the Dynamic Field "
+"Driver (type)  exists and was already loaded. To prevent the function call "
+"on a driver where is not defined it first check if the driver can execute "
+"the function, then executes the function in the driver passing all "
+"parameters."
 msgstr ""
 
 #. type: Content of: <section><section><note><para>
@@ -13566,7 +13593,8 @@ msgid ""
 "Driver the module will be loaded as a base class in the Driver. Notice also "
 "that new behaviors can be specified, this extended behaviors will be added "
 "to the behaviors that the Driver has out of the box, therefore a call to "
-"HasBehavior() to check for this new behaviors will be totally transparent."
+"<code>HasBehavior()</code> to check for this new behaviors will be totally "
+"transparent."
 msgstr ""
 
 #. type: CDATA
@@ -13606,7 +13634,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:19
 msgid ""
 "In this section the Foo extension for Text field driver is shown and "
-"explained. The extension only implements the function Foo()."
+"explained. The extension only implements the function <code>Foo()</code>."
 msgstr ""
 
 #. type: CDATA
@@ -13658,8 +13686,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:69
 msgid ""
-"The function <emphasis>Foo()</emphasis> has no special logic it is only for "
-"testing and it always returns 1."
+"The function <code>Foo()</code> has no special logic it is only for testing "
+"and it always returns 1."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -14007,11 +14035,11 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:26
 msgid ""
-"Normally called as \"BackendObject\" in the frontend modules is the mediator "
-"between the frontend modules and each specific Dynamic Field implementation "
-"or Driver. It defines a Generic middle API for all Dynamic Field Drivers, "
-"and each Driver has the responsibility to implement the middle API for the "
-"specific needs for the field."
+"Normally called as <literal>BackendObject</literal> in the frontend modules "
+"is the mediator between the frontend modules and each specific Dynamic Field "
+"implementation or Driver. It defines a Generic middle API for all Dynamic "
+"Field Drivers, and each Driver has the responsibility to implement the "
+"middle API for the specific needs for the field."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -14071,11 +14099,14 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:64
 msgid ""
-"It exists some base drivers like Base.pm BaseText.pm, BaseSelect.pm and "
-"BaseDateTime.pm, that implements common functions for certain drivers (e.g "
-"Driver TextArea.pm uses BaseText.pm that also uses Base.pm then TextArea "
-"only needs to implement the functions that are missing in Base.pm and "
-"BateText.pm or the ones that are special cases)"
+"It exists some base drivers like <filename>Base.pm</filename>, "
+"<filename>BaseText.pm</filename>, <filename>BaseSelect.pm</filename> and "
+"<filename>BaseDateTime.pm</filename>, that implements common functions for "
+"certain drivers (e.g Driver <filename>TextArea.pm</filename> uses "
+"<filename>BaseText.pm</filename> that also uses <filename>Base.pm</filename> "
+"then <literal>TextArea</literal> only needs to implement the functions that "
+"are missing in <filename>Base.pm</filename> and <filename>BateText.pm</"
+"filename> or the ones that are special cases)"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -14168,9 +14199,9 @@ msgstr ""
 msgid ""
 "To manage the Dynamic Fields (Add, Edit and List) a series of modules has "
 "been already developed. There is one specific master module "
-"(AdminDynamicField.pm) that shows the list of defined Dynamic Fields, and "
-"from within other modules are called to create new Dynamic Fields or modify "
-"an existing ones."
+"(<filename>AdminDynamicField.pm</filename>) that shows the list of defined "
+"Dynamic Fields, and from within other modules are called to create new "
+"Dynamic Fields or modify an existing ones."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -14182,8 +14213,9 @@ msgid ""
 "needed information for all the Drivers that are linked to them, no matter if "
 "they are from different type. What is mandatory is that each Driver must be "
 "linked to an Admin Dialog. (e.g. Text and TextArea Drivers share "
-"AdminDynamicFieldText.pm Admin Dialog, and Date and Date/Time Drivers share "
-"AdminDynamicFieldDateTime.pm Admin Dialog)."
+"<filename>AdminDynamicFieldText.pm</filename> Admin Dialog, and Date and "
+"Date/Time Drivers share <filename>AdminDynamicFieldDateTime.pm</filename> "
+"Admin Dialog)."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -14262,8 +14294,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:176
 msgid ""
-"<emphasis>dynamic_field</emphasis>: Used by the Core Module DynamicField.pm, "
-"it stores the Dynamic Field definitions."
+"<emphasis>dynamic_field</emphasis>: Used by the Core Module "
+"<filename>DynamicField.pm</filename>, it stores the Dynamic Field "
+"definitions."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -14348,41 +14381,42 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:24
 msgid ""
 "The first step is that the Frontend module reads the configured Dynamic "
-"Fields for example <emphasis>AgentTicketNote</emphasis> should read "
-"<emphasis>Ticket::Frontend::AgentTicketNote###DynamicField</emphasis> "
-"setting. This setting can be used as the filter parameter for DynamicField "
-"Core Module function <emphasis>DynamicFieldListGet()</emphasis>. The screen "
-"can store the results of this function to have the list of the Dynamic "
-"Fields activated for this particular screen."
+"Fields for example <literal>AgentTicketNote</literal> should read "
+"<literal>Ticket::Frontend::AgentTicketNote###DynamicField</literal> setting. "
+"This setting can be used as the filter parameter for DynamicField Core "
+"Module function <code>DynamicFieldListGet()</code>. The screen can store the "
+"results of this function to have the list of the Dynamic Fields activated "
+"for this particular screen."
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:32
 msgid ""
 "Next, the screen should try to get the values from the web request, it can "
-"use the BackendObject function <emphasis>EditFieldValueGet()</emphasis> for "
-"this purpose. and can use this values to trigger ACLs. The BackendObject "
-"will use each Driver to perform the specific actions for all functions."
+"use the BackendObject function <code>EditFieldValueGet()</code> for this "
+"purpose. and can use this values to trigger ACLs. The "
+"<literal>BackendObject</literal> will use each Driver to perform the "
+"specific actions for all functions."
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:38
 msgid ""
 "To continue, the screen should get the HTML for each field to display it, "
-"the BackendObject function <emphasis>EditFieldRender()</emphasis> can be "
-"used to perform this action and the ACLs restriction as well as the Values "
-"from the web request can be passed to this function in order to get better "
-"results. in case of a submit the screen could also use the BackendObject "
-"function <emphasis>EditFieldValueValidate()</emphasis> to check the "
+"the <literal>BackendObject</literal> function <code>EditFieldRender()</code> "
+"can be used to perform this action and the ACLs restriction as well as the "
+"Values from the web request can be passed to this function in order to get "
+"better results. in case of a submit the screen could also use the "
+"BackendObject function <code>EditFieldValueValidate()</code> to check the "
 "mandatory fields."
 msgstr ""
 
 #. type: Content of: <section><note><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:47
 msgid ""
-"Other screens could use <emphasis>DisplayFieldRender()</emphasis> instead of "
-"<emphasis>EditFieldRender()</emphasis> if the screen only shows the field "
-"value, and in such case no value validation is needed."
+"Other screens could use <code>DisplayFieldRender()</code> instead of "
+"<code>EditFieldRender()</code> if the screen only shows the field value, and "
+"in such case no value validation is needed."
 msgstr ""
 
 #. type: Content of: <section><para>
@@ -14392,8 +14426,8 @@ msgid ""
 "for this example if the Dynamic Field is linked to a ticket object, the "
 "screen should already have the TicketID, otherwise if the field is linked to "
 "an article object in order to set the value of the field is necessary to "
-"create the article first. <emphasis>ValueSet()</emphasis> from the "
-"BackendObject can be used to set the Dynamic Field value."
+"create the article first. <code>ValueSet()</code> from the BackendObject can "
+"be used to set the Dynamic Field value."
 msgstr ""
 
 #. type: Content of: <section><para>
@@ -14615,7 +14649,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:184
 msgid ""
 "The second widget has the Dynamic Field specific form attributes. This is "
-"the place where new attributes cat be set and it could use Java Script and "
+"the place where new attributes cat be set and it could use JavaScript and "
 "AJAX technologies to make it more easy or friendly for the end user."
 msgstr ""
 
@@ -14662,7 +14696,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:213
 msgid ""
 "The final part of the file contains the \"Submit\" button and the \"Cancel\" "
-"link, as well as other needed Java Script code."
+"link, as well as other needed JavaScript code."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -14743,9 +14777,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:72
 msgid ""
-"The constructor 'new' creates a new instance of the class. According to the "
-"coding guidelines objects of other classes that are needed in this module "
-"are normally created here."
+"The constructor <literal>new</literal> creates a new instance of the class. "
+"According to the coding guidelines objects of other classes that are needed "
+"in this module are normally created here."
 msgstr ""
 
 #. type: CDATA
@@ -14794,7 +14828,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:118
 msgid ""
-"<emphasis>Run</emphasis> is the default function to be called by the web "
+"<literal>Run</literal> is the default function to be called by the web "
 "request, we try to make this function as simple as possible and let the "
 "helper functions to do the \"hard\" work."
 msgstr ""
@@ -14834,9 +14868,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:153
 msgid ""
-"<emphasis>_Add()</emphasis> function is also pretty simple, it just get some "
-"parameters from the web request and call the <emphasis>_ShowScreen()</"
-"emphasis> function, normally this function is not needed to be modified."
+"<code>_Add</code> function is also pretty simple, it just get some "
+"parameters from the web request and call the <code>_ShowScreen()</code> "
+"function, normally this function is not needed to be modified."
 msgstr ""
 
 #. type: CDATA
@@ -14961,16 +14995,16 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:275
 msgid ""
-"The <emphasis>_AddAction()</emphasis> function gets the configuration "
-"parameters from a new dynamic field, it validates the Dynamic Field name "
-"only contains letters and numbers. This function could validate any other "
-"parameter."
+"The <code>_AddAction</code> function gets the configuration parameters from "
+"a new dynamic field, it validates the Dynamic Field name only contains "
+"letters and numbers. This function could validate any other parameter."
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:280
 msgid ""
-"Name, Label, FieldOrder, Validity are common parameters for all Dynamic "
+"<literal>Name</literal>, <literal>Label</literal>, <literal>FieldOrder</"
+"literal>, <literal>Validity</literal> are common parameters for all Dynamic "
 "Fields and they are required. Each Dynamic Field has its specific "
 "configuration that must contain at least the DefaultValue parameter, in this "
 "case it also have ShowValue and ValueMask parameters for Password field."
@@ -15063,9 +15097,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:359
 msgid ""
-"The \"_Change\" function is very similar to the \"_Add\" function but since "
-"this function is used to edit an existing field it needs to validated the "
-"FieldID parameter and gather the current Dynamic Field data."
+"The <code>_Change</code> function is very similar to the <code>_Add</code> "
+"function but since this function is used to edit an existing field it needs "
+"to validated the FieldID parameter and gather the current Dynamic Field data."
 msgstr ""
 
 #. type: CDATA
@@ -15217,9 +15251,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:508
 msgid ""
-"<emphasis>_ChangeAction()</emphasis> is very similar to "
-"<emphasis>_AddAction()</emphasis>\", but adapted for the update of an "
-"existing field instead of creating a new one."
+"<code>_ChangeAction()</code> is very similar to <code>_AddAction()</code>\", "
+"but adapted for the update of an existing field instead of creating a new "
+"one."
 msgstr ""
 
 #. type: CDATA
@@ -15319,9 +15353,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:605
 msgid ""
-"The <emphasis>_ShowScreen</emphasis> function is used to set and define the "
-"HTML elements and blocks from a template to generate the Admin Dialog HTML "
-"code."
+"The <code>_ShowScreen</code> function is used to set and define the HTML "
+"elements and blocks from a template to generate the Admin Dialog HTML code."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -15333,8 +15366,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:7
 msgid ""
 "The configuration files are used to register the Dynamic Field Types "
-"(Driver) and the Object Type Drivers for the BackendObject. They also store "
-"standard registrations for Admin Modules in the framework."
+"(Driver) and the Object Type Drivers for the <literal>BackendObject</"
+"literal>. They also store standard registrations for Admin Modules in the "
+"framework."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -15367,9 +15401,9 @@ msgstr ""
 msgid ""
 "This setting registers the Password Dynamic Field Driver for the Backend "
 "module so it can be included in the list of available Dynamic Fields Types, "
-"it also specify its own Admin Dialog in the key \"ConfigDialog\", this key "
-"is used by the Master Dynamic Field Admin Module to manage this new Dynamic "
-"Field Type."
+"it also specify its own Admin Dialog in the key <literal>ConfigDialog</"
+"literal>, this key is used by the Master Dynamic Field Admin Module to "
+"manage this new Dynamic Field Type."
 msgstr ""
 
 #. type: CDATA
@@ -15429,8 +15463,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:24
 msgid ""
 "In this section the Password Dynamic Field driver is shown and explained. "
-"This driver inherits some functions from Base.pm and BaseText.pm and only "
-"implements the functions that needs different results."
+"This driver inherits some functions from <filename>Base.pm</filename> and "
+"<filename>BaseText.pm</filename> and only implements the functions that "
+"needs different results."
 msgstr ""
 
 #. type: CDATA
@@ -15467,8 +15502,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:57
 msgid ""
 "This is the common header that can be found in common OTRS modules. The "
-"class/package name is declared via the package keyword. Notice that BaseText "
-"is used as base class."
+"class/package name is declared via the package keyword. Notice that "
+"<literal>BaseText</literal> is used as base class."
 msgstr ""
 
 #. type: CDATA
@@ -15535,9 +15570,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:120
 msgid ""
-"The constructor <emphasis>new</emphasis> creates a new instance of the "
-"class. According to the coding guidelines objects of other classes that are "
-"needed in this module should be created here."
+"The constructor <literal>new</literal> creates a new instance of the class. "
+"According to the coding guidelines objects of other classes that are needed "
+"in this module should be created here."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -15552,8 +15587,8 @@ msgstr ""
 #. type: Content of: <section><section><note><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:131
 msgid ""
-"Drivers are created only by the BankendObject and not directly from any "
-"other module."
+"Drivers are created only by the <literal>BackendObject</literal> and not "
+"directly from any other module."
 msgstr ""
 
 #. type: CDATA
@@ -15651,8 +15686,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:225
 msgid ""
 "This function is the responsible to create the HTML representation of the "
-"field and its label, and is used in the edit screens like \"AgentTicketPhone"
-"\", \"AgentTicketNote\", etc"
+"field and its label, and is used in the edit screens like "
+"<literal>AgentTicketPhone</literal>, <literal>AgentTicketNote</literal>, etc"
 msgstr ""
 
 #. type: CDATA
@@ -15722,8 +15757,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:291
 msgid ""
-"<emphasis>DisplayValueRender()</emphasis> function returns the field value "
-"as a plain text as well as its title (both can be translated). for this "
+"<code>DisplayValueRender()</code> function returns the field value as a "
+"plain text as well as its title (both can be translated). for this "
 "particular example we are checking if the password should be reveled or "
 "display a predefined mask by a configuration parameter in the Dynamic Field."
 msgstr ""
@@ -15777,8 +15812,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:341
 msgid ""
-"This function is similar to <emphasis>DisplayValueRender()</emphasis> but is "
-"used in places where there is no LayoutObject."
+"This function is similar to <code>DisplayValueRender()</code> but is used in "
+"places where there is no LayoutObject."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -15819,10 +15854,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:389
 msgid ""
-"<emphasis>ValueSet()</emphasis> is used to store a Dynamic Field value, in "
-"this case this field only stores one text type value. Other fields could "
-"store more than one value on either ValueText, ValueDateTime, or ValueInt "
-"format."
+"<code>ValueSet()</code> is used to store a Dynamic Field value, in this case "
+"this field only stores one text type value. Other fields could store more "
+"than one value on either <literal>ValueText</literal>, "
+"<literal>ValueDateTime</literal>, or <literal>ValueInt</literal> format."
 msgstr ""
 
 #. type: CDATA
@@ -15849,9 +15884,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:409
 msgid ""
-"<emphasis>AllValuesDelete()</emphasis> function is used to delete all values "
-"from a certain Dynamic Field. This function is very useful when a Dynamic "
-"Field is going to be deleted."
+"<code>AllValuesDelete()</code> function is used to delete all values from a "
+"certain Dynamic Field. This function is very useful when a Dynamic Field is "
+"going to be deleted."
 msgstr ""
 
 #. type: CDATA
@@ -15863,8 +15898,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:419
 msgid ""
-"The <emphasis>ValueValidate()</emphasis> function is used to check if the "
-"value is consistent to its type."
+"The <code>ValueValidate()</code> function is used to check if the value is "
+"consistent to its type."
 msgstr ""
 
 #. type: CDATA
@@ -15876,8 +15911,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:428
 msgid ""
-"This function is used by TicketSearch core module to build the internal "
-"query to search for a ticket based on this field as a search parameter."
+"This function is used by <literal>TicketSearch</literal> core module to "
+"build the internal query to search for a ticket based on this field as a "
+"search parameter."
 msgstr ""
 
 #. type: CDATA
@@ -15889,10 +15925,11 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:437
 msgid ""
-"The <emphasis>SearchSQLOrderFieldGet</emphasis> is also a helper for "
-"TicketSearch module, \"$Param{TableAlias}.\" should be kept and \"value_text"
-"\" could be replaced with \"value_date\" or \"value_int\" depending on the "
-"field."
+"The <literal>SearchSQLOrderFieldGet</literal> is also a helper for "
+"<literal>TicketSearch</literal> module, <literal>$Param{TableAlias}</"
+"literal> should be kept and <literal>value_text</literal> could be replaced "
+"with <literal>value_date</literal> or <literal>value_int</literal> depending "
+"on the field."
 msgstr ""
 
 #. type: CDATA
@@ -15904,11 +15941,12 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:447
 msgid ""
-"<emphasis>EditFieldValueGet()</emphasis> is a function used in the edit "
-"screens of OTRS and its purpose is to get the value of the field, either "
-"form a template like generic agent profile or from a web request. This "
-"function gets the web request in the $Param{ParamObject}, that is a copy of "
-"the ParamObject of the Frontend Module or screen."
+"<code>EditFieldValueGet()</code> is a function used in the edit screens of "
+"OTRS and its purpose is to get the value of the field, either form a "
+"template like generic agent profile or from a web request. This function "
+"gets the web request in the <literal>$Param{ParamObject}</literal>, that is "
+"a copy of the <literal>ParamObject</literal> of the Frontend Module or "
+"screen."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -15956,11 +15994,11 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:481
 msgid ""
 "This function is used by ticket search dialog and its similar to "
-"<emphasis>EditFieldRander()</emphasis>, but normally on a search screen "
-"small changes has to be done for all fields, for this example we use a HTML "
-"text input instead of a password input. In other fields like Dropdown field "
-"is displayed as a Multiple select in order to let the user search for more "
-"than one value at a time."
+"<code>EditFieldRander()</code>, but normally on a search screen small "
+"changes has to be done for all fields, for this example we use a HTML text "
+"input instead of a password input. In other fields like Dropdown field is "
+"displayed as a Multiple select in order to let the user search for more than "
+"one value at a time."
 msgstr ""
 
 #. type: CDATA
@@ -15972,8 +16010,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:493
 msgid ""
-"Very similar to <emphasis>EditFieldValueGet()</emphasis>, but uses a "
-"different name prefix, adapted for the search dialog screen."
+"Very similar to <code>EditFieldValueGet()</code>, but uses a different name "
+"prefix, adapted for the search dialog screen."
 msgstr ""
 
 #. type: CDATA
@@ -15985,9 +16023,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:502
 msgid ""
-"<emphasis>SearchFieldParameterBuild()</emphasis> is used also by the ticket "
-"search dialog to set the correct operator and value to do the search on this "
-"field. It also returns how the value should be displayed in the used search "
+"<code>SearchFieldParameterBuild()</code> is used also by the ticket search "
+"dialog to set the correct operator and value to do the search on this field. "
+"It also returns how the value should be displayed in the used search "
 "attributes, in the results page."
 msgstr ""
 
@@ -16002,8 +16040,9 @@ msgstr ""
 msgid ""
 "This function is used by the stats modules, it includes the field definition "
 "in the stats format. For fields with fixed values it also includes all this "
-"possible values and if they can be translated, take a look to the BaseSelect "
-"driver code for an example how to implement those."
+"possible values and if they can be translated, take a look to the "
+"<literal>BaseSelect</literal> driver code for an example how to implement "
+"those."
 msgstr ""
 
 #. type: CDATA
@@ -16015,10 +16054,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:524
 msgid ""
-"<emphasis>StatsSearchFieldParameterBuild()</emphasis> is very similar to the "
-"<emphasis>SearchFieldParameterBuild()</emphasis>, the difference id that the "
-"<emphasis>SearchFieldParameterBuild()</emphasis> gets the value from the "
-"search profile and this one gets the value directly from its parameters."
+"<code>StatsSearchFieldParameterBuild()</code> is very similar to the "
+"<code>SearchFieldParameterBuild()</code>, the difference id that the "
+"<code>SearchFieldParameterBuild()</code> gets the value from the search "
+"profile and this one gets the value directly from its parameters."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -16035,10 +16074,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:538
 msgid ""
-"The <emphasis>TemplateValueTypeGet()</emphasis> function is used to know how "
-"the Dynamic Field values stored on a profile should be retrieved, as an "
-"SCALAR or as an ARRAY, and it also defines the correct name of the field in "
-"the profile."
+"The <code>TemplateValueTypeGet()</code> function is used to know how the "
+"Dynamic Field values stored on a profile should be retrieved, as an SCALAR "
+"or as an ARRAY, and it also defines the correct name of the field in the "
+"profile."
 msgstr ""
 
 #. type: CDATA
@@ -16050,10 +16089,10 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:548
 msgid ""
-"This function is used by otrs.FillDB.pl script to populate the database with "
-"some test and random data. The value inserted by this function is not really "
-"relevant. The only restriction is that the value must be compatible with the "
-"field value type."
+"This function is used by <filename>otrs.FillDB.pl</filename> script to "
+"populate the database with some test and random data. The value inserted by "
+"this function is not really relevant. The only restriction is that the value "
+"must be compatible with the field value type."
 msgstr ""
 
 #. type: CDATA
@@ -16066,8 +16105,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:558
 msgid ""
 "Used by the notification modules this function returns 1 if the field is "
-"present in the $Param{ObjectAttributes} parameter and if it match the given "
-"value."
+"present in the <literal>$Param{ObjectAttributes}</literal> parameter and if "
+"it match the given value."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -16149,13 +16188,14 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:11
 msgid ""
 "The Dynamic Fields are the evolution of the ticket and article Free Fields "
-"( \"TikcetFreeText\", \"TicketFreeKey\", \"TicketFreeTime\", "
-"\"ArticleFreeText\", \"ArticleFreeKey\" and \"ArticleFreeTime\" ) from older "
-"versions of OTRS."
+"(<literal>TikcetFreeText</literal>, <literal>TicketFreeKey</literal>, "
+"<literal>TicketFreeTime</literal>, <literal>ArticleFreeText</literal>, "
+"<literal>ArticleFreeKey</literal> and <literal>ArticleFreeTime</literal>) "
+"from older versions of OTRS."
 msgstr ""
 
 #. type: Content of: <section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:16
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:18
 msgid ""
 "From OTRS version 3.1 the old Free Fields has been replaced with the new "
 "Dynamic Fields, for a better backward compatibility and data preservation "
@@ -16166,7 +16206,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><note><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:24
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:26
 msgid ""
 "Any custom development that uses Free Fields needs to be ported to the new "
 "Dynamic Fields code structure, otherwise it will not work anymore. For this "
@@ -16177,7 +16217,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:33
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:35
 msgid ""
 "The restriction on the number of the fields per ticket or article has been "
 "removed, this means that a ticket or article could have as many fields as "
@@ -16186,7 +16226,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:39
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:41
 msgid ""
 "The new Dynamic Fields can store the same data types as the Free Fields "
 "(Text and Date/Time), and they can be also defined as them (Single line "
@@ -16197,7 +16237,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:46
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:48
 msgid ""
 "Due to its modular design each Dynamic Field type can be seen as a plug-in "
 "to a framework, and this plug-in can be a OTRS standard package to extend "
@@ -16225,7 +16265,7 @@ msgid ""
 "If you want to create your own postmaster filter, just create your own "
 "module.  These modules are located under <filename>Kernel/System/PostMaster/"
 "Filter/*.pm</filename>.  For default modules see the admin manual. You just "
-"need two functions: new() and Run():"
+"need two functions: <code>new()</code> and <code>Run()</code>:"
 msgstr ""
 
 #. type: Content of: <section><para>
@@ -17491,7 +17531,7 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:20
 msgid ""
 "In OTRS 5, <filename>Kernel/Output/HTML</filename> was restructured. All "
-"perl modules (except <filename>Layout.pm</filename>) were moved to "
+"Perl modules (except <filename>Layout.pm</filename>) were moved to "
 "subdirectories (one for every module layer). Template (theme) files were "
 "also moved from <filename>Kernel/Output/HTML/Standard</filename> to "
 "<filename>Kernel/Output/HTML/Templates/Standard</filename>. Please perform "
@@ -17506,24 +17546,26 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:27
 msgid ""
-"With OTRS 5 there is no support for \"pre\" output filters any more. These "
-"filters changed the template content before it was parsed, and that could "
-"potentially lead to bad performance issues because the templates could not "
-"be cached any more and had to be parsed and compiled every time."
+"With OTRS 5 there is no support for <literal>pre</literal> output filters "
+"any more. These filters changed the template content before it was parsed, "
+"and that could potentially lead to bad performance issues because the "
+"templates could not be cached any more and had to be parsed and compiled "
+"every time."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:30
 msgid ""
-"Just switch from \"pre\" to \"post\" output filters. To translate content, "
-"you can run <code>$LayoutObject->Translate()</code> directly. If you need "
-"other template features, just define a small template file for your output "
-"filter and use it to render your content before injecting it into the main "
-"data. It can also be helpful to use jQuery DOM operations to reorder/replace "
-"content on the screen in some cases instead of using regular expressions. In "
-"this case you would inject the new code somewhere in the page as invisible "
-"content (e. g. with the class <literal>Hidden</literal>), and then move it "
-"with jQuery to the correct location in the DOM and show it."
+"Just switch from <literal>pre</literal> to <literal>post</literal> output "
+"filters. To translate content, you can run <code>$LayoutObject->Translate()</"
+"code> directly. If you need other template features, just define a small "
+"template file for your output filter and use it to render your content "
+"before injecting it into the main data. It can also be helpful to use jQuery "
+"DOM operations to reorder/replace content on the screen in some cases "
+"instead of using regular expressions. In this case you would inject the new "
+"code somewhere in the page as invisible content (e. g. with the class "
+"<literal>Hidden</literal>), and then move it with jQuery to the correct "
+"location in the DOM and show it."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -17598,9 +17640,9 @@ msgid ""
 "The operation <code>TicketGet()</code> returns dynamic field data from "
 "ticket and articles differently than in OTRS 4.  Now they are cleanly "
 "separated from the rest of the static ticket and article fields - they are "
-"now grouped in a list called DynamicField. Please adapt any applications "
-"using this operation accordingly.  <placeholder type=\"programlisting\" id="
-"\"0\"/>"
+"now grouped in a list called <literal>DynamicField</literal>. Please adapt "
+"any applications using this operation accordingly.  <placeholder type="
+"\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -17673,9 +17715,9 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:153
 msgid ""
 "Up to OTRS 4, objects used to be created both centrally and also locally and "
-"then handed down to all objects by passing them to the contructors.  With "
-"OTRS 4 and later versions, there is now an ObjectManager that centralizes "
-"singleton object creation and access."
+"then handed down to all objects by passing them to the constructors.  With "
+"OTRS 4 and later versions, there is now an <literal>ObjectManager</literal> "
+"that centralizes singleton object creation and access."
 msgstr ""
 
 #. type: CDATA
@@ -17739,31 +17781,31 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:159
 msgid ""
 "This will require you first of all to change all toplevel Perl scripts (.pl "
-"files only!)  to load and provide the ObjectManager to all OTRS objects. "
-"Let's look at otrs.CheckDB.pl from OTRS 3.3 as an example: <placeholder type="
-"\"programlisting\" id=\"0\"/> We can see that a lot of code is used to load "
-"the packages and create the common objects that must be passed to OTRS "
-"objects to be used in the script. With OTRS 4, this looks quite different: "
-"<placeholder type=\"programlisting\" id=\"1\"/> The new code is a bit "
-"shorter than the old. It is no longer necessary to load all the packages, "
-"just the ObjectManager. Subsequently <literal>$Kernel::OM->Get('My::Perl::"
-"Package')</literal> can be used to get instances of Objects which only have "
-"to be created once. The <literal>LogPrefix</literal> setting controls the "
-"log messages that <literal>Kernel::System::Log</literal> writes, it could "
-"also be omitted."
+"files only!)  to load and provide the <literal>ObjectManager</literal> to "
+"all OTRS objects.  Let's look at otrs.CheckDB.pl from OTRS 3.3 as an "
+"example: <placeholder type=\"programlisting\" id=\"0\"/> We can see that a "
+"lot of code is used to load the packages and create the common objects that "
+"must be passed to OTRS objects to be used in the script. With OTRS 4, this "
+"looks quite different: <placeholder type=\"programlisting\" id=\"1\"/> The "
+"new code is a bit shorter than the old. It is no longer necessary to load "
+"all the packages, just the <literal>ObjectManager</literal>. Subsequently "
+"<literal>$Kernel::OM->Get('My::Perl::Package')</literal> can be used to get "
+"instances of objects which only have to be created once. The "
+"<literal>LogPrefix</literal> setting controls the log messages that "
+"<literal>Kernel::System::Log</literal> writes, it could also be omitted."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:224
 msgid ""
 "From this example you can also deduce the general porting guide when it "
-"comes to accessing objects: don't store them in $Self any more (unless "
-"needed for specific reasons). Just fetch and use the objects on demand like "
-"<literal>$Kernel::OM->Get('Kernel::System::Log')->Log(...)</literal>. This "
-"also has the benefit that the Log object will only be created if something "
-"must be logged.  Sometimes it could also be useful to create local variables "
-"if an object is used many times in a function, like <literal>$DBObject</"
-"literal> in the example above."
+"comes to accessing objects: don't store them in <literal>$Self</literal> any "
+"more (unless needed for specific reasons). Just fetch and use the objects on "
+"demand like <code>$Kernel::OM->Get('Kernel::System::Log')->Log(...)</code>. "
+"This also has the benefit that the Log object will only be created if "
+"something must be logged.  Sometimes it could also be useful to create local "
+"variables if an object is used many times in a function, like <literal>"
+"$DBObject</literal> in the example above."
 msgstr ""
 
 #. type: CDATA
@@ -17781,10 +17823,11 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:232
 msgid ""
 "There's not much more to know when porting packages that should be loadable "
-"by the ObjectManager.  They should declare the modules they use (via "
-"<literal>$Kernel::OM->Get()</literal>) like this: <placeholder type="
-"\"programlisting\" id=\"0\"/> The @ObjectDependencies declaration is needed "
-"for the ObjectManager to keep the correct order when destroying the objects."
+"by the <literal>ObjectManager</literal>.  They should declare the modules "
+"they use (via <code>$Kernel::OM->Get()</code>) like this: <placeholder type="
+"\"programlisting\" id=\"0\"/> The <literal>@ObjectDependencies</literal> "
+"declaration is needed for the <literal>ObjectManager</literal> to keep the "
+"correct order when destroying the objects."
 msgstr ""
 
 #. type: CDATA
@@ -17921,7 +17964,7 @@ msgid ""
 "difference. Old: <placeholder type=\"programlisting\" id=\"0\"/> New: "
 "<placeholder type=\"programlisting\" id=\"1\"/> You can see that the "
 "dependencies are declared and the objects are only fetched on demand.  We'll "
-"talk about the CacheInternalObject in the next section."
+"talk about the <literal>CacheInternalObject</literal> in the next section."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -17935,20 +17978,19 @@ msgid ""
 "Since <literal>Kernel::System::Cache</literal> is now also able to cache in-"
 "memory, <literal>Kernel::System::CacheInternal</literal> was dropped. Please "
 "see the previous example for how to migrate your code: you need to use the "
-"global Cache object and pass the <literal>Type</literal> settings with every "
-"call to <literal>Get()</literal>, <literal>Set()</literal>, "
-"<literal>Delete()</literal> and <literal>CleanUp()</literal>. The "
-"<literal>TTL</literal> parameter is now optional and defaults to 20 days, so "
-"you only have to specify it in <literal>Get()</literal> if you require a "
-"different TTL value."
+"global <literal>Cache</literal> object and pass the <literal>Type</literal> "
+"settings with every call to <code>Get()</code>, <code>Set()</code>, "
+"<code>Delete()</code> and <code>CleanUp()</code>. The <literal>TTL</literal> "
+"parameter is now optional and defaults to 20 days, so you only have to "
+"specify it in <code>Get()</code> if you require a different TTL value."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><warning><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:386
 msgid ""
 "It is especially important to add the <literal>Type</literal> to "
-"<literal>CleanUp()</literal> as otherwise not just the current cache type "
-"but the entire cache would be deleted."
+"<code>CleanUp()</code> as otherwise not just the current cache type but the "
+"entire cache would be deleted."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -18027,9 +18069,9 @@ msgid ""
 "Code tags in SOPM files have to be updated. Please do not use <literal>"
 "$Self</literal> any more.  In the past this was used to get access to OTRS "
 "objects like the <literal>MainObject</literal>.  Please use the "
-"ObjectManager now. Here is an example for the old style: <placeholder type="
-"\"programlisting\" id=\"0\"/> Now this should be replaced by: <placeholder "
-"type=\"programlisting\" id=\"1\"/>"
+"<literal>ObjectManager</literal> now. Here is an example for the old style: "
+"<placeholder type=\"programlisting\" id=\"0\"/> Now this should be replaced "
+"by: <placeholder type=\"programlisting\" id=\"1\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -18328,15 +18370,15 @@ msgstr ""
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:588
 msgid ""
-"<literal>Layout::Get()</literal> is now deprecated. Please use "
-"<literal>Layout::Translate()</literal> instead."
+"<code>Layout::Get()</code> is now deprecated. Please use <code>Layout::"
+"Translate()</code> instead."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:593
 msgid ""
 "All occurrences of <literal>$Text{\"\"}</literal> in Perl code must now be "
-"replaced by calls to <literal>Layout::Translate()</literal>."
+"replaced by calls to <code>Layout::Translate()</code>."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
@@ -18362,7 +18404,7 @@ msgstr ""
 msgid ""
 "For the same reason, dynamically injected JavaScript that was enclosed by "
 "<literal>dtl:js_on_document_complete</literal> will not work any more. "
-"Please use <literal>Layout::AddJSOnDocumentComplete()</literal> instead of "
+"Please use <code>Layout::AddJSOnDocumentComplete()</code> instead of "
 "injecting this as template data."
 msgstr ""
 
@@ -18376,7 +18418,7 @@ msgstr ""
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:611
 msgid ""
-"Please be careful with \"<literal>pre</literal>\" output filters (the ones "
+"Please be careful with <literal>pre</literal> output filters (the ones "
 "configured in <literal>Frontend::Output::FilterElementPre</literal>). They "
 "still work, but they will prevent the template from being cached. This could "
 "lead to serious performance issues. You should definitely not have any pre "
@@ -18426,7 +18468,7 @@ msgstr ""
 msgid ""
 "With OTRS 4, in UnitTests <literal>$Self</literal> no longer provides common "
 "objects like the <literal>MainObject</literal>, for example. Please always "
-"use <literal>$Kernel::OM->Get('...')</literal> to fetch these objects."
+"use <code>$Kernel::OM->Get('...')</code> to fetch these objects."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -18438,7 +18480,8 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:644
 msgid ""
 "If you use any custom ticket history types, you have to take two steps for "
-"them to be displayed correctly in AgentTicketHistory of OTRS 4+."
+"them to be displayed correctly in <literal>AgentTicketHistory</literal> of "
+"OTRS 4+."
 msgstr ""
 
 #. type: CDATA

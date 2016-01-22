@@ -16,7 +16,7 @@
             <programlisting><![CDATA[
 # --
 # AdminDynamicFieldPassword.tt - provides HTML form for AdminDynamicFieldPassword
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -182,7 +182,7 @@
         </para>
         <para>
             The second widget has the Dynamic Field specific form attributes. This is the place
-            where new attributes cat be set and it could use Java Script and AJAX technologies to
+            where new attributes cat be set and it could use JavaScript and AJAX technologies to
             make it more easy or friendly for the end user.
         </para>
         <para>
@@ -211,7 +211,7 @@ Core.Agent.Admin.DynamicField.ValidationInit();
         </para>
         <para>
             The final part of the file contains the "Submit" button and the "Cancel" link, as well
-            as other needed Java Script code.
+            as other needed JavaScript code.
         </para>
     </section>
 </section>

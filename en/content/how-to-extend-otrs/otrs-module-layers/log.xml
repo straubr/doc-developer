@@ -125,7 +125,7 @@ sub Log {
         <title>Configuration example</title>
         <para>
             To activate our custom logging module, the administrator can either set the existing
-            configuration item "LogModule" manually to <literal>Kernel::System::Log::CustomFile</literal>. To realize
+            configuration item <literal>LogModule</literal> manually to <literal>Kernel::System::Log::CustomFile</literal>. To realize
             this automatically, you can provide an XML configuration file which overrides the default
             setting.
         </para>

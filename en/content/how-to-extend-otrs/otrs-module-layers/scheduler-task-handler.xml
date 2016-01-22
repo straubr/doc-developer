@@ -31,7 +31,7 @@
         </para>
         <para>
             Currently the scheduler only has one working task handler backend named
-            "GenericInterface". This task handler backend executes Generic Interface Invoker
+            <literal>GenericInterface</literal>. This task handler backend executes Generic Interface Invoker
             modules in the background.
         </para>
         <para>
@@ -40,7 +40,7 @@
         <para>
             By using the OTRS Scheduler combined with the Generic Interface a user does not need to
             wait in the New phone ticket screen after creating a ticket until a Remote System
-            responds to a web service request triggered by an event like "TicketCreate", instead
+            responds to a web service request triggered by an event like <literal>TicketCreate</literal>, instead
             this task can be delegated to the OTRS scheduler to run it on the background.
         </para>
         <para>
@@ -59,7 +59,7 @@
                 <programlisting><![CDATA[
 # --
 # Kernel/Scheduler/TaskHandler/Test.pm - Scheduler task handler test backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -96,9 +96,9 @@ sub new {
                 ]]></programlisting>
             </para>
             <para>
-                The constructor 'new' creates a new instance of the class. According to the coding
+                The constructor <literal>new</literal> creates a new instance of the class. According to the coding
                 guidelines objects of other classes that are needed in this module have to be
-                created in "new".
+                created in <literal>new</literal>.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -137,13 +137,13 @@ sub Run {
                 ]]></programlisting>
             </para>
             <para>
-                The 'Run' function is the main part of the module it checks the incoming data,
+                The <literal>Run</literal> function is the main part of the module it checks the incoming data,
                 make calls to other OTRS modules to execute the tasks, waits for the task result and
                 based on the result information it determines if the task was successfully executed
                 or not and if the task needs to be re-schedule itself, when and with which data.
             </para>
             <para>
-                For this testing example if the parameter "File" exists in the incoming data, a new
+                For this testing example if the parameter <literal>File</literal> exists in the incoming data, a new
                 file is to be created on the file system by the task handler, depending of the
                 success of this, the task handler will continue to the rest part of the code where
                 base it decisions for the returning structure on the previously provided data.

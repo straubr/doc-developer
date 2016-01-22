@@ -80,7 +80,7 @@ chomp $Variable;
             <programlisting format="linespecific"><![CDATA[
 # --
 # (file name) - a short description what it does
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -96,7 +96,7 @@ chomp $Variable;
 #!/usr/bin/perl
 # --
 # (file name) - a short description what it does
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU AFFERO General Public License as published by
@@ -254,19 +254,19 @@ my $Var = 1 if $Something == 'Yes';
                 Some builtin subroutines of Perl may not be used in every place:
             <itemizedlist>
                 <listitem>
-                    <para>Don't use "die" and "exit" in .pm-files.</para>
+                    <para>Don't use <literal>die</literal> and <literal>exit</literal> in <filename>.pm</filename> files.</para>
                 </listitem>
                 <listitem>
-                    <para>Don't use the "Dumper" function in released files.</para>
+                    <para>Don't use the <literal>Dumper</literal> function in released files.</para>
                 </listitem>
                 <listitem>
-                    <para>Don't use "print" in .pm files.</para>
+                    <para>Don't use <literal>print</literal> in <filename>.pm</filename> files.</para>
                 </listitem>
                 <listitem>
-                    <para>Don't use "require", use Main::Require() instead.</para>
+                    <para>Don't use <literal>require</literal>, use <literal>Main::Require()</literal> instead.</para>
                 </listitem>
                 <listitem>
-                    <para>Use the functions of the TimeObject instead of the builtin functions like time(), localtime() etc.</para>
+                    <para>Use the functions of the <literal>TimeObject</literal> instead of the builtin functions like <literal>time()</literal>, <literal>localtime()</literal> etc.</para>
                 </listitem>
             </itemizedlist>
             </para>
@@ -316,7 +316,7 @@ $Text =~ m{
             </para>
             <para>
                 Names should be as descriptive as possible.
-                A reader should be able to say what is meant by a name without digging too deep into the code. E.g. use $ConfigItemID instead of $ID.
+                A reader should be able to say what is meant by a name without digging too deep into the code. E.g. use <literal>$ConfigItemID</literal> instead of <literal>$ID</literal>.
             <programlisting format="linespecific"><![CDATA[
 e. g. @TicktIDs or $Output or StateSet()
             ]]></programlisting>
@@ -347,7 +347,7 @@ my $ID;
                     </programlisting>
                 </para>
                 <para>
-                    Do not set to "undef" or '' in the declaration as this might hide mistakes in code.
+                    Do not set to <literal>undef</literal> or <literal>''</literal> in the declaration as this might hide mistakes in code.
 
                     <programlisting format="linespecific"><![CDATA[
 my $Variable = undef;
@@ -358,7 +358,7 @@ my $Variable;
                     ]]>
                     </programlisting>
 
-                    You can set a variable to '' if you want to concatenate strings:
+                    You can set a variable to <literal>''</literal> if you want to concatenate strings:
 
                     <programlisting format="linespecific"><![CDATA[
 my $SqlStatement = '';
@@ -380,8 +380,8 @@ for my $Part ( @Parts ) {
                 <title>Handling of parameters</title>
 
                 <para>
-                    To fetch the parameters passed to subroutines, OTRS normally uses the hash %Param (not %Params).
-                    This leads to more readable code as every time we use %Param in the subroutine code we know it is the parameter hash passed to the subroutine.
+                    To fetch the parameters passed to subroutines, OTRS normally uses the hash <literal>%Param</literal> (not <literal>%Params</literal>).
+                    This leads to more readable code as every time we use <literal>%Param</literal> in the subroutine code we know it is the parameter hash passed to the subroutine.
                 </para>
                 <para>
                     Just in some exceptions a regular list of parameters should be used.
@@ -451,7 +451,7 @@ return $Self->{DBObject}->Do( ... );
                     ]]>
                     </programlisting>
 
-                    The following example is better as this says explicitly what is returned. With the example above the reader doesn't know what the return value is as he might not know what Do() returns.
+                    The following example is better as this says explicitly what is returned. With the example above the reader doesn't know what the return value is as he might not know what <literal>Do()</literal> returns.
 
                     <programlisting format="linespecific"><![CDATA[
 return if !$Self->{DBObject}->Do( ... );
@@ -476,7 +476,7 @@ return $SuccessfulInsert;
             <section id="packages-use">
                 <title>"use" statements</title>
                 <para>
-                    use strict and use warnings have to be the first two "use"s in a module. This is correct:
+                    <literal>use strict</literal> and <literal>use warnings</literal> have to be the first two "use"s in a module. This is correct:
                     <programlisting format="linespecific"><![CDATA[
 package Kernel::System::ITSMConfigItem::History;
 
@@ -511,13 +511,13 @@ use warnings;
                 <para>
                     <itemizedlist>
                         <listitem>
-                            <para>Don't use the LayoutObject in core modules (Kernel/System).</para>
+                            <para>Don't use the <literal>LayoutObject</literal> in core modules (<filename>Kernel/System</filename>).</para>
                         </listitem>
                         <listitem>
-                            <para>Don't use the ParamObject in core modules (Kernel/System).</para>
+                            <para>Don't use the <literal>ParamObject</literal> in core modules (<filename>Kernel/System</filename>).</para>
                         </listitem>
                         <listitem>
-                            <para>Don't use the DBObject in frontend modules (Kernel/Modules).</para>
+                            <para>Don't use the <literal>DBObject</literal> in frontend modules (<filename>Kernel/Modules</filename>).</para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -560,7 +560,7 @@ This returns something like:
 =cut
                     ]]></programlisting>
 
-                    You can copy and paste a Data::Dumper output for the return values.
+                    You can copy and paste a <literal>Data::Dumper</literal> output for the return values.
                 </para>
             </section>
         </section>
@@ -626,7 +626,7 @@ return if !$Self->{DBObject}->Prepare(
                 ]]></programlisting>
 
                 This is easy to read and modify, and the whitespace can be handled well by our supported DBMSs.
-                For auto-generated SQL code (like in TicketSearch), this indentation is not neccessary.
+                For auto-generated SQL code (like in <literal>TicketSearch</literal>), this indentation is not neccessary.
             </para>
         </section>
         <section id="database-returning-on-errors">
@@ -641,7 +641,7 @@ return if !$Self->{DBObject}->Prepare( ... );
         <section id="database-using-limit">
             <title>using Limit</title>
             <para>
-                Use Limit => 1 if you expect just one row to be returned.
+                Use <literal>Limit => 1</literal> if you expect just one row to be returned.
                 <programlisting format="linespecific"><![CDATA[
 $Self->{DBObject}->Prepare(
     SQL   => 'SELECT id FROM users WHERE username = ?',

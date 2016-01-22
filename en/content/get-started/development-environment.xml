@@ -21,7 +21,7 @@ shell> git clone git@github.com:OTRS/otrs.git -b master
 # for a specific branch like OTRS 3.3
 shell> git clone git@github.com:OTRS/otrs.git -b rel-3_3
 ]]></screen>
-            Check out the "module-tools" module (from github) too, for your development environment. It contains a number of useful tools:
+            Check out the <literal>module-tools</literal> module (from github) too, for your development environment. It contains a number of useful tools:
         <screen><![CDATA[
 shell> git clone git@github.com:OTRS/module-tools.git
 ]]></screen>

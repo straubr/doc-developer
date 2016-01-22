@@ -16,7 +16,7 @@
             <programlisting><![CDATA[
 # --
 # Kernel/Modules/AdminDynamicFieldPassword.pm - provides a dynamic fields password config view for admins
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -69,7 +69,7 @@ sub new {
             ]]></programlisting>
         </para>
         <para>
-            The constructor 'new' creates a new instance of the class. According to the coding
+            The constructor <literal>new</literal> creates a new instance of the class. According to the coding
             guidelines objects of other classes that are needed in this module are normally created
             here.
         </para>
@@ -115,7 +115,7 @@ sub Run {
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>Run</emphasis> is the default function to be called by the web request, we
+            <literal>Run</literal> is the default function to be called by the web request, we
             try to make this function as simple as possible and let the helper functions to do
             the "hard" work.
         </para>
@@ -150,8 +150,8 @@ sub _Add {
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>_Add()</emphasis> function  is also pretty simple, it just get some parameters
-            from the web request and call the <emphasis>_ShowScreen()</emphasis> function, normally
+            <code>_Add</code> function  is also pretty simple, it just get some parameters
+            from the web request and call the <code>_ShowScreen()</code> function, normally
             this function is not needed to be modified.
         </para>
         <para>
@@ -272,12 +272,12 @@ sub _AddAction {
             ]]></programlisting>
         </para>
         <para>
-            The <emphasis>_AddAction()</emphasis> function gets the configuration parameters from
+            The <code>_AddAction</code> function gets the configuration parameters from
             a new dynamic field, it validates the Dynamic Field name only contains letters and
             numbers. This function could validate any other parameter.
         </para>
         <para>
-            Name, Label, FieldOrder, Validity are common parameters for all Dynamic Fields and they
+            <literal>Name</literal>, <literal>Label</literal>, <literal>FieldOrder</literal>, <literal>Validity</literal> are common parameters for all Dynamic Fields and they
             are required. Each Dynamic Field has its specific configuration that must contain at
             least the DefaultValue parameter, in this case it also have ShowValue and ValueMask
             parameters for Password field.
@@ -356,7 +356,7 @@ sub _Change {
             ]]></programlisting>
         </para>
         <para>
-            The "_Change" function is very similar to the "_Add" function but since this function is
+            The <code>_Change</code> function is very similar to the <code>_Add</code> function but since this function is
             used to edit an existing field it needs to validated the FieldID parameter and gather
             the current Dynamic Field data.
         </para>
@@ -505,8 +505,8 @@ sub _ChangeAction {
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>_ChangeAction()</emphasis> is very similar to
-            <emphasis>_AddAction()</emphasis>", but adapted for the update of an existing field
+            <code>_ChangeAction()</code> is very similar to
+            <code>_AddAction()</code>", but adapted for the update of an existing field
             instead of creating a new one.
         </para>
         <para>
@@ -602,7 +602,7 @@ sub _ShowScreen {
             ]]></programlisting>
         </para>
         <para>
-            The <emphasis>_ShowScreen</emphasis> function is used to set and define the HTML
+            The <code>_ShowScreen</code> function is used to set and define the HTML
             elements and blocks from a template to generate the Admin Dialog HTML code.
         </para>
     </section>

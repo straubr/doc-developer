@@ -13,19 +13,19 @@
     <para>
         <itemizedlist mark="round">
             <listitem>
-                <para>AgentOnline</para>
+                <para><literal>AgentOnline</literal></para>
             </listitem>
             <listitem>
-                <para>AgentTicketEscalation</para>
+                <para><literal>AgentTicketEscalation</literal></para>
             </listitem>
             <listitem>
-                <para>CharsetCheck</para>
+                <para><literal>CharsetCheck</literal></para>
             </listitem>
             <listitem>
-                <para>CustomerOnline</para>
+                <para><literal>CustomerOnline</literal></para>
             </listitem>
             <listitem>
-                <para>UIDCheck</para>
+                <para><literal>UIDCheck</literal></para>
             </listitem>
         </itemizedlist>
     </para>
@@ -36,13 +36,13 @@
             <filename>Kernel/Output/HTML/TicketNotification*.pm</filename>.
             There is an example of a notify module below.
             Save it under <filename>Kernel/Output/HTML/TicketNotificationCustom.pm</filename>.
-            You just need 2 functions: new() and Run().
+            You just need 2 functions: <code>new()</code> and <code>Run()</code>.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[
 # --
 # Kernel/Output/HTML/NotificationCustom.pm
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -118,7 +118,7 @@ sub Run {
         <title>Configuration Example</title>
         <para>
             There is the need to activate your custom notification module.
-            This can be done using the xml configuration below. There may
+            This can be done using the XML configuration below. There may
             be additional parameters in the config hash for your notification
             module.
         </para>
@@ -144,7 +144,7 @@ sub Run {
         <title>Use Case Example</title>
         <para>
             Useful ticket menu implementation could be a link to a external
-            tool if parameters (e.g. FreeTextField) have been set.
+            tool if parameters (e.g. <literal>FreeTextField</literal>) have been set.
         </para>
     </section>
     <section id="notify-module-releases">

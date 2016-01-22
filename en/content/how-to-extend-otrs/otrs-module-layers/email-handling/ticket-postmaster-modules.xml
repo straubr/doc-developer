@@ -12,7 +12,7 @@
         If you want to create your own postmaster filter, just create your own module.
         These modules are located under <filename>Kernel/System/PostMaster/Filter/*.pm</filename>.
         For default modules see the admin manual. You just need two functions:
-        new() and Run():
+        <code>new()</code> and <code>Run()</code>:
     </para>
     <para>
         The following is an examplary module to match emails and set X-OTRS-Headers
@@ -47,7 +47,7 @@
         And the actual filter code in <filename>Kernel/System/PostMaster/Filter/Example.pm</filename>:
         <programlisting><![CDATA[
 # --
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you

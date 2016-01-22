@@ -11,7 +11,7 @@
         <filename>Kernel/System/SLA/*.pm</filename>. For more information about their configuration see the admin manual.
         Following, there is an example of an SLA preferences module.
         Save it under <filename>Kernel/System/SLA/PreferencesCustom.pm</filename>.
-        You just need 3 functions: new(), SLAPreferencesSet() and SLAPreferencesGet().
+        You just need 3 functions: <code>new()</code>, <code>SLAPreferencesSet()</code> and <code>SLAPreferencesGet()</code>.
         Make sure the function returns 1.
     </para>
     <section id="sla-preferences-module-code">

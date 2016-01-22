@@ -17,13 +17,13 @@
         <para>
             <itemizedlist mark="round">
                 <listitem>
-                    <para>new</para>
+                    <para><literal>new</literal></para>
                 </listitem>
                 <listitem>
-                    <para>PrepareRequest</para>
+                    <para><literal>PrepareRequest</literal></para>
                 </listitem>
                 <listitem>
-                    <para>HandleResponse</para>
+                    <para><literal>HandleResponse</literal></para>
                 </listitem>
             </itemizedlist>
         </para>
@@ -40,7 +40,7 @@
                 <programlisting><![CDATA[
 # --
 # Kernel/GenericInterface/Invoker/Test.pm - GenericInterface test data Invoker backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -89,9 +89,9 @@ sub new {
                 ]]></programlisting>
             </para>
             <para>
-                The constructor 'new' creates a new instance of the class. According to the coding
+                The constructor <literal>new</literal> creates a new instance of the class. According to the coding
                 guidelines only objects of other classes not handled by the object manager that are
-                needed in this module have to be created in "new".
+                needed in this module have to be created in <literal>new</literal>.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -125,25 +125,25 @@ sub PrepareRequest {
                 ]]></programlisting>
             </para>
             <para>
-                The 'PrepareRequest' function is used to handle and collect all needed data to be
+                The <literal>PrepareRequest</literal> function is used to handle and collect all needed data to be
                 sent into the request, here we can receive data from the request handler, use it,
                 extend it, generate new data, and after that, we can transfer the results to the
                 mapping layer.
             </para>
             <para>
                 For this example we are expecting to receive a ticket number, if there isn't then we
-                use the debugger method "Error()" that creates an entry in the debug log and also
+                use the debugger method <code>Error()</code> that creates an entry in the debug log and also
                 returns a structure with the parameter Success as 0 and Error Message as the passed
                 summary.
             </para>
             <para>
                 Also this example appends the word "Test" to the parameter "Action" and if
-                GetSystemTime is requested, it will fill the SystemTime parameter with the current
+                <literal>GetSystemTime</literal> is requested, it will fill the <literal>SystemTime</literal> parameter with the current
                 system time. This part of the code is to prepare the data to be sent, on a real
                 invoker some calls to core modules (<filename>Kernel/System/*.pm</filename>) should be made here.
             </para>
             <para>
-                If during any part of the 'PrepareRequest' function the request need to be stop
+                If during any part of the <literal>PrepareRequest</literal> function the request need to be stop
                 without generating and error an entry in the debug log the following code can be
                 used:
             </para>
@@ -212,14 +212,14 @@ sub HandleResponse {
                 ]]></programlisting>
             </para>
             <para>
-                The 'HandleResponse' function is used to receive  and process the data from the
+                The <literal>HandleResponse</literal> function is used to receive  and process the data from the
                 previous request, that was made to the Remote System this data already passed by
                 Mapping layer, to transform it from Remote System format to OTRS format (if
                 needed).
             </para>
             <para>
                 For this particular example it checks the ticket number again and check if the
-                action ends with the word 'Test' (as was done in the 'PrepareRequest' function).
+                action ends with the word 'Test' (as was done in the <literal>PrepareRequest</literal> function).
             </para>
             <para>
                 <emphasis>Remember</emphasis>

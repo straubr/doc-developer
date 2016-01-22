@@ -11,7 +11,7 @@
         <filename>Kernel/System/Auth/Sync/*.pm</filename>. For more information about their configuration see the admin manual.
         Following, there is an example of an authentication synchronization module.
         Save it under <filename>Kernel/System/Auth/Sync/CustomAuthSync.pm</filename>.
-        You just need 2 functions: new() and Sync(). Return 1, then the
+        You just need 2 functions: <code>new()</code> and <code>Sync()</code>. Return 1, then the
         synchronization is ok.
     </para>
     <section id="auth-sync-module-code">

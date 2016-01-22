@@ -23,7 +23,7 @@
         <section id="dynamic-fields-framework-backends-backend">
             <title>Dynamic Field (Backend)</title>
             <para>
-                Normally called as "BackendObject" in the frontend modules is the mediator between
+                Normally called as <literal>BackendObject</literal> in the frontend modules is the mediator between
                 the frontend modules and each specific Dynamic Field implementation or Driver. It
                 defines a Generic middle API for all Dynamic Field Drivers, and each Driver has
                 the responsibility to implement the middle API for the specific needs for the field.
@@ -61,10 +61,10 @@
                 This modules are located in <filename>$OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm</filename>.
             </para>
             <para>
-                It exists some base drivers like Base.pm BaseText.pm, BaseSelect.pm and
-                BaseDateTime.pm, that implements common functions for certain drivers (e.g Driver
-                TextArea.pm uses BaseText.pm that also uses Base.pm then TextArea only needs to
-                implement the functions that are missing in Base.pm and BateText.pm or the ones that
+                It exists some base drivers like <filename>Base.pm</filename>, <filename>BaseText.pm</filename>, <filename>BaseSelect.pm</filename> and
+                <filename>BaseDateTime.pm</filename>, that implements common functions for certain drivers (e.g Driver
+                <filename>TextArea.pm</filename> uses <filename>BaseText.pm</filename> that also uses <filename>Base.pm</filename> then <literal>TextArea</literal> only needs to
+                implement the functions that are missing in <filename>Base.pm</filename> and <filename>BateText.pm</filename> or the ones that
                 are special cases)
             </para>
             <para>
@@ -117,7 +117,7 @@
         <title>Dynamic Fields Admin Modules</title>
         <para>
             To manage the Dynamic Fields (Add, Edit and List) a series of modules has been already
-            developed. There is one specific master module (AdminDynamicField.pm) that shows the
+            developed. There is one specific master module (<filename>AdminDynamicField.pm</filename>) that shows the
             list of defined Dynamic Fields, and from within other modules are called to create new
             Dynamic Fields or modify an existing ones.
         </para>
@@ -127,8 +127,8 @@
             Drivers can share Admin Dialogs, if they can provide add needed information for all
             the Drivers that are linked to them, no matter if they are from different type. What is
             mandatory is that each Driver must be linked to an Admin Dialog. (e.g. Text and
-            TextArea Drivers share AdminDynamicFieldText.pm Admin Dialog, and Date and Date/Time
-            Drivers share AdminDynamicFieldDateTime.pm Admin Dialog).
+            TextArea Drivers share <filename>AdminDynamicFieldText.pm</filename> Admin Dialog, and Date and Date/Time
+            Drivers share <filename>AdminDynamicFieldDateTime.pm</filename> Admin Dialog).
         </para>
         <para>
             Admin Dialogs follows the normal OTRS Admin Module rules and architecture. But for
@@ -173,7 +173,7 @@
             There are two tables in the database to store the dynamic field information:
         </para>
         <para>
-            <emphasis>dynamic_field</emphasis>: Used by the Core Module DynamicField.pm, it stores
+            <emphasis>dynamic_field</emphasis>: Used by the Core Module <filename>DynamicField.pm</filename>, it stores
             the Dynamic Field definitions.
         </para>
         <para>

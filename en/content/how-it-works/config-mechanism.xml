@@ -77,8 +77,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
             If it is set to <literal>0</literal>, the config variable is inactive.
         </para>
         <para>
-            If the optional attribute "ConfigLevel" is set, the config variable might not be edited by the administrator,
-            depending on his own config level. The config variable "ConfigLevel" sets the level of technical experience
+            If the optional attribute <literal>ConfigLevel</literal> is set, the config variable might not be edited by the administrator,
+            depending on his own config level. The config variable <literal>ConfigLevel</literal> sets the level of technical experience
             of the administrator. It can be 100 (Expert), 200 (Advanced) or 300 (Beginner).
             As a guideline which config level should be given to an option, it is recommended that all options
             having to do with the configuration of externel interaction, like Sendmail, LDAP, SOAP,

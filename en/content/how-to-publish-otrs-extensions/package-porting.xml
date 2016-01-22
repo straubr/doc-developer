@@ -17,17 +17,17 @@ still work with the OTRS API.
         <section>
             <title><filename>Kernel/Output/HTML</filename> restructured</title>
             <para>
-                In OTRS 5, <filename>Kernel/Output/HTML</filename> was restructured. All perl modules (except <filename>Layout.pm</filename>) were moved to subdirectories (one for every module layer). Template (theme) files were also moved from <filename>Kernel/Output/HTML/Standard</filename> to <filename>Kernel/Output/HTML/Templates/Standard</filename>. Please perform this migration also in your code.
+                In OTRS 5, <filename>Kernel/Output/HTML</filename> was restructured. All Perl modules (except <filename>Layout.pm</filename>) were moved to subdirectories (one for every module layer). Template (theme) files were also moved from <filename>Kernel/Output/HTML/Standard</filename> to <filename>Kernel/Output/HTML/Templates/Standard</filename>. Please perform this migration also in your code.
             </para>
         </section>
 
         <section>
             <title>Pre-Output-Filters</title>
             <para>
-                With OTRS 5 there is no support for "pre" output filters any more. These filters changed the template content before it was parsed, and that could potentially lead to bad performance issues because the templates could not be cached any more and had to be parsed and compiled every time.
+                With OTRS 5 there is no support for <literal>pre</literal> output filters any more. These filters changed the template content before it was parsed, and that could potentially lead to bad performance issues because the templates could not be cached any more and had to be parsed and compiled every time.
             </para>
             <para>
-                Just switch from "pre" to "post" output filters. To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions. In this case you would inject the new code somewhere in the page as invisible content (e. g. with the class <literal>Hidden</literal>), and then move it with jQuery to the correct location in the DOM and show it.
+                Just switch from <literal>pre</literal> to <literal>post</literal> output filters. To translate content, you can run <code>$LayoutObject->Translate()</code> directly. If you need other template features, just define a small template file for your output filter and use it to render your content before injecting it into the main data. It can also be helpful to use jQuery DOM operations to reorder/replace content on the screen in some cases instead of using regular expressions. In this case you would inject the new code somewhere in the page as invisible content (e. g. with the class <literal>Hidden</literal>), and then move it with jQuery to the correct location in the DOM and show it.
             </para>
             <para>
                 To make using post output filters easier, there is also a new mechanism to request HTML comment hooks for certain templates/blocks. You can add in your module config XML like:
@@ -77,7 +77,7 @@ the specified blocks so that filters can use them.</Description>
             <title>GenericInterface API change in "Ticket" connector</title>
             <para>
                    The operation <code>TicketGet()</code> returns dynamic field data from ticket and articles differently than in OTRS 4.
-                   Now they are cleanly  separated from the rest of the static ticket and article fields - they are now grouped in a list called DynamicField. Please adapt any applications using this operation accordingly.
+                   Now they are cleanly  separated from the rest of the static ticket and article fields - they are now grouped in a list called <literal>DynamicField</literal>. Please adapt any applications using this operation accordingly.
 
                     <programlisting><![CDATA[
 # changed from:
@@ -151,14 +151,14 @@ Ticket => [
             <title>New Object Handling</title>
             <para>
                 Up to OTRS 4, objects used to be created both centrally and also locally and
-                then handed down to all objects by passing them to the contructors.
-                With OTRS 4 and later versions, there is now an ObjectManager that centralizes
-                singleton object creation and access.
+                then handed down to all objects by passing them to the constructors.
+                With OTRS 4 and later versions, there is now an <literal>ObjectManager</literal>
+                that centralizes singleton object creation and access.
             </para>
             <para>
                 This will require you first of all to change all toplevel Perl scripts (.pl files only!)
-                to load and provide the ObjectManager to all OTRS objects. Let's look at otrs.CheckDB.pl from
-                OTRS 3.3 as an example:
+                to load and provide the <literal>ObjectManager</literal> to all OTRS objects.
+                Let's look at otrs.CheckDB.pl from OTRS 3.3 as an example:
 
                 <programlisting><![CDATA[
 use strict;
@@ -216,21 +216,21 @@ my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
                 ]]></programlisting>
 
                 The new code is a bit shorter than the old. It is no longer necessary to load all the
-                packages, just the ObjectManager. Subsequently <literal>$Kernel::OM->Get('My::Perl::Package')</literal>
-                can be used to get instances of Objects which only have to be created once. The <literal>LogPrefix</literal> setting
+                packages, just the <literal>ObjectManager</literal>. Subsequently <literal>$Kernel::OM->Get('My::Perl::Package')</literal>
+                can be used to get instances of objects which only have to be created once. The <literal>LogPrefix</literal> setting
                 controls the log messages that <literal>Kernel::System::Log</literal> writes, it could also be omitted.
             </para>
             <para>
                 From this example you can also deduce the general porting guide when it comes to accessing
-                objects: don't store them in $Self any more (unless needed for specific reasons). Just fetch and use
-                the objects on demand like <literal>$Kernel::OM->Get('Kernel::System::Log')->Log(...)</literal>. This also has
+                objects: don't store them in <literal>$Self</literal> any more (unless needed for specific reasons). Just fetch and use
+                the objects on demand like <code>$Kernel::OM->Get('Kernel::System::Log')->Log(...)</code>. This also has
                 the benefit that the Log object will only be created if something must be logged.
                 Sometimes it could also be useful to create local variables if an object is used many times in a function,
                 like <literal>$DBObject</literal> in the example above.
             </para>
             <para>
-                There's not much more to know when porting packages that should be loadable by the ObjectManager.
-                They should declare the modules they use (via <literal>$Kernel::OM->Get()</literal>) like this:
+                There's not much more to know when porting packages that should be loadable by the <literal>ObjectManager</literal>.
+                They should declare the modules they use (via <code>$Kernel::OM->Get()</code>) like this:
 
                 <programlisting><![CDATA[
 our @ObjectDependencies = (
@@ -240,8 +240,8 @@ our @ObjectDependencies = (
 );
                 ]]></programlisting>
 
-                The @ObjectDependencies declaration is needed for the ObjectManager to keep the correct
-                order when destroying the objects.
+                The <literal>@ObjectDependencies</literal> declaration is needed for the
+                <literal>ObjectManager</literal> to keep the correct order when destroying the objects.
             </para>
             <para>
                 Let's look at <filename>Valid.pm</filename> from OTRS 3.3 and 4 to see the difference. Old:
@@ -370,7 +370,7 @@ sub ValidList {
                 ]]></programlisting>
 
                 You can see that the dependencies are declared and the objects are only fetched on demand.
-                We'll talk about the CacheInternalObject in the next section.
+                We'll talk about the <literal>CacheInternalObject</literal> in the next section.
             </para>
         </section>
 
@@ -379,11 +379,11 @@ sub ValidList {
             <para>
                 Since <literal>Kernel::System::Cache</literal> is now also able to cache in-memory,
                 <literal>Kernel::System::CacheInternal</literal> was dropped. Please see the previous example
-                for how to migrate your code: you need to use the global Cache object and pass the <literal>Type</literal>
-                settings with every call to <literal>Get()</literal>, <literal>Set()</literal>, <literal>Delete()</literal> and <literal>CleanUp()</literal>. The <literal>TTL</literal> parameter is now optional and defaults to 20 days, so you only have to specify it in <literal>Get()</literal> if you require a different TTL value.
+                for how to migrate your code: you need to use the global <literal>Cache</literal> object and pass the <literal>Type</literal>
+                settings with every call to <code>Get()</code>, <code>Set()</code>, <code>Delete()</code> and <code>CleanUp()</code>. The <literal>TTL</literal> parameter is now optional and defaults to 20 days, so you only have to specify it in <code>Get()</code> if you require a different TTL value.
                 <warning>
                     <para>
-                        It is especially important to add the <literal>Type</literal> to <literal>CleanUp()</literal> as otherwise not just the current cache type but the entire cache would be deleted.
+                        It is especially important to add the <literal>Type</literal> to <code>CleanUp()</code> as otherwise not just the current cache type but the entire cache would be deleted.
                     </para>
                 </warning>
             </para>
@@ -403,7 +403,7 @@ sub ValidList {
             <para>
                 Code tags in SOPM files have to be updated. Please do not use <literal>$Self</literal> any more.
                 In the past this was used to get access to OTRS objects like the <literal>MainObject</literal>.
-                Please use the ObjectManager now. Here is an example for the old style:
+                Please use the <literal>ObjectManager</literal> now. Here is an example for the old style:
                 <programlisting><![CDATA[
 <CodeInstall Type="post">
 
@@ -585,12 +585,12 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
                     </listitem>
                     <listitem>
                         <para>
-                            <literal>Layout::Get()</literal> is now deprecated. Please use <literal>Layout::Translate()</literal> instead.
+                            <code>Layout::Get()</code> is now deprecated. Please use <code>Layout::Translate()</code> instead.
                         </para>
                     </listitem>
                     <listitem>
                         <para>
-                            All occurrences of <literal>$Text{""}</literal> in Perl code must now be replaced by calls to <literal>Layout::Translate()</literal>.
+                            All occurrences of <literal>$Text{""}</literal> in Perl code must now be replaced by calls to <code>Layout::Translate()</code>.
                         </para>
                         <para>This is becase in DTL there was no separation between template and data. If DTL-Tags were inserted as part of some data, the engine would still parse them. This is no longer the case in Template::Toolkit, there is a strict separation of template and data.
                         </para>
@@ -600,7 +600,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
                     </listitem>
                     <listitem>
                         <para>
-                            For the same reason, dynamically injected JavaScript that was enclosed by <literal>dtl:js_on_document_complete</literal> will not work any more. Please use <literal>Layout::AddJSOnDocumentComplete()</literal> instead of injecting this as template data.
+                            For the same reason, dynamically injected JavaScript that was enclosed by <literal>dtl:js_on_document_complete</literal> will not work any more. Please use <code>Layout::AddJSOnDocumentComplete()</code> instead of injecting this as template data.
                         </para>
                         <para>
                             You can find an example for this in <filename>Kernel/System/DynamicField/Driver/BaseSelect.pm</filename>.
@@ -608,7 +608,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
                     </listitem>
                     <listitem>
                         <para>
-                            Please be careful with "<literal>pre</literal>" output filters (the ones configured in
+                            Please be careful with <literal>pre</literal> output filters (the ones configured in
                             <literal>Frontend::Output::FilterElementPre</literal>). They still work, but they will prevent the template
                             from being cached. This could lead to serious performance issues. You should definitely not have any pre output filters that operate on all templates, but limit them to certain templates via configuration setting.
                         </para>
@@ -634,7 +634,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
         <section id="package-porting-33-to-4-unit-tests">
             <title>UnitTests</title>
             <para>
-                With OTRS 4, in UnitTests <literal>$Self</literal> no longer provides common objects like the <literal>MainObject</literal>, for example. Please always use <literal>$Kernel::OM->Get('...')</literal> to fetch these objects.
+                With OTRS 4, in UnitTests <literal>$Self</literal> no longer provides common objects like the <literal>MainObject</literal>, for example. Please always use <code>$Kernel::OM->Get('...')</code> to fetch these objects.
             </para>
         </section>
 
@@ -642,7 +642,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
             <title>Custom TicketHistory types</title>
             <para>
                 If you use any custom ticket history types, you have to take two steps for them to be displayed correctly
-                in AgentTicketHistory of OTRS 4+.
+                in <literal>AgentTicketHistory</literal> of OTRS 4+.
             </para>
             <para>
                 Firstly, you have to register your custom ticket history types via SysConfig. This could look like:

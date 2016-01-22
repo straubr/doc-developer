@@ -166,25 +166,25 @@
         <para>
         <itemizedlist mark="round">
             <listitem>
-                <para>Kernel::System::Config (to access config options)</para>
+                <para><literal>Kernel::System::Config</literal> (to access config options)</para>
             </listitem>
             <listitem>
-                <para>Kernel::System::Log (to log into OTRS log backend)</para>
+                <para><literal>Kernel::System::Log</literal> (to log into OTRS log backend)</para>
             </listitem>
             <listitem>
-                <para>Kernel::System::DB (to access the database backend)</para>
+                <para><literal>Kernel::System::DB</literal> (to access the database backend)</para>
             </listitem>
             <listitem>
-                <para>Kernel::System::Auth (to check user authentication)</para>
+                <para><literal>Kernel::System::Auth</literal> (to check user authentication)</para>
             </listitem>
             <listitem>
-                <para>Kernel::System::User (to manage users)</para>
+                <para><literal>Kernel::System::User</literal> (to manage users)</para>
             </listitem>
             <listitem>
-                <para>Kernel::System::Group (to manage groups)</para>
+                <para><literal>Kernel::System::Group</literal> (to manage groups)</para>
             </listitem>
             <listitem>
-                <para>Kernel::System::Email (for sending emails)</para>
+                <para><literal>Kernel::System::Email</literal> (for sending emails)</para>
             </listitem>
         </itemizedlist>
         </para>
@@ -207,16 +207,16 @@
         <title>Frontend Modules</title>
         <para>
             Frontend modules are located under <filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>. There are two
-            public functions in there - "new()" and "run()" - which are accessed from the Frontend
-            Handle (e.g. index.pl).
+            public functions in there - <code>new()</code> and <code>run()</code> - which are accessed from the Frontend
+            Handle (e.g. <filename>index.pl</filename>).
         </para>
         <para>
-            "new()" is used to create a frontend module object. The Frontend Handle provides the
+            <code>new()</code> is used to create a frontend module object. The Frontend Handle provides the
             used frontend module with the basic framework objects. These are, for example:
-            ParamObject (to get web form params), DBObject (to use existing database connections),
-            LayoutObject (to use templates and other html layout functions), ConfigObject (to
-            access config settings), LogObject (to use the framework log system), UserObject
-            (to get the user functions from the current user), GroupObject (to get the group
+            <literal>ParamObject</literal> (to get web form params), <literal>DBObject</literal> (to use existing database connections),
+            <literal>LayoutObject</literal> (to use templates and other html layout functions), <literal>ConfigObject</literal> (to
+            access config settings), <literal>LogObject</literal> (to use the framework log system), <literal>UserObject</literal>
+            (to get the user functions from the current user), <literal>GroupObject</literal> (to get the group
             functions).
         </para>
         <para>
@@ -228,7 +228,7 @@
         <title>CMD Frontend</title>
         <para>
             The CMD (Command) Frontend is like the Web Frontend Handle and the Web Frontend Module
-            in one (just without the LayoutObject) and uses the core modules for some actions in
+            in one (just without the <literal>LayoutObject</literal>) and uses the core modules for some actions in
             the system.
         </para>
     </section>
@@ -243,38 +243,38 @@
         <itemizedlist mark="round">
             <listitem>
                 <para>
-                    Kernel::GenericInterface::Transport (to interact with remote systems)
+                    <literal>Kernel::GenericInterface::Transport</literal> (to interact with remote systems)
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    Kernel::GenericInterface::Mapping (to transform data into a required format)
+                    <literal>Kernel::GenericInterface::Mapping</literal> (to transform data into a required format)
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    Kernel::GenericInterface::Requester (to use OTRS as a client for the web
+                    <literal>Kernel::GenericInterface::Requester</literal> (to use OTRS as a client for the web
                     service)
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    Kernel::GenericInterface::Provider (to use OTRS as a server for web service)
+                    <literal>Kernel::GenericInterface::Provider</literal> (to use OTRS as a server for web service)
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    Kernel::GenericInterface::Operation (to execute Provider actions)
+                    <literal>Kernel::GenericInterface::Operation</literal> (to execute Provider actions)
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    Kernel::GenericInterface::Invoker (to execute Requester actions)
+                    <literal>Kernel::GenericInterface::Invoker</literal> (to execute Requester actions)
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    Kernel::GenericInterface::Debugger (to track web service communication,
+                    <literal>Kernel::GenericInterface::Debugger</literal> (to track web service communication,
                     using log entries)
                 </para>
             </listitem>
@@ -289,7 +289,7 @@
             <para>
                 Generic Interface Invoker modules are located under
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/*</filename>. Each Invoker is contained in a folder
-                called "Controller". This approach helps to define a name space not only for
+                called <literal>Controller</literal>. This approach helps to define a name space not only for
                 internal classes and methods but for filenames too. For example:
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Invoker/Test/</filename> is the
                 Controller for all Test-type invokers.
@@ -320,7 +320,7 @@
             <para>
                 Generic Interface Operation modules are located under
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each Operation is contained in a
-                folder called "Controller". This approach help to define a name space not only for
+                folder called <literal>Controller</literal>. This approach help to define a name space not only for
                 internal classes and methods but for filenames too. For example:
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/Ticket/</filename> is the
                 Controller for all Ticket-type operations.
@@ -358,7 +358,7 @@
         <para>
             Scheduler Task Handler modules are located under
             <filename>$OTRS_HOME/Kernel/Scheduler/TaskHandler/*</filename>. These modules are used to perform asynchronous
-            tasks. For example, the GenericInterface task handler perform Generic Interface Requests to
+            tasks. For example, the <literal>GenericInterface</literal> task handler perform Generic Interface Requests to
             Remote Systems outside the apache process. This helps the system to be more responsive,
             preventing possible performance issues.
         </para>

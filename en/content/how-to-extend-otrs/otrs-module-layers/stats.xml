@@ -13,19 +13,19 @@ In contrast to static stats modules, dynamic statistics can be configured via th
         <para>
             <itemizedlist mark="round">
                 <listitem>
-                    <para>new</para>
+                    <para><literal>new</literal></para>
                 </listitem>
                 <listitem>
-                    <para>GetObjectName</para>
+                    <para><literal>GetObjectName</literal></para>
                 </listitem>
                 <listitem>
-                    <para>GetObjectAttributes</para>
+                    <para><literal>GetObjectAttributes</literal></para>
                 </listitem>
                 <listitem>
-                    <para>ExportWrapper</para>
+                    <para><literal>ExportWrapper</literal></para>
                 </listitem>
                 <listitem>
-                    <para>ImportWrapper</para>
+                    <para><literal>ImportWrapper</literal></para>
                 </listitem>
             </itemizedlist>
         </para>

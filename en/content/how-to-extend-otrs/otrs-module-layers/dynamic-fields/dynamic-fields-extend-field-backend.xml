@@ -17,13 +17,13 @@
         <title>Code Example:</title>
         <para>
             In this section the Foo extension for Backend is shown and explained. The
-            extension only defines the function Foo().
+            extension only defines the function <code>Foo()</code>.
          </para>
          <para>
             <programlisting><![CDATA[
 # --
 # Kernel/System/DynamicField/FooExtensionBackend.pm - Extension for DynamicField backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -129,7 +129,7 @@ sub Foo {
             ]]></programlisting>
         </para>
         <para>
-            The function <emphasis>Foo()</emphasis> is only used for test purposes, first it checks
+            The function <code>Foo()</code> is only used for test purposes, first it checks
             the Dynamic Field configuration, then it checks if the Dynamic Field Driver (type)
             exists and was already loaded. To prevent the function call on a driver where is not
             defined it first check if the driver can execute the function, then executes the

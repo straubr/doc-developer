@@ -22,14 +22,14 @@
         <title>Code Example:</title>
         <para>
             In this section the Password Dynamic Field driver is shown and explained. This driver
-            inherits some functions from Base.pm and BaseText.pm and only implements the functions
+            inherits some functions from <filename>Base.pm</filename> and <filename>BaseText.pm</filename> and only implements the functions
             that needs different results.
          </para>
          <para>
             <programlisting><![CDATA[
 # --
 # Kernel/System/DynamicField/Driver/Password.pm - Driver for DynamicField Password backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -55,7 +55,7 @@ our @ObjectDependencies = (
         </para>
         <para>
             This is the common header that can be found in common OTRS modules. The class/package
-            name is declared via the package keyword. Notice that BaseText is used as base class.
+            name is declared via the package keyword. Notice that <literal>BaseText</literal> is used as base class.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -117,7 +117,7 @@ sub new {
             ]]></programlisting>
         </para>
         <para>
-            The constructor <emphasis>new</emphasis> creates a new instance of the class. According
+            The constructor <literal>new</literal> creates a new instance of the class. According
             to the coding guidelines objects of other classes that are needed in this module should
             be created here.
         </para>
@@ -128,7 +128,7 @@ sub new {
         </para>
         <note>
             <para>
-                Drivers are created only by the BankendObject and not directly from any other
+                Drivers are created only by the <literal>BackendObject</literal> and not directly from any other
                 module.
             </para>
         </note>
@@ -223,7 +223,7 @@ EOF
         </para>
         <para>
             This function is the responsible to create the HTML representation of the field and its
-            label, and is used in the edit screens like "AgentTicketPhone", "AgentTicketNote", etc
+            label, and is used in the edit screens like <literal>AgentTicketPhone</literal>, <literal>AgentTicketNote</literal>, etc
         </para>
         <para>
             <programlisting><![CDATA[
@@ -288,7 +288,7 @@ sub DisplayValueRender {
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>DisplayValueRender()</emphasis> function returns the field value as a plain
+            <code>DisplayValueRender()</code> function returns the field value as a plain
             text as well as its title (both can be translated). for this particular example we are
             checking if the password should be reveled or display a predefined mask by  a
             configuration parameter in the Dynamic Field.
@@ -338,7 +338,7 @@ sub ReadableValueRender {
             ]]></programlisting>
         </para>
         <para>
-            This function is similar to <emphasis>DisplayValueRender()</emphasis> but is used  in
+            This function is similar to <code>DisplayValueRender()</code> but is used  in
             places where there is no LayoutObject.
         </para>
         <para>
@@ -386,9 +386,9 @@ sub ValueSet { ... }
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>ValueSet()</emphasis> is used to store a Dynamic Field value, in this case
+            <code>ValueSet()</code> is used to store a Dynamic Field value, in this case
             this field only stores one text type value. Other fields could store more than one
-            value on either ValueText, ValueDateTime, or ValueInt format.
+            value on either <literal>ValueText</literal>, <literal>ValueDateTime</literal>, or <literal>ValueInt</literal> format.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -406,7 +406,7 @@ sub AllValuesDelete { ... }
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>AllValuesDelete()</emphasis> function is used to delete all values from a
+            <code>AllValuesDelete()</code> function is used to delete all values from a
             certain Dynamic Field. This function is very useful when a Dynamic Field is going to be
             deleted.
         </para>
@@ -416,7 +416,7 @@ sub ValueValidate { ... }
             ]]></programlisting>
         </para>
         <para>
-            The <emphasis>ValueValidate()</emphasis> function is used to check if the value is
+            The <code>ValueValidate()</code> function is used to check if the value is
             consistent to its type.
         </para>
         <para>
@@ -425,7 +425,7 @@ sub SearchSQLGet { ... }
             ]]></programlisting>
         </para>
         <para>
-            This function is used by TicketSearch core module to build the internal query to search
+            This function is used by <literal>TicketSearch</literal> core module to build the internal query to search
             for a ticket based on this field as a search parameter.
         </para>
         <para>
@@ -434,9 +434,9 @@ sub SearchSQLOrderFieldGet { ... }
             ]]></programlisting>
         </para>
         <para>
-            The <emphasis>SearchSQLOrderFieldGet</emphasis> is also a helper for TicketSearch
-            module, "$Param{TableAlias}." should be kept and "value_text" could be replaced with
-            "value_date" or "value_int" depending on the field.
+            The <literal>SearchSQLOrderFieldGet</literal> is also a helper for <literal>TicketSearch</literal>
+            module, <literal>$Param{TableAlias}</literal> should be kept and <literal>value_text</literal> could be replaced with
+            <literal>value_date</literal> or <literal>value_int</literal> depending on the field.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -444,10 +444,10 @@ sub EditFieldValueGet { ... }
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>EditFieldValueGet()</emphasis> is a function used in the edit screens of OTRS
+            <code>EditFieldValueGet()</code> is a function used in the edit screens of OTRS
             and its purpose is to get the value of the field, either form a template like generic
             agent profile or from a web request. This function gets the web request in the
-            $Param{ParamObject}, that is a copy of the ParamObject of the Frontend Module or screen.
+            <literal>$Param{ParamObject}</literal>, that is a copy of the <literal>ParamObject</literal> of the Frontend Module or screen.
         </para>
         <para>
             There are two return formats for this function, the normal: that is just the raw value
@@ -479,7 +479,7 @@ sub SearchFieldRender { ... }
         </para>
         <para>
             This function is used by ticket search dialog and its similar to
-            <emphasis>EditFieldRander()</emphasis>, but normally on a search screen small changes
+            <code>EditFieldRander()</code>, but normally on a search screen small changes
             has to be done for all fields, for this example we use a HTML text input instead of a
             password input. In other fields like Dropdown field is displayed as a Multiple select in
             order to let the user search for more than one value at a time.
@@ -490,7 +490,7 @@ sub SearchFieldValueGet { ... }
             ]]></programlisting>
         </para>
         <para>
-            Very similar to <emphasis>EditFieldValueGet()</emphasis>, but uses a different name
+            Very similar to <code>EditFieldValueGet()</code>, but uses a different name
             prefix, adapted for the search dialog screen.
         </para>
         <para>
@@ -499,7 +499,7 @@ sub SearchFieldParameterBuild { ... }
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>SearchFieldParameterBuild()</emphasis> is used also by the ticket search
+            <code>SearchFieldParameterBuild()</code> is used also by the ticket search
             dialog to set the correct operator and value to do the search on this field. It also
             returns how the value should be displayed in the used search attributes, in the results
             page.
@@ -512,7 +512,7 @@ sub StatsFieldParameterBuild { ... }
         <para>
             This function is used by the stats modules, it includes the field definition in the
             stats format. For fields with fixed values it also includes all this possible values
-            and if they can be translated, take a look to the BaseSelect driver code for an example
+            and if they can be translated, take a look to the <literal>BaseSelect</literal> driver code for an example
             how to implement those.
         </para>
         <para>
@@ -521,9 +521,9 @@ sub StatsSearchFieldParameterBuild { ... }
             ]]></programlisting>
         </para>
         <para>
-            <emphasis>StatsSearchFieldParameterBuild()</emphasis> is very similar to the
-            <emphasis>SearchFieldParameterBuild()</emphasis>, the difference id that the
-            <emphasis>SearchFieldParameterBuild()</emphasis> gets the value from the search profile
+            <code>StatsSearchFieldParameterBuild()</code> is very similar to the
+            <code>SearchFieldParameterBuild()</code>, the difference id that the
+            <code>SearchFieldParameterBuild()</code> gets the value from the search profile
             and this one gets the value directly from its parameters.
         </para>
         <para>
@@ -535,7 +535,7 @@ sub TemplateValueTypeGet { ... }
             ]]></programlisting>
         </para>
         <para>
-            The <emphasis>TemplateValueTypeGet()</emphasis> function is used to know how the
+            The <code>TemplateValueTypeGet()</code> function is used to know how the
             Dynamic Field values stored on a profile should be retrieved, as an SCALAR or as an
             ARRAY, and it also defines the correct name of the field in the profile.
         </para>
@@ -545,7 +545,7 @@ sub RandomValueSet { ... }
             ]]></programlisting>
         </para>
         <para>
-            This function is used by otrs.FillDB.pl script to populate the database with some test
+            This function is used by <filename>otrs.FillDB.pl</filename> script to populate the database with some test
             and random data. The value inserted by this function is not really relevant. The only
             restriction is that the value must be compatible with the field value type.
         </para>
@@ -556,7 +556,7 @@ sub ObjectMatch { ... }
         </para>
         <para>
             Used by the notification modules this function returns 1 if the field is present in the
-            $Param{ObjectAttributes} parameter and if it match the given value.
+            <literal>$Param{ObjectAttributes}</literal> parameter and if it match the given value.
         </para>
     </section>
 </section>

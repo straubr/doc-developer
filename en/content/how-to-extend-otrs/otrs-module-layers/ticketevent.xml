@@ -6,20 +6,20 @@
         Ticket event modules are running right after a ticket action takes place.
         Per convention these modules are located in the directory <filename>Kernel/System/Ticket/Event</filename>.
         An ticket event module needs only the two functions new() and Run().
-        The method Run() receives at least the parameters Event, UserID, and Data.
-        Data is a hash ref containing data of the ticket, and in case of Article-related events also
+        The method <code>Run()</code> receives at least the parameters <literal>Event</literal>, <literal>UserID</literal>, and <literal>Data</literal>.
+        <literal>Data</literal> is a hash ref containing data of the ticket, and in case of Article-related events also
         containing Article data.
     </para>
     <section id="ticketevent-code">
         <title>Code example</title>
         <para>
-            See <filename>Kernel/System/Ticket/Event/EventModulePostTemplate.pm</filename> in the package TemplateModule.
+            See <filename>Kernel/System/Ticket/Event/EventModulePostTemplate.pm</filename> in the package <literal>TemplateModule</literal>.
         </para>
     </section>
     <section id="ticketevent-configuration">
         <title>Configuration example</title>
         <para>
-            See <filename>Kernel/Config/Files/EventModulePostTemplate.xml</filename> in the package TemplateModule.
+            See <filename>Kernel/Config/Files/EventModulePostTemplate.xml</filename> in the package <literal>TemplateModule</literal>.
         </para>
     </section>
     <section id="ticketevent-usecases">
@@ -38,13 +38,13 @@
             <para>
                 A customized OTRS might hold non-standard data in additional database tables.
                 When a ticket is deleted then this additional data needs to be deleted.
-                This functionality can be achieved with a ticket event module listening to 'TicketDelete' events.
+                This functionality can be achieved with a ticket event module listening to <literal>TicketDelete</literal> events.
             </para>
         </section>
         <section id="ticketevent-usecase-30">
             <title>New tickets should be twittered.</title>
             <para>
-                A ticket event module listening to 'TicketCreate' can send out tweets.
+                A ticket event module listening to <literal>TicketCreate</literal> can send out tweets.
             </para>
         </section>
     </section>

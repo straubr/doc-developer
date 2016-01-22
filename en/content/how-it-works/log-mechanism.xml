@@ -7,7 +7,7 @@
         OTRS comes with a log backend that can be used for application logging and debugging.
     </para>
     <para>
-        The Log object can be accessed and used via the ObjectManager like this:
+        The Log object can be accessed and used via the <literal>ObjectManager</literal> like this:
     <programlisting><![CDATA[
 $Kernel::OM->Get('Kernel::System::Log')->Log(
     Priority => 'error',

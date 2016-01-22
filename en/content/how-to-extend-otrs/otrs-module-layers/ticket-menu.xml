@@ -25,7 +25,7 @@
         <programlisting linenumbering="numbered"><![CDATA[
 # --
 # Kernel/Output/HTML/TicketMenuCustom.pm
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # Id: TicketMenuCustom.pm,v 1.17 2010/04/12 21:34:06 martin Exp $
 # --
@@ -132,7 +132,7 @@ sub Run {
         <title>Configuration Example</title>
         <para>
             There is the need to activate your custom ticket menu module.
-            This can be done using the xml configuration below. There may
+            This can be done using the XML configuration below. There may
             be additional parameters in the config hash for your ticket menu
             module.
         </para>
@@ -158,7 +158,7 @@ sub Run {
         <title>Use Case Example</title>
         <para>
             Useful ticket menu implementation could be a link to a external
-            tool if parameters (e.g. FreeTextField) have been set.
+            tool if parameters (e.g. <literal>FreeTextField</literal>) have been set.
         </para>
     </section>
     <section id="ticket-menu-module-caveats">

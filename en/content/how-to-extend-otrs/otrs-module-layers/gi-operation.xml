@@ -37,7 +37,7 @@
                 <programlisting><![CDATA[
 # --
 # Kernel/GenericInterface/Operation/Test/Test.pm - GenericInterface test operation backend
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -87,9 +87,9 @@ sub new {
                 ]]></programlisting>
             </para>
             <para>
-                The constructor 'new' creates a new instance of the class. According to the coding
+                The constructor <literal>new</literal> creates a new instance of the class. According to the coding
                 guidelines only objects of other classes not handled by the object manager that are
-                needed in this module have to be created in "new".
+                needed in this module have to be created in <literal>new</literal>.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -134,14 +134,14 @@ sub Run {
                 ]]></programlisting>
             </para>
             <para>
-                The 'Run' function is the main part of each operation, it receives all internal
+                The <literal>Run</literal> function is the main part of each operation, it receives all internal
                 mapped data from remote system needed by the provider to execute the action, it
                 performs the action and returns the result to the provider to be external mapped
                 and deliver back to the remote system.
             </para>
             <para>
                 This particular example returns the same data as came from the remote system,
-                unless "TestError" parameter is passed in this case it returns an error.
+                unless <literal>TestError</literal> parameter is passed in this case it returns an error.
             </para>
             <para>
                 <programlisting><![CDATA[

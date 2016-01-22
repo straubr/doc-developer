@@ -10,7 +10,7 @@
         authentication modules. The agent authentication modules are located under
         <filename>Kernel/System/Auth/*.pm</filename>. For more information about their configuration see the admin manual.
         Following, there is an example of a simple agent auth module. Save it under <filename>Kernel/System/Auth/Simple.pm</filename>.
-        You just need 3 functions: new(), GetOption() and Auth(). Return the uid, then the
+        You just need 3 functions: <code>new()</code>, <code>GetOption()</code> and <code>Auth()</code>. Return the uid, then the
         authentication is ok.
     </para>
     <section id="agent-auth-module-code">

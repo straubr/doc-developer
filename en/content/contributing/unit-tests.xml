@@ -10,16 +10,16 @@
     <section id="testing">
         <title>Creating a test file</title>
         <para>
-            The test files are stored in .t files under /scripts/test/*.t.
-            For example the file /scripts/test/Calendar.t for the Calendar Module.
+            The test files are stored in .t files under <filename>/scripts/test/*.t</filename>.
+            For example the file <filename>/scripts/test/Calendar.t</filename> for the Calendar Module.
         </para>
         <para>
             A test file consists of the function call of the function to be tested and the analysis of the return value.
-            Example (/scripts/test/Calendar.t):
+            Example (<filename>/scripts/test/Calendar.t</filename>):
         <programlisting><![CDATA[
 # --
 # Calendar.t - Calendar
-# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -61,7 +61,7 @@ $Self->True(
             To be able to run the unit tests, you need to have all optional Perl modules installed,  except those for different database backends than what you are using. Run <filename>bin/otrs.CheckModules.pl</filename> to verify your module installation.
         </para>
         <para>
-            You also need to have an instance of the OTRS web frontend running on the FQDN that is configured in your local OTRS's Config.pm file. This OTRS instance must use the same database that is configured for the unit tests.
+            You also need to have an instance of the OTRS web frontend running on the FQDN that is configured in your local OTRS's <filename>Config.pm</filename> file. This OTRS instance must use the same database that is configured for the unit tests.
         </para>
     </section>
 
