@@ -16,6 +16,8 @@
         <para>
             A test file consists of the function call of the function to be tested and the analysis of the return value.
             Example (<filename>/scripts/test/Calendar.t</filename>):
+        </para>
+        <para>
         <programlisting><![CDATA[
 # --
 # Calendar.t - Calendar
@@ -69,6 +71,8 @@ $Self->True(
         <title>Testing</title>
         <para>
             To check your tests, just use <filename>bin/otrs.Console.pl Dev::UnitTest::Run --test Calendar</filename> to use <filename>/scripts/test/Calendar.t</filename>.
+        </para>
+        <para>
         <programlisting><![CDATA[
 shell:/opt/otrs> bin/otrs.Console.pl Dev::UnitTest::Run --test Calendar
 +-------------------------------------------------------------------+
@@ -104,6 +108,8 @@ shell:/opt/otrs>
             <title>True()</title>
             <para>
                 This function tests whether given scalar value is a true value in Perl.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 $Self->True(
     $EventID,
@@ -128,6 +134,8 @@ $Self->False(
             <title>Is()</title>
             <para>
                 This function tests whether the given scalar variables are equal.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 $Self->Is(
     $A,
@@ -141,6 +149,8 @@ $Self->Is(
             <title>IsNot()</title>
             <para>
                 This function tests whether the given scalar variables are inequal.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 $Self->IsNot(
     $A,
@@ -155,6 +165,8 @@ $Self->IsNot(
             <para>
                 This function compares complex data structures for equality. <literal>$A</literal>
                 and <literal>$B</literal> have to be references.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 $Self->IsDeeply(
     $A,
@@ -169,6 +181,8 @@ $Self->IsDeeply(
             <para>
                 This function compares complex data structures for inequality. <literal>$A</literal>
                 and <literal>$B</literal> have to be references.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 $Self->IsNotDeeply(
     $A,

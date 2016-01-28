@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-01-22 15:21+0100\n"
+"POT-Creation-Date: 2016-01-28 10:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -201,7 +201,7 @@ msgstr ""
 #: en/content/contributing/accessibility.xml:20
 msgid ""
 "Accessibility is a general term used to describe the degree to which a "
-"product, device, service, or environment is accessible by as many people as "
+"product, device, service or environment is accessible by as many people as "
 "possible.  Accessibility can be viewed as the \"ability to access\" and "
 "possible benefit of some system or entity. Accessibility is often used to "
 "focus on people with disabilities and their right of access to entities, "
@@ -212,7 +212,7 @@ msgstr ""
 #: en/content/contributing/accessibility.xml:27
 msgid ""
 "In the context of web development, accessibility has a focus on enabling "
-"people with impariments full access to web interfaces. For example, this "
+"people with impairments full access to web interfaces. For example, this "
 "group of people can include partially visually impaired or completely blind "
 "people. While the former can still partially use the GUI, the latter have to "
 "completely rely on assistive technologies such as software which reads the "
@@ -282,37 +282,36 @@ msgstr ""
 #: en/content/contributing/accessibility.xml:78
 msgid ""
 "While commercial screen readers such as JAWS (perhaps the best known one) "
-"can be extremely expensive, there are OpenSource screen readers which you "
+"can be extremely expensive, there are open source screen readers which you "
 "can install and use:"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/accessibility.xml:83
 msgid ""
-"<ulink url=\"http://www.nvda-project.org/\">NVDA</ulink>, a screen reader "
-"for Windows.  (Use the 2010.beta1 or any later version as this has better "
-"support for the web accessibility standards)."
+"<ulink url=\"http://www.nvaccess.org/\">NVDA</ulink>, a screen reader for "
+"Windows."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:90
+#: en/content/contributing/accessibility.xml:88
 msgid ""
-"<ulink url=\"http://live.gnome.org/Orca\">ORCA</ulink>, a screen reader for "
-"Gnome/Linux."
+"<ulink url=\"https://wiki.gnome.org/Projects/Orca\">ORCA</ulink>, a screen "
+"reader for Gnome/Linux."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:96
+#: en/content/contributing/accessibility.xml:94
 msgid "Now you don't have an excuse any more. ;)"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/accessibility.xml:101
+#: en/content/contributing/accessibility.xml:99
 msgid "Accessibility Standards"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/contributing/accessibility.xml:103
+#: en/content/contributing/accessibility.xml:101
 msgid ""
 "This section is included for reference only, you do not have to study the "
 "standards themselves to be able to work on accessibility issues in OTRS.  "
@@ -320,38 +319,38 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/accessibility.xml:109
+#: en/content/contributing/accessibility.xml:107
 msgid "Web Content Accessibility Guidelines (WCAG)"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:112
+#: en/content/contributing/accessibility.xml:110
 msgid ""
 "This W3C standard gives general guidelines for how to create accessible web "
 "pages."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:117
+#: en/content/contributing/accessibility.xml:115
 msgid "<ulink url=\"http://www.w3.org/TR/WCAG20/\">WCAG 2.0</ulink>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:122
+#: en/content/contributing/accessibility.xml:120
 msgid ""
 "<ulink url=\"http://www.w3.org/WAI/WCAG20/quickref/\">How to Meet WCAG "
 "2.0</ulink>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:127
+#: en/content/contributing/accessibility.xml:125
 msgid ""
 "<ulink url=\"http://www.w3.org/TR/UNDERSTANDING-WCAG20/\">Understanding WCAG "
 "2.0</ulink>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:133
+#: en/content/contributing/accessibility.xml:131
 msgid ""
 "WCAG has different levels of accessibility support.  We currently plan to "
 "support level A, as AA and AAA deal with matters that seem not relevant for "
@@ -359,56 +358,56 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/accessibility.xml:139
+#: en/content/contributing/accessibility.xml:137
 msgid "Accessible Rich Internet Applications (WAI-ARIA) 1.0"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:141
+#: en/content/contributing/accessibility.xml:139
 msgid ""
-"This standard (ist is still in draft status, in fact) deals with the special "
-"issues arising from the shift away from static content to dynamic web "
-"applications. It deals with questions like how a user can be notified of "
-"changes in the user interface resulting from AJAX requests, for example."
+"This standard deals with the special issues arising from the shift away from "
+"static content to dynamic web applications. It deals with questions like how "
+"a user can be notified of changes in the user interface resulting from AJAX "
+"requests, for example."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:150
+#: en/content/contributing/accessibility.xml:146
 msgid "<ulink url=\"http://www.w3.org/TR/wai-aria/\">WAI-ARIA 1.0</ulink>"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/accessibility.xml:159
+#: en/content/contributing/accessibility.xml:155
 msgid "Implementation guidelines"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/accessibility.xml:161
+#: en/content/contributing/accessibility.xml:157
 msgid "Provide alternatives for non-text content"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:163
+#: en/content/contributing/accessibility.xml:159
 msgid ""
 "Goal: <emphasis>All non-text content that is presented to the user has a "
-"text alternative that serves the equivalent purpose</emphasis> (WCAG 1.1.1)"
+"text alternative that serves the equivalent purpose.</emphasis> (WCAG 1.1.1)"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:168
+#: en/content/contributing/accessibility.xml:164
 msgid ""
 "It is very important to understand that screen readers can only present "
 "textual information and available metadata to the user.  To give you an "
 "example, whenever a screen reader sees <literal>&lt;a href=\"#\" "
 "class=\"CloseLink\"&gt;&lt;/a&gt;</literal>, it can only read \"link\" to "
-"the user, but not the purpose of this link.  With a slight improvement, it "
+"the user, but not the target of this link.  With a slight improvement, it "
 "would be accessible: <literal>&lt;a href=\"#\" class=\"CloseLink\" "
 "title=\"Close this widget\"&gt;&lt;/a&gt;</literal>.  In this case the user "
 "would hear \"link close this widget\", voila!"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:178
+#: en/content/contributing/accessibility.xml:174
 msgid ""
 "It is important to always formulate the text in a most \"speaking\" way.  "
 "Just imagine it is the only information that you have. Will it help you? Can "
@@ -416,29 +415,30 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:183
+#: en/content/contributing/accessibility.xml:179
 msgid "Please follow these rules when working on OTRS:"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:188
+#: en/content/contributing/accessibility.xml:184
 msgid ""
-"<emphasis>Rul:</emphasis>: Wherever possible, use speaking texts and "
+"<emphasis>Rule</emphasis>: Wherever possible, use speaking texts and "
 "formulate in real, understandable and precise sentences. \"Close this "
 "widget\" is much better than \"Close\", because the latter is redundant."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:195
+#: en/content/contributing/accessibility.xml:191
 msgid ""
 "<emphasis>Rule</emphasis>: Links always must have either text content that "
 "is spoken by the screen reader (<literal>&lt;a href=\"#\" &gt;Delete this "
-"entry&lt;/a&gt;</literal>), or a title attribute (<literal>&lt;a href=\"#\" "
-"title=\"Close this widget\"&gt;&lt;/a&gt;</literal>)."
+"entry&lt;/a&gt;</literal>), or a <literal>title</literal> attribute "
+"(<literal>&lt;a href=\"#\" title=\"Close this "
+"widget\"&gt;&lt;/a&gt;</literal>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:202
+#: en/content/contributing/accessibility.xml:198
 msgid ""
 "<emphasis>Rule</emphasis>: Images must always have an alternative text that "
 "can be read to the user (<literal>&lt;img src=\"house.png\" alt=\"Image of a "
@@ -446,19 +446,19 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/accessibility.xml:211
+#: en/content/contributing/accessibility.xml:207
 msgid "Make navigation easy"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:214
+#: en/content/contributing/accessibility.xml:210
 msgid ""
-"Goal: <emphasis>allow the user to easily navigate the current page and the "
+"Goal: <emphasis>Allow the user to easily navigate the current page and the "
 "entire application.</emphasis>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:217
+#: en/content/contributing/accessibility.xml:213
 msgid ""
 "The <literal>title</literal> tag is the first thing a user hears from the "
 "screen reader when opening a web page.  For OTRS, there is also always just "
@@ -469,36 +469,42 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:225
+#: en/content/contributing/accessibility.xml:221
 msgid ""
 "<emphasis>Rule</emphasis>: Always give a precise title to the page that "
 "allows the user to understand where they currently are."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:230
+#: en/content/contributing/accessibility.xml:226
 msgid ""
 "Screen readers can use the built-in document structure of HTML (headings "
 "<literal>h1</literal> to <literal>h6</literal>) to determine the structure "
 "of a document and to allow the user to jump around from section to section.  "
 "However, this is not enough to reflect the structure of a dynamic web "
 "application.  That's why ARIA defines several \"landmark\" roles that can be "
-"given to elements to indicate their navigational significance.  To keep the "
-"validity of the HTML documents, the role attributes (ARIA landmark roles)  "
-"are not inserted into the source code directly, but instead by classes which "
-"will later be used by the JavaScript functions in OTRS.UI.Accessibility to "
-"set the corresponding role attributes on the node."
+"given to elements to indicate their navigational significance."
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/accessibility.xml:234
+msgid ""
+"To keep the validity of the HTML documents, the <literal>role</literal> "
+"attributes (ARIA landmark roles)  are not inserted into the source code "
+"directly, but instead by classes which will later be used by the JavaScript "
+"functions in <literal>OTRS.UI.Accessibility</literal> to set the "
+"corresponding <literal>role</literal> attributes on the node."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:244
+#: en/content/contributing/accessibility.xml:242
 msgid ""
-"<emphasis>Rule</emphasis>: Use WAI ARIA Landmark Roles to structure the "
-"content for screenreaders"
+"<emphasis>Rule</emphasis>: Use WAI-ARIA Landmark Roles to structure the "
+"content for screen readers."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:248
+#: en/content/contributing/accessibility.xml:246
 msgid ""
 "Banner: <literal>&lt;div class=\"ARIARoleBanner\"&gt;&lt;/div&gt;</literal> "
 "will become <literal>&lt;div class=\"ARIARoleBanner\" "
@@ -506,16 +512,16 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:254
+#: en/content/contributing/accessibility.xml:252
 msgid ""
 "Navigation: <literal>&lt;div "
 "class=\"ARIARoleNavigation\"&gt;&lt;/div&gt;</literal> will become "
-"<literal>&lt;div class=\"AriaRoleNavigation\" "
+"<literal>&lt;div class=\"ARIARoleNavigation\" "
 "role=\"navigation\"&gt;&lt;/div&gt;</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:260
+#: en/content/contributing/accessibility.xml:258
 msgid ""
 "Search function: <literal>&lt;div "
 "class=\"ARIARoleSearch\"&gt;&lt;/div&gt;</literal> will become "
@@ -524,7 +530,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:266
+#: en/content/contributing/accessibility.xml:264
 msgid ""
 "Main application area: <literal>&lt;div "
 "class=\"ARIARoleMain\"&gt;&lt;/div&gt;</literal> will become "
@@ -533,7 +539,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para><itemizedlist><listitem><para>
-#: en/content/contributing/accessibility.xml:272
+#: en/content/contributing/accessibility.xml:270
 msgid ""
 "Footer: <literal>&lt;div "
 "class=\"ARIARoleContentinfo\"&gt;&lt;/div&gt;</literal> will become "
@@ -542,24 +548,30 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/accessibility.xml:281
+#: en/content/contributing/accessibility.xml:279
 msgid ""
 "For navigation inside of <literal>&lt;form&lt;</literal> elements, it is "
-"neccessary for the impaired user to know what each input elements purpose "
+"necessary for the impaired user to know what each input elements purpose "
 "is. This can be achieved by using standard HTML "
 "<literal>&lt;label&gt;</literal> elements which create a link between the "
-"label and the form element.  When an input element gets focus, the screen "
-"reader will usually read the connected label, so that the agent can hear its "
-"exact purpose.  An additional benefit for seeing users is that they can "
-"click on the label, and the input element will get focus (escpecially "
-"helpful for checkboxes, for example)."
+"label and the form element."
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/accessibility.xml:286
+msgid ""
+"When an input element gets focus, the screen reader will usually read the "
+"connected label, so that the user can hear its exact purpose.  An additional "
+"benefit for seeing users is that they can click on the label, and the input "
+"element will get focus (escpecially helpful for checkboxes, for example)."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
 #: en/content/contributing/accessibility.xml:294
 msgid ""
 "<emphasis>Rule</emphasis>: Provide <literal>&lt;label&gt;</literal> elements "
-"for *all* form element (input, select, textarea) fields."
+"for <emphasis>all</emphasis> form element (<literal>input</literal>, "
+"<literal>select</literal>, <literal>textarea</literal>) fields."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
@@ -636,8 +648,8 @@ msgstr ""
 #: en/content/contributing/accessibility.xml:348
 msgid ""
 "This will make sure that the error tooltips are being read by the screen "
-"reader.  That way the blind agent a) knows the item which has an error and "
-"b) get a text describing the error."
+"reader.  That way the blind user a) knows the item which has an error and b) "
+"get a text describing the error."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
@@ -670,7 +682,7 @@ msgstr ""
 #: en/content/contributing/accessibility.xml:374
 msgid ""
 "<emphasis>Rule</emphasis>: Each page must identify its own main language so "
-"that the screenreader can choose the right speech synthesis engine."
+"that the screen reader can choose the right speech synthesis engine."
 msgstr ""
 
 #. type: Content of: <section><section><section><itemizedlist><listitem><para>
@@ -718,8 +730,8 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/contributing/sending-contributions.xml:15
 msgid ""
-"The easiest way to send in your contributions to the OTRS developer's team "
-"is by creating a \"pull request\" in github. Please take a look at the "
+"The easiest way to send your contributions to the OTRS developer's team is "
+"by creating a \"pull request\" in github. Please take a look at the "
 "instructions on <ulink url=\"https://help.github.com\">github</ulink>, "
 "specifically about <ulink "
 "url=\"https://help.github.com/articles/fork-a-repo\">forking a repository "
@@ -746,7 +758,7 @@ msgstr ""
 #. type: Content of: <section><para><itemizedlist><listitem><para>
 #: en/content/contributing/sending-contributions.xml:25
 msgid ""
-"Create a new development branch for your fix/feature/contribution, based off "
+"Create a new development branch for your fix/feature/contribution, based on "
 "the current branch."
 msgstr ""
 
@@ -794,9 +806,9 @@ msgid ""
 "&lt;filename&gt;Kernel/Config.pm&lt;/filename&gt;</literal>, then the German "
 "translation has to be "
 "<literal>&lt;filename&gt;Kernel/Config.pm&lt;/filename&gt; "
-"bearbeiten</literal>, keeping the the XML tags intact. Regular &lt; and &gt; "
+"bearbeiten</literal>, keeping the XML tags intact. Regular &lt; and &gt; "
 "signs that are escaped in the source text must also be escaped in the "
-"traslations (like <literal>&amp;lt;someone@example.com&amp;gt;</literal>).  "
+"translations (like <literal>&amp;lt;someone@example.com&amp;gt;</literal>).  "
 "Scripts and examples usually do not have to be translated (so you can just "
 "copy the source text to the translation text field in this case)."
 msgstr ""
@@ -824,7 +836,7 @@ msgstr ""
 msgid ""
 "Starting with OTRS 4, all translations of the OTRS GUI and the public "
 "extension modules are managed via <ulink "
-"url=\"http://www.transifex.com\">transifex</ulink>.  The OTRS project on "
+"url=\"https://www.transifex.com\">Transifex</ulink>.  The OTRS project on "
 "Transifex can be found at <ulink "
 "url=\"https://www.transifex.com/otrs/OTRS/\">https://www.transifex.com/otrs/OTRS/</ulink>."
 msgstr ""
@@ -834,7 +846,7 @@ msgstr ""
 msgid ""
 "To contribute to a translation of the OTRS GUI, an extension module or a "
 "manual, please sign up for a free translators account on <ulink "
-"url=\"http://www.transifex.com\">transifex</ulink>.  Then you can join your "
+"url=\"https://www.transifex.com\">Transifex</ulink>.  Then you can join your "
 "language team and start updating your translation. No additional software or "
 "files required.  The OTRS developers will download the translations from "
 "time to time into the OTRS source code repositories, you don't have to "
@@ -871,8 +883,8 @@ msgid ""
 "This section talks about how the different parts of the English user "
 "interface should be capitalized. For further information, you may want to "
 "review <ulink "
-"url=\"http://msdn.microsoft.com/en-us/library/aa974176.aspx#capitalization\">this "
-"helpful page</ulink>."
+"url=\"https://msdn.microsoft.com/en-us/library/dn742478.aspx\">this helpful "
+"page</ulink>."
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
@@ -921,7 +933,7 @@ msgstr ""
 #: en/content/contributing/ui-design.xml:49
 msgid ""
 "For translations, it has to be checked if the title style capitalization is "
-"also appropriate in the target language, it might have to be changed to "
+"also appropriate in the target language. It might have to be changed to "
 "sentence style capitalization or something else."
 msgstr ""
 
@@ -948,13 +960,21 @@ msgid ""
 "<filename>/scripts/test/Calendar.t</filename> for the Calendar Module."
 msgstr ""
 
+#. type: Content of: <section><section><para>
+#: en/content/contributing/unit-tests.xml:17
+msgid ""
+"A test file consists of the function call of the function to be tested and "
+"the analysis of the return value.  Example "
+"(<filename>/scripts/test/Calendar.t</filename>):"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:19
+#: en/content/contributing/unit-tests.xml:21
 #, no-wrap
 msgid ""
 "# --\n"
 "# Calendar.t - Calendar\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -988,22 +1008,18 @@ msgid ""
 "[..]\n"
 msgstr ""
 
-#. type: Content of: <section><section><para>
-#: en/content/contributing/unit-tests.xml:17
-msgid ""
-"A test file consists of the function call of the function to be tested and "
-"the analysis of the return value.  Example "
-"(<filename>/scripts/test/Calendar.t</filename>): <placeholder "
-"type=\"programlisting\" id=\"0\"/>"
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:139 en/content/contributing/unit-tests.xml:154 en/content/contributing/unit-tests.xml:170 en/content/contributing/unit-tests.xml:186 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:46 en/content/contributing/code-style-guide/perl.xml:56 en/content/contributing/code-style-guide/perl.xml:70 en/content/contributing/code-style-guide/perl.xml:79 en/content/contributing/code-style-guide/perl.xml:94 en/content/contributing/code-style-guide/perl.xml:110 en/content/contributing/code-style-guide/perl.xml:154 en/content/contributing/code-style-guide/perl.xml:171 en/content/contributing/code-style-guide/perl.xml:193 en/content/contributing/code-style-guide/perl.xml:236 en/content/contributing/code-style-guide/perl.xml:245 en/content/contributing/code-style-guide/perl.xml:257 en/content/contributing/code-style-guide/perl.xml:269 en/content/contributing/code-style-guide/perl.xml:281 en/content/contributing/code-style-guide/perl.xml:322 en/content/contributing/code-style-guide/perl.xml:343 en/content/contributing/code-style-guide/perl.xml:376 en/content/contributing/code-style-guide/perl.xml:385 en/content/contributing/code-style-guide/perl.xml:396 en/content/contributing/code-style-guide/perl.xml:409 en/content/contributing/code-style-guide/perl.xml:438 en/content/contributing/code-style-guide/perl.xml:449 en/content/contributing/code-style-guide/perl.xml:468 en/content/contributing/code-style-guide/perl.xml:479 en/content/contributing/code-style-guide/perl.xml:492 en/content/contributing/code-style-guide/perl.xml:507 en/content/contributing/code-style-guide/perl.xml:516 en/content/contributing/code-style-guide/perl.xml:526 en/content/contributing/code-style-guide/perl.xml:544 en/content/contributing/code-style-guide/perl.xml:559 en/content/contributing/code-style-guide/perl.xml:610 en/content/contributing/code-style-guide/perl.xml:656 en/content/contributing/code-style-guide/perl.xml:666 en/content/contributing/code-style-guide/perl.xml:688 en/content/contributing/code-style-guide/perl.xml:712 en/content/contributing/code-style-guide/perl.xml:723 en/content/how-to-extend-otrs/writing-otrs-application.xml:39 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:232 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:254 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:117 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:142 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:193 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:250 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:288 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:327 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:349 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:77 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:123 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:158 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:364 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:513 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:29 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:229 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:345 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:375 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:384 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:394 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:404 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:414 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:423 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:432 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:442 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:465 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:476 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:488 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:497 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:508 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:519 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:533 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:543 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:553 en/content/how-to-publish-otrs-extensions/package-building.xml:255 en/content/how-to-publish-otrs-extensions/package-building.xml:273 en/content/how-to-publish-otrs-extensions/package-building.xml:291 en/content/how-to-publish-otrs-extensions/package-building.xml:309
+msgid "<placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/unit-tests.xml:59
+#: en/content/contributing/unit-tests.xml:61
 msgid "Prerequisites for testing"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/contributing/unit-tests.xml:61
+#: en/content/contributing/unit-tests.xml:63
 msgid ""
 "To be able to run the unit tests, you need to have all optional Perl modules "
 "installed, except those for different database backends than what you are "
@@ -1012,7 +1028,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/contributing/unit-tests.xml:64
+#: en/content/contributing/unit-tests.xml:66
 msgid ""
 "You also need to have an instance of the OTRS web frontend running on the "
 "FQDN that is configured in your local OTRS's <filename>Config.pm</filename> "
@@ -1021,12 +1037,20 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/unit-tests.xml:69
+#: en/content/contributing/unit-tests.xml:71
 msgid "Testing"
 msgstr ""
 
+#. type: Content of: <section><section><para>
+#: en/content/contributing/unit-tests.xml:73
+msgid ""
+"To check your tests, just use <filename>bin/otrs.Console.pl "
+"Dev::UnitTest::Run --test Calendar</filename> to use "
+"<filename>/scripts/test/Calendar.t</filename>."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:72
+#: en/content/contributing/unit-tests.xml:76
 #, no-wrap
 msgid ""
 "shell:/opt/otrs> bin/otrs.Console.pl Dev::UnitTest::Run --test Calendar\n"
@@ -1047,22 +1071,13 @@ msgid ""
 "shell:/opt/otrs>\n"
 msgstr ""
 
-#. type: Content of: <section><section><para>
-#: en/content/contributing/unit-tests.xml:71
-msgid ""
-"To check your tests, just use <filename>bin/otrs.Console.pl "
-"Dev::UnitTest::Run --test Calendar</filename> to use "
-"<filename>/scripts/test/Calendar.t</filename>.  <placeholder "
-"type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><title>
-#: en/content/contributing/unit-tests.xml:94
+#: en/content/contributing/unit-tests.xml:98
 msgid "UnitTest API"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/contributing/unit-tests.xml:96
+#: en/content/contributing/unit-tests.xml:100
 msgid ""
 "OTRS provides a small and simple API for unit testing that was used in the "
 "previous example.  Here we'll list the most important functions, please also "
@@ -1072,12 +1087,17 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/unit-tests.xml:104
+#: en/content/contributing/unit-tests.xml:108
 msgid "True()"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/unit-tests.xml:110
+msgid "This function tests whether given scalar value is a true value in Perl."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:107
+#: en/content/contributing/unit-tests.xml:113
 #, no-wrap
 msgid ""
 "$Self->True(\n"
@@ -1086,20 +1106,13 @@ msgid ""
 ");\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:106
-msgid ""
-"This function tests whether given scalar value is a true value in Perl.  "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/unit-tests.xml:116
+#: en/content/contributing/unit-tests.xml:122
 msgid "False()"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:119
+#: en/content/contributing/unit-tests.xml:125
 #, no-wrap
 msgid ""
 "$Self->False(\n"
@@ -1109,19 +1122,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:118
+#: en/content/contributing/unit-tests.xml:124
 msgid ""
 "This function tests whether given scalar value is a false value in Perl.  "
 "<placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/unit-tests.xml:128
+#: en/content/contributing/unit-tests.xml:134
 msgid "Is()"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/unit-tests.xml:136
+msgid "This function tests whether the given scalar variables are equal."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:131
+#: en/content/contributing/unit-tests.xml:139
 #, no-wrap
 msgid ""
 "$Self->Is(\n"
@@ -1131,20 +1149,18 @@ msgid ""
 ");\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:130
-msgid ""
-"This function tests whether the given scalar variables are equal.  "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/unit-tests.xml:141
+#: en/content/contributing/unit-tests.xml:149
 msgid "IsNot()"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/unit-tests.xml:151
+msgid "This function tests whether the given scalar variables are inequal."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:144
+#: en/content/contributing/unit-tests.xml:154
 #, no-wrap
 msgid ""
 "$Self->IsNot(\n"
@@ -1154,20 +1170,21 @@ msgid ""
 ");\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:143
-msgid ""
-"This function tests whether the given scalar variables are inequal.  "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/unit-tests.xml:154
+#: en/content/contributing/unit-tests.xml:164
 msgid "IsDeeply()"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/unit-tests.xml:166
+msgid ""
+"This function compares complex data structures for "
+"equality. <literal>$A</literal> and <literal>$B</literal> have to be "
+"references."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:158
+#: en/content/contributing/unit-tests.xml:170
 #, no-wrap
 msgid ""
 "$Self->IsDeeply(\n"
@@ -1177,21 +1194,21 @@ msgid ""
 ");\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:156
-msgid ""
-"This function compares complex data structures for "
-"equality. <literal>$A</literal> and <literal>$B</literal> have to be "
-"references.  <placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/unit-tests.xml:168
+#: en/content/contributing/unit-tests.xml:180
 msgid "IsNotDeeply()"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/unit-tests.xml:182
+msgid ""
+"This function compares complex data structures for "
+"inequality. <literal>$A</literal> and <literal>$B</literal> have to be "
+"references."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/unit-tests.xml:172
+#: en/content/contributing/unit-tests.xml:186
 #, no-wrap
 msgid ""
 "$Self->IsNotDeeply(\n"
@@ -1199,14 +1216,6 @@ msgid ""
 "    $B,\n"
 "    'Test Name',\n"
 ");\n"
-msgstr ""
-
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:170
-msgid ""
-"This function compares complex data structures for "
-"inequality. <literal>$A</literal> and <literal>$B</literal> have to be "
-"references.  <placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -1258,8 +1267,8 @@ msgstr ""
 #: en/content/contributing/code-style-guide/css.xml:43
 msgid ""
 "Wherever possible, module specific design should not be used.  Therefore we "
-"also do not work with IDs on the body element, for example, if it can be "
-"avoided."
+"also do not work with IDs on the <literal>body</literal> element, for "
+"example, if it can be avoided."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -1267,8 +1276,17 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
+#. type: Content of: <section><section><itemizedlist><listitem><para>
+#: en/content/contributing/code-style-guide/css.xml:56
+msgid ""
+"All definitions have a <literal>{</literal> in the same line as the "
+"selector, all rules are defined in one row per rule, the definition ends "
+"with a row with a single <literal>}</literal> in it. See the following "
+"example:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/css.xml:59
+#: en/content/contributing/code-style-guide/css.xml:60
 #, no-wrap
 msgid ""
 "#Selector {\n"
@@ -1279,26 +1297,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/css.xml:56
-msgid ""
-"All definitions have a <literal>{</literal> in the same line as the "
-"selector, all rules are defined in one row per rule, the definition ends "
-"with a row with a single <literal>}</literal> in it. See the following "
-"example: <placeholder type=\"programlisting\" id=\"0\"/>"
+#: en/content/contributing/code-style-guide/css.xml:71
+msgid "Between <literal>:</literal> and the rule value, there is a space."
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/css.xml:70
-msgid "Between <literal>:</literal> and the rule value, there is a space"
-msgstr ""
-
-#. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/css.xml:75
+#: en/content/contributing/code-style-guide/css.xml:76
 msgid "Every rule has an indent of 4 spaces."
 msgstr ""
 
+#. type: Content of: <section><section><itemizedlist><listitem><para>
+#: en/content/contributing/code-style-guide/css.xml:81
+msgid ""
+"If multiple selectors are specified, separate them with comma and put each "
+"one on an own line:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/css.xml:82
+#: en/content/contributing/code-style-guide/css.xml:84
 #, no-wrap
 msgid ""
 "#Selector1,\n"
@@ -1309,14 +1325,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/css.xml:80
-msgid ""
-"If multiple selectors are specified, separate them with comma and put each "
-"one on an own line: <placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
-#. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/css.xml:93
+#: en/content/contributing/code-style-guide/css.xml:95
 msgid ""
 "If rules are combinable, combine them (e.g. combine "
 "<literal>background-position</literal>, <literal>background-image</literal>, "
@@ -1324,23 +1333,21 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/css.xml:98
+#: en/content/contributing/code-style-guide/css.xml:100
 msgid ""
 "Rules should be in a logical order within a definition (all color specific "
 "rule together, all positioning rules together, ...)."
 msgstr ""
 
-#. type: CDATA
+#. type: Content of: <section><section><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/css.xml:105
-#, no-wrap
-msgid "<div class=\"NavigationBar\" id=\"AdminMenu\"></div>\n"
+msgid "All IDs and Names are written in CamelCase notation:"
 msgstr ""
 
-#. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/css.xml:103
-msgid ""
-"All IDs and Names are written in CamelCase notation: <placeholder "
-"type=\"programlisting\" id=\"0\"/>"
+#. type: CDATA
+#: en/content/contributing/code-style-guide/css.xml:108
+#, no-wrap
+msgid "<div class=\"NavigationBar\" id=\"AdminMenu\"></div>\n"
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -1366,8 +1373,13 @@ msgstr ""
 msgid "Directory Structure"
 msgstr ""
 
+#. type: Content of: <section><section><para>
+#: en/content/contributing/code-style-guide/javascript.xml:18
+msgid "Directory structure inside the <literal>js/</literal> folder:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/javascript.xml:20
+#: en/content/contributing/code-style-guide/javascript.xml:21
 #, no-wrap
 msgid ""
 "* js\n"
@@ -1380,20 +1392,13 @@ msgid ""
 "    * Core.*                  # common API\n"
 msgstr ""
 
-#. type: Content of: <section><section><para>
-#: en/content/contributing/code-style-guide/javascript.xml:18
-msgid ""
-"Directory structure inside the <literal>js/</literal> folder: <placeholder "
-"type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:32
+#: en/content/contributing/code-style-guide/javascript.xml:33
 msgid "Thirdparty Code"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/javascript.xml:34
+#: en/content/contributing/code-style-guide/javascript.xml:35
 msgid ""
 "Every thirdparty module gets its own subdirectory: \"module name\"-\"version "
 "number\" (e.g. ckeditor-3.0.1, jquery-1.3.2).  Inside of that, file names "
@@ -1403,72 +1408,72 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:42 en/content/contributing/code-style-guide/perl.xml:328
+#: en/content/contributing/code-style-guide/javascript.xml:43 en/content/contributing/code-style-guide/perl.xml:367
 msgid "Variables"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:45
+#: en/content/contributing/code-style-guide/javascript.xml:46
 msgid "Variable names should be CamelCase, just like in Perl."
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:46
+#: en/content/contributing/code-style-guide/javascript.xml:47
 msgid ""
 "Variables that hold a jQuery object should start with <literal>$</literal>, "
 "for example: <literal>$Tooltip</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:52
+#: en/content/contributing/code-style-guide/javascript.xml:53
 msgid "Functions"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:55
+#: en/content/contributing/code-style-guide/javascript.xml:56
 msgid "Function names should be CamelCase, just like in Perl."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:61
+#: en/content/contributing/code-style-guide/javascript.xml:62
 msgid "Namespaces"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:64
+#: en/content/contributing/code-style-guide/javascript.xml:65
 msgid "TODO..."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:70
+#: en/content/contributing/code-style-guide/javascript.xml:71
 msgid "Comments"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:73
+#: en/content/contributing/code-style-guide/javascript.xml:74
 msgid "Single line comments are done with <literal>//</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:74
-msgid "Longer comments are done with <literal>/* ... */</literal>"
+#: en/content/contributing/code-style-guide/javascript.xml:75
+msgid "Longer comments are done with <literal>/* ... */</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:76
+#: en/content/contributing/code-style-guide/javascript.xml:77
 msgid ""
 "If you comment out parts of your JavaScript code, only use "
-"<literal>//</literal> because <literal>/* .. */</literal> can cause problems "
-"with Regular Expressions in the code."
+"<literal>//</literal> because <literal>/* ... */</literal> can cause "
+"problems with Regular Expressions in the code."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:84
+#: en/content/contributing/code-style-guide/javascript.xml:85
 msgid "Event Handling"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:88
+#: en/content/contributing/code-style-guide/javascript.xml:89
 msgid ""
 "Always use <literal>$.bind()</literal> instead of the event-shorthand "
 "methods of jQuery for better readability (wrong: "
@@ -1477,7 +1482,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:92
+#: en/content/contributing/code-style-guide/javascript.xml:93
 msgid ""
 "Do not use <literal>$.live()</literal>! We had severe performance issues "
 "with <literal>$.live()</literal> in correlation with mouse events.  Until it "
@@ -1486,7 +1491,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:97
+#: en/content/contributing/code-style-guide/javascript.xml:98
 msgid ""
 "If you <literal>$.bind()</literal> events, make sure to "
 "<literal>$.unbind()</literal> them beforehand, to make sure that events will "
@@ -1529,36 +1534,45 @@ msgid ""
 "}\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:301 en/content/how-to-extend-otrs/writing-otrs-application.xml:39 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:232 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:254 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:117 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:142 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:193 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:250 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:288 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:327 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:349 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:77 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:123 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:158 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:364 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:513 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:29 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:229 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:345 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:375 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:384 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:394 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:404 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:414 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:423 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:432 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:442 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:465 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:476 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:488 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:497 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:508 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:519 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:533 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:543 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:553 en/content/how-to-publish-otrs-extensions/package-building.xml:255 en/content/how-to-publish-otrs-extensions/package-building.xml:273 en/content/how-to-publish-otrs-extensions/package-building.xml:291 en/content/how-to-publish-otrs-extensions/package-building.xml:309
-msgid "<placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:33
+#: en/content/contributing/code-style-guide/perl.xml:34
 msgid "Length of lines"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:35
+#: en/content/contributing/code-style-guide/perl.xml:36
 msgid "Lines should not be longer than 100 characters."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:40
+#: en/content/contributing/code-style-guide/perl.xml:41
 msgid "Spaces and parentheses"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:43
+msgid ""
+"To gain more readability, we use spaces between keywords and opening "
+"parenthesis."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:44
+#: en/content/contributing/code-style-guide/perl.xml:46
 #, no-wrap
 msgid ""
 "if ()...\n"
 "for ()...\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:53
+msgid ""
+"If there is just one single variable, the parenthesis enclose the variable "
+"with no spaces inside."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:50
+#: en/content/contributing/code-style-guide/perl.xml:56
 #, no-wrap
 msgid ""
 "if ($Condition) { ... }\n"
@@ -1568,51 +1582,50 @@ msgid ""
 "if ( $Condition ) { ... }\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:66
+msgid ""
+"If the condition is not just one single variable, we use spaces between the "
+"parenthesis and the condition.  And there is still the space between the "
+"keyword (e.g. <literal>if</literal>) and the opening parenthesis."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:60
+#: en/content/contributing/code-style-guide/perl.xml:70
 #, no-wrap
 msgid "if ( $Condition && $ABC ) { ... }\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:76
+msgid "Note that for Perl builtin functions, we do not use parentheses:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:65
+#: en/content/contributing/code-style-guide/perl.xml:79
 #, no-wrap
 msgid "chomp $Variable;\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:42
-msgid ""
-"To gain more readability, we use spaces between keywords and opening "
-"parenthesis.  <placeholder type=\"programlisting\" id=\"0\"/> If there is "
-"just one single variable, the parenthesis enclose the variable with no "
-"spaces inside.  <placeholder type=\"programlisting\" id=\"1\"/> If the "
-"condition is not just one single variable, we use spaces between the "
-"parenthesis and the condition.  And there is still the space between the "
-"keyword (e.g. if) and the opening parens.  <placeholder "
-"type=\"programlisting\" id=\"2\"/> Note that for Perl builtin functions, we "
-"do not use parentheses: <placeholder type=\"programlisting\" id=\"3\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:74
+#: en/content/contributing/code-style-guide/perl.xml:88
 msgid "Source code header and charset"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:76
+#: en/content/contributing/code-style-guide/perl.xml:90
 msgid ""
 "Attach the following header to every source file.  Source files are saved in "
 "UTF-8 charset."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:80
+#: en/content/contributing/code-style-guide/perl.xml:94
 #, no-wrap
 msgid ""
 "# --\n"
 "# (file name) - a short description what it does\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -1621,18 +1634,18 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:92
-msgid "Executable files (*.pl) have a special header."
+#: en/content/contributing/code-style-guide/perl.xml:107
+msgid "Executable files (<filename>*.pl</filename>) have a special header."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:95
+#: en/content/contributing/code-style-guide/perl.xml:110
 #, no-wrap
 msgid ""
 "#!/usr/bin/perl\n"
 "# --\n"
 "# (file name) - a short description what it does\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This program is free software; you can redistribute it and/or modify\n"
 "# it under the terms of the GNU AFFERO General Public License as published "
@@ -1654,30 +1667,40 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:122
+#: en/content/contributing/code-style-guide/perl.xml:138
 msgid "Using the Perl language"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:125
+#: en/content/contributing/code-style-guide/perl.xml:141
 msgid "Control flow"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:128
+#: en/content/contributing/code-style-guide/perl.xml:144
 msgid "Conditions"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:130
+#: en/content/contributing/code-style-guide/perl.xml:146
 msgid ""
 "Conditions can be quite complex and there can be \"chained\" conditions "
 "(linked with logical 'or' or 'and' operations).  When coding for OTRS, you "
 "have to be aware of several situations."
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:150
+msgid ""
+"Perl Best Practices says, that high precedence operators "
+"(<literal>&amp;&amp;</literal> and <literal>||</literal>) shouldn't mixed up "
+"with low precedence operators (<literal>and</literal> and "
+"<literal>or</literal>).  To avoid confusion, we always use the high "
+"precedence operators."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:136
+#: en/content/contributing/code-style-guide/perl.xml:154
 #, no-wrap
 msgid ""
 "if ( $Condition1 && $Condition2 ) { ... }\n"
@@ -1688,17 +1711,22 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:134
+#: en/content/contributing/code-style-guide/perl.xml:164
 msgid ""
-"Perl Best Practices says, that high precedence operators ('&amp;&amp;' and "
-"'||') shouldn't mixed up with low precedence operators ('and' and 'or').  To "
-"avoid confusion, we always use the high precedence operators.  <placeholder "
-"type=\"programlisting\" id=\"0\"/> This means that you have to be aware of "
-"traps. Sometimes you need to use parenthesis to make clear what you want."
+"This means that you have to be aware of traps. Sometimes you need to use "
+"parenthesis to make clear what you want."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:167
+msgid ""
+"If you have long conditions (line is longer than 120 characters over all), "
+"you have to break it in several lines.  And the start of the conditions is "
+"in a new line (not in the line of the <literal>if</literal>)."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:150
+#: en/content/contributing/code-style-guide/perl.xml:171
 #, no-wrap
 msgid ""
 "if (\n"
@@ -1715,8 +1743,17 @@ msgid ""
 "{ ... }\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:188
+msgid ""
+"Also note, that the right parenthesis is in a line on its own and the left "
+"curly bracket is also in a new line and with the same indentation as the "
+"<literal>if</literal>.  The operators are at the beginning of a new line! "
+"The subsequent examples show how to do it..."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:169
+#: en/content/contributing/code-style-guide/perl.xml:193
 #, no-wrap
 msgid ""
 "if (\n"
@@ -1750,41 +1787,38 @@ msgid ""
 "{ ... }\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:148
-msgid ""
-"If you have long conditions (line is longer than 120 characters over all), "
-"you have to break it in several lines.  And the start of the conditions is "
-"in a new line ( not in the line of the 'if').  <placeholder "
-"type=\"programlisting\" id=\"0\"/> Also note, that the right parenthesis is "
-"in a line on its own and the left curly bracket is also in a new line an "
-"with the same indentation as the 'if'.  The operators are at the beginning "
-"of a new line! The subsequent examples show how to do it...  <placeholder "
-"type=\"programlisting\" id=\"1\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:203
-msgid "Postfix \"if\""
+#: en/content/contributing/code-style-guide/perl.xml:227
+msgid "Postfix <literal>if</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:205
+#: en/content/contributing/code-style-guide/perl.xml:229
 msgid ""
-"Generally we use \"postfix if\" statements to reduce the number of levels.  "
-"But we don't use it for multiline statments and is only allowed when "
-"involves return statements in functions or to end a loop or to go next "
-"iteration."
+"Generally we use \"postfix <literal>if</literal>\" statements to reduce the "
+"number of levels.  But we don't use it for multiline statements and is only "
+"allowed when involves return statements in functions or to end a loop or to "
+"go next iteration."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:233 en/content/contributing/code-style-guide/perl.xml:266
+msgid "This is correct:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:210
+#: en/content/contributing/code-style-guide/perl.xml:236
 #, no-wrap
 msgid "next ITEM if !$ItemId;\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:242 en/content/contributing/code-style-guide/perl.xml:278 en/content/contributing/code-style-guide/perl.xml:556
+msgid "This is wrong:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:216
+#: en/content/contributing/code-style-guide/perl.xml:245
 #, no-wrap
 msgid ""
 "return $Self->{LogObject}->Log(\n"
@@ -1793,8 +1827,13 @@ msgid ""
 ") if !$ItemId;\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:254
+msgid "This is less maintainable than this:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:225
+#: en/content/contributing/code-style-guide/perl.xml:257
 #, no-wrap
 msgid ""
 "if( !$ItemId ) {\n"
@@ -1804,7 +1843,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:234
+#: en/content/contributing/code-style-guide/perl.xml:269
 #, no-wrap
 msgid ""
 "for my $Needed (1..10) {\n"
@@ -1814,75 +1853,75 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:243
+#: en/content/contributing/code-style-guide/perl.xml:281
 #, no-wrap
 msgid "my $Var = 1 if $Something == 'Yes';\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:209
-msgid ""
-"Ok: <placeholder type=\"programlisting\" id=\"0\"/> Not ok: <placeholder "
-"type=\"programlisting\" id=\"1\"/> This is less maintainable than "
-"<placeholder type=\"programlisting\" id=\"2\"/> Ok: <placeholder "
-"type=\"programlisting\" id=\"3\"/> Not ok: <placeholder "
-"type=\"programlisting\" id=\"4\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:252
+#: en/content/contributing/code-style-guide/perl.xml:290
 msgid "Restrictions for the use of some Perl builtins"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:254
+#: en/content/contributing/code-style-guide/perl.xml:292
 msgid "Some builtin subroutines of Perl may not be used in every place:"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:257
+#: en/content/contributing/code-style-guide/perl.xml:297
 msgid ""
 "Don't use <literal>die</literal> and <literal>exit</literal> in "
 "<filename>.pm</filename> files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:260
+#: en/content/contributing/code-style-guide/perl.xml:300
 msgid "Don't use the <literal>Dumper</literal> function in released files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:263
+#: en/content/contributing/code-style-guide/perl.xml:303
 msgid "Don't use <literal>print</literal> in <filename>.pm</filename> files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:266
+#: en/content/contributing/code-style-guide/perl.xml:306
 msgid ""
 "Don't use <literal>require</literal>, use <literal>Main::Require()</literal> "
 "instead."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:269
+#: en/content/contributing/code-style-guide/perl.xml:309
 msgid ""
 "Use the functions of the <literal>TimeObject</literal> instead of the "
 "builtin functions like <literal>time()</literal>, "
-"<literal>localtime()</literal> etc."
+"<literal>localtime()</literal>, etc."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:276
+#: en/content/contributing/code-style-guide/perl.xml:316
 msgid "Regular Expressions"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:318
+msgid ""
+"For regular expressions we always use the <literal>m//</literal> operator "
+"with curly braces as delimiters. We also use the modifiers "
+"<literal>x</literal>, <literal>m</literal> and <literal>s</literal>.  The "
+"<literal>x</literal> modifiers allows you to comment your regex and use "
+"spaces to \"group\" logical groups."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:280
+#: en/content/contributing/code-style-guide/perl.xml:322
 #, no-wrap
 msgid ""
 "$Date =~ m{ \\A \\d{4} - \\d{2} - \\d{2} \\z }xms\n"
 "$Date =~ m{\n"
-"    \\A    # beginning of the string\n"
+"    \\A      # beginning of the string\n"
 "    \\d{4} - # year\n"
 "    \\d{2} - # month\n"
 "    [^\\n]   # everything but newline\n"
@@ -1891,33 +1930,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:278
-msgid ""
-"For regular expressions we always use the m// operator with curly braces as "
-"delimiters. We also use the modifiers x, m and s.  The x modifiers allows "
-"you to comment your regex and use spaces to \"group\" logical groups.  "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:293
+#: en/content/contributing/code-style-guide/perl.xml:335
 msgid ""
 "As the space no longer has a special meaning, you have to use a single "
-"character class to match a single space ( [ ]).  If you want to match any "
-"whitespace you can use \\s."
+"character class to match a single space (<literal>[ ]</literal>).  If you "
+"want to match any whitespace you can use <literal>\\s</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:297
+#: en/content/contributing/code-style-guide/perl.xml:339
 msgid ""
-"In the regex, the dot ('.') includes the newline (whereas in regex without s "
-"modifier the dot means 'everything but newline').  If you want to match "
-"anything but newline, you have to use the negated single character class "
-"([^\\n])."
+"In the regex, the dot (<literal>.</literal>) includes the newline (whereas "
+"in regex without <literal>s</literal> modifier the dot means 'everything but "
+"newline').  If you want to match anything but newline, you have to use the "
+"negated single character class (<literal>[^\\n]</literal>)."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:301
+#: en/content/contributing/code-style-guide/perl.xml:343
 #, no-wrap
 msgid ""
 "$Text =~ m{\n"
@@ -1928,46 +1958,54 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:312
+#: en/content/contributing/code-style-guide/perl.xml:354
 msgid "Naming"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:314
+#: en/content/contributing/code-style-guide/perl.xml:356
 msgid ""
 "Names and comments are written in English. Variables, objects and methods "
 "must be descriptive nouns or noun phrases with the first letter set upper "
-"case (CamelCase)."
-msgstr ""
-
-#. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:320
-#, no-wrap
-msgid "e. g. @TicktIDs or $Output or StateSet()\n"
+"case (<ulink "
+"url=\"https://en.wikipedia.org/wiki/CamelCase\">CamelCase</ulink>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:318
+#: en/content/contributing/code-style-guide/perl.xml:360
 msgid ""
 "Names should be as descriptive as possible.  A reader should be able to say "
 "what is meant by a name without digging too deep into the code. E.g. use "
-"<literal>$ConfigItemID</literal> instead of <literal>$ID</literal>.  "
-"<placeholder type=\"programlisting\" id=\"0\"/>"
+"<literal>$ConfigItemID</literal> instead of "
+"<literal>$ID</literal>. Examples: <literal>@TicktIDs</literal>, "
+"<literal>$Output</literal>, <literal>StateSet()</literal>, etc."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:331
+#: en/content/contributing/code-style-guide/perl.xml:370
 msgid "Declaration"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:373
+msgid ""
+"If you have several variables, you can declare them in one line if they "
+"\"belong together\":"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:335
+#: en/content/contributing/code-style-guide/perl.xml:376
 #, no-wrap
 msgid "my ($Minute, $Hour, $Year);\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:382
+msgid "Otherwise break it into separate lines:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:342
+#: en/content/contributing/code-style-guide/perl.xml:385
 #, no-wrap
 msgid ""
 "\n"
@@ -1976,27 +2014,32 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:334
+#: en/content/contributing/code-style-guide/perl.xml:393
 msgid ""
-"If you have several variables, you can declare them in on line if the "
-"\"belong together\": <placeholder type=\"programlisting\" id=\"0\"/> and "
-"break it into seperate lines otherwise: <placeholder type=\"programlisting\" "
-"id=\"1\"/>"
+"Do not set to <literal>undef</literal> or <literal>''</literal> in the "
+"declaration as this might hide mistakes in code."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:352
+#: en/content/contributing/code-style-guide/perl.xml:396
 #, no-wrap
 msgid ""
 "my $Variable = undef;\n"
 "\n"
-"#is the same as\n"
+"# is the same as\n"
 "\n"
 "my $Variable;\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:406
+msgid ""
+"You can set a variable to <literal>''</literal> if you want to concatenate "
+"strings:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:363
+#: en/content/contributing/code-style-guide/perl.xml:409
 #, no-wrap
 msgid ""
 "my $SqlStatement = '';\n"
@@ -2006,28 +2049,22 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:350
-msgid ""
-"Do not set to <literal>undef</literal> or <literal>''</literal> in the "
-"declaration as this might hide mistakes in code.  <placeholder "
-"type=\"programlisting\" id=\"0\"/> You can set a variable to "
-"<literal>''</literal> if you want to concatenate strings: <placeholder "
-"type=\"programlisting\" id=\"1\"/> Otherwise you would get an "
-"\"uninitialized\" warning."
+#: en/content/contributing/code-style-guide/perl.xml:418
+msgid "Otherwise you would get an \"uninitialized\" warning."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:377
+#: en/content/contributing/code-style-guide/perl.xml:424
 msgid "Subroutines"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:380
+#: en/content/contributing/code-style-guide/perl.xml:427
 msgid "Handling of parameters"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:383
+#: en/content/contributing/code-style-guide/perl.xml:430
 msgid ""
 "To fetch the parameters passed to subroutines, OTRS normally uses the hash "
 "<literal>%Param</literal> (not <literal>%Params</literal>).  This leads to "
@@ -2035,8 +2072,15 @@ msgid ""
 "subroutine code we know it is the parameter hash passed to the subroutine."
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:434
+msgid ""
+"Just in some exceptions a regular list of parameters should be used.  So we "
+"want to avoid something like this:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:390
+#: en/content/contributing/code-style-guide/perl.xml:438
 #, no-wrap
 msgid ""
 "sub TestSub {\n"
@@ -2044,8 +2088,13 @@ msgid ""
 "}\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:446
+msgid "We want to use this instead:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:399
+#: en/content/contributing/code-style-guide/perl.xml:449
 #, no-wrap
 msgid ""
 "sub TestSub {\n"
@@ -2054,23 +2103,27 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:387
+#: en/content/contributing/code-style-guide/perl.xml:457
 msgid ""
-"Just in some exceptions a regular list of parameters should be used.  So we "
-"want to avoid something like this: <placeholder type=\"programlisting\" "
-"id=\"0\"/> We want to use this instead: <placeholder type=\"programlisting\" "
-"id=\"1\"/> This has several advantages: We do not have to change the code in "
-"the subroutine when a new parameter should be passed, and calling a function "
+"This has several advantages: We do not have to change the code in the "
+"subroutine when a new parameter should be passed, and calling a function "
 "with named parameters is much more readable."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:412
+#: en/content/contributing/code-style-guide/perl.xml:463
 msgid "Multiple named parameters"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:465
+msgid ""
+"If a function call requires more than one named parameter, split them into "
+"multiple lines:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:415
+#: en/content/contributing/code-style-guide/perl.xml:468
 #, no-wrap
 msgid ""
 "    $Self->{LogObject}->Log(\n"
@@ -2079,29 +2132,35 @@ msgid ""
 "    );\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:476
+msgid "Instead of:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:423
+#: en/content/contributing/code-style-guide/perl.xml:479
 #, no-wrap
 msgid ""
 "    $Self->{LogObject}->Log( Priority => 'error', Message  => \"Need "
 "$Needed!\", );\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:414
-msgid ""
-"If a function call requires more than one named parameter, split them into "
-"multiple lines: <placeholder type=\"programlisting\" id=\"0\"/> instead of: "
-"<placeholder type=\"programlisting\" id=\"1\"/>"
+#. type: Content of: <section><section><section><section><title>
+#: en/content/contributing/code-style-guide/perl.xml:486
+msgid "<literal>return</literal> statements"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:430
-msgid "return statements"
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:488
+msgid ""
+"Subroutines have to have a <literal>return</literal> statement.  The "
+"explicit <literal>return</literal> statement is preferred over the implicit "
+"way (result of last statement in subroutine) as this clarifies what the "
+"subroutine returns."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:435
+#: en/content/contributing/code-style-guide/perl.xml:492
 #, no-wrap
 msgid ""
 "sub TestSub {\n"
@@ -2110,150 +2169,157 @@ msgid ""
 "}\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:432
-msgid ""
-"Subroutines have to have a return statement.  The explicit return statement "
-"is preferred over the implicit way (result of last statement in subroutine) "
-"as this clarifies what the subroutine returns.  <placeholder "
-"type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:445
+#: en/content/contributing/code-style-guide/perl.xml:502
 msgid "Explicit return values"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:504
+msgid ""
+"Explicit return values means that you should not have a "
+"<literal>return</literal> statement followed by a subroutine call."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:449
+#: en/content/contributing/code-style-guide/perl.xml:507
 #, no-wrap
 msgid "return $Self->{DBObject}->Do( ... );\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:513
+msgid ""
+"The following example is better as this says explicitly what is "
+"returned. With the example above the reader doesn't know what the return "
+"value is as he might not know what <literal>Do()</literal> returns."
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:456
+#: en/content/contributing/code-style-guide/perl.xml:516
 #, no-wrap
 msgid ""
 "return if !$Self->{DBObject}->Do( ... );\n"
 "return 1;\n"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:523
+msgid ""
+"If you assign the result of a subroutine to a variable, a \"good\" variable "
+"name indicates what was returned:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:464
+#: en/content/contributing/code-style-guide/perl.xml:526
 #, no-wrap
 msgid ""
 "my $SuccessfulInsert = $Self->{DBObject}->Do( ... );\n"
 "return $SuccessfulInsert;\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:448
-msgid ""
-"Explicit return values means that you should not have a return statement "
-"followed by a subroutine call.  <placeholder type=\"programlisting\" "
-"id=\"0\"/> The following example is better as this says explicitly what is "
-"returned. With the example above the reader doesn't know what the return "
-"value is as he might not know what <literal>Do()</literal> returns.  "
-"<placeholder type=\"programlisting\" id=\"1\"/> If you assign the result of "
-"a subroutine to a variable, a \"good\" variable name indicates what was "
-"returned: <placeholder type=\"programlisting\" id=\"2\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:474
+#: en/content/contributing/code-style-guide/perl.xml:536
 msgid "Packages"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:477
-msgid "\"use\" statements"
-msgstr ""
-
-#. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:480
-#, no-wrap
-msgid ""
-"package Kernel::System::ITSMConfigItem::History;\n"
-"\n"
-"use strict;\n"
-"use warnings;\n"
-"\n"
-"use Kernel::System::User;\n"
-"use Kernel::System::Time;\n"
-msgstr ""
-
-#. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:492
-#, no-wrap
-msgid ""
-"package Kernel::System::ITSMConfigItem::History;\n"
-"\n"
-"use Kernel::System::User;\n"
-"use Kernel::System::Time;\n"
-"\n"
-"use strict;\n"
-"use warnings;\n"
+#: en/content/contributing/code-style-guide/perl.xml:539
+msgid "<literal>use</literal> statements"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:479
+#: en/content/contributing/code-style-guide/perl.xml:541
 msgid ""
 "<literal>use strict</literal> and <literal>use warnings</literal> have to be "
-"the first two \"use\"s in a module. This is correct: <placeholder "
-"type=\"programlisting\" id=\"0\"/> This is wrong: <placeholder "
-"type=\"programlisting\" id=\"1\"/>"
+"the first two \"use\"s in a module. This is correct:"
+msgstr ""
+
+#. type: CDATA
+#: en/content/contributing/code-style-guide/perl.xml:544
+#, no-wrap
+msgid ""
+"package Kernel::System::ITSMConfigItem::History;\n"
+"\n"
+"use strict;\n"
+"use warnings;\n"
+"\n"
+"use Kernel::System::User;\n"
+"use Kernel::System::Time;\n"
+msgstr ""
+
+#. type: CDATA
+#: en/content/contributing/code-style-guide/perl.xml:559
+#, no-wrap
+msgid ""
+"package Kernel::System::ITSMConfigItem::History;\n"
+"\n"
+"use Kernel::System::User;\n"
+"use Kernel::System::Time;\n"
+"\n"
+"use strict;\n"
+"use warnings;\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:506
+#: en/content/contributing/code-style-guide/perl.xml:573
 msgid "Objects and their allocation"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:508
+#: en/content/contributing/code-style-guide/perl.xml:575
 msgid ""
 "In OTRS many objects are available. But you should not use every object in "
 "every file to keep the frontend/backend separation."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:514
+#: en/content/contributing/code-style-guide/perl.xml:581
 msgid ""
 "Don't use the <literal>LayoutObject</literal> in core modules "
 "(<filename>Kernel/System</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:517
+#: en/content/contributing/code-style-guide/perl.xml:584
 msgid ""
 "Don't use the <literal>ParamObject</literal> in core modules "
 "(<filename>Kernel/System</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:520
+#: en/content/contributing/code-style-guide/perl.xml:587
 msgid ""
 "Don't use the <literal>DBObject</literal> in frontend modules "
 "(<filename>Kernel/Modules</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:531
+#: en/content/contributing/code-style-guide/perl.xml:598
 msgid "Writing good documentation"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:534
+#: en/content/contributing/code-style-guide/perl.xml:601
 msgid "Perldoc"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:537
+#: en/content/contributing/code-style-guide/perl.xml:604
 msgid "Documenting subroutines"
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:607
+msgid ""
+"Subroutines should always be documented. The documentation contains a "
+"general description about what the subroutine does, a sample subroutine call "
+"and what the subroutine returns. It should be in this order. A sample "
+"documentation looks like this:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:542
+#: en/content/contributing/code-style-guide/perl.xml:610
 #, no-wrap
 msgid ""
 "=item LastTimeObjectChanged()\n"
@@ -2278,43 +2344,44 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:540
+#: en/content/contributing/code-style-guide/perl.xml:632
 msgid ""
-"Subroutines should always be documented. The documentation contains a "
-"general description about what the subroutine does, a sample subroutine call "
-"and what the subroutine returns. It should be in this order. A sample "
-"documentation looks like this: <placeholder type=\"programlisting\" "
-"id=\"0\"/> You can copy and paste a <literal>Data::Dumper</literal> output "
-"for the return values."
+"You can copy and paste a <literal>Data::Dumper</literal> output for the "
+"return values."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:569
+#: en/content/contributing/code-style-guide/perl.xml:638
 msgid "Commenting"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:572
+#: en/content/contributing/code-style-guide/perl.xml:641
 msgid ""
 "In general, you should try to write your code as readable and "
 "self-explaining as possible.  Don't write a comment to explain what obvious "
-"code does, this is unneccessary duplication.  Good comments should explain "
-"WHY there is some code, possible side effects and anything that might be "
-"special or unusually complicated about the code."
+"code does, this is unnecessary duplication.  Good comments should explain "
+"<emphasis>why</emphasis> there is some code, possible side effects and "
+"anything that might be special or unusually complicated about the code."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:579
+#: en/content/contributing/code-style-guide/perl.xml:648
 msgid "Special comments"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:581
+#: en/content/contributing/code-style-guide/perl.xml:650
 msgid "There are two special kinds of comments."
 msgstr ""
 
+#. type: Content of: <section><section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:653
+msgid "Example 1 - comment for a longer block of code"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:586
+#: en/content/contributing/code-style-guide/perl.xml:656
 #, no-wrap
 msgid ""
 "# -----------------------------------#\n"
@@ -2323,45 +2390,43 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:584
-msgid ""
-"Example 1 - comment for a longer block of code <placeholder "
-"type=\"programlisting\" id=\"0\"/>"
+#: en/content/contributing/code-style-guide/perl.xml:663
+msgid "Example 2 - comment for customizing standard OTRS files"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:594
+#: en/content/contributing/code-style-guide/perl.xml:666
 #, no-wrap
 msgid "# --- customizing for some project\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:593
-msgid ""
-"Example 2 - comment for customizing standard OTRS files <placeholder "
-"type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:604
+#: en/content/contributing/code-style-guide/perl.xml:676
 msgid "Database interaction"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:607
+#: en/content/contributing/code-style-guide/perl.xml:679
 msgid "Declaration of SQL statements"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:609
+#: en/content/contributing/code-style-guide/perl.xml:681
 msgid ""
 "If there is no chance for changing the SQL statement, it should be used in "
-"the Prepare function.  The reason for this is, that the SQL statement and "
-"the bind parameters are closer to each other."
+"the <literal>Prepare</literal> function.  The reason for this is, that the "
+"SQL statement and the bind parameters are closer to each other."
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:685
+msgid ""
+"The SQL statement should be written as one nicely indented string without "
+"concatenation like this:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:615
+#: en/content/contributing/code-style-guide/perl.xml:688
 #, no-wrap
 msgid ""
 "return if !$Self->{DBObject}->Prepare(\n"
@@ -2377,41 +2442,43 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:613
+#: en/content/contributing/code-style-guide/perl.xml:702
 msgid ""
-"The SQL statement should be written as one nicely indented string without "
-"concatenation like this: <placeholder type=\"programlisting\" id=\"0\"/> "
 "This is easy to read and modify, and the whitespace can be handled well by "
 "our supported DBMSs.  For auto-generated SQL code (like in "
-"<literal>TicketSearch</literal>), this indentation is not neccessary."
+"<literal>TicketSearch</literal>), this indentation is not necessary."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:633
+#: en/content/contributing/code-style-guide/perl.xml:707
 msgid "Returning on errors"
 msgstr ""
 
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:709
+msgid ""
+"Whenever you use database functions you should handle errors. If anything "
+"goes wrong, return from subroutine:"
+msgstr ""
+
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:636
+#: en/content/contributing/code-style-guide/perl.xml:712
 #, no-wrap
 msgid "return if !$Self->{DBObject}->Prepare( ... );\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:635
-msgid ""
-"Whenever you use database functions you should handle errors. If anything "
-"goes wrong, return from subroutine: <placeholder type=\"programlisting\" "
-"id=\"0\"/>"
+#. type: Content of: <section><section><section><title>
+#: en/content/contributing/code-style-guide/perl.xml:718
+msgid "Using Limit"
 msgstr ""
 
-#. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:642
-msgid "using Limit"
+#. type: Content of: <section><section><section><para>
+#: en/content/contributing/code-style-guide/perl.xml:720
+msgid "Use <literal>Limit => 1</literal> if you expect just one row to be returned."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:645
+#: en/content/contributing/code-style-guide/perl.xml:723
 #, no-wrap
 msgid ""
 "$Self->{DBObject}->Prepare(\n"
@@ -2421,24 +2488,17 @@ msgid ""
 ");\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:644
-msgid ""
-"Use <literal>Limit => 1</literal> if you expect just one row to be "
-"returned.  <placeholder type=\"programlisting\" id=\"0\"/>"
-msgstr ""
-
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:655
-msgid "Using the while loop"
+#: en/content/contributing/code-style-guide/perl.xml:733
+msgid "Using the <literal>while</literal> loop"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:657
+#: en/content/contributing/code-style-guide/perl.xml:735
 msgid ""
-"Always use the while loop, even when you expect one row to be returned, as "
-"some databases do not release the statement handle and this can lead to "
-"weird bugs."
+"Always use the <literal>while</literal> loop, even when you expect one row "
+"to be returned, as some databases do not release the statement handle and "
+"this can lead to weird bugs."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -7471,7 +7531,7 @@ msgid ""
 "# --\n"
 "# Kernel/GenericInterface/Invoker/Test.pm - GenericInterface test data "
 "Invoker backend\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -7941,7 +8001,7 @@ msgid ""
 "# --\n"
 "# Kernel/GenericInterface/Mapping/Test.pm - GenericInterface test data "
 "mapping backend\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -8271,7 +8331,7 @@ msgid ""
 "# --\n"
 "# Kernel/GenericInterface/Operation/Test/Test.pm - GenericInterface test "
 "operation backend\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -8542,7 +8602,7 @@ msgid ""
 "# --\n"
 "# Kernel/GenericInterface/Transport/HTTP/Test.pm - GenericInterface network "
 "transport interface for testing\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -9094,7 +9154,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/Output/HTML/NotificationCustom.pm\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -9714,7 +9774,7 @@ msgid ""
 "# --\n"
 "# Kernel/Scheduler/TaskHandler/Test.pm - Scheduler task handler test "
 "backend\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -11705,7 +11765,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/Output/HTML/TicketMenuCustom.pm\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# Id: TicketMenuCustom.pm,v 1.17 2010/04/12 21:34:06 martin Exp $\n"
 "# --\n"
@@ -11995,7 +12055,7 @@ msgid ""
 "# --\n"
 "# Kernel/System/DynamicField/FooExtensionBackend.pm - Extension for "
 "DynamicField backend\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -12279,7 +12339,7 @@ msgid ""
 "# --\n"
 "# Kernel/System/DynamicField/Driver/FooExtensionText.pm - Extension for "
 "DynamicField Text Driver\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -13092,7 +13152,7 @@ msgid ""
 "# --\n"
 "# AdminDynamicFieldPassword.tt - provides HTML form for "
 "AdminDynamicFieldPassword\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -13419,7 +13479,7 @@ msgid ""
 "# --\n"
 "# Kernel/Modules/AdminDynamicFieldPassword.pm - provides a dynamic fields "
 "password config view for admins\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -14210,7 +14270,7 @@ msgid ""
 "# --\n"
 "# Kernel/System/DynamicField/Driver/Password.pm - Driver for DynamicField "
 "Password backend\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -15065,7 +15125,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "# --\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"

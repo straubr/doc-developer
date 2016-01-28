@@ -16,7 +16,8 @@
         <title>Directory Structure</title>
         <para>
             Directory structure inside the <literal>js/</literal> folder:
-
+        </para>
+        <para>
             <programlisting format="linespecific"><![CDATA[
 * js
     * thirdparty              # thirdparty libs always have the version number inside the directory
@@ -71,10 +72,10 @@
         <para>
             <itemizedlist>
                 <listitem><para>Single line comments are done with <literal>//</literal>.</para></listitem>
-                <listitem><para>Longer comments are done with <literal>/* ... */</literal></para></listitem>
+                <listitem><para>Longer comments are done with <literal>/* ... */</literal>.</para></listitem>
                 <listitem><para>
                     If you comment out parts of your JavaScript code, only use <literal>//</literal>
-                    because <literal>/* .. */</literal> can cause problems with Regular Expressions in the code.
+                    because <literal>/* ... */</literal> can cause problems with Regular Expressions in the code.
                 </para></listitem>
             </itemizedlist>
         </para>

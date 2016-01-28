@@ -12,7 +12,7 @@
         If your code does not validate against this tool, it will likely not be accepted.
     </para>
     <para>
-        The easiest way to send in your contributions to the OTRS developer's team is by creating a "pull request"
+        The easiest way to send your contributions to the OTRS developer's team is by creating a "pull request"
         in github. Please take a look at the instructions on <ulink url="https://help.github.com">github</ulink>,
         specifically about <ulink url="https://help.github.com/articles/fork-a-repo">forking a repository and
         sending pull requests</ulink>.
@@ -22,7 +22,7 @@
         <itemizedlist>
             <listitem><para>Register at github, if you have no account yet.</para></listitem>
             <listitem><para>Fork the repository you want to contribute to, and checkout the branch that the changes should go in.</para></listitem>
-            <listitem><para>Create a new development branch for your fix/feature/contribution, based off the current branch.</para></listitem>
+            <listitem><para>Create a new development branch for your fix/feature/contribution, based on the current branch.</para></listitem>
             <listitem><para>After you finished your changes and committed them, push your branch to github.</para></listitem>
             <listitem><para>Create a pull request. The OTRS dev team will be notified about this, check your pull request and either merge it or give you some feedback about possible improvements.</para></listitem>
         </itemizedlist>

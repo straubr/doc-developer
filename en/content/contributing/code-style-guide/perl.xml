@@ -14,7 +14,7 @@
                 TAB: We use 4 spaces. Examples for braces:
             </para>
             <para>
-            <programlisting format="linespecific"><![CDATA[
+                <programlisting format="linespecific"><![CDATA[
 if ($Condition) {
     Foo();
 }
@@ -25,7 +25,8 @@ else {
 while ($Condition == 1) {
     Foo();
 }
-            ]]></programlisting>
+                ]]>
+                </programlisting>
             </para>
         </section>
 
@@ -40,28 +41,41 @@ while ($Condition == 1) {
             <title>Spaces and parentheses</title>
             <para>
                 To gain more readability, we use spaces between keywords and opening parenthesis.
-
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 if ()...
 for ()...
-                ]]></programlisting>
-
+                ]]>
+                </programlisting>
+            </para>
+            <para>
                 If there is just one single variable, the parenthesis enclose the variable with no spaces inside.
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 if ($Condition) { ... }
 
 # instead of
 
 if ( $Condition ) { ... }
-                ]]></programlisting>
-
+                ]]>
+                </programlisting>
+            </para>
+            <para>
                 If the condition is not just one single variable, we use spaces between the parenthesis and the condition.
-                And there is still the space between the keyword (e.g. if) and the opening parens.
+                And there is still the space between the keyword (e.g. <literal>if</literal>) and the opening parenthesis.
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 if ( $Condition && $ABC ) { ... }
-                ]]></programlisting>
-
+                ]]>
+                </programlisting>
+            </para>
+            <para>
                 Note that for Perl builtin functions, we do not use parentheses:
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 chomp $Variable;
                 ]]>
@@ -77,7 +91,7 @@ chomp $Variable;
                 Source files are saved in UTF-8 charset.
             </para>
             <para>
-            <programlisting format="linespecific"><![CDATA[
+                <programlisting format="linespecific"><![CDATA[
 # --
 # (file name) - a short description what it does
 # Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
@@ -86,13 +100,14 @@ chomp $Variable;
 # the enclosed file COPYING for license information (AGPL). If you
 # did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
 # --
-            ]]></programlisting>
+                ]]>
+                </programlisting>
             </para>
             <para>
-                Executable files (*.pl) have a special header.
+                Executable files (<filename>*.pl</filename>) have a special header.
             </para>
             <para>
-            <programlisting format="linespecific"><![CDATA[
+                <programlisting format="linespecific"><![CDATA[
 #!/usr/bin/perl
 # --
 # (file name) - a short description what it does
@@ -113,7 +128,8 @@ chomp $Variable;
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # or see http://www.gnu.org/licenses/agpl.txt.
 # --
-            ]]></programlisting>
+                ]]>
+                </programlisting>
             </para>
         </section>
     </section> <!-- formatting -->
@@ -131,8 +147,10 @@ chomp $Variable;
                     When coding for OTRS, you have to be aware of several situations.
                 </para>
                 <para>
-                    Perl Best Practices says, that high precedence operators ('&amp;&amp;' and '||') shouldn't mixed up with low precedence operators ('and' and 'or').
+                    Perl Best Practices says, that high precedence operators (<literal>&amp;&amp;</literal> and <literal>||</literal>) shouldn't mixed up with low precedence operators (<literal>and</literal> and <literal>or</literal>).
                     To avoid confusion, we always use the high precedence operators.
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 if ( $Condition1 && $Condition2 ) { ... }
 
@@ -141,12 +159,15 @@ if ( $Condition1 && $Condition2 ) { ... }
 if ( $Condition and $Condition2 ) { ... }
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     This means that you have to be aware of traps. Sometimes you need to use parenthesis to make clear what you want.
                 </para>
                 <para>
                     If you have long conditions (line is longer than 120 characters over all), you have to break it in several lines.
-                    And the start of the conditions is in a new line ( not in the line of the 'if').
+                    And the start of the conditions is in a new line (not in the line of the <literal>if</literal>).
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 if (
     $Condition1
@@ -162,10 +183,13 @@ if ( $Condition1
 { ... }
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     Also note, that the right parenthesis is in a line on its own and the left curly bracket
-                    is also in a new line an with the same indentation as the 'if'.
+                    is also in a new line and with the same indentation as the <literal>if</literal>.
                     The operators are at the beginning of a new line! The subsequent examples show how to do it...
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 if (
     $XMLHash[0]->{otrs_stats}[1]{StatType}[1]{Content}
@@ -200,19 +224,24 @@ if (
             </section>
 
             <section id="postfix-if">
-                <title>Postfix "if"</title>
+                <title>Postfix <literal>if</literal></title>
                 <para>
-                    Generally we use "postfix if" statements to reduce the number of levels.
-                    But we don't use it for multiline statments and is only allowed when involves return statements in functions or to end a loop or to go next iteration.
+                    Generally we use "postfix <literal>if</literal>" statements to reduce the number of levels.
+                    But we don't use it for multiline statements and is only allowed when involves return statements in functions or to end a loop or to go next iteration.
                 </para>
                 <para>
-                    Ok:
+                    This is correct:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 next ITEM if !$ItemId;
                     ]]>
                     </programlisting>
-
-                    Not ok:
+                </para>
+                <para>
+                    This is wrong:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 return $Self->{LogObject}->Log(
     Priority => 'error',
@@ -220,8 +249,11 @@ return $Self->{LogObject}->Log(
 ) if !$ItemId;
                     ]]>
                     </programlisting>
-
-                    This is less maintainable than
+                </para>
+                <para>
+                    This is less maintainable than this:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 if( !$ItemId ) {
     $Self->{LogObject}->Log( ... );
@@ -229,8 +261,11 @@ if( !$ItemId ) {
 }
                     ]]>
                     </programlisting>
-
-                    Ok:
+                </para>
+                <para>
+                    This is correct:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 for my $Needed (1..10) {
     next if $Needed == 5;
@@ -238,8 +273,11 @@ for my $Needed (1..10) {
 }
                     ]]>
                     </programlisting>
-
-                    Not ok:
+                </para>
+                <para>
+                    This is wrong:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my $Var = 1 if $Something == 'Yes';
                     ]]>
@@ -252,35 +290,39 @@ my $Var = 1 if $Something == 'Yes';
             <title>Restrictions for the use of some Perl builtins</title>
             <para>
                 Some builtin subroutines of Perl may not be used in every place:
-            <itemizedlist>
-                <listitem>
-                    <para>Don't use <literal>die</literal> and <literal>exit</literal> in <filename>.pm</filename> files.</para>
-                </listitem>
-                <listitem>
-                    <para>Don't use the <literal>Dumper</literal> function in released files.</para>
-                </listitem>
-                <listitem>
-                    <para>Don't use <literal>print</literal> in <filename>.pm</filename> files.</para>
-                </listitem>
-                <listitem>
-                    <para>Don't use <literal>require</literal>, use <literal>Main::Require()</literal> instead.</para>
-                </listitem>
-                <listitem>
-                    <para>Use the functions of the <literal>TimeObject</literal> instead of the builtin functions like <literal>time()</literal>, <literal>localtime()</literal> etc.</para>
-                </listitem>
-            </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Don't use <literal>die</literal> and <literal>exit</literal> in <filename>.pm</filename> files.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Don't use the <literal>Dumper</literal> function in released files.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Don't use <literal>print</literal> in <filename>.pm</filename> files.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Don't use <literal>require</literal>, use <literal>Main::Require()</literal> instead.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Use the functions of the <literal>TimeObject</literal> instead of the builtin functions like <literal>time()</literal>, <literal>localtime()</literal>, etc.</para>
+                    </listitem>
+                </itemizedlist>
             </para>
         </section>
 
         <section id="regular-expressions">
             <title>Regular Expressions</title>
             <para>
-                For regular expressions we always use the m// operator with curly braces as delimiters. We also use the modifiers x, m and s.
-                The x modifiers allows you to comment your regex and use spaces to "group" logical groups.
+                For regular expressions we always use the <literal>m//</literal> operator with curly braces as delimiters. We also use the modifiers <literal>x</literal>, <literal>m</literal> and <literal>s</literal>.
+                The <literal>x</literal> modifiers allows you to comment your regex and use spaces to "group" logical groups.
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 $Date =~ m{ \A \d{4} - \d{2} - \d{2} \z }xms
 $Date =~ m{
-    \A    # beginning of the string
+    \A      # beginning of the string
     \d{4} - # year
     \d{2} - # month
     [^\n]   # everything but newline
@@ -290,12 +332,12 @@ $Date =~ m{
                 </programlisting>
             </para>
             <para>
-                As the space no longer has a special meaning, you have to use a single character class to match a single space ( [ ]).
-                If you want to match any whitespace you can use \s.
+                As the space no longer has a special meaning, you have to use a single character class to match a single space (<literal>[ ]</literal>).
+                If you want to match any whitespace you can use <literal>\s</literal>.
             </para>
             <para>
-                In the regex, the dot ('.') includes the newline (whereas in regex without s modifier the dot means 'everything but newline').
-                If you want to match anything but newline, you have to use the negated single character class ([^\n]).
+                In the regex, the dot (<literal>.</literal>) includes the newline (whereas in regex without <literal>s</literal> modifier the dot means 'everything but newline').
+                If you want to match anything but newline, you have to use the negated single character class (<literal>[^\n]</literal>).
             </para>
             <para>
             <programlisting format="linespecific"><![CDATA[
@@ -312,14 +354,11 @@ $Text =~ m{
             <title>Naming</title>
             <para>
                 Names and comments are written in English. Variables, objects and methods
-                must be descriptive nouns or noun phrases with the first letter set upper case (CamelCase).
+                must be descriptive nouns or noun phrases with the first letter set upper case (<ulink url="https://en.wikipedia.org/wiki/CamelCase">CamelCase</ulink>).
             </para>
             <para>
                 Names should be as descriptive as possible.
-                A reader should be able to say what is meant by a name without digging too deep into the code. E.g. use <literal>$ConfigItemID</literal> instead of <literal>$ID</literal>.
-            <programlisting format="linespecific"><![CDATA[
-e. g. @TicktIDs or $Output or StateSet()
-            ]]></programlisting>
+                A reader should be able to say what is meant by a name without digging too deep into the code. E.g. use <literal>$ConfigItemID</literal> instead of <literal>$ID</literal>. Examples: <literal>@TicktIDs</literal>, <literal>$Output</literal>, <literal>StateSet()</literal>, etc.
             </para>
         </section>
 
@@ -331,14 +370,18 @@ e. g. @TicktIDs or $Output or StateSet()
                 <title>Declaration</title>
 
                 <para>
-                    If you have several variables, you can declare them in on line if the "belong together":
+                    If you have several variables, you can declare them in one line if they "belong together":
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my ($Minute, $Hour, $Year);
 ]]>
                     </programlisting>
-
-                    and break it into seperate lines otherwise:
-
+                </para>
+                <para>
+                    Otherwise break it into separate lines:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 
 my $Minute;
@@ -348,18 +391,21 @@ my $ID;
                 </para>
                 <para>
                     Do not set to <literal>undef</literal> or <literal>''</literal> in the declaration as this might hide mistakes in code.
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my $Variable = undef;
 
-#is the same as
+# is the same as
 
 my $Variable;
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     You can set a variable to <literal>''</literal> if you want to concatenate strings:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my $SqlStatement = '';
 for my $Part ( @Parts ) {
@@ -367,7 +413,8 @@ for my $Part ( @Parts ) {
 }
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     Otherwise you would get an "uninitialized" warning.
                 </para>
             </section>
@@ -386,23 +433,27 @@ for my $Part ( @Parts ) {
                 <para>
                     Just in some exceptions a regular list of parameters should be used.
                     So we want to avoid something like this:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 sub TestSub {
     my ( $Self, $Param1, $Param2 ) = @_;
 }
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     We want to use this instead:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 sub TestSub {
     my ( $Self, %Param ) = @_;
 }
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     This has several advantages: We do not have to change the code in the subroutine when a new parameter should be passed,
                     and calling a function with named parameters is much more readable.
                 </para>
@@ -412,14 +463,19 @@ sub TestSub {
                 <title>Multiple named parameters</title>
                 <para>
                     If a function call requires more than one named parameter, split them into multiple lines:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
     $Self->{LogObject}->Log(
         Priority => 'error',
         Message  => "Need $Needed!",
     );
                     ]]></programlisting>
-
-                    instead of:
+                </para>
+                <para>
+                    Instead of:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
     $Self->{LogObject}->Log( Priority => 'error', Message  => "Need $Needed!", );
                     ]]></programlisting>
@@ -427,11 +483,12 @@ sub TestSub {
             </section>
 
             <section id="return-statements">
-                <title>return statements</title>
+                <title><literal>return</literal> statements</title>
                 <para>
-                    Subroutines have to have a return statement.
-                    The explicit return statement is preferred over the implicit way (result of last statement in subroutine) as this clarifies what the subroutine returns.
-
+                    Subroutines have to have a <literal>return</literal> statement.
+                    The explicit <literal>return</literal> statement is preferred over the implicit way (result of last statement in subroutine) as this clarifies what the subroutine returns.
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 sub TestSub {
     ...
@@ -444,23 +501,28 @@ sub TestSub {
             <section id="explicit-return-values">
                 <title>Explicit return values</title>
                 <para>
-
-                    Explicit return values means that you should not have a return statement followed by a subroutine call.
+                    Explicit return values means that you should not have a <literal>return</literal> statement followed by a subroutine call.
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 return $Self->{DBObject}->Do( ... );
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     The following example is better as this says explicitly what is returned. With the example above the reader doesn't know what the return value is as he might not know what <literal>Do()</literal> returns.
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 return if !$Self->{DBObject}->Do( ... );
 return 1;
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     If you assign the result of a subroutine to a variable, a "good" variable name indicates what was returned:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my $SuccessfulInsert = $Self->{DBObject}->Do( ... );
 return $SuccessfulInsert;
@@ -474,9 +536,11 @@ return $SuccessfulInsert;
             <title>Packages</title>
 
             <section id="packages-use">
-                <title>"use" statements</title>
+                <title><literal>use</literal> statements</title>
                 <para>
                     <literal>use strict</literal> and <literal>use warnings</literal> have to be the first two "use"s in a module. This is correct:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 package Kernel::System::ITSMConfigItem::History;
 
@@ -487,8 +551,11 @@ use Kernel::System::User;
 use Kernel::System::Time;
                     ]]>
                     </programlisting>
-
+                </para>
+                <para>
                     This is wrong:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 package Kernel::System::ITSMConfigItem::History;
 
@@ -538,7 +605,8 @@ use warnings;
 
                 <para>
                     Subroutines should always be documented. The documentation contains a general description about what the subroutine does, a sample subroutine call and what the subroutine returns. It should be in this order. A sample documentation looks like this:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 =item LastTimeObjectChanged()
 
@@ -559,7 +627,8 @@ This returns something like:
 
 =cut
                     ]]></programlisting>
-
+                </para>
+                <para>
                     You can copy and paste a <literal>Data::Dumper</literal> output for the return values.
                 </para>
             </section>
@@ -570,9 +639,9 @@ This returns something like:
 
             <para>
                 In general, you should try to write your code as readable and self-explaining as possible.
-                Don't write a comment to explain what obvious code does, this is unneccessary duplication.
-                Good comments should explain WHY there is some code, possible side effects and anything that might be special or
-                unusually complicated about the code.
+                Don't write a comment to explain what obvious code does, this is unnecessary duplication.
+                Good comments should explain <emphasis>why</emphasis> there is some code, possible side
+                effects and anything that might be special or unusually complicated about the code.
             </para>
 
             <section id="special-comments">
@@ -582,7 +651,8 @@ This returns something like:
                 </para>
                 <para>
                     Example 1 - comment for a longer block of code
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 # -----------------------------------#
 # here is the start of a special area
@@ -591,6 +661,8 @@ This returns something like:
                 </para>
                 <para>
                     Example 2 - comment for customizing standard OTRS files
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 # --- customizing for some project
                     ]]></programlisting>
@@ -606,12 +678,13 @@ This returns something like:
         <section id="database-sql-statements">
             <title>Declaration of SQL statements</title>
             <para>
-                If there is no chance for changing the SQL statement, it should be used in the Prepare function.
+                If there is no chance for changing the SQL statement, it should be used in the <literal>Prepare</literal> function.
                 The reason for this is, that the SQL statement and the bind parameters are closer to each other.
             </para>
             <para>
                 The SQL statement should be written as one nicely indented string without concatenation like this:
-
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 return if !$Self->{DBObject}->Prepare(
     SQL => '
@@ -624,24 +697,29 @@ return if !$Self->{DBObject}->Prepare(
     Bind => [ \$Param{TicketID}, \$Param{SenderType} ],
 );
                 ]]></programlisting>
-
+            </para>
+            <para>
                 This is easy to read and modify, and the whitespace can be handled well by our supported DBMSs.
-                For auto-generated SQL code (like in <literal>TicketSearch</literal>), this indentation is not neccessary.
+                For auto-generated SQL code (like in <literal>TicketSearch</literal>), this indentation is not necessary.
             </para>
         </section>
         <section id="database-returning-on-errors">
             <title>Returning on errors</title>
             <para>
                 Whenever you use database functions you should handle errors. If anything goes wrong, return from subroutine:
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 return if !$Self->{DBObject}->Prepare( ... );
                 ]]></programlisting>
             </para>
         </section>
         <section id="database-using-limit">
-            <title>using Limit</title>
+            <title>Using Limit</title>
             <para>
                 Use <literal>Limit => 1</literal> if you expect just one row to be returned.
+            </para>
+            <para>
                 <programlisting format="linespecific"><![CDATA[
 $Self->{DBObject}->Prepare(
     SQL   => 'SELECT id FROM users WHERE username = ?',
@@ -652,9 +730,9 @@ $Self->{DBObject}->Prepare(
             </para>
         </section>
         <section id="database-using-while-loop">
-            <title>Using the while loop</title>
+            <title>Using the <literal>while</literal> loop</title>
             <para>
-                Always use the while loop, even when you expect one row to be returned,
+                Always use the <literal>while</literal> loop, even when you expect one row to be returned,
                 as some databases do not release the statement handle and this can lead to weird bugs.
             </para>
         </section>

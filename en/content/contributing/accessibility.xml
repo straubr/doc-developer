@@ -17,14 +17,14 @@
                 What is Accessibility?
             </title>
             <para>
-                Accessibility is a general term used to describe the degree to which a product, device, service, or
+                Accessibility is a general term used to describe the degree to which a product, device, service or
                 environment is accessible by as many people as possible.
                 Accessibility can be viewed as the "ability to access" and possible benefit of some
                 system or entity. Accessibility is often used to focus on people with disabilities
                 and their right of access to entities, often through use of assistive technology.
             </para>
             <para>
-                In the context of web development, accessibility has a focus on enabling people with impariments
+                In the context of web development, accessibility has a focus on enabling people with impairments
                 full access to web interfaces. For example, this group of people can include partially visually
                 impaired or completely blind people. While the former can still partially use the GUI, the latter
                 have to completely rely on assistive technologies such as software which reads the screen to them (screen readers).
@@ -76,18 +76,16 @@
         </title>
         <para>
             While commercial screen readers such as JAWS (perhaps the best known one) can be extremely expensive,
-            there are OpenSource screen readers which you can install and use:
+            there are open source screen readers which you can install and use:
             <itemizedlist>
                 <listitem>
                     <para>
-                        <ulink url="http://www.nvda-project.org/">NVDA</ulink>, a screen reader for Windows.
-                        (Use the 2010.beta1 or any later version as
-                        this has better support for the web accessibility standards).
+                        <ulink url="http://www.nvaccess.org/">NVDA</ulink>, a screen reader for Windows.
                     </para>
                 </listitem>
                 <listitem>
                     <para>
-                        <ulink url="http://live.gnome.org/Orca">ORCA</ulink>, a screen reader for Gnome/Linux.
+                        <ulink url="https://wiki.gnome.org/Projects/Orca">ORCA</ulink>, a screen reader for Gnome/Linux.
                     </para>
                 </listitem>
             </itemizedlist>
@@ -138,11 +136,9 @@
         <section>
             <title> Accessible Rich Internet Applications (WAI-ARIA) 1.0</title>
             <para>
-                This standard (ist is still in draft status, in fact) deals
-                with the special issues arising from the shift away from static
-                content to dynamic web applications. It deals with questions like
-                how a user can be notified of changes in the user interface
-                resulting from AJAX requests, for example.
+                This standard deals with the special issues arising from the shift away from static
+                content to dynamic web applications. It deals with questions like how a user can be
+                notified of changes in the user interface resulting from AJAX requests, for example.
 
                 <itemizedlist>
                     <listitem>
@@ -156,12 +152,12 @@
     </section>
 
     <section>
-        <title> Implementation guidelines</title>
+        <title>Implementation guidelines</title>
 
         <section><title>Provide alternatives for non-text content</title>
             <para>
                 Goal: <emphasis>All non-text content that is presented to the user has a
-                text alternative that serves the equivalent purpose</emphasis> (WCAG 1.1.1)
+                text alternative that serves the equivalent purpose.</emphasis> (WCAG 1.1.1)
 
             </para>
             <para>
@@ -169,7 +165,7 @@
                 present textual information and available metadata to the user.
                 To give you an example, whenever a screen reader sees
                 <literal>&lt;a href="#" class="CloseLink"&gt;&lt;/a&gt;</literal>,
-                it can only read "link" to the user, but not the purpose of this link.
+                it can only read "link" to the user, but not the target of this link.
                 With a slight improvement, it would be accessible:
                 <literal>&lt;a href="#" class="CloseLink" title="Close this widget"&gt;&lt;/a&gt;</literal>.
                 In this case the user would hear "link close this widget", voila!
@@ -185,7 +181,7 @@
                 <itemizedlist>
                     <listitem>
                         <para>
-                            <emphasis>Rul:</emphasis>: Wherever possible, use speaking texts and formulate in real,
+                            <emphasis>Rule</emphasis>: Wherever possible, use speaking texts and formulate in real,
                             understandable and precise sentences. "Close this widget" is much better than
                             "Close", because the latter is redundant.
                         </para>
@@ -194,7 +190,7 @@
                         <para>
                             <emphasis>Rule</emphasis>: Links always must have either text content that is
                             spoken by the screen reader (<literal>&lt;a href="#" &gt;Delete this entry&lt;/a&gt;</literal>),
-                            or a title attribute (<literal>&lt;a href="#" title="Close this widget"&gt;&lt;/a&gt;</literal>).
+                            or a <literal>title</literal> attribute (<literal>&lt;a href="#" title="Close this widget"&gt;&lt;/a&gt;</literal>).
                         </para>
                     </listitem>
                     <listitem>
@@ -211,7 +207,7 @@
             <title>Make navigation easy</title>
 
             <para>
-                Goal: <emphasis>allow the user to easily navigate the current page and the entire application.</emphasis>
+                Goal: <emphasis>Allow the user to easily navigate the current page and the entire application.</emphasis>
             </para>
             <para>
                 The <literal>title</literal> tag is the first thing a user hears from the screen reader when opening a web page.
@@ -233,15 +229,17 @@
                 However, this is not enough to reflect the structure of a dynamic web application.
                 That's why ARIA defines several "landmark" roles that can be given to elements to
                 indicate their navigational significance.
-                To keep the validity of the HTML documents, the role attributes (ARIA landmark roles)
+            </para>
+            <para>
+                To keep the validity of the HTML documents, the <literal>role</literal> attributes (ARIA landmark roles)
                 are not inserted into the source code directly, but instead by classes which will
-                later be used by the JavaScript functions in OTRS.UI.Accessibility to set the
-                corresponding role attributes on the node.
+                later be used by the JavaScript functions in <literal>OTRS.UI.Accessibility</literal> to set the
+                corresponding <literal>role</literal> attributes on the node.
             </para>
             <itemizedlist>
                 <listitem>
                     <para>
-                        <emphasis>Rule</emphasis>: Use WAI ARIA Landmark Roles to structure the content for screenreaders
+                        <emphasis>Rule</emphasis>: Use WAI-ARIA Landmark Roles to structure the content for screen readers.
                         <itemizedlist>
                             <listitem>
                                 <para>
@@ -252,7 +250,7 @@
                             <listitem>
                                 <para>
                                     Navigation: <literal>&lt;div class="ARIARoleNavigation"&gt;&lt;/div&gt;</literal>
-                                    will become <literal>&lt;div class="AriaRoleNavigation" role="navigation"&gt;&lt;/div&gt;</literal>
+                                    will become <literal>&lt;div class="ARIARoleNavigation" role="navigation"&gt;&lt;/div&gt;</literal>
                                 </para>
                             </listitem>
                             <listitem>
@@ -279,12 +277,14 @@
             </itemizedlist>
             <para>
                 For navigation inside of <literal>&lt;form&lt;</literal> elements,
-                it is neccessary for the impaired user to know what each input
+                it is necessary for the impaired user to know what each input
                 elements purpose is. This can be achieved by using standard HTML
                 <literal>&lt;label&gt;</literal> elements which create a link
                 between the label and the form element.
+            </para>
+            <para>
                 When an input element gets focus, the screen reader will
-                usually read the connected label, so that the agent can hear its exact purpose.
+                usually read the connected label, so that the user can hear its exact purpose.
                 An additional benefit for seeing users is that they can click on the label,
                 and the input element will get focus (escpecially helpful for checkboxes, for example).
             </para>
@@ -292,7 +292,7 @@
                 <listitem>
                     <para>
                         <emphasis>Rule</emphasis>: Provide <literal>&lt;label&gt;</literal>
-                        elements for *all* form element (input, select, textarea) fields.
+                        elements for <emphasis>all</emphasis> form element (<literal>input</literal>, <literal>select</literal>, <literal>textarea</literal>) fields.
                     </para>
                     <para>
                         Example: <literal>&lt;label for="date"&gt;Date:&lt;/label&gt;&lt;input type="text" name="date" id="date"/&gt;</literal>
@@ -346,7 +346,7 @@
                     </para>
                     <para>
                         This will make sure that the error tooltips are being read by the screen reader.
-                        That way the blind agent a) knows the item which has an error and b) get a text describing the error.
+                        That way the blind user a) knows the item which has an error and b) get a text describing the error.
                     </para>
                 </listitem>
                 <listitem>
@@ -372,7 +372,7 @@
                 <listitem>
                     <para>
                         <emphasis>Rule</emphasis>: Each page must identify its own main language
-                        so that the screenreader can choose the right speech synthesis engine.
+                        so that the screen reader can choose the right speech synthesis engine.
                     </para>
                     <para>
                         Example: <literal>&lt;html lang="fr"&gt;...&lt;/html&gt;</literal>

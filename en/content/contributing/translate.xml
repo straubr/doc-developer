@@ -12,11 +12,11 @@
     <section id="update-existing-translation">
         <title>Updating an existing translation</title>
         <para>
-            Starting with OTRS 4, all translations of the OTRS GUI and the public extension modules are managed via <ulink url="http://www.transifex.com">transifex</ulink>.
+            Starting with OTRS 4, all translations of the OTRS GUI and the public extension modules are managed via <ulink url="https://www.transifex.com">Transifex</ulink>.
             The OTRS project on Transifex can be found at <ulink url="https://www.transifex.com/otrs/OTRS/">https://www.transifex.com/otrs/OTRS/</ulink>.
         </para>
         <para>
-            To contribute to a translation of the OTRS GUI, an extension module or a manual, please sign up for a free translators account on <ulink url="http://www.transifex.com">transifex</ulink>.
+            To contribute to a translation of the OTRS GUI, an extension module or a manual, please sign up for a free translators account on <ulink url="https://www.transifex.com">Transifex</ulink>.
             Then you can join your language team and start updating your translation. No additional software or files required.
             The OTRS developers will download the translations from time to time into the OTRS source code repositories, you don't have to submit them anywhere.
         </para>

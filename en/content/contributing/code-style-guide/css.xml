@@ -41,7 +41,7 @@
             <listitem>
                 <para>
                     Wherever possible, module specific design should not be used.
-                    Therefore we also do not work with IDs on the body element, for example, if it can be avoided.
+                    Therefore we also do not work with IDs on the <literal>body</literal> element, for example, if it can be avoided.
                 </para>
             </listitem>
         </itemizedlist>
@@ -55,7 +55,8 @@
                 <para>
                     All definitions have a <literal>{</literal> in the same line as the selector, all rules are defined in one row per rule,
                     the definition ends with a row with a single <literal>}</literal> in it. See the following example:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 #Selector {
     width: 10px;
@@ -67,7 +68,7 @@
             </listitem>
             <listitem>
                 <para>
-                    Between <literal>:</literal> and the rule value, there is a space
+                    Between <literal>:</literal> and the rule value, there is a space.
                 </para>
             </listitem>
             <listitem>
@@ -78,7 +79,8 @@
             <listitem>
                 <para>
                     If multiple selectors are specified, separate them with comma and put each one on an own line:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 #Selector1,
 #Selector2,
@@ -101,7 +103,8 @@
             <listitem>
                 <para>
                     All IDs and Names are written in CamelCase notation:
-
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 <div class="NavigationBar" id="AdminMenu"></div>
                     ]]></programlisting>
