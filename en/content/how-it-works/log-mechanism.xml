@@ -8,11 +8,13 @@
     </para>
     <para>
         The Log object can be accessed and used via the <literal>ObjectManager</literal> like this:
-    <programlisting><![CDATA[
+    </para>
+    <para>
+        <programlisting><![CDATA[
 $Kernel::OM->Get('Kernel::System::Log')->Log(
     Priority => 'error',
     Message => 'Need something!',
 );
-    ]]></programlisting>
+        ]]></programlisting>
     </para>
 </section>

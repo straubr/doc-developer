@@ -15,16 +15,20 @@
             Then switch to the new directory using the command line and check them out by using the following command:
         </para>
         <para>
-        <screen><![CDATA[
+            <screen><![CDATA[
 # for git master
 shell> git clone git@github.com:OTRS/otrs.git -b master
 # for a specific branch like OTRS 3.3
 shell> git clone git@github.com:OTRS/otrs.git -b rel-3_3
-]]></screen>
+            ]]></screen>
+        </para>
+        <para>
             Check out the <literal>module-tools</literal> module (from github) too, for your development environment. It contains a number of useful tools:
-        <screen><![CDATA[
+        </para>
+        <para>
+            <screen><![CDATA[
 shell> git clone git@github.com:OTRS/module-tools.git
-]]></screen>
+            ]]></screen>
         </para>
         <para>
             Please configure the OTRS system according to the
@@ -69,26 +73,34 @@ shell> git clone git@github.com:OTRS/module-tools.git
             In order to facilitate the OTRS access the files, links must be created.
             This is done by a script in the directory module tools repository.
             Example: Linking the Calendar Module:
-        <screen><![CDATA[
+        </para>
+        <para>
+            <screen><![CDATA[
 shell> ~/src/module-tools/link.pl ~/src/Calendar/ ~/src/otrs/
-]]></screen>
+            ]]></screen>
+        </para>
+        <para>
             Whenever new files are added, they must be linked as described above.
         </para>
         <para>
             As soon as the linking is completed, the SysConfig must be rebuilt to register the module in OTRS.
             Additional SQL or Perl code from the module must also be executed.
             Example:
-        <screen><![CDATA[
+        </para>
+        <para>
+            <screen><![CDATA[
 shell> ~/src/otrs/bin/otrs.Console.pl Maint::Config::Rebuild
 shell> ~/src/module-tools/DatabaseInstall.pl -m Calendar.sopm -a install
 shell> ~/src/module-tools/CodeInstall.pl -m Calendar.sopm -a install
-]]></screen>
+            ]]></screen>
         </para>
         <para>
             To remove links from OTRS enter the following command:
-        <screen><![CDATA[
+        </para>
+        <para>
+            <screen><![CDATA[
 shell> ~/src/module-tools/remove_links.pl ~/src/otrs/
-]]></screen>
+            ]]></screen>
         </para>
     </section>
 </section>

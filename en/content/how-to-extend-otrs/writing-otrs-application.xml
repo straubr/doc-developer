@@ -15,7 +15,9 @@
             First of all we must build the directory <filename>/Hello World</filename> for the module in the developer directory.
             In this directory, all directories existent in OTRS can be created.
             Each module should at least contain the following directories:
-<screen><![CDATA[
+        </para>
+        <para>
+            <screen><![CDATA[
 Kernel
 Kernel/System
 Kernel/Modules
@@ -23,7 +25,7 @@ Kernel/Output/HTML/Standard
 Kernel/Config
 Kernel/Config/Files
 Kernel/Language
-]]></screen>
+            ]]></screen>
         </para>
     </section>
 
@@ -36,7 +38,7 @@ Kernel/Language
             The impact of the various settings is described in the chapter 'Config Mechanism'.
         </para>
         <para>
-        <programlisting><![CDATA[
+            <programlisting><![CDATA[
 <?xml version="1.0" encoding="UTF-8" ?>
 <otrs_config version="1.0" init="Application">
         <ConfigItem Name="Frontend::Module###AgentHelloWorld" Required="1" Valid="1">
@@ -62,7 +64,7 @@ Kernel/Language
         </Setting>
     </ConfigItem>
 </otrs_config>
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
     </section>
 
@@ -72,7 +74,9 @@ Kernel/Language
             After creating the links and executing the Sysconfig, a new module with the name 'HelloWorld' is displayed.
             When calling it up, an error message is displayed as OTRS cannot find the matching frontend module yet.
             This is the next thing to be created. To do so, we create the following file:
-        <programlisting><![CDATA[
+        </para>
+        <para>
+            <programlisting><![CDATA[
 # --
 # Kernel/Modules/AgentHelloWorld.pm - frontend module
 # Copyright (C) (year) (name of author) (email of author)
@@ -127,7 +131,7 @@ sub Run {
 }
 
 1;
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
     </section>
 
@@ -135,7 +139,9 @@ sub Run {
         <title>Core Module</title>
         <para>
             Next, we create the file for the core module <filename>/HelloWorld/Kernel/System/HelloWorld.pm</filename> with the following content:
-        <programlisting><![CDATA[
+        </para>
+        <para>
+            <programlisting><![CDATA[
 # --
 # Kernel/System/HelloWorld.pm - core module
 # Copyright (C) (year) (name of author) (email of author)
@@ -167,7 +173,7 @@ sub GetHelloWorldText {
 }
 
 1;
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
     </section>
 
@@ -176,7 +182,9 @@ sub GetHelloWorldText {
         <para>
             The last thing missing before the new module can run is the relevant HTML template.
             Thus, we create the following file:
-        <programlisting><![CDATA[
+        </para>
+        <para>
+            <programlisting><![CDATA[
 # --
 # Kernel/Output/HTML/Standard/AgentHelloWorld.tt - overview
 # Copyright (C) (year) (name of author) (email of author)
@@ -189,7 +197,7 @@ sub GetHelloWorldText {
 <p>
     [% Data.HelloWorldText | Translate() | html %]
 </p>
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
         <para>
 The module is working now and displays the text 'Hello World' when called.
@@ -203,7 +211,9 @@ The module is working now and displays the text 'Hello World' when called.
             translation file for this language in
             <filename>HelloWorld/Kernel/Language/de_AgentHelloWorld.pm</filename>.
             Example:
-        <programlisting><![CDATA[
+        </para>
+        <para>
+            <programlisting><![CDATA[
 package Kernel::Language::de_AgentHelloWorld;
 
 use strict;
@@ -217,7 +227,7 @@ sub Data {
     return 1;
 }
 1;
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
     </section>
 

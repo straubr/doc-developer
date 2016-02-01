@@ -17,6 +17,8 @@
             <title><literal>&lt;Name&gt;</literal></title>
             <para>
                 The package name (required).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <Name>Calendar</Name>
                 ]]></programlisting>
@@ -26,6 +28,8 @@
             <title><literal>&lt;Version&gt;</literal></title>
             <para>
                 The package version (required).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <Version>1.2.3</Version>
                 ]]></programlisting>
@@ -35,12 +39,16 @@
             <title><literal>&lt;Framework&gt;</literal></title>
             <para>
                 The targeted framework version (3.2.x means e.g. 3.2.1 or 3.2.2) (required).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <Framework>3.2.x</Framework>
                 ]]></programlisting>
             </para>
             <para>
                 Can also be used several times.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <Framework>3.0.x</Framework>
 <Framework>3.1.x</Framework>
@@ -52,6 +60,8 @@
             <title><literal>&lt;Vendor&gt;</literal></title>
             <para>
                 The package vendor (required).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <Vendor>OTRS AG</Vendor>
                 ]]></programlisting>
@@ -61,6 +71,8 @@
             <title><literal>&lt;URL&gt;</literal></title>
             <para>
                 The vendor URL (required).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <URL>http://otrs.org/</URL>
                 ]]></programlisting>
@@ -70,6 +82,8 @@
             <title><literal>&lt;License&gt;</literal></title>
             <para>
                 The license of the package (required).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
                 ]]></programlisting>
@@ -79,6 +93,8 @@
             <title><literal>&lt;ChangeLog&gt;</literal></title>
             <para>
                 The package change log (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <ChangeLog Version="1.1.2" Date="2013-02-15 18:45:21">Added some feature.</ChangeLog>
 <ChangeLog Version="1.1.1" Date="2013-02-15 16:17:51">New package.</ChangeLog>
@@ -89,6 +105,8 @@
             <title><literal>&lt;Description&gt;</literal></title>
             <para>
                 The package description in different languages (required).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <Description Lang="en">A web calendar.</Description>
 <Description Lang="de">Ein Web Kalender.</Description>
@@ -100,6 +118,8 @@
             <para>
                 The possible actions for the package after installation. If one of these actions is
                 not defined on the package, it will be considered as possible.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <PackageIsVisible>1</PackageIsVisible>
 <PackageIsDownloadable>0</PackageIsDownloadable>
@@ -111,6 +131,8 @@
             <title><literal>&lt;BuildHost&gt;</literal></title>
             <para>
                 This will be filled in automatically by OPM.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <BuildHost>?</BuildHost>
                 ]]></programlisting>
@@ -120,6 +142,8 @@
             <title><literal>&lt;BuildDate&gt;</literal></title>
             <para>
                 This will be filled in automatically by OPM.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <BuildDate>?</BuildDate>
                 ]]></programlisting>
@@ -128,8 +152,10 @@
         <section id="package-package-required">
             <title><literal>&lt;PackageRequired&gt;</literal></title>
             <para>
-                Packages that must be installed beforehand (optional). If PackageRequired is used,
+                Packages that must be installed beforehand (optional). If <literal>PackageRequired</literal> is used,
                 a version of the required package must be specified.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <PackageRequired Version="1.0.3">SomeOtherPackage</PackageRequired>
 <PackageRequired Version="5.3.2">SomeotherPackage2</PackageRequired>
@@ -140,6 +166,8 @@
             <title><literal>&lt;ModuleRequired&gt;</literal></title>
             <para>
                 Perl modules that must be installed beforehand (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <ModuleRequired Version="1.03">Encode</ModuleRequired>
 <ModuleRequired Version="5.32">MIME::Tools</ModuleRequired>
@@ -150,6 +178,8 @@
             <title><literal>&lt;OS&gt;</literal></title>
             <para>
                 Required OS (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <OS>linux</OS>
 <OS>darwin</OS>
@@ -161,6 +191,8 @@
             <title><literal>&lt;Filelist&gt;</literal></title>
             <para>
                 This is a list of files included in the package (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <Filelist>
     <File Permission="644" Location="Kernel/Config/Files/Calendar.pm"/>
@@ -175,6 +207,8 @@
             <title><literal>&lt;DatabaseInstall&gt;</literal></title>
             <para>
                 Database entries that have to be created when a package is installed (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <DatabaseInstall>
     <TableCreate Name="calendar_event">
@@ -201,6 +235,8 @@
                 Information on which actions have to be performed in case of an upgrade (optional).
                 Example (if already installed package version is below 1.3.4 (e. g. 1.2.6), the
                 defined action will be performed):
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <DatabaseUpgrade>
     <TableCreate Name="calendar_event_involved" Version="1.3.4">
@@ -220,6 +256,8 @@
             <title><literal>&lt;DatabaseReinstall&gt;</literal></title>
             <para>
                 Information on what actions have to be performed if the package is reinstalled (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <DatabaseReinstall></DatabaseReinstall>
                 ]]></programlisting>
@@ -234,6 +272,8 @@
             <title><literal>&lt;DatabaseUninstall&gt;</literal></title>
             <para>
                 Actions to be performed on package uninstall (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <DatabaseUninstall>
     <TableDrop Name="calendar_event" />
@@ -259,7 +299,7 @@ Some Info formatted in HTML....
                 ]]></programlisting>
             </para>
             <para>
-                You can also use the "Format" attribute to define if you want to use "html" (which
+                You can also use the <literal>Format</literal> attribute to define if you want to use "html" (which
                 is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
                 intro is shown (to keep the newlines and whitespace of the content).
             </para>
@@ -277,7 +317,7 @@ Some Info formatted in html....
                 ]]></programlisting>
             </para>
             <para>
-                You can also use the "Format" attribute to define if you want to use "html" (which
+                You can also use the <literal>Format</literal> attribute to define if you want to use "html" (which
                 is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
                 intro is shown (to keep the newlines and whitespace of the content).
             </para>
@@ -295,7 +335,7 @@ Some Info formatted in html....
                 ]]></programlisting>
             </para>
             <para>
-                You can also use the "Format" attribute to define if you want to use "html" (which
+                You can also use the <literal>Format</literal> attribute to define if you want to use "html" (which
                 is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
                 intro is shown (to keep the newlines and whitespace of the content).
             </para>
@@ -313,7 +353,7 @@ Some Info formatted in html....
                 ]]></programlisting>
             </para>
             <para>
-                You can also use the "Format" attribute to define if you want to use "html" (which
+                You can also use the <literal>Format</literal> attribute to define if you want to use "html" (which
                 is default) or "plain" to use automatically a <literal>&lt;pre&gt;&lt;/pre&gt;</literal> tag when
                 intro is shown (to keep the newlines and whitespace of the content).
             </para>
@@ -322,6 +362,8 @@ Some Info formatted in html....
             <title><literal>&lt;CodeInstall&gt;</literal></title>
             <para>
                 Perl code to be executed when the package is installed (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <CodeInstall><![CDATA[
 # log example
@@ -345,6 +387,8 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
             <para>
                 Perl code to be executed when the package is uninstalled (optional). On "pre" or "post"
                 time of package uninstallation.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <CodeUninstall><![CDATA[
 ...
@@ -361,6 +405,8 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
             <title><literal>&lt;CodeReinstall&gt;</literal></title>
             <para>
                 Perl code to be executed when the package is reinstalled (optional).
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <CodeReinstall><![CDATA[
 ...
@@ -380,6 +426,8 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
                 Perl code to be executed when the package is upgraded (subject to version tag),
                 (optional). Example (if already installed package version is below 1.3.4 (e. g.
                 1.2.6), defined action will be performed):
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <CodeUpgrade Version="1.3.4"><![CDATA[
 ...
@@ -397,29 +445,32 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
             <para>
                 This tag singals that a package has been merged into another package. In this case
                 the original package needs to be removed from the filesystem and the packages database,
-                but all data must be kept. Let's assume that <filename>PackageOne</filename> was merged
-                into <filename>PackageTwo</filename>. Then <filename>PackageTwo.sopm</filename>
+                but all data must be kept. Let's assume that <literal>PackageOne</literal> was merged
+                into <literal>PackageTwo</literal>. Then <filename>PackageTwo.sopm</filename>
                 should contain this:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <PackageMerge Name="MergeOne" TargetVersion="2.0.0"></PackageMerge>
                 ]]></programlisting>
-
-                If <filename>PackageOne</filename> also contained database structures, we need to be
+            </para>
+            <para>
+                If <literal>PackageOne</literal> also contained database structures, we need to be
                 sure that it was at the latest available version of the package to have a consistent
                 state in the database after merging the package. The attribute <literal>TargetVersion</literal>
-                does just this: it signifies the last known version of <filename>PackageOne</filename>
-                at the time <filename>PackageTwo</filename> was created. This is mainly to stop the upgrade process
-                if in the user's system a version of <filename>PackageOne</filename> was found that is
+                does just this: it signifies the last known version of <literal>PackageOne</literal>
+                at the time <literal>PackageTwo</literal> was created. This is mainly to stop the upgrade process
+                if in the user's system a version of <literal>PackageOne</literal> was found that is
                 <emphasis>newer</emphasis> than the one specified in <literal>TargetVersion</literal> as this
                 could lead to problems.
             </para>
             <para>
                 Additionally it is possible to add required database and code upgrade tags for
-                <filename>PackageOne</filename> to make sure that it gets properly upgraded to the
+                <literal>PackageOne</literal> to make sure that it gets properly upgraded to the
                 <literal>TargetVersion</literal> <emphasis>before</emphasis> merging it - to avoid
                 inconsistency problems. Here's how this could look like:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <PackageMerge Name="MergeOne" TargetVersion="2.0.0">
   <DatabaseUpgrade Type="merge">
@@ -430,7 +481,8 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
   </DatabaseUpgrade>
 </PackageMerge>
                 ]]></programlisting>
-
+            </para>
+            <para>
                 As you can see the atribute <literal>Type="merge"</literal> needs to be set in this case.
                 These sections will only be executed if a package merge is possible.
             </para>
@@ -442,12 +494,18 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
                 These attributes can be added to the regular <literal>Database*</literal> and <literal>Code*</literal> sections.
                 If they are present, the section will only be executed if anoter package is or is not
                 in the local package repository.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <DatabaseInstall IfPackage="AnyPackage">
     ...
 </DatabaseInstall>
                 ]]></programlisting>
+            </para>
+            <para>
                 or
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <CodeUpgrade IfNotPackage="OtherPackage">
     ...
@@ -465,6 +523,8 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
         <title>Example .sopm</title>
         <para>
             This is an example spec file looks with some of the above tags.
+        </para>
+        <para>
             <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_package version="1.0">
@@ -513,12 +573,14 @@ $Kernel::OM->Get('Kernel::System::DB')->Do(SQL => "SOME SQL");
         <title>Package Build</title>
         <para>
             To build an .opm package from the spec opm.
+        </para>
+        <para>
             <screen><![CDATA[
 shell> bin/otrs.Console.pl Dev::Package::Build /path/to/example.sopm /tmp
 Building package...
 Done.
 shell>
-]]></screen>
+            ]]></screen>
         </para>
     </section>
     <section id="package-life-cycle">
@@ -526,6 +588,8 @@ shell>
         <para>
             The following image shows you how the life cycle of a package
             installation/upgrade/uninstallation works in the backend step by step.
+        </para>
+        <para>
             <figure>
                 <title>Package Life Cycle</title>
                 <screenshot>

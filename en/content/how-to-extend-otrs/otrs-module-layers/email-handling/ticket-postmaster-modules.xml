@@ -20,6 +20,8 @@
     </para>
     <para>
         <filename>Kernel/Config/Files/MyModule.xml</filename>:
+    </para>
+    <para>
         <programlisting><![CDATA[
 <ConfigItem Name="PostMaster::PreFilterModule###1-Example" Required="0" Valid="1">
     <Description Translatable="1">Example module to filter and manipulate incoming messages.</Description>
@@ -45,6 +47,8 @@
     </para>
     <para>
         And the actual filter code in <filename>Kernel/System/PostMaster/Filter/Example.pm</filename>:
+    </para>
+    <para>
         <programlisting><![CDATA[
 # --
 # Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
@@ -131,10 +135,12 @@ sub Run {
 }
 
 1;
-    ]]></programlisting>
+        ]]></programlisting>
     </para>
     <para>
         The following image shows you the email processing flow.
+    </para>
+    <para>
         <figure>
             <title>Email Processing Flow</title>
             <screenshot>

@@ -122,6 +122,8 @@ $Self->True(
             <title>False()</title>
             <para>
                 This function tests whether given scalar value is a false value in Perl.
+            </para>
+            <para>
                 <programlisting><![CDATA[
 $Self->False(
     $EventID,

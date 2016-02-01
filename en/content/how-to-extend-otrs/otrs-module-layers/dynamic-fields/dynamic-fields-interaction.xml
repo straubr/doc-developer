@@ -13,6 +13,8 @@
     <para>
         The following picture shows a simple example of how the Dynamic Fields interact with other
         OTRS framework parts.
+    </para>
+    <para>
         <figure>
             <title>Dynamic Field Interaction</title>
             <screenshot>

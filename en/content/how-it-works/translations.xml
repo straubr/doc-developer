@@ -17,6 +17,8 @@
             <code>$LanguageObject->Translate('My string %s', $Data)</code> will mark 'My string %s' for translation.
             If you need to mark strings, but NOT translate them in the code yet, you can use the NOOP method
             <code>Kernel::Langauge::Translatable()</code>.
+        </para>
+        <para>
             <programlisting><![CDATA[
 package MyPackage;
 
@@ -38,6 +40,8 @@ my $UntranslatedString = Translatable('My string %s');
         <para>
             In SysConfig and Database XML files you can mark strings for extraction with the
             <literal>Translatable="1"</literal> attribute.
+        </para>
+        <para>
             <programlisting><![CDATA[
 # Database XML
 <Insert Table="groups">
@@ -55,7 +59,6 @@ my $UntranslatedString = Translatable('My string %s');
     </Option>
 </Setting>
                 ]]></programlisting>
-
         </para>
     </section>
     <section>
@@ -99,6 +102,8 @@ my $UntranslatedString = Translatable('My string %s');
             </para>
             <para>
                 Format:
+            </para>
+            <para>
                 <programlisting><![CDATA[
 package Kernel::Language::de;
 
@@ -147,6 +152,8 @@ sub Data {
             </para>
             <para>
                 Format:
+            </para>
+            <para>
                 <programlisting><![CDATA[
 package Kernel::Language::xx_Custom;
 

@@ -31,6 +31,8 @@ still work with the OTRS API.
             </para>
             <para>
                 To make using post output filters easier, there is also a new mechanism to request HTML comment hooks for certain templates/blocks. You can add in your module config XML like:
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <ConfigItem
 Name="Frontend::Template::GenerateBlockHooks###100-OTRSBusiness-ContactWithData"
@@ -50,16 +52,19 @@ the specified blocks so that filters can use them.</Description>
     </Setting>
 </ConfigItem>
                 ]]></programlisting>
-
+            </para>
+            <para>
                 This will cause the block <literal>CustomerTable</literal> in <filename>AgentTicketZoom.tt</filename> to be
                 wrapped in HTML comments each time it is rendered:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <!--HookStartCustomerTable-->
 ... block output ...
 <!--HookEndCustomerTable-->
                 ]]></programlisting>
-
+            </para>
+            <para>
                 With this mechanism every package can request just the block hooks it
                 needs, and they are consistently rendered. These HTML comments can then be used in your
                 output filter for easy regular expression matching.
@@ -76,10 +81,14 @@ the specified blocks so that filters can use them.</Description>
         <section>
             <title>GenericInterface API change in "Ticket" connector</title>
             <para>
-                   The operation <code>TicketGet()</code> returns dynamic field data from ticket and articles differently than in OTRS 4.
-                   Now they are cleanly  separated from the rest of the static ticket and article fields - they are now grouped in a list called <literal>DynamicField</literal>. Please adapt any applications using this operation accordingly.
-
-                    <programlisting><![CDATA[
+                The operation <code>TicketGet()</code> returns dynamic field data from ticket and
+                articles differently than in OTRS 4. Now they are cleanly  separated from the rest
+                of the static ticket and article fields - they are now grouped in a list called
+                <literal>DynamicField</literal>. Please adapt any applications using this operation
+                accordingly.
+            </para>
+            <para>
+                <programlisting><![CDATA[
 # changed from:
 
 Ticket => [
@@ -106,7 +115,7 @@ Ticket => [
         ],
     },
 ]
-                    ]]></programlisting>
+                ]]></programlisting>
             </para>
         </section>
         <section>
@@ -159,7 +168,8 @@ Ticket => [
                 This will require you first of all to change all toplevel Perl scripts (.pl files only!)
                 to load and provide the <literal>ObjectManager</literal> to all OTRS objects.
                 Let's look at otrs.CheckDB.pl from OTRS 3.3 as an example:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 use strict;
 use warnings;
@@ -187,11 +197,13 @@ $CommonObject{LogObject}    = Kernel::System::Log->new(
 $CommonObject{MainObject} = Kernel::System::Main->new(%CommonObject);
 $CommonObject{DBObject}   = Kernel::System::DB->new(%CommonObject);
                 ]]></programlisting>
-
+            </para>
+            <para>
                 We can see that a lot of code is used to load the packages and create the common
                 objects that must be passed to OTRS objects to be used in the script. With OTRS 4,
                 this looks quite different:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 use strict;
 use warnings;
@@ -214,7 +226,8 @@ local $Kernel::OM = Kernel::System::ObjectManager->new(
 # get database object
 my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
                 ]]></programlisting>
-
+            </para>
+            <para>
                 The new code is a bit shorter than the old. It is no longer necessary to load all the
                 packages, just the <literal>ObjectManager</literal>. Subsequently <literal>$Kernel::OM->Get('My::Perl::Package')</literal>
                 can be used to get instances of objects which only have to be created once. The <literal>LogPrefix</literal> setting
@@ -231,7 +244,8 @@ my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
             <para>
                 There's not much more to know when porting packages that should be loadable by the <literal>ObjectManager</literal>.
                 They should declare the modules they use (via <code>$Kernel::OM->Get()</code>) like this:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 our @ObjectDependencies = (
     'Kernel::Config',
@@ -239,13 +253,15 @@ our @ObjectDependencies = (
     'Kernel::System::Main',
 );
                 ]]></programlisting>
-
+            </para>
+            <para>
                 The <literal>@ObjectDependencies</literal> declaration is needed for the
                 <literal>ObjectManager</literal> to keep the correct order when destroying the objects.
             </para>
             <para>
                 Let's look at <filename>Valid.pm</filename> from OTRS 3.3 and 4 to see the difference. Old:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 package Kernel::System::Valid;
 
@@ -302,9 +318,11 @@ sub ValidList {
     return %Data;
 }
                 ]]></programlisting>
-
+            </para>
+            <para>
                 New:
-
+            </para>
+            <para>
                 <programlisting><![CDATA[
 package Kernel::System::Valid;
 
@@ -368,7 +386,8 @@ sub ValidList {
     return %Data;
 }
                 ]]></programlisting>
-
+            </para>
+            <para>
                 You can see that the dependencies are declared and the objects are only fetched on demand.
                 We'll talk about the <literal>CacheInternalObject</literal> in the next section.
             </para>
@@ -381,12 +400,12 @@ sub ValidList {
                 <literal>Kernel::System::CacheInternal</literal> was dropped. Please see the previous example
                 for how to migrate your code: you need to use the global <literal>Cache</literal> object and pass the <literal>Type</literal>
                 settings with every call to <code>Get()</code>, <code>Set()</code>, <code>Delete()</code> and <code>CleanUp()</code>. The <literal>TTL</literal> parameter is now optional and defaults to 20 days, so you only have to specify it in <code>Get()</code> if you require a different TTL value.
-                <warning>
-                    <para>
-                        It is especially important to add the <literal>Type</literal> to <code>CleanUp()</code> as otherwise not just the current cache type but the entire cache would be deleted.
-                    </para>
-                </warning>
             </para>
+            <warning>
+                <para>
+                    It is especially important to add the <literal>Type</literal> to <code>CleanUp()</code> as otherwise not just the current cache type but the entire cache would be deleted.
+                </para>
+            </warning>
         </section>
 
         <section id="package-porting-33-to-4-scheduler-location">
@@ -404,6 +423,8 @@ sub ValidList {
                 Code tags in SOPM files have to be updated. Please do not use <literal>$Self</literal> any more.
                 In the past this was used to get access to OTRS objects like the <literal>MainObject</literal>.
                 Please use the <literal>ObjectManager</literal> now. Here is an example for the old style:
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <CodeInstall Type="post">
 
@@ -441,7 +462,11 @@ if ( $Self->{MainObject}->Require($CodeModule) ) {
 
 </CodeInstall>
                 ]]></programlisting>
+            </para>
+            <para>
                 Now this should be replaced by:
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <CodeInstall Type="post"><![CDATA[
 $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
@@ -576,7 +601,8 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
 
             <para>
                 There are a few more things to note when porting your code to the new template engine:
-
+            </para>
+            <para>
                 <itemizedlist>
                     <listitem>
                         <para>
@@ -646,6 +672,8 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
             </para>
             <para>
                 Firstly, you have to register your custom ticket history types via SysConfig. This could look like:
+            </para>
+            <para>
                 <programlisting><![CDATA[
 <ConfigItem Name="Ticket::Frontend::HistoryTypes###100-MyCustomModule" Required="1" Valid="1">
     <Description Translatable="1">Controls how to display the ticket history entries as readable values.</Description>
@@ -658,7 +686,9 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
     </Setting>
 </ConfigItem>
                 ]]></programlisting>
-                The second step is to translate the english text that you provided for the custom ticket history type
+            </para>
+            <para>
+                The second step is to translate the English text that you provided for the custom ticket history type
                 in your translation files, if needed. That's it!
             </para>
             <para>

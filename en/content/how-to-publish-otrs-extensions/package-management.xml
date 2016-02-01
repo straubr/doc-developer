@@ -20,27 +20,30 @@
             where the location is by activating the SysConfig setting <literal>Package::RepositoryList</literal>
             and adding the new location there. Then you will have a new select option in the package manager.
         </para>
-
         <para>
             In your repository, create an index file for your OPM packages.
             OTRS just reads this index file and knows what packages are available.
-        <screen><![CDATA[
+        </para>
+        <para>
+            <screen><![CDATA[
 shell> bin/otrs.Console.pl Dev::Package::RepositoryIndex /path/to/repository/ > /path/to/repository/otrs.xml
-]]></screen>
+            ]]></screen>
         </para>
     </section>
 
     <section id="package-commands">
         <title>Package Commands</title>
         <para>
-            You can use the following OPM commands over the admin interface or over bin/otrs.PackageManager.pl
-            to manage admin jobs for OPM packages.
+            You can use the following OPM commands over the admin interface or over
+            <filename>bin/otrs.PackageManager.pl</filename> to manage admin jobs for OPM packages.
         </para>
 
         <section id="install">
             <title>Install</title>
             <para>
                 Install OPM packages.
+            </para>
+            <para>
                 <itemizedlist mark="round" >
                     <listitem>
                         <para>
@@ -48,11 +51,14 @@ shell> bin/otrs.Console.pl Dev::Package::RepositoryIndex /path/to/repository/ > 
                         </para>
                     </listitem>
                     <listitem>
-                        <para>CMD:
-                        <screen><![CDATA[
+                        <para>
+                            CMD:
+                        </para>
+                        <para>
+                            <screen><![CDATA[
 shell> bin/otrsConsole.pl Admin::Package::Install /path/to/package.opm
 ]]></screen>
-                        </para>
+                            </para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -62,14 +68,19 @@ shell> bin/otrsConsole.pl Admin::Package::Install /path/to/package.opm
             <title>Uninstall</title>
             <para>
                 Uninstall OPM packages.
+            </para>
+            <para>
                 <itemizedlist mark="round" >
                     <listitem>
                         <para>Web: <ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
                         </para>
                     </listitem>
                     <listitem>
-                        <para>CMD:
-                        <screen><![CDATA[
+                        <para>
+                            CMD:
+                        </para>
+                        <para>
+                            <screen><![CDATA[
 shell> bin/otrsConsole.pl Admin::Package::Uninstall /path/to/package.opm
 ]]></screen>
                         </para>
@@ -81,14 +92,19 @@ shell> bin/otrsConsole.pl Admin::Package::Uninstall /path/to/package.opm
             <title>Upgrade</title>
             <para>
                 Upgrade OPM packages.
+            </para>
+            <para>
                 <itemizedlist mark="round" >
                     <listitem>
                         <para>Web: <ulink url="http://localhost/otrs/index.pl?Action=AdminPackageManager">http://localhost/otrs/index.pl?Action=AdminPackageManager</ulink>
                         </para>
                     </listitem>
                     <listitem>
-                        <para>CMD:
-                        <screen><![CDATA[
+                        <para>
+                            CMD:
+                        </para>
+                        <para>
+                            <screen><![CDATA[
 shell> bin/otrsConsole.pl Admin::Package::Upgrade /path/to/package.opm
 ]]></screen>
                         </para>
@@ -100,6 +116,8 @@ shell> bin/otrsConsole.pl Admin::Package::Upgrade /path/to/package.opm
             <title>List</title>
             <para>
                 List all OPM packages.
+            </para>
+            <para>
                 <itemizedlist mark="round">
                     <listitem>
                         <para>Web:
@@ -107,8 +125,11 @@ shell> bin/otrsConsole.pl Admin::Package::Upgrade /path/to/package.opm
                         </para>
                     </listitem>
                     <listitem>
-                        <para>CMD:
-                        <screen><![CDATA[
+                        <para>
+                            CMD:
+                        </para>
+                        <para>
+                            <screen><![CDATA[
 shell> bin/otrsConsole.pl Admin::Package::List
 ]]></screen>
                         </para>

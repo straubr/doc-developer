@@ -75,19 +75,25 @@ you use Bind you do not need the function <code>Quote()</code>.
             <section id="database-sql-quote">
             <title>QUOTE</title>
                 <para>
-String:
+                    String:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my $QuotedString = $Kernel::OM->Get('Kernel::System::DB')->Quote("It's a problem!");
                     ]]></programlisting>
                 </para>
                 <para>
-Integer:
+                    Integer:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my $QuotedInteger = $Kernel::OM->Get('Kernel::System::DB')->Quote('123', 'Integer');
                     ]]></programlisting>
                 </para>
                 <para>
-Number:
+                    Number:
+                </para>
+                <para>
                     <programlisting format="linespecific"><![CDATA[
 my $QuotedNumber = $Kernel::OM->Get('Kernel::System::DB')->Quote('21.35', 'Number');
                     ]]></programlisting>

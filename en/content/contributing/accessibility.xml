@@ -286,7 +286,7 @@
                 When an input element gets focus, the screen reader will
                 usually read the connected label, so that the user can hear its exact purpose.
                 An additional benefit for seeing users is that they can click on the label,
-                and the input element will get focus (escpecially helpful for checkboxes, for example).
+                and the input element will get focus (especially helpful for checkboxes, for example).
             </para>
             <itemizedlist>
                 <listitem>

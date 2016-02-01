@@ -16,16 +16,13 @@
 
     <section>
         <title>Skin Basics</title>
-
         <para>
             All skins are in <filename>$OTRS_HOME/var/httpd/htdocs/skins/$SKIN_TYPE/$SKIN_NAME</filename>.
             There are two types of skins: agent and customer skins.
         </para>
-
         <para>
             Each of the agents can select individually, which of the installed agent skins they want to "wear".
         </para>
-
         <para>
             For the customer interface, a skin has to be selected globally with the config setting
             <literal>Loader::Customer::SelectedSkin</literal>. All customers will see this skin.
@@ -34,24 +31,26 @@
 
     <section>
         <title>How skins are loaded</title>
-
         <para>
             It is important to note that the "default" skin will <emphasis>always</emphasis> be loaded <emphasis>first</emphasis>.
             If the agent selected another skin than the "default" one, then the other one will be loaded only
             <emphasis>after</emphasis> the default skin. By "loading" here we mean that OTRS will put tags into the HTML content
             which cause the CSS files to be loaded by the browser. Let's see an example of this:
-
+        </para>
+        <para>
             <programlisting><![CDATA[
 <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css-cache/CommonCSS_179376764084443c181048401ae0e2ad.css" />
 <link rel="stylesheet" href="/otrs-web/skins/Agent/ivory/css-cache/CommonCSS_e0783e0c2445ad9cc59c35d6e4629684.css" />
             ]]></programlisting>
-
+        </para>
+        <para>
             Here it can clearly be seen that the default skin is loaded first, and then the custom skin specified
             by the agent. In this example, we see the result of the activated loader (<literal>Loader::Enabled</literal>
             set to 1), which gathers all CSS files, concatenates and minifies them and serves them as one chunk to the
             browser. This saves bandwith and also reduces the number of HTTP requests. Let's see the same example with the
             Loader turned off:
-
+        </para>
+        <para>
             <programlisting><![CDATA[
 <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Reset.css" />
 <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Default.css" />
@@ -74,32 +73,28 @@
 <link rel="stylesheet" href="/otrs-web/skins/Agent/default/css/Core.Agent.CustomerUser.OpenTicket.css" />
 <link rel="stylesheet" href="/otrs-web/skins/Agent/ivory/css/Core.Dialog.css" />
             ]]></programlisting>
-
+        </para>
+        <para>
             Here we can better see the individual files that come from the skins.
         </para>
-
         <para>
             There are different types of CSS files: common files which must always be loaded,
             and "module-specific" files which are only loaded for special modules within the OTRS
             framework.
         </para>
-
         <para>
             In addition, it is possible to specify CSS files which only must be loaded on IE7 or
             IE8 (in the case of the customer interface, also IE6). This is unfortunate, but it was
             not possible to develop a modern GUI on these browsers without having special CSS for them.
         </para>
-
         <para>
             For details regarding the CSS file types, please see the <link linkend="loader">section on the Loader</link>.
         </para>
-
         <para>
             For each HTML page generation, the loader will first take all configured CSS files from the
             default skin, and then for each file look if it is also available in a custom skin (if a custom
             skin is selected) and load them after the default files.
         </para>
-
         <para>
             That means a) that CSS files in custom skins need to have the same names as in the default skins,
             and b) that a custom skin does not need to have all files of the default skin. That is the big
@@ -107,29 +102,33 @@
             and only needs to change those which should result in a different display. That can often be
             done in a single file, like in the example above.
         </para>
-
         <para>
             Another effect of this is that you  need to be careful to overwrite all default CSS rules in your
             custom skins that you want to change. Let's see an example:
-
+        </para>
+        <para>
             <programlisting><![CDATA[
 .Header h1 {
     font-weight: bold;
     color: #000;
 }
             ]]></programlisting>
-
+        </para>
+        <para>
             This defines special headings inside of the .Header element as bold, black text. Now if you want to
             change that in your skin to another color and normal text, it is not enough to write
-
+        </para>
+        <para>
             <programlisting><![CDATA[
 .Header h1 {
     color: #F00;
 }
             ]]></programlisting>
-
+        </para>
+        <para>
             Because the original rule for <literal>font-weight</literal> still applies. You need to override it explicitly:
-
+        </para>
+        <para>
             <programlisting><![CDATA[
 .Header h1 {
     font-weight: normal;
@@ -137,15 +136,16 @@
 }
             ]]></programlisting>
         </para>
-
     </section>
 
     <section>
         <title>Creating a New Skin</title>
-        <para>In this section, we will be creating a new agent skin which replaces the default OTRS background color (white)
-        with a custom company color (light grey) and the default logo by a custome one.
-        Also we will configure that skin to be the one which all agents will see by default.</para>
-
+        <para>
+            In this section, we will be creating a new agent skin which replaces the default OTRS
+            background color (white) with a custom company color (light grey) and the default logo
+            by a custome one. Also we will configure that skin to be the one which all agents will
+            see by default.
+        </para>
         <para>There are only two simple steps we need to take to achieve this goal:
             <itemizedlist>
                 <listitem><para>create the skin files</para></listitem>
@@ -153,7 +153,6 @@
                 <listitem><para>make the skin known to the OTRS system.</para></listitem>
             </itemizedlist>
         </para>
-
         <para>
             Let's start by creating the files needed for our new skin. First of all, we need to create a new
             folder for this skin (we'll call it "custom"). This folder will be
@@ -163,7 +162,8 @@
             In there, we need to place the new CSS file in a new directory
             <filename>css</filename> which defines the new skin's appearance. We'll call it <filename>Core.Default.css</filename>
             (remember that it must have the same name as one of the files in the "default" skin). This is the code needed for the CSS file:
-
+        </para>
+        <para>
             <programlisting><![CDATA[
 body {
     background-color: #c0c0c0; /* not very beautiful but it meets our purpose */
@@ -175,7 +175,8 @@ body {
             to place our custom logo (e.g. <filename>logo.png</filename>) in a new directory (e.g. <filename>img</filename>) in our skin directory.
             Then we need to create a new config file <filename>$OTRS_HOME/Kernel/Config/Files/CustomSkin.xml</filename>, which will contain the needed settings
             as follows:
-
+        </para>
+        <para>
             <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_config version="1.0" init="Framework">
@@ -208,7 +209,8 @@ body {
     </ConfigItem>
 </otrs_config>
             ]]></programlisting>
-
+        </para>
+        <para>
             To make this configuration active, we need to navigate to the SysConfig module in the admin area
             of OTRS (alternatively, you can run the script <filename>$OTRS_HOME/bin/otrs.Console.pl Maint::Config::Rebuild</filename>).
             This will regenerate the Perl cache of the XML configuration files, so that our new skin is now known
@@ -218,11 +220,13 @@ body {
         <para>
             In conclusion: to create a new skin in OTRS, we had to place the new logo file, and create one CSS and one XML file, resulting
             in three new files:
+        </para>
+        <para>
             <screen><![CDATA[
 $OTRS_HOME/Kernel/Config/Files/CustomSkin.xml
 $OTRS_HOME/var/httpd/htdocs/skins/Agent/custom/img/custom-logo.png
 $OTRS_HOME/var/httpd/htdocs/skins/Agent/custom/css/Core.Header.css
-]]></screen>
+            ]]></screen>
         </para>
     </section>
 </section>

@@ -21,12 +21,16 @@
         <title>Automatically Generated Configuration Files</title>
         <para>
             In <filename>Kernel/Config/Files</filename> you can find some automatically generated configuration files:
+        </para>
+        <para>
 <screen><![CDATA[
 ZZZAAuto.pm                 # Perl cache of the XML configuration's default values
 ZZZACL.pm                   # Perl cache of ACL configuration from database
 ZZZAuto.pm                  # Contains all the settings the user changed in their SysConfig
 ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from database
 ]]></screen>
+        </para>
+        <para>
             These files should never be manually changed as they are overwritten by OTRS.
         </para>
     </section>
@@ -43,21 +47,25 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
         </para>
         <para>
             Each XML config file has the following layout:
-        <programlisting><![CDATA[
+        </para>
+        <para>
+            <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
 <otrs_config version="1.0" init="Changes">
 
     <!--  config items will be here -->
 
 </otrs_config>
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
         <para>
             The <literal>init</literal> attribute describes where the config options should be loaded. There are different levels available and will be loaded/overloaded in the following order: <literal>Framework</literal> (for framework settings e. g. session option), <literal>Application</literal> (for application settings e. g. ticket options), <literal>Config</literal> (for extensions to existing applications e. g. ITSM options) and <literal>Changes</literal> (for custom development e. g. to overwrite framework or ticket options).
         </para>
         <para>
             If you want to add config options, here is an example:
-        <programlisting><![CDATA[
+        </para>
+        <para>
+            <programlisting><![CDATA[
 <ConfigItem Name="Ticket::Hook" Required="1" Valid="1" ConfigLevel="300">
     <Description Lang="en">The identifier for a ticket. The default is Ticket#.</Description>
     <Description Lang="de">Ticket-Identifikator. Als Standard wird Ticket# verwendet.</Description>
@@ -67,7 +75,7 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
         <String Regex="">Ticket#</String>
     </Setting>
 </ConfigItem>
-        ]]></programlisting>
+            ]]></programlisting>
         </para>
         <para>
             If <literal>required</literal> is set to <literal>1</literal>, the config variable is included and cannot be disabled.
@@ -81,7 +89,7 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
             depending on his own config level. The config variable <literal>ConfigLevel</literal> sets the level of technical experience
             of the administrator. It can be 100 (Expert), 200 (Advanced) or 300 (Beginner).
             As a guideline which config level should be given to an option, it is recommended that all options
-            having to do with the configuration of externel interaction, like Sendmail, LDAP, SOAP,
+            having to do with the configuration of external interaction, like Sendmail, LDAP, SOAP,
             and others should get a config level of at least 200 (Advanced).
         </para>
         <para>
@@ -101,17 +109,20 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
     <String Regex="" Check="File"></String>
 </Setting>
                     ]]></programlisting>
-
+                </para>
+                <para>
                     A config element for numbers and single-line strings.
                     Checking the validity with a regular expression is possible (optional).
                     The optional <literal>Check</literal> attribute checks elements on the file system.
-
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <String Translatable="1">My Setting</String>
 </Setting>
                     ]]></programlisting>
-
+                </para>
+                <para>
                     The optional <literal>Translatable</literal> attribute marks this setting as translatable, which
                     will cause it to be included in the OTRS translation files.
                     This attribute can be placed on any tag (see also below).
@@ -121,6 +132,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 <title>Textarea</title>
                 <para>
                     A config element for multiline text.
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <TextArea></TextArea>
@@ -132,6 +145,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 <title>Options</title>
                 <para>
                     This config element offers preset values as a pull-down menu.
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <Option SelectedID="0">
@@ -140,9 +155,11 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
     </Option>
 </Setting>
                     ]]></programlisting>
-
+                </para>
+                <para>
                     You can also choose the default value by "Value":
-
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <Option SelectedValue="No">
@@ -157,6 +174,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 <title>Array</title>
                 <para>
                     With this config element arrays can be displayed.
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <Array>
@@ -171,6 +190,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 <title>Hash</title>
                 <para>
                     With this config element hashes can be displayed.
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <Hash>
@@ -182,6 +203,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 </para>
                 <para>
                     A hash can also contain nested arrays or hashes.
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <Hash>
@@ -208,6 +231,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 <title>FrontendModuleReg (NavBar)</title>
                 <para>
                     Module registration for Agent Interface:
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <FrontendModuleReg>
@@ -252,6 +277,8 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 <title>FrontendModuleReg (NavBarModule)</title>
                 <para>
                     Module registration for Admin Interface:
+                </para>
+                <para>
                     <programlisting><![CDATA[
 <Setting>
     <FrontendModuleReg>
@@ -281,10 +308,16 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
         </para>
         <para>
             If you want to read a config option:
+        </para>
+        <para>
             <programlisting><![CDATA[
 my $ConfigOption = $Kernel::OM->Get('Kernel::Config')->Get('Prefix::Option');
             ]]></programlisting>
+        </para>
+        <para>
             If you want to change a config option at runtime and just for this one request/process:
+        </para>
+        <para>
             <programlisting><![CDATA[
 $Kernel::OM->Get('Kernel::Config')->Set(
     Key => 'Prefix::Option'

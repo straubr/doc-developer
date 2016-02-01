@@ -6,6 +6,8 @@
     <para>
         The OTRS framework is modular. The following picture shows the basic layer architecture of
         OTRS.
+    </para>
+    <para>
         <figure>
             <title>OTRS Architecture</title>
             <screenshot>
@@ -16,6 +18,8 @@
     <para>
         Introduced in OTRS 3.1, the OTRS Generic Interface continues OTRS modularity. The next
         picture shows the basic layer architecture of the Generic Interface.
+    </para>
+    <para>
         <figure>
             <title>Generic Interface Architecture</title>
             <screenshot>
@@ -197,7 +201,7 @@
         <title>Frontend Handle</title>
         <para>
             The interface between the browser, web server and the frontend modules. A frontend
-            module can be used via the http-link.
+            module can be used via the HTTP-link.
         </para>
         <para>
             <ulink url="">http://localhost/otrs/index.pl?Action=Module</ulink>
@@ -340,8 +344,7 @@
                 Generic Interface Network Transport modules are located under
                 <filename>$OTRS_HOME/Kernel/GenericInterface/Operation/*</filename>. Each transport module should be
                 placed in a directory named as the Network Protocol used. For example: The "HTTP
-                SOAP" transport module, located in <filename>$OTRS_HOME/Kernel/GenericInterface/Transport
-                /HTTP/SOAP.pm</filename>.
+                SOAP" transport module, located in <filename>$OTRS_HOME/Kernel/GenericInterface/Transport/HTTP/SOAP.pm</filename>.
             </para>
             <para>
                 Generic Interface transport modules are used send data to, and receive data from a
