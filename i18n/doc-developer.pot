@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-02-01 11:25+0100\n"
+"POT-Creation-Date: 2016-02-01 11:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1009,7 +1009,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:46 en/content/contributing/code-style-guide/perl.xml:56 en/content/contributing/code-style-guide/perl.xml:70 en/content/contributing/code-style-guide/perl.xml:79 en/content/contributing/code-style-guide/perl.xml:94 en/content/contributing/code-style-guide/perl.xml:110 en/content/contributing/code-style-guide/perl.xml:154 en/content/contributing/code-style-guide/perl.xml:171 en/content/contributing/code-style-guide/perl.xml:193 en/content/contributing/code-style-guide/perl.xml:236 en/content/contributing/code-style-guide/perl.xml:245 en/content/contributing/code-style-guide/perl.xml:257 en/content/contributing/code-style-guide/perl.xml:269 en/content/contributing/code-style-guide/perl.xml:281 en/content/contributing/code-style-guide/perl.xml:322 en/content/contributing/code-style-guide/perl.xml:343 en/content/contributing/code-style-guide/perl.xml:376 en/content/contributing/code-style-guide/perl.xml:385 en/content/contributing/code-style-guide/perl.xml:396 en/content/contributing/code-style-guide/perl.xml:409 en/content/contributing/code-style-guide/perl.xml:438 en/content/contributing/code-style-guide/perl.xml:449 en/content/contributing/code-style-guide/perl.xml:468 en/content/contributing/code-style-guide/perl.xml:479 en/content/contributing/code-style-guide/perl.xml:492 en/content/contributing/code-style-guide/perl.xml:507 en/content/contributing/code-style-guide/perl.xml:516 en/content/contributing/code-style-guide/perl.xml:526 en/content/contributing/code-style-guide/perl.xml:544 en/content/contributing/code-style-guide/perl.xml:559 en/content/contributing/code-style-guide/perl.xml:610 en/content/contributing/code-style-guide/perl.xml:656 en/content/contributing/code-style-guide/perl.xml:666 en/content/contributing/code-style-guide/perl.xml:688 en/content/contributing/code-style-guide/perl.xml:712 en/content/contributing/code-style-guide/perl.xml:723 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:144 en/content/how-to-extend-otrs/writing-otrs-application.xml:187 en/content/how-to-extend-otrs/writing-otrs-application.xml:216 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:232 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:254 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:117 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:142 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:193 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:250 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:288 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:327 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:349 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:77 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:123 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:158 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:364 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:513 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:29 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:229 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:345 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:375 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:384 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:394 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:404 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:414 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:423 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:432 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:442 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:465 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:476 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:488 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:497 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:508 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:519 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:533 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:543 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:553 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:453 en/content/how-to-publish-otrs-extensions/package-building.xml:474 en/content/how-to-publish-otrs-extensions/package-building.xml:499 en/content/how-to-publish-otrs-extensions/package-building.xml:509 en/content/how-to-publish-otrs-extensions/package-building.xml:528 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
+#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:47 en/content/contributing/code-style-guide/perl.xml:57 en/content/contributing/code-style-guide/perl.xml:71 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:111 en/content/contributing/code-style-guide/perl.xml:155 en/content/contributing/code-style-guide/perl.xml:172 en/content/contributing/code-style-guide/perl.xml:194 en/content/contributing/code-style-guide/perl.xml:237 en/content/contributing/code-style-guide/perl.xml:246 en/content/contributing/code-style-guide/perl.xml:258 en/content/contributing/code-style-guide/perl.xml:270 en/content/contributing/code-style-guide/perl.xml:282 en/content/contributing/code-style-guide/perl.xml:323 en/content/contributing/code-style-guide/perl.xml:344 en/content/contributing/code-style-guide/perl.xml:377 en/content/contributing/code-style-guide/perl.xml:386 en/content/contributing/code-style-guide/perl.xml:397 en/content/contributing/code-style-guide/perl.xml:410 en/content/contributing/code-style-guide/perl.xml:439 en/content/contributing/code-style-guide/perl.xml:450 en/content/contributing/code-style-guide/perl.xml:469 en/content/contributing/code-style-guide/perl.xml:480 en/content/contributing/code-style-guide/perl.xml:493 en/content/contributing/code-style-guide/perl.xml:508 en/content/contributing/code-style-guide/perl.xml:517 en/content/contributing/code-style-guide/perl.xml:527 en/content/contributing/code-style-guide/perl.xml:545 en/content/contributing/code-style-guide/perl.xml:560 en/content/contributing/code-style-guide/perl.xml:611 en/content/contributing/code-style-guide/perl.xml:657 en/content/contributing/code-style-guide/perl.xml:667 en/content/contributing/code-style-guide/perl.xml:689 en/content/contributing/code-style-guide/perl.xml:713 en/content/contributing/code-style-guide/perl.xml:724 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:144 en/content/how-to-extend-otrs/writing-otrs-application.xml:187 en/content/how-to-extend-otrs/writing-otrs-application.xml:216 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:232 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:254 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:117 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:142 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:193 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:250 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:288 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:327 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:349 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:77 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:123 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:158 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:364 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:513 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:29 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:229 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:345 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:375 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:384 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:394 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:404 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:414 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:423 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:432 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:442 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:465 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:476 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:488 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:497 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:508 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:519 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:533 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:543 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:553 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:453 en/content/how-to-publish-otrs-extensions/package-building.xml:474 en/content/how-to-publish-otrs-extensions/package-building.xml:499 en/content/how-to-publish-otrs-extensions/package-building.xml:509 en/content/how-to-publish-otrs-extensions/package-building.xml:528 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
 msgid "<placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
@@ -1406,7 +1406,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:43 en/content/contributing/code-style-guide/perl.xml:367
+#: en/content/contributing/code-style-guide/javascript.xml:43 en/content/contributing/code-style-guide/perl.xml:368
 msgid "Variables"
 msgstr ""
 
@@ -1539,23 +1539,25 @@ msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:36
-msgid "Lines should not be longer than 100 characters."
+msgid ""
+"Lines should generally not be longer than 120 characters, unless it is "
+"neccessary for special reasons."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:41
+#: en/content/contributing/code-style-guide/perl.xml:42
 msgid "Spaces and parentheses"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:43
+#: en/content/contributing/code-style-guide/perl.xml:44
 msgid ""
 "To gain more readability, we use spaces between keywords and opening "
 "parenthesis."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:46
+#: en/content/contributing/code-style-guide/perl.xml:47
 #, no-wrap
 msgid ""
 "if ()...\n"
@@ -1563,14 +1565,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:53
+#: en/content/contributing/code-style-guide/perl.xml:54
 msgid ""
 "If there is just one single variable, the parenthesis enclose the variable "
 "with no spaces inside."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:56
+#: en/content/contributing/code-style-guide/perl.xml:57
 #, no-wrap
 msgid ""
 "if ($Condition) { ... }\n"
@@ -1581,7 +1583,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:66
+#: en/content/contributing/code-style-guide/perl.xml:67
 msgid ""
 "If the condition is not just one single variable, we use spaces between the "
 "parenthesis and the condition.  And there is still the space between the "
@@ -1589,36 +1591,36 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:70
+#: en/content/contributing/code-style-guide/perl.xml:71
 #, no-wrap
 msgid "if ( $Condition && $ABC ) { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:76
+#: en/content/contributing/code-style-guide/perl.xml:77
 msgid "Note that for Perl builtin functions, we do not use parentheses:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:79
+#: en/content/contributing/code-style-guide/perl.xml:80
 #, no-wrap
 msgid "chomp $Variable;\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:88
+#: en/content/contributing/code-style-guide/perl.xml:89
 msgid "Source code header and charset"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:90
+#: en/content/contributing/code-style-guide/perl.xml:91
 msgid ""
 "Attach the following header to every source file.  Source files are saved in "
 "UTF-8 charset."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:94
+#: en/content/contributing/code-style-guide/perl.xml:95
 #, no-wrap
 msgid ""
 "# --\n"
@@ -1632,12 +1634,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:107
+#: en/content/contributing/code-style-guide/perl.xml:108
 msgid "Executable files (<filename>*.pl</filename>) have a special header."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:110
+#: en/content/contributing/code-style-guide/perl.xml:111
 #, no-wrap
 msgid ""
 "#!/usr/bin/perl\n"
@@ -1665,22 +1667,22 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:138
+#: en/content/contributing/code-style-guide/perl.xml:139
 msgid "Using the Perl language"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:141
+#: en/content/contributing/code-style-guide/perl.xml:142
 msgid "Control flow"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:144
+#: en/content/contributing/code-style-guide/perl.xml:145
 msgid "Conditions"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:146
+#: en/content/contributing/code-style-guide/perl.xml:147
 msgid ""
 "Conditions can be quite complex and there can be \"chained\" conditions "
 "(linked with logical 'or' or 'and' operations).  When coding for OTRS, you "
@@ -1688,7 +1690,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:150
+#: en/content/contributing/code-style-guide/perl.xml:151
 msgid ""
 "Perl Best Practices says, that high precedence operators "
 "(<literal>&amp;&amp;</literal> and <literal>||</literal>) shouldn't mixed up "
@@ -1698,7 +1700,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:154
+#: en/content/contributing/code-style-guide/perl.xml:155
 #, no-wrap
 msgid ""
 "if ( $Condition1 && $Condition2 ) { ... }\n"
@@ -1709,14 +1711,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:164
+#: en/content/contributing/code-style-guide/perl.xml:165
 msgid ""
 "This means that you have to be aware of traps. Sometimes you need to use "
 "parenthesis to make clear what you want."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:167
+#: en/content/contributing/code-style-guide/perl.xml:168
 msgid ""
 "If you have long conditions (line is longer than 120 characters over all), "
 "you have to break it in several lines.  And the start of the conditions is "
@@ -1724,7 +1726,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:171
+#: en/content/contributing/code-style-guide/perl.xml:172
 #, no-wrap
 msgid ""
 "if (\n"
@@ -1742,7 +1744,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:188
+#: en/content/contributing/code-style-guide/perl.xml:189
 msgid ""
 "Also note, that the right parenthesis is in a line on its own and the left "
 "curly bracket is also in a new line and with the same indentation as the "
@@ -1751,7 +1753,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:193
+#: en/content/contributing/code-style-guide/perl.xml:194
 #, no-wrap
 msgid ""
 "if (\n"
@@ -1786,12 +1788,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:227
+#: en/content/contributing/code-style-guide/perl.xml:228
 msgid "Postfix <literal>if</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:229
+#: en/content/contributing/code-style-guide/perl.xml:230
 msgid ""
 "Generally we use \"postfix <literal>if</literal>\" statements to reduce the "
 "number of levels.  But we don't use it for multiline statements and is only "
@@ -1800,23 +1802,23 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:233 en/content/contributing/code-style-guide/perl.xml:266
+#: en/content/contributing/code-style-guide/perl.xml:234 en/content/contributing/code-style-guide/perl.xml:267
 msgid "This is correct:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:236
+#: en/content/contributing/code-style-guide/perl.xml:237
 #, no-wrap
 msgid "next ITEM if !$ItemId;\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:242 en/content/contributing/code-style-guide/perl.xml:278 en/content/contributing/code-style-guide/perl.xml:556
+#: en/content/contributing/code-style-guide/perl.xml:243 en/content/contributing/code-style-guide/perl.xml:279 en/content/contributing/code-style-guide/perl.xml:557
 msgid "This is wrong:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:245
+#: en/content/contributing/code-style-guide/perl.xml:246
 #, no-wrap
 msgid ""
 "return $Self->{LogObject}->Log(\n"
@@ -1826,12 +1828,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:254
+#: en/content/contributing/code-style-guide/perl.xml:255
 msgid "This is less maintainable than this:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:257
+#: en/content/contributing/code-style-guide/perl.xml:258
 #, no-wrap
 msgid ""
 "if( !$ItemId ) {\n"
@@ -1841,7 +1843,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:269
+#: en/content/contributing/code-style-guide/perl.xml:270
 #, no-wrap
 msgid ""
 "for my $Needed (1..10) {\n"
@@ -1851,47 +1853,47 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:281
+#: en/content/contributing/code-style-guide/perl.xml:282
 #, no-wrap
 msgid "my $Var = 1 if $Something == 'Yes';\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:290
+#: en/content/contributing/code-style-guide/perl.xml:291
 msgid "Restrictions for the use of some Perl builtins"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:292
+#: en/content/contributing/code-style-guide/perl.xml:293
 msgid "Some builtin subroutines of Perl may not be used in every place:"
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:297
+#: en/content/contributing/code-style-guide/perl.xml:298
 msgid ""
 "Don't use <literal>die</literal> and <literal>exit</literal> in "
 "<filename>.pm</filename> files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:300
+#: en/content/contributing/code-style-guide/perl.xml:301
 msgid "Don't use the <literal>Dumper</literal> function in released files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:303
+#: en/content/contributing/code-style-guide/perl.xml:304
 msgid "Don't use <literal>print</literal> in <filename>.pm</filename> files."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:306
+#: en/content/contributing/code-style-guide/perl.xml:307
 msgid ""
 "Don't use <literal>require</literal>, use <literal>Main::Require()</literal> "
 "instead."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:309
+#: en/content/contributing/code-style-guide/perl.xml:310
 msgid ""
 "Use the functions of the <literal>TimeObject</literal> instead of the "
 "builtin functions like <literal>time()</literal>, "
@@ -1899,12 +1901,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:316
+#: en/content/contributing/code-style-guide/perl.xml:317
 msgid "Regular Expressions"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:318
+#: en/content/contributing/code-style-guide/perl.xml:319
 msgid ""
 "For regular expressions we always use the <literal>m//</literal> operator "
 "with curly braces as delimiters. We also use the modifiers "
@@ -1914,7 +1916,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:322
+#: en/content/contributing/code-style-guide/perl.xml:323
 #, no-wrap
 msgid ""
 "$Date =~ m{ \\A \\d{4} - \\d{2} - \\d{2} \\z }xms\n"
@@ -1928,7 +1930,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:335
+#: en/content/contributing/code-style-guide/perl.xml:336
 msgid ""
 "As the space no longer has a special meaning, you have to use a single "
 "character class to match a single space (<literal>[ ]</literal>).  If you "
@@ -1936,7 +1938,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:339
+#: en/content/contributing/code-style-guide/perl.xml:340
 msgid ""
 "In the regex, the dot (<literal>.</literal>) includes the newline (whereas "
 "in regex without <literal>s</literal> modifier the dot means 'everything but "
@@ -1945,7 +1947,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:343
+#: en/content/contributing/code-style-guide/perl.xml:344
 #, no-wrap
 msgid ""
 "$Text =~ m{\n"
@@ -1956,12 +1958,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:354
+#: en/content/contributing/code-style-guide/perl.xml:355
 msgid "Naming"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:356
+#: en/content/contributing/code-style-guide/perl.xml:357
 msgid ""
 "Names and comments are written in English. Variables, objects and methods "
 "must be descriptive nouns or noun phrases with the first letter set upper "
@@ -1970,7 +1972,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:360
+#: en/content/contributing/code-style-guide/perl.xml:361
 msgid ""
 "Names should be as descriptive as possible.  A reader should be able to say "
 "what is meant by a name without digging too deep into the code. E.g. use "
@@ -1980,30 +1982,30 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:370
+#: en/content/contributing/code-style-guide/perl.xml:371
 msgid "Declaration"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:373
+#: en/content/contributing/code-style-guide/perl.xml:374
 msgid ""
 "If you have several variables, you can declare them in one line if they "
 "\"belong together\":"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:376
+#: en/content/contributing/code-style-guide/perl.xml:377
 #, no-wrap
 msgid "my ($Minute, $Hour, $Year);\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:382
+#: en/content/contributing/code-style-guide/perl.xml:383
 msgid "Otherwise break it into separate lines:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:385
+#: en/content/contributing/code-style-guide/perl.xml:386
 #, no-wrap
 msgid ""
 "\n"
@@ -2012,14 +2014,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:393
+#: en/content/contributing/code-style-guide/perl.xml:394
 msgid ""
 "Do not set to <literal>undef</literal> or <literal>''</literal> in the "
 "declaration as this might hide mistakes in code."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:396
+#: en/content/contributing/code-style-guide/perl.xml:397
 #, no-wrap
 msgid ""
 "my $Variable = undef;\n"
@@ -2030,14 +2032,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:406
+#: en/content/contributing/code-style-guide/perl.xml:407
 msgid ""
 "You can set a variable to <literal>''</literal> if you want to concatenate "
 "strings:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:409
+#: en/content/contributing/code-style-guide/perl.xml:410
 #, no-wrap
 msgid ""
 "my $SqlStatement = '';\n"
@@ -2047,22 +2049,22 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:418
+#: en/content/contributing/code-style-guide/perl.xml:419
 msgid "Otherwise you would get an \"uninitialized\" warning."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:424
+#: en/content/contributing/code-style-guide/perl.xml:425
 msgid "Subroutines"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:427
+#: en/content/contributing/code-style-guide/perl.xml:428
 msgid "Handling of parameters"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:430
+#: en/content/contributing/code-style-guide/perl.xml:431
 msgid ""
 "To fetch the parameters passed to subroutines, OTRS normally uses the hash "
 "<literal>%Param</literal> (not <literal>%Params</literal>).  This leads to "
@@ -2071,14 +2073,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:434
+#: en/content/contributing/code-style-guide/perl.xml:435
 msgid ""
 "Just in some exceptions a regular list of parameters should be used.  So we "
 "want to avoid something like this:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:438
+#: en/content/contributing/code-style-guide/perl.xml:439
 #, no-wrap
 msgid ""
 "sub TestSub {\n"
@@ -2087,12 +2089,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:446
+#: en/content/contributing/code-style-guide/perl.xml:447
 msgid "We want to use this instead:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:449
+#: en/content/contributing/code-style-guide/perl.xml:450
 #, no-wrap
 msgid ""
 "sub TestSub {\n"
@@ -2101,7 +2103,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:457
+#: en/content/contributing/code-style-guide/perl.xml:458
 msgid ""
 "This has several advantages: We do not have to change the code in the "
 "subroutine when a new parameter should be passed, and calling a function "
@@ -2109,19 +2111,19 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:463
+#: en/content/contributing/code-style-guide/perl.xml:464
 msgid "Multiple named parameters"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:465
+#: en/content/contributing/code-style-guide/perl.xml:466
 msgid ""
 "If a function call requires more than one named parameter, split them into "
 "multiple lines:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:468
+#: en/content/contributing/code-style-guide/perl.xml:469
 #, no-wrap
 msgid ""
 "    $Self->{LogObject}->Log(\n"
@@ -2131,12 +2133,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:476
+#: en/content/contributing/code-style-guide/perl.xml:477
 msgid "Instead of:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:479
+#: en/content/contributing/code-style-guide/perl.xml:480
 #, no-wrap
 msgid ""
 "    $Self->{LogObject}->Log( Priority => 'error', Message  => \"Need "
@@ -2144,12 +2146,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:486
+#: en/content/contributing/code-style-guide/perl.xml:487
 msgid "<literal>return</literal> statements"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:488
+#: en/content/contributing/code-style-guide/perl.xml:489
 msgid ""
 "Subroutines have to have a <literal>return</literal> statement.  The "
 "explicit <literal>return</literal> statement is preferred over the implicit "
@@ -2158,7 +2160,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:492
+#: en/content/contributing/code-style-guide/perl.xml:493
 #, no-wrap
 msgid ""
 "sub TestSub {\n"
@@ -2168,25 +2170,25 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:502
+#: en/content/contributing/code-style-guide/perl.xml:503
 msgid "Explicit return values"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:504
+#: en/content/contributing/code-style-guide/perl.xml:505
 msgid ""
 "Explicit return values means that you should not have a "
 "<literal>return</literal> statement followed by a subroutine call."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:507
+#: en/content/contributing/code-style-guide/perl.xml:508
 #, no-wrap
 msgid "return $Self->{DBObject}->Do( ... );\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:513
+#: en/content/contributing/code-style-guide/perl.xml:514
 msgid ""
 "The following example is better as this says explicitly what is "
 "returned. With the example above the reader doesn't know what the return "
@@ -2194,7 +2196,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:516
+#: en/content/contributing/code-style-guide/perl.xml:517
 #, no-wrap
 msgid ""
 "return if !$Self->{DBObject}->Do( ... );\n"
@@ -2202,14 +2204,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:523
+#: en/content/contributing/code-style-guide/perl.xml:524
 msgid ""
 "If you assign the result of a subroutine to a variable, a \"good\" variable "
 "name indicates what was returned:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:526
+#: en/content/contributing/code-style-guide/perl.xml:527
 #, no-wrap
 msgid ""
 "my $SuccessfulInsert = $Self->{DBObject}->Do( ... );\n"
@@ -2217,24 +2219,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:536
+#: en/content/contributing/code-style-guide/perl.xml:537
 msgid "Packages"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:539
+#: en/content/contributing/code-style-guide/perl.xml:540
 msgid "<literal>use</literal> statements"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:541
+#: en/content/contributing/code-style-guide/perl.xml:542
 msgid ""
 "<literal>use strict</literal> and <literal>use warnings</literal> have to be "
 "the first two \"use\"s in a module. This is correct:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:544
+#: en/content/contributing/code-style-guide/perl.xml:545
 #, no-wrap
 msgid ""
 "package Kernel::System::ITSMConfigItem::History;\n"
@@ -2247,7 +2249,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:559
+#: en/content/contributing/code-style-guide/perl.xml:560
 #, no-wrap
 msgid ""
 "package Kernel::System::ITSMConfigItem::History;\n"
@@ -2260,55 +2262,55 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:573
+#: en/content/contributing/code-style-guide/perl.xml:574
 msgid "Objects and their allocation"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:575
+#: en/content/contributing/code-style-guide/perl.xml:576
 msgid ""
 "In OTRS many objects are available. But you should not use every object in "
 "every file to keep the frontend/backend separation."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:581
+#: en/content/contributing/code-style-guide/perl.xml:582
 msgid ""
 "Don't use the <literal>LayoutObject</literal> in core modules "
 "(<filename>Kernel/System</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:584
+#: en/content/contributing/code-style-guide/perl.xml:585
 msgid ""
 "Don't use the <literal>ParamObject</literal> in core modules "
 "(<filename>Kernel/System</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/perl.xml:587
+#: en/content/contributing/code-style-guide/perl.xml:588
 msgid ""
 "Don't use the <literal>DBObject</literal> in frontend modules "
 "(<filename>Kernel/Modules</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:598
+#: en/content/contributing/code-style-guide/perl.xml:599
 msgid "Writing good documentation"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:601
+#: en/content/contributing/code-style-guide/perl.xml:602
 msgid "Perldoc"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:604
+#: en/content/contributing/code-style-guide/perl.xml:605
 msgid "Documenting subroutines"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:607
+#: en/content/contributing/code-style-guide/perl.xml:608
 msgid ""
 "Subroutines should always be documented. The documentation contains a "
 "general description about what the subroutine does, a sample subroutine call "
@@ -2317,7 +2319,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:610
+#: en/content/contributing/code-style-guide/perl.xml:611
 #, no-wrap
 msgid ""
 "=item LastTimeObjectChanged()\n"
@@ -2342,19 +2344,19 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:632
+#: en/content/contributing/code-style-guide/perl.xml:633
 msgid ""
 "You can copy and paste a <literal>Data::Dumper</literal> output for the "
 "return values."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:638
+#: en/content/contributing/code-style-guide/perl.xml:639
 msgid "Commenting"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:641
+#: en/content/contributing/code-style-guide/perl.xml:642
 msgid ""
 "In general, you should try to write your code as readable and "
 "self-explaining as possible.  Don't write a comment to explain what obvious "
@@ -2364,22 +2366,22 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:648
+#: en/content/contributing/code-style-guide/perl.xml:649
 msgid "Special comments"
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:650
+#: en/content/contributing/code-style-guide/perl.xml:651
 msgid "There are two special kinds of comments."
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:653
+#: en/content/contributing/code-style-guide/perl.xml:654
 msgid "Example 1 - comment for a longer block of code"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:656
+#: en/content/contributing/code-style-guide/perl.xml:657
 #, no-wrap
 msgid ""
 "# -----------------------------------#\n"
@@ -2388,28 +2390,28 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:663
+#: en/content/contributing/code-style-guide/perl.xml:664
 msgid "Example 2 - comment for customizing standard OTRS files"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:666
+#: en/content/contributing/code-style-guide/perl.xml:667
 #, no-wrap
 msgid "# --- customizing for some project\n"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:676
+#: en/content/contributing/code-style-guide/perl.xml:677
 msgid "Database interaction"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:679
+#: en/content/contributing/code-style-guide/perl.xml:680
 msgid "Declaration of SQL statements"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:681
+#: en/content/contributing/code-style-guide/perl.xml:682
 msgid ""
 "If there is no chance for changing the SQL statement, it should be used in "
 "the <literal>Prepare</literal> function.  The reason for this is, that the "
@@ -2417,14 +2419,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:685
+#: en/content/contributing/code-style-guide/perl.xml:686
 msgid ""
 "The SQL statement should be written as one nicely indented string without "
 "concatenation like this:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:688
+#: en/content/contributing/code-style-guide/perl.xml:689
 #, no-wrap
 msgid ""
 "return if !$Self->{DBObject}->Prepare(\n"
@@ -2440,7 +2442,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:702
+#: en/content/contributing/code-style-guide/perl.xml:703
 msgid ""
 "This is easy to read and modify, and the whitespace can be handled well by "
 "our supported DBMSs.  For auto-generated SQL code (like in "
@@ -2448,35 +2450,35 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:707
+#: en/content/contributing/code-style-guide/perl.xml:708
 msgid "Returning on errors"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:709
+#: en/content/contributing/code-style-guide/perl.xml:710
 msgid ""
 "Whenever you use database functions you should handle errors. If anything "
 "goes wrong, return from subroutine:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:712
+#: en/content/contributing/code-style-guide/perl.xml:713
 #, no-wrap
 msgid "return if !$Self->{DBObject}->Prepare( ... );\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:718
+#: en/content/contributing/code-style-guide/perl.xml:719
 msgid "Using Limit"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:720
+#: en/content/contributing/code-style-guide/perl.xml:721
 msgid "Use <literal>Limit => 1</literal> if you expect just one row to be returned."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:723
+#: en/content/contributing/code-style-guide/perl.xml:724
 #, no-wrap
 msgid ""
 "$Self->{DBObject}->Prepare(\n"
@@ -2487,12 +2489,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:733
+#: en/content/contributing/code-style-guide/perl.xml:734
 msgid "Using the <literal>while</literal> loop"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:735
+#: en/content/contributing/code-style-guide/perl.xml:736
 msgid ""
 "Always use the <literal>while</literal> loop, even when you expect one row "
 "to be returned, as some databases do not release the statement handle and "
@@ -7346,7 +7348,7 @@ msgstr ""
 msgid ""
 "# --\n"
 "# Kernel/Output/HTML/DashboardTicketStatsGeneric.pm - message of the day\n"
-"# Copyright (C) 2001-2015 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
