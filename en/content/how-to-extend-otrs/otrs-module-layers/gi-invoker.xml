@@ -4,14 +4,14 @@
 <section id="invoker">
     <title>Invoker</title>
     <para>
-        The invoker is used to create a request from OTRS to a Remote System, this part of the GI
+        The invoker is used to create a request from OTRS to a Remote System. This part of the GI
         is in charge of perform necessary tasks in OTRS side, to gather the necessary data in order
         to construct the request.
     </para>
     <section id="adding_invoker">
         <title>Invoker backend</title>
         <para>
-            Next we will show how to develop a new Invoker, each invoker has to implement these
+            Next we will show how to develop a new Invoker. Each invoker has to implement these
             subroutines:
         </para>
         <para>
@@ -62,7 +62,7 @@ our $ObjectManagerDisabled = 1;
             </para>
             <para>
                 This is common header that can be found in common OTRS modules. The class/package
-                name is declared via the package keyword. Invokers can not be instantiated by the
+                name is declared via the <literal>package</literal> keyword. Invokers can not be instantiated by the
                 Object Manager.
             </para>
             <para>
@@ -126,20 +126,20 @@ sub PrepareRequest {
             </para>
             <para>
                 The <literal>PrepareRequest</literal> function is used to handle and collect all needed data to be
-                sent into the request, here we can receive data from the request handler, use it,
+                sent into the request. Here we can receive data from the request handler, use it,
                 extend it, generate new data, and after that, we can transfer the results to the
                 mapping layer.
             </para>
             <para>
-                For this example we are expecting to receive a ticket number, if there isn't then we
+                For this example we are expecting to receive a ticket number. If there isn't then we
                 use the debugger method <code>Error()</code> that creates an entry in the debug log and also
-                returns a structure with the parameter Success as 0 and Error Message as the passed
-                summary.
+                returns a structure with the parameter <literal>Success</literal> as 0 and an error message as the passed
+                <literal>Summary</literal>.
             </para>
             <para>
-                Also this example appends the word "Test" to the parameter "Action" and if
+                Also this example appends the word "Test" to the parameter <literal>Action</literal> and if
                 <literal>GetSystemTime</literal> is requested, it will fill the <literal>SystemTime</literal> parameter with the current
-                system time. This part of the code is to prepare the data to be sent, on a real
+                system time. This part of the code is to prepare the data to be sent. On a real
                 invoker some calls to core modules (<filename>Kernel/System/*.pm</filename>) should be made here.
             </para>
             <para>
@@ -157,9 +157,9 @@ return {
                 ]]></programlisting>
             </para>
             <para>
-                Using this, the Requester will understand that the request should not continue (
-                it will not be sent to Mapping layer and will also not be sent to the
-                Network Transport) Requester will not send an error on the debug log. it will only
+                Using this, the Requester will understand that the request should not continue
+                (it will not be sent to Mapping layer and will also not be sent to the
+                Network Transport). The Requester will not send an error on the debug log, it will only
                 silently stop.
             </para>
             <para>
@@ -213,7 +213,7 @@ sub HandleResponse {
             </para>
             <para>
                 The <literal>HandleResponse</literal> function is used to receive  and process the data from the
-                previous request, that was made to the Remote System this data already passed by
+                previous request, that was made to the Remote System. This data already passed by
                 Mapping layer, to transform it from Remote System format to OTRS format (if
                 needed).
             </para>
@@ -221,13 +221,14 @@ sub HandleResponse {
                 For this particular example it checks the ticket number again and check if the
                 action ends with the word 'Test' (as was done in the <literal>PrepareRequest</literal> function).
             </para>
-            <para>
-                <emphasis>Remember</emphasis>
-                This invoker is only used for tests, a real invoker will check if the response
-                was on the format described by the Remote System and can perform some actions
-                like: call another invoker, perform an call to a Core Module, update the database,
-                send an error, etc.
-            </para>
+            <note>
+                <para>
+                    This invoker is only used for tests, a real invoker will check if the response
+                    was on the format described by the Remote System and can perform some actions
+                    like: call another invoker, perform a call to a Core Module, update the database,
+                    send an error, etc.
+                </para>
+            </note>
             <para>
                 <programlisting><![CDATA[
 =back

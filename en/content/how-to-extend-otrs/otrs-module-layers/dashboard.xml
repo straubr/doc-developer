@@ -167,7 +167,7 @@ sub Run {
         </para>
         <para>
 To use this module add the following to the <filename>Kernel/Config.pm</filename>
-and restart your webserver (if you use mod_perl).
+and restart your web server (if you use <literal>mod_perl</literal>).
         </para>
         <para>
             <programlisting linenumbering="numbered"><![CDATA[
@@ -201,7 +201,7 @@ An excessive number of days or individual lines may lead to performance degradat
         <section id="dashboard-module-releases">
             <title>Release Availability</title>
             <para>
-from 2.4.0
+From version 2.4.0.
             </para>
         </section>
     </section>

@@ -47,7 +47,7 @@ return $Id;
             ]]></programlisting>
             <note>
                 <para>
-Take care to use Limit as param and not in the SQL string because
+Take care to use <literal>Limit</literal> as param and not in the SQL string because
 not all databases support LIMIT in SQL strings.
                 </para>
             </note>
@@ -67,8 +67,8 @@ return $Id;
             ]]></programlisting>
             <note>
                 <para>
-Use the Bind attribute where ever you can, especially for long statements. If
-you use Bind you do not need the function <code>Quote()</code>.
+Use the <literal>Bind</literal> attribute where ever you can, especially for long statements. If
+you use <literal>Bind</literal> you do not need the function <code>Quote()</code>.
                 </para>
             </note>
             </section>
@@ -100,7 +100,7 @@ my $QuotedNumber = $Kernel::OM->Get('Kernel::System::DB')->Quote('21.35', 'Numbe
                 </para>
                 <note>
                     <para>
-Please use the Bind attribute instead of <code>Quote()</code> where ever you can.
+Please use the <literal>Bind</literal> attribute instead of <code>Quote()</code> where ever you can.
                     </para>
                 </note>
             </section>
@@ -114,7 +114,7 @@ you write applications that can be used in all of them.
             </para>
             <note>
                 <para>
-The &lt;Insert&gt; syntax has changed in >=2.2. Values are now used in the tag content (not longer in an attribute).
+The <literal>&lt;Insert&gt;</literal> syntax has changed in >=2.2. Values are now used in the tag content (not longer in an attribute).
                 </para>
             </note>
             <section id="database-xml-insert">

@@ -37,7 +37,7 @@
                     If data parameters are given to the templates by the application module,
                     these data can be output to the template. <literal>[% Data.Name %]</literal> is
                     the most simple, but also most dangerous one. It will insert the data
-                    parameter whose name is 'Name' into the template as it is, without further processing.
+                    parameter whose name is <literal>Name</literal> into the template as it is, without further processing.
                 </para>
                 <warning>
                     <para>
@@ -64,7 +64,7 @@
                 </para>
                 <para>
                     If you have data entries with complex names containing special characters,
-                    you cannot use the dot (.) notation to access this data. Use item() instead:
+                    you cannot use the dot (<literal>.</literal>) notation to access this data. Use <literal>item()</literal> instead:
                     <literal>[% Data.item('Complex-name') %]</literal>.
                 </para>
             </section>
@@ -133,7 +133,7 @@ var TreeData = [% JSON(Data.TreeData) %];
             <section id="env">
                 <title><literal>[% Env() %]</literal></title>
                 <para>
-                    Inserts environment variables provided by the LayoutObject. Some examples:
+                    Inserts environment variables provided by the <literal>LayoutObject</literal>. Some examples:
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -497,15 +497,15 @@ else {
                 ]]></programlisting>
             </para>
             <para>
-                This snippet creates a small form and puts an onchange-Handler on the
-                &lt;select&gt; element which triggers an AJAX based form update.
+                This snippet creates a small form and puts an <literal>onchange</literal> handler on the
+                <literal>&lt;select&gt;</literal> element which triggers an AJAX based form update.
             </para>
             <para>
                 Why is it necessary to enclose the JavaScript code in
                 <literal>[% WRAPPER JSOnDocumentComplete %]...[% END %]</literal>?
                 Starting with OTRS 3.0, JavaScript loading was
                 moved to the footer part of the page for performance reasons. This means that
-                within the &lt;body&gt; of the page, no JavaScript libraries are loaded yet.
+                within the <literal>&lt;body&gt;</literal> of the page, no JavaScript libraries are loaded yet.
                 With <literal>[% WRAPPER JSOnDocumentComplete %]...[% END %]</literal> you can make sure that this
                 JavaScript is moved to a part of the final HTML document, where it will be
                 executed only after the entire external JavaScript and CSS content has been
@@ -513,7 +513,7 @@ else {
             </para>
             <para>
                 Inside the <literal>[% WRAPPER JSOnDocumentComplete %]...[% END %]</literal> block, you can use
-                &lt;script&gt; tags to enclose your JavaScript code, but you do not have to do so.
+                <literal>&lt;script&gt;</literal> tags to enclose your JavaScript code, but you do not have to do so.
                 It may be beneficial because it will enable correct syntax highlighting in IDEs
                 which support it.
             </para>

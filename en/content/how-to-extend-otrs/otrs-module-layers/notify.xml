@@ -8,7 +8,7 @@
         Notification modules are used to display a notification below the
         main navigation. You can write and register your own notification
         module.
-        There are currently 5 ticket menues in the OTRS framework.
+        There are currently 5 ticket menus in the OTRS framework.
     </para>
     <para>
         <itemizedlist mark="round">
@@ -34,7 +34,7 @@
         <para>
             The notification modules are located under
             <filename>Kernel/Output/HTML/TicketNotification*.pm</filename>.
-            There is an example of a notify module below.
+            Following, there is an example of a notify module.
             Save it under <filename>Kernel/Output/HTML/TicketNotificationCustom.pm</filename>.
             You just need 2 functions: <code>new()</code> and <code>Run()</code>.
         </para>
@@ -143,7 +143,7 @@ sub Run {
     <section id="notify-module-use_cases">
         <title>Use Case Example</title>
         <para>
-            Useful ticket menu implementation could be a link to a external
+            Useful ticket menu implementation could be a link to an external
             tool if parameters (e.g. <literal>FreeTextField</literal>) have been set.
         </para>
     </section>

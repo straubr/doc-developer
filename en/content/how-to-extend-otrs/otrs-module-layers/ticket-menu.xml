@@ -5,10 +5,10 @@
 <section id="ticket-menu-module">
     <title>Ticket Menu Module</title>
     <para>
-        Ticket menu modules are used to display an addtional link in the
+        Ticket menu modules are used to display an additional link in the
         menu above a ticket. You can write and register your own ticket
         menu module.
-        There are 4 ticket menues (Generic, Lock, Responsible and
+        There are 4 ticket menus (Generic, Lock, Responsible and
         TicketWatcher) which come with the OTRS framework. For
         more information please have a look at the OTRS admin manual.
     </para>
@@ -17,9 +17,9 @@
         <para>
             The ticket menu modules are located under
             <filename>Kernel/Output/HTML/TicketMenu*.pm</filename>.
-            There is an example of a ticket-menu module below.
+            Following, there is an example of a ticket menu module.
             Save it under <filename>Kernel/Output/HTML/TicketMenuCustom.pm</filename>.
-            You just need 2 functions: new() and Run().
+            You just need 2 functions: <code>new()</code> and <code>Run()</code>.
         </para>
         <para>
         <programlisting linenumbering="numbered"><![CDATA[

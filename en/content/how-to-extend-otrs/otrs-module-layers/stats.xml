@@ -164,7 +164,7 @@ sub GetObjectAttributes {
 In this sample stats module, we want to provide three attributes the user can chose from: a list of queues, a list of states and a time drop down. To get the values shown in the drop down, some operations are needed. In this case <literal>StateList</literal> and <literal>GetAllQueues</literal> are called.
             </para>
             <para>
-Then the list of attributes is created. Each attribute is defined via a hashreference. You can use these keys:
+Then the list of attributes is created. Each attribute is defined via a hash reference. You can use these keys:
             </para>
             <para>
                 <itemizedlist mark="round" >
@@ -199,7 +199,7 @@ Then the list of attributes is created. Each attribute is defined via a hashrefe
                 </itemizedlist>
             </para>
             <para>
-Hint: If you install this sample an you configured a statistic with some queues - lets say 'queue A' and 'queue B' - then these queues are the only ones that are shown to the user when he starts the statistic. Sometimes a dynamic drop down or multiselect field is needed. In this case, you can set <literal>SelectedValues</literal> in the definition of the attribute:
+Hint: If you install this sample and you configure a statistic with some queues - lets say 'queue A' and 'queue B' - then these queues are the only ones that are shown to the user when he starts the statistic. Sometimes a dynamic drop down or multiselect field is needed. In this case, you can set <literal>SelectedValues</literal> in the definition of the attribute:
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -246,7 +246,7 @@ sub GetStatElement {
                 ]]></programlisting>
             </para>
             <para>
-If the "per cell" calculation should be avoided, <literal>GetStatTable</literal> is an alternative. <literal>GetStatTable</literal> returns a list of rows, hence an array of arrayreferences. This leads to the same result as using <literal>GetStatElement</literal>.
+If the "per cell" calculation should be avoided, <literal>GetStatTable</literal> is an alternative. <literal>GetStatTable</literal> returns a list of rows, hence an array of array references. This leads to the same result as using <literal>GetStatElement</literal>.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -277,7 +277,7 @@ sub GetStatTable {
                 ]]></programlisting>
             </para>
             <para>
-<literal>GetStatTable</literal> gets all information about the stats query that is needed. The passed parameters contains information about the attributes (<literal>Restrictions</literal>, attributes that are used for x/y-axis) and the table structure. The table structure is a hash reference where the keys are the values of the y-axis and their values are hashreferences with the parameters used for <literal>GetStatElement</literal> subroutines.
+<literal>GetStatTable</literal> gets all information about the stats query that is needed. The passed parameters contain information about the attributes (<literal>Restrictions</literal>, attributes that are used for x/y-axis) and the table structure. The table structure is a hash reference where the keys are the values of the y-axis and their values are hash references with the parameters used for <literal>GetStatElement</literal> subroutines.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -352,7 +352,7 @@ sub GetStatTable {
                 ]]></programlisting>
             </para>
             <para>
-Sometimes the headers of the table have to be changed. In that case, a subroutine called <literal>GetHeaderLine</literal> has to be implemented. That subroutine has to return an arrayreference with the column headers as elements. It gets information about the x-values passed.
+Sometimes the headers of the table have to be changed. In that case, a subroutine called <literal>GetHeaderLine</literal> has to be implemented. That subroutine has to return an array reference with the column headers as elements. It gets information about the x-values passed.
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -684,7 +684,7 @@ Use cases.
         <section id="module-stats-dynamic-caveats">
             <title>Caveats and Warnings</title>
             <para>
-If you have a lot of cells in the result table and the GetStatElement is quite complex, the request can take a long time.
+If you have a lot of cells in the result table and the <literal>GetStatElement</literal> is quite complex, the request can take a long time.
             </para>
         </section>
         <section id="module-stats-dynamic-releases">
@@ -782,7 +782,7 @@ sub Param {
 The <literal>Param</literal> method provides the list of all parameters/attributes that can be selected to create a static stat. It gets some parameters passed: The values for the stats attributes provided in a request, the format of the stats and the name of the object (name of the module).
             </para>
             <para>
-The parameters/attributes have to be hashreferences with these key-value-pairs.
+The parameters/attributes have to be hash references with these key-value pairs:
             </para>
             <para>
                 <itemizedlist mark="round" >
@@ -850,7 +850,7 @@ sub Run {
                 ]]></programlisting>
             </para>
             <para>
-The <literal>Run</literal> method actually generates the table data for the stats. It gets the attributes for this stats passed. In this sample it in <literal>%Param</literal> a key <literal>TypeIDs</literal> and a key <literal>QueueIDs</literal> exist (see attributes in <literal>Param</literal> method) and their values are array references. The returned data consists of three parts: Two array references and an array. In the first array reference the title for the statistic is stored, the second array reference contains the headlines for the columns in the table. And then the data for the table body follow.
+The <literal>Run</literal> method actually generates the table data for the stats. It gets the attributes for this stats passed. In this sample in <literal>%Param</literal> a key <literal>TypeIDs</literal> and a key <literal>QueueIDs</literal> exist (see attributes in <literal>Param</literal> method) and their values are array references. The returned data consists of three parts: Two array references and an array. In the first array reference the title for the statistic is stored, the second array reference contains the headlines for the columns in the table. And then the data for the table body follow.
             </para>
             <para>
                 <programlisting><![CDATA[

@@ -3,14 +3,14 @@
 <section id="ticketnumber-generator">
     <title>Ticket Number Generator Modules</title>
     <para>
-        Ticket number generators are used to create distinct identifiers aka TicketNumber for
+        Ticket number generators are used to create distinct identifiers aka ticket number for
         new tickets.
         Any method of creating a string of numbers is possible, you should use common sense about
         the length of the resulting string (guideline: 5-10).
     </para>
     <para>
-        When creating a ticket number, make sure the result is prefixed by the SysConfig-Variable
-        SystemID in order to enable the detection of ticket numbers on inbound email responses.
+        When creating a ticket number, make sure the result is prefixed by the SysConfig variable
+        <literal>SystemID</literal> in order to enable the detection of ticket numbers on inbound email responses.
         A ticket number generator module needs the two functions <code>TicketCreateNumber()</code> and
         <code>GetTNByString()</code>.
     </para>

@@ -4,7 +4,7 @@
 <section id="operation">
     <title>Operation</title>
     <para>
-        The operation is used to perform an action within OTRS, this action is requested by the
+        The operation is used to perform an action within OTRS. This action is requested by the
         external system and can include special parameters in order to correctly execute the action.
         After the action is performed, OTRS sends a defined confirmation to the external system.
     </para>
@@ -12,15 +12,15 @@
         <title>Operation backend</title>
         <para>
             Next we will show how to develop a new Operation, each operation has to implement these
-            subroutines
+            subroutines:
         </para>
         <para>
             <itemizedlist mark="round">
                 <listitem>
-                    <para>new</para>
+                    <para><literal>new</literal></para>
                 </listitem>
                 <listitem>
-                    <para>Run</para>
+                    <para><literal>Run</literal></para>
                 </listitem>
             </itemizedlist>
         </para>
@@ -56,10 +56,10 @@ our $ObjectManagerDisabled = 1;
             </para>
             <para>
                 This is common header that can be found in common OTRS modules. The class/package
-                name is declared via the package keyword.
+                name is declared via the <literal>package</literal> keyword.
             </para>
             <para>
-                We also include VariableCheck module to perform certain validation over some
+                We also include <literal>VariableCheck</literal> module to perform certain validation over some
                 variables. Operations can not be instantiated by the Object Manager.
             </para>
             <para>
@@ -134,14 +134,14 @@ sub Run {
                 ]]></programlisting>
             </para>
             <para>
-                The <literal>Run</literal> function is the main part of each operation, it receives all internal
+                The <literal>Run</literal> function is the main part of each operation. It receives all internal
                 mapped data from remote system needed by the provider to execute the action, it
                 performs the action and returns the result to the provider to be external mapped
                 and deliver back to the remote system.
             </para>
             <para>
                 This particular example returns the same data as came from the remote system,
-                unless <literal>TestError</literal> parameter is passed in this case it returns an error.
+                unless <literal>TestError</literal> parameter is passed. In this case it returns an error.
             </para>
             <para>
                 <programlisting><![CDATA[

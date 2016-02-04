@@ -4,8 +4,8 @@
 <section id="mapping">
     <title>Mapping</title>
     <para>
-        The mapping is used to convert data from / to OTRS, to / from the external system.
-        This data can be represented as key =&gt; value pairs, mapping modules can be developed to
+        The mapping is used to convert data from OTRS to the external systems, and vice versa.
+        This data can be represented as key =&gt; value pairs. Mapping modules can be developed to
         transform not just values but also the keys.
     </para>
     <para>
@@ -59,7 +59,7 @@
             </listitem>
             <listitem>
                 <para>
-                    The data is mapped form the OTRS format to the remote system format
+                    The data is mapped from the OTRS format to the remote system format
                 </para>
             </listitem>
             <listitem>
@@ -77,7 +77,7 @@
         <orderedlist>
             <listitem>
                 <para>
-                    OTRS prepare the request to the remote system using the data in the OTRS format
+                    OTRS prepares the request to the remote system using the data in the OTRS format
                 </para>
             </listitem>
             <listitem>
@@ -87,8 +87,8 @@
             </listitem>
             <listitem>
                 <para>
-                    The request is sent to the remote system which perform the action and send the
-                    response back to OTRS with the response data in remote system format
+                    The request is sent to the remote system which performs the action and sends the
+                    response back to OTRS with the data in remote system format
                 </para>
             </listitem>
             <listitem>
@@ -98,7 +98,7 @@
             </listitem>
             <listitem>
                 <para>
-                    OTRS process the response
+                    OTRS processes the response
                 </para>
             </listitem>
         </orderedlist>
@@ -112,21 +112,21 @@
             keys and values.
         </para>
         <para>
-            So it is highly provable that you don't need to develop a custom mapping module.
-            Please check Mapping Simple module (<filename>Kernel/GenericInterface/Mapping/Simple.pm</filename>)
+            So it is highly probable that you don't need to develop a custom mapping module.
+            Please check <emphasis>Simple</emphasis> mapping module (<filename>Kernel/GenericInterface/Mapping/Simple.pm</filename>)
             and its on-line documentation before continue.
         </para>
         <para>
-            If Mapping Simple module does not match your needs then we will show how to develop a
-            new Mapping backend, each mapping backend has to implement these subroutines:
+            If <emphasis>Simple</emphasis> mapping module does not match your needs then we will show how to develop a
+            new mapping backend. Each mapping backend has to implement these subroutines:
         </para>
         <para>
             <itemizedlist mark="round">
                 <listitem>
-                    <para>new</para>
+                    <para><literal>new</literal></para>
                 </listitem>
                 <listitem>
-                    <para>Map</para>
+                    <para><literal>Map</literal></para>
                 </listitem>
             </itemizedlist>
         </para>
@@ -286,13 +286,13 @@ sub Map {
                 ]]></programlisting>
             </para>
             <para>
-                The <literal>map</literal> function is the main part of each mapping module, it receives the mapping
+                The <literal>Map</literal> function is the main part of each mapping module. It receives the mapping
                 configuration (rules) and the data in the original format (either OTRS or remote
-                system format) and converts it to a new format, even the structure of the data can
+                system format) and converts it to a new format, even if the structure of the data can
                 be changed during the mapping process.
             </para>
             <para>
-                In this particular example there are three rules to map the values this rules are
+                In this particular example there are three rules to map the values. This rules are
                 set in the mapping configuration key <literal>TestOption</literal> and they are <literal>ToUpper</literal>, <literal>ToLower</literal> and
                 <literal>Empty</literal>.
             </para>

@@ -22,12 +22,12 @@
     </para>
     <para>
         OTRS uses the network transport modules to send petitions to the Remote System to perform a
-        remote action along with the required data, OTRS waits for the Remote System response and
+        remote action along with the required data. OTRS waits for the Remote System response and
         send it back to the Requester module.
     </para>
     <para>
-        In both ways network transport modules deals with the data in the Remote System format. it
-        is not recommended to do any data transformation in this modules, the Mapping layer is the
+        In both ways network transport modules deal with the data in the Remote System format. It
+        is not recommended to do any data transformation in this modules, as the Mapping layer is the
         responsible to perform any data transformation needed during the communication. An exception
         of this is the data conversion that is required specifically by for the transport e.g. XML
         or JSON from / to Perl conversions.
@@ -35,7 +35,7 @@
     <section id="adding_transport">
         <title>Transport backend</title>
         <para>
-            Next will show how to develop a new transport backend, each transport backend has to
+            Next we will show how to develop a new transport backend. Each transport backend has to
             implement these subroutines:
         </para>
         <para>
@@ -60,7 +60,7 @@
             handled by the transport module (<filename>Kernel/GenericInterface/Transport.pm</filename>).
         </para>
         <para>
-            Currently Generic Interface implements the HTTP SOAP and HTTP REST transports, if the
+            Currently Generic Interface implements the HTTP SOAP and HTTP REST transports. If the
             planned web service can use HTTP SOAP or HTTP SOAP there is no need to create a new
             network transport module, instead we recommend to take a look into HTTP SOAP or HTTP
             REST configurations to check their settings and how it can be tuned according to the
@@ -71,7 +71,7 @@
             <para>
                 In case that the provided network transports does not match the web service needs,
                 then in this section a sample network transport module is shown and each subroutine
-                is explained. Normally transport modules uses CPAN modules as backends for example
+                is explained. Normally transport modules uses CPAN modules as backends. For example
                 the HTTP SOAP transport modules uses <literal>SOAP::Lite</literal> module as backend.
             </para>
             <para>
@@ -107,10 +107,7 @@ our $ObjectManagerDisabled = 1;
             </para>
             <para>
                 This is common header that can be found in common OTRS modules. The class/package
-                name is declared via the package keyword.
-            </para>
-            <para>
-                transports can not be instantiated by the Object Manager.
+                name is declared via the package keyword. Transports can not be instantiated by the Object Manager.
             </para>
 
             <para>
@@ -180,12 +177,12 @@ sub ProviderProcessRequest {
                 ]]></programlisting>
             </para>
             <para>
-                The <literal>ProviderProcessRequest</literal> function gets the request form the Remote System (in
+                The <literal>ProviderProcessRequest</literal> function gets the request from the Remote System (in
                 this case the same OTRS) and extracts the data and the operation to perform from
                 the request. For this example the operation is always <literal>test_operation</literal>.
             </para>
             <para>
-                The way this function parse the request to get the data and the operation name,
+                The way this function parses the request to get the data and the operation name,
                 depends completely on the protocol to be implemented and the external modules that
                 are used for.
             </para>
@@ -239,11 +236,11 @@ sub ProviderGenerateResponse {
                 ]]></programlisting>
             </para>
             <para>
-                This function send the response back to the Remote System for the requested
+                This function sends the response back to the Remote System for the requested
                 operation.
             </para>
             <para>
-                For this particular example we return an standard HTTP response success (200) or
+                For this particular example we return a standard HTTP response success (200) or
                 not (500), along with the required data on each case.
             </para>
             <para>
@@ -278,11 +275,11 @@ sub RequesterPerformRequest {
             </para>
             <para>
                 This is the only function that is used by OTRS as requester. It sends the request
-                to the Remote System and waits for it response.
+                to the Remote System and waits for its response.
             </para>
             <para>
                 For this example we use a custom protocol handler to avoid send the request to the
-                real network. this custom protocol is specified below.
+                real network. This custom protocol is specified below.
             </para>
            <para>
                 <programlisting><![CDATA[

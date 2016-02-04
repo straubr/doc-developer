@@ -151,7 +151,7 @@ Useful logging backends could be logging to a web service or to encrypted files.
     <section id="log-module-caveats">
         <title>Caveats and Warnings</title>
         <para>
-Please note that <literal>Kernel::System::Log</literal> has other methods than Log() which cannot be reimplemented,
+Please note that <literal>Kernel::System::Log</literal> has other methods than <literal>Log()</literal> which cannot be reimplemented,
 for example code for working with shared memory segments and log data caching.
         </para>
     </section>

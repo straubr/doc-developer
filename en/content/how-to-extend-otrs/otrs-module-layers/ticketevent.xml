@@ -5,8 +5,8 @@
     <para>
         Ticket event modules are running right after a ticket action takes place.
         Per convention these modules are located in the directory <filename>Kernel/System/Ticket/Event</filename>.
-        An ticket event module needs only the two functions new() and Run().
-        The method <code>Run()</code> receives at least the parameters <literal>Event</literal>, <literal>UserID</literal>, and <literal>Data</literal>.
+        A ticket event module needs only two functions: <code>new()</code> and <code>Run()</code>.
+        The method <code>Run()</code> receives at least the parameters <literal>Event</literal>, <literal>UserID</literal> and <literal>Data</literal>.
         <literal>Data</literal> is a hash ref containing data of the ticket, and in case of Article-related events also
         containing Article data.
     </para>
@@ -57,10 +57,10 @@
     <section id="ticketevent-releases">
         <title>Release Availability</title>
         <para>
-Ticket events have been available in OTRS since OTRS 2.0.
+            Ticket events have been available in OTRS since OTRS 2.0.
         </para>
         <para>
-Ticket Events for OTRS 2.0:
+            Ticket events for OTRS 2.0:
 TicketCreate, TicketDelete, TicketTitleUpdate, TicketUnlockTimeoutUpdate,
 TicketEscalationStartUpdate, MoveTicket,
 SetCustomerData, TicketFreeTextSet, TicketFreeTimeSet,
@@ -70,10 +70,10 @@ TicketResponsibleUpdate, PrioritySet, HistoryAdd,
 HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate,
 ArticleFreeTextSet, ArticleUpdate, ArticleSend,
 ArticleBounce, SendAgentNotification,
-SendCustomerNotification, SendAutoResponse, ArticleFlagSet;
+SendCustomerNotification, SendAutoResponse, ArticleFlagSet.
         </para>
         <para>
-Ticket Events for OTRS 2.1 and higher:
+Ticket events for OTRS 2.1 and higher:
 TicketCreate, TicketDelete, TicketTitleUpdate, TicketUnlockTimeoutUpdate,
 TicketEscalationStartUpdate, TicketQueueUpdate (MoveTicket),
 TicketCustomerUpdate (SetCustomerData), TicketFreeTextUpdate
@@ -86,10 +86,10 @@ HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate,
 ArticleFreeTextUpdate (ArticleFreeTextSet), ArticleUpdate, ArticleSend,
 ArticleBounce, ArticleAgentNotification (SendAgentNotification),
 ArticleCustomerNotification (SendCustomerNotification), ArticleAutoResponse
-(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete;
+(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete.
         </para>
         <para>
-Ticket Events for OTRS 2.4:
+Ticket events for OTRS 2.4:
 TicketCreate, TicketDelete, TicketTitleUpdate, TicketUnlockTimeoutUpdate,
 TicketQueueUpdate(MoveTicket), TicketTypeUpdate, TicketServiceUpdate,
 TicketSLAUpdate, TicketCustomerUpdate (SetCustomerData), TicketFreeTextUpdate, TicketFreeTimeUpdate,
@@ -100,7 +100,7 @@ HistoryAdd, HistoryDelete,
 TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate (ArticleFreeTextSet),
 ArticleUpdate, ArticleSend, ArticleBounce, ArticleAgentNotification (SendAgentNotification),
 ArticleCustomerNotification (SendCustomerNotification),
-ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete;
+ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete.
         </para>
     </section>
 </section>
