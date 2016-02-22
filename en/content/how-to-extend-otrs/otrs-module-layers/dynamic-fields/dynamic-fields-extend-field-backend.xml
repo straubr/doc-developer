@@ -4,7 +4,7 @@
 <section id="dynamic-fields-extend-field-backend">
     <title>Dynamic Field Backend Extension Example</title>
     <para>
-        Backend extensions will be loaded transparently into the Backed itself as a base class, all
+        Backend extensions will be loaded transparently into the Backend itself as a base class. All
         defined object and properties from the Backend will be accessible in the extension.
     </para>
     <note>
@@ -16,7 +16,7 @@
     <section id="dynamic-fields-extend-field-backend-code">
         <title>Code Example:</title>
         <para>
-            In this section the Foo extension for Backend is shown and explained. The
+            In this section the <literal>Foo</literal> extension for Backend is shown and explained. The
             extension only defines the function <code>Foo()</code>.
          </para>
          <para>
@@ -53,8 +53,8 @@ DynamicFields Extension for Backend
             ]]></programlisting>
         </para>
         <para>
-            This is the common header that can be found in common OTRS modules. The class/package
-            name is declared via the package keyword.
+            This is common header that can be found in common OTRS modules. The class/package
+            name is declared via the <literal>package</literal> keyword.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -129,7 +129,7 @@ sub Foo {
             ]]></programlisting>
         </para>
         <para>
-            The function <code>Foo()</code> is only used for test purposes, first it checks
+            The function <code>Foo()</code> is only used for test purposes. First it checks
             the Dynamic Field configuration, then it checks if the Dynamic Field Driver (type)
             exists and was already loaded. To prevent the function call on a driver where is not
             defined it first check if the driver can execute the function, then executes the
@@ -137,8 +137,8 @@ sub Foo {
         </para>
         <note>
             <para>
-                It is also possible to skip the step that test if the Driver can execute the
-                function, to do that is necessary to implement a mechanism in the Frontend module
+                It is also possible to skip the step that tests if the Driver can execute the
+                function. To do that it is necessary to implement a mechanism in the Frontend module
                 to require a special behavior on the Dynamic Field, and only after call the function
                 in the Backend object.
             </para>

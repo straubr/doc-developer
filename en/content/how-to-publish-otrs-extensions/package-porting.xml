@@ -136,7 +136,7 @@ Ticket => [
                 Until OTRS 5, the Perl module <literal>PDF::API2</literal> was not present on all systems. Therefore
                 a fallback HTML print mode existed. With OTRS 5, the module is now bundled and HTML print was dropped.
                 <code>$LayoutObject->PrintHeader()</code> and <code>PrintFooter()</code> are not available any more.
-                Please remove the HTML print fallback from your code and change it to generate PDF if neccessary.
+                Please remove the HTML print fallback from your code and change it to generate PDF if necessary.
             </para>
         </section>
         <section>
@@ -165,9 +165,9 @@ Ticket => [
                 that centralizes singleton object creation and access.
             </para>
             <para>
-                This will require you first of all to change all toplevel Perl scripts (.pl files only!)
+                This will require you first of all to change all top level Perl scripts (.pl files only!)
                 to load and provide the <literal>ObjectManager</literal> to all OTRS objects.
-                Let's look at otrs.CheckDB.pl from OTRS 3.3 as an example:
+                Let's look at <filename>otrs.CheckDB.pl</filename> from OTRS 3.3 as an example:
             </para>
             <para>
                 <programlisting><![CDATA[
@@ -237,7 +237,7 @@ my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
                 From this example you can also deduce the general porting guide when it comes to accessing
                 objects: don't store them in <literal>$Self</literal> any more (unless needed for specific reasons). Just fetch and use
                 the objects on demand like <code>$Kernel::OM->Get('Kernel::System::Log')->Log(...)</code>. This also has
-                the benefit that the Log object will only be created if something must be logged.
+                the benefit that the <literal>Log</literal> object will only be created if something must be logged.
                 Sometimes it could also be useful to create local variables if an object is used many times in a function,
                 like <literal>$DBObject</literal> in the example above.
             </para>
@@ -394,12 +394,12 @@ sub ValidList {
         </section>
 
         <section id="package-porting-33-to-4-cache">
-            <title>CacheInternalObject removed</title>
+            <title><literal>CacheInternalObject</literal> removed</title>
             <para>
                 Since <literal>Kernel::System::Cache</literal> is now also able to cache in-memory,
                 <literal>Kernel::System::CacheInternal</literal> was dropped. Please see the previous example
                 for how to migrate your code: you need to use the global <literal>Cache</literal> object and pass the <literal>Type</literal>
-                settings with every call to <code>Get()</code>, <code>Set()</code>, <code>Delete()</code> and <code>CleanUp()</code>. The <literal>TTL</literal> parameter is now optional and defaults to 20 days, so you only have to specify it in <code>Get()</code> if you require a different TTL value.
+                settings with every call to <code>Get()</code>, <code>Set()</code>, <code>Delete()</code> and <code>CleanUp()</code>. The <literal>TTL</literal> parameter is now optional and defaults to 20 days, so you only have to specify it in <code>Get()</code> if you require a different <literal>TTL</literal> value.
             </para>
             <warning>
                 <para>
@@ -412,7 +412,7 @@ sub ValidList {
             <title>Scheduler backend files moved</title>
             <para>
                 The backend files of the scheduler moved from <filename>Kernel/Scheduler</filename> to
-                <filename>Kernel/System/Scheduler</filename>. If you have any custom TaskHandler modules,
+                <filename>Kernel/System/Scheduler</filename>. If you have any custom Task Handler modules,
                 you need to move them also.
             </para>
         </section>
@@ -618,7 +618,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
                         <para>
                             All occurrences of <literal>$Text{""}</literal> in Perl code must now be replaced by calls to <code>Layout::Translate()</code>.
                         </para>
-                        <para>This is becase in DTL there was no separation between template and data. If DTL-Tags were inserted as part of some data, the engine would still parse them. This is no longer the case in Template::Toolkit, there is a strict separation of template and data.
+                        <para>This is because in DTL there was no separation between template and data. If DTL-Tags were inserted as part of some data, the engine would still parse them. This is no longer the case in Template::Toolkit, there is a strict separation of template and data.
                         </para>
                         <para>
                             Hint: should you ever need to interpolate tags in data, you can use the <literal>Interpolate</literal> filter for this (<literal>[% Data.Name | Interpolate %]</literal>). This is not recommended for security and performance reasons!
@@ -636,10 +636,10 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
                         <para>
                             Please be careful with <literal>pre</literal> output filters (the ones configured in
                             <literal>Frontend::Output::FilterElementPre</literal>). They still work, but they will prevent the template
-                            from being cached. This could lead to serious performance issues. You should definitely not have any pre output filters that operate on all templates, but limit them to certain templates via configuration setting.
+                            from being cached. This could lead to serious performance issues. You should definitely not have any <literal>pre</literal> output filters that operate on all templates, but limit them to certain templates via configuration setting.
                         </para>
                         <para>
-                            Post output filters (<literal>Frontend::Output::FilterElementPost</literal> don't have such strong negative performance effects.
+                            The <literal>post</literal> output filters (<literal>Frontend::Output::FilterElementPost</literal>) don't have such strong negative performance effects.
                             However, they should also be used carefully, and not for all templates.
                         </para>
                     </listitem>
@@ -650,7 +650,7 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
         <section id="package-porting-33-to-4-fontawesome">
             <title>New FontAwesome version</title>
             <para>
-                With OTRS 4, we've also updated FontAwesome to a new version. As a consequence, the icons css classes have changed. While previously icons were defined by using a schema like <literal>icon-{iconname}</literal>, it is now <literal>fa fa-{iconname}</literal>.
+                With OTRS 4, we've also updated FontAwesome to a new version. As a consequence, the icons CSS classes have changed. While previously icons were defined by using a schema like <literal>icon-{iconname}</literal>, it is now <literal>fa fa-{iconname}</literal>.
             </para>
             <para>
                 Due to this change, you need to make sure to update all custom frontend module registrations which make use of icons (e.g. for the top navigation bar) to use the new schema. This is also true for templates where you're using icon elements like <literal>&lt;i class="icon-{iconname}"&gt;&lt;/i&gt;</literal>.
@@ -658,14 +658,14 @@ $Kernel::OM->Get('var::packagesetup::MyPackage')->CodeInstall();
         </section>
 
         <section id="package-porting-33-to-4-unit-tests">
-            <title>UnitTests</title>
+            <title>Unit Tests</title>
             <para>
-                With OTRS 4, in UnitTests <literal>$Self</literal> no longer provides common objects like the <literal>MainObject</literal>, for example. Please always use <code>$Kernel::OM->Get('...')</code> to fetch these objects.
+                With OTRS 4, in Unit Tests <literal>$Self</literal> no longer provides common objects like the <literal>MainObject</literal>, for example. Please always use <code>$Kernel::OM->Get('...')</code> to fetch these objects.
             </para>
         </section>
 
         <section id="package-porting-33-to-4-custom-ticket-history-types">
-            <title>Custom TicketHistory types</title>
+            <title>Custom Ticket History types</title>
             <para>
                 If you use any custom ticket history types, you have to take two steps for them to be displayed correctly
                 in <literal>AgentTicketHistory</literal> of OTRS 4+.

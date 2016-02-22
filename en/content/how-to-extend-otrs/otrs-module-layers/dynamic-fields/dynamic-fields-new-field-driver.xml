@@ -6,9 +6,10 @@
     <para>
         The driver <emphasis>is</emphasis> the Dynamic Field. It contains several functions that
         are used wide in the OTRS framework. A driver can inherit some functions form base classes,
-        for example TextArea driver inherit most of the functions from Base.pm and BaseText.pm and
-        it only implements the functions that requires different logic or results. Checkbox field
-        driver only inherits from Base.pm as all other functions are very different from any other
+        for example <literal>TextArea</literal> driver inherits most of the functions from
+        <filename>Base.pm</filename> and <filename>BaseText.pm</filename> and it only implements
+        the functions that requires different logic or results. Checkbox field driver only inherits
+        from <filename>Base.pm</filename> as all other functions are very different from any other
         Base driver.
     </para>
     <note>
@@ -55,7 +56,8 @@ our @ObjectDependencies = (
         </para>
         <para>
             This is the common header that can be found in common OTRS modules. The class/package
-            name is declared via the package keyword. Notice that <literal>BaseText</literal> is used as base class.
+            name is declared via the <literal>package</literal> keyword. Notice that
+            <literal>BaseText</literal> is used as base class.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -118,8 +120,8 @@ sub new {
         </para>
         <para>
             The constructor <literal>new</literal> creates a new instance of the class. According
-            to the coding guidelines objects of other classes that are needed in this module should
-            be created here.
+            to the coding guidelines objects of other classes that are needed in this module have
+            to be created in <literal>new</literal>.
         </para>
         <para>
             It is important to define the behaviors correctly as the field might or might not be
@@ -150,7 +152,7 @@ sub EditFieldRender {
     }
     $Value = $Param{Value} if defined $Param{Value};
 
-    # extract the dynamic field value form the web request
+    # extract the dynamic field value from the web request
     my $FieldValue = $Self->EditFieldValueGet(
         %Param,
     );
@@ -223,14 +225,14 @@ EOF
         </para>
         <para>
             This function is the responsible to create the HTML representation of the field and its
-            label, and is used in the edit screens like <literal>AgentTicketPhone</literal>, <literal>AgentTicketNote</literal>, etc
+            label, and is used in the edit screens like <literal>AgentTicketPhone</literal>, <literal>AgentTicketNote</literal>, etc.
         </para>
         <para>
             <programlisting><![CDATA[
 sub DisplayValueRender {
     my ( $Self, %Param ) = @_;
 
-    # set HTMLOuput as default if not specified
+    # set HTMLOutput as default if not specified
     if ( !defined $Param{HTMLOutput} ) {
         $Param{HTMLOutput} = 1;
     }
@@ -256,7 +258,7 @@ sub DisplayValueRender {
         $Title = 'The value of this field is hidden.'
     }
 
-    # HTMLOuput transformations
+    # HTMLOutput transformations
     if ( $Param{HTMLOutput} ) {
         $Value = $Param{LayoutObject}->Ascii2Html(
             Text => $Value,
@@ -289,8 +291,8 @@ sub DisplayValueRender {
         </para>
         <para>
             <code>DisplayValueRender()</code> function returns the field value as a plain
-            text as well as its title (both can be translated). for this particular example we are
-            checking if the password should be reveled or display a predefined mask by  a
+            text as well as its title (both can be translated). For this particular example we are
+            checking if the password should be revealed or display a predefined mask by  a
             configuration parameter in the Dynamic Field.
         </para>
         <para>
@@ -339,7 +341,7 @@ sub ReadableValueRender {
         </para>
         <para>
             This function is similar to <code>DisplayValueRender()</code> but is used  in
-            places where there is no LayoutObject.
+            places where there is no <literal>LayoutObject</literal>.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -367,7 +369,7 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
         <title>Other Functions:</title>
         <para>
             The following are other functions that are might needed if the new Dynamic Field does
-            not inherit from other classes, To see the complete code of this functions please take a
+            not inherit from other classes. To see the complete code of this functions please take a
             look directly into the files <filename>Kernel/System/DynamicField/Driver/Base.pm</filename> and
             <filename>Kernel/System/DynamicField/Driver/BaseText.pm</filename>
         </para>
@@ -386,9 +388,9 @@ sub ValueSet { ... }
             ]]></programlisting>
         </para>
         <para>
-            <code>ValueSet()</code> is used to store a Dynamic Field value, in this case
+            <code>ValueSet()</code> is used to store a Dynamic Field value. In this case
             this field only stores one text type value. Other fields could store more than one
-            value on either <literal>ValueText</literal>, <literal>ValueDateTime</literal>, or <literal>ValueInt</literal> format.
+            value on either <literal>ValueText</literal>, <literal>ValueDateTime</literal> or <literal>ValueInt</literal> format.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -396,8 +398,8 @@ sub ValueDelete { ... }
             ]]></programlisting>
         </para>
         <para>
-            This function is used to delete one field value attached to a particular object ID, is
-            used for example if the instance of object is to be deleted, then there is no reason to
+            This function is used to delete one field value attached to a particular object ID.
+            For example if the instance of an object is to be deleted, then there is no reason to
             have the field value stored in the database for that particular object instance.
         </para>
         <para>
@@ -435,7 +437,7 @@ sub SearchSQLOrderFieldGet { ... }
         </para>
         <para>
             The <literal>SearchSQLOrderFieldGet</literal> is also a helper for <literal>TicketSearch</literal>
-            module, <literal>$Param{TableAlias}</literal> should be kept and <literal>value_text</literal> could be replaced with
+            module. <literal>$Param{TableAlias}</literal> should be kept and <literal>value_text</literal> could be replaced with
             <literal>value_date</literal> or <literal>value_int</literal> depending on the field.
         </para>
         <para>
@@ -445,18 +447,18 @@ sub EditFieldValueGet { ... }
         </para>
         <para>
             <code>EditFieldValueGet()</code> is a function used in the edit screens of OTRS
-            and its purpose is to get the value of the field, either form a template like generic
+            and its purpose is to get the value of the field, either from a template like generic
             agent profile or from a web request. This function gets the web request in the
             <literal>$Param{ParamObject}</literal>, that is a copy of the <literal>ParamObject</literal> of the Frontend Module or screen.
         </para>
         <para>
             There are two return formats for this function, the normal: that is just the raw value
-            or a structure: that is the pair field name =&gt; field value. for example a Date Dynamic
-            Field returns normally the date as string, and if it should return the an structure it
-            returns a pair for each part of the the date in the hash.
+            or a structure: that is the pair field name =&gt; field value. For example a Date Dynamic
+            Field returns normally the date as string, and if it should return a structure it
+            returns a pair for each part of the date in the hash.
         </para>
         <para>
-            The if the result should be a structure then, normally this is used to store its values
+            If the result should be a structure then, normally this is used to store its values
             in a template, like a generic agent profile. For example a date field uses several HTML
             components to build the field, like the "Used" check-box and selects for year, month,
             day etc.
@@ -467,7 +469,7 @@ sub EditFieldValueValidate { ... }
             ]]></programlisting>
         </para>
         <para>
-            This function should provide at least, a method to validate if the field is empty, and
+            This function should provide at least a method to validate if the field is empty, and
             return an error if the field is empty and mandatory, but it can also do more validations
             for other kind of fields, like if the option selected is valid, or if a date should be
             only in the past etc. It can provide a custom error message also.
@@ -478,9 +480,9 @@ sub SearchFieldRender { ... }
             ]]></programlisting>
         </para>
         <para>
-            This function is used by ticket search dialog and its similar to
+            This function is used by ticket search dialog and it is similar to
             <code>EditFieldRander()</code>, but normally on a search screen small changes
-            has to be done for all fields, for this example we use a HTML text input instead of a
+            has to be done for all fields. For this example we use a HTML text input instead of a
             password input. In other fields like Dropdown field is displayed as a Multiple select in
             order to let the user search for more than one value at a time.
         </para>
@@ -501,7 +503,7 @@ sub SearchFieldParameterBuild { ... }
         <para>
             <code>SearchFieldParameterBuild()</code> is used also by the ticket search
             dialog to set the correct operator and value to do the search on this field. It also
-            returns how the value should be displayed in the used search attributes, in the results
+            returns how the value should be displayed in the used search attributes in the results
             page.
         </para>
         <para>
@@ -510,7 +512,7 @@ sub StatsFieldParameterBuild { ... }
             ]]></programlisting>
         </para>
         <para>
-            This function is used by the stats modules, it includes the field definition in the
+            This function is used by the stats modules. It includes the field definition in the
             stats format. For fields with fixed values it also includes all this possible values
             and if they can be translated, take a look to the <literal>BaseSelect</literal> driver code for an example
             how to implement those.
@@ -522,7 +524,7 @@ sub StatsSearchFieldParameterBuild { ... }
         </para>
         <para>
             <code>StatsSearchFieldParameterBuild()</code> is very similar to the
-            <code>SearchFieldParameterBuild()</code>, the difference id that the
+            <code>SearchFieldParameterBuild()</code>. The difference is that the
             <code>SearchFieldParameterBuild()</code> gets the value from the search profile
             and this one gets the value directly from its parameters.
         </para>
@@ -536,7 +538,7 @@ sub TemplateValueTypeGet { ... }
         </para>
         <para>
             The <code>TemplateValueTypeGet()</code> function is used to know how the
-            Dynamic Field values stored on a profile should be retrieved, as an SCALAR or as an
+            Dynamic Field values stored on a profile should be retrieved, as a SCALAR or as an
             ARRAY, and it also defines the correct name of the field in the profile.
         </para>
         <para>
@@ -555,8 +557,8 @@ sub ObjectMatch { ... }
             ]]></programlisting>
         </para>
         <para>
-            Used by the notification modules this function returns 1 if the field is present in the
-            <literal>$Param{ObjectAttributes}</literal> parameter and if it match the given value.
+            Used by the notification modules. This function returns 1 if the field is present in the
+            <literal>$Param{ObjectAttributes}</literal> parameter and if it matches the given value.
         </para>
     </section>
 </section>

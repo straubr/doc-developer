@@ -41,8 +41,8 @@
         </para>
         <para>
             This setting registers the Password Dynamic Field Driver for the Backend module so it
-            can be included in the list of available Dynamic Fields Types, it also specify its own
-            Admin Dialog in the key <literal>ConfigDialog</literal>, this key is used by the Master Dynamic Field
+            can be included in the list of available Dynamic Fields Types. It also specify its own
+            Admin Dialog in the key <literal>ConfigDialog</literal>. This key is used by the Master Dynamic Field
             Admin Module to manage this new Dynamic Field Type.
         </para>
         <para>
@@ -65,7 +65,7 @@
             ]]></programlisting>
         </para>
         <para>
-            This is an standard module registration for the Password Admin Dialog in the Admin
+            This is a standard module registration for the Password Admin Dialog in the Admin
             Interface.
         </para>
         <para>

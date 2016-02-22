@@ -4,7 +4,7 @@
 <section id="dynamic-fields-extend-options">
     <title>How To Extend The Dynamic Fields</title>
     <para>
-        There are many ways to extend the Dynamic Fields, the following sections will try to cover
+        There are many ways to extend the Dynamic Fields. The following sections will try to cover
         the most common scenarios.
     </para>
     <section id="dynamic-fields-extend-options-new-field">
@@ -15,7 +15,7 @@
         <itemizedlist mark='round'>
             <listitem>
                 <para>
-                    Create a Dynamic Field Driver:
+                    Create a Dynamic Field Driver
                 </para>
                 <para>
                     This is the main module of the new field.
@@ -23,7 +23,7 @@
             </listitem>
             <listitem>
                 <para>
-                    Create or use an existing Admin Dialog:
+                    Create or use an existing Admin Dialog
                 </para>
                 <para>
                     To have a management interface and set its configuration options.
@@ -31,7 +31,7 @@
             </listitem>
             <listitem>
                 <para>
-                    Create a Configuration File:
+                    Create a Configuration File
                 </para>
                 <para>
                     To register the new field in the Backend (or new Admin Dialogs in the framework
@@ -51,7 +51,7 @@
                     Create a Dynamic Field Driver
                 </para>
                 <para>
-                    This is the main module of the new Field.
+                    This is the main module of the new field.
                 </para>
             </listitem>
             <listitem>
@@ -124,27 +124,27 @@
     <section id="dynamic-fields-extend-options-backend-functionalities">
         <title>Extend Backend and Drivers Functionalities</title>
         <para>
-            It might be possible that the BackendObject does not have a needed function for
+            It might be possible that the Backend object does not have a needed function for
             custom developments, or could also be possible that it has the function needed, but the
             return format does not match the needs of the custom development, or that a new behavior
             is needed to execute the new or the old functions.
         </para>
         <para>
-            The easiest way to do this, is to extend the current field files, for this is necessary
+            The easiest way to do this, is to extend the current field files. For this it is necessary
             to create a new Backend extension file that defines the new functions and create also
-            Drivers extensions that implement this new functions for each field. This new drivers
+            Drivers extensions that implement these new functions for each field. These new drivers
             will only need to implement the new functions since the original drivers takes care of
-            the standard functions. All this new new files does not need a constructor as they will
-            be loaded as a base for the BackendObject and the drivers.
+            the standard functions. All these new files do not need a constructor as they will
+            be loaded as a base for the Backend object and the drivers.
         </para>
         <para>
             The only restrictions are that the functions should be named different than the ones
             on the Backend and Drivers, otherwise they will be overwritten with current objects.
         </para>
         <para>
-            Put the new Backend extension into the DynamicField directory (e.g.
+            Put the new Backend extension into the <filename>DynamicField</filename> directory (e.g.
             <filename>/$OTRS_HOME/Kernel/System/DynamicField/NewPackageBackend.pm</filename> and its Drivers in
-            <filename>/$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm</filename>
+            <filename>/$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm</filename>).
         </para>
         <para>
             New behaviors only need a small setting in the extensions configuration file.

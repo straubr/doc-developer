@@ -31,7 +31,7 @@
                 the responsibility to implement the middle API for the specific needs for the field.
             </para>
             <para>
-                The Dynamic Field Backend is the master controller of all the Drivers, each
+                The Dynamic Field Backend is the master controller of all the Drivers. Each
                 function in this module is responsible to check the required parameters and call
                 the same function in the specific Driver according to the Dynamic Field
                 Configuration parameter received.
@@ -49,25 +49,25 @@
             <title>Dynamic Field Drivers</title>
             <para>
                 A Dynamic Field Driver is the implementation of the Dynamic Field. Each Driver
-                must implement all the mandatory functions specified in the Backend. (there are
+                must implement all the mandatory functions specified in the Backend (there are
                 some functions that depends on a behavior and it is not needed to implement those
-                if the Dynamic Field does not have that particular behavior)
+                if the Dynamic Field does not have that particular behavior).
             </para>
             <para>
                 A Driver is responsible to know how to get its own value or values from a web
-                request, or from a profile (like a search profile), it also needs to know the HTML
+                request, or from a profile (like a search profile). It also needs to know the HTML
                 code to render the field in edit or display screens, or how to interact with the
                 stats module, among other functions.
             </para>
             <para>
-                This modules are located in <filename>$OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm</filename>.
+                These modules are located in <filename>$OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm</filename>.
             </para>
             <para>
                 It exists some base drivers like <filename>Base.pm</filename>, <filename>BaseText.pm</filename>, <filename>BaseSelect.pm</filename> and
-                <filename>BaseDateTime.pm</filename>, that implements common functions for certain drivers (e.g Driver
+                <filename>BaseDateTime.pm</filename>, that implements common functions for certain drivers (e.g. Driver
                 <filename>TextArea.pm</filename> uses <filename>BaseText.pm</filename> that also uses <filename>Base.pm</filename> then <literal>TextArea</literal> only needs to
                 implement the functions that are missing in <filename>Base.pm</filename> and <filename>BateText.pm</filename> or the ones that
-                are special cases)
+                are special cases).
             </para>
             <para>
                 The following is the Drivers inheritance tree:
@@ -107,11 +107,11 @@
             <title>Object Type Delegate</title>
             <para>
                 An Object Type Delegate is responsible to perform specific functions on the
-                object linked to the dynamic field. This functions are triggered by the
-                BackendObject as they are needed.
+                object linked to the dynamic field. These functions are triggered by the
+                Backend object as they are needed.
             </para>
             <para>
-                This modules are located in <filename>$OTRS_HOME/Kernel/System/DynamicField/ObjectType/*.pm</filename>.
+                These modules are located in <filename>$OTRS_HOME/Kernel/System/DynamicField/ObjectType/*.pm</filename>.
             </para>
         </section>
     </section>
@@ -125,20 +125,20 @@
         </para>
         <para>
             Normally a Dynamic Field Driver needs its own Admin Module (Admin Dialog) to define
-            its properties, this dialog might differ from other Drivers. But this is not mandatory,
-            Drivers can share Admin Dialogs, if they can provide add needed information for all
+            its properties. This dialog might differ from other Drivers. But this is not mandatory,
+            Drivers can share Admin Dialogs, if they can provide needed information for all
             the Drivers that are linked to them, no matter if they are from different type. What is
-            mandatory is that each Driver must be linked to an Admin Dialog. (e.g. Text and
+            mandatory is that each Driver must be linked to an Admin Dialog (e.g. Text and
             TextArea Drivers share <filename>AdminDynamicFieldText.pm</filename> Admin Dialog, and Date and Date/Time
             Drivers share <filename>AdminDynamicFieldDateTime.pm</filename> Admin Dialog).
         </para>
         <para>
-            Admin Dialogs follows the normal OTRS Admin Module rules and architecture. But for
+            Admin Dialogs follow the normal OTRS Admin Module rules and architecture. But for
             standardization all configuration common parts to all Dynamic Fields should have the
             same look and feel among all Admin Dialogs.
         </para>
         <para>
-            This modules are located in <filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>.
+            These modules are located in <filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>.
         </para>
         <note>
             <para>
@@ -153,18 +153,18 @@
             tables.
         </para>
         <section id="dynamic-fields-framework-core-dynamicfield">
-            <title>"DynamicField.pm" Core Module</title>
+            <title><filename>DynamicField.pm</filename> Core Module</title>
             <para>
-                This module is responsible to manage the Dynamic Field definitions, it provides the
-                basic API for add, change, delete, list and get Dynamic Fields and is located
+                This module is responsible to manage the Dynamic Field definitions. It provides the
+                basic API for add, change, delete, list and get Dynamic Fields. This module is located
                 in <filename>$OTRS_HOME/Kernel/System/DynamicField.pm</filename>.
             </para>
         </section>
         <section id="dynamic-fields-framework-core-dynamicfieldvalue">
-            <title>"DynamicFieldValue.pm" Core Module</title>
+            <title><filename>DynamicFieldValue.pm</filename> Core Module</title>
             <para>
-                This module is responsible to read and write Dynamic Field values into the from and
-                into the database this module is highly use by the Drivers and is located in
+                This module is responsible to read and write Dynamic Field values into the form and
+                into the database. This module is highly used by the Drivers and is located in
                 <filename>$OTRS_HOME/Kernel/System/DynamicFieldValue.pm</filename>.
             </para>
         </section>
@@ -179,7 +179,7 @@
             the Dynamic Field definitions.
         </para>
         <para>
-            <emphasis>dynamic_field_value</emphasis>: Used by the Core Module DynamicFieldValue.pm
+            <emphasis>dynamic_field_value</emphasis>: Used by the Core Module <filename>DynamicFieldValue.pm</filename>
             to save the Dynamic Field values for each Dynamic Field and each Object Type instance.
         </para>
     </section>
@@ -187,8 +187,8 @@
         <title>Dynamic Fields Configuration Files</title>
         <para>
             The Backend module needs a way to know which Drivers exists and since the amount of
-            Drivers can be easily extended, the easiest way to manage them is to use the system
-            configuration, where the information of Dynamic Field Drivers and ObjectType Drivers
+            Drivers can be easily extended. The easiest way to manage them is to use the system
+            configuration, where the information of Dynamic Field Drivers and Object Type Drivers
             can be stored and extended.
         </para>
         <para>
@@ -197,8 +197,8 @@
             Fields.
         </para>
         <para>
-            Frontend modules needs to read the system configuration to know which Dynamic Fields
-            are active for each screen and which ones are also mandatory. for example:
+            Frontend modules need to read the system configuration to know which Dynamic Fields
+            are active for each screen and which ones are also mandatory. For example:
             <literal>Ticket::Frontend::AgentTicketPhone###DynamicField</literal> stores the active, mandatory and
             inactive Dynamic Fields for New Phone Ticket Screen.
         </para>

@@ -4,7 +4,7 @@
 <section id="dynamic-fields-extend-field-driver">
     <title>Dynamic Field Driver Extension Example</title>
     <para>
-        Driver extensions will be loaded transparently into the Driver itself as a base class, all
+        Driver extensions will be loaded transparently into the Driver itself as a base class. All
         defined object and properties from the Driver will be accessible in the extension.
     </para>
     <note>
@@ -16,7 +16,7 @@
     <section id="dynamic-fields-extend-field-driver-code">
         <title>Code Example:</title>
         <para>
-            In this section the Foo extension for Text field driver is shown and explained. The
+            In this section the <literal>Foo</literal> extension for Text field driver is shown and explained. The
             extension only implements the function <code>Foo()</code>.
          </para>
          <para>
@@ -54,8 +54,8 @@ Please look there for a detailed reference of the functions.
             ]]></programlisting>
         </para>
         <para>
-            This is the common header that can be found in common OTRS modules. The class/package
-            name is declared via the package keyword.
+            This is common header that can be found in common OTRS modules. The class/package
+            name is declared via the <literal>package</literal> keyword.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -66,7 +66,7 @@ sub Foo {
             ]]></programlisting>
         </para>
         <para>
-            The function <code>Foo()</code> has no special logic it is only for testing and
+            The function <code>Foo()</code> has no special logic. It is only for testing and
             it always returns 1.
         </para>
         <para>

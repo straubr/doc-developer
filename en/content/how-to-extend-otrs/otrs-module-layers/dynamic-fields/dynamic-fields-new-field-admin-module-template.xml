@@ -51,7 +51,7 @@
             ]]></programlisting>
         </para>
         <para>
-            This is part of the code has the main box and also the actions side bar, no
+            This part of the code has the main box and also the actions side bar. No
             modifications are needed in this section.
         </para>
         <para>
@@ -66,8 +66,8 @@
             ]]></programlisting>
         </para>
         <para>
-            In this section of the code is defined the right part of the dialog, notice that the
-            value of the Action hidden input must match with the name of the Admin Dialog.
+            In this section of the code is defined the right part of the dialog. Notice that the
+            value of the <literal>Action</literal> hidden input must match with the name of the Admin Dialog.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -137,7 +137,7 @@
             ]]></programlisting>
         </para>
         <para>
-            This first widget contains the common form attributes for the Dynamic Fields, for
+            This first widget contains the common form attributes for the Dynamic Fields. For
             consistency with other Dynamic Fields is recommended to leave this part of the code
             unchanged.
         </para>
@@ -182,7 +182,7 @@
         </para>
         <para>
             The second widget has the Dynamic Field specific form attributes. This is the place
-            where new attributes cat be set and it could use JavaScript and AJAX technologies to
+            where new attributes can be set and it could use JavaScript and AJAX technologies to
             make it more easy or friendly for the end user.
         </para>
         <para>

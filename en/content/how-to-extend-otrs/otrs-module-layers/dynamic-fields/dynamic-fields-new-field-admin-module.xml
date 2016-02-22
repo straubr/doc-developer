@@ -35,8 +35,8 @@ use Kernel::System::DynamicField;
             ]]></programlisting>
         </para>
         <para>
-            This is the common header that can be found in common OTRS modules. The class/package
-            name is declared via the package keyword.
+            This is common header that can be found in common OTRS modules. The class/package
+            name is declared via the <literal>package</literal> keyword.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -70,8 +70,7 @@ sub new {
         </para>
         <para>
             The constructor <literal>new</literal> creates a new instance of the class. According to the coding
-            guidelines objects of other classes that are needed in this module are normally created
-            here.
+            guidelines objects of other classes that are needed in this module have to be created in <literal>new</literal>.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -115,7 +114,7 @@ sub Run {
             ]]></programlisting>
         </para>
         <para>
-            <literal>Run</literal> is the default function to be called by the web request, we
+            <literal>Run</literal> is the default function to be called by the web request. We
             try to make this function as simple as possible and let the helper functions to do
             the "hard" work.
         </para>
@@ -151,7 +150,7 @@ sub _Add {
         </para>
         <para>
             <code>_Add</code> function  is also pretty simple, it just get some parameters
-            from the web request and call the <code>_ShowScreen()</code> function, normally
+            from the web request and call the <code>_ShowScreen()</code> function. Normally
             this function is not needed to be modified.
         </para>
         <para>
@@ -273,18 +272,18 @@ sub _AddAction {
         </para>
         <para>
             The <code>_AddAction</code> function gets the configuration parameters from
-            a new dynamic field, it validates the Dynamic Field name only contains letters and
+            a new dynamic field, and it validates that the Dynamic Field name only contains letters and
             numbers. This function could validate any other parameter.
         </para>
         <para>
             <literal>Name</literal>, <literal>Label</literal>, <literal>FieldOrder</literal>, <literal>Validity</literal> are common parameters for all Dynamic Fields and they
             are required. Each Dynamic Field has its specific configuration that must contain at
-            least the DefaultValue parameter, in this case it also have ShowValue and ValueMask
-            parameters for Password field.
+            least the <literal>DefaultValue</literal> parameter. In this case it also have
+            <literal>ShowValue</literal> and <literal>ValueMask</literal> parameters for Password field.
         </para>
         <para>
-            If the field has the ability to store a fixed list of values they need should be stored
-            in the PossibleValues parameter inside the specific configuration hash.
+            If the field has the ability to store a fixed list of values they should be stored
+            in the <literal>PossibleValues</literal> parameter inside the specific configuration hash.
         </para>
         <para>
             As in other Admin Modules, if a parameter is not valid this function returns to the
@@ -357,7 +356,7 @@ sub _Change {
         </para>
         <para>
             The <code>_Change</code> function is very similar to the <code>_Add</code> function but since this function is
-            used to edit an existing field it needs to validated the FieldID parameter and gather
+            used to edit an existing field it needs to validated the <literal>FieldID</literal> parameter and gather
             the current Dynamic Field data.
         </para>
         <para>
@@ -506,7 +505,7 @@ sub _ChangeAction {
         </para>
         <para>
             <code>_ChangeAction()</code> is very similar to
-            <code>_AddAction()</code>", but adapted for the update of an existing field
+            <code>_AddAction()</code>, but adapted for the update of an existing field
             instead of creating a new one.
         </para>
         <para>
@@ -539,7 +538,7 @@ sub _ShowScreen {
     # when adding we need to create an extra order number for the new field
     if ( $Param{Mode} eq 'Add' ) {
 
-        # get the last element form the order list and add 1
+        # get the last element from the order list and add 1
         my $LastOrderNumber = $DynamicfieldOrderList[-1];
         $LastOrderNumber++;
 

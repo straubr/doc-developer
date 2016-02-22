@@ -15,8 +15,8 @@
         versions of OTRS.
     </para>
     <para>
-        From OTRS version 3.1 the old Free Fields has been replaced with the new Dynamic Fields,
-        for a better backward compatibility and data preservation when updating from previous
+        From OTRS version 3.1 the old Free Fields has been replaced with the new Dynamic Fields.
+        For a better backward compatibility and data preservation when updating from previous
         versions, a migration script has been developed to convert the existing Free Fields to
         Dynamic Fields and to move their values from the <emphasis>ticket</emphasis> and
         <emphasis>article</emphasis> tables in the database to new dynamic fields tables.
@@ -32,21 +32,21 @@
         </para>
     </note>
     <para>
-        The restriction on the number of the fields per ticket or article has been removed, this
-        means that a ticket or article could have as many fields as needed. and now it is also
+        The restriction on the number of the fields per ticket or article has been removed. This
+        means that a ticket or article could have as many fields as needed. And now it is also
         possible to use the Dynamic Fields framework for other objects rather than just ticket or
         article.
     </para>
     <para>
         The new Dynamic Fields can store the same data types as the Free Fields
         (Text and Date/Time), and they can be also defined as them (Single line input, drop-down and
-        date-time). but Dynamic Fields goes beyond that, a new data type: Integer, has been added
+        date-time), but Dynamic Fields go beyond that, a new integer data type has been added
         and also new options to define the fields like Multiple-line inputs, check-boxes,
         Multiple-select and date (without time) fields. Each field type defines its own data type.
     </para>
     <para>
         Due to its modular design each Dynamic Field type can be seen as a plug-in to a framework,
-        and this plug-in can be a OTRS standard package to extend the available types of the
+        and this plug-in can be an OTRS standard package to extend the available types of the
         Dynamic Fields or even to extend current Dynamic Field with more functions.
     </para>
 </section>

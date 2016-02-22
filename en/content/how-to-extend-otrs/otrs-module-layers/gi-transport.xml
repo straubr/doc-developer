@@ -107,7 +107,7 @@ our $ObjectManagerDisabled = 1;
             </para>
             <para>
                 This is common header that can be found in common OTRS modules. The class/package
-                name is declared via the package keyword. Transports can not be instantiated by the Object Manager.
+                name is declared via the <literal>package</literal> keyword. Transports can not be instantiated by the Object Manager.
             </para>
 
             <para>

@@ -5,7 +5,7 @@
     <title>Dynamic Field Extension Configuration File Example</title>
     <para>
         The configuration files are used to register the extensions for the Backend and Drivers as
-        well as new behaviors for each driver.
+        well as new behaviors for each drivers.
     </para>
     <note>
         <para>
@@ -16,7 +16,7 @@
     <section id="dynamic-fields-extend-field-config-code">
         <title>Code Example:</title>
         <para>
-            In this section a configuration file for Foo Extension is shown and explained.
+            In this section a configuration file for <literal>Foo</literal> extension is shown and explained.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -42,8 +42,8 @@
             ]]></programlisting>
         </para>
         <para>
-            This setting registers the extension in the Backend Object. The module will be loaded
-            from Backend as a base class.
+            This setting registers the extension in the <literal>Backend</literal> object. The module will be loaded
+            from <literal>Backend</literal> as a base class.
         </para>
         <para>
             <programlisting><![CDATA[
@@ -65,10 +65,10 @@
             ]]></programlisting>
         </para>
         <para>
-            This is the registration for a extension in the "Text" Dynamic Field Driver the module
+            This is the registration for an extension in the <literal>Text</literal> Dynamic Field Driver. The module
             will be loaded as a base class in the Driver. Notice also that new behaviors can be
-            specified, this extended behaviors will be added to the behaviors that the Driver has
-            out of the box, therefore a call to <code>HasBehavior()</code> to check for this new behaviors will
+            specified. These extended behaviors will be added to the behaviors that the Driver has
+            out of the box, therefore a call to <code>HasBehavior()</code> to check for these new behaviors will
             be totally transparent.
         </para>
         <para>

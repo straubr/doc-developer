@@ -5,7 +5,7 @@
     <title>Package Management</title>
     <para>
         The OPM (OTRS Package Manager) is a mechanism to distribute software packages for
-        the OTRS framework via http, ftp or file upload.
+        the OTRS framework via HTTP, FTP or file upload.
     </para>
     <para>
         For example, the OTRS project offers OTRS modules like a calendar, a file manager
@@ -16,7 +16,7 @@
     <section id="package-distribution">
         <title>Package Distribution</title>
         <para>
-            If you want to create an OPM online repositiory, just tell the OTRS framework
+            If you want to create an OPM online repository, just tell the OTRS framework
             where the location is by activating the SysConfig setting <literal>Package::RepositoryList</literal>
             and adding the new location there. Then you will have a new select option in the package manager.
         </para>

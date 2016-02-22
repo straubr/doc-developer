@@ -4,10 +4,10 @@
 <section id="dynamic-fields-new-field">
     <title>Creating A New Dynamic Field</title>
     <para>
-        To illustrate this process a new Dynamic Field "Password" will be created. this new Dynamic
-        Field Type will show a New password field to Ticket or Article objects. since is very
-        similar to a Text Dynamic Field we will use the Base an BaseText Drivers as a basis to build
-        this new field.
+        To illustrate this process a new Dynamic Field "Password" will be created. This new Dynamic
+        Field Type will show a New password field to Ticket or Article objects. Since is very
+        similar to a Text Dynamic Field we will use the <literal>Base</literal> and
+        <literal>BaseText</literal> Drivers as a basis to build this new field.
     </para>
     <note>
         <para>

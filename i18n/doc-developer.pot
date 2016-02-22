@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-02-04 11:57+0100\n"
+"POT-Creation-Date: 2016-02-22 14:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -937,8 +937,8 @@ msgid ""
 "sentence style capitalization or something else."
 msgstr ""
 
-#. type: Content of: <section><title>
-#: en/content/contributing/unit-tests.xml:5
+#. type: Content of: <section><section><section><title>
+#: en/content/contributing/unit-tests.xml:5 en/content/how-to-publish-otrs-extensions/package-porting.xml:661
 msgid "Unit Tests"
 msgstr ""
 
@@ -1009,7 +1009,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:47 en/content/contributing/code-style-guide/perl.xml:57 en/content/contributing/code-style-guide/perl.xml:71 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:111 en/content/contributing/code-style-guide/perl.xml:155 en/content/contributing/code-style-guide/perl.xml:172 en/content/contributing/code-style-guide/perl.xml:194 en/content/contributing/code-style-guide/perl.xml:237 en/content/contributing/code-style-guide/perl.xml:246 en/content/contributing/code-style-guide/perl.xml:258 en/content/contributing/code-style-guide/perl.xml:270 en/content/contributing/code-style-guide/perl.xml:282 en/content/contributing/code-style-guide/perl.xml:323 en/content/contributing/code-style-guide/perl.xml:344 en/content/contributing/code-style-guide/perl.xml:377 en/content/contributing/code-style-guide/perl.xml:386 en/content/contributing/code-style-guide/perl.xml:397 en/content/contributing/code-style-guide/perl.xml:410 en/content/contributing/code-style-guide/perl.xml:439 en/content/contributing/code-style-guide/perl.xml:450 en/content/contributing/code-style-guide/perl.xml:469 en/content/contributing/code-style-guide/perl.xml:480 en/content/contributing/code-style-guide/perl.xml:493 en/content/contributing/code-style-guide/perl.xml:508 en/content/contributing/code-style-guide/perl.xml:517 en/content/contributing/code-style-guide/perl.xml:527 en/content/contributing/code-style-guide/perl.xml:545 en/content/contributing/code-style-guide/perl.xml:560 en/content/contributing/code-style-guide/perl.xml:611 en/content/contributing/code-style-guide/perl.xml:657 en/content/contributing/code-style-guide/perl.xml:667 en/content/contributing/code-style-guide/perl.xml:689 en/content/contributing/code-style-guide/perl.xml:713 en/content/contributing/code-style-guide/perl.xml:724 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:144 en/content/how-to-extend-otrs/writing-otrs-application.xml:187 en/content/how-to-extend-otrs/writing-otrs-application.xml:216 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:233 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:255 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:114 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:190 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:247 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:285 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:324 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:346 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:77 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:123 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:158 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:364 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:513 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:29 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:229 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:297 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:345 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:375 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:384 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:394 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:404 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:414 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:423 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:432 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:442 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:465 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:476 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:488 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:497 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:508 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:519 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:533 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:543 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:553 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:453 en/content/how-to-publish-otrs-extensions/package-building.xml:474 en/content/how-to-publish-otrs-extensions/package-building.xml:499 en/content/how-to-publish-otrs-extensions/package-building.xml:509 en/content/how-to-publish-otrs-extensions/package-building.xml:528 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
+#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:47 en/content/contributing/code-style-guide/perl.xml:57 en/content/contributing/code-style-guide/perl.xml:71 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:111 en/content/contributing/code-style-guide/perl.xml:155 en/content/contributing/code-style-guide/perl.xml:172 en/content/contributing/code-style-guide/perl.xml:194 en/content/contributing/code-style-guide/perl.xml:237 en/content/contributing/code-style-guide/perl.xml:246 en/content/contributing/code-style-guide/perl.xml:258 en/content/contributing/code-style-guide/perl.xml:270 en/content/contributing/code-style-guide/perl.xml:282 en/content/contributing/code-style-guide/perl.xml:323 en/content/contributing/code-style-guide/perl.xml:344 en/content/contributing/code-style-guide/perl.xml:377 en/content/contributing/code-style-guide/perl.xml:386 en/content/contributing/code-style-guide/perl.xml:397 en/content/contributing/code-style-guide/perl.xml:410 en/content/contributing/code-style-guide/perl.xml:439 en/content/contributing/code-style-guide/perl.xml:450 en/content/contributing/code-style-guide/perl.xml:469 en/content/contributing/code-style-guide/perl.xml:480 en/content/contributing/code-style-guide/perl.xml:493 en/content/contributing/code-style-guide/perl.xml:508 en/content/contributing/code-style-guide/perl.xml:517 en/content/contributing/code-style-guide/perl.xml:527 en/content/contributing/code-style-guide/perl.xml:545 en/content/contributing/code-style-guide/perl.xml:560 en/content/contributing/code-style-guide/perl.xml:611 en/content/contributing/code-style-guide/perl.xml:657 en/content/contributing/code-style-guide/perl.xml:667 en/content/contributing/code-style-guide/perl.xml:689 en/content/contributing/code-style-guide/perl.xml:713 en/content/contributing/code-style-guide/perl.xml:724 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:139 en/content/how-to-extend-otrs/writing-otrs-application.xml:190 en/content/how-to-extend-otrs/writing-otrs-application.xml:219 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:233 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:255 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:114 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:190 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:247 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:285 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:324 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:346 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:76 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:122 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:296 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:363 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:512 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:30 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:63 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:138 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:231 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:299 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:377 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:386 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:396 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:406 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:416 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:425 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:434 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:444 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:467 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:478 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:490 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:499 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:510 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:521 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:535 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:545 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:555 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:455 en/content/how-to-publish-otrs-extensions/package-building.xml:476 en/content/how-to-publish-otrs-extensions/package-building.xml:501 en/content/how-to-publish-otrs-extensions/package-building.xml:511 en/content/how-to-publish-otrs-extensions/package-building.xml:530 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
 msgid "<placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
@@ -1541,7 +1541,7 @@ msgstr ""
 #: en/content/contributing/code-style-guide/perl.xml:36
 msgid ""
 "Lines should generally not be longer than 120 characters, unless it is "
-"neccessary for special reasons."
+"necessary for special reasons."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -2526,12 +2526,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><figure>
-#: en/content/get-started/architecture.xml:13 en/content/get-started/architecture.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:12 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:146 en/content/how-to-publish-otrs-extensions/package-building.xml:595
+#: en/content/get-started/architecture.xml:13 en/content/get-started/architecture.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:12 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:146 en/content/how-to-publish-otrs-extensions/package-building.xml:597
 msgid "<placeholder type=\"screenshot\" id=\"0\"/>"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/get-started/architecture.xml:11 en/content/get-started/architecture.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:10 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:14 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:144 en/content/how-to-publish-otrs-extensions/package-building.xml:593
+#: en/content/get-started/architecture.xml:11 en/content/get-started/architecture.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:10 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:14 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:144 en/content/how-to-publish-otrs-extensions/package-building.xml:595
 msgid "<placeholder type=\"figure\" id=\"0\"/>"
 msgstr ""
 
@@ -3207,7 +3207,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
-#: en/content/get-started/development-environment.xml:18 en/content/get-started/development-environment.xml:29 en/content/get-started/development-environment.xml:78 en/content/get-started/development-environment.xml:91 en/content/get-started/development-environment.xml:101 en/content/how-it-works/config-mechanism.xml:26 en/content/how-it-works/skins.xml:225 en/content/how-to-extend-otrs/writing-otrs-application.xml:20 en/content/how-to-publish-otrs-extensions/package-building.xml:578 en/content/how-to-publish-otrs-extensions/package-management.xml:28 en/content/how-to-publish-otrs-extensions/package-management.xml:58 en/content/how-to-publish-otrs-extensions/package-management.xml:83 en/content/how-to-publish-otrs-extensions/package-management.xml:107 en/content/how-to-publish-otrs-extensions/package-management.xml:132
+#: en/content/get-started/development-environment.xml:18 en/content/get-started/development-environment.xml:29 en/content/get-started/development-environment.xml:78 en/content/get-started/development-environment.xml:91 en/content/get-started/development-environment.xml:101 en/content/how-it-works/config-mechanism.xml:26 en/content/how-it-works/skins.xml:225 en/content/how-to-extend-otrs/writing-otrs-application.xml:20 en/content/how-to-publish-otrs-extensions/package-building.xml:580 en/content/how-to-publish-otrs-extensions/package-management.xml:28 en/content/how-to-publish-otrs-extensions/package-management.xml:58 en/content/how-to-publish-otrs-extensions/package-management.xml:83 en/content/how-to-publish-otrs-extensions/package-management.xml:107 en/content/how-to-publish-otrs-extensions/package-management.xml:132
 msgid "<placeholder type=\"screen\" id=\"0\"/>"
 msgstr ""
 
@@ -6298,7 +6298,8 @@ msgid ""
 "use strict;\n"
 "use warnings;\n"
 "\n"
-"use Kernel::System::HelloWorld;\n"
+"# Frontend modules are not handled by the ObjectManager.\n"
+"our $ObjectManagerDisabled = 1;\n"
 "\n"
 "sub new {\n"
 "    my ( $Type, %Param ) = @_;\n"
@@ -6307,18 +6308,6 @@ msgid ""
 "    my $Self = {%Param};\n"
 "    bless ($Self, $Type);\n"
 "\n"
-"    # check needed objects\n"
-"    for (qw(ParamObject DBObject TicketObject LayoutObject LogObject "
-"QueueObject ConfigObject EncodeObject MainObject)) {\n"
-"        if ( !$Self->{$_} ) {\n"
-"            $Self->{LayoutObject}->FatalError( Message => \"Got no $_!\" "
-");\n"
-"        }\n"
-"    }\n"
-"\n"
-"    # create needed objects\n"
-"    $Self->{HelloWorldObject} = Kernel::System::HelloWorld->new(%Param);\n"
-"\n"
 "    return $Self;\n"
 "}\n"
 "\n"
@@ -6326,17 +6315,21 @@ msgid ""
 "    my ( $Self, %Param ) = @_;\n"
 "    my %Data = ();\n"
 "\n"
-"    $Data{HelloWorldText} = "
-"$Self->{HelloWorldObject}->GetHelloWorldText();\n"
+"    my $HelloWorldObject = $Kernel::OM->Get('Kernel::System::HelloWorld');\n"
+"    my $LayoutObject     = "
+"$Kernel::OM->Get('Kernel::Output::HTML::Layout');\n"
+"\n"
+"    $Data{HelloWorldText} = $HelloWorldObject->GetHelloWorldText();\n"
 "\n"
 "    # build output\n"
-"    my $Output = $Self->{LayoutObject}->Header(Title => \"HelloWorld\");\n"
-"    $Output   .= $Self->{LayoutObject}->NavigationBar();\n"
-"    $Output   .= $Self->{LayoutObject}->Output(\n"
-"        Data => \\%Data,\n"
+"    my $Output = $LayoutObject->Header(Title => \"HelloWorld\");\n"
+"    $Output   .= $LayoutObject->NavigationBar();\n"
+"    $Output   .= $LayoutObject->Output(\n"
+"        Data         => \\%Data,\n"
 "        TemplateFile => 'AgentHelloWorld',\n"
 "    );\n"
-"    $Output   .= $Self->{LayoutObject}->Footer();\n"
+"    $Output   .= $LayoutObject->Footer();\n"
+"\n"
 "    return $Output;\n"
 "}\n"
 "\n"
@@ -6344,12 +6337,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:139
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:134
 msgid "Core Module"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:141
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:136
 msgid ""
 "Next, we create the file for the core module "
 "<filename>/HelloWorld/Kernel/System/HelloWorld.pm</filename> with the "
@@ -6357,7 +6350,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:144
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:139
 #, no-wrap
 msgid ""
 "# --\n"
@@ -6374,6 +6367,11 @@ msgid ""
 "use strict;\n"
 "use warnings;\n"
 "\n"
+"# list your object dependencies (e.g. Kernel::System::DB) here\n"
+"our @ObjectDependencies = (\n"
+"    # 'Kernel::System::DB',\n"
+");\n"
+"\n"
 "sub new {\n"
 "    my ( $Type, %Param ) = @_;\n"
 "\n"
@@ -6387,6 +6385,9 @@ msgid ""
 "sub GetHelloWorldText {\n"
 "    my ( $Self, %Param ) = @_;\n"
 "\n"
+"    # Get the DBObject from the central object manager\n"
+"    # my $DBObject = $Kernel::OM->Get('Kernel::System::DB');\n"
+"\n"
 "    return 'Hello World!';\n"
 "}\n"
 "\n"
@@ -6394,19 +6395,19 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:181
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:184
 msgid "Template File"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:183
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:186
 msgid ""
 "The last thing missing before the new module can run is the relevant HTML "
 "template.  Thus, we create the following file:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:187
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:190
 #, no-wrap
 msgid ""
 "# --\n"
@@ -6425,17 +6426,17 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:203
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:206
 msgid "The module is working now and displays the text 'Hello World' when called."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:208
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:211
 msgid "Language File"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:210
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:213
 msgid ""
 "If the text 'Hello World!' is to be translated into for instance German, you "
 "can create a translation file for this language in "
@@ -6444,7 +6445,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:216
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:219
 #, no-wrap
 msgid ""
 "package Kernel::Language::de_AgentHelloWorld;\n"
@@ -6463,12 +6464,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:235
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:238
 msgid "Summary"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/writing-otrs-application.xml:237
+#: en/content/how-to-extend-otrs/writing-otrs-application.xml:240
 msgid ""
 "The example given above shows that it is not too difficult to write a new "
 "module for OTRS.  It is important, though, to make sure that the module and "
@@ -8105,8 +8106,8 @@ msgid ""
 "our $ObjectManagerDisabled = 1;\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:165 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:58
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:165 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:57 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:38
 msgid ""
 "This is common header that can be found in common OTRS modules. The "
 "class/package name is declared via the <literal>package</literal> keyword."
@@ -8709,8 +8710,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:109
 msgid ""
 "This is common header that can be found in common OTRS modules. The "
-"class/package name is declared via the package keyword. Transports can not "
-"be instantiated by the Object Manager."
+"class/package name is declared via the <literal>package</literal> "
+"keyword. Transports can not be instantiated by the Object Manager."
 msgstr ""
 
 #. type: CDATA
@@ -9910,8 +9911,8 @@ msgid ""
 "}\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:99
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:99 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:122
 msgid ""
 "The constructor <literal>new</literal> creates a new instance of the "
 "class. According to the coding guidelines objects of other classes that are "
@@ -9985,7 +9986,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:345
+#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347
 #, no-wrap
 msgid ""
 "1;\n"
@@ -12129,8 +12130,8 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:7
 msgid ""
-"Backend extensions will be loaded transparently into the Backed itself as a "
-"base class, all defined object and properties from the Backend will be "
+"Backend extensions will be loaded transparently into the Backend itself as a "
+"base class. All defined object and properties from the Backend will be "
 "accessible in the extension."
 msgstr ""
 
@@ -12142,15 +12143,15 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:17 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:17 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:17 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:10 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:10 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:12 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:22
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:17 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:17 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:17 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:10 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:10 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:12 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:23
 msgid "Code Example:"
 msgstr ""
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:19
 msgid ""
-"In this section the Foo extension for Backend is shown and explained. The "
-"extension only defines the function <code>Foo()</code>."
+"In this section the <literal>Foo</literal> extension for Backend is shown "
+"and explained. The extension only defines the function <code>Foo()</code>."
 msgstr ""
 
 #. type: CDATA
@@ -12187,13 +12188,6 @@ msgid ""
 "=over 4\n"
 "\n"
 "=cut\n"
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:57 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:38
-msgid ""
-"This is the common header that can be found in common OTRS modules. The "
-"class/package name is declared via the package keyword."
 msgstr ""
 
 #. type: CDATA
@@ -12277,7 +12271,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:132
 msgid ""
-"The function <code>Foo()</code> is only used for test purposes, first it "
+"The function <code>Foo()</code> is only used for test purposes. First it "
 "checks the Dynamic Field configuration, then it checks if the Dynamic Field "
 "Driver (type)  exists and was already loaded. To prevent the function call "
 "on a driver where is not defined it first check if the driver can execute "
@@ -12288,14 +12282,14 @@ msgstr ""
 #. type: Content of: <section><section><note><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:140
 msgid ""
-"It is also possible to skip the step that test if the Driver can execute the "
-"function, to do that is necessary to implement a mechanism in the Frontend "
-"module to require a special behavior on the Dynamic Field, and only after "
-"call the function in the Backend object."
+"It is also possible to skip the step that tests if the Driver can execute "
+"the function. To do that it is necessary to implement a mechanism in the "
+"Frontend module to require a special behavior on the Dynamic Field, and only "
+"after call the function in the Backend object."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:164 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:90 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:362
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:164 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:90 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:364
 msgid "The normal OTRS footer for a Perl module file."
 msgstr ""
 
@@ -12308,7 +12302,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:7
 msgid ""
 "The configuration files are used to register the extensions for the Backend "
-"and Drivers as well as new behaviors for each driver."
+"and Drivers as well as new behaviors for each drivers."
 msgstr ""
 
 #. type: Content of: <section><note><para>
@@ -12321,8 +12315,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:19
 msgid ""
-"In this section a configuration file for Foo Extension is shown and "
-"explained."
+"In this section a configuration file for <literal>Foo</literal> extension is "
+"shown and explained."
 msgstr ""
 
 #. type: CDATA
@@ -12360,8 +12354,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:45
 msgid ""
-"This setting registers the extension in the Backend Object. The module will "
-"be loaded from Backend as a base class."
+"This setting registers the extension in the <literal>Backend</literal> "
+"object. The module will be loaded from <literal>Backend</literal> as a base "
+"class."
 msgstr ""
 
 #. type: CDATA
@@ -12391,12 +12386,12 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:68
 msgid ""
-"This is the registration for a extension in the \"Text\" Dynamic Field "
-"Driver the module will be loaded as a base class in the Driver. Notice also "
-"that new behaviors can be specified, this extended behaviors will be added "
-"to the behaviors that the Driver has out of the box, therefore a call to "
-"<code>HasBehavior()</code> to check for this new behaviors will be totally "
-"transparent."
+"This is the registration for an extension in the <literal>Text</literal> "
+"Dynamic Field Driver. The module will be loaded as a base class in the "
+"Driver. Notice also that new behaviors can be specified. These extended "
+"behaviors will be added to the behaviors that the Driver has out of the box, "
+"therefore a call to <code>HasBehavior()</code> to check for these new "
+"behaviors will be totally transparent."
 msgstr ""
 
 #. type: CDATA
@@ -12419,7 +12414,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:7
 msgid ""
 "Driver extensions will be loaded transparently into the Driver itself as a "
-"base class, all defined object and properties from the Driver will be "
+"base class. All defined object and properties from the Driver will be "
 "accessible in the extension."
 msgstr ""
 
@@ -12433,8 +12428,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:19
 msgid ""
-"In this section the Foo extension for Text field driver is shown and "
-"explained. The extension only implements the function <code>Foo()</code>."
+"In this section the <literal>Foo</literal> extension for Text field driver "
+"is shown and explained. The extension only implements the function "
+"<code>Foo()</code>."
 msgstr ""
 
 #. type: CDATA
@@ -12488,7 +12484,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:69
 msgid ""
-"The function <code>Foo()</code> has no special logic it is only for testing "
+"The function <code>Foo()</code> has no special logic. It is only for testing "
 "and it always returns 1."
 msgstr ""
 
@@ -12500,7 +12496,7 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:7
 msgid ""
-"There are many ways to extend the Dynamic Fields, the following sections "
+"There are many ways to extend the Dynamic Fields. The following sections "
 "will try to cover the most common scenarios."
 msgstr ""
 
@@ -12515,18 +12511,18 @@ msgid "To create a new Dynamic Field Type is necessary to:"
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:18
-msgid "Create a Dynamic Field Driver:"
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:51
+msgid "Create a Dynamic Field Driver"
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:21
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:21 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:54
 msgid "This is the main module of the new field."
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:26
-msgid "Create or use an existing Admin Dialog:"
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:26 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:73
+msgid "Create or use an existing Admin Dialog"
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
@@ -12535,8 +12531,8 @@ msgid "To have a management interface and set its configuration options."
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:34
-msgid "Create a Configuration File:"
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:34 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:89 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:115 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:182
+msgid "Create a Configuration File"
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
@@ -12554,16 +12550,6 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:46
 msgid "To create a new Dynamic Field Type for other objects is necessary to:"
-msgstr ""
-
-#. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:51
-msgid "Create a Dynamic Field Driver"
-msgstr ""
-
-#. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:54
-msgid "This is the main module of the new Field."
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
@@ -12589,11 +12575,6 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:73
-msgid "Create or use an existing Admin Dialog"
-msgstr ""
-
-#. type: Content of: <section><section><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:81 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:107
 msgid "Implement Dynamic Fields in the Frontend Modules"
 msgstr ""
@@ -12601,11 +12582,6 @@ msgstr ""
 #. type: Content of: <section><section><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:84 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:110
 msgid "To be able to use the Dynamic Fields."
-msgstr ""
-
-#. type: Content of: <section><section><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:89 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:115 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:182
-msgid "Create a Configuration File"
 msgstr ""
 
 #. type: Content of: <section><section><itemizedlist><listitem><para>
@@ -12642,7 +12618,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:127
 msgid ""
-"It might be possible that the BackendObject does not have a needed function "
+"It might be possible that the Backend object does not have a needed function "
 "for custom developments, or could also be possible that it has the function "
 "needed, but the return format does not match the needs of the custom "
 "development, or that a new behavior is needed to execute the new or the old "
@@ -12652,13 +12628,13 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:133
 msgid ""
-"The easiest way to do this, is to extend the current field files, for this "
-"is necessary to create a new Backend extension file that defines the new "
-"functions and create also Drivers extensions that implement this new "
-"functions for each field. This new drivers will only need to implement the "
+"The easiest way to do this, is to extend the current field files. For this "
+"it is necessary to create a new Backend extension file that defines the new "
+"functions and create also Drivers extensions that implement these new "
+"functions for each field. These new drivers will only need to implement the "
 "new functions since the original drivers takes care of the standard "
-"functions. All this new new files does not need a constructor as they will "
-"be loaded as a base for the BackendObject and the drivers."
+"functions. All these new files do not need a constructor as they will be "
+"loaded as a base for the Backend object and the drivers."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -12672,10 +12648,11 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-options.xml:145
 msgid ""
-"Put the new Backend extension into the DynamicField directory (e.g.  "
+"Put the new Backend extension into the <filename>DynamicField</filename> "
+"directory (e.g.  "
 "<filename>/$OTRS_HOME/Kernel/System/DynamicField/NewPackageBackend.pm</filename> "
 "and its Drivers in "
-"<filename>/$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm</filename>"
+"<filename>/$OTRS_HOME/Kernel/System/DynamicField/Driver/NewPackage*.pm</filename>)."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -12745,15 +12722,15 @@ msgstr ""
 msgid ""
 "To illustrate this process a new Dynamic Field functionality extension for "
 "the function <emphasis>Foo</emphasis> will be added to the Backend Object as "
-"well as in in the Text field driver."
+"well as in the Text field driver."
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend.xml:12
 msgid ""
-"To create this extension we will create 3 files: a Configuration File (XML), "
-"to register the modules, a Backend extension (Perl), to define the new "
-"function, and a Text field Driver extension (Perl), that implements the new "
+"To create this extension we will create 3 files: a Configuration File (XML)  "
+"to register the modules, a Backend extension (Perl) to define the new "
+"function, and a Text field Driver extension (Perl) that implements the new "
 "function for Text fields."
 msgstr ""
 
@@ -12841,7 +12818,7 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:34
 msgid ""
-"The Dynamic Field Backend is the master controller of all the Drivers, each "
+"The Dynamic Field Backend is the master controller of all the Drivers. Each "
 "function in this module is responsible to check the required parameters and "
 "call the same function in the specific Driver according to the Dynamic Field "
 "Configuration parameter received."
@@ -12871,17 +12848,17 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:51
 msgid ""
 "A Dynamic Field Driver is the implementation of the Dynamic Field. Each "
-"Driver must implement all the mandatory functions specified in the "
-"Backend. (there are some functions that depends on a behavior and it is not "
-"needed to implement those if the Dynamic Field does not have that particular "
-"behavior)"
+"Driver must implement all the mandatory functions specified in the Backend "
+"(there are some functions that depends on a behavior and it is not needed to "
+"implement those if the Dynamic Field does not have that particular "
+"behavior)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:57
 msgid ""
 "A Driver is responsible to know how to get its own value or values from a "
-"web request, or from a profile (like a search profile), it also needs to "
+"web request, or from a profile (like a search profile). It also needs to "
 "know the HTML code to render the field in edit or display screens, or how to "
 "interact with the stats module, among other functions."
 msgstr ""
@@ -12889,7 +12866,7 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:63
 msgid ""
-"This modules are located in "
+"These modules are located in "
 "<filename>$OTRS_HOME/Kernel/System/DynamicField/Driver/*.pm</filename>."
 msgstr ""
 
@@ -12899,11 +12876,11 @@ msgid ""
 "It exists some base drivers like <filename>Base.pm</filename>, "
 "<filename>BaseText.pm</filename>, <filename>BaseSelect.pm</filename> and "
 "<filename>BaseDateTime.pm</filename>, that implements common functions for "
-"certain drivers (e.g Driver <filename>TextArea.pm</filename> uses "
+"certain drivers (e.g. Driver <filename>TextArea.pm</filename> uses "
 "<filename>BaseText.pm</filename> that also uses <filename>Base.pm</filename> "
 "then <literal>TextArea</literal> only needs to implement the functions that "
 "are missing in <filename>Base.pm</filename> and "
-"<filename>BateText.pm</filename> or the ones that are special cases)"
+"<filename>BateText.pm</filename> or the ones that are special cases)."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -12975,14 +12952,14 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:109
 msgid ""
 "An Object Type Delegate is responsible to perform specific functions on the "
-"object linked to the dynamic field. This functions are triggered by the "
-"BackendObject as they are needed."
+"object linked to the dynamic field. These functions are triggered by the "
+"Backend object as they are needed."
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:114
 msgid ""
-"This modules are located in "
+"These modules are located in "
 "<filename>$OTRS_HOME/Kernel/System/DynamicField/ObjectType/*.pm</filename>."
 msgstr ""
 
@@ -13005,11 +12982,11 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:127
 msgid ""
 "Normally a Dynamic Field Driver needs its own Admin Module (Admin Dialog) to "
-"define its properties, this dialog might differ from other Drivers. But this "
-"is not mandatory, Drivers can share Admin Dialogs, if they can provide add "
+"define its properties. This dialog might differ from other Drivers. But this "
+"is not mandatory, Drivers can share Admin Dialogs, if they can provide "
 "needed information for all the Drivers that are linked to them, no matter if "
 "they are from different type. What is mandatory is that each Driver must be "
-"linked to an Admin Dialog. (e.g. Text and TextArea Drivers share "
+"linked to an Admin Dialog (e.g. Text and TextArea Drivers share "
 "<filename>AdminDynamicFieldText.pm</filename> Admin Dialog, and Date and "
 "Date/Time Drivers share <filename>AdminDynamicFieldDateTime.pm</filename> "
 "Admin Dialog)."
@@ -13018,7 +12995,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:136
 msgid ""
-"Admin Dialogs follows the normal OTRS Admin Module rules and "
+"Admin Dialogs follow the normal OTRS Admin Module rules and "
 "architecture. But for standardization all configuration common parts to all "
 "Dynamic Fields should have the same look and feel among all Admin Dialogs."
 msgstr ""
@@ -13026,7 +13003,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:141
 msgid ""
-"This modules are located in "
+"These modules are located in "
 "<filename>$OTRS_HOME/Kernel/Modules/*.pm</filename>."
 msgstr ""
 
@@ -13051,28 +13028,28 @@ msgstr ""
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:156
-msgid "\"DynamicField.pm\" Core Module"
+msgid "<filename>DynamicField.pm</filename> Core Module"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:158
 msgid ""
-"This module is responsible to manage the Dynamic Field definitions, it "
-"provides the basic API for add, change, delete, list and get Dynamic Fields "
-"and is located in "
+"This module is responsible to manage the Dynamic Field definitions. It "
+"provides the basic API for add, change, delete, list and get Dynamic "
+"Fields. This module is located in "
 "<filename>$OTRS_HOME/Kernel/System/DynamicField.pm</filename>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:164
-msgid "\"DynamicFieldValue.pm\" Core Module"
+msgid "<filename>DynamicFieldValue.pm</filename> Core Module"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:166
 msgid ""
 "This module is responsible to read and write Dynamic Field values into the "
-"from and into the database this module is highly use by the Drivers and is "
+"form and into the database. This module is highly used by the Drivers and is "
 "located in "
 "<filename>$OTRS_HOME/Kernel/System/DynamicFieldValue.pm</filename>."
 msgstr ""
@@ -13099,8 +13076,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:182
 msgid ""
 "<emphasis>dynamic_field_value</emphasis>: Used by the Core Module "
-"DynamicFieldValue.pm to save the Dynamic Field values for each Dynamic Field "
-"and each Object Type instance."
+"<filename>DynamicFieldValue.pm</filename> to save the Dynamic Field values "
+"for each Dynamic Field and each Object Type instance."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -13112,9 +13089,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:189
 msgid ""
 "The Backend module needs a way to know which Drivers exists and since the "
-"amount of Drivers can be easily extended, the easiest way to manage them is "
+"amount of Drivers can be easily extended. The easiest way to manage them is "
 "to use the system configuration, where the information of Dynamic Field "
-"Drivers and ObjectType Drivers can be stored and extended."
+"Drivers and Object Type Drivers can be stored and extended."
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -13128,9 +13105,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-framework.xml:200
 msgid ""
-"Frontend modules needs to read the system configuration to know which "
-"Dynamic Fields are active for each screen and which ones are also "
-"mandatory. for example: "
+"Frontend modules need to read the system configuration to know which Dynamic "
+"Fields are active for each screen and which ones are also mandatory. For "
+"example: "
 "<literal>Ticket::Frontend::AgentTicketPhone###DynamicField</literal> stores "
 "the active, mandatory and inactive Dynamic Fields for New Phone Ticket "
 "Screen."
@@ -13175,7 +13152,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:26
 msgid ""
 "The first step is that the Frontend module reads the configured Dynamic "
-"Fields for example <literal>AgentTicketNote</literal> should read "
+"Fields. For example <literal>AgentTicketNote</literal> should read "
 "<literal>Ticket::Frontend::AgentTicketNote###DynamicField</literal> "
 "setting. This setting can be used as the filter parameter for DynamicField "
 "Core Module function <code>DynamicFieldListGet()</code>. The screen can "
@@ -13186,23 +13163,22 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:34
 msgid ""
-"Next, the screen should try to get the values from the web request, it can "
-"use the BackendObject function <code>EditFieldValueGet()</code> for this "
-"purpose. and can use this values to trigger ACLs. The "
-"<literal>BackendObject</literal> will use each Driver to perform the "
-"specific actions for all functions."
+"Next, the screen should try to get the values from the web request. It can "
+"use the Backend Object function <code>EditFieldValueGet()</code> for this "
+"purpose, and can use this values to trigger ACLs. The Backend Object will "
+"use each Driver to perform the specific actions for all functions."
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:40
 msgid ""
-"To continue, the screen should get the HTML for each field to display it, "
-"the <literal>BackendObject</literal> function <code>EditFieldRender()</code> "
-"can be used to perform this action and the ACLs restriction as well as the "
-"Values from the web request can be passed to this function in order to get "
-"better results. in case of a submit the screen could also use the "
-"BackendObject function <code>EditFieldValueValidate()</code> to check the "
-"mandatory fields."
+"To continue, the screen should get the HTML for each field to display "
+"it. The Backend Object function <code>EditFieldRender()</code> can be used "
+"to perform this action and the ACLs restriction as well as the Values from "
+"the web request can be passed to this function in order to get better "
+"results. In case of a submit the screen could also use the BackendObject "
+"function <code>EditFieldValueValidate()</code> to check the mandatory "
+"fields."
 msgstr ""
 
 #. type: Content of: <section><note><para>
@@ -13216,20 +13192,20 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:55
 msgid ""
-"To store the value of the Dynamic Field is necessary to get the Object ID, "
-"for this example if the Dynamic Field is linked to a ticket object, the "
+"To store the value of the Dynamic Field is necessary to get the Object "
+"ID. For this example if the Dynamic Field is linked to a ticket object, the "
 "screen should already have the TicketID, otherwise if the field is linked to "
 "an article object in order to set the value of the field is necessary to "
-"create the article first. <code>ValueSet()</code> from the BackendObject can "
-"be used to set the Dynamic Field value."
+"create the article first. <code>ValueSet()</code> from the Backend Object "
+"can be used to set the Dynamic Field value."
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-interaction.xml:62
 msgid ""
 "In summary the Frontend modules does not need to know how each Dynamic Field "
-"works internally to get or set their values or to display them, It just "
-"needs to call the BackendObject module and use the fields in a generic way."
+"works internally to get or set their values or to display them. It just "
+"needs to call the Backend Object module and use the fields in a generic way."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -13302,7 +13278,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:54
 msgid ""
-"This is part of the code has the main box and also the actions side bar, no "
+"This part of the code has the main box and also the actions side bar. No "
 "modifications are needed in this section."
 msgstr ""
 
@@ -13328,9 +13304,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:69
 msgid ""
-"In this section of the code is defined the right part of the dialog, notice "
-"that the value of the Action hidden input must match with the name of the "
-"Admin Dialog."
+"In this section of the code is defined the right part of the dialog. Notice "
+"that the value of the <literal>Action</literal> hidden input must match with "
+"the name of the Admin Dialog."
 msgstr ""
 
 #. type: CDATA
@@ -13445,7 +13421,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:140
 msgid ""
 "This first widget contains the common form attributes for the Dynamic "
-"Fields, for consistency with other Dynamic Fields is recommended to leave "
+"Fields. For consistency with other Dynamic Fields is recommended to leave "
 "this part of the code unchanged."
 msgstr ""
 
@@ -13505,7 +13481,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:184
 msgid ""
 "The second widget has the Dynamic Field specific form attributes. This is "
-"the place where new attributes cat be set and it could use JavaScript and "
+"the place where new attributes can be set and it could use JavaScript and "
 "AJAX technologies to make it more easy or friendly for the end user."
 msgstr ""
 
@@ -13637,16 +13613,8 @@ msgid ""
 "}\n"
 msgstr ""
 
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:72
-msgid ""
-"The constructor <literal>new</literal> creates a new instance of the "
-"class. According to the coding guidelines objects of other classes that are "
-"needed in this module are normally created here."
-msgstr ""
-
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:77
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:76
 #, no-wrap
 msgid ""
 "sub Run {\n"
@@ -13689,15 +13657,15 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:118
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:117
 msgid ""
 "<literal>Run</literal> is the default function to be called by the web "
-"request, we try to make this function as simple as possible and let the "
+"request. We try to make this function as simple as possible and let the "
 "helper functions to do the \"hard\" work."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:123
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:122
 #, no-wrap
 msgid ""
 "sub _Add {\n"
@@ -13732,15 +13700,15 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:153
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:152
 msgid ""
 "<code>_Add</code> function is also pretty simple, it just get some "
 "parameters from the web request and call the <code>_ShowScreen()</code> "
-"function, normally this function is not needed to be modified."
+"function. Normally this function is not needed to be modified."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:158
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:157
 #, no-wrap
 msgid ""
 "sub _AddAction {\n"
@@ -13866,46 +13834,48 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:275
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:274
 msgid ""
 "The <code>_AddAction</code> function gets the configuration parameters from "
-"a new dynamic field, it validates the Dynamic Field name only contains "
-"letters and numbers. This function could validate any other parameter."
+"a new dynamic field, and it validates that the Dynamic Field name only "
+"contains letters and numbers. This function could validate any other "
+"parameter."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:280
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:279
 msgid ""
 "<literal>Name</literal>, <literal>Label</literal>, "
 "<literal>FieldOrder</literal>, <literal>Validity</literal> are common "
 "parameters for all Dynamic Fields and they are required. Each Dynamic Field "
-"has its specific configuration that must contain at least the DefaultValue "
-"parameter, in this case it also have ShowValue and ValueMask parameters for "
+"has its specific configuration that must contain at least the "
+"<literal>DefaultValue</literal> parameter. In this case it also have "
+"<literal>ShowValue</literal> and <literal>ValueMask</literal> parameters for "
 "Password field."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:286
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:285
 msgid ""
-"If the field has the ability to store a fixed list of values they need "
-"should be stored in the PossibleValues parameter inside the specific "
-"configuration hash."
+"If the field has the ability to store a fixed list of values they should be "
+"stored in the <literal>PossibleValues</literal> parameter inside the "
+"specific configuration hash."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:290
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:289
 msgid ""
 "As in other Admin Modules, if a parameter is not valid this function returns "
 "to the Add screen highlighting the erroneous form fields."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:294
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:293
 msgid "If all the parameters are correct it creates a new Dynamic Field."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:297
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:296
 #, no-wrap
 msgid ""
 "sub _Change {\n"
@@ -13972,16 +13942,16 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:359
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:358
 msgid ""
 "The <code>_Change</code> function is very similar to the <code>_Add</code> "
 "function but since this function is used to edit an existing field it needs "
-"to validated the FieldID parameter and gather the current Dynamic Field "
-"data."
+"to validated the <literal>FieldID</literal> parameter and gather the current "
+"Dynamic Field data."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:364
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:363
 #, no-wrap
 msgid ""
 "sub _ChangeAction {\n"
@@ -14135,15 +14105,15 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:508
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:507
 msgid ""
-"<code>_ChangeAction()</code> is very similar to <code>_AddAction()</code>\", "
+"<code>_ChangeAction()</code> is very similar to <code>_AddAction()</code>, "
 "but adapted for the update of an existing field instead of creating a new "
 "one."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:513
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:512
 #, no-wrap
 msgid ""
 "sub _ShowScreen {\n"
@@ -14176,7 +14146,7 @@ msgid ""
 "field\n"
 "    if ( $Param{Mode} eq 'Add' ) {\n"
 "\n"
-"        # get the last element form the order list and add 1\n"
+"        # get the last element from the order list and add 1\n"
 "        my $LastOrderNumber = $DynamicfieldOrderList[-1];\n"
 "        $LastOrderNumber++;\n"
 "\n"
@@ -14241,7 +14211,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:605
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:604
 msgid ""
 "The <code>_ShowScreen</code> function is used to set and define the HTML "
 "elements and blocks from a template to generate the Admin Dialog HTML code."
@@ -14295,9 +14265,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:43
 msgid ""
 "This setting registers the Password Dynamic Field Driver for the Backend "
-"module so it can be included in the list of available Dynamic Fields Types, "
-"it also specify its own Admin Dialog in the key "
-"<literal>ConfigDialog</literal>, this key is used by the Master Dynamic "
+"module so it can be included in the list of available Dynamic Fields "
+"Types. It also specify its own Admin Dialog in the key "
+"<literal>ConfigDialog</literal>. This key is used by the Master Dynamic "
 "Field Admin Module to manage this new Dynamic Field Type."
 msgstr ""
 
@@ -14329,7 +14299,7 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:68
 msgid ""
-"This is an standard module registration for the Password Admin Dialog in the "
+"This is a standard module registration for the Password Admin Dialog in the "
 "Admin Interface."
 msgstr ""
 
@@ -14343,15 +14313,16 @@ msgstr ""
 msgid ""
 "The driver <emphasis>is</emphasis> the Dynamic Field. It contains several "
 "functions that are used wide in the OTRS framework. A driver can inherit "
-"some functions form base classes, for example TextArea driver inherit most "
-"of the functions from Base.pm and BaseText.pm and it only implements the "
-"functions that requires different logic or results. Checkbox field driver "
-"only inherits from Base.pm as all other functions are very different from "
-"any other Base driver."
+"some functions form base classes, for example <literal>TextArea</literal> "
+"driver inherits most of the functions from <filename>Base.pm</filename> and "
+"<filename>BaseText.pm</filename> and it only implements the functions that "
+"requires different logic or results. Checkbox field driver only inherits "
+"from <filename>Base.pm</filename> as all other functions are very different "
+"from any other Base driver."
 msgstr ""
 
 #. type: Content of: <section><note><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:16
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:17
 msgid ""
 "Please refer to the Perl On-line Documentation (POD) of the module "
 "<filename>/Kernel/System/DynmicField/Backend.pm</filename> to have the list "
@@ -14359,7 +14330,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:24
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:25
 msgid ""
 "In this section the Password Dynamic Field driver is shown and "
 "explained. This driver inherits some functions from "
@@ -14368,7 +14339,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:29
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:30
 #, no-wrap
 msgid ""
 "# --\n"
@@ -14399,15 +14370,15 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:57
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:58
 msgid ""
 "This is the common header that can be found in common OTRS modules. The "
-"class/package name is declared via the package keyword. Notice that "
-"<literal>BaseText</literal> is used as base class."
+"class/package name is declared via the <literal>package</literal> "
+"keyword. Notice that <literal>BaseText</literal> is used as base class."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:61
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:63
 #, no-wrap
 msgid ""
 "sub new {\n"
@@ -14471,15 +14442,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:120
-msgid ""
-"The constructor <literal>new</literal> creates a new instance of the "
-"class. According to the coding guidelines objects of other classes that are "
-"needed in this module should be created here."
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:125
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:127
 msgid ""
 "It is important to define the behaviors correctly as the field might or "
 "might not be used in certain screens, functions that depends on behaviors "
@@ -14488,14 +14451,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><note><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:131
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:133
 msgid ""
 "Drivers are created only by the <literal>BackendObject</literal> and not "
 "directly from any other module."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:136
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:138
 #, no-wrap
 msgid ""
 "sub EditFieldRender {\n"
@@ -14516,7 +14479,7 @@ msgid ""
 "    }\n"
 "    $Value = $Param{Value} if defined $Param{Value};\n"
 "\n"
-"    # extract the dynamic field value form the web request\n"
+"    # extract the dynamic field value from the web request\n"
 "    my $FieldValue = $Self->EditFieldValueGet(\n"
 "        %Param,\n"
 "    );\n"
@@ -14590,21 +14553,22 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:225
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:227
 msgid ""
 "This function is the responsible to create the HTML representation of the "
 "field and its label, and is used in the edit screens like "
-"<literal>AgentTicketPhone</literal>, <literal>AgentTicketNote</literal>, etc"
+"<literal>AgentTicketPhone</literal>, <literal>AgentTicketNote</literal>, "
+"etc."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:229
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:231
 #, no-wrap
 msgid ""
 "sub DisplayValueRender {\n"
 "    my ( $Self, %Param ) = @_;\n"
 "\n"
-"    # set HTMLOuput as default if not specified\n"
+"    # set HTMLOutput as default if not specified\n"
 "    if ( !defined $Param{HTMLOutput} ) {\n"
 "        $Param{HTMLOutput} = 1;\n"
 "    }\n"
@@ -14630,7 +14594,7 @@ msgid ""
 "        $Title = 'The value of this field is hidden.'\n"
 "    }\n"
 "\n"
-"    # HTMLOuput transformations\n"
+"    # HTMLOutput transformations\n"
 "    if ( $Param{HTMLOutput} ) {\n"
 "        $Value = $Param{LayoutObject}->Ascii2Html(\n"
 "            Text => $Value,\n"
@@ -14664,16 +14628,16 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:291
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:293
 msgid ""
 "<code>DisplayValueRender()</code> function returns the field value as a "
-"plain text as well as its title (both can be translated). for this "
-"particular example we are checking if the password should be reveled or "
+"plain text as well as its title (both can be translated). For this "
+"particular example we are checking if the password should be revealed or "
 "display a predefined mask by a configuration parameter in the Dynamic Field."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:297
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:299
 #, no-wrap
 msgid ""
 "sub ReadableValueRender {\n"
@@ -14721,35 +14685,35 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:341
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:343
 msgid ""
 "This function is similar to <code>DisplayValueRender()</code> but is used in "
-"places where there is no LayoutObject."
+"places where there is no <literal>LayoutObject</literal>."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:367
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:369
 msgid "Other Functions:"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:369
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:371
 msgid ""
 "The following are other functions that are might needed if the new Dynamic "
-"Field does not inherit from other classes, To see the complete code of this "
+"Field does not inherit from other classes. To see the complete code of this "
 "functions please take a look directly into the files "
 "<filename>Kernel/System/DynamicField/Driver/Base.pm</filename> and "
 "<filename>Kernel/System/DynamicField/Driver/BaseText.pm</filename>"
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:375
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:377
 #, no-wrap
 msgid "sub ValueGet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:380
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:382
 msgid ""
 "This function retrieves the value from the field on a specified Object. In "
 "this case we are returning the first text value, since the field only stores "
@@ -14757,43 +14721,43 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:384
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:386
 #, no-wrap
 msgid "sub ValueSet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:389
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:391
 msgid ""
-"<code>ValueSet()</code> is used to store a Dynamic Field value, in this case "
+"<code>ValueSet()</code> is used to store a Dynamic Field value. In this case "
 "this field only stores one text type value. Other fields could store more "
 "than one value on either <literal>ValueText</literal>, "
-"<literal>ValueDateTime</literal>, or <literal>ValueInt</literal> format."
+"<literal>ValueDateTime</literal> or <literal>ValueInt</literal> format."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:394
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:396
 #, no-wrap
 msgid "sub ValueDelete { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:399
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:401
 msgid ""
 "This function is used to delete one field value attached to a particular "
-"object ID, is used for example if the instance of object is to be deleted, "
-"then there is no reason to have the field value stored in the database for "
-"that particular object instance."
+"object ID.  For example if the instance of an object is to be deleted, then "
+"there is no reason to have the field value stored in the database for that "
+"particular object instance."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:404
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:406
 #, no-wrap
 msgid "sub AllValuesDelete { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:409
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:411
 msgid ""
 "<code>AllValuesDelete()</code> function is used to delete all values from a "
 "certain Dynamic Field. This function is very useful when a Dynamic Field is "
@@ -14801,26 +14765,26 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:414
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:416
 #, no-wrap
 msgid "sub ValueValidate { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:419
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:421
 msgid ""
 "The <code>ValueValidate()</code> function is used to check if the value is "
 "consistent to its type."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:423
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:425
 #, no-wrap
 msgid "sub SearchSQLGet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:428
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:430
 msgid ""
 "This function is used by <literal>TicketSearch</literal> core module to "
 "build the internal query to search for a ticket based on this field as a "
@@ -14828,33 +14792,33 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:432
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:434
 #, no-wrap
 msgid "sub SearchSQLOrderFieldGet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:437
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:439
 msgid ""
 "The <literal>SearchSQLOrderFieldGet</literal> is also a helper for "
-"<literal>TicketSearch</literal> module, "
-"<literal>$Param{TableAlias}</literal> should be kept and "
+"<literal>TicketSearch</literal> "
+"module. <literal>$Param{TableAlias}</literal> should be kept and "
 "<literal>value_text</literal> could be replaced with "
 "<literal>value_date</literal> or <literal>value_int</literal> depending on "
 "the field."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:442
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:444
 #, no-wrap
 msgid "sub EditFieldValueGet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:447
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:449
 msgid ""
 "<code>EditFieldValueGet()</code> is a function used in the edit screens of "
-"OTRS and its purpose is to get the value of the field, either form a "
+"OTRS and its purpose is to get the value of the field, either from a "
 "template like generic agent profile or from a web request. This function "
 "gets the web request in the <literal>$Param{ParamObject}</literal>, that is "
 "a copy of the <literal>ParamObject</literal> of the Frontend Module or "
@@ -14862,34 +14826,34 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:453
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:455
 msgid ""
 "There are two return formats for this function, the normal: that is just the "
-"raw value or a structure: that is the pair field name =&gt; field value. for "
+"raw value or a structure: that is the pair field name =&gt; field value. For "
 "example a Date Dynamic Field returns normally the date as string, and if it "
-"should return the an structure it returns a pair for each part of the the "
-"date in the hash."
+"should return a structure it returns a pair for each part of the date in the "
+"hash."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:459
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:461
 msgid ""
-"The if the result should be a structure then, normally this is used to store "
-"its values in a template, like a generic agent profile. For example a date "
-"field uses several HTML components to build the field, like the \"Used\" "
-"check-box and selects for year, month, day etc."
+"If the result should be a structure then, normally this is used to store its "
+"values in a template, like a generic agent profile. For example a date field "
+"uses several HTML components to build the field, like the \"Used\" check-box "
+"and selects for year, month, day etc."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:465
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:467
 #, no-wrap
 msgid "sub EditFieldValueValidate { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:470
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:472
 msgid ""
-"This function should provide at least, a method to validate if the field is "
+"This function should provide at least a method to validate if the field is "
 "empty, and return an error if the field is empty and mandatory, but it can "
 "also do more validations for other kind of fields, like if the option "
 "selected is valid, or if a date should be only in the past etc. It can "
@@ -14897,60 +14861,60 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:476
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:478
 #, no-wrap
 msgid "sub SearchFieldRender { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:481
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:483
 msgid ""
-"This function is used by ticket search dialog and its similar to "
+"This function is used by ticket search dialog and it is similar to "
 "<code>EditFieldRander()</code>, but normally on a search screen small "
-"changes has to be done for all fields, for this example we use a HTML text "
+"changes has to be done for all fields. For this example we use a HTML text "
 "input instead of a password input. In other fields like Dropdown field is "
 "displayed as a Multiple select in order to let the user search for more than "
 "one value at a time."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:488
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:490
 #, no-wrap
 msgid "sub SearchFieldValueGet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:493
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:495
 msgid ""
 "Very similar to <code>EditFieldValueGet()</code>, but uses a different name "
 "prefix, adapted for the search dialog screen."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:497
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:499
 #, no-wrap
 msgid "sub SearchFieldParameterBuild { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:502
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:504
 msgid ""
 "<code>SearchFieldParameterBuild()</code> is used also by the ticket search "
 "dialog to set the correct operator and value to do the search on this "
 "field. It also returns how the value should be displayed in the used search "
-"attributes, in the results page."
+"attributes in the results page."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:508
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:510
 #, no-wrap
 msgid "sub StatsFieldParameterBuild { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:513
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:515
 msgid ""
-"This function is used by the stats modules, it includes the field definition "
+"This function is used by the stats modules. It includes the field definition "
 "in the stats format. For fields with fixed values it also includes all this "
 "possible values and if they can be translated, take a look to the "
 "<literal>BaseSelect</literal> driver code for an example how to implement "
@@ -14958,48 +14922,48 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:519
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:521
 #, no-wrap
 msgid "sub StatsSearchFieldParameterBuild { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:524
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:526
 msgid ""
 "<code>StatsSearchFieldParameterBuild()</code> is very similar to the "
-"<code>SearchFieldParameterBuild()</code>, the difference id that the "
+"<code>SearchFieldParameterBuild()</code>. The difference is that the "
 "<code>SearchFieldParameterBuild()</code> gets the value from the search "
 "profile and this one gets the value directly from its parameters."
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:530
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:532
 msgid "This function is used by statistics module."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:533
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:535
 #, no-wrap
 msgid "sub TemplateValueTypeGet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:538
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:540
 msgid ""
 "The <code>TemplateValueTypeGet()</code> function is used to know how the "
-"Dynamic Field values stored on a profile should be retrieved, as an SCALAR "
-"or as an ARRAY, and it also defines the correct name of the field in the "
+"Dynamic Field values stored on a profile should be retrieved, as a SCALAR or "
+"as an ARRAY, and it also defines the correct name of the field in the "
 "profile."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:543
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:545
 #, no-wrap
 msgid "sub RandomValueSet { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:548
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:550
 msgid ""
 "This function is used by <filename>otrs.FillDB.pl</filename> script to "
 "populate the database with some test and random data. The value inserted by "
@@ -15008,17 +14972,17 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:553
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:555
 #, no-wrap
 msgid "sub ObjectMatch { ... }\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:558
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:560
 msgid ""
-"Used by the notification modules this function returns 1 if the field is "
+"Used by the notification modules. This function returns 1 if the field is "
 "present in the <literal>$Param{ObjectAttributes}</literal> parameter and if "
-"it match the given value."
+"it matches the given value."
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -15030,9 +14994,10 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field.xml:7
 msgid ""
 "To illustrate this process a new Dynamic Field \"Password\" will be "
-"created. this new Dynamic Field Type will show a New password field to "
-"Ticket or Article objects. since is very similar to a Text Dynamic Field we "
-"will use the Base an BaseText Drivers as a basis to build this new field."
+"created. This new Dynamic Field Type will show a New password field to "
+"Ticket or Article objects. Since is very similar to a Text Dynamic Field we "
+"will use the <literal>Base</literal> and <literal>BaseText</literal> Drivers "
+"as a basis to build this new field."
 msgstr ""
 
 #. type: Content of: <section><note><para>
@@ -15110,7 +15075,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:18
 msgid ""
 "From OTRS version 3.1 the old Free Fields has been replaced with the new "
-"Dynamic Fields, for a better backward compatibility and data preservation "
+"Dynamic Fields.  For a better backward compatibility and data preservation "
 "when updating from previous versions, a migration script has been developed "
 "to convert the existing Free Fields to Dynamic Fields and to move their "
 "values from the <emphasis>ticket</emphasis> and <emphasis>article</emphasis> "
@@ -15132,8 +15097,8 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:35
 msgid ""
 "The restriction on the number of the fields per ticket or article has been "
-"removed, this means that a ticket or article could have as many fields as "
-"needed. and now it is also possible to use the Dynamic Fields framework for "
+"removed. This means that a ticket or article could have as many fields as "
+"needed. And now it is also possible to use the Dynamic Fields framework for "
 "other objects rather than just ticket or article."
 msgstr ""
 
@@ -15142,8 +15107,8 @@ msgstr ""
 msgid ""
 "The new Dynamic Fields can store the same data types as the Free Fields "
 "(Text and Date/Time), and they can be also defined as them (Single line "
-"input, drop-down and date-time). but Dynamic Fields goes beyond that, a new "
-"data type: Integer, has been added and also new options to define the fields "
+"input, drop-down and date-time), but Dynamic Fields go beyond that, a new "
+"integer data type has been added and also new options to define the fields "
 "like Multiple-line inputs, check-boxes, Multiple-select and date (without "
 "time) fields. Each field type defines its own data type."
 msgstr ""
@@ -15152,7 +15117,7 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-overview.xml:48
 msgid ""
 "Due to its modular design each Dynamic Field type can be seen as a plug-in "
-"to a framework, and this plug-in can be a OTRS standard package to extend "
+"to a framework, and this plug-in can be an OTRS standard package to extend "
 "the available types of the Dynamic Fields or even to extend current Dynamic "
 "Field with more functions."
 msgstr ""
@@ -15166,9 +15131,9 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:7
 msgid ""
 "PostMaster modules are used during the PostMaster process.  There are two "
-"kinds of PostMaster modules. PostMasterPre (used after parsing an email)  "
-"and PostMasterPost (used after an email is processed and in the database) "
-"modules."
+"kinds of PostMaster modules: <literal>PostMasterPre</literal> (used after "
+"parsing an email)  and <literal>PostMasterPost</literal> (used after an "
+"email is processed and is in the database)."
 msgstr ""
 
 #. type: Content of: <section><para>
@@ -15178,13 +15143,13 @@ msgid ""
 "module.  These modules are located under "
 "<filename>Kernel/System/PostMaster/Filter/*.pm</filename>.  For default "
 "modules see the admin manual. You just need two functions: "
-"<code>new()</code> and <code>Run()</code>:"
+"<code>new()</code> and <code>Run()</code>."
 msgstr ""
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:18
 msgid ""
-"The following is an examplary module to match emails and set X-OTRS-Headers "
+"The following is an exemplary module to match emails and set X-OTRS-Headers "
 "(see <filename>doc/X-OTRS-Headers.txt</filename> for more info)."
 msgstr ""
 
@@ -15349,8 +15314,9 @@ msgstr ""
 #. type: Content of: <section><para>
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:7
 msgid ""
-"If you want to create an OPM package (.opm) you need to create a spec file "
-"(.sopm) which includes the properties of the package."
+"If you want to create an OPM package (<literal>.opm</literal>) you need to "
+"create a spec file (<literal>.sopm</literal>) which includes the properties "
+"of the package."
 msgstr ""
 
 #. type: Content of: <section><section><title>
@@ -15361,8 +15327,9 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:13
 msgid ""
-"The OPM package is XML based. You can create/edit the .sopm via a text or "
-"XML editor.  It contains meta data, a file list and database options."
+"The OPM package is XML based. You can create/edit the "
+"<literal>.sopm</literal> via a text or XML editor. It contains meta data, a "
+"file list and database options."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -15684,8 +15651,8 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;DatabaseInstall Type=\"post\"&gt;</literal> "
 "or <literal>&lt;DatabaseInstall Type=\"pre\"&gt;</literal> to define the "
-"time of execution separately (post is default). For more info see <link "
-"linkend=\"package-life-cycle\">Package Life Cycle</link>."
+"time of execution separately (<literal>post</literal> is default). For more "
+"info see <link linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -15697,8 +15664,8 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:235
 msgid ""
 "Information on which actions have to be performed in case of an upgrade "
-"(optional).  Example (if already installed package version is below 1.3.4 "
-"(e. g. 1.2.6), the defined action will be performed):"
+"(optional).  Example if already installed package version is below 1.3.4 "
+"(e. g. 1.2.6), the defined action will be performed:"
 msgstr ""
 
 #. type: CDATA
@@ -15718,8 +15685,8 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;DatabaseUpgrade Type=\"post\"&gt;</literal> "
 "or <literal>&lt;DatabaseUpgrade Type=\"pre\"&gt;</literal> to define the "
-"time of execution separately (post is default). For more info see <link "
-"linkend=\"package-life-cycle\">Package Life Cycle</link>."
+"time of execution separately (<literal>post</literal> is default). For more "
+"info see <link linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -15730,7 +15697,7 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:258
 msgid ""
-"Information on what actions have to be performed if the package is "
+"Information on which actions have to be performed if the package is "
 "reinstalled (optional)."
 msgstr ""
 
@@ -15745,9 +15712,9 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;DatabaseReinstall "
 "Type=\"post\"&gt;</literal> or <literal>&lt;DatabaseReinstall "
-"Type=\"pre\"&gt;</literal> to define the time of execution separately (post "
-"is default). For more info see <link linkend=\"package-life-cycle\">Package "
-"Life Cycle</link>."
+"Type=\"pre\"&gt;</literal> to define the time of execution separately "
+"(<literal>post</literal> is default). For more info see <link "
+"linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -15774,9 +15741,9 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;DatabaseUninstall "
 "Type=\"post\"&gt;</literal> or <literal>&lt;DatabaseUninstall "
-"Type=\"pre\"&gt;</literal> to define the time of execution separately (post "
-"is default). For more info see <link linkend=\"package-life-cycle\">Package "
-"Life Cycle</link>."
+"Type=\"pre\"&gt;</literal> to define the time of execution separately "
+"(<literal>post</literal> is default). For more info see <link "
+"linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -15928,8 +15895,8 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;CodeInstall Type=\"post\"&gt;</literal> or "
 "<literal>&lt;CodeInstall Type=\"pre\"&gt;</literal> to define the time of "
-"execution separately (post is default). For more info see <link "
-"linkend=\"package-life-cycle\">Package Life Cycle</link>."
+"execution separately (<literal>post</literal> is default). For more info see "
+"<link linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -15964,8 +15931,8 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;CodeUninstall Type=\"post\"&gt;</literal> "
 "or <literal>&lt;CodeUninstall Type=\"pre\"&gt;</literal> to define the time "
-"of execution separately (post is default). For more info see <link "
-"linkend=\"package-life-cycle\">Package Life Cycle</link>."
+"of execution separately (<literal>post</literal> is default). For more info "
+"see <link linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -15998,8 +15965,8 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;CodeReinstall Type=\"post\"&gt;</literal> "
 "or <literal>&lt;CodeReinstall Type=\"pre\"&gt;</literal> to define the time "
-"of execution separately (post is default). For more info see <link "
-"linkend=\"package-life-cycle\">Package Life Cycle</link>."
+"of execution separately (<literal>post</literal> is default). For more info "
+"see <link linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -16010,9 +15977,10 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-building.xml:426
 msgid ""
-"Perl code to be executed when the package is upgraded (subject to version "
-"tag), (optional). Example (if already installed package version is below "
-"1.3.4 (e. g.  1.2.6), defined action will be performed):"
+"Perl code to be executed when the package is upgraded (subject to "
+"<literal>version</literal> tag), (optional). Example if already installed "
+"package version is below 1.3.4 (e. g.  1.2.6), defined action will be "
+"performed:"
 msgstr ""
 
 #. type: CDATA
@@ -16035,19 +16003,20 @@ msgstr ""
 msgid ""
 "You also can choose <literal>&lt;CodeUpgrade Type=\"post\"&gt;</literal> or "
 "<literal>&lt;CodeUpgrade Type=\"pre\"&gt;</literal> to define the time of "
-"execution separately (post is default)."
+"execution separately (<literal>post</literal> is default). For more info see "
+"<link linkend=\"package-life-cycle\">Package Life Cycle</link>."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:444
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:446
 msgid "<literal>&lt;PackageMerge&gt;</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:446
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:448
 msgid ""
 "This tag singals that a package has been merged into another package. In "
-"this case the original package needs to be removed from the filesystem and "
+"this case the original package needs to be removed from the file system and "
 "the packages database, but all data must be kept. Let's assume that "
 "<literal>PackageOne</literal> was merged into "
 "<literal>PackageTwo</literal>. Then <filename>PackageTwo.sopm</filename> "
@@ -16055,13 +16024,13 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:453
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:455
 #, no-wrap
 msgid "<PackageMerge Name=\"MergeOne\" TargetVersion=\"2.0.0\"></PackageMerge>\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:458
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:460
 msgid ""
 "If <literal>PackageOne</literal> also contained database structures, we need "
 "to be sure that it was at the latest available version of the package to "
@@ -16076,7 +16045,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:468
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:470
 msgid ""
 "Additionally it is possible to add required database and code upgrade tags "
 "for <literal>PackageOne</literal> to make sure that it gets properly "
@@ -16086,7 +16055,7 @@ msgid ""
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:474
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:476
 #, no-wrap
 msgid ""
 "<PackageMerge Name=\"MergeOne\" TargetVersion=\"2.0.0\">\n"
@@ -16102,29 +16071,29 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:486
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:488
 msgid ""
-"As you can see the atribute <literal>Type=\"merge\"</literal> needs to be "
+"As you can see the attribute <literal>Type=\"merge\"</literal> needs to be "
 "set in this case.  These sections will only be executed if a package merge "
 "is possible."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:492
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:494
 msgid "Conditions: <literal>IfPackage</literal> and <literal>IfNotPackage</literal>"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:494
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:496
 msgid ""
 "These attributes can be added to the regular <literal>Database*</literal> "
 "and <literal>Code*</literal> sections.  If they are present, the section "
-"will only be executed if anoter package is or is not in the local package "
+"will only be executed if another package is or is not in the local package "
 "repository."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:499
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:501
 #, no-wrap
 msgid ""
 "<DatabaseInstall IfPackage=\"AnyPackage\">\n"
@@ -16133,12 +16102,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:506
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:508
 msgid "or"
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:509
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:511
 #, no-wrap
 msgid ""
 "<CodeUpgrade IfNotPackage=\"OtherPackage\">\n"
@@ -16147,24 +16116,25 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:516
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:518
 msgid ""
-"Thease attributes can be also set in the Database and Code sections inside "
-"the <literal>PackageMerge</literal> tags."
+"These attributes can be also set in the <literal>Database*</literal> and "
+"<literal>Code*</literal> sections inside the <literal>PackageMerge</literal> "
+"tags."
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:523
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:525
 msgid "Example .sopm"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:525
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:527
 msgid "This is an example spec file looks with some of the above tags."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:528
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:530
 #, no-wrap
 msgid ""
 "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
@@ -16226,17 +16196,17 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:573
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:575
 msgid "Package Build"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:575
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:577
 msgid "To build an .opm package from the spec opm."
 msgstr ""
 
 #. type: CDATA
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:578
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:580
 #, no-wrap
 msgid ""
 "shell> bin/otrs.Console.pl Dev::Package::Build /path/to/example.sopm /tmp\n"
@@ -16246,24 +16216,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:587
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:589
 msgid "Package Life Cycle - Install/Upgrade/Uninstall"
 msgstr ""
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:589
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:591
 msgid ""
 "The following image shows you how the life cycle of a package "
 "installation/upgrade/uninstallation works in the backend step by step."
 msgstr ""
 
 #. type: Content of: <section><section><para><figure><title>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:594
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:596
 msgid "Package Life Cycle"
 msgstr ""
 
 #. type: Content of: <section><section><para><figure><screenshot>
-#: en/content/how-to-publish-otrs-extensions/package-building.xml:596
+#: en/content/how-to-publish-otrs-extensions/package-building.xml:598
 msgid ""
 "<graphic fileref=\"screenshots/package-life-cycle.png\" scalefit=\"1\" "
 "width=\"100%\" contentdepth=\"100%\"></graphic>"
@@ -16278,7 +16248,7 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-management.xml:7
 msgid ""
 "The OPM (OTRS Package Manager) is a mechanism to distribute software "
-"packages for the OTRS framework via http, ftp or file upload."
+"packages for the OTRS framework via HTTP, FTP or file upload."
 msgstr ""
 
 #. type: Content of: <section><para>
@@ -16298,8 +16268,8 @@ msgstr ""
 #. type: Content of: <section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-management.xml:19
 msgid ""
-"If you want to create an OPM online repositiory, just tell the OTRS "
-"framework where the location is by activating the SysConfig setting "
+"If you want to create an OPM online repository, just tell the OTRS framework "
+"where the location is by activating the SysConfig setting "
 "<literal>Package::RepositoryList</literal> and adding the new location "
 "there. Then you will have a new select option in the package manager."
 msgstr ""
@@ -16581,7 +16551,7 @@ msgid ""
 "the module is now bundled and HTML print was dropped.  "
 "<code>$LayoutObject->PrintHeader()</code> and <code>PrintFooter()</code> are "
 "not available any more.  Please remove the HTML print fallback from your "
-"code and change it to generate PDF if neccessary."
+"code and change it to generate PDF if necessary."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -16628,10 +16598,10 @@ msgstr ""
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:168
 msgid ""
-"This will require you first of all to change all toplevel Perl scripts (.pl "
+"This will require you first of all to change all top level Perl scripts (.pl "
 "files only!)  to load and provide the <literal>ObjectManager</literal> to "
-"all OTRS objects.  Let's look at otrs.CheckDB.pl from OTRS 3.3 as an "
-"example:"
+"all OTRS objects.  Let's look at <filename>otrs.CheckDB.pl</filename> from "
+"OTRS 3.3 as an example:"
 msgstr ""
 
 #. type: CDATA
@@ -16719,9 +16689,9 @@ msgid ""
 "more (unless needed for specific reasons). Just fetch and use the objects on "
 "demand like "
 "<code>$Kernel::OM->Get('Kernel::System::Log')->Log(...)</code>. This also "
-"has the benefit that the Log object will only be created if something must "
-"be logged.  Sometimes it could also be useful to create local variables if "
-"an object is used many times in a function, like "
+"has the benefit that the <literal>Log</literal> object will only be created "
+"if something must be logged.  Sometimes it could also be useful to create "
+"local variables if an object is used many times in a function, like "
 "<literal>$DBObject</literal> in the example above."
 msgstr ""
 
@@ -16904,7 +16874,7 @@ msgstr ""
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:397
-msgid "CacheInternalObject removed"
+msgid "<literal>CacheInternalObject</literal> removed"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
@@ -16918,7 +16888,7 @@ msgid ""
 "<code>Set()</code>, <code>Delete()</code> and <code>CleanUp()</code>. The "
 "<literal>TTL</literal> parameter is now optional and defaults to 20 days, so "
 "you only have to specify it in <code>Get()</code> if you require a different "
-"TTL value."
+"<literal>TTL</literal> value."
 msgstr ""
 
 #. type: Content of: <section><section><section><warning><para>
@@ -16939,8 +16909,8 @@ msgstr ""
 msgid ""
 "The backend files of the scheduler moved from "
 "<filename>Kernel/Scheduler</filename> to "
-"<filename>Kernel/System/Scheduler</filename>. If you have any custom "
-"TaskHandler modules, you need to move them also."
+"<filename>Kernel/System/Scheduler</filename>. If you have any custom Task "
+"Handler modules, you need to move them also."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -17320,7 +17290,7 @@ msgstr ""
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:621
 msgid ""
-"This is becase in DTL there was no separation between template and data. If "
+"This is because in DTL there was no separation between template and data. If "
 "DTL-Tags were inserted as part of some data, the engine would still parse "
 "them. This is no longer the case in Template::Toolkit, there is a strict "
 "separation of template and data."
@@ -17357,17 +17327,18 @@ msgid ""
 "Please be careful with <literal>pre</literal> output filters (the ones "
 "configured in <literal>Frontend::Output::FilterElementPre</literal>). They "
 "still work, but they will prevent the template from being cached. This could "
-"lead to serious performance issues. You should definitely not have any pre "
-"output filters that operate on all templates, but limit them to certain "
-"templates via configuration setting."
+"lead to serious performance issues. You should definitely not have any "
+"<literal>pre</literal> output filters that operate on all templates, but "
+"limit them to certain templates via configuration setting."
 msgstr ""
 
 #. type: Content of: <section><section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:642
 msgid ""
-"Post output filters (<literal>Frontend::Output::FilterElementPost</literal> "
-"don't have such strong negative performance effects.  However, they should "
-"also be used carefully, and not for all templates."
+"The <literal>post</literal> output filters "
+"(<literal>Frontend::Output::FilterElementPost</literal>) don't have such "
+"strong negative performance effects.  However, they should also be used "
+"carefully, and not for all templates."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
@@ -17379,7 +17350,7 @@ msgstr ""
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:653
 msgid ""
 "With OTRS 4, we've also updated FontAwesome to a new version. As a "
-"consequence, the icons css classes have changed. While previously icons were "
+"consequence, the icons CSS classes have changed. While previously icons were "
 "defined by using a schema like <literal>icon-{iconname}</literal>, it is now "
 "<literal>fa fa-{iconname}</literal>."
 msgstr ""
@@ -17394,22 +17365,17 @@ msgid ""
 "class=\"icon-{iconname}\"&gt;&lt;/i&gt;</literal>."
 msgstr ""
 
-#. type: Content of: <section><section><section><title>
-#: en/content/how-to-publish-otrs-extensions/package-porting.xml:661
-msgid "UnitTests"
-msgstr ""
-
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:663
 msgid ""
-"With OTRS 4, in UnitTests <literal>$Self</literal> no longer provides common "
-"objects like the <literal>MainObject</literal>, for example. Please always "
-"use <code>$Kernel::OM->Get('...')</code> to fetch these objects."
+"With OTRS 4, in Unit Tests <literal>$Self</literal> no longer provides "
+"common objects like the <literal>MainObject</literal>, for example. Please "
+"always use <code>$Kernel::OM->Get('...')</code> to fetch these objects."
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-publish-otrs-extensions/package-porting.xml:668
-msgid "Custom TicketHistory types"
+msgid "Custom Ticket History types"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>

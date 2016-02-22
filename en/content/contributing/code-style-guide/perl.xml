@@ -34,7 +34,7 @@ while ($Condition == 1) {
             <title>Length of lines</title>
             <para>
                 Lines should generally not be longer than 120 characters,
-                unless it is neccessary for special reasons.
+                unless it is necessary for special reasons.
             </para>
         </section>
 
