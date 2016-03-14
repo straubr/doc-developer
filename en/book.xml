@@ -3,13 +3,12 @@
 
 <book lang="en">
     <bookinfo>
-        <title>OTRS 5 - Developer Manual</title>
-        <!--<edition>Cancún Beach (México)</edition>-->
+        <title>OTRS 6 - Developer Manual</title>
         <copyright>
-            <year>2003-2015</year>
+            <year>2003-2016</year>
             <holder>OTRS AG</holder>
         </copyright>
-        <date>2015-05-12</date>
+        <date>2016-03-14</date>
         <legalnotice>
             <para>
                 This work is copyrighted by OTRS AG. You may copy it in whole or in part as long as the copies retain this copyright statement.
