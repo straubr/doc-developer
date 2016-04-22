@@ -95,9 +95,10 @@ To retrieve the configured OTRS time zone or user default time zone, always use 
             </para>
         </section>
         <section id="date-time-methods-comparison">
-            <title>Comparison methods</title>
+            <title>Comparison operators and methods</title>
             <para>
-<literal>IsNewerThan()</literal>, <literal>IsOlderThan()</literal> and <literal>Equals()</literal> can be used to compare two DateTime objects. <literal>Compare()</literal> is usable in Perl's sort context as it returns -1, 0 or 1.
+<literal>Kernel::System::DateTime</literal> uses operator overloading for comparisons. So you can simply compare two DateTime objects with &lt;, &lt;=, ==, !=, &gt;= and &gt;.
+<literal>Compare()</literal> is usable in Perl's sort context as it returns -1, 0 or 1.
             </para>
         </section>
     </section>
