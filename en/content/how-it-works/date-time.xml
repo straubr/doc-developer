@@ -118,11 +118,11 @@ my $UserTimeStamp  = $TimeObject->SystemTime2TimeStamp( SystemTime => $UserSyste
         ]]></programlisting>
 Example (new code):
         <programlisting format="linespecific"><![CDATA[
-my $DateTimeObject = $Kernel::OM->Create('Kernel::System::DateTime'); # This implicitly sets the OTRS time zone
+my $DateTimeObject = $Kernel::OM->Create('Kernel::System::DateTime'); # This implicitly sets the configured OTRS time zone
 my $UserTimeZone   = 'Europe/Berlin'; # normally retrieved via config or param
 $DateTimeObject->ToTimeZone( TimeZone => $UserTimeZone );
-my $UserSystemTime = $DateTimeObject->ToEpoch();
-my $UserTimeStamp  = $DateTimeObject->ToString();
+my $SystemTime    = $DateTimeObject->ToEpoch(); # note that the epoch is independent from the time zone, it's always calculated for UTC
+my $UserTimeStamp = $DateTimeObject->ToString();
         ]]></programlisting>
         </para>
     </section>

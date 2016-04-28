@@ -7,6 +7,49 @@
 With every new minor or major version of OTRS, you need to port your package(s) and make sure they
 still work with the OTRS API.
     </para>
+        <section id="package-porting-5-to-6">
+            <title>From OTRS 5 to 6</title>
+            <para>
+                This section lists changes that you need to examine when porting your package from
+                OTRS 5 to 6.
+            </para>
+
+            <section>
+                <title>Date and time calculation</title>
+                <para>
+                    In OTRS 6, a new module for date and time calculation was added: <literal>Kernel::System::DateTime</literal>. The module <literal>Kernel::System::Time</literal> is now deprecated and should not be used for new code anymore.
+                </para>
+
+                <para>
+                    The main advantage of the new <literal>Kernel::System::DateTime</literal> module is the support for real time zones like <literal>Europe/Berlin</literal> instead of time offsets in hours like <literal>+2</literal>.
+                    Note that also the old <literal>Kernel::System::Time</literal> module has been improved to support time zones. Time offsets have been completely dropped. This means that any code that uses time offsets for calculations
+                    has to be ported to use the new <literal>DateTime</literal> module instead. Code that doesn't fiddle around with time offsets itself can be left untouched in most cases. You just have to make sure that upon creation
+                    of a <literal>Kernel::System::Time</literal> object a valid time zone will be given.
+                </para>
+
+                <para>
+                    Here's an example for porting time offset code to time zones:
+        <programlisting format="linespecific"><![CDATA[
+my $TimeObject     = $Kernel::OM->Get('Kernel::System::Time'); # Assume a time offset of 0 for this time object
+my $SystemTime     = $TimeObject->TimeStamp2SystemTime( String => '2004-08-14 22:45:00' );
+my $UserTimeZone   = '+2'; # normally retrieved via config or param
+my $UserSystemTime = $SystemTime + $UserTimeZone * 3600;
+my $UserTimeStamp  = $TimeObject->SystemTime2TimeStamp( SystemTime => $UserSystemTime );
+        ]]></programlisting>
+Code using the new <literal>Kernel::System::DateTime</literal> module:
+        <programlisting format="linespecific"><![CDATA[
+my $DateTimeObject = $Kernel::OM->Create('Kernel::System::DateTime'); # This implicitly sets the configured OTRS time zone
+my $UserTimeZone   = 'Europe/Berlin'; # normally retrieved via config or param
+$DateTimeObject->ToTimeZone( TimeZone => $UserTimeZone );
+my $SystemTime    = $DateTimeObject->ToEpoch(); # note that the epoch is independent from the time zone, it's always calculated for UTC
+my $UserTimeStamp = $DateTimeObject->ToString();
+        ]]></programlisting>
+
+                </para>
+            </section>
+
+        </section>
+
         <section id="package-porting-4-to-5">
         <title>From OTRS 4 to 5</title>
         <para>
