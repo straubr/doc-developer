@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section id="unit-tests">
+    <title>Egységtesztek</title>
+    <para>
+        Az OTRS egységteszteket biztosít az alapmodulokhoz.
+    </para>
+
+    <section id="testing">
+        <title>Egy tesztfájl létrehozása</title>
+        <para>
+            A tesztfájlok .t fájlokban vannak tárolva a
+<filename>/scripts/test/*.t</filename> helyen. Például a
+<filename>/scripts/test/Calendar.t</filename> fájl a naptár modulhoz van.
+        </para>
+        <para>
+            Egy tesztfájl a tesztelendő függvény függvényhívásaiból és a visszatérési
+érték elemzéséből áll. Példa
+(<filename>/scripts/test/Calendar.t</filename>):
+        </para>
+        <para>
+        <programlisting><![CDATA[
+# --
+# Calendar.t - Naptár
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+use strict;
+use warnings;
+use utf8;
+
+use vars qw($Self);
+
+use Kernel::System::CalendarEvent;
+
+my $EventObject = $Kernel::OM->Get('Kernel::System::CalendarEvent');
+
+
+my $EventID = $EventObject->EventAdd(
+    Title => 'Valamilyen teszt',
+    StartTime => '1977-10-27 20:15',
+    EndTime => '1977-10-27 21:00',
+    State => 'public',
+    UserIDs => [1],
+);
+
+$Self->True(
+    $EventID,
+    'EventAdd()',
+);
+
+[..]
+        ]]></programlisting>
+        </para>
+    </section>
+
+    <section>
+        <title>Előfeltételek a teszteléshez</title>
+        <para>
+            Hogy képes legyen lefuttatni az egységteszteket, arra van szüksége, hogy az
+összes választható Perl-modul telepítve legyen, kivéve azokat, amelyek az Ön
+által használt adatbázis háttérprogramoktól eltérőkhöz valók. Futtassa a
+<filename>bin/otrs.CheckModules.pl</filename> parancsfájlt a modultelepítés
+ellenőrzéséhez.
+        </para>
+        <para>
+            Szüksége van egy teljes képzésű tartományneven (FQDN) futó OTRS webes
+előtétprogram egy példányára, amely az OTRS helyi
+<filename>Config.pm</filename> fájljában be van állítva. Ennek az OTRS
+példánynak ugyanazt az adatbázist kell használnia, amelyek az
+egységtesztekhez vannak beállítva.
+        </para>
+    </section>
+
+    <section>
+        <title>Tesztelés</title>
+        <para>
+            A tesztek ellenőrzéséhez egyszerűen használja a
+<filename>bin/otrs.Console.pl Dev::UnitTest::Run --test Calendar</filename>
+parancsot a <filename>/scripts/test/Calendar.t</filename> fájl
+használatához.
+        </para>
+        <para>
+        <programlisting><![CDATA[
+shell:/opt/otrs> bin/otrs.Console.pl Dev::UnitTest::Run --test Calendar
++-------------------------------------------------------------------+
+/opt/otrs/scripts/test/Calendar.t:
++-------------------------------------------------------------------+
+ok 1 - EventAdd()
+=====================================================================
+Product:   OTRS 5.0.x git
+Test Time: 0 s
+Time:      2010-04-02 12:58:37
+Host:      yourhost.example.com
+Perl:      5.8.9
+OS:        linux
+TestOk:    1
+TestNotOk: 0
+=====================================================================
+shell:/opt/otrs>
+        ]]></programlisting>
+        </para>
+    </section>
+
+    <section>
+        <title>Egységteszt API</title>
+        <para>
+            Az OTRS egy kicsi és egyszerű API-t biztosít az egységteszteléshez, amely az
+előző példában volt használva. Itt fel fogjuk sorolni a legfontosabb
+függvényeket, de nézze meg a <ulink
+url="http://otrs.github.io/doc/api/otrs/stable/Kernel/System/UnitTest.pm.html"><literal>Kernel::System::UnitTest</literal></ulink>
+internetes API hivatkozását is.
+        </para>
+
+        <section>
+            <title>True()</title>
+            <para>
+                Ez a függvény azt teszteli, hogy a megadott skalár érték igaz érték-e a
+Perlben.
+            </para>
+            <para>
+                <programlisting><![CDATA[
+$Self->True(
+    $EventID,
+    'EventAdd()',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>False()</title>
+            <para>
+                Ez a függvény azt teszteli, hogy a megadott skalár érték hamis érték-e a
+Perlben.
+            </para>
+            <para>
+                <programlisting><![CDATA[
+$Self->False(
+    $EventID,
+    'EventAdd()',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>Is()</title>
+            <para>
+                Ez a függvény azt teszteli, hogy a megadott skalár változók egyenlők-e.
+            </para>
+            <para>
+                <programlisting><![CDATA[
+$Self->Is(
+    $A,
+    $B,
+    'Tesztnév',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>IsNot()</title>
+            <para>
+                Ez a függvény azt teszteli, hogy a megadott skalár változók nem egyenlők-e.
+            </para>
+            <para>
+                <programlisting><![CDATA[
+$Self->IsNot(
+    $A,
+    $B,
+    'Tesztnév',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>IsDeeply()</title>
+            <para>
+                Ez a függvény összetett adatszerkezeteket hasonlít össze az
+egyenlőséghez. <literal>$A</literal> és <literal>$B</literal> hivatkozás
+kell legyen.
+            </para>
+            <para>
+                <programlisting><![CDATA[
+$Self->IsDeeply(
+    $A,
+    $B,
+    'Tesztnév',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section>
+            <title>IsNotDeeply()</title>
+            <para>
+                Ez a függvény összetett adatszerkezeteket hasonlít össze a nem
+egyenlőséghez. <literal>$A</literal> és <literal>$B</literal> hivatkozás
+kell legyen.
+            </para>
+            <para>
+                <programlisting><![CDATA[
+$Self->IsNotDeeply(
+    $A,
+    $B,
+    'Tesztnév',
+);
+                ]]></programlisting>
+            </para>
+        </section>
+
+    </section>
+</section>

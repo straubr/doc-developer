@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section id="writing-new-otrs-frontend-module">
+    <title>Egy új OTRS előtétprogram modul írása</title>
+    <para>
+        Ebben a fejezetben egy új OTRS modul írása van szemléltetve egy egyszerű kis
+program alapján. A szükséges előkövetelmény egy olyan OTRS fejlesztői
+környezet, amely a hasonló nevű fejezetben van megadva.
+    </para>
+
+    <section id="what-we-want-to-write">
+        <title>Mit szeretnénk írni</title>
+        <para>
+            Szeretnénk írni egy olyan kis OTRS modult, amely a „Hello World” szöveget
+jeleníti meg, amikor előhívják. Mindenek előtt fel kell építenünk a
+<filename>/Hello World</filename> könyvtárat a modulhoz a fejlesztői
+könyvtárban. Ebben a könyvtárban létrehozható az OTRS-ben meglévő összes
+könyvtár. Minden modulnak legalább a következő könyvtárakat kell
+tartalmaznia:
+        </para>
+        <para>
+            <screen><![CDATA[
+Kernel
+Kernel/System
+Kernel/Modules
+Kernel/Output/HTML/Standard
+Kernel/Config
+Kernel/Config/Files
+Kernel/Language
+            ]]></screen>
+        </para>
+    </section>
+
+    <section id="default-config-file">
+        <title>Alapértelmezett beállítófájl</title>
+        <para>
+            Egy modulregisztráció létrehozása megkönnyíti az új modul megjelenítését az
+OTRS-ben. Ezért létrehozunk egy
+<filename>/Kernel/Config/Files/HelloWorld.xml</filename> fájlt. Ebben a
+fájlban létrehozunk egy új beállítási elemet. A különféle beállítások hatása
+a „Beállítási mechanizmus” fejezetben van leírva.
+        </para>
+        <para>
+            <programlisting><![CDATA[
+<?xml version="1.0" encoding="UTF-8" ?>
+<otrs_config version="1.0" init="Application">
+        <ConfigItem Name="Frontend::Module###AgentHelloWorld" Required="1" Valid="1">
+        <Description Translatable="1">FrontendModuleRegistration for HelloWorld module.</Description>
+        <Group>HelloWorld</Group>
+        <SubGroup>Frontend::Agent::ModuleRegistration</SubGroup>
+        <Setting>
+            <FrontendModuleReg>
+                <Title>HelloWorld</Title>
+                <Group>users</Group>
+                <Description>HelloWorld</Description>
+                <NavBarName>HelloWorld</NavBarName>
+                <NavBar>
+                    <Description>HelloWorld</Description>
+                    <Name>HelloWorld</Name>
+                    <Link>Action=AgentHelloWorld</Link>
+                    <NavBar>HelloWorld</NavBar>
+                    <Type>Menu</Type>
+                    <Prio>8400</Prio>
+                    <Block>ItemArea</Block>
+                </NavBar>
+            </FrontendModuleReg>
+        </Setting>
+    </ConfigItem>
+</otrs_config>
+            ]]></programlisting>
+        </para>
+    </section>
+
+    <section id="writing-frontend-module">
+        <title>Előtétprogram modul</title>
+        <para>
+            A hivatkozások létrehozása és a rendszerbeállítások végrehajtása után
+megjelenik egy új modul „HelloWorld” néven. Előhívásakor egy hibaüzenet
+jelenik meg, mivel az OTRS még nem találja a hozzá tartozó előtétprogram
+modult. Ez a következő dolog, amit létre kell hozni. Ehhez hozzuk létre az
+alábbi fájlt:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+# --
+# Kernel/Modules/AgentHelloWorld.pm - előtétprogram modul
+# Copyright (C) (év) (szerző neve) (szerző e-mail címe)
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+package Kernel::Modules::AgentHelloWorld;
+
+use strict;
+use warnings;
+
+# Az előtétprogram-modulokat nem kezeli az objektumkezelő.
+our $ObjectManagerDisabled = 1;
+
+sub new {
+    my ( $Type, %Param ) = @_;
+
+    # új kivonat lefoglalása az objektumhoz
+    my $Self = {%Param};
+    bless ($Self, $Type);
+
+    return $Self;
+}
+
+sub Run {
+    my ( $Self, %Param ) = @_;
+    my %Data = ();
+
+    my $HelloWorldObject = $Kernel::OM->Get('Kernel::System::HelloWorld');
+    my $LayoutObject     = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
+
+    $Data{HelloWorldText} = $HelloWorldObject->GetHelloWorldText();
+
+    # kimenet felépítése
+    my $Output = $LayoutObject->Header(Title => "HelloWorld");
+    $Output   .= $LayoutObject->NavigationBar();
+    $Output   .= $LayoutObject->Output(
+        Data         => \%Data,
+        TemplateFile => 'AgentHelloWorld',
+    );
+    $Output   .= $LayoutObject->Footer();
+
+    return $Output;
+}
+
+1;
+            ]]></programlisting>
+        </para>
+    </section>
+
+    <section id="writing-core-module">
+        <title>Alapmodul</title>
+        <para>
+            Ezután hozzunk létre egy fájlt a
+<filename>/HelloWorld/Kernel/System/HelloWorld.pm</filename> alapmodulhoz az
+alábbi tartalommal:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+# --
+# Kernel/System/HelloWorld.pm - alapmodul
+# Copyright (C) (év) (szerző neve) (szerző e-mail címe)
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+package Kernel::System::HelloWorld;
+
+use strict;
+use warnings;
+
+# itt sorolja fel az objektum függőségeit (például Kernel::System::DB)
+our @ObjectDependencies = (
+    # 'Kernel::System::DB',
+);
+
+sub new {
+    my ( $Type, %Param ) = @_;
+
+    # kivonat lefoglalása az új objektumhoz
+    my $Self = {};
+    bless ($Self, $Type);
+
+    return $Self;
+}
+
+sub GetHelloWorldText {
+    my ( $Self, %Param ) = @_;
+
+    # a DBObject lekérése a központi objektumkezelőtől
+    # my $DBObject = $Kernel::OM->Get('Kernel::System::DB');
+
+    return 'Hello World!';
+}
+
+1;
+            ]]></programlisting>
+        </para>
+    </section>
+
+    <section id="template-file">
+        <title>Sablonfájl</title>
+        <para>
+            Az utolsó hiányzó dolog, mielőtt az új modul futtatható lenne, a hozzá
+tartozó HTML sablon. Ezért hozzuk létre az alábbi fájlt:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+# --
+# Kernel/Output/HTML/Standard/AgentHelloWorld.tt - áttekintő
+# Copyright (C) (év) (szerző neve) (szerző e-mail címe)
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+<h1>[% Translate("Overview") | html %]: [% Translate("HelloWorld") %]</h1>
+<p>
+    [% Data.HelloWorldText | Translate() | html %]
+</p>
+            ]]></programlisting>
+        </para>
+        <para>
+A modul most már működik, és a meghívásakor megjeleníti a „Hello World”
+szöveget.
+        </para>
+    </section>
+
+    <section id="language-file">
+        <title>Nyelvi fájl</title>
+        <para>
+            Ha a „Hello World!” szöveget le kell fordítani például magyarra, akkor
+létrehozhat egy fordítási fájlt ehhez a nyelvhez a
+<filename>HelloWorld/Kernel/Language/hu_AgentHelloWorld.pm</filename>
+helyre. Példa:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+package Kernel::Language::hu_AgentHelloWorld;
+
+use strict;
+use warnings;
+
+sub Data {
+    my $Self = shift;
+
+    $Self->{Translation}->{'Hello World!'} = 'Helló, Világ!';
+
+    return 1;
+}
+1;
+            ]]></programlisting>
+        </para>
+    </section>
+
+    <section id="summary">
+        <title>Összefoglaló</title>
+        <para>
+            A fent megadott példa azt mutatja be, hogy nem túl bonyolult egy új modult
+írni az OTRS-hez. Fontos azonban meggyőződni arról, hogy a modul és a
+fájlnév egyedi legyen, és ennélfogva ne ütközzenek a keretrendszerrel vagy
+egyéb kiterjesztő modulokkal. Amikor egy modul elkészült, akkor egy OPM
+csomagot kell előállítani belőle (lásd a <link
+linkend="package-building">csomagkészítés</link> fejezetet).
+        </para>
+    </section>
+</section>

@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<section id="ticketevent">
+    <title>Jegyesemény modul</title>
+    <para>
+        A jegyesemény modulok közvetlenül azután futnak le, amikor egy jegyművelet
+megtörténik. Megegyezés szerint ezek a modulok a
+<filename>Kernel/System/Ticket/Event</filename> könyvtárban találhatók. Egy
+jegyesemény modulnak mindössze két függvényre van szüksége:
+<code>new()</code> és <code>Run()</code>. A <code>Run()</code> metódus
+legalább az <literal>Event</literal>, a <literal>UserID</literal> és a
+<literal>Data</literal> paramétereket fogadja. A <literal>Data</literal> a
+jegy adatait tartalmazó kivonathivatkozás, és a bejegyzésre vonatkozó
+események esetében a bejegyzés adatait is tartalmazza.
+    </para>
+    <section id="ticketevent-code">
+        <title>Kódpélda</title>
+        <para>
+            Nézze meg a
+<filename>Kernel/System/Ticket/Event/EventModulePostTemplate.pm</filename>
+fájlt a <literal>TemplateModule</literal> csomagban.
+        </para>
+    </section>
+    <section id="ticketevent-configuration">
+        <title>Beállítási példa</title>
+        <para>
+            Nézze meg a
+<filename>Kernel/Config/Files/EventModulePostTemplate.xml</filename> fájlt a
+<literal>TemplateModule</literal> csomagban.
+        </para>
+    </section>
+    <section id="ticketevent-usecases">
+        <title>Használati esetek</title>
+        <section id="ticketevent-usecase-10">
+            <title>Egy jegyet fel kell oldani egy áthelyezés művelet után.</title>
+            <para>
+                Ez a szabványos funkció a
+<literal>Kernel::System::Ticket::Event::ForceUnlock</literal> jegyesemény
+modullal lett megvalósítva. Amikor erre a funkcióra nincs szükség, akkor az
+kikapcsolható a
+<literal>Ticket::EventModulePost###910-ForceUnlockOnMove</literal>
+rendszerbeállítási bejegyzés beállításának törlésével.
+            </para>
+        </section>
+        <section id="ticketevent-usecase-20">
+            <title>További tisztítóművelet végrehajtása egy jegy törlésekor.</title>
+            <para>
+                Egy személyre szabott OTRS tarthat nem szabványos adatokat további
+adatbázistáblákban. Amikor egy jegyet törölnek, akkor ezeket a további
+adatokat is törölni kell. Ez a funkcionalitás elérhető egy olyan jegyesemény
+modullal, amely a <literal>TicketDelete</literal> eseményekre figyel.
+            </para>
+        </section>
+        <section id="ticketevent-usecase-30">
+            <title>Az új jegyeket közzé kell tenni a Twitteren.</title>
+            <para>
+                Egy <literal>TicketCreate</literal> eseményre figyelő jegyesemény modul
+képes üzeneteket kiküldeni a Twitterre.
+            </para>
+        </section>
+    </section>
+    <section id="ticketevent-caveats">
+        <title>Ellenjavaslatok és figyelmeztetések</title>
+        <para>
+            Nincsenek ismert ellenjavaslatok.
+        </para>
+    </section>
+    <section id="ticketevent-releases">
+        <title>Kiadási elérhetőség</title>
+        <para>
+            A jegyesemények az OTRS 2.0 óta lettek elérhetők az OTRS-ben.
+        </para>
+        <para>
+            Jegyesemények az OTRS 2.0-nál: TicketCreate, TicketDelete,
+TicketTitleUpdate, TicketUnlockTimeoutUpdate, TicketEscalationStartUpdate,
+MoveTicket, SetCustomerData, TicketFreeTextSet, TicketFreeTimeSet,
+TicketPendingTimeSet, LockSet, StateSet, OwnerSet, TicketResponsibleUpdate,
+PrioritySet, HistoryAdd, HistoryDelete, TicketAccountTime, TicketMerge,
+ArticleCreate, ArticleFreeTextSet, ArticleUpdate, ArticleSend,
+ArticleBounce, SendAgentNotification, SendCustomerNotification,
+SendAutoResponse, ArticleFlagSet.
+        </para>
+        <para>
+Jegyesemények az OTRS 2.1 és újabb verzióknál: TicketCreate, TicketDelete,
+TicketTitleUpdate, TicketUnlockTimeoutUpdate, TicketEscalationStartUpdate,
+TicketQueueUpdate (MoveTicket), TicketCustomerUpdate (SetCustomerData),
+TicketFreeTextUpdate (TicketFreeTextSet), TicketFreeTimeUpdate
+(TicketFreeTimeSet), TicketPendingTimeUpdate (TicketPendingTimeSet),
+TicketLockUpdate (LockSet), TicketStateUpdate (StateSet), TicketOwnerUpdate
+(OwnerSet), TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet),
+TicketSubscribe, TicketUnsubscribe, HistoryAdd, HistoryDelete,
+TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate
+(ArticleFreeTextSet), ArticleUpdate, ArticleSend, ArticleBounce,
+ArticleAgentNotification (SendAgentNotification),
+ArticleCustomerNotification (SendCustomerNotification), ArticleAutoResponse
+(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete.
+        </para>
+        <para>
+Jegyesemények az OTRS 2.4-nél: TicketCreate, TicketDelete,
+TicketTitleUpdate, TicketUnlockTimeoutUpdate, TicketQueueUpdate(MoveTicket),
+TicketTypeUpdate, TicketServiceUpdate, TicketSLAUpdate, TicketCustomerUpdate
+(SetCustomerData), TicketFreeTextUpdate, TicketFreeTimeUpdate,
+TicketPendingTimeUpdate (TicketPendingTimeSet), TicketLockUpdate (LockSet),
+TicketStateUpdate (StateSet), TicketOwnerUpdate (OwnerSet),
+TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet), HistoryAdd,
+HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate,
+ArticleFreeTextUpdate (ArticleFreeTextSet), ArticleUpdate, ArticleSend,
+ArticleBounce, ArticleAgentNotification (SendAgentNotification),
+ArticleCustomerNotification (SendCustomerNotification),
+ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete.
+        </para>
+    </section>
+</section>

@@ -1,0 +1,439 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section id="loader">
+    <title>A CSS és JavaScript „betöltő”</title>
+    <para>
+        Az OTRS 3.0-val kezdve az OTRS-ben lévő CSS és JavaScript kód hatalmas
+mennyiségre nőtt. Hogy képes legyen kielégíteni mind a fejlesztői
+szempontokat (jó karbantarthatóság különálló fájlok nagy mennyiségével),
+mind a teljesítmény problémákat (kevés HTTP-kérés megtétele és minimalizált
+tartalom kiszolgálása felesleges üres karakterek és dokumentáció nélkül),
+foglalkozni kellett ezzel. A célok eléréséhez kitalálták a betöltőt.
+    </para>
+
+    <section>
+        <title>Hogyan működik</title>
+        <para>
+            Leegyszerűsítve, a betöltő
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        minden egyes kérésnél pontosan meghatározza, hogy mely CSS és JavaScript
+fájlok szükségesek a kliens oldalhoz a jelenlegi alkalmazásmodulnál
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        összegyűjti az összes ide vonatkozó adatot
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        minimalizálja az adatokat a felesleges üres karakterek és dokumentáció
+eltávolításával
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        kiszolgálja a kliens oldalnak mindössze néhány HTTP-kérésben a sok egyedüli
+helyett, lehetővé téve a kliensnek, hogy a gyorstárazza ezeket a töredékeket
+a böngésző gyorsítótárába
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        végrehajtja ezeket a feladatokat egy jól teljesítő módon az OTRS
+gyorsítótárazó mechanizmusait használva.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para>
+            Természetesen van egy kicsivel részletesebb magyarázat is, de ennek
+elegendőnek kell lennie első áttekintésként.
+        </para>
+    </section>
+
+    <section>
+        <title>Alapvető működés</title>
+        <para>
+            A <literal>Loader::Enabled::CSS</literal> és a
+<literal>Loader::Enabled::JavaScript</literal> konfigurációs beállításokkal
+kapcsolható be és ki a betöltő a JavaScriptet és CSS-t illetőleg
+(alapértelmezetten be van kapcsolva).
+        </para>
+        <warning>
+            <para>
+                Az Internet Explorer böngészőben lévő megjelenítési problémák miatt a
+betöltőt nem lehet kikapcsolni a CSS-fájlokhoz ennél a kliens böngészőnél (a
+konfigurációs beállítás felül lesz bírálva). A 8-as verzióig az Internet
+Explorer nem tud 32 CSS-fájlnál többet kezelni egy oldalon.
+            </para>
+        </warning>
+        <para>
+            Ha többet szeretne megtudni arról, hogy a betöltő hogyan működik, akkor
+kapcsolja ki az OTRS telepítésében a fent említett konfigurációs
+beállításokkal. Most nézze meg annak az alkalmazásmodulnak a forráskódját,
+amelyet jelenleg használ ezen az OTRS rendszeren (természetesen egy
+újratöltés után). Látni fogja, hogy számos CSS-fájl töltődött be az oldal
+<literal>&lt;head&gt;</literal> szakaszában, és sok JavaScript fájl van az
+oldal alján közvetlenül a lezáró <literal>&lt;/body&gt;</literal> elem
+előtt.
+        </para>
+        <para>
+            Ehhez hasonlóan számos egyedülálló fájlban lévő olvashatóan formázott
+tartalom megléte sokkal egyszerűbbé teszi a fejlesztést, és akár egyáltalán
+lehetségessé téve azt. Azonban ennek megvan az a hátránya, hogy nagyszámú
+HTTP-kérést (a hálózati késleltetésnek nagy hatása van) és felesleges
+tartalmakat (üres karaktereket és dokumentációt) szükséges átvinni a
+kliensnek.
+        </para>
+        <para>
+            A betöltő megoldja ezt a problémát a fenti rövid leírásban felvázolt lépések
+végrehajtásával. Kapcsolja be ismét a betöltőt, és most töltse újra az
+oldalt. Most azt láthatja, hogy csak nagyon kevés CSS és JavaScript címke
+van a HTML kódban ehhez hasonlóan:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+<script type="text/javascript" src="/otrs30-dev-web/js/js-cache/CommonJS_d16010491cbd4faaaeb740136a8ecbfd.js"></script>
+
+<script type="text/javascript" src="/otrs30-dev-web/js/js-cache/ModuleJS_b54ba9c085577ac48745f6849978907c.js"></script>
+            ]]></programlisting>
+        </para>
+        <para>
+            Mi történt most? Ennél az oldalnál a HTML kódot előállító eredeti kérés
+közben a betöltő előállította ezt a két fájlt (vagy kivette azokat a
+gyorsítótárból), és betette a látható <literal>&lt;script&gt;</literal>
+címkébe azon az oldalon, amely ezekhez a fájlokhoz van kapcsolva, ahelyett,
+hogy az összes ide vonatkozó JavaScript fájlt különállóan kapcsolta volna
+hozzá (amint a bekapcsolt betöltő nélkül láthatta).
+        </para>
+        <para>
+            A CSS szakasz egy kicsivel bonyolultabbnak tűnik:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+    <link rel="stylesheet" type="text/css" href="/otrs30-dev-web/skins/Agent/default/css-cache/CommonCSS_00753c78c9be7a634c70e914486bfbad.css" />
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="/otrs30-dev-web/skins/Agent/default/css-cache/CommonCSS_IE7_59394a0516ce2e7359c255a06835d31f.css" />
+<![endif]-->
+
+<!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/otrs30-dev-web/skins/Agent/default/css-cache/CommonCSS_IE8_ff58bd010ef0169703062b6001b13ca9.css" />
+<![endif]-->
+            ]]></programlisting>
+        </para>
+        <para>
+            Ennek az az oka, hogy az Internet Explorer 7 és 8 esetén speciális bánásmód
+szükséges az alapértelmezett CSS mellett a webes szabványtechnológiák
+hiányos támogatásuk miatt. Ezért van néhány normál CSS-fájlunk, amelyek
+minden böngészőben betöltődnek, és néhány speciális CSS-fájl az úgynevezett
+„feltételes megjegyzéseken” belül, amely azt idézi elő, hogy
+<emphasis>csak</emphasis> az Internet Explorer 7/8 töltse be azokat. Az
+összes többi böngésző figyelmen kívül fogja hagyni.
+        </para>
+        <para>
+            Most felvázoltuk, hogy a betöltő hogyan működik. Nézzük meg, hogy hogyan
+hasznosíthatja azt a saját OTRS kiterjesztéseiben a betöltőhöz történő
+konfigurációs adatok hozzáadásával, azt mondva neki, hogy további vagy
+alternatív CSS vagy JavaScript tartalmat töltsön be.
+        </para>
+    </section>
+
+    <section id="loader-javascript">
+        <title>A betöltő beállítása: JavaScript</title>
+        <para>
+            Hogy képes legyen helyesen működni, a betöltőnek tudnia kell, hogy mely
+tartalmat kell betöltenie egy bizonyos OTRS alkalmazásmodulnál. Először
+olyan JavaScript fájlokat fog keresni, amelyeket <emphasis>mindig</emphasis>
+be kell tölteni, és ezután keres olyan speciális fájlokat, amelyek csak a
+jelenlegi alkalmazásmodulnál fontosak.
+        </para>
+        <section id="loader-common-javascript">
+            <title>Közös JavaScript</title>
+            <para>
+                A betöltendő JavaScript fájlok listája a
+<literal>Loader::Agent::CommonJS</literal> (az ügyintézői felülethez) és a
+<literal>Loader::Customer::CommonJS</literal> (az ügyfélfelülethez)
+konfigurációs beállításokban állítható be.
+            </para>
+            <para>
+                Ezek a beállítások kivonatokként vannak tervezve azért, hogy az OTRS
+kiterjesztések hozzáadhassák a saját kivonatkulcsaikat a további betöltendő
+tartalomhoz. Nézzünk egy példát:
+            </para>
+            <para>
+                <programlisting><![CDATA[
+<ConfigItem Name="Loader::Agent::CommonJS###000-Framework" Required="1" Valid="1">
+    <Description Translatable="1">JS fájlok listája, amelyek mindig betöltődnek az ügyintézői felületnél.</Description>
+    <Group>Framework</Group>
+    <SubGroup>Core::Web</SubGroup>
+    <Setting>
+        <Array>
+            <Item>thirdparty/json/json2.js</Item>
+            <Item>thirdparty/jquery-1.4.4/jquery.js</Item>
+
+            ...
+
+            <Item>Core.App.js</Item>
+            <Item>Core.Agent.js</Item>
+            <Item>Core.Agent.Search.js</Item>
+        </Array>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+            </para>
+            <para>
+                Ez azon JavaScript fájlok listája, amelyeket mindig be kell tölteni az OTRS
+ügyintézői felületénél.
+            </para>
+            <para>
+                Olyan új tartalom hozzáadásához, amelyet mindig be kellene tölteni az
+ügyintézői felületen, egyszerűen adjon hozzá egy XML beállítófájlt egy másik
+kivonatbejegyzéssel:
+            </para>
+            <para>
+                <programlisting><![CDATA[
+<ConfigItem Name="Loader::Agent::CommonJS###100-CustomPackage" Required="0" Valid="1">
+    <Description Translatable="1">JS fájlok listája, amelyek mindig betöltődnek az ügyintézői felületnél az „EgyeniCsomag” csomaghoz.</Description>
+    <Group>Framework</Group>
+    <SubGroup>Core::Web</SubGroup>
+    <Setting>
+        <Array>
+            <Item>EgyeniCsomag.App.js</Item>
+        </Array>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+            </para>
+            <para>
+                Egyszerű, nemde?
+            </para>
+        </section>
+
+        <section id="loader-module-javascript">
+            <title>Modulspecifikus JavaScript</title>
+            <para>
+                Nem minden JavaScript használható az OTRS összes alkalmazásmoduljánál. Ezért
+lehetséges modulspecifikus JavaScript fájlok megadása. Amikor egy bizonyos
+modult használnak (mint például <literal>AgentDashboard</literal>), akkor
+ennek a modulnak a modulspecifikus JavaScript fájlja is be lesz töltve. A
+beállítás az XML beállításokban lévő előtétprogram modul regisztrációban
+történik. Ismét egy példa:
+            </para>
+            <para>
+                <programlisting><![CDATA[
+<ConfigItem Name="Frontend::Module###AgentDashboard" Required="0" Valid="1">
+    <Description Translatable="1">Előtétprogram modul regisztráció az ügyintézői felülethez.</Description>
+    <Group>Framework</Group>
+    <SubGroup>Frontend::Agent::ModuleRegistration</SubGroup>
+    <Setting>
+        <FrontendModuleReg>
+            <Description>Ügyintéző vezérlőpult</Description>
+            <Title></Title>
+            <NavBarName>Dashboard</NavBarName>
+            <NavBar>
+                <Description Translatable="1"></Description>
+                <Name Translatable="1">Vezérlőpult</Name>
+                <Link>Action=AgentDashboard</Link>
+                <NavBar>Dashboard</NavBar>
+                <Type>Menu</Type>
+                <Description Translatable="1"></Description>
+                <Block>ItemArea</Block>
+                <AccessKey>d</AccessKey>
+                <Prio>50</Prio>
+            </NavBar>
+            <Loader>
+                <JavaScript>thirdparty/flot/excanvas.js</JavaScript>
+                <JavaScript>thirdparty/flot/jquery.flot.js</JavaScript>
+                <JavaScript>Core.UI.Chart.js</JavaScript>
+                <JavaScript>Core.UI.DnD.js</JavaScript>
+                <JavaScript>Core.Agent.Dashboard.js</JavaScript>
+            </Loader>
+        </FrontendModuleReg>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+            </para>
+            <para>
+                Lehetséges egy <literal>&lt;Loader&gt;</literal> címke elhelyezése az
+előtétprogram modul regisztrációkban, amely tartalmazhat
+<literal>&lt;JavaScript&gt;</literal> címkéket, minden fájlhoz egyet,
+amelyet be kellene tölteni ennél az alkalmazásmodulnál.
+            </para>
+            <para>
+                Most már rendelkezik az összes olyan információval, amely annak a módszernek
+a beállításhoz szükséges, hogy a betöltő kezelje a JavaScript kódot.
+            </para>
+            <para>
+                Van egy speciális eset: a <literal>ToolbarModule</literal> moduloknál is
+hozzáadhat egyéni JavaScript fájlokat. Egyszerűen adjon hozzá egy
+<literal>JavaScript</literal> attribútumot a beállításhoz ehhez hasonlóan:
+            </para>
+            <para>
+                <programlisting><![CDATA[
+<ConfigItem Name="Frontend::ToolBarModule###410-Ticket::AgentTicketEmail" Required="0" Valid="1">
+    <Description Translatable="1">Eszköztárelem egy gyorsbillentyűhöz.</Description>
+    <Group>Ticket</Group>
+    <SubGroup>Frontend::Agent::ToolBarModule</SubGroup>
+    <Setting>
+        <Hash>
+            <Item Key="Module">Kernel::Output::HTML::ToolBarLink</Item>
+            <Item Key="Name">Új e-mail jegy</Item>
+            <Item Key="Priority">1009999</Item>
+            <Item Key="Link">Action=AgentTicketEmail</Item>
+            <Item Key="Action">AgentTicketEmail</Item>
+            <Item Key="AccessKey">l</Item>
+            <Item Key="CssClass">EmailTicket</Item>
+            <Item Key="JavaScript">OTRS.Agent.CustomToolbarModule.js</Item>
+        </Hash>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+            </para>
+        </section>
+    </section>
+
+    <section>
+        <title>A betöltő beállítása: CSS</title>
+        <para>
+            A betöltő a CSS-fájlokat nagyon hasonlóan kezeli a JavaScript fájlokhoz,
+ahogy az előző <link linkend="loader-javascript">szakaszban</link> le van
+írva, és a beállítások kiterjesztése is ugyanolyan módon működik.
+        </para>
+
+        <section>
+            <title>Közös CSS</title>
+            <para>
+                Annak a módja, ahogy a közös CSS-t kezelik, nagyon hasonló a <link
+linkend="loader-common-javascript">közös JavaScript</link> betöltésének
+módjához. Itt az ide vonatkozó konfigurációs beállításokat
+<literal>Loader::Agent::CommonCSS</literal> és
+<literal>Loader::Customer::CommonCSS</literal> néven hívják.
+            </para>
+            <para>
+                Mindamellett ahogy már fent megjegyeztük, az Internet Explorer 7 és 8 (és az
+ügyfélfelületnél a 6 is) speciális bánásmódot igényel. Ezért speciális
+konfigurációs beállítások vannak számukra az olyan közös CSS-fájlok
+megadásához, amelyeket csak ezekben a böngészőkben kell betölteni. Az ide
+vonatkozó beállítások a következők:
+<literal>Loader::Agent::CommonCSS::IE7</literal>,
+<literal>Loader::Agent::CommonCSS::IE8</literal>,
+<literal>Loader::Customer::CommonCSS::IE6</literal>,
+<literal>Loader::Customer::CommonCSS::IE7</literal> és
+<literal>Loader::Customer::CommonCSS::IE8</literal>.
+            </para>
+            <para>
+                Egy példa:
+            </para>
+            <para>
+                <programlisting><![CDATA[
+<ConfigItem Name="Loader::Agent::CommonCSS::IE8###000-Framework" Required="1" Valid="1">
+    <Description Translatable="1">IE8-specifikus CSS fájlok listája, amelyek mindig betöltődnek az ügyintézői felületnél.</Description>
+    <Group>Framework</Group>
+    <SubGroup>Core::Web</SubGroup>
+    <Setting>
+        <Array>
+            <Item>Core.OverviewSmall.IE8.css</Item>
+        </Array>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+            </para>
+            <para>
+                Ez a közös CSS-fájlok listája az ügyintézői felületnél, amelyeket csak
+Internet Explorer 8 böngészőben kell betölteni.
+            </para>
+        </section>
+
+        <section>
+            <title>Modulspecifikus CSS</title>
+            <para>
+                A modulspecifikus CSS-fájlokat nagyon hasonlóan kezelik a <link
+linkend="loader-module-javascript">modulspecifikus JavaScript</link> fájlok
+kezelésének módjához. Ez is az előtétprogram modul regisztrációkban van
+beállítva. Példa:
+            </para>
+            <para>
+                <programlisting><![CDATA[
+<ConfigItem Name="Frontend::Module###Admin" Required="0" Valid="1">
+    <Description Translatable="1">Előtétprogram modul regisztráció az ügyintézői felületnél.</Description>
+    <Group>Framework</Group>
+    <SubGroup>Frontend::Admin::ModuleRegistration</SubGroup>
+    <Setting>
+        <FrontendModuleReg>
+            <Group>admin</Group>
+            <Description>Adminisztrációs terület</Description>
+            <Title></Title>
+            <NavBarName>Admin</NavBarName>
+            <NavBar>
+                <Type>Menu</Type>
+                <Description Translatable="1"></Description>
+                <Block>ItemArea</Block>
+                <Name Translatable="1">Admin</Name>
+                <Link>Action=Admin</Link>
+                <NavBar>Admin</NavBar>
+                <AccessKey>a</AccessKey>
+                <Prio>10000</Prio>
+            </NavBar>
+            <NavBarModule>
+                <Module>Kernel::Output::HTML::NavBarModuleAdmin</Module>
+            </NavBarModule>
+            <Loader>
+                <CSS>Core.Agent.Admin.css</CSS>
+                <CSS_IE7>Core.Agent.AdminIE7.css</CSS_IE7>
+                <JavaScript>Core.Agent.Admin.SysConfig.js</JavaScript>
+            </Loader>
+        </FrontendModuleReg>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+            </para>
+            <para>
+                Itt egy olyan modulunk van (az ügyintézői felület adminisztrátori áttekintő
+oldala), amelynek speciális JavaScript, normál CSS
+(<literal>&lt;CSS&gt;</literal> címkenév) és az Internet Explorer 7
+böngészőhöz speciális CSS (<literal>&lt;CSS_IE7&gt;</literal> címkenév)
+címkéi vannak. Ezek mindegyikét be kell tölteni az ügyintézői felülethez
+meghatározott közös JavaScript és CSS-fájlok mellett.
+            </para>
+            <para>
+                Lehetséges modulspecifikus CSS-fájlok megadása is az Internet Explorer 8
+(<literal>&lt;CSS_IE8&gt;</literal> címkenév), és az ügyfélfelület esetén az
+Internet Explorer 6 (<literal>&lt;CSS_IE6&gt;</literal> címkenév)
+böngészőkhöz.
+            </para>
+            <para>
+                Van egy speciális eset: a <literal>ToolbarModule</literal> moduloknál is
+hozzáadhat egyéni CSS-fájlokat. Egyszerűen adjon hozzá egy
+<literal>CSS</literal>, <literal>CSS_IE7</literal> vagy
+<literal>CSS_IE8</literal> attribútumot a beállításhoz ehhez hasonlóan:
+            </para>
+            <para>
+                <programlisting><![CDATA[
+<ConfigItem Name="Frontend::ToolBarModule###410-Ticket::AgentTicketEmail" Required="0" Valid="1">
+    <Description Translatable="1">Eszköztárelem egy gyorsbillentyűhöz.</Description>
+    <Group>Ticket</Group>
+    <SubGroup>Frontend::Agent::ToolBarModule</SubGroup>
+    <Setting>
+        <Hash>
+            <Item Key="Module">Kernel::Output::HTML::ToolBarLink</Item>
+            <Item Key="Name">Új e-mail jegy</Item>
+            <Item Key="Priority">1009999</Item>
+            <Item Key="Link">Action=AgentTicketEmail</Item>
+            <Item Key="Action">AgentTicketEmail</Item>
+            <Item Key="AccessKey">l</Item>
+            <Item Key="CssClass">EmailTicket</Item>
+            <Item Key="CSS">OTRS.Agent.CustomToolbarModule.css</Item>
+            <Item Key="CSS_IE7">OTRS.Agent.CustomToolbarModule.IE7.css</Item>
+        </Hash>
+    </Setting>
+</ConfigItem>
+                ]]></programlisting>
+            </para>
+        </section>
+    </section>
+</section>

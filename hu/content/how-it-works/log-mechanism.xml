@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section>
+    <title>Naplózó mechanizmus</title>
+    <para>
+        Az OTRS egy olyan naplózó háttérprogrammal érkezik, amely használható az
+alkalmazás naplózásánál és a hibakeresésnél.
+    </para>
+    <para>
+        A <literal>Log</literal> objektum az <literal>ObjectManager</literal>
+modulon keresztül érhető el és használható ehhez hasonlóan:
+    </para>
+    <para>
+        <programlisting><![CDATA[
+$Kernel::OM->Get('Kernel::System::Log')->Log(
+    Priority => 'error',
+    Message => 'Valamire szükség van!',
+);
+        ]]></programlisting>
+    </para>
+</section>

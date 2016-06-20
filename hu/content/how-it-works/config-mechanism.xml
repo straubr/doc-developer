@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section>
+    <title>Beállítási mechanizmus</title>
+    <para>
+        Az OTRS dedikált mechanizmussal érkezik a konfigurációs beállítások
+kezeléséhez egy grafikus felületen (rendszerbeállításokon) keresztül. Ez a
+szakasz azt írja le, hogy hogyan működik belsőleg, és hogyan adhat meg új
+konfigurációs beállításokat, vagy hogyan változtathatja meg a meglévő
+alapértelmezett értékeket.
+    </para>
+
+    <section id="default-config">
+        <title><filename>Defaults.pm</filename>: az OTRS alapértelmezett beállításai</title>
+        <para>
+            Az OTRS alapértelmezett beállítófájlja a
+<filename>Kernel/Config/Defaults.pm</filename>. Ezt a fájlt érintetlenül
+kell hagyni, mivel automatikusan frissítésre kerül a keretrendszer
+frissítéseikor.
+        </para>
+    </section>
+
+    <section id="auto-generated-config-files">
+        <title>Automatikusan előállított beállítófájlok</title>
+        <para>
+            A <filename>Kernel/Config/Files</filename> mappában néhány automatikusan
+előállított beállítófájl található:
+        </para>
+        <para>
+<screen><![CDATA[
+ZZZAAuto.pm              # Az XML beállítások alapértelmezett értékeinek Perl gyorsítótára
+ZZZACL.pm                # Az ACL beállítások Perl gyorsítótára az adatbázisból
+ZZZAuto.pm               # A felhasználó által a rendszerbeállításokban megváltoztatott
+                         #   összes beállítást tartalmazza
+ZZZProcessManagement.pm  # A ProcessManagement beállítások Perl gyorsítótára az adatbázisból
+]]></screen>
+        </para>
+        <para>
+            Ezeket a fájlokat sosem szabad kézzel megváltoztatni, mivel az OTRS
+felülírja azokat.
+        </para>
+    </section>
+
+    <section id="xml-config">
+        <title>XML beállítási lehetőségek</title>
+        <para>
+            Az OTRS-ben azok a beállítási lehetőségek, amelyeket az adminisztrátor a
+rendszerbeállításokon keresztül tud beállítani, XML-fájlokban vannak megadva
+egy speciális formátumban. Az XML beállítófájlok az
+<filename>$OTRS_HOME/Kernel/Config/Files/*.xml</filename> fájlokban
+találhatók. A <filename>Kernel/Config/Files/ZZZAAuto.pm</filename> fájl
+annak az XML-nek a gyorsítótárazott Perl-verziója, amely az összes
+beállítást tartalmazza az alapértelmezett értékükkel. Ez (újra) előállítható
+a <filename>bin/otrs.Console.pl Maint::Config::Rebuild</filename>
+parancsfájllal. Az adminisztrátor által elvégzett összes változtatás a
+<filename>Kernel/Config/Files/ZZZAuto.pm</filename> fájlban van eltárolva.
+        </para>
+        <para>
+            Az egyes XML beállítófájloknak a következő elrendezésük van:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+<?xml version="1.0" encoding="utf-8" ?>
+<otrs_config version="1.0" init="Changes">
+
+    <!-- itt lesznek a beállítási elemek -->
+
+</otrs_config>
+            ]]></programlisting>
+        </para>
+        <para>
+            Az <literal>init</literal> attribútum azt írja le, hogy honnan kell a
+beállítási lehetőségeket betölteni. Különböző szintek érhetők el, és a
+következő sorrendben lesznek betöltve/felülírva:
+<literal>Framework</literal> (a keretrendszer beállításaihoz, például
+munkamenet beállítás), <literal>Application</literal> (az alkalmazás
+beállításaihoz, például jegybeállítások), <literal>Config</literal>
+(kiterjesztésekhez a meglévő alkalmazásoknál, például ITSM beállítások) és
+<literal>Changes</literal> (egyéni fejlesztésekhez, például keretrendszer
+vagy jegybeállítások felülírásához).
+        </para>
+        <para>
+            Ha beállítási lehetőségeket szeretne hozzáadni, akkor itt egy példa:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+<ConfigItem Name="Ticket::Hook" Required="1" Valid="1" ConfigLevel="300">
+    <Description Lang="en">The identifier for a ticket. The default is Ticket#.</Description>
+    <Description Lang="de">Ticket-Identifikator. Als Standard wird Ticket# verwendet.</Description>
+    <Group>Ticket</Group>
+    <SubGroup>Core::Ticket</SubGroup>
+    <Setting>
+        <String Regex="">Ticket#</String>
+    </Setting>
+</ConfigItem>
+            ]]></programlisting>
+        </para>
+        <para>
+            Ha a <literal>required</literal> jellemző <literal>1</literal> értékre van
+állítva, akkor a beállítási változót tartalmazza, és nem lehet letiltani.
+        </para>
+        <para>
+            Ha a <literal>valid</literal> jellemző <literal>1</literal> értékre van
+állítva, akkor a beállítási változó aktív. Ha <literal>0</literal> értékre
+van állítva, akkor a beállítási változó inaktív.
+        </para>
+        <para>
+            Ha az opcionális <literal>ConfigLevel</literal> attribútum be van állítva,
+akkor a beállítási változót esetleg nem szerkesztheti az adminisztrátor a
+saját beállítási szintjétől függően. A <literal>ConfigLevel</literal>
+beállítási változó állítja be az adminisztrátor szakmai tapasztalatának
+szintjét. Lehet 100 (Szakértő), 200 (Speciális) vagy 300
+(Kezdő). Iránymutatásként, hogy mely beállítási szintet kell egy
+lehetőséghez megadni, az az ajánlott, hogy az összes olyan lehetőségnek,
+amelyet külső interakció beállításával kell megtenni (mint például Sendmail,
+LDAP, SOAP és egyebek), legalább 200 (Speciális) beállítási szintet kell
+kapnia.
+        </para>
+        <para>
+            A beállítási változó a <literal>Setting</literal> elemben van meghatározva.
+        </para>
+
+        <section id="xml-config-variable">
+            <title>Az XML beállítási változók típusai</title>
+            <para>
+                Az XML konfigurációs beállítások különféle típusú változókat támogatnak.
+            </para>
+            <section id="xml-config-string">
+                <title>Szöveg</title>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <String Regex="" Check="File"></String>
+</Setting>
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Egy beállítási elem számokhoz és egysoros szövegekhez. Az érvényesség
+ellenőrzése egy reguláris kifejezéssel lehetséges (opcionális). Az
+opcionális <literal>Check</literal> attribútum ellenőrzi az elemeket a
+fájlrendszeren.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <String Translatable="1">Saját beállítás</String>
+</Setting>
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Az opcionális <literal>Translatable</literal> attribútum jelöli meg ezt a
+beállítást fordíthatóként, amely azt fogja eredményezni, hogy fel lesz véve
+az OTRS fordítási fájljaiba. Ezt az attribútumot bármely címkére el lehet
+helyezni (lásd lent is).
+                </para>
+            </section>
+            <section id="xml-config-textarea">
+                <title>Szövegdoboz</title>
+                <para>
+                    Egy beállítási elem többsoros szöveghez.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <TextArea></TextArea>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-option">
+                <title>Lehetőségek</title>
+                <para>
+                    Ez a beállítási elem előre beállított értékeket nyújt egy legördülő
+menüként.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <Option SelectedID="0">
+        <Item Key="0" Translatable="1">Nem</Item>
+        <Item Key="1" Translatable="1">Igen</Item>
+    </Option>
+</Setting>
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Kiválaszthatja az alapértelmezett értéket is az „érték” szerint:
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <Option SelectedValue="Nem">
+        <Item Key="0" Translatable="1">Nem</Item>
+        <Item Key="1" Translatable="1">Igen</Item>
+    </Option>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-array">
+                <title>Tömb</title>
+                <para>
+                    Ezzel a beállítási elemmel tömbök jeleníthetők meg.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <Array>
+        <Item>Első elem</Item>
+        <Item>Második elem</Item>
+    </Array>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-hash">
+                <title>Kivonat</title>
+                <para>
+                    Ezzel a beállítási elemmel kivonatok jeleníthetők meg.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <Hash>
+        <Item Key="1" Translatable="1">1. érték</Item>
+        <Item Key="2" Translatable="1">2. érték</Item>
+    </Hash>
+</Setting>
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Egy kivonat tartalmazhat beágyazott tömböket vagy kivonatokat is.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <Hash>
+        <Item Key=""></Item>
+        <Item Key="">
+            <Hash>
+                <Item Key=""></Item>
+                <Item Key=""></Item>
+            </Hash>
+        </Item>
+        <Item Key="">
+            <Array>
+                <Item></Item>
+                <Item></Item>
+            </Array>
+        </Item>
+        <Item Key=""></Item>
+    </Hash>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-navbar">
+                <title>FrontendModuleReg (NavBar)</title>
+                <para>
+                    Modul regisztráció az ügyintézői felülethez:
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <FrontendModuleReg>
+        <Description>Ügyintéző vezérlőpult</Description>
+        <Title></Title>
+        <NavBarName>Vezérlőpult</NavBarName>
+        <NavBar>
+            <Description Translatable="1"></Description>
+            <Name Translatable="1">Vezérlőpult</Name>
+            <Link>Action=AgentDashboard</Link>
+            <LinkOption></LinkOption>
+            <NavBar>Dashboard</NavBar>
+            <Type>Menu</Type>
+            <Block>ItemArea</Block>
+            <AccessKey>d</AccessKey>
+            <Prio>50</Prio>
+        </NavBar>
+        <Loader>
+            <CSS>Core.Agent.Dashboard.css</CSS>
+            <CSS>Core.AllocationList.css</CSS>
+            <CSS>thirdparty/fullcalendar-1.6.1/fullcalendar.css</CSS>
+            <CSS>thirdparty/d3js/nv.d3.css</CSS>
+            <JavaScript>thirdparty/flot-0.8.3/excanvas.js</JavaScript>
+            <JavaScript>thirdparty/flot-0.8.3/jquery.flot.js</JavaScript>
+            <JavaScript>thirdparty/fullcalendar-1.6.1/fullcalendar.min.js</JavaScript>
+            <JavaScript>thirdparty/d3js/d3.v3.min.js</JavaScript>
+            <JavaScript>thirdparty/d3js/nv.d3.min.js</JavaScript>
+            <JavaScript>thirdparty/d3js/models/OTRSmultiBarChart.js</JavaScript>
+            <JavaScript>thirdparty/d3js/models/OTRSstackedAreaChart.js</JavaScript>
+            <JavaScript>Core.UI.Chart.js</JavaScript>
+            <JavaScript>Core.UI.AdvancedChart.js</JavaScript>
+            <JavaScript>Core.UI.AllocationList.js</JavaScript>
+            <JavaScript>Core.Agent.TableFilters.js</JavaScript>
+            <JavaScript>Core.Agent.Dashboard.js</JavaScript>
+        </Loader>
+    </FrontendModuleReg>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-navbarmodule">
+                <title>FrontendModuleReg (NavBarModule)</title>
+                <para>
+                    Modul regisztráció az adminisztrátori felülethez:
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting>
+    <FrontendModuleReg>
+        <Group>admin</Group>
+        <Description>Admin</Description>
+        <Title Translatable="1">Ügyfelek &lt;-&gt; Csoportok</Title>
+        <NavBarName>Admin</NavBarName>
+        <NavBarModule>
+            <Module>Kernel::Output::HTML::NavBarModuleAdmin</Module>
+            <Name Translatable="1">Ügyfél-felhasználó &lt;-&gt; Csoportok</Name>
+            <Description Translatable="1">Ügyfél-felhasználó hozzákapcsolása csoportokhoz.</Description>
+            <Block>Customer</Block>
+            <Prio>400</Prio>
+        </NavBarModule>
+    </FrontendModuleReg>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+        </section>
+    </section>
+
+    <section id="accessing-config-options">
+        <title>Hozzáférés a beállítási lehetőségekhez futási időben</title>
+        <para>
+            Olvashatja és írhatja (egy kérésnél) a beállítási lehetőségeket a
+<literal>Kernel::Config</literal> alapmodulon keresztül.
+        </para>
+        <para>
+            Ha egy beállítási lehetőséget szeretne olvasni:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+my $ConfigOption = $Kernel::OM->Get('Kernel::Config')->Get('Prefix::Option');
+            ]]></programlisting>
+        </para>
+        <para>
+            Ha meg szeretne változtatni egy beállítási lehetőséget futási időben, és
+csak ennél az egy kérésnél/folyamatnál:
+        </para>
+        <para>
+            <programlisting><![CDATA[
+$Kernel::OM->Get('Kernel::Config')->Set(
+    Key => 'Prefix::Option'
+    Value => 'Valami új érték',
+);
+            ]]></programlisting>
+        </para>
+    </section>
+</section>
