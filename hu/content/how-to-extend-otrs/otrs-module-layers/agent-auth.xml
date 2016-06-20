@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+
+<section id="agent-auth-module">
+    <title>Ügyintézői hitelesítő modul</title>
+    <para>
+        Számos ügyintézői hitelesítő modul létezik (DB, LDAP és HTTPBasicAuth),
+amelyek az OTRS keretrendszerrel érkeznek. Lehetőség van saját hitelesítő
+modulok fejlesztésére is. Az ügyintézői hitelesítő modulok a
+<filename>Kernel/System/Auth/*.pm</filename> alatt találhatók. Ezek
+beállításáról további információkért nézze meg az adminisztrátori
+kézikönyvet. Ezt követően egy egyszerű ügyintézői hitelesítő modul példája
+található. Mentse el a <filename>Kernel/System/Auth/Simple.pm</filename>
+helyre. Mindössze három függvényre van szüksége: <code>new()</code>,
+<code>GetOption()</code> és <code>Auth()</code>. Adja vissza az uid-t, és
+ezután a hitelesítés rendben van.
+    </para>
+    <section id="agent-auth-module-code">
+        <title>Kódpélda</title>
+        <para>
+            A felületosztály neve <literal>Kernel::System::Auth</literal>. A példa
+ügyintézői hitelesítés hívható
+<literal>Kernel::System::Auth::CustomAuth</literal> néven. Lent találhat egy
+példát.
+        </para>
+        <para>
+        <programlisting linenumbering="numbered"><![CDATA[
+# --
+# Kernel/System/Auth/CustomAuth.pm - a CustomAuth hitelesítést biztosítja
+# Martin Edenhofer Kernel::System::Auth::DB osztálya alapján
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# --
+# ID: CustomAuth.pm,v 1.1 2010/05/10 15:30:34 fk Exp $
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+package Kernel::System::Auth::CustomAuth;
+
+use strict;
+use warnings;
+
+use Authen::CustomAuth;
+
+sub new {
+    my ( $Type, %Param ) = @_;
+
+    # új kivonat lefoglalása az objektumhoz
+    my $Self = {};
+    bless( $Self, $Type );
+
+    # a szükséges objektumok ellenőrzése
+    for (qw(LogObject ConfigObject DBObject)) {
+        $Self->{$_} = $Param{$_} || die "Nincs $_!";
+    }
+
+    # Hibakeresés: 0=ki 1=be
+    $Self->{Debug} = 0;
+
+    # beállítás lekérése
+    $Self->{Die} = $Self->{ConfigObject}->Get( 'AuthModule::CustomAuth::Die' . $Param{Count} );
+
+    # felhasználótábla lekérése
+    $Self->{CustomAuthHost} = $Self->{ConfigObject}->Get( 'AuthModule::CustomAuth::Host' . $Param{Count} )
+        || die "Szükséges: AuthModule::CustomAuth::Host$Param{Count}.";
+    $Self->{CustomAuthSecret}
+        = $Self->{ConfigObject}->Get( 'AuthModule::CustomAuth::Password' . $Param{Count} )
+        || die "Szükséges: AuthModule::CustomAuth::Password$Param{Count}.";
+
+    return $Self;
+}
+
+sub GetOption {
+    my ( $Self, %Param ) = @_;
+
+    # a szükséges dolgok ellenőrzése
+    if ( !$Param{What} ) {
+        $Self->{LogObject}->Log( Priority => 'error', Message => "Mi szükséges!" );
+        return;
+    }
+
+    # modulbeállítások
+    my %Option = ( PreAuth => 0, );
+
+    # beállítás visszaadása
+    return $Option{ $Param{What} };
+}
+
+sub Auth {
+    my ( $Self, %Param ) = @_;
+
+    # a szükséges dolgok ellenőrzése
+    if ( !$Param{User} ) {
+        $Self->{LogObject}->Log( Priority => 'error', Message => "Felhasználó szükséges!" );
+        return;
+    }
+
+    # paraméterek lekérése
+    my $User       = $Param{User}      || '';
+    my $Pw         = $Param{Pw}        || '';
+    my $RemoteAddr = $ENV{REMOTE_ADDR} || 'Nincs REMOTE_ADDR környezet!';
+    my $UserID     = '';
+    my $GetPw      = '';
+
+    # csak hibakeresés esetén!
+    if ( $Self->{Debug} > 0 ) {
+        $Self->{LogObject}->Log(
+            Priority => 'notice',
+            Message  => "Felhasználó: „$User” megpróbált hitelesíteni ezzel a jelszóval: „$Pw” ($RemoteAddr)",
+        );
+    }
+
+    # csak egy jegyzet
+    if ( !$User ) {
+        $Self->{LogObject}->Log(
+            Priority => 'notice',
+            Message  => "Nincs felhasználó megadva!!! (REMOTE_ADDR: $RemoteAddr)",
+        );
+        return;
+    }
+
+    # csak egy jegyzet
+    if ( !$Pw ) {
+        $Self->{LogObject}->Log(
+            Priority => 'notice',
+            Message  => "Felhasználó: $User hitelesítés jelszó nélkül!!! (REMOTE_ADDR: $RemoteAddr)",
+        );
+        return;
+    }
+
+    # Egy RADIUS objektum létrehozása
+    my $CustomAuth = Authen::CustomAuth->new(
+        Host   => $Self->{CustomAuthHost},
+        Secret => $Self->{CustomAuthecret},
+    );
+    if ( !$CustomAuth ) {
+        if ( $Self->{Die} ) {
+            die "Nem lehet kapcsolódni ehhez: $Self->{CustomAuthHost}: $@";
+        }
+        else {
+            $Self->{LogObject}->Log(
+                Priority => 'error',
+                Message  => "Nem lehet kapcsolódni ehhez: $Self->{CustomAuthHost}: $@",
+            );
+            return;
+        }
+    }
+    my $AuthResult = $CustomAuth->check_pwd( $User, $Pw );
+
+    # bejelentkezési jegyzet
+    if ( defined($AuthResult) && $AuthResult == 1 ) {
+        $Self->{LogObject}->Log(
+            Priority => 'notice',
+            Message  => "Felhasználó: $User hitelesítése rendben (REMOTE_ADDR: $RemoteAddr).",
+        );
+        return $User;
+    }
+
+    # csak egy jegyzet
+    else {
+        $Self->{LogObject}->Log(
+            Priority => 'notice',
+            Message  => "Felhasználó: $User hitelesítése rossz jelszóval!!! (REMOTE_ADDR: $RemoteAddr)"
+        );
+        return;
+    }
+}
+
+1;
+
+        ]]></programlisting>
+        </para>
+    </section>
+    <section id="agent-auth-module-configuration">
+        <title>Beállítási példa</title>
+        <para>
+            Szükség van az egyéni ügyintézői hitelesítés modul bekapcsolására. Ezt a
+lenti Perl beállítás használatával lehet megtenni. Nem ajánlott az XML
+beállítás használata, mert kizárhatja magát a rendszerbeállításokon
+keresztül.
+        </para>
+        <para>
+        <programlisting linenumbering="numbered"><![CDATA[
+            $Self->{'AuthModule'} = 'Kernel::System::Auth::CustomAuth';
+        ]]></programlisting>
+        </para>
+    </section>
+    <section id="agent-auth-module-use_cases">
+        <title>Használati eset példa</title>
+        <para>
+            Egy hitelesítési megvalósítás hasznos példája lehet egy SOAP háttérprogram.
+        </para>
+    </section>
+    <section id="agent-auth-module-releases">
+        <title>Kiadási elérhetőség</title>
+        <para>
+        <informaltable>
+            <tgroup cols="2">
+                <thead>
+                    <row>
+                        <entry>Név</entry>
+                        <entry>Kiadás</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>DB</entry>
+                        <entry>1.0</entry>
+                    </row>
+                    <row>
+                        <entry>HTTPBasicAuth</entry>
+                        <entry>1.2</entry>
+                    </row>
+                    <row>
+                        <entry>LDAP</entry>
+                        <entry>1.0</entry>
+                    </row>
+                    <row>
+                        <entry>RADIUS</entry>
+                        <entry>1.3</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </informaltable>
+        </para>
+    </section>
+</section>

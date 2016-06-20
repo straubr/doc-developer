@@ -1,0 +1,811 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section id="code-style-guide-perl">
+    <title>Perl</title>
+
+    <section id="formatting">
+        <title>Formázás</title>
+
+
+        <section id="whitespace">
+            <title>Üres karakterek</title>
+            <para>
+                TABULÁTOR: 4 szóközt használunk. Példa a zárójelekre:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+if ($Feltétel) {
+    Izé();
+}
+else {
+    Bigyó();
+}
+
+while ($Feltétel == 1) {
+    Izé();
+}
+                ]]>
+                </programlisting>
+            </para>
+        </section>
+
+        <section id="line-length">
+            <title>A sorok hossza</title>
+            <para>
+                A sorok általában nem lehetnek hosszabbak 120 karakternél, hacsak ez
+különleges okok miatt nem szükséges.
+            </para>
+        </section>
+
+        <section id="parentheses">
+            <title>Szóközök és zárójelek</title>
+            <para>
+                A jobb olvashatóság érdekében szóközöket használunk a kulcsszavak és a nyitó
+zárójelek között.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+if ()...
+for ()...
+                ]]>
+                </programlisting>
+            </para>
+            <para>
+                Ha csak egy egyedülálló változó van, akkor a zárójelek belül szóközök nélkül
+veszik körbe a változót.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+if ($Feltétel) { ... }
+
+# e helyett
+
+if ( $Feltétel ) { ... }
+                ]]>
+                </programlisting>
+            </para>
+            <para>
+                Ha a feltétel nem csak egy egyedülálló változó, akkor szóközöket használunk
+a zárójelek és a feltétel között. És továbbra is szóköz van a kulcsszó
+(például <literal>if</literal>) és a nyitó zárójel között.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+if ( $Feltétel && $ABC ) { ... }
+                ]]>
+                </programlisting>
+            </para>
+            <para>
+                Ne feledje, hogy a Perl beépített függvényeinél nem használunk zárójeleket:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+chomp $Variable;
+                ]]>
+                </programlisting>
+            </para>
+        </section>
+
+
+        <section id="source-code-header">
+            <title>Forráskód fejléc és karakterkódolás</title>
+            <para>
+                Csatolja hozzá a következő fejlécet minden egyes forrásfájlhoz. A
+forrásfájlok UTF-8 karakterkódolással vannak elmentve.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+# --
+# (fájlnév) - egy rövid leírás, hogy mi ez
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+                ]]>
+                </programlisting>
+            </para>
+            <para>
+                A végrehajtható fájloknak (<filename>*.pl</filename>) különleges fejlécük
+van.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+#!/usr/bin/perl
+# --
+# (fájlnév) - egy rövid leírás, hogy mi ez
+# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# --
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU AFFERO General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# or see http://www.gnu.org/licenses/agpl.txt.
+# --
+                ]]>
+                </programlisting>
+            </para>
+        </section>
+    </section>
+
+    <!-- formatting -->
+<section id="using-perl-language">
+        <title>A Perl nyelv használata</title>
+
+        <section id="control-flow">
+            <title>Vezérlési folyamat</title>
+
+            <section id="conditions">
+                <title>Feltételek</title>
+                <para>
+                    A feltételek meglehetősen összetettek lehetnek, és lehetnek „láncolt”
+feltételek is (logikai „és” vagy „vagy” operátorral összekapcsolva). Az OTRS
+kódolásakor tisztában kell lennie számos helyzettel.
+                </para>
+                <para>
+                    A bevált Perl gyakorlatok azt mondják, hogy a magas precedenciájú
+operátorokat (<literal>&amp;&amp;</literal> és <literal>||</literal>) nem
+kellene keverni az alacsony precedenciájú operátorokkal
+(<literal>and</literal> és <literal>or</literal>). A zűrzavar elkerülése
+érdekében mindig a magas precedenciájú operátorokat használjuk.
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+if ( $Condition1 && $Condition2 ) { ... }
+
+# e helyett
+
+if ( $Condition and $Condition2 ) { ... }
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ez azt jelenti, hogy tisztában kell lennie a buktatókkal. Néha zárójeleket
+kell használnia, hogy világossá tegye, mit szeretne.
+                </para>
+                <para>
+                    Ha hosszú feltételei vannak (a sor 120 karakternél hosszabb), akkor több
+sorra kell tördelnie azt. Továbbá a feltételek kezdete egy új sorban van
+(nem az <literal>if</literal> sorában).
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+if (
+    $Feltétel1
+    && $Feltétel2
+    )
+{ ... }
+
+# e helyett:
+
+if ( $Feltétel1
+    && $Feltétel2
+    )
+{ ... }
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Jegyezze meg azt is, hogy a jobboldali zárójel egyedül áll a sorban,
+valamint a baloldali kapcsos zárójel szintén új sorban van, és ugyanolyan
+behúzással rendelkezik mint az <literal>if</literal>. Az operátorok egy új
+sor elején vannak! A következő példák bemutatják, hogyan kell ezt csinálni…
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+if (
+    $XMLHash[0]->{otrs_stats}[1]{StatType}[1]{Content}
+    && $XMLHash[0]->{otrs_stats}[1]{StatType}[1]{Content} eq 'static'
+    )
+{ ... }
+
+if ( $TemplateName eq 'AgentTicketCustomer' ) {
+    ...
+}
+
+if (
+    ( $Param{Section} eq 'Xaxis' || $Param{Section} eq 'All' )
+    && $StatData{StatType} eq 'dynamic'
+    )
+{ ... }
+
+if (
+    $Self->{TimeObject}->TimeStamp2SystemTime( String => $Cell->{TimeStop} )
+    > $Self->{TimeObject}->TimeStamp2SystemTime(
+        String => $ValueSeries{$Row}{$TimeStop}
+    )
+    || $Self->{TimeObject}->TimeStamp2SystemTime( String => $Cell->{TimeStart} )
+    < $Self->{TimeObject}->TimeStamp2SystemTime(
+        String => $ValueSeries{$Row}{$TimeStart}
+    )
+    )
+{ ... }
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+
+            <section id="postfix-if">
+                <title>Hátul álló <literal>if</literal></title>
+                <para>
+                    Általánosan azért használunk „hátul álló <literal>if</literal>”
+utasításokat, hogy csökkentsük a szintek számát. De ne használjuk többsoros
+utasításoknál, és csak akkor megengedett, amikor visszatérési utasításokat
+hoz magával a függvény, vagy egy ciklus befejezéséhez, illetve a következő
+iterációra való ugráshoz.
+                </para>
+                <para>
+                    Ez helyes:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+next ITEM if !$ItemId;
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ez hibás:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+return $Self->{LogObject}->Log(
+    Priority => 'error',
+    Message  => 'ItemID szükséges!',
+) if !$ItemId;
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ez kevésbé karbantartható ennél:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+if( !$ItemId ) {
+    $Self->{LogObject}->Log( ... );
+    return;
+}
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ez helyes:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+for my $Needed (1..10) {
+    next if $Needed == 5;
+    last  if $Needed == 9;
+}
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ez hibás:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my $Var = 1 if $Something == 'Yes';
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+        </section>
+
+        <section id="builtin-sub-restrictions">
+            <title>Néhány beépített Perl szubrutin használatának korlátozása</title>
+            <para>
+                A Perl néhány beépített szubrutinját nem lehet használni semmilyen helyen:
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Ne használja a <literal>die</literal> és <literal>exit</literal>
+szubrutinokat a <filename>.pm</filename> fájlokban.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Ne használja a <literal>Dumper</literal> függvényt a kiadott fájlokban.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Ne használja a <literal>print</literal> utasítást a <filename>.pm</filename>
+fájlokban.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Ne használja a <literal>require</literal> kulcsszót, inkább használja a
+<literal>Main::Require()</literal> metódust.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Használja a <literal>TimeObject</literal> függvényeit az olyan beépített
+függvények helyett, mint például a <literal>time()</literal>,
+<literal>localtime()</literal>, stb.</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+
+        <section id="regular-expressions">
+            <title>Reguláris kifejezések</title>
+            <para>
+                A reguláris kifejezéseknél mindig kapcsos zárójelekkel használjuk az
+<literal>m//</literal> operátort elválasztóként. Használjuk az
+<literal>x</literal>, <literal>m</literal> és <literal>s</literal>
+módosítókat is. Az <literal>x</literal> módosítók lehetővé teszik a
+reguláris kifejezések megjegyzéssel történő ellátását, és szóközök
+használatát a logikai csoportok „csoportosításához”.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+$Date =~ m{ \A \d{4} - \d{2} - \d{2} \z }xms
+$Date =~ m{
+    \A      # a szöveg kezdete
+    \d{4} - # év
+    \d{2} - # hónap
+    [^\n]   # minden, kivéve az új sort
+    #..
+}xms;
+    ]]>
+                </programlisting>
+            </para>
+            <para>
+                Mivel a szóköznek többé nincs különleges jelentése, ezért egy egyedüli
+karakterosztályt kell használnia egy egyedülálló szóköz illesztéséhez
+(<literal>[ ]</literal>). Ha akármennyi szóközre szeretne illeszteni, akkor
+azt a <literal>\s</literal> használatával teheti meg.
+            </para>
+            <para>
+                A reguláris kifejezésben a pont (<literal>.</literal>) tartalmazza az új
+sort (minthogy az <literal>s</literal> módosító nélküli reguláris
+kifejezésben a pont azt jelenti, hogy „minden, kivéve az új sor”). Ha
+bármire szeretne illeszteni az új sort kivéve, akkor a tagadott egyedüli
+karakterosztályt kell használnia (<literal>[^\n]</literal>).
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
+$Text =~ m{
+    Teszt
+    [ ]    # itt szóköznek kell lennie a „Teszt” és a „Regex” között
+    Regex
+}xms;
+    ]]></programlisting>
+            </para>
+        </section>
+
+        <section id="naming">
+            <title>Elnevezés</title>
+            <para>
+                A neveket és a megjegyzéseket angolul kell írni. A változókat, objektumokat
+és metódusokat leíró főnevekkel vagy főnévi igenevekkel írjuk úgy, hogy az
+első betű nagybetűs legyen (<ulink
+url="https://hu.wikipedia.org/wiki/CamelCase">CamelCase</ulink>).
+            </para>
+            <para>
+                A neveknek annyira leírónak kell lenniük, amennyire csak lehetséges. Az
+olvasónak egy név alapján meg kell tudni mondania, hogy az mit jelent
+anélkül, hogy túl mélyre ásná magát a kódban. Például használja a
+<literal>$ConfigItemID</literal> nevet az <literal>$ID</literal>
+helyett. Példák: <literal>@TicktIDs</literal>, <literal>$Output</literal>,
+<literal>StateSet()</literal>, stb.
+            </para>
+        </section>
+
+
+        <section id="variables">
+            <title>Változók</title>
+
+            <section id="variable-declaration">
+                <title>Deklaráció</title>
+
+                <para>
+                    Ha több változója van, akkor deklarálhatja azokat egyetlen sorban, ha azok
+„összetartoznak”:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my ($Minute, $Hour, $Year);
+]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Egyébként tördelje azokat külön sorokba:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+
+my $Minute;
+my $ID;
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ne állítson be <literal>undef</literal> vagy <literal>''</literal> kezdeti
+értéket a deklarációban, ugyanis ez elrejtheti a hibákat a kódban.
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my $Variable = undef;
+
+# ugyanaz mint
+
+my $Variable;
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Akkor állíthat be egy változót <literal>''</literal> értékre, ha szövegeket
+szeretne összefűzni:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my $SqlStatement = '';
+for my $Part ( @Parts ) {
+    $SqlStatement .= $Part;
+}
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Egyébként „előkészítetlen” figyelmeztetést kaphat.
+                </para>
+            </section>
+        </section>
+
+        <section id="subroutines">
+            <title>Szubrutinok</title>
+
+            <section id="subroutines-parameters">
+                <title>Paraméterek kezelése</title>
+
+                <para>
+                    A szubrutinoknak átadott paraméterek lekéréséhez az OTRS normális esetben a
+<literal>%Param</literal> kivonatot használja (nem a
+<literal>%Params</literal> kivonatot). Ez jobban olvasható kódot eredményez,
+mivel minden esetben tudjuk, hogy amikor <literal>%Param</literal> kivonatot
+használjuk a szubrutin kódokban, akkor paraméterkivonat került átadásra a
+szubrutinnak.
+                </para>
+                <para>
+                    Csak néhány kivételnél kell a paraméterek szabályos listáját használni. Így
+el szeretnénk kerülni az ehhez hasonlókat:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+sub TestSub {
+    my ( $Self, $Param1, $Param2 ) = @_;
+}
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Inkább ezt szeretnénk használni:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+sub TestSub {
+    my ( $Self, %Param ) = @_;
+}
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ennek számos előnye van: nem kell megváltoztatnunk a kódot a szubrutinban,
+amikor egy új paramétert kell átadni, és egy elnevezett paraméterekkel
+rendelkező függvény hívása sokkal olvashatóbb.
+                </para>
+            </section>
+
+            <section id="multiple-named-parameters">
+                <title>Több elnevezett paraméter</title>
+                <para>
+                    Ha egy függvényhívás egynél több elnevezett paramétert igényel, akkor
+tördelje azokat több sorba:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+    $Self->{LogObject}->Log(
+        Priority => 'error',
+        Message  => "Need $Needed!",
+    );
+                    ]]></programlisting>
+                </para>
+                <para>
+                    E helyett:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+    $Self->{LogObject}->Log( Priority => 'error', Message  => "Need $Needed!", );
+                    ]]></programlisting>
+                </para>
+            </section>
+
+            <section id="return-statements">
+                <title><literal>return</literal> utasítások</title>
+                <para>
+                    A szubrutinoknak rendelkezniük kell egy <literal>return</literal>
+utasítással. Az explicit <literal>return</literal> utasítás előnyben
+részesített az implicit módszernél (az utolsó utasítás eredménye a
+szubrutinban), mivel ez tisztázza, hogy mit ad vissza a szubrutin.
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+sub TestSub {
+    ...
+    return; # undef visszaadása, de nem az utolsó utasítás eredménye
+}
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+            <section id="explicit-return-values">
+                <title>Explicit visszatérési értékek</title>
+                <para>
+                    Az explicit visszatérési értékek azt jelentik, hogy nem kell egy
+<literal>return</literal> utasítást tenni egy szubrutinhívást követően.
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+return $Self->{DBObject}->Do( ... );
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    A következő példa jobb, mivel ez explicit módon megmondja, hogy mi kerül
+visszaadásra. A fenti példával az olvasó nem tudja, hogy mi a visszatérési
+érték, mivel nem tudhatja, hogy a <literal>Do()</literal> mit ad vissza.
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+return if !$Self->{DBObject}->Do( ... );
+return 1;
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ha egy szubrutin eredményét hozzárendeli egy változóhoz, akkor egy „jó”
+változónév jelzi, hogy mi lett visszaadva:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my $SuccessfulInsert = $Self->{DBObject}->Do( ... );
+return $SuccessfulInsert;
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+        </section>
+
+        <section id="packages">
+            <title>Csomagok</title>
+
+            <section id="packages-use">
+                <title><literal>use</literal> utasítások</title>
+                <para>
+                    A <literal>use strict</literal> és <literal>use warnings</literal>
+utasításoknak kell az első két „use”-nak lennie a modulban. Ez helyes:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+package Kernel::System::ITSMConfigItem::History;
+
+use strict;
+use warnings;
+
+use Kernel::System::User;
+use Kernel::System::Time;
+                    ]]>
+                    </programlisting>
+                </para>
+                <para>
+                    Ez hibás:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+package Kernel::System::ITSMConfigItem::History;
+
+use Kernel::System::User;
+use Kernel::System::Time;
+
+use strict;
+use warnings;
+                    ]]>
+                    </programlisting>
+                </para>
+            </section>
+
+            <section id="objects-allocation">
+                <title>Objektumok és azok lefoglalása</title>
+                <para>
+                    Az OTRS-ben sok objektum érhető el. De nem kell minden egyes objektumot
+használnia minden fájlban az előtétprogram/háttérprogram elválasztásának
+megtartásához.
+                </para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>Ne használja a <literal>LayoutObject</literal> objektumot az alapmodulokban
+(<filename>Kernel/System</filename>).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Ne használja a <literal>ParamObject</literal> objektumot az alapmodulokban
+(<filename>Kernel/System</filename>).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Ne használja a <literal>DBObject</literal> objektumot az előtétprogram
+modulokban (<filename>Kernel/Modules</filename>).</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </section>
+
+        </section>
+
+    </section>
+
+    <!-- using-perl-language -->
+<section id="documentation">
+        <title>Jó dokumentáció írása</title>
+
+        <section id="perldoc">
+            <title>Perldoc</title>
+
+            <section id="documenting-subroutines">
+                <title>Szubrutinok dokumentálása</title>
+
+                <para>
+                    A szubrutinokat mindig dokumentálni kell. A dokumentum tartalmaz egy
+általános leírást arról, hogy mit csinál a szubrutin, egy minta
+szubrutinhívást, és hogy mit ad vissza a szubrutin. Ezeknek ebben a
+sorrendben kell lenniük. Egy minta dokumentáció így néz ki:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+=item LastTimeObjectChanged()
+
+calculates the last time the object was changed. It returns a hash reference with
+    information about the object and the time.
+
+    my $Info = $Object->LastTimeObjectChanged(
+        Param => 'Value',
+    );
+
+This returns something like:
+
+    my $Info = {
+        ConfigItemID    => 1234,
+        HistoryType     => 'foo',
+        LastTimeChanged => '08.10.2009',
+    };
+
+=cut
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Lemásolhat és beilleszthet egy <literal>Data::Dumper</literal> kimenetet a
+visszatérési értékekhez.
+                </para>
+            </section>
+        </section>
+
+        <section id="commenting">
+            <title>Megjegyzések</title>
+
+            <para>
+                Általánosságban meg kell próbálni olvashatóan és önmagát magyarázóan írni a
+kódot, amennyire csak lehetséges. Ne írjon megjegyzést annak magyarázásához,
+hogy a nyilvánvaló kód mit csinál, mert az szükségtelen megkettőzés. A jó
+megjegyzéseknek azt kell elmagyarázniuk, hogy <emphasis>miért</emphasis> van
+valami a kódban, mik a lehetséges mellékhatások és bármi egyéb, amely
+különleges lehet vagy szokatlanul bonyolult a kóddal kapcsolatban.
+            </para>
+
+            <section id="special-comments">
+                <title>Különleges megjegyzések</title>
+                <para>
+                    Két különleges típusú megjegyzés van.
+                </para>
+                <para>
+                    1. példa: megjegyzés egy hosszabb kódblokkhoz
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+# --------------------------------------#
+# itt van egy különleges terület kezdete
+# --------------------------------------#
+                    ]]></programlisting>
+                </para>
+                <para>
+                    2. példa: megjegyzés a szabványos OTRS fájlok személyre szabásához
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+# --- személyre szabás valamilyen projektnél
+                    ]]></programlisting>
+                </para>
+            </section>
+        </section>
+    </section>
+
+
+    <section id="database-interaction">
+        <title>Adatbázis kölcsönhatás</title>
+
+        <section id="database-sql-statements">
+            <title>SQL-utasítások deklarációja</title>
+            <para>
+                Ha nincs esély az SQL-utasítás megváltoztatására, akkor azt a
+<literal>Prepare</literal> függvényben kell használni. Ennek az az oka, hogy
+az SQL-utasítás és a kötési paraméterek közelebb vannak egymáshoz.
+            </para>
+            <para>
+                Az SQL-utasítást egy összefűzések nélküli, pontosan behúzott szövegként kell
+megírni úgy, mint például ezt:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+return if !$Self->{DBObject}->Prepare(
+    SQL => '
+        SELECT art.id
+        FROM article art, article_sender_type ast
+        WHERE art.ticket_id = ?
+            AND art.article_sender_type_id = ast.id
+            AND ast.name = ?
+        ORDER BY art.id',
+    Bind => [ \$Param{TicketID}, \$Param{SenderType} ],
+);
+                ]]></programlisting>
+            </para>
+            <para>
+                Ezt könnyű olvasni és módosítani, és az üres karaktereket jól tudják kezelni
+a támogatott DBMS-ek. Az automatikusan előállított SQL-kódnál (mint a
+<literal>TicketSearch</literal> modulban) ez a behúzás nem szükséges.
+            </para>
+        </section>
+        <section id="database-returning-on-errors">
+            <title>Visszatérés hibák esetén</title>
+            <para>
+                Valahányszor adatbázis-függvényeket használ, kezelnie kell a hibákat. Ha
+valami elromlik, az visszakerül a szubrutinból:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+return if !$Self->{DBObject}->Prepare( ... );
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="database-using-limit">
+            <title>Korlát használata</title>
+            <para>
+                Használja a <literal>Limit => 1</literal> korlátozást, ha csak egyetlen sort
+vár visszatérésként.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+$Self->{DBObject}->Prepare(
+    SQL   => 'SELECT id FROM users WHERE username = ?',
+    Bind  => [ \$Username ],
+    Limit => 1,
+);
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="database-using-while-loop">
+            <title>A <literal>while</literal> ciklus használata</title>
+            <para>
+                Mindig használja a <literal>while</literal> ciklust még akkor is, ha csak
+egyetlen sort vár visszatérésként, mivel néhány adatbázis nem szabadítja fel
+az utasításkezelőt, és ez furcsa hibákhoz vezethet.
+            </para>
+        </section>
+
+    </section>
+
+</section>
