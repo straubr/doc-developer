@@ -48,6 +48,13 @@ my $UserTimeStamp = $DateTimeObject->ToString();
                 </para>
             </section>
 
+            <section>
+                <title>Ticket SolutionTime to Closed (for <literal>TicketGet()</literal> with the <literal>Extended</literal> parameter)</title>
+                <para>
+                    For OTRS 6, all extensions needs to be checked and ported from <literal>$Ticket{SolutionTime}</literal> to <literal>$Ticket{Closed}</literal> if <literal>TicketGet()</literal> is called with the <literal>Extended</literal> parameter (see bug<ulink url="http://bugs.otrs.org/show_bug.cgi?id=11872">#11872</ulink>).
+                </para>
+            </section>
+
         </section>
 
         <section id="package-porting-4-to-5">
