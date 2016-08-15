@@ -240,7 +240,7 @@
         <title>Generic Interface Modules</title>
         <para>
             Generic Interface modules are located under <filename>$OTRS_HOME/Kernel/GenericInterface/*</filename>.
-            Generic Interface modules are used to handle each part of an web service execution on
+            Generic Interface modules are used to handle each part of a web service execution on
             the system. The main modules for the Generic Interface are:
         </para>
         <para>
