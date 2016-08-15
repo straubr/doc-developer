@@ -59,7 +59,7 @@
         <para>
             With the configuration settings <literal>Loader::Enabled::CSS</literal>
             and <literal>Loader::Enabled::JavaScript</literal>, the loader can be turned
-            on and off for JavaScript and CSS, respectively (it is on by default).
+            on and off for CSS and JavaScript, respectively (it is on by default).
         </para>
         <warning>
             <para>
