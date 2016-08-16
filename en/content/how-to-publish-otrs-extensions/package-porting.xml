@@ -55,6 +55,47 @@ my $UserTimeStamp = $DateTimeObject->ToString();
                 </para>
             </section>
 
+            <section>
+                <title>JavaScript removed from templates</title>
+                <para>
+                    With OTRS 6, all JavaScript - especially located in <literal>JSOnDocumentComplete</literal> blocks - is removed from template files and moved to JavaScript files instead.
+                    Only in very rare conditions JavaScript needs to be placed within template files. For all other occurences, place the JS code in module-specific JavaScript files.
+                    An <literal>Init()</literal> method within such a JavaScript file is executed automatically on file load (for the initialization of event bindings etc.) if you register
+                    the JavaScript file at the OTRS application. This is done by executing <literal>Core.Init.RegisterNamespace(TargetNS, 'APP_MODULE');</literal> at the end of the namespace
+                    declaration within the JavaScript file.
+                </para>
+            </section>
+
+            <section>
+                <title>Template files for rich text editor removed</title>
+                <para>
+                    Along with the refactoring of the JavaScript within template files (see above), the template files for the rich text editor (<literal>RichTextEditor.tt</literal> and
+                    <literal>CustomerRichTextEditor.tt</literal>) were removed as they are no longer necessary.
+                </para>
+                <para>
+                    Typically, these template files were included in the module-specific template files within a block:
+        <programlisting format="linespecific"><![CDATA[
+[% RenderBlockStart("RichText") %]
+[% InsertTemplate("RichTextEditor.tt") %]
+[% RenderBlockEnd("RichText") %]
+        ]]></programlisting>
+                    This is no longer needed and can be removed. Instead of calling this block from the perl module, it is now necessary to set the needed rich text parameters there.
+                    Instead of:
+        <programlisting format="linespecific"><![CDATA[
+$LayoutObject->Block(
+    Name => 'RichText',
+    Data => \%Param,
+);
+        ]]></programlisting>
+                    you now have to call:
+        <programlisting format="linespecific"><![CDATA[
+$LayoutObject->SetRichTextParameters(
+    Data => \%Param,
+);
+        ]]></programlisting>
+                </para>
+            </section>
+
         </section>
 
         <section id="package-porting-4-to-5">
