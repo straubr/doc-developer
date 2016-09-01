@@ -70,6 +70,9 @@
     <section>
         <title>Comments</title>
         <para>
+            The <link linkend="code-style-guide-perl-commenting">commenting guidelines for Perl code</link> also apply to JavaScript.
+        </para>
+        <para>
             <itemizedlist>
                 <listitem><para>Single line comments are done with <literal>//</literal>.</para></listitem>
                 <listitem><para>Longer comments are done with <literal>/* ... */</literal>.</para></listitem>
