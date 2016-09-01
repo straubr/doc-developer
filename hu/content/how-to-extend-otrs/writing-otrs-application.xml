@@ -24,7 +24,7 @@ tartalmaznia:
 Kernel
 Kernel/System
 Kernel/Modules
-Kernel/Output/HTML/Standard
+Kernel/Output/HTML/Templates/Standard
 Kernel/Config
 Kernel/Config/Files
 Kernel/Language
@@ -197,8 +197,8 @@ tartozó HTML sablon. Ezért hozzuk létre az alábbi fájlt:
         <para>
             <programlisting><![CDATA[
 # --
-# Kernel/Output/HTML/Standard/AgentHelloWorld.tt - áttekintő
-# Copyright (C) (év) (szerző neve) (szerző e-mail címe)
+# Kernel/Output/HTML/Templates/Standard/AgentHelloWorld.tt - overview
+# Copyright (C) (year) (name of author) (email of author)
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you

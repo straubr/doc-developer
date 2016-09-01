@@ -73,8 +73,12 @@ Perlben.</para></listitem>
         </para>
     </section>
 
-    <section>
-        <title>Megjegyzések</title>
+    <section id="code-style-guide-javascript-code-comments">
+        <title>Code Comments</title>
+        <para>
+            The <link linkend="code-style-guide-perl-code-comments">commenting
+guidelines for Perl code</link> also apply to JavaScript.
+        </para>
         <para>
             <itemizedlist>
                 <listitem><para>Egysoros megjegyzéseket <literal>//</literal> karakterekkel kell készíteni.</para></listitem>

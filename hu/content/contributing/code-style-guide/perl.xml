@@ -695,8 +695,8 @@ visszatérési értékekhez.
             </section>
         </section>
 
-        <section id="commenting">
-            <title>Megjegyzések</title>
+        <section id="code-style-guide-perl-code-comments">
+            <title>Code Comments</title>
 
             <para>
                 Általánosságban meg kell próbálni olvashatóan és önmagát magyarázóan írni a
@@ -707,30 +707,95 @@ valami a kódban, mik a lehetséges mellékhatások és bármi egyéb, amely
 különleges lehet vagy szokatlanul bonyolult a kóddal kapcsolatban.
             </para>
 
-            <section id="special-comments">
-                <title>Különleges megjegyzések</title>
-                <para>
-                    Két különleges típusú megjegyzés van.
-                </para>
-                <para>
-                    1. példa: megjegyzés egy hosszabb kódblokkhoz
-                </para>
-                <para>
-                    <programlisting format="linespecific"><![CDATA[
-# --------------------------------------#
-# itt van egy különleges terület kezdete
-# --------------------------------------#
-                    ]]></programlisting>
-                </para>
-                <para>
-                    2. példa: megjegyzés a szabványos OTRS fájlok személyre szabásához
-                </para>
-                <para>
-                    <programlisting format="linespecific"><![CDATA[
-# --- személyre szabás valamilyen projektnél
-                    ]]></programlisting>
-                </para>
-            </section>
+            <para>
+                Please adhere to the following guidelines:
+            </para>
+
+            <variablelist>
+
+                <varlistentry>
+                    <term>Make the code so readable that comments are not needed, if possible.</term>
+                    <listitem>
+                        <para>
+                            It's always preferrable to write code so that it is very readable and
+self-explaining, for example with precise variable and function names.
+                        </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Don't say what the code says (DRY).</term>
+                    <listitem>
+                        <para>
+                            Don't repeat (obvious) code in the comments.
+                        </para>
+                        <programlisting format="linespecific"><![CDATA[
+# WRONG:
+
+# get config object
+my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+                        ]]></programlisting>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Document <emphasis>why</emphasis> the code is there, not how it works.</term>
+                    <listitem>
+                        <para>
+                            Usually, code comments should explain the <emphasis>purpose</emphasis> of
+code, not how it works in detail. There might be exceptions for specially
+complicated code, but in this case also a refactoring to make it more
+readable could be commendable.
+                        </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Document pitfalls.</term>
+                    <listitem>
+                        <para>
+                            Everything that is unclear, tricky or that puzzled you during development
+should be documented.
+                        </para>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Use full-line sentence-style comments to document algorithm paragraphs.</term>
+                    <listitem>
+                        <para>
+                            Always use full sentences (uppercase first letter and final
+period). Subsequent lines of a sentence should be indented.
+                        </para>
+                        <programlisting format="linespecific"><![CDATA[
+# Check if object name is provided.
+if ( !$_[1] ) {
+    $_[0]->_DieWithError(
+        Error => "Error: Missing parameter (object name)",
+    );
+}
+
+# Record the object we are about to retrieve to potentially build better error messages.
+# Needs to be a statement-modifying 'if', otherwise 'local' is local
+#   to the scope of the 'if'-block.
+local $CurrentObject = $_[1] if !$CurrentObject;
+                        ]]></programlisting>
+                    </listitem>
+                </varlistentry>
+                <varlistentry>
+                    <term>Use short end-of-line comments to add detail information.</term>
+                    <listitem>
+                        <para>
+                            These can either be a complete sentence (capital first letter and period) or
+just a phrase (lowercase first letter and no period).
+                        </para>
+                        <programlisting format="linespecific"><![CDATA[
+$BuildMode = oct $Param{Mode};   # *from* octal, not *to* octal
+
+# or
+
+$BuildMode = oct $Param{Mode};   # Convert *from* octal, not *to* octal.
+
+                        ]]></programlisting>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
         </section>
     </section>
 

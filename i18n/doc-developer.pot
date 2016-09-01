@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-02-22 14:30+0100\n"
+"POT-Creation-Date: 2016-09-01 11:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1009,7 +1009,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:47 en/content/contributing/code-style-guide/perl.xml:57 en/content/contributing/code-style-guide/perl.xml:71 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:111 en/content/contributing/code-style-guide/perl.xml:155 en/content/contributing/code-style-guide/perl.xml:172 en/content/contributing/code-style-guide/perl.xml:194 en/content/contributing/code-style-guide/perl.xml:237 en/content/contributing/code-style-guide/perl.xml:246 en/content/contributing/code-style-guide/perl.xml:258 en/content/contributing/code-style-guide/perl.xml:270 en/content/contributing/code-style-guide/perl.xml:282 en/content/contributing/code-style-guide/perl.xml:323 en/content/contributing/code-style-guide/perl.xml:344 en/content/contributing/code-style-guide/perl.xml:377 en/content/contributing/code-style-guide/perl.xml:386 en/content/contributing/code-style-guide/perl.xml:397 en/content/contributing/code-style-guide/perl.xml:410 en/content/contributing/code-style-guide/perl.xml:439 en/content/contributing/code-style-guide/perl.xml:450 en/content/contributing/code-style-guide/perl.xml:469 en/content/contributing/code-style-guide/perl.xml:480 en/content/contributing/code-style-guide/perl.xml:493 en/content/contributing/code-style-guide/perl.xml:508 en/content/contributing/code-style-guide/perl.xml:517 en/content/contributing/code-style-guide/perl.xml:527 en/content/contributing/code-style-guide/perl.xml:545 en/content/contributing/code-style-guide/perl.xml:560 en/content/contributing/code-style-guide/perl.xml:611 en/content/contributing/code-style-guide/perl.xml:657 en/content/contributing/code-style-guide/perl.xml:667 en/content/contributing/code-style-guide/perl.xml:689 en/content/contributing/code-style-guide/perl.xml:713 en/content/contributing/code-style-guide/perl.xml:724 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:139 en/content/how-to-extend-otrs/writing-otrs-application.xml:190 en/content/how-to-extend-otrs/writing-otrs-application.xml:219 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:233 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:255 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:114 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:190 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:247 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:285 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:324 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:346 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:76 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:122 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:296 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:363 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:512 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:30 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:63 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:138 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:231 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:299 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:377 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:386 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:396 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:406 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:416 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:425 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:434 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:444 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:467 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:478 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:490 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:499 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:510 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:521 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:535 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:545 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:555 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:455 en/content/how-to-publish-otrs-extensions/package-building.xml:476 en/content/how-to-publish-otrs-extensions/package-building.xml:501 en/content/how-to-publish-otrs-extensions/package-building.xml:511 en/content/how-to-publish-otrs-extensions/package-building.xml:530 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
+#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:47 en/content/contributing/code-style-guide/perl.xml:57 en/content/contributing/code-style-guide/perl.xml:71 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:111 en/content/contributing/code-style-guide/perl.xml:155 en/content/contributing/code-style-guide/perl.xml:172 en/content/contributing/code-style-guide/perl.xml:194 en/content/contributing/code-style-guide/perl.xml:237 en/content/contributing/code-style-guide/perl.xml:246 en/content/contributing/code-style-guide/perl.xml:258 en/content/contributing/code-style-guide/perl.xml:270 en/content/contributing/code-style-guide/perl.xml:282 en/content/contributing/code-style-guide/perl.xml:323 en/content/contributing/code-style-guide/perl.xml:344 en/content/contributing/code-style-guide/perl.xml:377 en/content/contributing/code-style-guide/perl.xml:386 en/content/contributing/code-style-guide/perl.xml:397 en/content/contributing/code-style-guide/perl.xml:410 en/content/contributing/code-style-guide/perl.xml:439 en/content/contributing/code-style-guide/perl.xml:450 en/content/contributing/code-style-guide/perl.xml:469 en/content/contributing/code-style-guide/perl.xml:480 en/content/contributing/code-style-guide/perl.xml:493 en/content/contributing/code-style-guide/perl.xml:508 en/content/contributing/code-style-guide/perl.xml:517 en/content/contributing/code-style-guide/perl.xml:527 en/content/contributing/code-style-guide/perl.xml:545 en/content/contributing/code-style-guide/perl.xml:560 en/content/contributing/code-style-guide/perl.xml:611 en/content/contributing/code-style-guide/perl.xml:747 en/content/contributing/code-style-guide/perl.xml:771 en/content/contributing/code-style-guide/perl.xml:782 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:139 en/content/how-to-extend-otrs/writing-otrs-application.xml:190 en/content/how-to-extend-otrs/writing-otrs-application.xml:219 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:233 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:255 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:114 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:190 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:247 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:285 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:324 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:346 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:76 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:122 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:296 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:363 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:512 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:30 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:63 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:138 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:231 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:299 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:377 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:386 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:396 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:406 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:416 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:425 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:434 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:444 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:467 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:478 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:490 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:499 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:510 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:521 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:535 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:545 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:555 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:455 en/content/how-to-publish-otrs-extensions/package-building.xml:476 en/content/how-to-publish-otrs-extensions/package-building.xml:501 en/content/how-to-publish-otrs-extensions/package-building.xml:511 en/content/how-to-publish-otrs-extensions/package-building.xml:530 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
 msgid "<placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
@@ -1442,23 +1442,30 @@ msgstr ""
 msgid "TODO..."
 msgstr ""
 
-#. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:71
-msgid "Comments"
+#. type: Content of: <section><section><section><title>
+#: en/content/contributing/code-style-guide/javascript.xml:71 en/content/contributing/code-style-guide/perl.xml:639
+msgid "Code Comments"
 msgstr ""
 
-#. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:74
-msgid "Single line comments are done with <literal>//</literal>."
-msgstr ""
-
-#. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:75
-msgid "Longer comments are done with <literal>/* ... */</literal>."
+#. type: Content of: <section><section><para>
+#: en/content/contributing/code-style-guide/javascript.xml:73
+msgid ""
+"The <link linkend=\"code-style-guide-perl-code-comments\">commenting "
+"guidelines for Perl code</link> also apply to JavaScript."
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/contributing/code-style-guide/javascript.xml:77
+msgid "Single line comments are done with <literal>//</literal>."
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/contributing/code-style-guide/javascript.xml:78
+msgid "Longer comments are done with <literal>/* ... */</literal>."
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/contributing/code-style-guide/javascript.xml:80
 msgid ""
 "If you comment out parts of your JavaScript code, only use "
 "<literal>//</literal> because <literal>/* ... */</literal> can cause "
@@ -1466,12 +1473,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:85
+#: en/content/contributing/code-style-guide/javascript.xml:88
 msgid "Event Handling"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:89
+#: en/content/contributing/code-style-guide/javascript.xml:92
 msgid ""
 "Always use <literal>$.bind()</literal> instead of the event-shorthand "
 "methods of jQuery for better readability (wrong: "
@@ -1480,7 +1487,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:93
+#: en/content/contributing/code-style-guide/javascript.xml:96
 msgid ""
 "Do not use <literal>$.live()</literal>! We had severe performance issues "
 "with <literal>$.live()</literal> in correlation with mouse events.  Until it "
@@ -1489,7 +1496,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:98
+#: en/content/contributing/code-style-guide/javascript.xml:101
 msgid ""
 "If you <literal>$.bind()</literal> events, make sure to "
 "<literal>$.unbind()</literal> them beforehand, to make sure that events will "
@@ -2350,11 +2357,6 @@ msgid ""
 "return values."
 msgstr ""
 
-#. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:639
-msgid "Commenting"
-msgstr ""
-
 #. type: Content of: <section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:642
 msgid ""
@@ -2365,53 +2367,135 @@ msgid ""
 "anything that might be special or unusually complicated about the code."
 msgstr ""
 
-#. type: Content of: <section><section><section><section><title>
+#. type: Content of: <section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:649
-msgid "Special comments"
+msgid "Please adhere to the following guidelines:"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:651
-msgid "There are two special kinds of comments."
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:655
+msgid "Make the code so readable that comments are not needed, if possible."
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:654
-msgid "Example 1 - comment for a longer block of code"
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:658
+msgid ""
+"It's always preferrable to write code so that it is very readable and "
+"self-explaining, for example with precise variable and function names."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:663
+msgid "Don't say what the code says (DRY)."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:666
+msgid "Don't repeat (obvious) code in the comments."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:657
+#: en/content/contributing/code-style-guide/perl.xml:668
 #, no-wrap
 msgid ""
-"# -----------------------------------#\n"
-"# here is the start of a special area\n"
-"# -----------------------------------#\n"
+"# WRONG:\n"
+"\n"
+"# get config object\n"
+"my $ConfigObject = $Kernel::OM->Get('Kernel::Config');\n"
 msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:664
-msgid "Example 2 - comment for customizing standard OTRS files"
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:677
+msgid "Document <emphasis>why</emphasis> the code is there, not how it works."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:680
+msgid ""
+"Usually, code comments should explain the <emphasis>purpose</emphasis> of "
+"code, not how it works in detail. There might be exceptions for specially "
+"complicated code, but in this case also a refactoring to make it more "
+"readable could be commendable."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:685
+msgid "Document pitfalls."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:688
+msgid ""
+"Everything that is unclear, tricky or that puzzled you during development "
+"should be documented."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:693
+msgid "Use full-line sentence-style comments to document algorithm paragraphs."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:696
+msgid ""
+"Always use full sentences (uppercase first letter and final "
+"period). Subsequent lines of a sentence should be indented."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:667
+#: en/content/contributing/code-style-guide/perl.xml:698
 #, no-wrap
-msgid "# --- customizing for some project\n"
+msgid ""
+"# Check if object name is provided.\n"
+"if ( !$_[1] ) {\n"
+"    $_[0]->_DieWithError(\n"
+"        Error => \"Error: Missing parameter (object name)\",\n"
+"    );\n"
+"}\n"
+"\n"
+"# Record the object we are about to retrieve to potentially build better "
+"error messages.\n"
+"# Needs to be a statement-modifying 'if', otherwise 'local' is local\n"
+"#   to the scope of the 'if'-block.\n"
+"local $CurrentObject = $_[1] if !$CurrentObject;\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:714
+msgid "Use short end-of-line comments to add detail information."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:717
+msgid ""
+"These can either be a complete sentence (capital first letter and period) or "
+"just a phrase (lowercase first letter and no period)."
+msgstr ""
+
+#. type: CDATA
+#: en/content/contributing/code-style-guide/perl.xml:719
+#, no-wrap
+msgid ""
+"$BuildMode = oct $Param{Mode};   # *from* octal, not *to* octal\n"
+"\n"
+"# or\n"
+"\n"
+"$BuildMode = oct $Param{Mode};   # Convert *from* octal, not *to* octal.\n"
+"\n"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:677
+#: en/content/contributing/code-style-guide/perl.xml:735
 msgid "Database interaction"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:680
+#: en/content/contributing/code-style-guide/perl.xml:738
 msgid "Declaration of SQL statements"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:682
+#: en/content/contributing/code-style-guide/perl.xml:740
 msgid ""
 "If there is no chance for changing the SQL statement, it should be used in "
 "the <literal>Prepare</literal> function.  The reason for this is, that the "
@@ -2419,14 +2503,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:686
+#: en/content/contributing/code-style-guide/perl.xml:744
 msgid ""
 "The SQL statement should be written as one nicely indented string without "
 "concatenation like this:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:689
+#: en/content/contributing/code-style-guide/perl.xml:747
 #, no-wrap
 msgid ""
 "return if !$Self->{DBObject}->Prepare(\n"
@@ -2442,7 +2526,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:703
+#: en/content/contributing/code-style-guide/perl.xml:761
 msgid ""
 "This is easy to read and modify, and the whitespace can be handled well by "
 "our supported DBMSs.  For auto-generated SQL code (like in "
@@ -2450,35 +2534,35 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:708
+#: en/content/contributing/code-style-guide/perl.xml:766
 msgid "Returning on errors"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:710
+#: en/content/contributing/code-style-guide/perl.xml:768
 msgid ""
 "Whenever you use database functions you should handle errors. If anything "
 "goes wrong, return from subroutine:"
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:713
+#: en/content/contributing/code-style-guide/perl.xml:771
 #, no-wrap
 msgid "return if !$Self->{DBObject}->Prepare( ... );\n"
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:719
+#: en/content/contributing/code-style-guide/perl.xml:777
 msgid "Using Limit"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:721
+#: en/content/contributing/code-style-guide/perl.xml:779
 msgid "Use <literal>Limit => 1</literal> if you expect just one row to be returned."
 msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:724
+#: en/content/contributing/code-style-guide/perl.xml:782
 #, no-wrap
 msgid ""
 "$Self->{DBObject}->Prepare(\n"
@@ -2489,12 +2573,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:734
+#: en/content/contributing/code-style-guide/perl.xml:792
 msgid "Using the <literal>while</literal> loop"
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:736
+#: en/content/contributing/code-style-guide/perl.xml:794
 msgid ""
 "Always use the <literal>while</literal> loop, even when you expect one row "
 "to be returned, as some databases do not release the statement handle and "
@@ -2996,8 +3080,8 @@ msgstr ""
 msgid ""
 "Generic Interface modules are located under "
 "<filename>$OTRS_HOME/Kernel/GenericInterface/*</filename>.  Generic "
-"Interface modules are used to handle each part of an web service execution "
-"on the system. The main modules for the Generic Interface are:"
+"Interface modules are used to handle each part of a web service execution on "
+"the system. The main modules for the Generic Interface are:"
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
@@ -4229,7 +4313,7 @@ msgstr ""
 msgid ""
 "With the configuration settings <literal>Loader::Enabled::CSS</literal> and "
 "<literal>Loader::Enabled::JavaScript</literal>, the loader can be turned on "
-"and off for JavaScript and CSS, respectively (it is on by default)."
+"and off for CSS and JavaScript, respectively (it is on by default)."
 msgstr ""
 
 #. type: Content of: <section><section><warning><para>
@@ -6212,7 +6296,7 @@ msgid ""
 "Kernel\n"
 "Kernel/System\n"
 "Kernel/Modules\n"
-"Kernel/Output/HTML/Standard\n"
+"Kernel/Output/HTML/Templates/Standard\n"
 "Kernel/Config\n"
 "Kernel/Config/Files\n"
 "Kernel/Language\n"
@@ -6411,7 +6495,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "# --\n"
-"# Kernel/Output/HTML/Standard/AgentHelloWorld.tt - overview\n"
+"# Kernel/Output/HTML/Templates/Standard/AgentHelloWorld.tt - overview\n"
 "# Copyright (C) (year) (name of author) (email of author)\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
