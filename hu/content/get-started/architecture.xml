@@ -251,11 +251,10 @@ néhány műveletnél a rendszeren.
     <section id="Generic-Interface">
         <title>Általános felület modulok</title>
         <para>
-            Az általános felület modulok az
-<filename>$OTRS_HOME/Kernel/GenericInterface/*</filename> alatt
-találhatók. Az általános felület modulok egy webszolgáltatás végrehajtásának
-egyes részei kezeléséhez használhatók a rendszeren. Az általános felület fő
-moduljai a következők:
+            Generic Interface modules are located under
+<filename>$OTRS_HOME/Kernel/GenericInterface/*</filename>.  Generic
+Interface modules are used to handle each part of a web service execution on
+the system. The main modules for the Generic Interface are:
         </para>
         <para>
         <itemizedlist mark="round">

@@ -58,10 +58,9 @@ elegendőnek kell lennie első áttekintésként.
     <section>
         <title>Alapvető működés</title>
         <para>
-            A <literal>Loader::Enabled::CSS</literal> és a
-<literal>Loader::Enabled::JavaScript</literal> konfigurációs beállításokkal
-kapcsolható be és ki a betöltő a JavaScriptet és CSS-t illetőleg
-(alapértelmezetten be van kapcsolva).
+            With the configuration settings <literal>Loader::Enabled::CSS</literal> and
+<literal>Loader::Enabled::JavaScript</literal>, the loader can be turned on
+and off for CSS and JavaScript, respectively (it is on by default).
         </para>
         <warning>
             <para>

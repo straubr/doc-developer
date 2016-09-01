@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2016-02-22 14:30+0100\n"
-"PO-Revision-Date: 2016-06-20 13:18+0000\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"POT-Creation-Date: 2016-09-01 11:13+0200\n"
+"PO-Revision-Date: 2016-09-01 09:14+0000\n"
+"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/otrs/OTRS/language/hu/)\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -1380,11 +1380,9 @@ msgstr ""
 #: en/content/contributing/code-style-guide/perl.xml:545
 #: en/content/contributing/code-style-guide/perl.xml:560
 #: en/content/contributing/code-style-guide/perl.xml:611
-#: en/content/contributing/code-style-guide/perl.xml:657
-#: en/content/contributing/code-style-guide/perl.xml:667
-#: en/content/contributing/code-style-guide/perl.xml:689
-#: en/content/contributing/code-style-guide/perl.xml:713
-#: en/content/contributing/code-style-guide/perl.xml:724
+#: en/content/contributing/code-style-guide/perl.xml:747
+#: en/content/contributing/code-style-guide/perl.xml:771
+#: en/content/contributing/code-style-guide/perl.xml:782
 #: en/content/how-it-works/config-mechanism.xml:52
 #: en/content/how-it-works/config-mechanism.xml:68
 #: en/content/how-it-works/config-mechanism.xml:107
@@ -2175,26 +2173,34 @@ msgstr "Névterek"
 msgid "TODO..."
 msgstr "Ez a rész még nincs megírva…"
 
-#. type: Content of: <section><section><title>
+#. type: Content of: <section><section><section><title>
 #: en/content/contributing/code-style-guide/javascript.xml:71
-msgid "Comments"
-msgstr "Megjegyzések"
+#: en/content/contributing/code-style-guide/perl.xml:639
+msgid "Code Comments"
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/contributing/code-style-guide/javascript.xml:73
+msgid ""
+"The <link linkend=\"code-style-guide-perl-code-comments\">commenting "
+"guidelines for Perl code</link> also apply to JavaScript."
+msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:74
+#: en/content/contributing/code-style-guide/javascript.xml:77
 msgid "Single line comments are done with <literal>//</literal>."
 msgstr ""
 "Egysoros megjegyzéseket <literal>//</literal> karakterekkel kell készíteni."
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:75
+#: en/content/contributing/code-style-guide/javascript.xml:78
 msgid "Longer comments are done with <literal>/* ... */</literal>."
 msgstr ""
 "Hosszabb megjegyzéseket <literal>/* ... */</literal> karakterekkel kell "
 "készíteni."
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:77
+#: en/content/contributing/code-style-guide/javascript.xml:80
 msgid ""
 "If you comment out parts of your JavaScript code, only use <literal>//</"
 "literal> because <literal>/* ... */</literal> can cause problems with "
@@ -2205,12 +2211,12 @@ msgstr ""
 "literal> használata problémákat okozhat a reguláris kifejezéseknél a kódban."
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/javascript.xml:85
+#: en/content/contributing/code-style-guide/javascript.xml:88
 msgid "Event Handling"
 msgstr "Eseménykezelés"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:89
+#: en/content/contributing/code-style-guide/javascript.xml:92
 msgid ""
 "Always use <literal>$.bind()</literal> instead of the event-shorthand "
 "methods of jQuery for better readability (wrong: <literal>$SomeObject."
@@ -2223,7 +2229,7 @@ msgstr ""
 "bind('click', ...</literal>)."
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:93
+#: en/content/contributing/code-style-guide/javascript.xml:96
 msgid ""
 "Do not use <literal>$.live()</literal>! We had severe performance issues "
 "with <literal>$.live()</literal> in correlation with mouse events.  Until it "
@@ -2237,7 +2243,7 @@ msgstr ""
 "eseménytípussal."
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/contributing/code-style-guide/javascript.xml:98
+#: en/content/contributing/code-style-guide/javascript.xml:101
 msgid ""
 "If you <literal>$.bind()</literal> events, make sure to <literal>$.unbind()</"
 "literal> them beforehand, to make sure that events will not be bound twice, "
@@ -3391,11 +3397,6 @@ msgstr ""
 "Lemásolhat és beilleszthet egy <literal>Data::Dumper</literal> kimenetet a "
 "visszatérési értékekhez."
 
-#. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:639
-msgid "Commenting"
-msgstr "Megjegyzések"
-
 #. type: Content of: <section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:642
 msgid ""
@@ -3412,56 +3413,134 @@ msgstr ""
 "valami a kódban, mik a lehetséges mellékhatások és bármi egyéb, amely "
 "különleges lehet vagy szokatlanul bonyolult a kóddal kapcsolatban."
 
-#. type: Content of: <section><section><section><section><title>
+#. type: Content of: <section><section><section><para>
 #: en/content/contributing/code-style-guide/perl.xml:649
-msgid "Special comments"
-msgstr "Különleges megjegyzések"
+msgid "Please adhere to the following guidelines:"
+msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:651
-msgid "There are two special kinds of comments."
-msgstr "Két különleges típusú megjegyzés van."
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:655
+msgid "Make the code so readable that comments are not needed, if possible."
+msgstr ""
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:654
-msgid "Example 1 - comment for a longer block of code"
-msgstr "1. példa: megjegyzés egy hosszabb kódblokkhoz"
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:658
+msgid ""
+"It's always preferrable to write code so that it is very readable and self-"
+"explaining, for example with precise variable and function names."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:663
+msgid "Don't say what the code says (DRY)."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:666
+msgid "Don't repeat (obvious) code in the comments."
+msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:657
+#: en/content/contributing/code-style-guide/perl.xml:668
 #, no-wrap
 msgid ""
-"# -----------------------------------#\n"
-"# here is the start of a special area\n"
-"# -----------------------------------#\n"
+"# WRONG:\n"
+"\n"
+"# get config object\n"
+"my $ConfigObject = $Kernel::OM->Get('Kernel::Config');\n"
 msgstr ""
-"# --------------------------------------#\n"
-"# itt van egy különleges terület kezdete\n"
-"# --------------------------------------#\n"
 
-#. type: Content of: <section><section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:664
-msgid "Example 2 - comment for customizing standard OTRS files"
-msgstr "2. példa: megjegyzés a szabványos OTRS fájlok személyre szabásához"
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:677
+msgid "Document <emphasis>why</emphasis> the code is there, not how it works."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:680
+msgid ""
+"Usually, code comments should explain the <emphasis>purpose</emphasis> of "
+"code, not how it works in detail. There might be exceptions for specially "
+"complicated code, but in this case also a refactoring to make it more "
+"readable could be commendable."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:685
+msgid "Document pitfalls."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:688
+msgid ""
+"Everything that is unclear, tricky or that puzzled you during development "
+"should be documented."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:693
+msgid "Use full-line sentence-style comments to document algorithm paragraphs."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:696
+msgid ""
+"Always use full sentences (uppercase first letter and final period). "
+"Subsequent lines of a sentence should be indented."
+msgstr ""
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:667
+#: en/content/contributing/code-style-guide/perl.xml:698
 #, no-wrap
-msgid "# --- customizing for some project\n"
-msgstr "# --- személyre szabás valamilyen projektnél\n"
+msgid ""
+"# Check if object name is provided.\n"
+"if ( !$_[1] ) {\n"
+"    $_[0]->_DieWithError(\n"
+"        Error => \"Error: Missing parameter (object name)\",\n"
+"    );\n"
+"}\n"
+"\n"
+"# Record the object we are about to retrieve to potentially build better error messages.\n"
+"# Needs to be a statement-modifying 'if', otherwise 'local' is local\n"
+"#   to the scope of the 'if'-block.\n"
+"local $CurrentObject = $_[1] if !$CurrentObject;\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><term>
+#: en/content/contributing/code-style-guide/perl.xml:714
+msgid "Use short end-of-line comments to add detail information."
+msgstr ""
+
+#. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
+#: en/content/contributing/code-style-guide/perl.xml:717
+msgid ""
+"These can either be a complete sentence (capital first letter and period) or "
+"just a phrase (lowercase first letter and no period)."
+msgstr ""
+
+#. type: CDATA
+#: en/content/contributing/code-style-guide/perl.xml:719
+#, no-wrap
+msgid ""
+"$BuildMode = oct $Param{Mode};   # *from* octal, not *to* octal\n"
+"\n"
+"# or\n"
+"\n"
+"$BuildMode = oct $Param{Mode};   # Convert *from* octal, not *to* octal.\n"
+"\n"
+msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:677
+#: en/content/contributing/code-style-guide/perl.xml:735
 msgid "Database interaction"
 msgstr "Adatbázis kölcsönhatás"
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:680
+#: en/content/contributing/code-style-guide/perl.xml:738
 msgid "Declaration of SQL statements"
 msgstr "SQL-utasítások deklarációja"
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:682
+#: en/content/contributing/code-style-guide/perl.xml:740
 msgid ""
 "If there is no chance for changing the SQL statement, it should be used in "
 "the <literal>Prepare</literal> function.  The reason for this is, that the "
@@ -3472,7 +3551,7 @@ msgstr ""
 "az SQL-utasítás és a kötési paraméterek közelebb vannak egymáshoz."
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:686
+#: en/content/contributing/code-style-guide/perl.xml:744
 msgid ""
 "The SQL statement should be written as one nicely indented string without "
 "concatenation like this:"
@@ -3481,7 +3560,7 @@ msgstr ""
 "megírni úgy, mint például ezt:"
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:689
+#: en/content/contributing/code-style-guide/perl.xml:747
 #, no-wrap
 msgid ""
 "return if !$Self->{DBObject}->Prepare(\n"
@@ -3507,7 +3586,7 @@ msgstr ""
 ");\n"
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:703
+#: en/content/contributing/code-style-guide/perl.xml:761
 msgid ""
 "This is easy to read and modify, and the whitespace can be handled well by "
 "our supported DBMSs.  For auto-generated SQL code (like in "
@@ -3518,12 +3597,12 @@ msgstr ""
 "<literal>TicketSearch</literal> modulban) ez a behúzás nem szükséges."
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:708
+#: en/content/contributing/code-style-guide/perl.xml:766
 msgid "Returning on errors"
 msgstr "Visszatérés hibák esetén"
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:710
+#: en/content/contributing/code-style-guide/perl.xml:768
 msgid ""
 "Whenever you use database functions you should handle errors. If anything "
 "goes wrong, return from subroutine:"
@@ -3532,18 +3611,18 @@ msgstr ""
 "valami elromlik, az visszakerül a szubrutinból:"
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:713
+#: en/content/contributing/code-style-guide/perl.xml:771
 #, no-wrap
 msgid "return if !$Self->{DBObject}->Prepare( ... );\n"
 msgstr "return if !$Self->{DBObject}->Prepare( ... );\n"
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:719
+#: en/content/contributing/code-style-guide/perl.xml:777
 msgid "Using Limit"
 msgstr "Korlát használata"
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:721
+#: en/content/contributing/code-style-guide/perl.xml:779
 msgid ""
 "Use <literal>Limit => 1</literal> if you expect just one row to be returned."
 msgstr ""
@@ -3551,7 +3630,7 @@ msgstr ""
 "vár visszatérésként."
 
 #. type: CDATA
-#: en/content/contributing/code-style-guide/perl.xml:724
+#: en/content/contributing/code-style-guide/perl.xml:782
 #, no-wrap
 msgid ""
 "$Self->{DBObject}->Prepare(\n"
@@ -3567,12 +3646,12 @@ msgstr ""
 ");\n"
 
 #. type: Content of: <section><section><section><title>
-#: en/content/contributing/code-style-guide/perl.xml:734
+#: en/content/contributing/code-style-guide/perl.xml:792
 msgid "Using the <literal>while</literal> loop"
 msgstr "A <literal>while</literal> ciklus használata"
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/code-style-guide/perl.xml:736
+#: en/content/contributing/code-style-guide/perl.xml:794
 msgid ""
 "Always use the <literal>while</literal> loop, even when you expect one row "
 "to be returned, as some databases do not release the statement handle and "
@@ -4143,13 +4222,9 @@ msgstr "Általános felület modulok"
 msgid ""
 "Generic Interface modules are located under <filename>$OTRS_HOME/Kernel/"
 "GenericInterface/*</filename>.  Generic Interface modules are used to handle "
-"each part of an web service execution on the system. The main modules for "
-"the Generic Interface are:"
+"each part of a web service execution on the system. The main modules for the "
+"Generic Interface are:"
 msgstr ""
-"Az általános felület modulok az <filename>$OTRS_HOME/Kernel/GenericInterface/"
-"*</filename> alatt találhatók. Az általános felület modulok egy "
-"webszolgáltatás végrehajtásának egyes részei kezeléséhez használhatók a "
-"rendszeren. Az általános felület fő moduljai a következők:"
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/get-started/architecture.xml:250
@@ -5781,12 +5856,8 @@ msgstr "Alapvető működés"
 msgid ""
 "With the configuration settings <literal>Loader::Enabled::CSS</literal> and "
 "<literal>Loader::Enabled::JavaScript</literal>, the loader can be turned on "
-"and off for JavaScript and CSS, respectively (it is on by default)."
+"and off for CSS and JavaScript, respectively (it is on by default)."
 msgstr ""
-"A <literal>Loader::Enabled::CSS</literal> és a <literal>Loader::Enabled::"
-"JavaScript</literal> konfigurációs beállításokkal kapcsolható be és ki a "
-"betöltő a JavaScriptet és CSS-t illetőleg (alapértelmezetten be van "
-"kapcsolva)."
 
 #. type: Content of: <section><section><warning><para>
 #: en/content/how-it-works/loader.xml:66
@@ -8557,18 +8628,11 @@ msgid ""
 "Kernel\n"
 "Kernel/System\n"
 "Kernel/Modules\n"
-"Kernel/Output/HTML/Standard\n"
+"Kernel/Output/HTML/Templates/Standard\n"
 "Kernel/Config\n"
 "Kernel/Config/Files\n"
 "Kernel/Language\n"
 msgstr ""
-"Kernel\n"
-"Kernel/System\n"
-"Kernel/Modules\n"
-"Kernel/Output/HTML/Standard\n"
-"Kernel/Config\n"
-"Kernel/Config/Files\n"
-"Kernel/Language\n"
 
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/writing-otrs-application.xml:33
@@ -8886,7 +8950,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "# --\n"
-"# Kernel/Output/HTML/Standard/AgentHelloWorld.tt - overview\n"
+"# Kernel/Output/HTML/Templates/Standard/AgentHelloWorld.tt - overview\n"
 "# Copyright (C) (year) (name of author) (email of author)\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
@@ -8898,18 +8962,6 @@ msgid ""
 "    [% Data.HelloWorldText | Translate() | html %]\n"
 "</p>\n"
 msgstr ""
-"# --\n"
-"# Kernel/Output/HTML/Standard/AgentHelloWorld.tt - áttekintő\n"
-"# Copyright (C) (év) (szerző neve) (szerző e-mail címe)\n"
-"# --\n"
-"# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
-"# the enclosed file COPYING for license information (AGPL). If you\n"
-"# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
-"# --\n"
-"<h1>[% Translate(\"Overview\") | html %]: [% Translate(\"HelloWorld\") %]</h1>\n"
-"<p>\n"
-"    [% Data.HelloWorldText | Translate() | html %]\n"
-"</p>\n"
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/writing-otrs-application.xml:206
