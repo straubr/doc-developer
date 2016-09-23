@@ -609,7 +609,7 @@ use warnings;
                 </para>
                 <para>
                     <programlisting format="linespecific"><![CDATA[
-=item LastTimeObjectChanged()
+=head2 LastTimeObjectChanged()
 
 calculates the last time the object was changed. It returns a hash reference with
     information about the object and the time.
