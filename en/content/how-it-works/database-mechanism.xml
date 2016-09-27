@@ -230,7 +230,7 @@ for (@SQL) {
                 <para>Oracle</para>
             </listitem>
             <listitem>
-                <para>Microsoft SQL Server (MSSQL)</para>
+                <para>Microsoft SQL Server (only for external database connections, not as OTRS database)</para>
             </listitem>
         </itemizedlist>
         </para>
