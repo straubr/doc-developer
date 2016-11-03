@@ -655,7 +655,7 @@ This returns something like:
                     <term>Make the code so readable that comments are not needed, if possible.</term>
                     <listitem>
                         <para>
-                            It's always preferrable to write code so that it is very readable and self-explaining, for example with precise variable and function names.
+                            It's always preferable to write code so that it is very readable and self-explaining, for example with precise variable and function names.
                         </para>
                     </listitem>
                 </varlistentry>
