@@ -96,6 +96,61 @@ $LayoutObject->SetRichTextParameters(
                 </para>
             </section>
 
+            <section>
+                <title>Perldoc structure changed</title>
+                <para>
+                    The structure of POD in Perl files was slightly improved and should be adapted in all files. POD is now also enforced to be syntactically correct.
+                </para>
+                <para>
+                    What was previously called <literal>SYNOPSIS</literal> is now changed to <literal>DESCRIPTION</literal>, as a synopsis typically provides a few popular code usage examples and not a description of the module itself. An additional synopsis can be provided, of course. Here's how an example:
+        <programlisting format="linespecific"><![CDATA[
+=head1 NAME
+
+Kernel::System::ObjectManager - Central singleton manager and object instance generator
+
+=head1 SYNOPSIS
+
+    # In toplevel scripts only!
+    local $Kernel::OM = Kernel::System::ObjectManager->new();
+
+    # Everywhere: get a singleton instance (and create it, if needed).
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+
+    # Remove singleton objects and all their dependencies.
+    $Kernel::OM->ObjectsDiscard(
+        Objects            => ['Kernel::System::Ticket', 'Kernel::System::Queue'],
+    );
+
+=head1 DESCRIPTION
+
+The ObjectManager is the central place to create and access singleton OTRS objects (via C<L</Get()>>)
+as well as create regular (unmanaged) object instances (via C<L</Create()>>).
+
+        ]]></programlisting>
+                    In case the <literal>DESCRIPTION</literal> does not add any value to the line in the <literal>NAME</literal> section, it should be rewritten or removed altogether.
+                </para>
+                <para>
+                    The second important change is that functions are now documented as <literal>=head2</literal> instead of the previously used <literal>=item</literal>.
+                    <programlisting format="linespecific"><![CDATA[
+=head2 Get()
+
+Retrieves a singleton object, and if it not yet exists, implicitly creates one for you.
+
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+
+    # On the second call, this returns the same ConfigObject as above.
+    my $ConfigObject2 = $Kernel::OM->Get('Kernel::Config');
+
+=cut
+
+sub Get { ... }
+                    ]]></programlisting>
+                </para>
+                <para>
+                    These changes lead to an improved online API documentation as can be seen in the ObjectManager documentation for <ulink url="http://otrs.github.io/doc/api/otrs/5.0/Perl/Kernel/System/ObjectManager.pm.html">OTRS 5</ulink> and <ulink url="http://otrs.github.io/doc/api/otrs/6.0/Perl/Kernel/System/ObjectManager.pm.html">OTRS 6</ulink>.
+                </para>
+            </section>
+
         </section>
 
         <section id="package-porting-4-to-5">
