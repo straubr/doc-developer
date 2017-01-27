@@ -179,7 +179,7 @@ body {
         <para>
             <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
-<otrs_config version="1.0" init="Framework">
+<otrs_config version="1.0" init="Changes">
     <ConfigItem Name="AgentLogo" Required="0" Valid="1">
         <Description Translatable="1">The logo shown in the header of the agent interface. The URL to the image must be a relative URL to the skin image directory.</Description>
         <Group>Framework</Group>
