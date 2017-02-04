@@ -95,7 +95,7 @@ chomp $Variable;
                 <programlisting format="linespecific"><![CDATA[
 # --
 # (file name) - a short description what it does
-# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -112,7 +112,7 @@ chomp $Variable;
 #!/usr/bin/perl
 # --
 # (file name) - a short description what it does
-# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU AFFERO General Public License as published by
@@ -600,6 +600,105 @@ use warnings;
 
         <section id="perldoc">
             <title>Perldoc</title>
+
+            <section id="documenting-backend-files">
+                <title>Documenting backend modules</title>
+
+                <variablelist>
+
+                    <varlistentry>
+                        <term>'NAME' section</term>
+                        <listitem>
+                            <para>
+                                This section should include the module name, ' - ' as separator and a brief description of the module purpose.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 NAME
+
+Kernel::System::MyModule - Functions to read from and write to files
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'SYNOPSIS' section</term>
+                        <listitem>
+                            <para>
+                                This section should give a short usage example of commonly used module functions.
+                            </para>
+                            <para>
+                                Usage of this section is optional.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 SYNOPSIS
+
+my $Object = $Kernel::OM->Get('Kernel::System::MyModule');
+
+Read data
+
+    my $FileContent = $Object->Read(
+        File => '/tmp/testfile',
+    );
+
+Write data
+
+    $Object->Write(
+        Content => 'my file content',
+        File    => '/tmp/testfile',
+    );
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'DESCRIPTION' section</term>
+                        <listitem>
+                            <para>
+                                This section should give more in-depth information about the module if deemed necessary (instead of having a long 'NAME' section).
+                            </para>
+                            <para>
+                                Usage of this section is optional.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 DESCRIPTION
+
+This module does not only handle files.
+
+It is also able to:
+- brew coffee
+- turn lead into gold
+- bring world peace
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'PUBLIC INTERFACE' section</term>
+                        <listitem>
+                            <para>
+                                This section marks the begin of all functions that are part of the API and therefore meant to be used by other modules.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 PUBLIC INTERFACE
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'PRIVATE FUNCTIONS' section</term>
+                        <listitem>
+                            <para>
+                                This section marks the begin of private functions.
+                            </para>
+                            <para>
+                                Functions below are not part of the API, to be used only within the module and therefore not considered stable.
+                            </para>
+                            <para>
+                                It is advisable to use this section whenever one or more private functions exist.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 PRIVATE FUNCTIONS
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </section>
 
             <section id="documenting-subroutines">
                 <title>Documenting subroutines</title>
