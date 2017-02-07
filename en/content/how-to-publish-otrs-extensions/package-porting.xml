@@ -97,6 +97,57 @@ $LayoutObject->SetRichTextParameters(
             </section>
 
             <section>
+                <title>Translations in JavaScript files</title>
+                <para>
+                    Adding translatable strings in JavaScript was quite difficult in OTRS. The string had to be translated in Perl or in the template and than sent to the JavaScript
+                    function. With OTRS 6, translation of strings is possible directly in the JavaScript file. All other workarounds, especially blocks in the templates only for
+                    translating strings, should be removed.
+                </para>
+                <para>
+                    Instead, the new JavaScript translation namespace <literal>Core.Language</literal> should be used to translate strings directly in the JS file:
+        <programlisting format="linespecific"><![CDATA[
+Core.Language.Translate('The string to translate');
+        ]]></programlisting>
+                    It is also possible to handover JS variables to be replaced in the string directly:
+        <programlisting format="linespecific"><![CDATA[
+Core.Language.Translate('The %s to %s', 'string', 'translate');
+        ]]></programlisting>
+                    Every <literal>%s</literal> is replaced by the variable given as extra parameter. The number of parameters is not limited.
+                </para>
+            </section>
+
+            <section>
+                <title>Handover data from Perl to JavaScript</title>
+                <para>
+                    To achieve template files without JavaScript code, some other workarounds had to be replaced with an appropriate solution. Besides translations, also the handover
+                    of data from Perl to JavaScript has been a problem in OTRS. The workaround was to add a JavaScript block in the template in which JavaScript variables were
+                    declared and filled with template tags based on data handed over from Perl to the template.
+                </para>
+                <para>
+                    The handover process of data from Perl to JavaScript is now much easier in OTRS 6. To send specific data as variable from Perl to JavaScript, one only has to call
+                    a function on Perl-side. The data is than automatically available in JavaScript.
+                </para>
+                <para>
+                    In Perl you only have to call:
+        <programlisting format="linespecific"><![CDATA[
+$Self->{LayoutObject}->AddJSData(
+    Key   => 'KeyToBeAvailableInJS',
+    Value => $YourData,
+);
+        ]]></programlisting>
+                    The <literal>Value</literal> parameter is automatically converted to a JSON object and can also contain complex data.
+                </para>
+                <para>
+                    In JavaScript you can get the data with:
+        <programlisting format="linespecific"><![CDATA[
+Core.Config.Get('KeyToBeAvailableInJS');
+        ]]></programlisting>
+                    This replaces all workarounds which need to be removed when porting a module to OTRS 6, because JavaScript in template files is now only allowed in
+                    very rare conditions (see above).
+                </para>
+            </section>
+
+            <section>
                 <title>Perldoc structure changed</title>
                 <para>
                     The structure of POD in Perl files was slightly improved and should be adapted in all files. POD is now also enforced to be syntactically correct.
