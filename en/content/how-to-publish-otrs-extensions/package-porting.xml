@@ -202,6 +202,130 @@ sub Get { ... }
                 </para>
             </section>
 
+            <section>
+                <title>HTML templates for JavaScript</title>
+                <para>
+                    OTRS 6 exposes new JavaScript template API via <literal>Core.Template</literal>
+                    class. You can use it in your JavaScript code in a similar way as you use
+                    <literal>TemplateToolkit</literal> from Perl code.
+                </para>
+                <para>
+                    Here's an example for porting existing <literal>jQuery</literal> based code to
+                    new template API:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+var DivID = 'MyDiv'.
+    DivText = 'Hello, world!';
+
+$('<div />').addClass('CSSClass')
+    .attr('id', DivID)
+    .text(DivText)
+    .appendTo('body');
+                    ]]></programlisting>
+                </para>
+                <para>
+                    First, make sure to create a new template file under
+                    <literal>Kernel/Output/JavaScript/Templates/Standard</literal> folder. In doing
+                    this, you should keep following in mind:
+                </para>
+                <para>
+                    <itemizedlist mark="round">
+                        <listitem>
+                            <para>
+                                Create a subfolder with name of your <literal>Module</literal>.
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                You may reuse any existing subfolder structure but only if it makes
+                                sense for your component (e.g. <literal>Agent/MyModule/</literal> or
+                                <literal>Agent/Admin/MyModule/</literal>).
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                Use <literal>.html.tmpl</literal> as extension for template file.
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                Name templates succinctly and clearly in order to avoid confusion
+                                (i.e. good:
+                                <literal>Agent/MyModule/SettingsDialog.html.tmpl</literal>, bad:
+                                <literal>Agent/SettingsDialogTemplate.html.tmpl</literal>).
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+                <para>
+                    Then, add your HTML to the template file, making sure to use placeholders for
+                    any variables you might need:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+<div id="{{ DivID }}" class="CSSClass">
+    {{ DivText | Translate }}
+</div>
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Then, just get rendered HTML by calling <literal>Core.Template.Render</literal>
+                    method with template path (without extension) and object containing variables
+                    for replacement:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+var DivHTML = Core.Template.Render('Agent/MyModule/SettingsDialog', {
+    DivID: 'MyDiv',
+    DivText: 'Hello, world!'
+});
+
+$(DivHTML).appendTo('body');
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Internally, <literal>Core.Template</literal> uses Nunjacks engine for parsing
+                    templates. Essentially, any valid Nunjacks syntax is supported, please see
+                    <ulink url="https://mozilla.github.io/nunjucks/templating.html">their
+                    documentation</ulink> for more information.
+                </para>
+                <para>
+                    Here are some tips:
+                </para>
+                <para>
+                    <itemizedlist mark="round">
+                        <listitem>
+                            <para>
+                                You can use <literal>| Translate</literal> filter for string
+                                translation to current language.
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                All <literal>{{ VarName }}</literal> variable outputs are HTML
+                                escaped by default. If you need to output some existing HTML, please
+                                use <literal>| safe</literal> filter to bypass escaping.
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                Use <literal>| urlencode</literal> for encoding url parameters.
+                            </para>
+                        </listitem>
+                        <listitem>
+                            <para>
+                                Complex structures in replacement object are supported, so feel free
+                                to pass arrays or hashes and iterate over them right from template.
+                                For example, look at <literal>{% for %}</literal> syntax in
+                                <ulink url="https://mozilla.github.io/nunjucks/templating.html#for">
+                                Nunjacks documentation</ulink>.
+                            </para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </section>
+
         </section>
 
         <section id="package-porting-4-to-5">
