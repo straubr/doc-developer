@@ -326,6 +326,30 @@ $(DivHTML).appendTo('body');
                 </para>
             </section>
 
+            <section>
+                <title>Checking user permissions</title>
+                <para>
+                    Before OTRS 6, user permissions were stored in the session and passed to the
+                    <code>LayoutObject</code> as attributes, which were then in turn accessed to determine user
+                    permissions like <code>if ($LayoutObject->{'UserIsGroup[admin]'}) { ... }</code>.
+                </para>
+                <para>
+                    With OTRS 6, permissions are no longer stored in the session and also not passed to the
+                    <code>LayoutObject</code>. Please switch your code to calling <code>PermissionCheck()</code>
+                    on <code>Kernel::System::Group</code> (for agents) or <code>Kernel::System::CustomerGroup</code>
+                    (for customers). Here's an example:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my $HasPermission = $Kernel::OM::Get('Kernel::System::Group')->PermissionCheck(
+    UserID    => $UserID,
+    GroupName => $GroupName,
+    Type      => 'move_into',
+);
+                    ]]></programlisting>
+                </para>
+            </section>
+
         </section>
 
         <section id="package-porting-4-to-5">
