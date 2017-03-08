@@ -341,7 +341,7 @@ $(DivHTML).appendTo('body');
                 </para>
                 <para>
                     <programlisting format="linespecific"><![CDATA[
-my $HasPermission = $Kernel::OM::Get('Kernel::System::Group')->PermissionCheck(
+my $HasPermission = $Kernel::OM->Get('Kernel::System::Group')->PermissionCheck(
     UserID    => $UserID,
     GroupName => $GroupName,
     Type      => 'move_into',
