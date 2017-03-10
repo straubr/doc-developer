@@ -32,3 +32,16 @@ xmllint --postvalid --nonet --xinclude --noout /path/to/doc-developer/en/book.xm
 ```
 
 If you don't see any output, the validation was successful.
+
+
+Generating Translation Sources Manually
+---------------------------------------
+
+If you add any new files, make sure to include them in `po4a.conf`.
+
+Then you can run
+```
+po4a -v -k0 /path/to/doc-developer/po4a.conf
+```
+
+The command will generate files for all supported languages.
