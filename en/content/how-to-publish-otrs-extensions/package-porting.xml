@@ -350,6 +350,90 @@ my $HasPermission = $Kernel::OM->Get('Kernel::System::Group')->PermissionCheck(
                 </para>
             </section>
 
+            <section>
+                <title>Ticket and Article API changes</title>
+                <para>
+                    In OTRS 6, changes to Ticket and Article API have been made, in preparations for
+                    new Omni Channel infrastructure.
+                </para>
+                <para>
+                    All methods related to articles have been moved to
+                    <literal>Kernel::System::Ticket::Article</literal> object. List of methods that
+                    have been migrated can be found <link linkend="otrs6-article-methods">here</link>.
+                </para>
+                <para>
+                    If you are referencing any of these methods via
+                    <literal>Kernel::System::Ticket</literal> object in your code, please switch to
+                    Article object and use it instead. For example:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my $TicketObject = $Kernel::OM->Get('Kernel::System::Ticket');
+
+my @Index = $TicketObject->ArticleIndex(
+    TicketID => $TicketID,
+);
+                    ]]></programlisting>
+                </para>
+                <para>
+                    This code now becomes:
+                </para>
+                <para>
+                    <programlisting format="linespecific"><![CDATA[
+my $ArticleObject = $Kernel::OM->Get('Kernel::System::Ticket::Article');
+
+my @Index = $ArticleObject->ArticleIndex(
+    TicketID => $TicketID,
+);
+                    ]]></programlisting>
+                </para>
+
+                <section id="otrs6-article-methods">
+                    <title>OTRS 6 article methods</title>
+                    <para>
+                        In OTRS 6, following methods have been migrated from
+                        <literal>Kernel::System::Ticket</literal> to
+                        <literal>Kernel::System::Ticket::Article</literal>:
+                    </para>
+                    <para>
+                        <itemizedlist>
+                            <listitem><para>ArticleCreate()</para></listitem>
+                            <listitem><para>ArticleGetTicketIDOfMessageID()</para></listitem>
+                            <listitem><para>ArticleGetContentPath()</para></listitem>
+                            <listitem><para>ArticleSenderTypeList()</para></listitem>
+                            <listitem><para>ArticleSenderTypeLookup()</para></listitem>
+                            <listitem><para>ArticleTypeLookup()</para></listitem>
+                            <listitem><para>ArticleTypeList()</para></listitem>
+                            <listitem><para>ArticleLastCustomerArticle()</para></listitem>
+                            <listitem><para>ArticleFirstArticle()</para></listitem>
+                            <listitem><para>ArticleIndex()</para></listitem>
+                            <listitem><para>ArticleContentIndex()</para></listitem>
+                            <listitem><para>ArticleGet   ()</para></listitem>
+                            <listitem><para>ArticleCount ()</para></listitem>
+                            <listitem><para>ArticlePage  ()</para></listitem>
+                            <listitem><para>ArticleUpdate()</para></listitem>
+                            <listitem><para>ArticleSend  ()</para></listitem>
+                            <listitem><para>ArticleBounce()</para></listitem>
+                            <listitem><para>SendAutoResponse()</para></listitem>
+                            <listitem><para>ArticleFlagSet()</para></listitem>
+                            <listitem><para>ArticleFlagDelete()</para></listitem>
+                            <listitem><para>ArticleFlagGet()</para></listitem>
+                            <listitem><para>ArticleFlagsOfTicketGet()</para></listitem>
+                            <listitem><para>ArticleAccountedTimeGet()</para></listitem>
+                            <listitem><para>ArticleAccountedTimeDelete()</para></listitem>
+                            <listitem><para>ArticleAttachmentIndex()</para></listitem>
+                            <listitem><para>ArticleDelete()</para></listitem>
+                            <listitem><para>ArticleDeletePlain()</para></listitem>
+                            <listitem><para>ArticleDeleteAttachment()</para></listitem>
+                            <listitem><para>ArticleWritePlain()</para></listitem>
+                            <listitem><para>ArticleWriteAttachment()</para></listitem>
+                            <listitem><para>ArticlePlain()</para></listitem>
+                            <listitem><para>ArticleAttachment()</para></listitem>
+                        </itemizedlist>
+                    </para>
+                </section>
+            </section>
+
         </section>
 
         <section id="package-porting-4-to-5">
