@@ -1,0 +1,671 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section id="package-porting-5-to-6">
+    <title>From OTRS 5 to 6</title>
+    <para>
+        This section lists changes that you need to examine when porting your package from OTRS 5 to 6.
+    </para>
+
+    <section id="package-porting-5-to-6-datetime">
+        <title>Date and time calculation</title>
+        <para>
+            In OTRS 6, a new module for date and time calculation was added:
+            <literal>Kernel::System::DateTime</literal>. The module <literal>Kernel::System::Time</literal> is now
+            deprecated and should not be used for new code anymore.
+        </para>
+        <para>
+            The main advantage of the new <literal>Kernel::System::DateTime</literal> module is the support for real
+            time zones like <literal>Europe/Berlin</literal> instead of time offsets in hours like
+            <literal>+2</literal>. Note that also the old <literal>Kernel::System::Time</literal> module has been
+            improved to support time zones. Time offsets have been completely dropped. This means that any code that
+            uses time offsets for calculations has to be ported to use the new <literal>DateTime</literal> module
+            instead. Code that doesn't fiddle around with time offsets itself can be left untouched in most cases. You
+            just have to make sure that upon creation of a <literal>Kernel::System::Time</literal> object a valid time
+            zone will be given.
+        </para>
+        <para>
+            Here's an example for porting time offset code to time zones:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+my $TimeObject     = $Kernel::OM->Get('Kernel::System::Time'); # Assume a time offset of 0 for this time object
+my $SystemTime     = $TimeObject->TimeStamp2SystemTime( String => '2004-08-14 22:45:00' );
+my $UserTimeZone   = '+2'; # normally retrieved via config or param
+my $UserSystemTime = $SystemTime + $UserTimeZone * 3600;
+my $UserTimeStamp  = $TimeObject->SystemTime2TimeStamp( SystemTime => $UserSystemTime );
+            ]]></programlisting>
+        </para>
+        <para>
+            Code using the new <literal>Kernel::System::DateTime</literal> module:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+my $DateTimeObject = $Kernel::OM->Create('Kernel::System::DateTime'); # This implicitly sets the configured OTRS time zone
+my $UserTimeZone   = 'Europe/Berlin'; # normally retrieved via config or param
+$DateTimeObject->ToTimeZone( TimeZone => $UserTimeZone );
+my $SystemTime    = $DateTimeObject->ToEpoch(); # note that the epoch is independent from the time zone, it's always calculated for UTC
+my $UserTimeStamp = $DateTimeObject->ToString();
+            ]]></programlisting>
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-solutiontime">
+        <title>
+            <literal>TicketGet()</literal> value <literal>SolutionTime</literal> renamed to <literal>Closed</literal>
+        </title>
+        <para>
+            For OTRS 6, all extensions need to be checked and ported from <literal>$Ticket{SolutionTime}</literal> to
+            <literal>$Ticket{Closed}</literal> if <literal>TicketGet()</literal> is called with the
+            <literal>Extended</literal> parameter (see
+            bug<ulink url="http://bugs.otrs.org/show_bug.cgi?id=11872">#11872</ulink>).
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-javascript-refactor">
+        <title>JavaScript removed from templates</title>
+        <para>
+            With OTRS 6, all JavaScript - especially located in <literal>JSOnDocumentComplete</literal> blocks - is
+            removed from template files and moved to JavaScript files instead. Only in very rare conditions JavaScript
+            needs to be placed within template files. For all other occurences, place the JS code in module-specific
+            JavaScript files. An <literal>Init()</literal> method within such a JavaScript file is executed
+            automatically on file load (for the initialization of event bindings etc.) if you register the JavaScript
+            file at the OTRS application. This is done by executing <literal>Core.Init.RegisterNamespace(TargetNS,
+            'APP_MODULE');</literal> at the end of the namespace declaration within the JavaScript file.
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-richtext-template">
+        <title>Template files for rich text editor removed</title>
+        <para>
+            Along with the refactoring of the JavaScript within template files (see above), the template files for the
+            rich text editor (<literal>RichTextEditor.tt</literal> and <literal>CustomerRichTextEditor.tt</literal>)
+            were removed as they are no longer necessary.
+        </para>
+        <para>
+            Typically, these template files were included in the module-specific template files within a block:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+[% RenderBlockStart("RichText") %]
+[% InsertTemplate("RichTextEditor.tt") %]
+[% RenderBlockEnd("RichText") %]
+            ]]></programlisting>
+        </para>
+        <para>
+            This is no longer needed and can be removed. Instead of calling this block from the perl module, it is now
+            necessary to set the needed rich text parameters there. Instead of:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+$LayoutObject->Block(
+Name => 'RichText',
+Data => \%Param,
+);
+            ]]></programlisting>
+        </para>
+        <para>
+            you now have to call:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+$LayoutObject->SetRichTextParameters(
+Data => \%Param,
+);
+            ]]></programlisting>
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-javascript-translations">
+        <title>Translations in JavaScript files</title>
+        <para>
+            Adding translatable strings in JavaScript was quite difficult in OTRS. The string had to be translated in
+            Perl or in the template and than sent to the JavaScript function. With OTRS 6, translation of strings is
+            possible directly in the JavaScript file. All other workarounds, especially blocks in the templates only for
+            translating strings, should be removed.
+        </para>
+        <para>
+            Instead, the new JavaScript translation namespace <literal>Core.Language</literal> should be used to
+            translate strings directly in the JS file:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+Core.Language.Translate('The string to translate');
+            ]]></programlisting>
+        </para>
+        <para>
+            It is also possible to handover JS variables to be replaced in the string directly:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+Core.Language.Translate('The %s to %s', 'string', 'translate');
+            ]]></programlisting>
+        </para>
+        <para>
+            Every <literal>%s</literal> is replaced by the variable given as extra parameter. The number of parameters
+            is not limited.
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-javascript-handover">
+        <title>Handover data from Perl to JavaScript</title>
+        <para>
+            To achieve template files without JavaScript code, some other workarounds had to be replaced with an
+            appropriate solution. Besides translations, also the handover of data from Perl to JavaScript has been a
+            problem in OTRS. The workaround was to add a JavaScript block in the template in which JavaScript variables
+            were declared and filled with template tags based on data handed over from Perl to the template.
+        </para>
+        <para>
+            The handover process of data from Perl to JavaScript is now much easier in OTRS 6. To send specific data as
+            variable from Perl to JavaScript, one only has to call a function on Perl-side. The data is than
+            automatically available in JavaScript.
+        </para>
+        <para>
+            In Perl you only have to call:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+$Self->{LayoutObject}->AddJSData(
+Key   => 'KeyToBeAvailableInJS',
+Value => $YourData,
+);
+            ]]></programlisting>
+        </para>
+        <para>
+            The <literal>Value</literal> parameter is automatically converted to a JSON object and can also contain
+            complex data.
+        </para>
+        <para>
+            In JavaScript you can get the data with:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+Core.Config.Get('KeyToBeAvailableInJS');
+        ]]></programlisting>
+        </para>
+        <para>
+            This replaces all workarounds which need to be removed when porting a module to OTRS 6, because JavaScript
+            in template files is now only allowed in very rare conditions (see above).
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-perldoc-structure">
+        <title>Perldoc structure changed</title>
+        <para>
+            The structure of POD in Perl files was slightly improved and should be adapted in all files. POD is now also
+            enforced to be syntactically correct.
+        </para>
+        <para>
+            What was previously called <literal>SYNOPSIS</literal> is now changed to <literal>DESCRIPTION</literal>, as
+            a synopsis typically provides a few popular code usage examples and not a description of the module itself.
+            An additional synopsis can be provided, of course. Here's how an example:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+=head1 NAME
+
+Kernel::System::ObjectManager - Central singleton manager and object instance generator
+
+=head1 SYNOPSIS
+
+# In toplevel scripts only!
+local $Kernel::OM = Kernel::System::ObjectManager->new();
+
+# Everywhere: get a singleton instance (and create it, if needed).
+my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+
+# Remove singleton objects and all their dependencies.
+$Kernel::OM->ObjectsDiscard(
+    Objects            => ['Kernel::System::Ticket', 'Kernel::System::Queue'],
+);
+
+=head1 DESCRIPTION
+
+The ObjectManager is the central place to create and access singleton OTRS objects (via C<L</Get()>>)
+as well as create regular (unmanaged) object instances (via C<L</Create()>>).
+
+            ]]></programlisting>
+        </para>
+        <para>
+            In case the <literal>DESCRIPTION</literal> does not add any value to the line in the <literal>NAME</literal>
+            section, it should be rewritten or removed altogether.
+        </para>
+        <para>
+            The second important change is that functions are now documented as <literal>=head2</literal> instead of the
+            previously used <literal>=item</literal>.
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+=head2 Get()
+
+Retrieves a singleton object, and if it not yet exists, implicitly creates one for you.
+
+my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+
+# On the second call, this returns the same ConfigObject as above.
+my $ConfigObject2 = $Kernel::OM->Get('Kernel::Config');
+
+=cut
+
+sub Get { ... }
+            ]]></programlisting>
+        </para>
+        <para>
+            These changes lead to an improved online API documentation as can be seen in the ObjectManager documentation
+            for
+            <ulink url="http://otrs.github.io/doc/api/otrs/5.0/Perl/Kernel/System/ObjectManager.pm.html">OTRS 5</ulink>
+            and
+            <ulink url="http://otrs.github.io/doc/api/otrs/6.0/Perl/Kernel/System/ObjectManager.pm.html">OTRS 6</ulink>.
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-javascript-templates">
+        <title>HTML templates for JavaScript</title>
+        <para>
+            OTRS 6 exposes new JavaScript template API via <literal>Core.Template</literal> class. You can use it in
+            your JavaScript code in a similar way as you use <literal>TemplateToolkit</literal> from Perl code.
+        </para>
+        <para>
+            Here's an example for porting existing <literal>jQuery</literal> based code to new template API:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+var DivID = 'MyDiv'.
+DivText = 'Hello, world!';
+
+$('<div />').addClass('CSSClass')
+.attr('id', DivID)
+.text(DivText)
+.appendTo('body');
+            ]]></programlisting>
+        </para>
+        <para>
+            First, make sure to create a new template file under
+            <literal>Kernel/Output/JavaScript/Templates/Standard</literal> folder. In doing this, you should keep
+            following in mind:
+        </para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        Create a subfolder with name of your <literal>Module</literal>.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        You may reuse any existing subfolder structure but only if it makes sense for your component
+                        (e.g. <literal>Agent/MyModule/</literal> or <literal>Agent/Admin/MyModule/</literal>).
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        Use <literal>.html.tmpl</literal> as extension for template file.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        Name templates succinctly and clearly in order to avoid confusion (i.e. good:
+                        <literal>Agent/MyModule/SettingsDialog.html.tmpl</literal>, bad:
+                        <literal>Agent/SettingsDialogTemplate.html.tmpl</literal>).
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para>
+            Then, add your HTML to the template file, making sure to use placeholders for any variables you might need:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+<div id="{{ DivID }}" class="CSSClass">
+{{ DivText | Translate }}
+</div>
+            ]]></programlisting>
+        </para>
+        <para>
+            Then, just get rendered HTML by calling <literal>Core.Template.Render</literal> method with template path
+            (without extension) and object containing variables for replacement:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+var DivHTML = Core.Template.Render('Agent/MyModule/SettingsDialog', {
+DivID: 'MyDiv',
+DivText: 'Hello, world!'
+});
+
+$(DivHTML).appendTo('body');
+            ]]></programlisting>
+        </para>
+        <para>
+            Internally, <literal>Core.Template</literal> uses Nunjacks engine for parsing templates. Essentially, any
+            valid Nunjacks syntax is supported, please see
+            <ulink url="https://mozilla.github.io/nunjucks/templating.html">their documentation</ulink> for more
+            information.
+        </para>
+        <para>
+            Here are some tips:
+        </para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para>
+                        You can use <literal>| Translate</literal> filter for string translation to current language.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        All <literal>{{ VarName }}</literal> variable outputs are HTML escaped by default. If you need
+                        to output some existing HTML, please use <literal>| safe</literal> filter to bypass escaping.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        Use <literal>| urlencode</literal> for encoding url parameters.
+                    </para>
+                </listitem>
+                <listitem>
+                    <para>
+                        Complex structures in replacement object are supported, so feel free to pass arrays or hashes
+                        and iterate over them right from template. For example, look at <literal>{% for %}</literal>
+                        syntax in <ulink url="https://mozilla.github.io/nunjucks/templating.html#for"> Nunjacks
+                        documentation</ulink>.
+                    </para>
+                </listitem>
+            </itemizedlist>
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-user-permissions">
+        <title>Checking user permissions</title>
+        <para>
+            Before OTRS 6, user permissions were stored in the session and passed to the <code>LayoutObject</code> as
+            attributes, which were then in turn accessed to determine user permissions like <code>if
+            ($LayoutObject->{'UserIsGroup[admin]'}) { ... }</code>.
+        </para>
+        <para>
+            With OTRS 6, permissions are no longer stored in the session and also not passed to the
+            <code>LayoutObject</code>. Please switch your code to calling <code>PermissionCheck()</code> on
+            <code>Kernel::System::Group</code> (for agents) or <code>Kernel::System::CustomerGroup</code> (for
+            customers). Here's an example:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+my $HasPermission = $Kernel::OM->Get('Kernel::System::Group')->PermissionCheck(
+UserID    => $UserID,
+GroupName => $GroupName,
+Type      => 'move_into',
+);
+            ]]></programlisting>
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-article-api">
+        <title>Ticket and Article API changes</title>
+        <para>
+            In OTRS 6, changes to Ticket and Article API have been made, in preparations for new Omni Channel
+            infrastructure.
+        </para>
+
+        <section id="otrs6-article-methods">
+            <title>Meta Article API</title>
+            <para>
+                Article object now provides top-level article functions that do not involve back-end related data.
+            </para>
+            <para>
+                Following methods related to articles have been moved to
+                <literal>Kernel::System::Ticket::Article</literal> object:
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                          <para><literal>ArticleFlagSet()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleFlagDelete()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleFlagGet()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleFlagsOfTicketGet()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleAccountedTimeGet()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleAccountedTimeDelete()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleSenderTypeList()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleSenderTypeLookup()</literal></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                If you are referencing any of these methods via <literal>Kernel::System::Ticket</literal> object in your
+                code, please switch to Article object and use it instead. For example:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+    my $ArticleObject = $Kernel::OM->Get('Kernel::System::Ticket::Article');
+
+    my %ArticleSenderTypeList = $ArticleObject->ArticleSenderTypeList();
+                ]]></programlisting>
+            </para>
+            <para>
+                New <literal>ArticleList()</literal> method is now provided by the article object, and can be used for
+                article listing and locating. This method implements filters and article numbering and returns article
+                meta data only as an ordered list. For example:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+my @Articles = $ArticleObject->ArticleList(
+    TicketID             => 123,
+    CommunicationChannel => 'Email',            # optional, to limit to a certain CommunicationChannel
+    SenderType           => 'customer',         # optional, to limit to a certain article SenderType
+    IsVisibleForCustomer => 1,                  # optional, to limit to a certain visibility
+    OnlyFirst            => 1,                  # optional, only return first match, or
+    OnlyLast             => 1,                  # optional, only return last match
+);
+                ]]></programlisting>
+            </para>
+            <para>
+                Following methods related to articles have been dropped all-together. If you are using any of them in
+                your code, please evaluate possibility of alternatives.
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                          <para>
+                              <literal>ArticleFirstArticle()</literal> (use
+                              <literal>ArticleList( OnlyFirst => 1)</literal> instead)
+                          </para>
+                    </listitem>
+                    <listitem>
+                          <para>
+                              <literal>ArticleLastCustomerArticle()</literal> (use
+                              <literal>ArticleList( SenderType => 'customer', OnlyLast => 1)</literal> or similar)
+                          </para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleCount()</literal> (use <literal>ArticleList()</literal> instead)</para>
+                    </listitem>
+                    <listitem>
+                          <para>
+                              <literal>ArticlePage()</literal> (reimplemented in <literal>AgentTicketZoom</literal>)
+                          </para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleTypeList()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleTypeLookup()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleIndex()</literal> (use <literal>ArticleList()</literal> instead)</para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>ArticleContentIndex()</literal></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                To work with article data please use new article backend API. To get correct backend object for an
+                article, please use:
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                          <para><literal>BackendForArticle(%Article)</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>BackendForChannel( ChannelName => $ChannelName )</literal></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <literal>BackendForArticle()</literal> returns the correct back end for a given article, or the invalid
+                back end, so that you can always expect a back end object instance that can be used for chain-calling.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+my $ArticleBackendObject = $ArticleObject->BackendForArticle( TicketID => 42, ArticleID => 123 );
+                ]]></programlisting>
+            </para>
+            <para>
+                <literal>BackendForChannel()</literal> returns the correct back end for a given communication channel.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+my $ArticleBackendObject = $ArticleObject->BackendForChannel( ChannelName => 'Email' );
+                ]]></programlisting>
+            </para>
+        </section>
+
+        <section id="package-porting-5-to-6-article-backend-api">
+            <title>Article Backend API</title>
+            <para>
+                All other article data and related methods have been moved to separate backends. Every communication
+                channel now has a dedicated backend API that handles article data and can be used to manipulate it.
+            </para>
+            <para>
+                OTRS 6 Free ships with some default channels and corresponding backends:
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Email (equivalent to old <literal>email</literal> article types)</para>
+                    </listitem>
+                    <listitem>
+                        <para>Phone (equivalent to old <literal>phone</literal> article types)</para>
+                    </listitem>
+                    <listitem>
+                        <para>Internal (equivalent to old <literal>note</literal> article types)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                Article data manipulation can be managed via following backend methods:
+            </para>
+            <para>
+                Article data manipulation can be managed via following backend methods:
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><literal>ArticleCreate()</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>ArticleUpdate()</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>ArticleGet()</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>ArticleDelete()</literal></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                All of these methods have dropped article type parameter, which must be substituted for
+                <literal>SenderType</literal> and <literal>IsVisibleForCustomer</literal> parameter combination. In
+                addition, all these methods now also require <literal>TicketID</literal> and <literal>UserID</literal>
+                parameters.
+            </para>
+            <para>
+                Please note that returning hash of <literal>ArticleGet()</literal> has changed, and some things (like
+                ticket data) might be missing. Utilize parameters like <literal>DynamicFields => 1</literal> and
+                <literal>RealNames => 1</literal> to get more information.
+            </para>
+            <para>
+                In addition, attachment data is not returned any more, please use combination of following methods from
+                the article backends:
+            </para>
+                <itemizedlist>
+                    <listitem>
+                        <para><literal>ArticleAttachmentIndex()</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>ArticleAttachment()</literal></para>
+                    </listitem>
+                </itemizedlist>
+            <para>
+                Note that <literal>ArticleAttachmentIndex()</literal> parameters and behavior has changed. Instead of
+                old strip parameter use combination of new <literal>ExcludePlainText</literal>,
+                <literal>ExcludeHTMLBody</literal> and <literal>ExcludeInline</literal>.
+            </para>
+            <para>
+                As an example, here is how to get all article and attachment data in the same hash:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+my @Articles = $ArticleObject->ArticleList(
+    TicketID => $TicketID,
+);
+
+ARTICLE:
+for my $Article (@Articles) {
+
+    # Make sure to retrieve backend object for this specific article.
+    my $ArticleBackendObject = $ArticleObject->BackendForArticle( %{$Article} );
+
+    my %ArticleData = $ArticleBackendObject->ArticleGet(
+        %{$Article},
+        DynamicFields => 1,
+        UserID        => $UserID,
+    );
+    $Article = \%ArticleData;
+
+    # Get attachment index (without attachments).
+    my %AtmIndex = $ArticleBackendObject->ArticleAttachmentIndex(
+        ArticleID => $Article->{ArticleID},
+        UserID    => $UserID,
+    );
+    next ARTICLE if !%AtmIndex;
+
+    my @Attachments;
+    ATTACHMENT:
+    for my $FileID ( sort keys %AtmIndex ) {
+        my %Attachment = $ArticleBackendObject->ArticleAttachment(
+            ArticleID => $Article->{ArticleID},
+            FileID    => $FileID,
+            UserID    => $UserID,
+        );
+        next ATTACHMENT if !%Attachment;
+
+        $Attachment{FileID} = $FileID;
+        $Attachment{Content} = encode_base64( $Attachment{Content} );
+
+        push @Attachments, \%Attachment;
+    }
+
+    # Include attachment data in article hash.
+    $Article->{Atms} = \@Attachments;
+}
+                ]]></programlisting>
+            </para>
+        </section>
+    </section>
+
+</section>
