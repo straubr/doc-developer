@@ -563,11 +563,17 @@ my $ArticleBackendObject = $ArticleObject->BackendForChannel( ChannelName => 'Em
                     <listitem>
                         <para>Internal (equivalent to old <literal>note</literal> article types)</para>
                     </listitem>
+                    <listitem>
+                        <para>Chat (equivalent to old <literal>chat</literal> article types)</para>
+                    </listitem>
                 </itemizedlist>
             </para>
-            <para>
-                Article data manipulation can be managed via following backend methods:
-            </para>
+            <note>
+                <para>
+                    While chat article backend is available in OTRS 6 Free, it is only utilized when system has a valid
+                    OTRS Business Solution™ installed.
+                </para>
+            </note>
             <para>
                 Article data manipulation can be managed via following backend methods:
             </para>
@@ -664,6 +670,66 @@ for my $Article (@Articles) {
     $Article->{Atms} = \@Attachments;
 }
                 ]]></programlisting>
+            </para>
+        </section>
+        <section id="package-porting-5-to-6-article-search-index">
+            <title>Article Search Index</title>
+            <para>
+                To make article indexing more generic, article backends now provide information necessary for properly
+                indexing article data. Index will be created similar to old <literal>StaticDB</literal> mechanism and
+                stored in a dedicated article search table.
+            </para>
+            <para>
+                Since now every article backend can provide search on arbitrary number of article fields, use
+                <literal>BackendSearchableFieldsGet()</literal> method to get information about them. This data can
+                also be used for forming requests to <literal>TicketSearch()</literal> method. Coincidentally, some
+                <literal>TicketSearch()</literal> parameters have changed their name to also include article backend
+                information, for example:
+            </para>
+            <para>
+                <informaltable>
+                    <tgroup cols="2">
+                        <thead>
+                            <row>
+                                <entry>Old parameter</entry>
+                                <entry>New parameter</entry>
+                            </row>
+                        </thead>
+                        <tbody>
+                            <row>
+                                <entry><literal>From</literal></entry>
+                                <entry><literal>MIMEBase_From</literal></entry>
+                            </row>
+                            <row>
+                                <entry><literal>To</literal></entry>
+                                <entry><literal>MIMEBase_To</literal></entry>
+                            </row>
+                            <row>
+                                <entry><literal>Cc</literal></entry>
+                                <entry><literal>MIMEBase_Cc</literal></entry>
+                            </row>
+                            <row>
+                                <entry><literal>Subject</literal></entry>
+                                <entry><literal>MIMEBase_Subject</literal></entry>
+                            </row>
+                            <row>
+                                <entry><literal>Body</literal></entry>
+                                <entry><literal>MIMEBase_Body</literal></entry>
+                            </row>
+                            <row>
+                                <entry><literal>AttachmentName</literal></entry>
+                                <entry><literal>MIMEBase_AttachmentName</literal></entry>
+                            </row>
+                        </tbody>
+                    </tgroup>
+                </informaltable>
+            </para>
+            <para>
+                Additionally, article search indexing will be done in an async call now, in order to off-load index
+                calculation to a separate task. While this is fine in production systems, it might create new problems
+                in certain situations, i.e. unit tests. If you are manually creating articles in your unit test, but
+                expect it to be searchable when created, make sure to manually call
+                <literal>ArticleIndexBuild()</literal> method on article object.
             </para>
         </section>
     </section>
