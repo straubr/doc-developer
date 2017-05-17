@@ -440,6 +440,12 @@ Type      => 'move_into',
                     <listitem>
                           <para><literal>ArticleSenderTypeLookup()</literal></para>
                     </listitem>
+                    <listitem>
+                          <para><literal>SearchStringStopWordsFind()</literal></para>
+                    </listitem>
+                    <listitem>
+                          <para><literal>SearchStringStopWordsUsageWarningActive()</literal></para>
+                    </listitem>
                 </itemizedlist>
             </para>
             <para>
@@ -599,6 +605,14 @@ my $ArticleBackendObject = $ArticleObject->BackendForChannel( ChannelName => 'Em
                 addition, all these methods now also require <literal>TicketID</literal> and <literal>UserID</literal>
                 parameters.
             </para>
+            <note>
+                <para>
+                    Since changes in article API are system-wide, any code using the old API must be ported for OTRS 6.
+                    This includes any web service definitions which leverage these methods directly via GenericInterface
+                    for example. They will need to be re-assessed and adapted to provide all required parameters to the
+                    new API during requests and manage subsequent responses in new format.
+                </para>
+            </note>
             <para>
                 Please note that returning hash of <literal>ArticleGet()</literal> has changed, and some things (like
                 ticket data) might be missing. Utilize parameters like <literal>DynamicFields => 1</literal> and
@@ -726,10 +740,10 @@ for my $Article (@Articles) {
             </para>
             <para>
                 Additionally, article search indexing will be done in an async call now, in order to off-load index
-                calculation to a separate task. While this is fine in production systems, it might create new problems
+                calculation to a separate task. While this is fine for production systems, it might create new problems
                 in certain situations, i.e. unit tests. If you are manually creating articles in your unit test, but
-                expect it to be searchable when created, make sure to manually call
-                <literal>ArticleIndexBuild()</literal> method on article object.
+                expect it to be searchable immediately after created, make sure to manually call the new
+                <literal>ArticleSearchIndexBuild()</literal> method on article object.
             </para>
         </section>
     </section>
