@@ -11,9 +11,18 @@ Cancún Beach (México)</edition>-->
 <date>2015-05-12</date>
         <legalnotice>
             <para>
-                Ez a mű az OTRS AG szerzői joga alatt áll. Lemásolhatja részben vagy
-egészben mindaddig, amíg a másolat tartalmazza ezt a szerzői jogi
-nyilatkozatot.
+                Ez a mű az OTRS AG szerzői joga alatt áll.
+            </para>
+
+            <para>
+                Lemásolhatja részben vagy egészben mindaddig, amíg a másolat tartalmazza ezt
+a szerzői jogi nyilatkozatot.
+            </para>
+
+            <para>
+                Minden márkanév a szabad felhasználásra vonatkozó garancia nélkül kerül
+felhasználásra, és lehetséges bejegyzett védjegyek lehetnek. Az ebben a
+kézikönyvben említett összes termék az illető gyártó védjegyei lehetnek.
             </para>
 
             <para>
@@ -23,26 +32,6 @@ url="https://github.com/OTRS/doc-developer">doc-developer</ulink>
 tárolóban. A hozzájárulásokat mindennél jobban köszönjük. Segíthet a saját
 nyelvére való fordításban is a <ulink
 url="https://www.transifex.com/otrs/OTRS/">Transifex</ulink> oldalon.
-            </para>
-
-            <para>
-                A UNIX az X/Open Company Limited bejegyzett védjegye. Az MS-DOS, a Windows,
-a Windows 95, a Windows 98, a Windows NT, a Windows 2000, a Windows XP, a
-Windows 2003, a Windows Vista és a Windows 7 a Microsoft Corporation
-bejegyzett védjegyei. További védjegyek és bejegyzett védjegyek: a SUSE és a
-YaST a SUSE GmbH, a Red Hat és a Fedora a Red Hat, Inc. bejegyzett
-védjegyei. A Mandrake a MandrakeSoft, SA. bejegyzett védjegye. A Debian a
-Software in the Public Interest, Inc. bejegyzett védjegye. A MySQL és a
-MySQL logó az Oracle Corporation és/vagy leányvállalatai bejegyzett
-védjegyei.
-            </para>
-            <para>
-                Minden márkanév a szabad felhasználásra vonatkozó garancia nélkül kerül
-felhasználásra, és lehetséges bejegyzett védjegyek lehetnek.
-            </para>
-            <para>
-                Az OTRS AG lényegében a gyártók jelölésrendszerét követi. Az ebben a
-kézikönyvben említett egyéb termékek az illető gyártók védjegyei lehetnek.
             </para>
         </legalnotice>
     </bookinfo>

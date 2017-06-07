@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-01 11:13+0200\n"
+"POT-Creation-Date: 2017-06-07 15:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,13 +37,26 @@ msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: en/book.xml:15
-msgid ""
-"This work is copyrighted by OTRS AG. You may copy it in whole or in part as "
-"long as the copies retain this copyright statement."
+msgid "This work is copyrighted by OTRS AG."
 msgstr ""
 
 #. type: Content of: <book><bookinfo><legalnotice><para>
 #: en/book.xml:19
+msgid ""
+"You may copy it in whole or in part as long as the copies retain this "
+"copyright statement."
+msgstr ""
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/book.xml:23
+msgid ""
+"All trade names are used without the guarantee for their free use and are "
+"possibly registered trade marks.  All products mentioned in this manual may "
+"be trade marks of the respective manufacturer."
+msgstr ""
+
+#. type: Content of: <book><bookinfo><legalnotice><para>
+#: en/book.xml:30
 msgid ""
 "The source code of this document can be found at <ulink "
 "url=\"https://otrs.github.io\">github</ulink>, in the repository <ulink "
@@ -51,36 +64,6 @@ msgid ""
 "Contributions are more than welcome.  You can also help translating it to "
 "your language at <ulink "
 "url=\"https://www.transifex.com/otrs/OTRS/\">Transifex</ulink>."
-msgstr ""
-
-#. type: Content of: <book><bookinfo><legalnotice><para>
-#: en/book.xml:28
-msgid ""
-"UNIX is a registered trademark of X/Open Company Limited.  Linux is a "
-"registered trademark of Linus Torvalds.  MS-DOS, Windows, Windows 95, "
-"Windows 98, Windows NT, Windows 2000, Windows XP, Windows 2003, Windows "
-"Vista and Windows 7 are registered trademarks of Microsoft Corporation.  "
-"Other trademarks and registered trademarks are: SUSE and YaST of SUSE Linux "
-"GmbH, Red Hat and Fedora are registered trademarks of Red Hat, Inc.  "
-"Mandrake is a registered trademark of MandrakeSoft, SA.  Debian is a "
-"registered trademark of Software in the Public Interest, Inc.  MySQL and the "
-"MySQL Logo are registered trademarks of Oracle Corporation and/or its "
-"affiliates."
-msgstr ""
-
-#. type: Content of: <book><bookinfo><legalnotice><para>
-#: en/book.xml:39
-msgid ""
-"All trade names are used without the guarantee for their free use and are "
-"possibly registered trade marks."
-msgstr ""
-
-#. type: Content of: <book><bookinfo><legalnotice><para>
-#: en/book.xml:43
-msgid ""
-"OTRS AG essentially follows the notations of the manufacturers.  Other "
-"products mentioned in this manual may be trademarks of the respective "
-"manufacturer."
 msgstr ""
 
 #. type: Content of: <appendix><title>
@@ -1009,7 +992,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><section><para>
-#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:47 en/content/contributing/code-style-guide/perl.xml:57 en/content/contributing/code-style-guide/perl.xml:71 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:111 en/content/contributing/code-style-guide/perl.xml:155 en/content/contributing/code-style-guide/perl.xml:172 en/content/contributing/code-style-guide/perl.xml:194 en/content/contributing/code-style-guide/perl.xml:237 en/content/contributing/code-style-guide/perl.xml:246 en/content/contributing/code-style-guide/perl.xml:258 en/content/contributing/code-style-guide/perl.xml:270 en/content/contributing/code-style-guide/perl.xml:282 en/content/contributing/code-style-guide/perl.xml:323 en/content/contributing/code-style-guide/perl.xml:344 en/content/contributing/code-style-guide/perl.xml:377 en/content/contributing/code-style-guide/perl.xml:386 en/content/contributing/code-style-guide/perl.xml:397 en/content/contributing/code-style-guide/perl.xml:410 en/content/contributing/code-style-guide/perl.xml:439 en/content/contributing/code-style-guide/perl.xml:450 en/content/contributing/code-style-guide/perl.xml:469 en/content/contributing/code-style-guide/perl.xml:480 en/content/contributing/code-style-guide/perl.xml:493 en/content/contributing/code-style-guide/perl.xml:508 en/content/contributing/code-style-guide/perl.xml:517 en/content/contributing/code-style-guide/perl.xml:527 en/content/contributing/code-style-guide/perl.xml:545 en/content/contributing/code-style-guide/perl.xml:560 en/content/contributing/code-style-guide/perl.xml:611 en/content/contributing/code-style-guide/perl.xml:747 en/content/contributing/code-style-guide/perl.xml:771 en/content/contributing/code-style-guide/perl.xml:782 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:139 en/content/how-to-extend-otrs/writing-otrs-application.xml:190 en/content/how-to-extend-otrs/writing-otrs-application.xml:219 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:233 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:255 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:114 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:190 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:247 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:285 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:324 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:346 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:76 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:122 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:296 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:363 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:512 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:30 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:63 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:138 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:231 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:299 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:377 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:386 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:396 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:406 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:416 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:425 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:434 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:444 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:467 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:478 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:490 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:499 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:510 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:521 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:535 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:545 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:555 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:455 en/content/how-to-publish-otrs-extensions/package-building.xml:476 en/content/how-to-publish-otrs-extensions/package-building.xml:501 en/content/how-to-publish-otrs-extensions/package-building.xml:511 en/content/how-to-publish-otrs-extensions/package-building.xml:530 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
+#: en/content/contributing/unit-tests.xml:21 en/content/contributing/unit-tests.xml:76 en/content/contributing/unit-tests.xml:113 en/content/contributing/unit-tests.xml:127 en/content/contributing/unit-tests.xml:141 en/content/contributing/unit-tests.xml:156 en/content/contributing/unit-tests.xml:172 en/content/contributing/unit-tests.xml:188 en/content/contributing/code-style-guide/css.xml:60 en/content/contributing/code-style-guide/css.xml:84 en/content/contributing/code-style-guide/css.xml:108 en/content/contributing/code-style-guide/javascript.xml:21 en/content/contributing/code-style-guide/perl.xml:17 en/content/contributing/code-style-guide/perl.xml:47 en/content/contributing/code-style-guide/perl.xml:57 en/content/contributing/code-style-guide/perl.xml:71 en/content/contributing/code-style-guide/perl.xml:80 en/content/contributing/code-style-guide/perl.xml:95 en/content/contributing/code-style-guide/perl.xml:111 en/content/contributing/code-style-guide/perl.xml:155 en/content/contributing/code-style-guide/perl.xml:172 en/content/contributing/code-style-guide/perl.xml:194 en/content/contributing/code-style-guide/perl.xml:237 en/content/contributing/code-style-guide/perl.xml:246 en/content/contributing/code-style-guide/perl.xml:258 en/content/contributing/code-style-guide/perl.xml:270 en/content/contributing/code-style-guide/perl.xml:282 en/content/contributing/code-style-guide/perl.xml:323 en/content/contributing/code-style-guide/perl.xml:344 en/content/contributing/code-style-guide/perl.xml:377 en/content/contributing/code-style-guide/perl.xml:386 en/content/contributing/code-style-guide/perl.xml:397 en/content/contributing/code-style-guide/perl.xml:410 en/content/contributing/code-style-guide/perl.xml:439 en/content/contributing/code-style-guide/perl.xml:450 en/content/contributing/code-style-guide/perl.xml:469 en/content/contributing/code-style-guide/perl.xml:480 en/content/contributing/code-style-guide/perl.xml:493 en/content/contributing/code-style-guide/perl.xml:508 en/content/contributing/code-style-guide/perl.xml:517 en/content/contributing/code-style-guide/perl.xml:527 en/content/contributing/code-style-guide/perl.xml:545 en/content/contributing/code-style-guide/perl.xml:560 en/content/contributing/code-style-guide/perl.xml:611 en/content/contributing/code-style-guide/perl.xml:747 en/content/contributing/code-style-guide/perl.xml:771 en/content/contributing/code-style-guide/perl.xml:782 en/content/how-it-works/config-mechanism.xml:52 en/content/how-it-works/config-mechanism.xml:68 en/content/how-it-works/config-mechanism.xml:107 en/content/how-it-works/config-mechanism.xml:119 en/content/how-it-works/config-mechanism.xml:137 en/content/how-it-works/config-mechanism.xml:150 en/content/how-it-works/config-mechanism.xml:163 en/content/how-it-works/config-mechanism.xml:179 en/content/how-it-works/config-mechanism.xml:195 en/content/how-it-works/config-mechanism.xml:208 en/content/how-it-works/config-mechanism.xml:236 en/content/how-it-works/config-mechanism.xml:282 en/content/how-it-works/config-mechanism.xml:313 en/content/how-it-works/config-mechanism.xml:321 en/content/how-it-works/database-mechanism.xml:81 en/content/how-it-works/database-mechanism.xml:89 en/content/how-it-works/database-mechanism.xml:97 en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110 en/content/how-it-works/loader.xml:156 en/content/how-it-works/loader.xml:185 en/content/how-it-works/loader.xml:215 en/content/how-it-works/loader.xml:264 en/content/how-it-works/loader.xml:320 en/content/how-it-works/loader.xml:347 en/content/how-it-works/loader.xml:400 en/content/how-it-works/log-mechanism.xml:13 en/content/how-it-works/skins.xml:41 en/content/how-it-works/skins.xml:54 en/content/how-it-works/skins.xml:110 en/content/how-it-works/skins.xml:122 en/content/how-it-works/skins.xml:132 en/content/how-it-works/skins.xml:167 en/content/how-it-works/skins.xml:180 en/content/how-it-works/templates.xml:60 en/content/how-it-works/templates.xml:79 en/content/how-it-works/templates.xml:89 en/content/how-it-works/templates.xml:106 en/content/how-it-works/templates.xml:118 en/content/how-it-works/templates.xml:127 en/content/how-it-works/templates.xml:139 en/content/how-it-works/templates.xml:174 en/content/how-it-works/templates.xml:189 en/content/how-it-works/templates.xml:215 en/content/how-it-works/templates.xml:224 en/content/how-it-works/templates.xml:233 en/content/how-it-works/templates.xml:242 en/content/how-it-works/templates.xml:261 en/content/how-it-works/templates.xml:283 en/content/how-it-works/templates.xml:311 en/content/how-it-works/templates.xml:335 en/content/how-it-works/templates.xml:370 en/content/how-it-works/templates.xml:419 en/content/how-it-works/templates.xml:473 en/content/how-it-works/templates.xml:529 en/content/how-it-works/translations.xml:22 en/content/how-it-works/translations.xml:45 en/content/how-it-works/translations.xml:107 en/content/how-it-works/translations.xml:157 en/content/how-to-extend-otrs/writing-otrs-application.xml:41 en/content/how-to-extend-otrs/writing-otrs-application.xml:79 en/content/how-to-extend-otrs/writing-otrs-application.xml:139 en/content/how-to-extend-otrs/writing-otrs-application.xml:190 en/content/how-to-extend-otrs/writing-otrs-application.xml:219 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/agent-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/auth-sync.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-auth.xml:181 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/customer-user-preferences.xml:156 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dashboard.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:40 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:69 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:97 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:151 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:166 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:233 en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:255 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:144 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:173 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:223 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:320 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:360 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:382 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:66 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:114 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:190 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:247 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:285 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:324 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:346 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/log.xml:133 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/notify.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:56 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:136 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:24 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:134 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:41 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:65 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:106 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:205 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:220 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:239 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:252 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:283 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:358 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:372 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:415 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:453 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:661 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:721 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:751 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:807 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:856 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1108 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:1113 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:140 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:46 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:67 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:102 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:154 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:174 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:211 en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:257 en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:57 en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:87 en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:105 en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:165 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:60 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:22 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-config.xml:75 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:61 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:31 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:58 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:145 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module-template.xml:189 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:42 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:76 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:122 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:296 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:363 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:512 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:18 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:27 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:49 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-config.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:30 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:63 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:138 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:231 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:299 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:377 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:386 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:396 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:406 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:416 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:425 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:434 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:444 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:467 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:478 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:490 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:499 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:510 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:521 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:535 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:545 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:555 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:25 en/content/how-to-extend-otrs/otrs-module-layers/email-handling/ticket-postmaster-modules.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:22 en/content/how-to-publish-otrs-extensions/package-building.xml:33 en/content/how-to-publish-otrs-extensions/package-building.xml:44 en/content/how-to-publish-otrs-extensions/package-building.xml:52 en/content/how-to-publish-otrs-extensions/package-building.xml:65 en/content/how-to-publish-otrs-extensions/package-building.xml:76 en/content/how-to-publish-otrs-extensions/package-building.xml:87 en/content/how-to-publish-otrs-extensions/package-building.xml:98 en/content/how-to-publish-otrs-extensions/package-building.xml:110 en/content/how-to-publish-otrs-extensions/package-building.xml:123 en/content/how-to-publish-otrs-extensions/package-building.xml:136 en/content/how-to-publish-otrs-extensions/package-building.xml:147 en/content/how-to-publish-otrs-extensions/package-building.xml:159 en/content/how-to-publish-otrs-extensions/package-building.xml:171 en/content/how-to-publish-otrs-extensions/package-building.xml:183 en/content/how-to-publish-otrs-extensions/package-building.xml:196 en/content/how-to-publish-otrs-extensions/package-building.xml:212 en/content/how-to-publish-otrs-extensions/package-building.xml:240 en/content/how-to-publish-otrs-extensions/package-building.xml:261 en/content/how-to-publish-otrs-extensions/package-building.xml:277 en/content/how-to-publish-otrs-extensions/package-building.xml:295 en/content/how-to-publish-otrs-extensions/package-building.xml:313 en/content/how-to-publish-otrs-extensions/package-building.xml:331 en/content/how-to-publish-otrs-extensions/package-building.xml:349 en/content/how-to-publish-otrs-extensions/package-building.xml:367 en/content/how-to-publish-otrs-extensions/package-building.xml:392 en/content/how-to-publish-otrs-extensions/package-building.xml:410 en/content/how-to-publish-otrs-extensions/package-building.xml:431 en/content/how-to-publish-otrs-extensions/package-building.xml:455 en/content/how-to-publish-otrs-extensions/package-building.xml:476 en/content/how-to-publish-otrs-extensions/package-building.xml:501 en/content/how-to-publish-otrs-extensions/package-building.xml:511 en/content/how-to-publish-otrs-extensions/package-building.xml:530 en/content/how-to-publish-otrs-extensions/package-porting.xml:36 en/content/how-to-publish-otrs-extensions/package-porting.xml:61 en/content/how-to-publish-otrs-extensions/package-porting.xml:91 en/content/how-to-publish-otrs-extensions/package-porting.xml:173 en/content/how-to-publish-otrs-extensions/package-porting.xml:207 en/content/how-to-publish-otrs-extensions/package-porting.xml:249 en/content/how-to-publish-otrs-extensions/package-porting.xml:265 en/content/how-to-publish-otrs-extensions/package-porting.xml:326 en/content/how-to-publish-otrs-extensions/package-porting.xml:428 en/content/how-to-publish-otrs-extensions/package-porting.xml:470 en/content/how-to-publish-otrs-extensions/package-porting.xml:677
 msgid "<placeholder type=\"programlisting\" id=\"0\"/>"
 msgstr ""
 
@@ -2380,7 +2363,7 @@ msgstr ""
 #. type: Content of: <section><section><section><variablelist><varlistentry><listitem><para>
 #: en/content/contributing/code-style-guide/perl.xml:658
 msgid ""
-"It's always preferrable to write code so that it is very readable and "
+"It's always preferable to write code so that it is very readable and "
 "self-explaining, for example with precise variable and function names."
 msgstr ""
 
@@ -3218,7 +3201,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/get-started/architecture.xml:360 en/content/how-to-extend-otrs/otrs-module-layers.xml:55
+#: en/content/get-started/architecture.xml:360
 msgid "Scheduler Task Handler Modules"
 msgstr ""
 
@@ -4240,7 +4223,9 @@ msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-it-works/database-mechanism.xml:233
-msgid "Microsoft SQL Server (MSSQL)"
+msgid ""
+"Microsoft SQL Server (only for external database connections, not as OTRS "
+"database)"
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -5151,7 +5136,7 @@ msgstr ""
 #, no-wrap
 msgid ""
 "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
-"<otrs_config version=\"1.0\" init=\"Framework\">\n"
+"<otrs_config version=\"1.0\" init=\"Changes\">\n"
 "    <ConfigItem Name=\"AgentLogo\" Required=\"0\" Valid=\"1\">\n"
 "        <Description Translatable=\"1\">The logo shown in the header of the "
 "agent interface. The URL to the image must be a relative URL to the skin "
@@ -6252,12 +6237,17 @@ msgid "Other core functions"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers.xml:60
+#: en/content/how-to-extend-otrs/otrs-module-layers.xml:55
+msgid "Daemon And Scheduler"
+msgstr ""
+
+#. type: Content of: <section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers.xml:61
 msgid "Dynamic Fields"
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers.xml:70
+#: en/content/how-to-extend-otrs/otrs-module-layers.xml:71
 msgid "Email Handling"
 msgstr ""
 
@@ -7671,7 +7661,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:44 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:705
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:126 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:20 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:44 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:16 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:705
 msgid "<literal>new</literal>"
 msgstr ""
 
@@ -7694,7 +7684,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:35 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:32 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:70 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:53 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:36 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:716 en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:14 en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:26
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-invoker.xml:35 en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:139 en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:32 en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:70 en/content/how-to-extend-otrs/otrs-module-layers/outputfilter.xml:88 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:36 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:716 en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:14 en/content/how-to-extend-otrs/otrs-module-layers/ticketnumber-generator.xml:26
 msgid "Code example"
 msgstr ""
 
@@ -8005,8 +7995,8 @@ msgid ""
 "modules can be developed to transform not just values but also the keys."
 msgstr ""
 
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:12 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:38
+#. type: Content of: <section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-mapping.xml:12
 msgid "<emphasis>For example:</emphasis>"
 msgstr ""
 
@@ -8477,7 +8467,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <section><section><para><itemizedlist><listitem><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:711
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:23 en/content/how-to-extend-otrs/otrs-module-layers/stats.xml:711
 msgid "<literal>Run</literal>"
 msgstr ""
 
@@ -9877,215 +9867,6 @@ msgstr ""
 #. type: Content of: <section><section><para><informaltable><tgroup><tbody><row><entry>
 #: en/content/how-to-extend-otrs/otrs-module-layers/queue-preferences.xml:168 en/content/how-to-extend-otrs/otrs-module-layers/service-preferences.xml:168 en/content/how-to-extend-otrs/otrs-module-layers/sla-preferences.xml:165
 msgid "PreferencesDB"
-msgstr ""
-
-#. type: Content of: <section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:5
-msgid "Task Handler"
-msgstr ""
-
-#. type: Content of: <section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:7
-msgid ""
-"The task handler modules are used to perform actions within OTRS "
-"asynchronously via OTRS scheduler (a separated \"daemon like\" process) made "
-"specifically to execute this kind of jobs."
-msgstr ""
-
-#. type: Content of: <section><section><title>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:12
-msgid "Task Handler backend"
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:14
-msgid ""
-"Next we will show how to develop a new scheduler task handler backend. Each "
-"task handler backend has to implement these subroutines:"
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:28
-msgid ""
-"We should implement each one of this methods in order to be able to execute "
-"tasks.  All task handler backends are used by main scheduler task handler "
-"module (<filename>Kernel/scheduler/TaskHandler.pm</filename>)."
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:33
-msgid ""
-"Currently the scheduler only has one working task handler backend named "
-"<literal>GenericInterface</literal>. This task handler backend executes "
-"Generic Interface Invoker modules in the background."
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:41
-msgid ""
-"By using the OTRS Scheduler combined with the Generic Interface a user does "
-"not need to wait in the New phone ticket screen after creating a ticket "
-"until a Remote System responds to a web service request triggered by an "
-"event like <literal>TicketCreate</literal>, instead this task can be "
-"delegated to the OTRS scheduler to run it on the background."
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:47
-msgid ""
-"There is no need to create a new task handler backend for the Generic "
-"Interface, unless a different behavior from the current one is needed. To "
-"delegate Generic Interface Invoker tasks to the OTRS Scheduler you need to "
-"configure the Invoker event trigger as asynchronous."
-msgstr ""
-
-#. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:55
-msgid ""
-"In this section a sample scheduler task handler module is shown and each "
-"subroutine is explained."
-msgstr ""
-
-#. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:59
-#, no-wrap
-msgid ""
-"# --\n"
-"# Kernel/Scheduler/TaskHandler/Test.pm - Scheduler task handler test "
-"backend\n"
-"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
-"# --\n"
-"# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
-"# the enclosed file COPYING for license information (AGPL). If you\n"
-"# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
-"# --\n"
-"\n"
-"package Kernel::Scheduler::TaskHandler::Test;\n"
-"\n"
-"use strict;\n"
-"use warnings;\n"
-"\n"
-"use vars qw(@ISA);\n"
-msgstr ""
-
-#. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:78
-msgid ""
-"This is common header that can be found in common OTRS modules. The "
-"class/package name is declared via the package keyword."
-msgstr ""
-
-#. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:82
-#, no-wrap
-msgid ""
-"sub new {\n"
-"    my ( $Type, %Param ) = @_;\n"
-"\n"
-"    my $Self = {};\n"
-"    bless( $Self, $Type );\n"
-"\n"
-"    # check needed objects\n"
-"    for my $Needed (qw(MainObject ConfigObject LogObject DBObject "
-"TimeObject)) {\n"
-"        $Self->{$Needed} = $Param{$Needed} || die \"Got no $Needed!\";\n"
-"    }\n"
-"\n"
-"    return $Self;\n"
-"}\n"
-msgstr ""
-
-#. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:99 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:122
-msgid ""
-"The constructor <literal>new</literal> creates a new instance of the "
-"class. According to the coding guidelines objects of other classes that are "
-"needed in this module have to be created in <literal>new</literal>."
-msgstr ""
-
-#. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:104
-#, no-wrap
-msgid ""
-"sub Run {\n"
-"    my ( $Self, %Param ) = @_;\n"
-"\n"
-"    # check data - we need a hash ref\n"
-"    if ( $Param{Data} && ref $Param{Data} ne 'HASH' ) {\n"
-"        $Self->{LogObject}->Log(\n"
-"            Priority => 'error',\n"
-"            Message  => 'Got no valid Data!',\n"
-"        );\n"
-"\n"
-"        return {\n"
-"            Success => 0,\n"
-"        };\n"
-"    }\n"
-"\n"
-"    # create tmp file\n"
-"    if ( $Param{Data}->{File} ) {\n"
-"        my $Content = 123;\n"
-"        return if !$Self->{MainObject}->FileWrite(\n"
-"            Location => $Param{Data}->{File},\n"
-"            Content  => \\$Content,\n"
-"        );\n"
-"    }\n"
-"\n"
-"    # re schedule with new time\n"
-"    return {\n"
-"        Success    => $Param{Data}->{Success},\n"
-"        ReSchedule => $Param{Data}->{ReSchedule},\n"
-"        DueTime    => $Param{Data}->{ReScheduleDueTime},\n"
-"        Data       => $Param{Data}->{ReScheduleData},\n"
-"    };\n"
-"}\n"
-msgstr ""
-
-#. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:140
-msgid ""
-"The <literal>Run</literal> function is the main part of the module. It "
-"checks the incoming data, make calls to other OTRS modules to execute the "
-"tasks, waits for the task result and based on the result information it "
-"determines if the task was successfully executed or not and if the task "
-"needs to be re-schedule itself, when and with which data."
-msgstr ""
-
-#. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:146
-msgid ""
-"For this testing example if the parameter <literal>File</literal> exists in "
-"the incoming data, a new file is to be created on the file system by the "
-"task handler, depending of the success of this, the task handler will "
-"continue to the rest part of the code where base its decisions for the "
-"returning structure on the previously provided data."
-msgstr ""
-
-#. type: Content of: <section><section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:152
-msgid ""
-"On real task handler backends the decisions for the returning structure "
-"could be based on the task handler backend logics, the task execution "
-"results, configuration settings, etc."
-msgstr ""
-
-#. type: CDATA
-#: en/content/how-to-extend-otrs/otrs-module-layers/scheduler-task-handler.xml:157 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347
-#, no-wrap
-msgid ""
-"1;\n"
-"\n"
-"=back\n"
-"\n"
-"=head1 TERMS AND CONDITIONS\n"
-"\n"
-"This software is part of the OTRS project (L<http://otrs.org/>).\n"
-"\n"
-"This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
-"the enclosed file COPYING for license information (AGPL). If you\n"
-"did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.\n"
-"\n"
-"=cut\n"
 msgstr ""
 
 #. type: Content of: <section><title>
@@ -12207,6 +11988,581 @@ msgid "Ticket number generators have been available in OTRS since OTRS 1.1."
 msgstr ""
 
 #. type: Content of: <section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:5
+msgid "OTRS Daemon"
+msgstr ""
+
+#. type: Content of: <section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:7
+msgid ""
+"The OTRS Daemon is a separated process that helps OTRS to execute certain "
+"actions asynchronously and detached of the web server process, but sharing "
+"the same database."
+msgstr ""
+
+#. type: Content of: <section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:11
+msgid "OTRS Daemon Modules"
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:13
+msgid ""
+"The OTRS Daemon <filename>bin/otrs.Daemon.pl</filename> main purpose is to "
+"call (Daemonize) all the registered daemon modules in the System "
+"Configuration."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:17
+msgid ""
+"Each daemon module must implement a common API in order to be correctly "
+"called by the OTRS Daemon and be a semi persistent process in the "
+"system. Persistent process could grow in size and memory usage over the time "
+"and normally they do not respond to changes in the configuration. That is "
+"why the daemon modules should implement a discard mechanism to be stopped "
+"and re-spawned again from time to time, freeing system resources and "
+"re-reading the configuration."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:25
+msgid ""
+"A daemon module could be an all-in-one solution to perform a certain job, "
+"but there could be the case that a solution requires different daemon "
+"modules due to its complexity.  That is exactly the case of the OTRS "
+"Scheduler Daemon that is split into several daemon modules including some "
+"daemon modules for task management and task execution."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:31
+msgid ""
+"It is not always necessary to create a new daemon module to perform certain "
+"task, usually the OTRS Scheduler Daemon can deal with the majority of them, "
+"either if it is an OTRS function that needs to be executed on a regular "
+"basis (CRON like) or if it's triggered by an OTRS event, the OTRS Scheduler "
+"should be capable to deal with it out of the box or by adding a new "
+"scheduler task worker module."
+msgstr ""
+
+#. type: Content of: <section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:38
+msgid "Creating A New Daemon Module"
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:40
+msgid ""
+"All daemon modules requires to be registered in the System Configuration in "
+"order to be called by the main OTRS Daemon."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:44
+msgid "Daemon Module Registration Code Example"
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:46
+#, no-wrap
+msgid ""
+"<ConfigItem Name=\"DaemonModules###TestDaemon\" Required=\"1\" "
+"Valid=\"1\">\n"
+"    <Description Translatable=\"1\">The daemon registration for the "
+"scheduler generic agent task manager.</Description>\n"
+"    <Group>Daemon</Group>\n"
+"    <SubGroup>Core::Daemon::ModuleRegistration</SubGroup>\n"
+"    <Setting>\n"
+"        <Hash>\n"
+"            <Item "
+"Key=\"Module\">Kernel::System::Daemon::DaemonModules::TestDaemon</Item>\n"
+"        </Hash>\n"
+"    </Setting>\n"
+"</ConfigItem>\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:61
+msgid "Daemon Module Code Example"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:63
+msgid ""
+"The following code implements a daemon module that displays the system time "
+"every 2 seconds."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:67
+#, no-wrap
+msgid ""
+"# --\n"
+"# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/\n"
+"# --\n"
+"# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
+"# the enclosed file COPYING for license information (AGPL). If you\n"
+"# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
+"# --\n"
+"\n"
+"package Kernel::System::Daemon::DaemonModules::TestDaemon;\n"
+"\n"
+"use strict;\n"
+"use warnings;\n"
+"use utf8;\n"
+"\n"
+"use Kernel::System::VariableCheck qw(:all);\n"
+"\n"
+"use parent qw(Kernel::System::Daemon::BaseDaemon);\n"
+"\n"
+"our @ObjectDependencies = (\n"
+"    'Kernel::Config',\n"
+"    'Kernel::System::Cache',\n"
+"    'Kernel::System::DB',\n"
+");\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:94 en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:79
+msgid ""
+"This is common header that can be found in most OTRS modules. The "
+"class/package name is declared via the package keyword."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:98
+msgid ""
+"In this case we are inheriting from <literal>BaseDaemon</literal> class, and "
+"the object manager dependencies are set."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:102
+#, no-wrap
+msgid ""
+"sub new {\n"
+"    my ( $Type, %Param ) = @_;\n"
+"\n"
+"    # Allocate new hash for object.\n"
+"    my $Self = {};\n"
+"    bless $Self, $Type;\n"
+"\n"
+"    # Get objects in constructor to save performance.\n"
+"    $Self->{ConfigObject} = $Kernel::OM->Get('Kernel::Config');\n"
+"    $Self->{CacheObject}  = $Kernel::OM->Get('Kernel::System::Cache');\n"
+"    $Self->{DBObject}     = $Kernel::OM->Get('Kernel::System::DB');\n"
+"\n"
+"    # Disable in memory cache to be clusterable.\n"
+"    $Self->{CacheObject}->Configure(\n"
+"        CacheInMemory  => 0,\n"
+"        CacheInBackend => 1,\n"
+"    );\n"
+"\n"
+"    $Self->{SleepPost} = 2;          # sleep 2 seconds after each loop\n"
+"    $Self->{Discard}   = 60 * 60;    # discard every hour\n"
+"\n"
+"    $Self->{DiscardCount} = $Self->{Discard} / $Self->{SleepPost};\n"
+"\n"
+"    $Self->{Debug}      = $Param{Debug};\n"
+"    $Self->{DaemonName} = 'Daemon: TestDaemon';\n"
+"\n"
+"    return $Self;\n"
+"}\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:134
+msgid ""
+"The constructor <literal>new</literal> creates a new instance of the class.  "
+"Some used objects are also created here. It is highly recommended to disable "
+"in-memory cache in daemon modules especially if OTRS runs in a cluster "
+"environment."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:140
+msgid ""
+"In order to make this daemon module to be executed every two seconds it is "
+"necessary to define a sleep time accordingly, otherwise it will be executed "
+"as soon as possible."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:145
+msgid ""
+"Refreshing the daemon module from time to time is necessary in order to "
+"define when it should be discarded."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:149
+msgid ""
+"For the following functions (<literal>PreRun</literal>, "
+"<literal>Run</literal> and <literal>PostRun</literal>) if they return false, "
+"the main OTRS Daemon will discard the object and create a new one as soon as "
+"possible."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:154
+#, no-wrap
+msgid ""
+"sub PreRun {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    # Check if database is on-line.\n"
+"    return 1 if $Self->{DBObject}->Ping();\n"
+"\n"
+"    sleep 10;\n"
+"\n"
+"    return;\n"
+"}\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:168
+msgid ""
+"The <literal>PreRun</literal> method is executed before the main daemon "
+"module method, and the its purpose is to perform some test before the real "
+"operation. In this case a check to the database is done (always "
+"recommended), otherwise it sleeps for 10 seconds. This is needed in order to "
+"wait for DB connection to be reestablished."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:174
+#, no-wrap
+msgid ""
+"sub Run {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    print \"Current time \" . localtime . \"\\n\";\n"
+"\n"
+"    return 1;\n"
+"}\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:185
+msgid ""
+"The <literal>Run</literal> method is where the main daemon module code "
+"resides, in this case it only prints the current time."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:189
+#, no-wrap
+msgid ""
+"sub PostRun {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"    sleep $Self->{SleepPost};\n"
+"    $Self->{DiscardCount}--;\n"
+"\n"
+"    if ( $Self->{Debug} ) {\n"
+"        print \"  $Self->{DaemonName} Discard Count: "
+"$Self->{DiscardCount}\\n\";\n"
+"    }\n"
+"\n"
+"    return if $Self->{DiscardCount} <= 0;\n"
+"\n"
+"    return 1;\n"
+"}\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:206
+msgid ""
+"The <literal>PostRun</literal> method is used to perform the sleeps "
+"(preventing the daemon module to be executed too often) and also to manage "
+"the safe discarding of the object. Other operations like verification or "
+"cleanup can be done here."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:211
+#, no-wrap
+msgid ""
+"sub Summary {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    my %Summary = (\n"
+"        Header => 'Test Daemon Summary:',\n"
+"        Column => [\n"
+"            {\n"
+"                Name        => 'SomeColumn',\n"
+"                DisplayName => 'Some Column',\n"
+"                Size        => 15,\n"
+"            },\n"
+"            {\n"
+"                Name        => 'AnotherColumn',\n"
+"                DisplayName => 'Another Column',\n"
+"                Size        => 15,\n"
+"            },\n"
+"            # ...\n"
+"        ],\n"
+"        Data => [\n"
+"            {\n"
+"                SomeColumn    => 'Some Data 1',\n"
+"                AnotherColumn => 'Another Data 1',\n"
+"            },\n"
+"            {\n"
+"                SomeColumn    => 'Some Data 2',\n"
+"                AnotherColumn => 'Another Data 2',\n"
+"            },\n"
+"            # ...\n"
+"        ],\n"
+"        NoDataMesssage => '',\n"
+"    );\n"
+"\n"
+"    return \\%Summary;\n"
+"}\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:249
+msgid ""
+"The <literal>Summary</literal> method is called by the console command "
+"<literal>Maint::Daemon::Summary</literal> and it's required to return "
+"<literal>Header</literal>, <literal>Column</literal>, "
+"<literal>Data</literal> and <literal>NoDataMessages</literal> keys.  "
+"<literal>Column</literal> and <literal>Data</literal> needs to be an array "
+"of hashes.  It is used to display useful information of what the daemon "
+"module is currently doing, or what has been done so far. This method is "
+"optional."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:257 en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:165
+#, no-wrap
+msgid "1;\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:262 en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:170
+msgid "End of file."
+msgstr ""
+
+#. type: Content of: <section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:5
+msgid "OTRS Scheduler"
+msgstr ""
+
+#. type: Content of: <section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:7
+msgid ""
+"The OTRS Scheduler is a conjunction of daemon modules and task workers that "
+"runs together in order to perform all needed OTRS tasks asynchronously from "
+"the web server process."
+msgstr ""
+
+#. type: Content of: <section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:11
+msgid "OTRS Scheduler Task Managers"
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:13
+msgid ""
+"<literal>SchedulerCronTaskManager</literal> reads registered cron tasks from "
+"the OTRS SysConfig and determines the correct time to create a task to be "
+"executed."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:17
+msgid ""
+"<literal>SchedulerFutureTaskManager</literal> checks the tasks that are set "
+"to be executed just one time in the future and sets this task to be executed "
+"in time. For example, when a Generic Interface Invoker can not reach the "
+"remote server, it can self schedule to be run again 5 minutes later."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:23
+msgid ""
+"<literal>SchedulerGenericAgentTaskManager</literal> continuously reads the "
+"<literal>GenericAgent</literal> tasks that are set to be run on regular time "
+"basis and sets their execution accordingly."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:28
+msgid ""
+"Whenever these tasks managers are not enough, a new daemon module can be "
+"created. At a certain point of its <literal>Run()</literal> method it needs "
+"to call <literal>TaskAdd()</literal> from the <literal>chedulerDB</literal> "
+"object to register a task, and as soon as it is registered, it will be "
+"executed in the next free slot by the "
+"<literal>SchedulerTaskWorker</literal>."
+msgstr ""
+
+#. type: Content of: <section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:35
+msgid "OTRS Scheduler Task Workers"
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:37
+msgid ""
+"<literal>SchedulerTaskWorker</literal> execute all tasks planned by the "
+"previous tasks managers plus the ones that come directly from the code by "
+"using the Asynchronous Executor."
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:41
+msgid ""
+"In order to execute each task, the <literal>SchedulerTaskWorker</literal> "
+"calls a backend module (Task Worker) to perform the specific task. The "
+"worker module is determined by the task type. If a new task type is added, "
+"it will require a new task worker."
+msgstr ""
+
+#. type: Content of: <section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:47
+msgid "Creating A New Scheduler Task Worker"
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:49
+msgid ""
+"All files placed under "
+"<filename>Kernel/System/Daemon/DaemonModules/SchedulerTaskWorker</filename> "
+"could potentially be task workers and they do not require any registration "
+"in the system configuration."
+msgstr ""
+
+#. type: Content of: <section><section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:55
+msgid "Scheduler Task Worker Code Example"
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:57
+#, no-wrap
+msgid ""
+"# --\n"
+"# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/\n"
+"# --\n"
+"# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
+"# the enclosed file COPYING for license information (AGPL). If you\n"
+"# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
+"# --\n"
+"\n"
+"package "
+"Kernel::System::Daemon::DaemonModules::SchedulerTaskWorker::TestWorker;\n"
+"\n"
+"use strict;\n"
+"use warnings;\n"
+"\n"
+"use parent qw(Kernel::System::Daemon::DaemonModules::BaseTaskWorker);\n"
+"\n"
+"our @ObjectDependencies = (\n"
+"    'Kernel::System::Log',\n"
+");\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:83
+msgid ""
+"In this case we are inheriting from <literal>BaseTaskWorker</literal> class, "
+"and the object manager dependencies are set."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:87
+#, no-wrap
+msgid ""
+"sub new {\n"
+"    my ( $Type, %Param ) = @_;\n"
+"\n"
+"    my $Self = {};\n"
+"    bless( $Self, $Type );\n"
+"\n"
+"    $Self->{Debug}      = $Param{Debug};\n"
+"    $Self->{WorkerName} = 'Worker: Test';\n"
+"\n"
+"    return $Self;\n"
+"}\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:102
+msgid "The constructor <literal>new</literal> creates a new instance of the class."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:105
+#, no-wrap
+msgid ""
+"sub Run {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    # Check task params.\n"
+"    my $CheckResult = $Self->_CheckTaskParams(\n"
+"        %Param,\n"
+"        NeededDataAttributes => [ 'NeededAtrribute1', 'NeededAtrribute2' "
+"],\n"
+"        DataParamsRef        => 'HASH', # or 'ARRAT'\n"
+"    );\n"
+"\n"
+"    # Stop execution if an error in params is detected.\n"
+"    return if !$CheckResult;\n"
+"\n"
+"    my $Success;\n"
+"    my $ErrorMessage;\n"
+"\n"
+"    if ( $Self->{Debug} ) {\n"
+"        print \"    $Self->{WorkerName} executes task: "
+"$Param{TaskName}\\n\";\n"
+"    }\n"
+"\n"
+"    do {\n"
+"\n"
+"        # Localize the standard error.\n"
+"        local *STDERR;\n"
+"\n"
+"        # Redirect the standard error to a variable.\n"
+"        open STDERR, \">>\", \\$ErrorMessage;\n"
+"\n"
+"        $Success = $Kernel::OM->Get('Kernel::System::MyPackage')->Run(\n"
+"            Param1 => 'someparam',\n"
+"        );\n"
+"    };\n"
+"\n"
+"    if ( !$Success ) {\n"
+"\n"
+"        $ErrorMessage ||= \"$Param{TaskName} execution failed without an "
+"error message!\";\n"
+"\n"
+"        $Self->_HandleError(\n"
+"            TaskName     => $Param{TaskName},\n"
+"            TaskType     => 'Test',\n"
+"            LogMessage   => \"There was an error executing $Param{TaskName}: "
+"$ErrorMessage\",\n"
+"            ErrorMessage => \"$ErrorMessage\",\n"
+"        );\n"
+"    }\n"
+"\n"
+"    return $Success;\n"
+"}\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:156
+msgid ""
+"The <literal>Run</literal> is the main method. A call to "
+"<literal>_CheckTaskParams()</literal> from the base class will save some "
+"lines of code. Executing the task while capturing the STDERR is a very good "
+"practice, since the OTRS Scheduler runs normally unattended, and saving all "
+"errors to a variable will make it available for further processing.  "
+"<literal>_HandleError()</literal> provides a common interface to send the "
+"error messages as email to the recipient specified in the System "
+"Configuration."
+msgstr ""
+
+#. type: Content of: <section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:5
 msgid "Dynamic Field Backend Extension Example"
 msgstr ""
@@ -12370,6 +12726,25 @@ msgid ""
 "the function. To do that it is necessary to implement a mechanism in the "
 "Frontend module to require a special behavior on the Dynamic Field, and only "
 "after call the function in the Backend object."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:147 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-driver.xml:73 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:347
+#, no-wrap
+msgid ""
+"1;\n"
+"\n"
+"=back\n"
+"\n"
+"=head1 TERMS AND CONDITIONS\n"
+"\n"
+"This software is part of the OTRS project (L<http://otrs.org/>).\n"
+"\n"
+"This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
+"the enclosed file COPYING for license information (AGPL). If you\n"
+"did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.\n"
+"\n"
+"=cut\n"
 msgstr ""
 
 #. type: Content of: <section><section><para>
@@ -13695,6 +14070,14 @@ msgid ""
 "    $Self->{DefaultValueMask} = '****';\n"
 "    return $Self;\n"
 "}\n"
+msgstr ""
+
+#. type: Content of: <section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-admin-module.xml:72 en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-new-field-driver.xml:122
+msgid ""
+"The constructor <literal>new</literal> creates a new instance of the "
+"class. According to the coding guidelines objects of other classes that are "
+"needed in this module have to be created in <literal>new</literal>."
 msgstr ""
 
 #. type: CDATA

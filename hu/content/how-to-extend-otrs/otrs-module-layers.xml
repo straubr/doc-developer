@@ -51,9 +51,10 @@ számelőállító moduljait is. Nézzük meg részletesen a különböző réte
         <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="otrs-module-layers/gi-operation.xml" />
     </section>
 
-    <section id="scheduler-taskhandler-modules">
-        <title>Ütemező feladatkezelő modulok</title>
-        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="otrs-module-layers/scheduler-task-handler.xml" />
+    <section id="daemon-scheduler-modules">
+        <title>Daemon And Scheduler</title>
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="otrs-module-layers/daemon/daemon-modules.xml" />
+        <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="otrs-module-layers/daemon/scheduler-task-worker-modules.xml" />
     </section>
 
     <section id="dynamicfields-modules">

@@ -197,8 +197,8 @@ tartozó HTML sablon. Ezért hozzuk létre az alábbi fájlt:
         <para>
             <programlisting><![CDATA[
 # --
-# Kernel/Output/HTML/Templates/Standard/AgentHelloWorld.tt - overview
-# Copyright (C) (year) (name of author) (email of author)
+# Kernel/Output/HTML/Templates/Standard/AgentHelloWorld.tt - áttekintő
+# Copyright (C) (év) (szerző neve) (szerző e-mail címe)
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you

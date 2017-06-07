@@ -210,12 +210,9 @@ szerint:
         <para>
             <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
-<otrs_config version="1.0" init="Framework">
+<otrs_config version="1.0" init="Changes">
     <ConfigItem Name="AgentLogo" Required="0" Valid="1">
-        <Description Translatable="1">
-          Az ügyintézői felület fejlécében megjelenített logó. A képre mutató
-          URL-nek a felszín képkönyvtárától relatív URL-nek kell lennie.
-        </Description>
+        <Description Translatable="1">The logo shown in the header of the agent interface. The URL to the image must be a relative URL to the skin image directory.</Description>
         <Group>Framework</Group>
         <SubGroup>Frontend::Agent</SubGroup>
         <Setting>
@@ -229,15 +226,15 @@ szerint:
         </Setting>
     </ConfigItem>
     <ConfigItem Name="Loader::Agent::Skin###100-custom" Required="0" Valid="1">
-        <Description Translatable="1">Egyéni felszín a fejlesztői kézikönyvhöz.</Description>
+        <Description Translatable="1">Custom skin for the development manual.</Description>
         <Group>Framework</Group>
         <SubGroup>Frontend::Agent</SubGroup>
         <Setting>
             <Hash>
                 <Item Key="InternalName">custom</Item>
-                <Item Key="VisibleName">Egyéni</Item>
-                <Item Key="Description">Egyéni felszín a fejlesztői kézikönyvhöz.</Item>
-                <Item Key="HomePage">www.azencegem.hu</Item>
+                <Item Key="VisibleName">Custom</Item>
+                <Item Key="Description">Custom skin for the development manual.</Item>
+                <Item Key="HomePage">www.yourcompany.com</Item>
             </Hash>
         </Setting>
     </ConfigItem>

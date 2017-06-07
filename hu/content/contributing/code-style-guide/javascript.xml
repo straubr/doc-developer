@@ -74,10 +74,10 @@ Perlben.</para></listitem>
     </section>
 
     <section id="code-style-guide-javascript-code-comments">
-        <title>Code Comments</title>
+        <title>Kódmagyarázatok</title>
         <para>
-            The <link linkend="code-style-guide-perl-code-comments">commenting
-guidelines for Perl code</link> also apply to JavaScript.
+            A <link linkend="code-style-guide-perl-code-comments">Perl-kód magyarázási
+irányelvei</link> a JavaScriptre is vonatkoznak.
         </para>
         <para>
             <itemizedlist>
