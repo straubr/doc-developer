@@ -276,7 +276,8 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
                 </para>
                 <para>
                     There are different possible date/time output formats: <literal>TimeLong</literal> (full date/time),
-                    <literal>TimeShort</literal> (no seconds), <literal>Date</literal> (no time) and <literal>TimeRelative</literal>, a speaking text like "a day ago".
+                    <literal>TimeShort</literal> (no seconds), <literal>Date</literal> (no time) and
+                    <literal>RelativeTime</literal> (a speaking text like "a day ago").
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -288,17 +289,18 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
 # Result for US English locale:
 06/09/2010 15:45
 
-[% Data.CreateTime ǀ Localize("TimeShort") %]
+[% Data.CreateTime ǀ Localize("Date") %]
 # Result for US English locale:
 06/09/2010
 
-[% Data.CreateTime ǀ Localize("TimeRelative") %]
+[% Data.CreateTime ǀ Localize("RelativeTime") %]
 # Result for US English locale:
 a day ago
                     ]]></programlisting>
                 </para>
                 <para>
-                    Also the output of human readable file sizes is avaliable as an option <literal>Localize('Filesize')</literal> (just pass in the raw file size in bytes).
+                    Also the output of human readable file sizes is available as an option
+                    <literal>Localize('Filesize')</literal> (just pass the raw file size in bytes).
                 </para>
                 <para>
                     <programlisting><![CDATA[
