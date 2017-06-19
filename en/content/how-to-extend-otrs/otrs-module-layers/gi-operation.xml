@@ -37,7 +37,7 @@
                 <programlisting><![CDATA[
 # --
 # Kernel/GenericInterface/Operation/Test/Test.pm - GenericInterface test operation backend
-# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -179,6 +179,467 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
         </Hash>
     </Setting>
 </ConfigItem>
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="operation-unittest">
+            <title>Unit Test Example</title>
+            <para>
+                Unit Test for Generic Interface operations does not differs from other unit tests
+                but it is needed to consider testing locally, but also simulating a remote
+                connection. It is a good practice to test both separately since results could be
+                slightly different.
+            </para>
+            <para>
+                To learn more about unit tests, please take a look to the
+                <link linkend="unit-tests">Unit Test Chapter</link>.
+            </para>
+            <para>
+                The following is just the starting point for a unit test:
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+# --
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
+# --
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (AGPL). If you
+# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.
+# --
+
+## no critic (Modules::RequireExplicitPackage)
+use strict;
+use warnings;
+use utf8;
+
+use vars (qw($Self));
+
+use Kernel::GenericInterface::Debugger;
+use Kernel::GenericInterface::Operation::Test::Test;
+
+use Kernel::System::VariableCheck qw(:all);
+
+# Skip SSL certificate verification (RestoreDatabase must not be used in this test).
+$Kernel::OM->ObjectParamAdd(
+    'Kernel::System::UnitTest::Helper' => {
+        SkipSSLVerify => 1,
+    },
+);
+my $Helper = $Kernel::OM->Get('Kernel::System::UnitTest::Helper');
+
+# get a random number
+my $RandomID = $Helper->GetRandomNumber();
+
+# create a new user for current test
+my $UserLogin = $Helper->TestUserCreate(
+    Groups => ['users'],
+);
+my $Password = $UserLogin;
+
+my $UserID = $Kernel::OM->Get('Kernel::System::User')->UserLookup(
+    UserLogin => $UserLogin,
+);
+
+# set web-service name
+my $WebserviceName = '-Test-' . $RandomID;
+
+# create web-service object
+my $WebserviceObject = $Kernel::OM->Get('Kernel::System::GenericInterface::Webservice');
+$Self->Is(
+    'Kernel::System::GenericInterface::Webservice',
+    ref $WebserviceObject,
+    "Create web service object",
+);
+
+my $WebserviceID = $WebserviceObject->WebserviceAdd(
+    Name   => $WebserviceName,
+    Config => {
+        Debugger => {
+            DebugThreshold => 'debug',
+        },
+        Provider => {
+            Transport => {
+                Type => '',
+            },
+        },
+    },
+    ValidID => 1,
+    UserID  => 1,
+);
+$Self->True(
+    $WebserviceID,
+    "Added Web Service",
+);
+
+# get remote host with some precautions for certain unit test systems
+my $Host = $Helper->GetTestHTTPHostname();
+
+my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+
+# prepare web-service config
+my $RemoteSystem =
+    $ConfigObject->Get('HttpType')
+    . '://'
+    . $Host
+    . '/'
+    . $ConfigObject->Get('ScriptAlias')
+    . '/nph-genericinterface.pl/WebserviceID/'
+    . $WebserviceID;
+
+my $WebserviceConfig = {
+    Description =>
+        'Test for Ticket Connector using SOAP transport backend.',
+    Debugger => {
+        DebugThreshold => 'debug',
+        TestMode       => 1,
+    },
+    Provider => {
+        Transport => {
+            Type   => 'HTTP::SOAP',
+            Config => {
+                MaxLength => 10000000,
+                NameSpace => 'http://otrs.org/SoapTestInterface/',
+                Endpoint  => $RemoteSystem,
+            },
+        },
+        Operation => {
+            Test => {
+                Type => 'Test::Test',
+            },
+        },
+    },
+    Requester => {
+        Transport => {
+            Type   => 'HTTP::SOAP',
+            Config => {
+                NameSpace => 'http://otrs.org/SoapTestInterface/',
+                Encoding  => 'UTF-8',
+                Endpoint  => $RemoteSystem,
+            },
+        },
+        Invoker => {
+            Test => {
+                Type => 'Test::TestSimple'
+                ,    # requester needs to be Test::TestSimple in order to simulate a request to a remote system
+            },
+        },
+    },
+};
+
+# update web-service with real config
+# the update is needed because we are using
+# the WebserviceID for the Endpoint in config
+my $WebserviceUpdate = $WebserviceObject->WebserviceUpdate(
+    ID      => $WebserviceID,
+    Name    => $WebserviceName,
+    Config  => $WebserviceConfig,
+    ValidID => 1,
+    UserID  => $UserID,
+);
+$Self->True(
+    $WebserviceUpdate,
+    "Updated Web Service $WebserviceID - $WebserviceName",
+);
+
+# debugger object
+my $DebuggerObject = Kernel::GenericInterface::Debugger->new(
+    DebuggerConfig => {
+        DebugThreshold => 'debug',
+        TestMode       => 1,
+    },
+    WebserviceID      => $WebserviceID,
+    CommunicationType => 'Provider',
+);
+$Self->Is(
+    ref $DebuggerObject,
+    'Kernel::GenericInterface::Debugger',
+    'DebuggerObject instantiate correctly',
+);
+
+# define test cases
+my @Tests = (
+    {
+        Name           => 'Test case name',
+        SuccessRequest => 1,                  # 1 or 0
+        RequestData    => {
+
+            # ... add test data
+        },
+        ExpectedReturnLocalData => {
+            Data => {
+
+                # ... add expected local results
+            },
+            Success => 1,                     # 1 or 0
+        },
+        ExpectedReturnRemoteData => {
+            Data => {
+
+                # ... add expected remote results
+            },
+            Success => 1,                     # 1 or 0
+        },
+        Operation => 'Test',
+    },
+
+    # ... add more test cases
+);
+
+TEST:
+for my $Test (@Tests) {
+
+    # create local object
+    my $LocalObject = "Kernel::GenericInterface::Operation::Test::$Test->{Operation}"->new(
+        DebuggerObject => $DebuggerObject,
+        WebserviceID   => $WebserviceID,
+    );
+
+    $Self->Is(
+        "Kernel::GenericInterface::Operation::Test::$Test->{Operation}",
+        ref $LocalObject,
+        "$Test->{Name} - Create local object",
+    );
+
+    my %Auth = (
+        UserLogin => $UserLogin,
+        Password  => $Password,
+    );
+    if ( IsHashRefWithData( $Test->{Auth} ) ) {
+        %Auth = %{ $Test->{Auth} };
+    }
+
+    # start requester with our web-service
+    my $LocalResult = $LocalObject->Run(
+        WebserviceID => $WebserviceID,
+        Invoker      => $Test->{Operation},
+        Data         => {
+            %Auth,
+            %{ $Test->{RequestData} },
+        },
+    );
+
+    # check result
+    $Self->Is(
+        'HASH',
+        ref $LocalResult,
+        "$Test->{Name} - Local result structure is valid",
+    );
+
+    # create requester object
+    my $RequesterObject = $Kernel::OM->Get('Kernel::GenericInterface::Requester');
+    $Self->Is(
+        'Kernel::GenericInterface::Requester',
+        ref $RequesterObject,
+        "$Test->{Name} - Create requester object",
+    );
+
+    # start requester with our web-service
+    my $RequesterResult = $RequesterObject->Run(
+        WebserviceID => $WebserviceID,
+        Invoker      => $Test->{Operation},
+        Data         => {
+            %Auth,
+            %{ $Test->{RequestData} },
+        },
+    );
+
+    # check result
+    $Self->Is(
+        'HASH',
+        ref $RequesterResult,
+        "$Test->{Name} - Requester result structure is valid",
+    );
+
+    $Self->Is(
+        $RequesterResult->{Success},
+        $Test->{SuccessRequest},
+        "$Test->{Name} - Requester successful result",
+    );
+
+    # ... add tests for the results
+}
+
+# delete web service
+my $WebserviceDelete = $WebserviceObject->WebserviceDelete(
+    ID     => $WebserviceID,
+    UserID => $UserID,
+);
+$Self->True(
+    $WebserviceDelete,
+    "Deleted Web Service $WebserviceID",
+);
+
+# also delete any other added data during the this test, since RestoreDatabase must not be used.
+
+1;
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="operation-wsdl">
+            <title>WSDL Extension Example</title>
+            <para>
+                WSDL files contains the definitions of the web services and its operations for SOAP
+                messages, in case we will extend
+                <filename>development/webservices/GenericTickeConnectorSOAP.wsdl</filename>
+                in some places:
+            </para>
+            <para>
+                Port Type:
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+    <wsdl:portType name="GenericTicketConnector_PortType">
+        <!-- ... -->
+        <wsdl:operation name="Test">
+            <wsdl:input message="tns:TestRequest"/>
+            <wsdl:output message="tns:TestResponse"/>
+        </wsdl:operation>
+    <!-- ... -->
+                ]]></programlisting>
+            </para>
+            <para>
+                Binding:
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+    <wsdl:binding name="GenericTicketConnector_Binding" type="tns:GenericTicketConnector_PortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <!-- ... -->
+        <wsdl:operation name="Test">
+            <soap:operation soapAction="http://www.otrs.org/TicketConnector/Test"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <!-- ... -->
+    </wsdl:binding>
+                ]]></programlisting>
+            </para>
+            <para>
+                Type:
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://www.otrs.org/TicketConnector/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <!-- ... -->
+            <xsd:element name="Test">
+                <xsd:complexType>
+                    <xsd:sequence>
+                            <xsd:element minOccurs="0" name="Param1" type="xsd:string"/>
+                            <xsd:element minOccurs="0" name="Param2" type="xsd:positiveInteger"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="TestResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" minOccurs="1" name="Attribute1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- ... -->
+        </xsd:schema>
+    </wsdl:types>
+                ]]></programlisting>
+            </para>
+            <para>
+                Message:
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+    <!-- ... -->
+    <wsdl:message name="TestRequest">
+        <wsdl:part element="tns:Test" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="TestResponse">
+        <wsdl:part element="tns:TestResponse" name="parameters"/>
+    </wsdl:message>
+    <!-- ... -->
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="operation-wadl">
+            <title>WADL Extension Example</title>
+            <para>
+                WADL files contains the definitions of the web services and its operations for REST
+                interface, add a new resource to
+                <filename>development/webservices/GenericTickeConnectorREST.wadl</filename>.
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+  <resources base="http://localhost/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorREST">
+    <!-- ... -->
+    <resource path="Test" id="Test">
+      <doc xml:lang="en" title="Test"/>
+        <param name="Param1" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <param name="Param2" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <method name="GET" id="GET_Test">
+          <doc xml:lang="en" title="GET_Test"/>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json; charset=UTF-8"/>
+          </response>
+        </method>
+      </resource>
+    </resource>
+    <!-- ... -->
+  </resources>
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="operation-soap">
+            <title>Web Service SOAP Extension Example</title>
+            <para>
+                Web services can be imported into OTRS by a YAML with with a predefined structure
+                in this case we will extend
+                <filename>development/webservices/GenericTickeConnectorSOAP.yml</filename> for a
+                SOAP web service.
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+Provider:
+  Operation:
+    # ...
+    Test:
+      Description: This is only a test
+      MappingInbound: {}
+      MappingOutbound: {}
+      Type: Test::Test
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="operation-rest">
+            <title>Web Service REST Extension Example</title>
+            <para>
+                Web services can be imported into OTRS by a YAML with with a predefined structure
+                in this case we will extend
+                <filename>development/webservices/GenericTickeConnectorREST.yml</filename> for a
+                REST web service.
+            </para>
+            <para>
+                <programlisting linenumbering="numbered"><![CDATA[
+Provider:
+  Operation:
+    # ...
+    Test:
+      Description: This is only a test
+      MappingInbound: {}
+      MappingOutbound: {}
+      Type: Test::Test
+  # ...
+  Transport:
+    Config:
+      # ...
+      RouteOperationMapping:
+        # ..
+        Test:
+          RequestMethod:
+          - GET
+          Route: /Test
                 ]]></programlisting>
             </para>
         </section>
