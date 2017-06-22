@@ -89,17 +89,15 @@
         <para>
             <itemizedlist>
                 <listitem><para>
-                    Always use <literal>$.bind()</literal> instead of the event-shorthand methods of jQuery for better
-                    readability (wrong: <literal>$SomeObject.click(...)</literal>, right: <literal>$SomeObject.bind('click', ...</literal>).
+                    Always use <literal>$.on()</literal> instead of the event-shorthand methods of jQuery for better
+                    readability (wrong: <literal>$SomeObject.click(...)</literal>, right: <literal>$SomeObject.on('click', ...</literal>).
                 </para></listitem>
                 <listitem><para>
-                    Do not use <literal>$.live()</literal>!
-                    We had severe performance issues with <literal>$.live()</literal> in correlation with mouse events.
-                    Until it can be verified that <literal>$.live()</literal> works with other event types without problems.
-                </para></listitem>
-                <listitem><para>
-                    If you <literal>$.bind()</literal> events, make sure to <literal>$.unbind()</literal> them beforehand,
+                    If you <literal>$.on()</literal> events, make sure to <literal>$.off()</literal> them beforehand,
                     to make sure that events will not be bound twice, should the code be executed another time.
+                </para></listitem>
+                <listitem><para>
+                    Make sure to use <literal>$.on()</literal> with namespacing, such as <literal>$.on('click.&lt;Name&gt;')</literal>.
                 </para></listitem>
             </itemizedlist>
         </para>
