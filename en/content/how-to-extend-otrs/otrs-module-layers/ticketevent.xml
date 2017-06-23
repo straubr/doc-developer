@@ -60,47 +60,65 @@
 Ticket events have been available in OTRS since OTRS 2.0.
         </para>
         <para>
-Ticket Events for OTRS 2.0:
-TicketCreate, TicketDelete, TicketTitleUpdate, TicketUnlockTimeoutUpdate,
-TicketEscalationStartUpdate, MoveTicket,
-SetCustomerData, TicketFreeTextSet, TicketFreeTimeSet,
-TicketPendingTimeSet, LockSet,
-StateSet, OwnerSet,
-TicketResponsibleUpdate, PrioritySet, HistoryAdd,
-HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate,
-ArticleFreeTextSet, ArticleUpdate, ArticleSend,
-ArticleBounce, SendAgentNotification,
-SendCustomerNotification, SendAutoResponse, ArticleFlagSet;
+            Ticket events available in OTRS 4.0:
         </para>
         <para>
-Ticket Events for OTRS 2.1 and higher:
-TicketCreate, TicketDelete, TicketTitleUpdate, TicketUnlockTimeoutUpdate,
-TicketEscalationStartUpdate, TicketQueueUpdate (MoveTicket),
-TicketCustomerUpdate (SetCustomerData), TicketFreeTextUpdate
-(TicketFreeTextSet), TicketFreeTimeUpdate (TicketFreeTimeSet),
-TicketPendingTimeUpdate (TicketPendingTimeSet), TicketLockUpdate (LockSet),
-TicketStateUpdate (StateSet), TicketOwnerUpdate (OwnerSet),
-TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet),
-TicketSubscribe, TicketUnsubscribe, HistoryAdd,
-HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate,
-ArticleFreeTextUpdate (ArticleFreeTextSet), ArticleUpdate, ArticleSend,
-ArticleBounce, ArticleAgentNotification (SendAgentNotification),
-ArticleCustomerNotification (SendCustomerNotification), ArticleAutoResponse
-(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete;
+            <itemizedlist>
+                <listitem><para>TicketCreate</para></listitem>
+                <listitem><para>TicketDelete</para></listitem>
+                <listitem><para>TicketTitleUpdate</para></listitem>
+                <listitem><para>TicketUnlockTimeoutUpdate</para></listitem>
+                <listitem><para>TicketQueueUpdate</para></listitem>
+                <listitem><para>TicketTypeUpdate</para></listitem>
+                <listitem><para>TicketServiceUpdate</para></listitem>
+                <listitem><para>TicketSLAUpdate</para></listitem>
+                <listitem><para>TicketCustomerUpdate</para></listitem>
+                <listitem><para>TicketPendingTimeUpdate</para></listitem>
+                <listitem><para>TicketLockUpdate</para></listitem>
+                <listitem><para>TicketArchiveFlagUpdate</para></listitem>
+                <listitem><para>TicketStateUpdate</para></listitem>
+                <listitem><para>TicketOwnerUpdate</para></listitem>
+                <listitem><para>TicketResponsibleUpdate</para></listitem>
+                <listitem><para>TicketPriorityUpdate</para></listitem>
+                <listitem><para>HistoryAdd</para></listitem>
+                <listitem><para>HistoryDelete</para></listitem>
+                <listitem><para>TicketAccountTime</para></listitem>
+                <listitem><para>TicketMerge</para></listitem>
+                <listitem><para>TicketSubscribe</para></listitem>
+                <listitem><para>TicketUnsubscribe</para></listitem>
+                <listitem><para>TicketFlagSet</para></listitem>
+                <listitem><para>TicketFlagDelete</para></listitem>
+                <listitem><para>TicketSlaveLinkAdd</para></listitem>
+                <listitem><para>TicketSlaveLinkDelete</para></listitem>
+                <listitem><para>TicketMasterLinkDelete</para></listitem>
+                <listitem><para>EscalationResponseTimeNotifyBefore</para></listitem>
+                <listitem><para>EscalationUpdateTimeNotifyBefore</para></listitem>
+                <listitem><para>EscalationSolutionTimeNotifyBefore</para></listitem>
+                <listitem><para>EscalationResponseTimeStart</para></listitem>
+                <listitem><para>EscalationUpdateTimeStart</para></listitem>
+                <listitem><para>EscalationSolutionTimeStart</para></listitem>
+                <listitem><para>EscalationResponseTimeStop</para></listitem>
+                <listitem><para>EscalationUpdateTimeStop</para></listitem>
+                <listitem><para>EscalationSolutionTimeStop</para></listitem>
+            </itemizedlist>
         </para>
         <para>
-Ticket Events for OTRS 2.4:
-TicketCreate, TicketDelete, TicketTitleUpdate, TicketUnlockTimeoutUpdate,
-TicketQueueUpdate(MoveTicket), TicketTypeUpdate, TicketServiceUpdate,
-TicketSLAUpdate, TicketCustomerUpdate (SetCustomerData), TicketFreeTextUpdate, TicketFreeTimeUpdate,
-TicketPendingTimeUpdate (TicketPendingTimeSet), TicketLockUpdate (LockSet),
-TicketStateUpdate (StateSet), TicketOwnerUpdate (OwnerSet),
-TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet),
-HistoryAdd, HistoryDelete,
-TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate (ArticleFreeTextSet),
-ArticleUpdate, ArticleSend, ArticleBounce, ArticleAgentNotification (SendAgentNotification),
-ArticleCustomerNotification (SendCustomerNotification),
-ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete;
+            Article events available in OTRS 4.0:
+        </para>
+        <para>
+            <itemizedlist>
+                <listitem><para>ArticleCreate</para></listitem>
+                <listitem><para>ArticleUpdate</para></listitem>
+                <listitem><para>ArticleSend</para></listitem>
+                <listitem><para>ArticleBounce</para></listitem>
+                <listitem><para>ArticleAgentNotification</para></listitem>
+                <listitem><para>ArticleCustomerNotification</para></listitem>
+                <listitem><para>ArticleAutoResponse</para></listitem>
+                <listitem><para>ArticleFlagSet</para></listitem>
+                <listitem><para>ArticleFlagDelete</para></listitem>
+                <listitem><para>ArticleAgentNotification</para></listitem>
+                <listitem><para>ArticleCustomerNotification</para></listitem>
+            </itemizedlist>
         </para>
     </section>
 </section>
