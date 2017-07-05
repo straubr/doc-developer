@@ -336,8 +336,8 @@ $(DivHTML).appendTo('body');
             ]]></programlisting>
         </para>
         <para>
-            Internally, <literal>Core.Template</literal> uses Nunjacks engine for parsing templates. Essentially, any
-            valid Nunjacks syntax is supported, please see
+            Internally, <literal>Core.Template</literal> uses Nunjucks engine for parsing templates. Essentially, any
+            valid Nunjucks syntax is supported, please see
             <ulink url="https://mozilla.github.io/nunjucks/templating.html">their documentation</ulink> for more
             information.
         </para>
@@ -366,7 +366,7 @@ $(DivHTML).appendTo('body');
                     <para>
                         Complex structures in replacement object are supported, so feel free to pass arrays or hashes
                         and iterate over them right from template. For example, look at <literal>{% for %}</literal>
-                        syntax in <ulink url="https://mozilla.github.io/nunjucks/templating.html#for"> Nunjacks
+                        syntax in <ulink url="https://mozilla.github.io/nunjucks/templating.html#for"> Nunjucks
                         documentation</ulink>.
                     </para>
                 </listitem>
