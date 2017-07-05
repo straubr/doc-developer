@@ -316,7 +316,7 @@ my $Var = 1 if $Something == 'Yes';
         <section id="regular-expressions">
             <title>Regular Expressions</title>
             <para>
-                For regular expressions we always use the <literal>m//</literal> operator with curly braces as delimiters. We also use the modifiers <literal>x</literal>, <literal>m</literal> and <literal>s</literal>.
+                For regular expressions <emphasis>in the source code</emphasis>, we always use the <literal>m//</literal> operator with curly braces as delimiters. We also use the modifiers <literal>x</literal>, <literal>m</literal> and <literal>s</literal>.
                 The <literal>x</literal> modifiers allows you to comment your regex and use spaces to "group" logical groups.
             </para>
             <para>
@@ -350,8 +350,9 @@ $Text =~ m{
     ]]></programlisting>
             </para>
             <para>
-                An exception to the convention above applies to all cases where regular expressions are not written statically in the code but instead are supplied by users in one form or another. Any evaluation of such a regular expression has to be done without any modifiers (e.g. <literal>$Variable =~ m{$Regex}</literal>) in order to match the expectation of (mostly inexperienced) users and also to be backwards compatible.
-                An example for this exception is the input validation of SysConfig strings using regular expressions.
+                An exception to the convention above applies to all cases where regular expressions are not written statically in the code but instead are <emphasis>supplied by users</emphasis> in one form or another (for example via SysConfig or in a PostMaster filter configuration). Any evaluation of such a regular expression has to be done without any modifiers (e.g. <literal>$Variable =~ m{$Regex}</literal>) in order to match the expectation of (mostly inexperienced) users and also to be backwards compatible.
+            </para>
+            <para>
                 If modifiers are strictly necessary for user supplied regular expressions, it is always possible to use embedded modifiers (e.g. <literal>(?:(?i)SmAlL oR lArGe)</literal>). For details, please see <ulink url="http://perldoc.perl.org/perlretut.html#Embedding-comments-and-modifiers-in-a-regular-expression">perlretut</ulink>.
             </para>
         </section>
