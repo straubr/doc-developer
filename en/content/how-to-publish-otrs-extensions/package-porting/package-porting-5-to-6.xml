@@ -50,6 +50,60 @@ my $UserTimeStamp = $DateTimeObject->ToString();
         </para>
     </section>
 
+    <section id="package-porting-5-to-6-user-multiupload">
+        <title>Adding the drag &amp; drop multiupload</title>
+        <para>
+            For OTRS 6, a multi attachment upload functionality was added. To implement the multi attachment upload in other extensions it is necessary to remove the attachment part from the template file, also the <code>JSOnDocumentComplete</code> parts (AttachmentDelete and AttachmentUpload). Please keep in mind, in some cases the JavaScript parts are already outsourced in <code>Core.Agent.XXX</code> files.
+        </para>
+        <note>
+            <para>
+                Please note that this is currently only applicable for places where it actually makes sense to have the possibility to upload multiple files (like AgentTicketPhone, AgentTicketCompose, etc.). This is not usable out of the box for admin screens.
+            </para>
+        </note>
+        <para>
+            To include the new multi attachment upload in the template, replace the existing <code>input type="file"</code> with the following code in your <code>.tt</code> template file:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+<label>[% Translate("Attachments") | html %]:</label>
+<div class="Field">
+[% INCLUDE "ArticleContent/AttachmentList.tt" %]
+</div>
+<div class="Clear"></div>
+            ]]></programlisting>
+        </para>
+        <para>
+            It is also necessary to remove the <code>IsUpload</code> variable and all other IsUpload parts from the perl module. Code parts like following are not needed anymore:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+my $IsUpload = ( $ParamObject->GetParam( Param => 'AttachmentUpload' ) ? 1 : 0 );
+            ]]></programlisting>
+        </para>
+        <para>
+            Additional to that, the Attachment Layout Block needs to be replaced:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+$LayoutObject->Block(
+    Name => 'Attachment',
+    Data => $Attachment,
+);
+            ]]></programlisting>
+        </para>
+        <para>
+            Replace it with this code:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+push @{ $Param{AttachmentList} }, $Attachment;
+            ]]></programlisting>
+        </para>
+        <para>
+            When adding selenium unit tests for the modules you ported, please take a look at <code>Selenium/Agent/MultiAttachmentUpload.t</code> for reference.
+        </para>
+    </section>
+
     <section id="package-porting-5-to-6-solutiontime">
         <title>
             <literal>TicketGet()</literal> value <literal>SolutionTime</literal> renamed to <literal>Closed</literal>
