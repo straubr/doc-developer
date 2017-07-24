@@ -67,7 +67,7 @@ my $UserTimeStamp = $DateTimeObject->ToString();
             <programlisting format="linespecific"><![CDATA[
 <label>[% Translate("Attachments") | html %]:</label>
 <div class="Field">
-[% INCLUDE "ArticleContent/AttachmentList.tt" %]
+[% INCLUDE "FormElements/AttachmentList.tt" %]
 </div>
 <div class="Clear"></div>
             ]]></programlisting>
