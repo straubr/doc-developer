@@ -457,21 +457,153 @@ Type      => 'move_into',
         </para>
     </section>
 
-    <section id="package-porting-5-to-6-solutiontime">
-        <title>
-            <literal>Ticket</literal> API changes
-        </title>
-        <para>
-            For OTRS 6, all extensions need to be checked and ported from <literal>$Ticket{SolutionTime}</literal> to
-            <literal>$Ticket{Closed}</literal> if <literal>TicketGet()</literal> is called with the
-            <literal>Extended</literal> parameter (see
-            bug<ulink url="http://bugs.otrs.org/show_bug.cgi?id=11872">#11872</ulink>).
-        </para>
-        <para>
-            Additionally, the database column <literal>ticket.create_time_unix</literal> was removed, and likewise the
-            value <literal>CreateTimeUnix</literal> from the <literal>TicketGet()</literal> result data.
-            Please use the value <literal>Created</literal> (database column <literal>ticket.create_time</literal>) instead.
-        </para>
+    <section id="package-porting-5-to-6-ticket-api">
+        <title><literal>Ticket</literal> API changes</title>
+
+        <section id="package-porting-5-to-6-ticket-api-ticketget">
+            <title><literal>TicketGet()</literal></title>
+            <para>
+                For OTRS 6, all extensions need to be checked and ported from <literal>$Ticket{SolutionTime}</literal> to
+                <literal>$Ticket{Closed}</literal> if <literal>TicketGet()</literal> is called with the
+                <literal>Extended</literal> parameter (see
+                bug<ulink url="http://bugs.otrs.org/show_bug.cgi?id=11872">#11872</ulink>).
+            </para>
+            <para>
+                Additionally, the database column <literal>ticket.create_time_unix</literal> was removed, and likewise the
+                value <literal>CreateTimeUnix</literal> from the <literal>TicketGet()</literal> result data.
+                Please use the value <literal>Created</literal> (database column <literal>ticket.create_time</literal>) instead.
+            </para>
+        </section>
+
+        <section id="package-porting-5-to-6-ticket-api-linkobject-events">
+            <title>LinkObject Events</title>
+            <para>
+                In OTRS 6, old ticket-specific <literal>LinkObject</literal> events have been dropped:
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><literal>TicketSlaveLinkAdd</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>TicketSlaveLinkDelete</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>TicketMasterLinkDelete</literal></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                Any event handlers listening on these events should be ported to two new events instead:
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><literal>LinkObjectLinkAdd</literal></para>
+                    </listitem>
+                    <listitem>
+                        <para><literal>LinkObjectLinkDelete</literal></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                These new events will be triggered any time a link is added or deleted by <literal>LinkObject</literal>,
+                regardless of the object type. <literal>Data</literal> parameter will contain all information your event
+                handlers might need for further processing, e.g.:
+            </para>
+            <para>
+                <variablelist>
+                    <varlistentry>
+                        <term><literal>SourceObject</literal></term>
+                        <listitem>
+                            <para>
+                                Name of the link source object (i.e. Ticket).
+                            </para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><literal>SourceKey</literal></term>
+                        <listitem>
+                            <para>
+                                Key of the link source object (i.e. TicketID).
+                            </para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><literal>TargetObject</literal></term>
+                        <listitem>
+                            <para>
+                                Name of the link target object (i.e. FAQItem).
+                            </para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><literal>TargetKey</literal></term>
+                        <listitem>
+                            <para>
+                                Key of the link target object (i.e. FAQItemID).
+                            </para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><literal>Type</literal></term>
+                        <listitem>
+                            <para>
+                                Type of the link (i.e. ParentChild).
+                            </para>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term><literal>State</literal></term>
+                        <listitem>
+                            <para>
+                                State of the link (Valid or Temporary).
+                            </para>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </para>
+            <para>
+                With these new events in place, any events specific for custom <literal>LinkObject</literal> module
+                implementations can be dropped, and all event handlers ported to use them instead. Since source and
+                target object names are provided in the event itself, it would be trivial to make them run only in
+                specific situations.
+            </para>
+            <para>
+                To register your event handler for these new events, make sure to add a registration in the
+                configuration, for example:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+<!-- OLD STYLE -->
+<ConfigItem Name="LinkObject::EventModulePost###1000-SampleModule" Required="0" Valid="1">
+    <Description Translatable="1">Event handler for sample link object module.</Description>
+    <Group>Framework</Group>
+    <SubGroup>Core::Event::Package</SubGroup>
+    <Setting>
+        <Hash>
+            <Item Key="Module">Kernel::System::LinkObject::Event::SampleModule</Item>
+            <Item Key="Event">(LinkObjectLinkAdd|LinkObjectLinkDelete)</Item>
+            <Item Key="Transaction">1</Item>
+        </Hash>
+    </Setting>
+</ConfigItem>
+
+<!-- NEW STYLE -->
+<Setting Name="LinkObject::EventModulePost###1000-SampleModule" Required="0" Valid="1">
+    <Description Translatable="1">Event handler for sample link object module.</Description>
+    <Navigation>Core::Event::Package</Navigation>
+    <Value>
+        <Hash>
+            <Item Key="Module">Kernel::System::LinkObject::Event::SampleModule</Item>
+            <Item Key="Event">(LinkObjectLinkAdd|LinkObjectLinkDelete)</Item>
+            <Item Key="Transaction">1</Item>
+        </Hash>
+    </Value>
+</Setting>
+                ]]></programlisting>
+            </para>
+        </section>
     </section>
 
     <section id="package-porting-5-to-6-article-api">
@@ -822,135 +954,6 @@ for my $Article (@Articles) {
                 in certain situations, i.e. unit tests. If you are manually creating articles in your unit test, but
                 expect it to be searchable immediately after created, make sure to manually call the new
                 <literal>ArticleSearchIndexBuild()</literal> method on article object.
-            </para>
-        </section>
-        <section id="package-porting-5-to-6-linkobject-events">
-            <title>LinkObject Events</title>
-            <para>
-                In OTRS 6, old ticket-specific <literal>LinkObject</literal> events have been dropped:
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para><literal>TicketSlaveLinkAdd</literal></para>
-                    </listitem>
-                    <listitem>
-                        <para><literal>TicketSlaveLinkDelete</literal></para>
-                    </listitem>
-                    <listitem>
-                        <para><literal>TicketMasterLinkDelete</literal></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                Any event handlers listening on these events should be ported to two new events instead:
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para><literal>LinkObjectLinkAdd</literal></para>
-                    </listitem>
-                    <listitem>
-                        <para><literal>LinkObjectLinkDelete</literal></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                These new events will be triggered any time a link is added or deleted by <literal>LinkObject</literal>,
-                regardless of the object type. <literal>Data</literal> parameter will contain all information your event
-                handlers might need for further processing, e.g.:
-            </para>
-            <para>
-                <variablelist>
-                    <varlistentry>
-                        <term><literal>SourceObject</literal></term>
-                        <listitem>
-                            <para>
-                                Name of the link source object (i.e. Ticket).
-                            </para>
-                        </listitem>
-                    </varlistentry>
-                    <varlistentry>
-                        <term><literal>SourceKey</literal></term>
-                        <listitem>
-                            <para>
-                                Key of the link source object (i.e. TicketID).
-                            </para>
-                        </listitem>
-                    </varlistentry>
-                    <varlistentry>
-                        <term><literal>TargetObject</literal></term>
-                        <listitem>
-                            <para>
-                                Name of the link target object (i.e. FAQItem).
-                            </para>
-                        </listitem>
-                    </varlistentry>
-                    <varlistentry>
-                        <term><literal>TargetKey</literal></term>
-                        <listitem>
-                            <para>
-                                Key of the link target object (i.e. FAQItemID).
-                            </para>
-                        </listitem>
-                    </varlistentry>
-                    <varlistentry>
-                        <term><literal>Type</literal></term>
-                        <listitem>
-                            <para>
-                                Type of the link (i.e. ParentChild).
-                            </para>
-                        </listitem>
-                    </varlistentry>
-                    <varlistentry>
-                        <term><literal>State</literal></term>
-                        <listitem>
-                            <para>
-                                State of the link (Valid or Temporary).
-                            </para>
-                        </listitem>
-                    </varlistentry>
-                </variablelist>
-            </para>
-            <para>
-                With these new events in place, any events specific for custom <literal>LinkObject</literal> module
-                implementations can be dropped, and all event handlers ported to use them instead. Since source and
-                target object names are provided in the event itself, it would be trivial to make them run only in
-                specific situations.
-            </para>
-            <para>
-                To register your event handler for these new events, make sure to add a registration in the
-                configuration, for example:
-            </para>
-            <para>
-                <programlisting format="linespecific"><![CDATA[
-<!-- OLD STYLE -->
-<ConfigItem Name="LinkObject::EventModulePost###1000-SampleModule" Required="0" Valid="1">
-    <Description Translatable="1">Event handler for sample link object module.</Description>
-    <Group>Framework</Group>
-    <SubGroup>Core::Event::Package</SubGroup>
-    <Setting>
-        <Hash>
-            <Item Key="Module">Kernel::System::LinkObject::Event::SampleModule</Item>
-            <Item Key="Event">(LinkObjectLinkAdd|LinkObjectLinkDelete)</Item>
-            <Item Key="Transaction">1</Item>
-        </Hash>
-    </Setting>
-</ConfigItem>
-
-<!-- NEW STYLE -->
-<Setting Name="LinkObject::EventModulePost###1000-SampleModule" Required="0" Valid="1">
-    <Description Translatable="1">Event handler for sample link object module.</Description>
-    <Navigation>Core::Event::Package</Navigation>
-    <Value>
-        <Hash>
-            <Item Key="Module">Kernel::System::LinkObject::Event::SampleModule</Item>
-            <Item Key="Event">(LinkObjectLinkAdd|LinkObjectLinkDelete)</Item>
-            <Item Key="Transaction">1</Item>
-        </Hash>
-    </Value>
-</Setting>
-                ]]></programlisting>
             </para>
         </section>
     </section>
