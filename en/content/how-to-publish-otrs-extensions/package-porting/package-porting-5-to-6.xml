@@ -104,6 +104,18 @@ push @{ $Param{AttachmentList} }, $Attachment;
         </para>
     </section>
 
+    <section id="package-porting-5-to-6-perl-config-file-format">
+        <title>Perl configuration file format</title>
+        <para>
+            OTRS 6 speeds up configuration file loading by dropping support for the old configuration format (1)
+            that just used sequential Perl code and had to be run by <literal>eval</literal>
+            and instead enforcing the new package-based format (1.1) for Perl configuration files.
+            OTRS 6+ can only load files with this format, please make sure to convert any custom developments to it
+            (see <filename>Kernel/Config/Files/ZZZ*.pm</filename> for examples). Every Perl configuration file
+            needs to contain a package with a <literal>Load()</literal> method.
+        </para>
+    </section>
+
     <section id="package-porting-5-to-6-solutiontime">
         <title>
             <literal>Ticket</literal> API changes
