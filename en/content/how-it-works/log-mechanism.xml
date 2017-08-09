@@ -21,7 +21,7 @@ $Kernel::OM->Get('Kernel::System::Log')->Log(
         </para>
         <para>
             Depending on the configured log level via <literal>MinimumLogLevel</literal> option in SysConfig, logged
-            message will either be saved or not, based on their <emphasise>Priority</emphasise> flag.
+            message will either be saved or not, based on their <emphasis>Priority</emphasis> flag.
         </para>
         <para>
             If <literal>error</literal> is set, just errors are logged. With <literal>debug</literal>, you get all
