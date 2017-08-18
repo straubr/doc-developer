@@ -104,16 +104,45 @@ push @{ $Param{AttachmentList} }, $Attachment;
         </para>
     </section>
 
-    <section id="package-porting-5-to-6-perl-config-file-format">
-        <title>Perl configuration file format</title>
-        <para>
-            OTRS 6 speeds up configuration file loading by dropping support for the old configuration format (1)
-            that just used sequential Perl code and had to be run by <literal>eval</literal>
-            and instead enforcing the new package-based format (1.1) for Perl configuration files.
-            OTRS 6+ can only load files with this format, please make sure to convert any custom developments to it
-            (see <filename>Kernel/Config/Files/ZZZ*.pm</filename> for examples). Every Perl configuration file
-            needs to contain a package with a <literal>Load()</literal> method.
-        </para>
+    <section id="packge-porting-5-to-6-configuration-files">
+        <title>Migrate configuration files</title>
+
+        <section id="package-porting-5-to-6-XML-config-file-format">
+            <title>XML configuration file format</title>
+            <para>
+                OTRS 6 uses a new XML configuration file format and the location of configuration files moved
+                from <filename>Kernel/Config/Files</filename> to <filename>Kernel/Config/Files/XML</filename>.
+                To convert existing XML configuration files to the new format and location, you can use the following
+                tool that is part of the OTRS framework:
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
+bin/otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure --source-directory Kernel/Config/Files
+Migrating configuration XML files...
+Kernel/Config/Files/Calendar.xml -> Kernel/Config/Files/XML/Calendar.xml... Done.
+Kernel/Config/Files/CloudServices.xml -> Kernel/Config/Files/XML/CloudServices.xml... Done.
+Kernel/Config/Files/Daemon.xml -> Kernel/Config/Files/XML/Daemon.xml... Done.
+Kernel/Config/Files/Framework.xml -> Kernel/Config/Files/XML/Framework.xml... Done.
+Kernel/Config/Files/GenericInterface.xml -> Kernel/Config/Files/XML/GenericInterface.xml... Done.
+Kernel/Config/Files/ProcessManagement.xml -> Kernel/Config/Files/XML/ProcessManagement.xml... Done.
+Kernel/Config/Files/Ticket.xml -> Kernel/Config/Files/XML/Ticket.xml... Done.
+
+Done.
+                ]]></programlisting>
+            </para>
+        </section>
+
+        <section id="package-porting-5-to-6-perl-config-file-format">
+            <title>Perl configuration file format</title>
+            <para>
+                OTRS 6 speeds up configuration file loading by dropping support for the old configuration format (1)
+                that just used sequential Perl code and had to be run by <literal>eval</literal>
+                and instead enforcing the new package-based format (1.1) for Perl configuration files.
+                OTRS 6+ can only load files with this format, please make sure to convert any custom developments to it
+                (see <filename>Kernel/Config/Files/ZZZ*.pm</filename> for examples). Every Perl configuration file
+                needs to contain a package with a <literal>Load()</literal> method.
+            </para>
+        </section>
     </section>
 
     <section id="package-porting-5-to-6-perldoc-structure">
