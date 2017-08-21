@@ -222,6 +222,15 @@ Data => \%Param,
 );
             ]]></programlisting>
         </para>
+        <para>Same rule applies for Customer interface. Remove RichText blocks with CustomerRichTextEditor.tt and
+        apply following code instead:</para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+$LayoutObject->CustomerSetRichTextParameters(
+Data => \%Param,
+);
+            ]]></programlisting>
+        </para>
     </section>
 
     <section id="package-porting-5-to-6-javascript-translations">
