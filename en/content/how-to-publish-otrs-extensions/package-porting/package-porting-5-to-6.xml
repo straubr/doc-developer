@@ -157,6 +157,25 @@ for my $Attachment (@TicketAttachments) {
         </para>
     </section>
 
+    <section id="package-porting-5-to-6-saveandcontinue">
+        <title>
+            <literal>Add save and save and finish buttons to admin modules</literal>
+        </title>
+        <para>
+            Admin modules in OTRS 6 should not only have a "save" button, but also a "save and finish" button. "Save" should leave the user on the same edit page after saving, "save and finish" should lead back to the overview of the entity the user is currently working on. Please see existing OTRS admin screens for reference.
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+<div class="Field SpacingTop SaveButtons">
+    <button class="Primary CallForAction" id="SubmitAndContinue" type="submit" value="[% Translate("Save") | html %]"><span>[% Translate("Save") | html %]</span></button>
+    [% Translate("or") | html %]
+    <button class="Primary CallForAction" id="Submit" type="submit" value="[% Translate("Save") | html %]"><span>[% Translate("Save and finish") | html %]</span></button>
+    [% Translate("or") | html %]
+    <a href="[% Env("Baselink") %]Action=[% Env("Action") %]"><span>[% Translate("Cancel") | html %]</span></a>
+</div>
+            ]]></programlisting>
+        </para>
+    </section>
 
     <section id="package-porting-5-to-6-solutiontime">
         <title>
@@ -237,7 +256,7 @@ Data => \%Param,
         <title>Translations in JavaScript files</title>
         <para>
             Adding translatable strings in JavaScript was quite difficult in OTRS. The string had to be translated in
-            Perl or in the template and than sent to the JavaScript function. With OTRS 6, translation of strings is
+            Perl or in the template and then sent to the JavaScript function. With OTRS 6, translation of strings is
             possible directly in the JavaScript file. All other workarounds, especially blocks in the templates only for
             translating strings, should be removed.
         </para>
