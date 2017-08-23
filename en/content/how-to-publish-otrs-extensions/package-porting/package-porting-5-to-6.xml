@@ -142,6 +142,12 @@ Done.
                 (see <filename>Kernel/Config/Files/ZZZ*.pm</filename> for examples). Every Perl configuration file
                 needs to contain a package with a <literal>Load()</literal> method.
             </para>
+            <para>
+                In the past, Perl configuration files were sometimes misused as an autoload mechanism
+                to override code in existing packages. This is not neccessary any more as OTRS 6 features a dedicated
+                Autoload mechanism. Please see <filename>Kernel/Autoload/Test.pm</filename> for a demonstration
+                on how to use this mechanism to add a method in an existing file.
+            </para>
         </section>
     </section>
 
