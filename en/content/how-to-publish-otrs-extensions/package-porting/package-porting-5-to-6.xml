@@ -1001,5 +1001,47 @@ for my $Article (@Articles) {
             </para>
         </section>
     </section>
-
+    <section id="package-porting-5-to-6-article-api">
+        <title>SysConfig changes</title>
+        <para>
+            Note that in OTRS 6 SysConfig API was changed, so you should check if the methods are still existing.
+            For example, <literal>ConfigItemUpdate()</literal> is removed. To replace it you should use combination
+            of the following methods:
+        </para>
+        <para>
+            <itemizedlist>
+                <listitem>
+                    <para><literal>SettingLock()</literal></para>
+                </listitem>
+                <listitem>
+                    <para><literal>SettingUpdate()</literal></para>
+                </listitem>
+                <listitem>
+                    <para><literal>ConfigurationDeploy()</literal></para>
+                </listitem>
+            </itemizedlist>
+        </para>
+        <para>
+            In case that you want to update <literal>ConfigItemUpdate()</literal> package setup, you could use
+            <literal>SettingsSet()</literal>.  It does all previous steps and it can be used for multiple settings at once.
+            DO NOT USE THIS FUNCTION IN SYSCONFIG SCREENS.
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+my $Success = $SysConfigObject->SettingsSet(
+    UserID   => 1,                                      # (required) UserID
+    Comments => 'Deployment comment',                   # (optional) Comment
+    Settings => [                                       # (required) List of settings to update.
+        {
+            Name                   => 'Setting::Name',  # (required)
+            EffectiveValue         => 'Value',          # (optional)
+            IsValid                => 1,                # (optional)
+            UserModificationActive => 1,                # (optional)
+        },
+        ...
+    ],
+);
+            ]]></programlisting>
+        </para>
+    </section>
 </section>
