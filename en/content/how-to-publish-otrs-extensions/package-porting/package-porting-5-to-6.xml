@@ -1044,4 +1044,19 @@ my $Success = $SysConfigObject->SettingsSet(
             ]]></programlisting>
         </para>
     </section>
+    <section id="package-porting-5-to-6-postmaster-filter-communication-log">
+        <title>Communication Log support for additional PostMaster Filters</title>
+        <para>
+            As part of email handling improvements for OTRS 6, a new logging mechanism was added to OTRS 6, exclusively
+            used for incoming and outgoing communications. All PostMaster filters were enriched with this new
+            <link linkend="log-mechanism-communication-log">Communication Log</link> API, which means any additional
+            filters coming with packages should also leverage the new log feature.
+        </para>
+        <para>
+            If your package implements additional PostMaster filters, make sure to get acquainted with
+            <link linkend="log-mechanism-communication-log">API usage instructions</link>. Also, you can get an example
+            of how to implement this logging mechanism by looking the code in the
+            <literal>Kernel::System::PostMaster::NewTicket</literal>.
+        </para>
+    </section>
 </section>

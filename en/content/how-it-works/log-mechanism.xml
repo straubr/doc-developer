@@ -48,7 +48,7 @@ $Kernel::OM->Get('Kernel::System::Log')->Log(
             configured <literal>LogModule</literal> option in SysConfig.
         </para>
     </section>
-    <section>
+    <section id="log-mechanism-communication-log">
         <title>Communication Log</title>
         <para>
             In addition to System Log, OTRS provides specialized logging backend for any communication related logging.
