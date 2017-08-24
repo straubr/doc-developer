@@ -1001,7 +1001,7 @@ for my $Article (@Articles) {
             </para>
         </section>
     </section>
-    <section id="package-porting-5-to-6-article-api">
+    <section id="package-porting-5-to-6-sysconfig-changes">
         <title>SysConfig changes</title>
         <para>
             Note that in OTRS 6 SysConfig API was changed, so you should check if the methods are still existing.
@@ -1057,6 +1057,72 @@ my $Success = $SysConfigObject->SettingsSet(
             <link linkend="log-mechanism-communication-log">API usage instructions</link>. Also, you can get an example
             of how to implement this logging mechanism by looking the code in the
             <literal>Kernel::System::PostMaster::NewTicket</literal>.
+        </para>
+    </section>
+
+    <section id="package-porting-5-to-6-process-mailqueue-for-ut">
+        <title>Process MailQueue for unit tests</title>
+        <para>
+            As part of email handling improvements for OTRS 6, all emails are now sent asynchronously, that means they are saved in a queue for future processing.
+        </para>
+
+        <para>
+            To the unit tests that depend on emails continue to work properly is necessary to force the processing of the email queue.
+        </para>
+
+        <para>
+            Make sure to start with a clean queue:
+            <programlisting><![CDATA[
+                my $MailQueueObject = $Kernel::OM->Get('Kernel::System::MailQueue');
+                $MailQueueObject->Delete();
+            ]]></programlisting>
+        </para>
+
+        <para>
+            If for some reason you can't clean completely the queue, e.g. selenium unit tests,
+            just delete the items created during the tests:
+            <programlisting><![CDATA[
+                my $MailQueueObject = $Kernel::OM->Get('Kernel::System::MailQueue');
+                my %MailQueueCurrentItems = map { $_->{ID} => $_ } @{ $MailQueueObject->List() || [] };
+
+                my $Items = $MailQueueObject->List();
+                MAIL_QUEUE_ITEM:
+                for my $Item ( @{$Items} ) {
+                    next MAIL_QUEUE_ITEM if $MailQueueCurrentItems{ $Item->{ID} };
+                    $MailQueueObject->Delete(
+                        ID => $Item->{ID},
+                    );
+                }
+            ]]></programlisting>
+        </para>
+
+        <para>
+            Process the queue after the code that you expect to send emails:
+            <programlisting><![CDATA[
+                my $MailQueueObject = $Kernel::OM->Get('Kernel::System::MailQueue');
+                my $QueueItems      = $MailQueueObject->List();
+                for my $Item ( @{$QueueItems} ) {
+                    $MailQueueObject->Send( %{$Item} );
+                }
+            ]]></programlisting>
+        </para>
+
+        <para>
+            Or process only the ones created during the tests:
+            <programlisting><![CDATA[
+                my $MailQueueObject = $Kernel::OM->Get('Kernel::System::MailQueue');
+                my $QueueItems      = $MailQueueObject->List();
+                MAIL_QUEUE_ITEM:
+                for my $Item ( @{$QueueItems} ) {
+                    next MAIL_QUEUE_ITEM if $MailQueueCurrentItems{ $Item->{ID} };
+                    $MailQueueObject->Send( %{$Item} );
+                }
+            ]]></programlisting>
+        </para>
+
+        <para>
+            Depending on your case, you may need to clean the queue after or before
+            processing it.
         </para>
     </section>
 </section>
