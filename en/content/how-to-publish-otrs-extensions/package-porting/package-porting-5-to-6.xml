@@ -1044,6 +1044,45 @@ my $Success = $SysConfigObject->SettingsSet(
             ]]></programlisting>
         </para>
     </section>
+    <section id="package-porting-5-to-6-linkobject-changes">
+        <title>SysConfig changes</title>
+        <para>
+            Note that LinkObject was slightly modified in the OTRS 6 and methods LinkList() and LinkKeyList()
+            might return different result if Direction parameter is used. Consider changing Direction.
+        </para>
+        <para>
+            Old code:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+my $LinkList = $LinkObject->LinkList(
+    Object    => 'Ticket',
+    Key       => '321',
+    Object2   => 'FAQ',
+    State     => 'Valid',
+    Type      => 'ParentChild',
+    Direction => 'Target',
+    UserID    => 1,
+);
+            ]]></programlisting>
+        </para>
+        <para>
+            New code:
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+my $LinkList = $LinkObject->LinkList(
+    Object    => 'Ticket',
+    Key       => '321',
+    Object2   => 'FAQ',
+    State     => 'Valid',
+    Type      => 'ParentChild',
+    Direction => 'Source',
+    UserID    => 1,
+);
+            ]]></programlisting>
+        </para>
+    </section>
     <section id="package-porting-5-to-6-postmaster-filter-communication-log">
         <title>Communication Log support for additional PostMaster Filters</title>
         <para>
