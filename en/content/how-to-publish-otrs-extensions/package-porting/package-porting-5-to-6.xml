@@ -100,7 +100,73 @@ push @{ $Param{AttachmentList} }, $Attachment;
             ]]></programlisting>
         </para>
         <para>
+            If the module where you want to integrate multiupload supports standard templates, make sure to add a section to have a human readable file size format right after the attachments of the selected template have been loaded (see e.g. AgentTicketPhone for reference):
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+for my $Attachment (@TicketAttachments) {
+    $Attachment->{Filesize} = $LayoutObject->HumanReadableDataSize(
+        Size => $Attachment->{Filesize},
+    );
+}
+            ]]></programlisting>
+        </para>
+        <para>
             When adding selenium unit tests for the modules you ported, please take a look at <code>Selenium/Agent/MultiAttachmentUpload.t</code> for reference.
+        </para>
+    </section>
+
+    <section id="packge-porting-5-to-6-breadcrumbs">
+        <title>Add breadcrumbs to admin modules</title>
+        <para>
+            In OTRS 6, all admin modules should have a breadcrumb. The breadcrumb only needs to be added on the .tt template file and should be placed right after the h1 headline on top of the file. Additionally, the headline should receive the class <code>InvisibleText</code> to make it only "visible" for screen readers.
+        </para>
+        <programlisting format="linespecific"><![CDATA[
+<div class="MainBox ARIARoleMain LayoutFixedSidebar SidebarFirst">
+    <h1 class="InvisibleText">[% Translate("Name of your module") | html %]</h1>
+[% BreadcrumbPath = [
+        {
+            Name => Translate('Name of your module'),
+        },
+    ]
+%]
+[% INCLUDE "Breadcrumb.tt" Path = BreadcrumbPath %]
+...
+        ]]></programlisting>
+        <para>
+            Please make sure to add the correct breadcrumb for all levels of your admin module (e.g. SubActions):
+        </para>
+        <programlisting format="linespecific"><![CDATA[
+[% BreadcrumbPath = [
+        {
+            Name => Translate('Module Home Screen'),
+            Link => Env("Action"),
+        },
+        {
+            Name => Translate("Some Subaction"),
+        },
+    ]
+%]
+
+[% INCLUDE "Breadcrumb.tt" Path = BreadcrumbPath %]
+            ]]></programlisting>
+    </section>
+
+    <section id="package-porting-5-to-6-saveandcontinue">
+        <title>Add save and save and finish buttons to admin modules</title>
+        <para>
+            Admin modules in OTRS 6 should not only have a "save" button, but also a "save and finish" button. "Save" should leave the user on the same edit page after saving, "save and finish" should lead back to the overview of the entity the user is currently working on. Please see existing OTRS admin screens for reference.
+        </para>
+        <para>
+            <programlisting format="linespecific"><![CDATA[
+<div class="Field SpacingTop SaveButtons">
+    <button class="Primary CallForAction" id="SubmitAndContinue" type="submit" value="[% Translate("Save") | html %]"><span>[% Translate("Save") | html %]</span></button>
+    [% Translate("or") | html %]
+    <button class="Primary CallForAction" id="Submit" type="submit" value="[% Translate("Save") | html %]"><span>[% Translate("Save and finish") | html %]</span></button>
+    [% Translate("or") | html %]
+    <a href="[% Env("Baselink") %]Action=[% Env("Action") %]"><span>[% Translate("Cancel") | html %]</span></a>
+</div>
+            ]]></programlisting>
         </para>
     </section>
 
@@ -291,7 +357,7 @@ $LayoutObject->CustomerSetRichTextParameters(
             <title>Translations in JavaScript files</title>
             <para>
                 Adding translatable strings in JavaScript was quite difficult in OTRS. The string had to be translated in
-                Perl or in the template and than sent to the JavaScript function. With OTRS 6, translation of strings is
+                Perl or in the template and then sent to the JavaScript function. With OTRS 6, translation of strings is
                 possible directly in the JavaScript file. All other workarounds, especially blocks in the templates only for
                 translating strings, should be removed.
             </para>
