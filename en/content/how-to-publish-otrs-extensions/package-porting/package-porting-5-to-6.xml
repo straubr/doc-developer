@@ -1002,7 +1002,7 @@ for my $Article (@Articles) {
         </section>
     </section>
     <section id="package-porting-5-to-6-sysconfig-changes">
-        <title>SysConfig changes</title>
+        <title>SysConfig API changes</title>
         <para>
             Note that in OTRS 6 SysConfig API was changed, so you should check if the methods are still existing.
             For example, <literal>ConfigItemUpdate()</literal> is removed. To replace it you should use combination
@@ -1022,10 +1022,12 @@ for my $Article (@Articles) {
             </itemizedlist>
         </para>
         <para>
-            In case that you want to update <literal>ConfigItemUpdate()</literal> package setup, you could use
-            <literal>SettingsSet()</literal>.  It does all previous steps and it can be used for multiple settings at once.
-            DO NOT USE THIS FUNCTION IN SYSCONFIG SCREENS.
+            In case that you want to update a configuration setting during a <literal>CodeInstall</literal> section of a package, you could use
+            <literal>SettingsSet()</literal>.  It does all previouly mentioned steps and it can be used for multiple settings at once.
         </para>
+        <note>
+            <para>Do not use <literal>SettingSet()</literal> in the SysConfig GUI itself.</para>
+        </note>
         <para>
             <programlisting format="linespecific"><![CDATA[
 my $Success = $SysConfigObject->SettingsSet(
@@ -1045,7 +1047,7 @@ my $Success = $SysConfigObject->SettingsSet(
         </para>
     </section>
     <section id="package-porting-5-to-6-linkobject-changes">
-        <title>SysConfig changes</title>
+        <title>LinkObject API changes</title>
         <para>
             Note that LinkObject was slightly modified in the OTRS 6 and methods LinkList() and LinkKeyList()
             might return different result if Direction parameter is used. Consider changing Direction.
