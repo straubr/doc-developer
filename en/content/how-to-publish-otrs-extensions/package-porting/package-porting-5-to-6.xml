@@ -48,6 +48,12 @@ my $SystemTime    = $DateTimeObject->ToEpoch(); # note that the epoch is indepen
 my $UserTimeStamp = $DateTimeObject->ToString();
             ]]></programlisting>
         </para>
+        <para>
+            Please note that the returned time values with the new <literal>Get()</literal> function in the <literal>Kernel::System::DateTime</literal> module
+            are without leading zero instead of the old <literal>SystemTime2Date()</literal> function in the <literal>Kernel::System::Time</literal> module.
+            In the new <literal>Kernel::System::DateTime</literal> module the function <literal>Format()</literal> returns the date/time as string formatted
+            according to the given format.
+        </para>
     </section>
 
     <section id="package-porting-5-to-6-user-multiupload">
