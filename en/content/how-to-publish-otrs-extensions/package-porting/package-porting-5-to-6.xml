@@ -122,12 +122,15 @@ for my $Attachment (@TicketAttachments) {
         </para>
     </section>
 
-    <section id="packge-porting-5-to-6-breadcrumbs">
-        <title>Add breadcrumbs to admin modules</title>
-        <para>
-            In OTRS 6, all admin modules should have a breadcrumb. The breadcrumb only needs to be added on the .tt template file and should be placed right after the h1 headline on top of the file. Additionally, the headline should receive the class <code>InvisibleText</code> to make it only "visible" for screen readers.
-        </para>
-        <programlisting format="linespecific"><![CDATA[
+    <section id="packge-porting-5-to-6-admin-modules">
+        <title>Improvements to administration screens</title>
+
+        <section id="packge-porting-5-to-6-breadcrumbs">
+            <title>Add breadcrumbs to administration screens</title>
+            <para>
+                In OTRS 6, all admin modules should have a breadcrumb. The breadcrumb only needs to be added on the .tt template file and should be placed right after the h1 headline on top of the file. Additionally, the headline should receive the class <code>InvisibleText</code> to make it only "visible" for screen readers.
+            </para>
+            <programlisting format="linespecific"><![CDATA[
 <div class="MainBox ARIARoleMain LayoutFixedSidebar SidebarFirst">
     <h1 class="InvisibleText">[% Translate("Name of your module") | html %]</h1>
 [% BreadcrumbPath = [
@@ -138,11 +141,11 @@ for my $Attachment (@TicketAttachments) {
 %]
 [% INCLUDE "Breadcrumb.tt" Path = BreadcrumbPath %]
 ...
-        ]]></programlisting>
-        <para>
-            Please make sure to add the correct breadcrumb for all levels of your admin module (e.g. SubActions):
-        </para>
-        <programlisting format="linespecific"><![CDATA[
+            ]]></programlisting>
+            <para>
+                Please make sure to add the correct breadcrumb for all levels of your admin module (e.g. <literal>Subaction</literal>s):
+            </para>
+            <programlisting format="linespecific"><![CDATA[
 [% BreadcrumbPath = [
         {
             Name => Translate('Module Home Screen'),
@@ -155,16 +158,16 @@ for my $Attachment (@TicketAttachments) {
 %]
 
 [% INCLUDE "Breadcrumb.tt" Path = BreadcrumbPath %]
-            ]]></programlisting>
-    </section>
+                ]]></programlisting>
+        </section>
 
-    <section id="package-porting-5-to-6-saveandcontinue">
-        <title>Add save and save and finish buttons to admin modules</title>
-        <para>
-            Admin modules in OTRS 6 should not only have a "save" button, but also a "save and finish" button. "Save" should leave the user on the same edit page after saving, "save and finish" should lead back to the overview of the entity the user is currently working on. Please see existing OTRS admin screens for reference.
-        </para>
-        <para>
-            <programlisting format="linespecific"><![CDATA[
+        <section id="package-porting-5-to-6-saveandcontinue">
+            <title>Add "save" and "save and finish" buttons to administration screens</title>
+            <para>
+                Admin modules in OTRS 6 should not only have a "save" button, but also a "save and finish" button. "Save" should leave the user on the same edit page after saving, "save and finish" should lead back to the overview of the entity the user is currently working on. Please see existing OTRS admin screens for reference.
+            </para>
+            <para>
+                <programlisting format="linespecific"><![CDATA[
 <div class="Field SpacingTop SaveButtons">
     <button class="Primary CallForAction" id="SubmitAndContinue" type="submit" value="[% Translate("Save") | html %]"><span>[% Translate("Save") | html %]</span></button>
     [% Translate("or") | html %]
@@ -172,8 +175,9 @@ for my $Attachment (@TicketAttachments) {
     [% Translate("or") | html %]
     <a href="[% Env("Baselink") %]Action=[% Env("Action") %]"><span>[% Translate("Cancel") | html %]</span></a>
 </div>
-            ]]></programlisting>
-        </para>
+                ]]></programlisting>
+            </para>
+        </section>
     </section>
 
     <section id="packge-porting-5-to-6-configuration-files">
