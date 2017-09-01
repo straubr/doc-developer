@@ -186,6 +186,58 @@
             </varlistentry>
         </variablelist>
 
+        <itemizedlist>
+            <title>Guidelines for placing settings in the right <literal>Navigation</literal> nodes</title>
+            <listitem>
+                <para>
+                    Only create new nodes if neccessary. Avoid nodes with only very few settings if possible.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    On the first tree level, no new nodes should be added.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Don't place new settings in <literal>Core</literal> directly. This is reserved for a few important global settings.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    <literal>Core::*</literal> can take new groups that contain settings that cover the same topic
+                    (like <literal>Core::Email</literal>) or relate to the same entity (like <literal>Core::Queue</literal>).
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    All event handler registrations go to <literal>Core::Event</literal>.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Don't add new direct child nodes within <literal>Frontend</literal>. Global front end settings go to
+                    <literal>Frontend::Base</literal>, settings only affecting a part of the system go to the respective
+                    <literal>Admin, Agent, Customer</literal> or <literal>Public</literal> sub nodes.
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    Front end settings that only affect one screen should go to the relevant screen (<literal>View</literal>)
+                    node (create one if needed), for example <literal>AgentTicketZoom</literal> related settings
+                    go to <literal>Frontend::Agent::View::TicketZoom</literal>. If there are module layers within one screen with
+                    groups of related settings, they would also go to a sub group here (e. g.
+                    <literal>Frontend::Agent::View::TicketZoom::MenuModule</literal> for all ticket zoom menu module registrations).
+                </para>
+            </listitem>
+            <listitem>
+                <para>
+                    All global Loader settings go to <literal>Frontend::Base::Loader</literal>, screen specific Loader settings to
+                    <literal>Frontend::*::ModuleRegistration::Loader</literal>.
+                </para>
+            </listitem>
+        </itemizedlist>
+
         <section id="xml-config-structure">
             <title>Structure of <literal>Value</literal> elements</title>
             <para>
