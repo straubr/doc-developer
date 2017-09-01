@@ -905,7 +905,7 @@ my $ArticleBackendObject = $ArticleObject->BackendForChannel( ChannelName => 'Em
             <note>
                 <para>
                     While chat article backend is available in OTRS 6 Free, it is only utilized when system has a valid
-                    OTRS Business Solution™ installed.
+                    <emphasis role="bold">OTRS Business Solution™</emphasis> installed.
                 </para>
             </note>
             <para>

@@ -4,7 +4,7 @@
 <section>
     <title>Config Mechanism</title>
     <para>
-        OTRS comes with a dedicated mechanism to manage configuration options via a graphical interface (SysConfig).
+        OTRS comes with a dedicated mechanism to manage configuration options via a graphical interface (System Configuration).
         This section describes how it works internally and how you can provide new configuration options or change
         existing default values.
     </para>
@@ -24,9 +24,8 @@
         </para>
         <para>
 <screen><![CDATA[
-ZZZAAuto.pm                 # Perl cache of the XML configuration's default values
+ZZZAAuto.pm                 # Perl cache of the XML configuration's current values (default or modified by user)
 ZZZACL.pm                   # Perl cache of ACL configuration from database
-ZZZAuto.pm                  # Contains all the settings the user changed in their SysConfig
 ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from database
 ]]></screen>
         </para>
@@ -39,11 +38,13 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
         <title>XML Config Options</title>
         <para>
             In OTRS, configuration options that the administrator can configure via SysConfig are provided via
-            XML files with a special format.
-            XML config files are located at <filename>$OTRS_HOME/Kernel/Config/Files/*.xml</filename>.
+            XML files with a special format. To convert old XML's you can use 'otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure' command.
             The file <filename>Kernel/Config/Files/ZZZAAuto.pm</filename> is a cached Perl version of the XML that contains
-            all settings with their default value. It can be (re-)generated with <filename>bin/otrs.Console.pl Maint::Config::Rebuild</filename>.
-            All changes the administrator makes are stored in <filename>Kernel/Config/Files/ZZZAuto.pm</filename>.
+            all settings with their current value. It can be (re-)generated with <filename>bin/otrs.Console.pl Maint::Config::Rebuild</filename>.
+        </para>
+        <para>
+            <literal>Note:</literal> <filename>$OTRS_HOME/Kernel/Config/Files/ZZZAuto.pm</filename> does not exist any more, it has been
+            merged into <filename>$OTRS_HOME/Kernel/Config/Files/ZZZAAuto.pm</filename>.
         </para>
         <para>
             Each XML config file has the following layout:
@@ -51,74 +52,255 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
         <para>
             <programlisting><![CDATA[
 <?xml version="1.0" encoding="utf-8" ?>
-<otrs_config version="1.0" init="Changes">
+<otrs_config version="2.0" init="Changes">
 
-    <!--  config items will be here -->
+    <!--  settings will be here -->
 
 </otrs_config>
             ]]></programlisting>
         </para>
+
+        <variablelist>
+            <title>Attributes of the <literal>otrs_config</literal> element</title>
+            <varlistentry>
+                <term><literal>init</literal></term>
+                <listitem>
+                    <para>
+                        The global <literal>init</literal> attribute describes where the config options should be loaded. There are different levels available and will be loaded/overloaded in the following order: <literal>Framework</literal> (for framework settings e. g. session option), <literal>Application</literal> (for application settings e. g. ticket options), <literal>Config</literal> (for extensions to existing applications e. g. ITSM options) and <literal>Changes</literal> (for custom development e. g. to overwrite framework or ticket options).
+                    </para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
+
         <para>
-            The <literal>init</literal> attribute describes where the config options should be loaded. There are different levels available and will be loaded/overloaded in the following order: <literal>Framework</literal> (for framework settings e. g. session option), <literal>Application</literal> (for application settings e. g. ticket options), <literal>Config</literal> (for extensions to existing applications e. g. ITSM options) and <literal>Changes</literal> (for custom development e. g. to overwrite framework or ticket options).
-        </para>
-        <para>
-            If you want to add config options, here is an example:
+            The configuration items are written as <literal>Setting</literal> elements with a <literal>Description</literal>,
+            a <literal>Navigation</literal> group (for the tree-based navigation in the GUI) and the <literal>Value</literal>
+            that it represents. Here's an example:
         </para>
         <para>
             <programlisting><![CDATA[
-<ConfigItem Name="Ticket::Hook" Required="1" Valid="1" ConfigLevel="300">
-    <Description Lang="en">The identifier for a ticket. The default is Ticket#.</Description>
-    <Description Lang="de">Ticket-Identifikator. Als Standard wird Ticket# verwendet.</Description>
-    <Group>Ticket</Group>
-    <SubGroup>Core::Ticket</SubGroup>
-    <Setting>
-        <String Regex="">Ticket#</String>
-    </Setting>
-</ConfigItem>
+<Setting Name="Ticket::Hook" Required="1" Valid="1">
+    <Description Translatable="1">The identifier for a ticket, e.g. Ticket#, Call#, MyTicket#. The default is Ticket#.</Description>
+    <Navigation>Core::Ticket</Navigation>
+    <Value>
+        <Item ValueType="String" ValueRegex="">Ticket#</Item>
+    </Value>
+</Setting>
             ]]></programlisting>
         </para>
-        <para>
-            If <literal>required</literal> is set to <literal>1</literal>, the config variable is included and cannot be disabled.
-        </para>
-        <para>
-            If <literal>valid</literal> is set to <literal>1</literal>, the config variable is active.
-            If it is set to <literal>0</literal>, the config variable is inactive.
-        </para>
-        <para>
-            If the optional attribute <literal>ConfigLevel</literal> is set, the config variable might not be edited by the administrator,
-            depending on his own config level. The config variable <literal>ConfigLevel</literal> sets the level of technical experience
-            of the administrator. It can be 100 (Expert), 200 (Advanced) or 300 (Beginner).
-            As a guideline which config level should be given to an option, it is recommended that all options
-            having to do with the configuration of external interaction, like Sendmail, LDAP, SOAP,
-            and others should get a config level of at least 200 (Advanced).
-        </para>
-        <para>
-            The config variable is defined in the <literal>Setting</literal> element.
-        </para>
 
-        <section id="xml-config-variable">
-            <title>Types of XML Config Variables</title>
+        <variablelist>
+            <title>Attributes of the <literal>Setting</literal> element</title>
+            <varlistentry>
+                <term><literal>Required</literal></term>
+                <listitem>
+                    <para>
+                        If this is set to 1, the config setting cannot be disabled.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>Valid</literal></term>
+                <listitem>
+                    <para>
+                        Determines if the config setting is active (1) or inactive (0) by default.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>ConfigLevel</literal></term>
+                <listitem>
+                    <para>
+                        If the optional attribute <literal>ConfigLevel</literal> is set, the config variable might not be edited by the administrator,
+                        depending on his own config level. The config variable <literal>ConfigLevel</literal> sets the level of technical experience
+                        of the administrator. It can be 100 (Expert), 200 (Advanced) or 300 (Beginner).
+                        As a guideline which config level should be given to an option, it is recommended that all options
+                        having to do with the configuration of external interaction, like Sendmail, LDAP, SOAP,
+                        and others should get a config level of at least 200 (Advanced).
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>Invisible</literal></term>
+                <listitem>
+                    <para>
+                        If set to 1, the config setting is not shown in the GUI.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>Readonly</literal></term>
+                <listitem>
+                    <para>
+                        If set to 1, the config setting cannot be changed in the GUI.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>UserModificationPossible</literal></term>
+                <listitem>
+                    <para>
+                        If <literal>UserModificationPossible</literal> is set to <literal>1</literal>, administrators can enable user modifications of this setting
+                        (in user preferences). Please note that this feature requires the <emphasis role="bold">OTRS Business Solution™</emphasis>.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>UserModificationActive</literal></term>
+                <listitem>
+                    <para>
+                        If <literal>UserModificationActive</literal> is set to <literal>1</literal>, user modifications of this setting is enabled (in user preferences).
+                        You should use this attribute together with <literal>UserModificationPossible</literal>.
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>UserPreferencesGroup</literal></term>
+                <listitem>
+                    <para>
+                        Use <literal>UserPreferencesGroup</literal> attribute to define under which group config variable belongs (in the UserPreferences screen).
+                        You should use this attribute together with <literal>UserModificationPossible</literal>.
+                    </para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
+
+        <section id="xml-config-structure">
+            <title>Structure of <literal>Value</literal> elements</title>
             <para>
-                The XML config settings support various types of variables.
+                <literal>Value</literal> elements hold the actual configuration data payload. They can contain single values,
+                hashes or arrays.
+            </para>
+
+            <section id="xml-config-item">
+                <title><literal>Item</literal></title>
+                <para>
+                    An <literal>Item</literal> element holds one piece of data.
+                    The optional <literal>ValueType</literal> attribute determines which kind of data and how it needs
+                    to be presented to the user in the GUI. If no <literal>ValueType</literal> is specified, it defaults
+                    to <literal>String</literal>.
+                </para>
+                <para>
+                    Please <link linkend="xml-config-value-types">see below</link> for a definition of
+                    the different value types.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="Ticket::Hook" Required="1" Valid="1">
+    <Description Translatable="1">The identifier for a ticket, e.g. Ticket#, Call#, MyTicket#. The default is Ticket#.</Description>
+    <Navigation>Core::Ticket</Navigation>
+    <Value>
+        <Item ValueType="String" ValueRegex="">Ticket#</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+
+            <section id="xml-config-array">
+                <title><literal>Array</literal></title>
+                <para>
+                    With this config element arrays can be displayed.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Array>
+            <Item Translatable="1">Value 1</Item>
+            <Item Translatable="1">Value 2</Item>
+            ...
+        </Array>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+
+            <section id="xml-config-hash">
+                <title><literal>Hash</literal></title>
+                <para>
+                    With this config element hashes can be displayed.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Hash>
+            <Item Key="One" Translatable="1">First</Item>
+            <Item Key="Two" Translatable="1">Second</Item>
+            ...
+        </Hash>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+                <para>
+                    It's possible to have nested array/hash elements (like hash of arrays, array of hashes, array of hashes of arrays, ...).
+                    Below is an example array of hashes.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="ExampleAoH">
+    ...
+    <Value>
+        <Array>
+            <DefaultItem>
+                <Hash>
+                    <Item></Item>
+                </Hash>
+            </DefaultItem>
+            <Item>
+                <Hash>
+                    <Item Key="One">1</Item>
+                    <Item Key="Two">2</Item>
+                </Hash>
+            </Item>
+            <Item>
+                <Hash>
+                    <Item Key="Three">3</Item>
+                    <Item Key="Four">4</Item>
+                </Hash>
+            </Item>
+        </Array>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+        </section>
+
+        <section id="xml-config-value-types">
+            <title>Value Types</title>
+            <para>
+                The XML config settings support various types of configuration variables.
             </para>
             <section id="xml-config-string">
                 <title>String</title>
                 <para>
                     <programlisting><![CDATA[
-<Setting>
-    <String Regex="" Check="File"></String>
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="String" ValueRegex=""></Item>
+    </Value>
 </Setting>
                     ]]></programlisting>
                 </para>
                 <para>
                     A config element for numbers and single-line strings.
                     Checking the validity with a regular expression is possible (optional).
-                    The optional <literal>Check</literal> attribute checks elements on the file system.
+                    This is the default <literal>ValueType</literal>.
                 </para>
                 <para>
                     <programlisting><![CDATA[
-<Setting>
-    <String Translatable="1">My Setting</String>
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="String" ValueRegex="" Translatable="1">Value</Item>
+    </Value>
 </Setting>
                     ]]></programlisting>
                 </para>
@@ -128,6 +310,23 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                     This attribute can be placed on any tag (see also below).
                 </para>
             </section>
+            <section id="xml-config-password">
+                <title>Password</title>
+                <para>
+                    A config element for passwords. It's still stored as plain text in the XML, but
+                    it's masked in the GUI.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="Password">Secret</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
             <section id="xml-config-textarea">
                 <title>Textarea</title>
                 <para>
@@ -135,169 +334,290 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 </para>
                 <para>
                     <programlisting><![CDATA[
-<Setting>
-    <TextArea></TextArea>
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="Textarea"></Item>
+    </Value>
 </Setting>
                     ]]></programlisting>
                 </para>
             </section>
-            <section id="xml-config-option">
-                <title>Options</title>
+            <section id="xml-config-select">
+                <title>Select</title>
                 <para>
-                    This config element offers preset values as a pull-down menu.
+                    This config element offers preset values as a pull-down menu. The <literal>SelectedID</literal>
+                    or <literal>SelectedValue</literal> attributes can pre-select a default value.
                 </para>
                 <para>
                     <programlisting><![CDATA[
-<Setting>
-    <Option SelectedID="0">
-        <Item Key="0" Translatable="1">No</Item>
-        <Item Key="1" Translatable="1">Yes</Item>
-    </Option>
-</Setting>
-                    ]]></programlisting>
-                </para>
-                <para>
-                    You can also choose the default value by "Value":
-                </para>
-                <para>
-                    <programlisting><![CDATA[
-<Setting>
-    <Option SelectedValue="No">
-        <Item Key="0" Translatable="1">No</Item>
-        <Item Key="1" Translatable="1">Yes</Item>
-    </Option>
-</Setting>
-                    ]]></programlisting>
-                </para>
-            </section>
-            <section id="xml-config-array">
-                <title>Array</title>
-                <para>
-                    With this config element arrays can be displayed.
-                </para>
-                <para>
-                    <programlisting><![CDATA[
-<Setting>
-    <Array>
-        <Item>First item</Item>
-        <Item>Second item</Item>
-    </Array>
-</Setting>
-                    ]]></programlisting>
-                </para>
-            </section>
-            <section id="xml-config-hash">
-                <title>Hash</title>
-                <para>
-                    With this config element hashes can be displayed.
-                </para>
-                <para>
-                    <programlisting><![CDATA[
-<Setting>
-    <Hash>
-        <Item Key="1" Translatable="1">Value 1</Item>
-        <Item Key="2" Translatable="1">Value 2</Item>
-    </Hash>
-</Setting>
-                    ]]></programlisting>
-                </para>
-                <para>
-                    A hash can also contain nested arrays or hashes.
-                </para>
-                <para>
-                    <programlisting><![CDATA[
-<Setting>
-    <Hash>
-        <Item Key=""></Item>
-        <Item Key="">
-            <Hash>
-                <Item Key=""></Item>
-                <Item Key=""></Item>
-            </Hash>
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="Select" SelectedID="Queue">
+            <Item ValueType="Option" Value="Queue" Translatable="1">Queue</Item>
+            <Item ValueType="Option" Value="SystemAddress" Translatable="1">System address</Item>
         </Item>
-        <Item Key="">
-            <Array>
-                <Item></Item>
-                <Item></Item>
-            </Array>
-        </Item>
-        <Item Key=""></Item>
-    </Hash>
+    </Value>
 </Setting>
                     ]]></programlisting>
                 </para>
             </section>
-            <section id="xml-config-navbar">
-                <title>FrontendModuleReg (NavBar)</title>
+            <section id="xml-config-checkbox">
+                <title>Checkbox</title>
+                <para>
+                    This config element checkbox has two states: 0 or 1.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="Checkbox">0</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-date">
+                <title>Date</title>
+                <para>
+                    This config element contains a date value.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="Date">2016-02-02</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-datetime">
+                <title>DateTime</title>
+                <para>
+                    This config element contains a date and time value.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="DateTime">2016-12-08 01:02:03</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-directory">
+                <title>Directory</title>
+                <para>
+                    This config element contains a directory.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="Directory">/etc</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-file">
+                <title>File</title>
+                <para>
+                    This config element contains a file path.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="File">/etc/hosts</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-entity">
+                <title>Entity</title>
+                <para>
+                    This config element contains a value of a particular entity.
+                    Supported entities: DynamicField, Queue, Priority, State and Type.
+                    Consistency checks will ensure that only valid entities can be configured
+                    and that entities used in the configuration cannot be set to invalid.
+                    Also, when an entity is renamed, all referencing config settings will be updated.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="Entity" ValueEntityType="Queue">Junk</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-timezone">
+                <title>TimeZone</title>
+                <para>
+                    This config element contains a time zone value.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="TimeZone">UTC</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-vacationdays">
+                <title>VacationDays</title>
+                <para>
+                    This config element contains definitions for vacation days which are repeating each year.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="VacationDays">
+            <DefaultItem ValueType="VacationDays"></DefaultItem>
+            <Item ValueMonth="1" ValueDay="1" Translatable="1">New Year's Day</Item>
+            <Item ValueMonth="5" ValueDay="1" Translatable="1">International Workers' Day</Item>
+            <Item ValueMonth="12" ValueDay="24" Translatable="1">Christmas Eve</Item>
+        </Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-vacationdaysonetime">
+                <title>VacationDaysOneTime</title>
+                <para>
+                    This config element contains definitions for vacation days which occur only once.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="VacationDaysOneTime">
+            <Item ValueYear="2004" ValueMonth="1" ValueDay="1">test</Item>
+        </Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-workinghours">
+                <title>WorkingHours</title>
+                <para>
+                    This config element contains definitions for working hours.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="WorkingHours">
+            <Item ValueType="Day" ValueName="Mon">
+                <Item ValueType="Hour">8</Item>
+                <Item ValueType="Hour">9</Item>
+            </Item>
+            <Item ValueType="Day" ValueName="Tue">
+                <Item ValueType="Hour">8</Item>
+                <Item ValueType="Hour">9</Item>
+            </Item>
+        </Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-config-frontendregistration">
+                <title>Frontend Registration</title>
                 <para>
                     Module registration for Agent Interface:
                 </para>
                 <para>
                     <programlisting><![CDATA[
-<Setting>
-    <FrontendModuleReg>
-        <Description>Agent Dashboard</Description>
-        <Title></Title>
-        <NavBarName>Dashboard</NavBarName>
-        <NavBar>
-            <Description Translatable="1"></Description>
-            <Name Translatable="1">Dashboard</Name>
-            <Link>Action=AgentDashboard</Link>
-            <LinkOption></LinkOption>
-            <NavBar>Dashboard</NavBar>
-            <Type>Menu</Type>
-            <Block>ItemArea</Block>
-            <AccessKey>d</AccessKey>
-            <Prio>50</Prio>
-        </NavBar>
-        <Loader>
-            <CSS>Core.Agent.Dashboard.css</CSS>
-            <CSS>Core.AllocationList.css</CSS>
-            <CSS>thirdparty/fullcalendar-1.6.1/fullcalendar.css</CSS>
-            <CSS>thirdparty/d3js/nv.d3.css</CSS>
-            <JavaScript>thirdparty/flot-0.8.3/excanvas.js</JavaScript>
-            <JavaScript>thirdparty/flot-0.8.3/jquery.flot.js</JavaScript>
-            <JavaScript>thirdparty/fullcalendar-1.6.1/fullcalendar.min.js</JavaScript>
-            <JavaScript>thirdparty/d3js/d3.v3.min.js</JavaScript>
-            <JavaScript>thirdparty/d3js/nv.d3.min.js</JavaScript>
-            <JavaScript>thirdparty/d3js/models/OTRSmultiBarChart.js</JavaScript>
-            <JavaScript>thirdparty/d3js/models/OTRSstackedAreaChart.js</JavaScript>
-            <JavaScript>Core.UI.Chart.js</JavaScript>
-            <JavaScript>Core.UI.AdvancedChart.js</JavaScript>
-            <JavaScript>Core.UI.AllocationList.js</JavaScript>
-            <JavaScript>Core.Agent.TableFilters.js</JavaScript>
-            <JavaScript>Core.Agent.Dashboard.js</JavaScript>
-        </Loader>
-    </FrontendModuleReg>
+<Setting Name="SettiFrontend::Module###AgentModuleName">
+    ...
+    <Value>
+        <Item ValueType="FrontendRegistration">
+            <Hash>
+                <Item Key="Group">
+                    <Array>
+                    </Array>
+                </Item>
+                <Item Key="GroupRo">
+                    <Array>
+                    </Array>
+                </Item>
+                <Item Key="Description" Translatable="1">Phone Call.</Item>
+                <Item Key="Title" Translatable="1">Phone-Ticket</Item>
+                <Item Key="NavBarName">Ticket</Item>
+            </Hash>
+        </Item>
+    </Value>
 </Setting>
                     ]]></programlisting>
                 </para>
             </section>
-            <section id="xml-config-navbarmodule">
-                <title>FrontendModuleReg (NavBarModule)</title>
-                <para>
-                    Module registration for Admin Interface:
-                </para>
-                <para>
-                    <programlisting><![CDATA[
-<Setting>
-    <FrontendModuleReg>
-        <Group>admin</Group>
-        <Description>Admin</Description>
-        <Title Translatable="1">Customers &lt;-&gt; Groups</Title>
-        <NavBarName>Admin</NavBarName>
-        <NavBarModule>
-            <Module>Kernel::Output::HTML::NavBarModuleAdmin</Module>
-            <Name Translatable="1">Customer User &lt;-&gt; Groups</Name>
-            <Description Translatable="1">Link customer user to groups.</Description>
-            <Block>Customer</Block>
-            <Prio>400</Prio>
-        </NavBarModule>
-    </FrontendModuleReg>
-</Setting>
-                    ]]></programlisting>
-                </para>
-            </section>
+        </section>
+    </section>
+    <section id="xml-default-item">
+        <title>DefaultItem in Array and Hash</title>
+        <para>
+            The new XML structure allows us to create complex structures. Therefore we need <literal>DefaultItem</literal> entries to describe
+            the structure of the Array/Hash. If it's not provided, system considers that you want simple Array/Hash with scalar values.
+            <literal>DefaultItem</literal> is used as a template when adding new elements, so it can contain additional attributes,
+            like <literal>ValueType</literal>, and it can define default values.
+        </para>
+        <para>
+            Here are few examples:
+        </para>
+        <section id="xml-aoa-select">
+            <title>Array of Array with Select items</title>
+            <para>
+                <programlisting><![CDATA[
+<Array>
+    <DefaultItem>
+        <Array>
+            <DefaultItem ValueType="Select" SelectedID='option-2'>
+                <Item ValueType="Option" Value="option-1">Option 1</Item>
+                <Item ValueType="Option" Value="option-2">Option 2</Item>
+            </DefaultItem>
+        </Array>
+    </DefaultItem>
+    ...
+</Array>
+                ]]></programlisting>
+            </para>
+        </section>
+        <section id="xml-hoh-date">
+            <title>Hash of Hash with Date items</title>
+            <para>
+                <programlisting><![CDATA[
+<Hash>
+    <DefaultItem>
+        <Hash>
+            <DefaultItem ValueType="Date">2017-01-01</DefaultItem>
+        </Hash>
+    </DefaultItem>
+    ...
+</Hash>
+                ]]></programlisting>
+            </para>
         </section>
     </section>
 
