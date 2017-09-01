@@ -13,7 +13,8 @@
         <title><filename>Defaults.pm</filename>: OTRS Default Configuration</title>
         <para>
             The default configuration file of OTRS is <filename>Kernel/Config/Defaults.pm</filename>.
-            This file should be left untouched as it is automatically updated on framework updates.
+            This file is needed for operation of freshly installed systems without a deployed XML configuration and
+            should be left untouched as it is automatically updated on framework updates.
         </para>
     </section>
 
@@ -22,20 +23,40 @@
         <para>
             In <filename>Kernel/Config/Files</filename> you can find some automatically generated configuration files:
         </para>
+        <variablelist>
+            <varlistentry>
+                <term><literal>ZZZAAuto.pm</literal></term>
+                <listitem>
+                    <para>
+                        Perl cache of the XML configuration's current values (default or modified by user)
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>ZZZACL.pm</literal></term>
+                <listitem>
+                    <para>
+                        Perl cache of ACL configuration from database
+                    </para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term><literal>ZZZACL.pm</literal></term>
+                <listitem>
+                    <para>
+                        Perl cache of ProcessManagement configuration from database
+                    </para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
         <para>
-<screen><![CDATA[
-ZZZAAuto.pm                 # Perl cache of the XML configuration's current values (default or modified by user)
-ZZZACL.pm                   # Perl cache of ACL configuration from database
-ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from database
-]]></screen>
-        </para>
-        <para>
-            These files should never be manually changed as they are overwritten by OTRS.
+            These files are a Perl representation of the current system configuration.
+            They should never be manually changed as they are overwritten by OTRS.
         </para>
     </section>
 
     <section id="xml-config">
-        <title>XML Config Options</title>
+        <title>XML Configuration Files</title>
         <para>
             In OTRS, configuration options that the administrator can configure via SysConfig are provided via
             XML files with a special format. To convert old XML's you can use 'otrs.Console.pl Dev::Tools::Migrate::ConfigXMLStructure' command.
@@ -574,22 +595,21 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
                 </para>
             </section>
         </section>
-    </section>
-    <section id="xml-default-item">
-        <title>DefaultItem in Array and Hash</title>
-        <para>
-            The new XML structure allows us to create complex structures. Therefore we need <literal>DefaultItem</literal> entries to describe
-            the structure of the Array/Hash. If it's not provided, system considers that you want simple Array/Hash with scalar values.
-            <literal>DefaultItem</literal> is used as a template when adding new elements, so it can contain additional attributes,
-            like <literal>ValueType</literal>, and it can define default values.
-        </para>
-        <para>
-            Here are few examples:
-        </para>
-        <section id="xml-aoa-select">
-            <title>Array of Array with Select items</title>
+        <section id="xml-default-item">
+            <title>DefaultItem in Array and Hash</title>
             <para>
-                <programlisting><![CDATA[
+                The new XML structure allows us to create complex structures. Therefore we need <literal>DefaultItem</literal> entries to describe
+                the structure of the Array/Hash. If it's not provided, system considers that you want simple Array/Hash with scalar values.
+                <literal>DefaultItem</literal> is used as a template when adding new elements, so it can contain additional attributes,
+                like <literal>ValueType</literal>, and it can define default values.
+            </para>
+            <para>
+                Here are few examples:
+            </para>
+            <section id="xml-aoa-select">
+                <title>Array of Array with Select items</title>
+                <para>
+                    <programlisting><![CDATA[
 <Array>
     <DefaultItem>
         <Array>
@@ -601,13 +621,13 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
     </DefaultItem>
     ...
 </Array>
-                ]]></programlisting>
-            </para>
-        </section>
-        <section id="xml-hoh-date">
-            <title>Hash of Hash with Date items</title>
-            <para>
-                <programlisting><![CDATA[
+                    ]]></programlisting>
+                </para>
+            </section>
+            <section id="xml-hoh-date">
+                <title>Hash of Hash with Date items</title>
+                <para>
+                    <programlisting><![CDATA[
 <Hash>
     <DefaultItem>
         <Hash>
@@ -616,8 +636,9 @@ ZZZProcessManagement.pm     # Perl cache of ProcessManagement configuration from
     </DefaultItem>
     ...
 </Hash>
-                ]]></programlisting>
-            </para>
+                    ]]></programlisting>
+                </para>
+            </section>
         </section>
     </section>
 
