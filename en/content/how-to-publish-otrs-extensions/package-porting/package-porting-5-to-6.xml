@@ -186,7 +186,8 @@ for my $Attachment (@TicketAttachments) {
         <section id="package-porting-5-to-6-XML-config-file-format">
             <title>XML configuration file format</title>
             <para>
-                OTRS 6 uses a new XML configuration file format and the location of configuration files moved
+                OTRS 6 uses a new <link linkend="xml-config">XML configuration file format</link>
+                and the location of configuration files moved
                 from <filename>Kernel/Config/Files</filename> to <filename>Kernel/Config/Files/XML</filename>.
                 To convert existing XML configuration files to the new format and location, you can use the following
                 tool that is part of the OTRS framework:
