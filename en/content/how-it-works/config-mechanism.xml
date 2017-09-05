@@ -400,6 +400,24 @@
                     ]]></programlisting>
                 </para>
             </section>
+            <section id="xml-config-password">
+                <title>PerlModule</title>
+                <para>
+                    A config element for Perl module. It has a <literal>ValueFilter</literal> attribute, which filters
+                    possible values for selection. In the example below, user can select Perl module
+                    <literal>Kernel::System::Log::SysLog</literal> or <literal>Kernel::System::Log::File</literal>.
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+<Setting Name="SettingName">
+    ...
+    <Value>
+        <Item ValueType="PerlModule" ValueFilter="Kernel/System/Log/*.pm">Kernel::System::Log::SysLog</Item>
+    </Value>
+</Setting>
+                    ]]></programlisting>
+                </para>
+            </section>
             <section id="xml-config-textarea">
                 <title>Textarea</title>
                 <para>
@@ -519,11 +537,11 @@
             <section id="xml-config-entity">
                 <title>Entity</title>
                 <para>
-                    This config element contains a value of a particular entity.
-                    Supported entities: DynamicField, Queue, Priority, State and Type.
-                    Consistency checks will ensure that only valid entities can be configured
-                    and that entities used in the configuration cannot be set to invalid.
-                    Also, when an entity is renamed, all referencing config settings will be updated.
+                    This config element contains a value of a particular entity. <literal>ValueEntityType</literal>
+                    attribute defines the entity type. Supported entities: DynamicField, Queue, Priority, State and
+                    Type. Consistency checks will ensure that only valid entities can be configured and that entities
+                    used in the configuration cannot be set to invalid. Also, when an entity is renamed, all
+                    referencing config settings will be updated.
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -556,6 +574,7 @@
                 <title>VacationDays</title>
                 <para>
                     This config element contains definitions for vacation days which are repeating each year.
+                    Following attributes are mandatory: <literal>ValueMonth</literal>, <literal>ValueDay</literal>.
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -577,6 +596,8 @@
                 <title>VacationDaysOneTime</title>
                 <para>
                     This config element contains definitions for vacation days which occur only once.
+                    Following attributes are mandatory: <literal>ValueMonth</literal>, <literal>ValueDay</literal>
+                    and <literal>ValueYear</literal>.
                 </para>
                 <para>
                     <programlisting><![CDATA[
