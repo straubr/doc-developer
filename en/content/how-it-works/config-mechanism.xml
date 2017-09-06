@@ -400,7 +400,7 @@
                     ]]></programlisting>
                 </para>
             </section>
-            <section id="xml-config-password">
+            <section id="xml-config-perlmodule">
                 <title>PerlModule</title>
                 <para>
                     A config element for Perl module. It has a <literal>ValueFilter</literal> attribute, which filters
