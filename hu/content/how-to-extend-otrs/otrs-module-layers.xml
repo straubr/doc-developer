@@ -52,7 +52,7 @@ számelőállító moduljait is. Nézzük meg részletesen a különböző réte
     </section>
 
     <section id="daemon-scheduler-modules">
-        <title>Daemon And Scheduler</title>
+        <title>Démon és ütemező</title>
         <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="otrs-module-layers/daemon/daemon-modules.xml" />
         <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="otrs-module-layers/daemon/scheduler-task-worker-modules.xml" />
     </section>

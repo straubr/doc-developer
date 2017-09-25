@@ -2,63 +2,66 @@
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
 <section id="scheduler-overview">
-    <title>OTRS Scheduler</title>
+    <title>OTRS ütemező</title>
     <para>
-        The OTRS Scheduler is a conjunction of daemon modules and task workers that
-runs together in order to perform all needed OTRS tasks asynchronously from
-the web server process.
+        Az OTRS ütemező a démonmodulok és a feladatelvégzők együttese, amelyek
+együtt futnak azért, hogy az összes szükséges OTRS feladatot aszinkron módon
+végrehajtsák a webkiszolgáló folyamatából.
     </para>
     <section id="scheduler-task-managers">
-        <title>OTRS Scheduler Task Managers</title>
+        <title>OTRS ütemező feladatkezelők</title>
         <para>
-            <literal>SchedulerCronTaskManager</literal> reads registered cron tasks from
-the OTRS SysConfig and determines the correct time to create a task to be
-executed.
+            A <literal>SchedulerCronTaskManager</literal> kiolvassa a regisztrált
+cron-feladatokat az OTRS rendszerbeállításaiból, és meghatározza a helyes
+időt a végrehajtandó feladat létrehozásához.
         </para>
         <para>
-            <literal>SchedulerFutureTaskManager</literal> checks the tasks that are set
-to be executed just one time in the future and sets this task to be executed
-in time. For example, when a Generic Interface Invoker can not reach the
-remote server, it can self schedule to be run again 5 minutes later.
+            A <literal>SchedulerFutureTaskManager</literal> ellenőrzi azokat a
+feladatokat, amelyek úgy vannak beállítva, hogy csak egy alkalommal fussanak
+a jövőben, és beállítja, hogy a feladat időben kerüljön
+végrehajtásra. Például amikor egy általános felület meghívónak nem sikerül
+elérnie a távoli kiszolgálót, akkor ütemezni tudja magát, hogy 5 perccel
+később újra fusson.
         </para>
         <para>
-            <literal>SchedulerGenericAgentTaskManager</literal> continuously reads the
-<literal>GenericAgent</literal> tasks that are set to be run on regular time
-basis and sets their execution accordingly.
+            A <literal>SchedulerGenericAgentTaskManager</literal> folyamatosan olvassa a
+<literal>GenericAgent</literal> feladatot, amely rendszeres időközönkénti
+futáshoz van beállítva, és annak megfelelően állítja be azok végrehajtását.
         </para>
         <para>
-            Whenever these tasks managers are not enough, a new daemon module can be
-created. At a certain point of its <literal>Run()</literal> method it needs
-to call <literal>TaskAdd()</literal> from the <literal>chedulerDB</literal>
-object to register a task, and as soon as it is registered, it will be
-executed in the next free slot by the
-<literal>SchedulerTaskWorker</literal>.
+            Amikor ezek a feladatkezelők nem elegendőek, akkor egy új démonmodul hozható
+létre. Egy feladat regisztrálásához a <literal>Run()</literal> metódusuk egy
+bizonyos pontján meg kell hívni a <literal>TaskAdd()</literal> függvényt a
+<literal>chedulerDB</literal> objektumból, és amint regisztrálva lett, akkor
+a <literal>SchedulerTaskWorker</literal> végrehajtja a következő szabad
+időszeletben.
         </para>
     </section>
     <section id="scheduler-task-workers">
-        <title>OTRS Scheduler Task Workers</title>
+        <title>OTRS ütemező feladatelvégzők</title>
             <para>
-                <literal>SchedulerTaskWorker</literal> execute all tasks planned by the
-previous tasks managers plus the ones that come directly from the code by
-using the Asynchronous Executor.
+                A <literal>SchedulerTaskWorker</literal> az aszinkron végrehajtó
+használatával végrehajtja az előző feladatkezelő által tervezett összes
+feladatot, és még azokat is, amelyek közvetlenül a kódból jönnek.
             </para>
             <para>
-                In order to execute each task, the <literal>SchedulerTaskWorker</literal>
-calls a backend module (Task Worker) to perform the specific task. The
-worker module is determined by the task type. If a new task type is added,
-it will require a new task worker.
+                Annak érdekében, hogy az összes feladatot végrehajtsa, a
+<literal>SchedulerTaskWorker</literal> meghív egy háttérprogram-modult
+(feladatelvégzőt) az adott feladat végrehajtásához. Az elvégző modult a
+feladat típusa határozza meg. Ha új feladattípus kerül hozzáadásra, akkor az
+új feladatelvégzőt is igényel.
             </para>
 
             <section id="creating-new-scheduler-task-worker">
-                <title>Creating A New Scheduler Task Worker</title>
+                <title>Új ütemező feladatelvégző létrehozása</title>
                 <para>
-                    All files placed under
+                    A
 <filename>Kernel/System/Daemon/DaemonModules/SchedulerTaskWorker</filename>
-could potentially be task workers and they do not require any registration
-in the system configuration.
+mappa alatt elhelyezett összes fájl lehet potenciális feladatelvégző, és
+azok nem igényelnek semmilyen regisztrációt a rendszerbeállításokban.
                 </para>
                 <section id="scheduler-task-worker-code-example">
-                    <title>Scheduler Task Worker Code Example</title>
+                    <title>Ütemező feladatelvégző kódpélda</title>
                     <para>
                         <programlisting><![CDATA[
 # --
@@ -82,12 +85,13 @@ our @ObjectDependencies = (
                         ]]></programlisting>
                     </para>
                     <para>
-                        This is common header that can be found in most OTRS modules. The
-class/package name is declared via the package keyword.
+                        Ez egy gyakori fejléc, amely megtalálható a legtöbb OTRS modulban. Az
+osztály/csomag neve a <literal>package</literal> kulcsszón keresztül van
+deklarálva.
                     </para>
                     <para>
-                        In this case we are inheriting from <literal>BaseTaskWorker</literal> class,
-and the object manager dependencies are set.
+                        Ebben az esetben a <literal>BaseTaskWorker</literal> osztályból
+származtatunk le, és az objektumkezelő függőségei be vannak állítva.
                     </para>
                     <para>
                         <programlisting><![CDATA[
@@ -105,36 +109,36 @@ sub new {
                         ]]></programlisting>
                     </para>
                     <para>
-                        The constructor <literal>new</literal> creates a new instance of the class.
+                        A <literal>new</literal> konstruktor hozza létre az osztály új példányát.
                     </para>
                     <para>
                         <programlisting><![CDATA[
 sub Run {
     my ( $Self, %Param ) = @_;
 
-    # Check task params.
+    # Feladatparaméterek ellenőrzése.
     my $CheckResult = $Self->_CheckTaskParams(
         %Param,
         NeededDataAttributes => [ 'NeededAtrribute1', 'NeededAtrribute2' ],
-        DataParamsRef        => 'HASH', # or 'ARRAT'
+        DataParamsRef        => 'HASH', # vagy 'ARRAT'
     );
 
-    # Stop execution if an error in params is detected.
+    # Végrehajtás leállítása, ha hiba található a paraméterekben.
     return if !$CheckResult;
 
     my $Success;
     my $ErrorMessage;
 
     if ( $Self->{Debug} ) {
-        print "    $Self->{WorkerName} executes task: $Param{TaskName}\n";
+        print "    $Self->{WorkerName} végrehajtja a feladatot: $Param{TaskName}\n";
     }
 
     do {
 
-        # Localize the standard error.
+        # A szabványos hiba lokalizálása.
         local *STDERR;
 
-        # Redirect the standard error to a variable.
+        # A szabványos hiba átirányítása egy változóba.
         open STDERR, ">>", \$ErrorMessage;
 
         $Success = $Kernel::OM->Get('Kernel::System::MyPackage')->Run(
@@ -144,12 +148,12 @@ sub Run {
 
     if ( !$Success ) {
 
-        $ErrorMessage ||= "$Param{TaskName} execution failed without an error message!";
+        $ErrorMessage ||= "$Param{TaskName} végrehajtása sikertelen egy hibaüzenettel!";
 
         $Self->_HandleError(
             TaskName     => $Param{TaskName},
             TaskType     => 'Test',
-            LogMessage   => "There was an error executing $Param{TaskName}: $ErrorMessage",
+            LogMessage   => "Hiba történt a(z) $Param{TaskName} végrehajtásakor: $ErrorMessage",
             ErrorMessage => "$ErrorMessage",
         );
     }
@@ -159,14 +163,14 @@ sub Run {
                         ]]></programlisting>
                     </para>
                     <para>
-                        The <literal>Run</literal> is the main method. A call to
-<literal>_CheckTaskParams()</literal> from the base class will save some
-lines of code. Executing the task while capturing the STDERR is a very good
-practice, since the OTRS Scheduler runs normally unattended, and saving all
-errors to a variable will make it available for further processing.
-<literal>_HandleError()</literal> provides a common interface to send the
-error messages as email to the recipient specified in the System
-Configuration.
+                        A <literal>Run</literal> a fő metódus. Egy
+<literal>_CheckTaskParams()</literal> hívás az alaposztályból megspórol
+néhány kódsort. A feladat végrehajtása a szabványos hibakimenet megszerzése
+közben nagyon jó gyakorlat, mivel az OTRS ütemező normális esetben
+felügyelet nélkül fut, és az összes hiba egy változóba történő mentése
+lehetővé fogja tenni a későbbi feldolgozást. A
+<literal>_HandleError()</literal> közös felületet biztosít a hibaüzenetek
+e-mailben történő küldéséhez a rendszerbeállításokban megadott címzetteknek.
                     </para>
                     <para>
                         <programlisting><![CDATA[
@@ -174,7 +178,7 @@ Configuration.
                         ]]></programlisting>
                     </para>
                     <para>
-                        End of file.
+                        Fájl vége.
                     </para>
                 </section>
         </section>

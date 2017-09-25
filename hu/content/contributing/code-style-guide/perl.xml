@@ -718,8 +718,8 @@ különleges lehet vagy szokatlanul bonyolult a kóddal kapcsolatban.
 ez lehetséges.</term>
                     <listitem>
                         <para>
-                            It's always preferable to write code so that it is very readable and
-self-explaining, for example with precise variable and function names.
+                            Mindig vonzóbb a kódot úgy írni, hogy nagyon olvasható és önmagát magyarázó
+legyen, például pontos változónevekkel és függvénynevekkel.
                         </para>
                     </listitem>
                 </varlistentry>

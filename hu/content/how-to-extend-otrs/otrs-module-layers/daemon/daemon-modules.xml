@@ -2,51 +2,51 @@
 <!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
 
 <section id="daemon-overview">
-    <title>OTRS Daemon</title>
+    <title>OTRS démon</title>
     <para>
-        The OTRS Daemon is a separated process that helps OTRS to execute certain
-actions asynchronously and detached of the web server process, but sharing
-the same database.
+        Az OTRS démon egy elkülönített folyamat, amely segít az OTRS-nek bizonyos
+műveleteket aszinkron módon és a webszolgáltatás folyamattól leválasztva
+végrehajtani, de ugyanazt az adatbázist megosztva.
     </para>
     <section id="daemon-modules">
-        <title>OTRS Daemon Modules</title>
+        <title>OTRS démonmodulok</title>
         <para>
-            The OTRS Daemon <filename>bin/otrs.Daemon.pl</filename> main purpose is to
-call (Daemonize) all the registered daemon modules in the System
-Configuration.
+            A <filename>bin/otrs.Daemon.pl</filename> OTRS démon fő célja, hogy meghívja
+(démonizálja) a rendszerbeállításokban lévő összes regisztrált démonmodult.
         </para>
         <para>
-            Each daemon module must implement a common API in order to be correctly
-called by the OTRS Daemon and be a semi persistent process in the
-system. Persistent process could grow in size and memory usage over the time
-and normally they do not respond to changes in the configuration. That is
-why the daemon modules should implement a discard mechanism to be stopped
-and re-spawned again from time to time, freeing system resources and
-re-reading the configuration.
+            Minden egyes démonmodulnak meg kell valósítania egy közös API-t annak
+érdekében, hogy az OTRS démon helyesen tudja meghívni, és félig állandó
+folyamat legyen a rendszeren. Az állandó folyamat megnövelheti a méretét és
+memóriahasználatát az idő múlásával, és normális esetben nem válaszolnak a
+beállításokban lévő változásokra. Ezért kell a démonmoduloknak
+megvalósítaniuk egy eldobási mechanizmust, hogy leállíthatók és újra
+meghívhatók legyenek időről időre, felszabadítva a rendszer erőforrásait és
+újraolvasva a beállításokat.
         </para>
         <para>
-            A daemon module could be an all-in-one solution to perform a certain job,
-but there could be the case that a solution requires different daemon
-modules due to its complexity.  That is exactly the case of the OTRS
-Scheduler Daemon that is split into several daemon modules including some
-daemon modules for task management and task execution.
+            Egy démonmodul lehet mindenre jó megoldás bizonyos feladat végrehajtásánál,
+de lehet olyan eset is, amikor egy megoldás különböző démonmodulokat igényel
+az összetettsége miatt. Pontosan ez az eset az OTRS ütemező démonjával,
+amely fel van osztva számos démonmodulra, beleértve a feladatkezeléshez és a
+feladatvégrehajtáshoz szükséges néhány démonmodult.
         </para>
         <para>
-            It is not always necessary to create a new daemon module to perform certain
-task, usually the OTRS Scheduler Daemon can deal with the majority of them,
-either if it is an OTRS function that needs to be executed on a regular
-basis (CRON like) or if it's triggered by an OTRS event, the OTRS Scheduler
-should be capable to deal with it out of the box or by adding a new
-scheduler task worker module.
+            Nem szükséges mindig új démonmodult létrehozni bizonyos feladatok
+végrehajtásához. Általában az OTRS ütemező démon elboldogul ezek jelentős
+részével – akár ha egy olyan OTRS függvényről van szó, amelyet rendszeresen
+végre kell hajtani (CRON-szerűen), vagy ha egy OTRS esemény aktiválta azt –
+az OTRS ütemezőnek képesnek kell lenni kezelnie mindenféle beállítás nélkül,
+vagy egy új ütemező feladatelvégző modul hozzáadásával.
         </para>
         <section id="creating-new-daemon-module">
-            <title>Creating A New Daemon Module</title>
+            <title>Új démonmodul létrehozása</title>
             <para>
-                All daemon modules requires to be registered in the System Configuration in
-order to be called by the main OTRS Daemon.
+                Az összes démonmodulnak regisztrálva kell lennie a rendszerbeállításokban
+azért, hogy a fő OTRS démon meg tudja hívni azokat.
             </para>
             <section id="daemon-module-registration-code-example">
-                <title>Daemon Module Registration Code Example</title>
+                <title>Démonmodul regisztrációs kódpélda</title>
                 <para>
                     <programlisting><![CDATA[
 <ConfigItem Name="DaemonModules###TestDaemon" Required="1" Valid="1">
@@ -63,10 +63,10 @@ order to be called by the main OTRS Daemon.
                 </para>
             </section>
             <section id="demon-module-code-example">
-                <title>Daemon Module Code Example</title>
+                <title>Démonmodul kódpélda</title>
                 <para>
-                    The following code implements a daemon module that displays the system time
-every 2 seconds.
+                    A következő kód egy olyan démonmodult valósít meg, amely megjeleníti a
+rendszeridőt 2 másodpercenként.
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -96,35 +96,36 @@ our @ObjectDependencies = (
                     ]]></programlisting>
                 </para>
                 <para>
-                    This is common header that can be found in most OTRS modules. The
-class/package name is declared via the package keyword.
+                    Ez egy gyakori fejléc, amely megtalálható a legtöbb OTRS modulban. Az
+osztály/csomag neve a <literal>package</literal> kulcsszón keresztül van
+deklarálva.
                 </para>
                 <para>
-                    In this case we are inheriting from <literal>BaseDaemon</literal> class, and
-the object manager dependencies are set.
+                    Ebben az esetben a <literal>BaseDaemon</literal> osztályból származtatunk
+le, és az objektumkezelő függőségei be vannak állítva.
                 </para>
                 <para>
                     <programlisting><![CDATA[
 sub new {
     my ( $Type, %Param ) = @_;
 
-    # Allocate new hash for object.
+    # Új kivonat lefoglalása az objektumhoz.
     my $Self = {};
     bless $Self, $Type;
 
-    # Get objects in constructor to save performance.
+    # Objektumok lekérése a konstruktorban a teljesítmény megtartásáért.
     $Self->{ConfigObject} = $Kernel::OM->Get('Kernel::Config');
     $Self->{CacheObject}  = $Kernel::OM->Get('Kernel::System::Cache');
     $Self->{DBObject}     = $Kernel::OM->Get('Kernel::System::DB');
 
-    # Disable in memory cache to be clusterable.
+    # Letiltás a memóriagyorsítótárban, hogy fürtözhető legyen.
     $Self->{CacheObject}->Configure(
         CacheInMemory  => 0,
         CacheInBackend => 1,
     );
 
-    $Self->{SleepPost} = 2;          # sleep 2 seconds after each loop
-    $Self->{Discard}   = 60 * 60;    # discard every hour
+    $Self->{SleepPost} = 2;          # 2 másodperc alvás minden hurok után
+    $Self->{Discard}   = 60 * 60;    # eldobás minden órában
 
     $Self->{DiscardCount} = $Self->{Discard} / $Self->{SleepPost};
 
@@ -136,32 +137,32 @@ sub new {
                     ]]></programlisting>
                 </para>
                 <para>
-                    The constructor <literal>new</literal> creates a new instance of the class.
-Some used objects are also created here. It is highly recommended to disable
-in-memory cache in daemon modules especially if OTRS runs in a cluster
-environment.
+                    A <literal>new</literal> konstruktor hozza létre az osztály új
+példányát. Néhány felhasznált objektum is itt lesz létrehozva. Erősen
+ajánlott a memóriába történő gyorsítótárazás letiltása a démonmodulokban,
+különösen akkor, ha az OTRS fürtözött környezetben fut.
                 </para>
                 <para>
-                    In order to make this daemon module to be executed every two seconds it is
-necessary to define a sleep time accordingly, otherwise it will be executed
-as soon as possible.
+                    Azért, hogy ez a démonmodul minden második másodpercben végrehajtható
+legyen, egy alvási idő meghatározása szükséges annak megfelelően, egyébként
+azonnal végrehajtásra kerül, amint lehetséges.
                 </para>
                 <para>
-                    Refreshing the daemon module from time to time is necessary in order to
-define when it should be discarded.
+                    A démonmodul frissítése időről időre azért szükséges, hogy meghatározható
+legyen, mikor kell eldobni.
                 </para>
                 <para>
-                    For the following functions (<literal>PreRun</literal>,
-<literal>Run</literal> and <literal>PostRun</literal>) if they return false,
-the main OTRS Daemon will discard the object and create a new one as soon as
-possible.
+                    A következő függvényeknél (<literal>PreRun</literal>, <literal>Run</literal>
+és <literal>PostRun</literal>) ha azok hamis értékkel térnek vissza, akkor a
+fő OTRS démon el fogja dobni az objektumot, és egy újat hoz létre, amint
+lehetséges.
                 </para>
                 <para>
                     <programlisting><![CDATA[
 sub PreRun {
     my ( $Self, %Param ) = @_;
 
-    # Check if database is on-line.
+    # Annak ellenőrzése, hogy az adatbázis elérhető-e.
     return 1 if $Self->{DBObject}->Ping();
 
     sleep 10;
@@ -171,26 +172,26 @@ sub PreRun {
                     ]]></programlisting>
                 </para>
                 <para>
-                    The <literal>PreRun</literal> method is executed before the main daemon
-module method, and the its purpose is to perform some test before the real
-operation. In this case a check to the database is done (always
-recommended), otherwise it sleeps for 10 seconds. This is needed in order to
-wait for DB connection to be reestablished.
+                    A <literal>PreRun</literal> metódus a fő démonmodul metódusa előtt kerül
+végrehajtásra, és a célja néhány teszt elvégzése a valódi műfelet
+előtt. Ebben az esetben az adatbázis ellenőrzése készen van (mindig
+javasolt), egyébként 10 másodpercet alszik. Ez azért szükséges, hogy
+megvárja az adatbázis-kapcsolat ismételt felépítését.
                 </para>
                 <para>
                     <programlisting><![CDATA[
 sub Run {
     my ( $Self, %Param ) = @_;
 
-    print "Current time " . localtime . "\n";
+    print "Jelenlegi idő: " . localtime . "\n";
 
     return 1;
 }
                     ]]></programlisting>
                 </para>
                 <para>
-                    The <literal>Run</literal> method is where the main daemon module code
-resides, in this case it only prints the current time.
+                    A <literal>Run</literal> metódus az, ahol a fő démonmodul kódja
+található. Ebben az esetben csak az aktuális időt írja ki.
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -200,7 +201,7 @@ sub PostRun {
     $Self->{DiscardCount}--;
 
     if ( $Self->{Debug} ) {
-        print "  $Self->{DaemonName} Discard Count: $Self->{DiscardCount}\n";
+        print "  $Self->{DaemonName} eldobásainak száma: $Self->{DiscardCount}\n";
     }
 
     return if $Self->{DiscardCount} <= 0;
@@ -210,10 +211,11 @@ sub PostRun {
                     ]]></programlisting>
                 </para>
                 <para>
-                    The <literal>PostRun</literal> method is used to perform the sleeps
-(preventing the daemon module to be executed too often) and also to manage
-the safe discarding of the object. Other operations like verification or
-cleanup can be done here.
+                    A <literal>PostRun</literal> metódus használható az alvások végrehajtásához
+(annak megakadályozásához, hogy a démonmodul túl gyakran legyen
+végrehajtva), valamint az objektum biztonságos eldobásának kezeléséhez
+is. Egyéb műveletek is elvégezhetők itt, mint például ellenőrzés vagy
+tisztítás.
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -221,28 +223,28 @@ sub Summary {
     my ( $Self, %Param ) = @_;
 
     my %Summary = (
-        Header => 'Test Daemon Summary:',
+        Header => 'Tesztdémon összegzés:',
         Column => [
             {
                 Name        => 'SomeColumn',
-                DisplayName => 'Some Column',
+                DisplayName => 'Valamilyen oszlop',
                 Size        => 15,
             },
             {
                 Name        => 'AnotherColumn',
-                DisplayName => 'Another Column',
+                DisplayName => 'Egy másik oszlop',
                 Size        => 15,
             },
             # ...
         ],
         Data => [
             {
-                SomeColumn    => 'Some Data 1',
-                AnotherColumn => 'Another Data 1',
+                SomeColumn    => '1. valamilyen adat',
+                AnotherColumn => '1. másik adat',
             },
             {
-                SomeColumn    => 'Some Data 2',
-                AnotherColumn => 'Another Data 2',
+                SomeColumn    => '2. valamilyen adat',
+                AnotherColumn => '2. másik adat',
             },
             # ...
         ],
@@ -254,14 +256,14 @@ sub Summary {
                     ]]></programlisting>
                 </para>
                 <para>
-                    The <literal>Summary</literal> method is called by the console command
-<literal>Maint::Daemon::Summary</literal> and it's required to return
+                    A <literal>Summary</literal> metódust a
+<literal>Maint::Daemon::Summary</literal> konzolparancs hívja meg, és
 <literal>Header</literal>, <literal>Column</literal>,
-<literal>Data</literal> and <literal>NoDataMessages</literal> keys.
-<literal>Column</literal> and <literal>Data</literal> needs to be an array
-of hashes.  It is used to display useful information of what the daemon
-module is currently doing, or what has been done so far. This method is
-optional.
+<literal>Data</literal> és <literal>NoDataMessages</literal> kulcsokat kell
+visszaadnia. A <literal>Column</literal> és a <literal>Data</literal>
+kulcsoknak tömböknek vagy kivonatoknak kell lenniük. Arra használható, hogy
+hasznos információkat jelenítsen meg arról, amit a démonmodul éppen csinál,
+vagy ami eddig történt. Ez a metódus elhagyható.
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -269,7 +271,7 @@ optional.
                     ]]></programlisting>
                 </para>
                 <para>
-                    End of file.
+                    Fájl vége.
                 </para>
             </section>
         </section>

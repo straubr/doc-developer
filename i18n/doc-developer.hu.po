@@ -4,13 +4,15 @@
 #
 # Translators:
 # Balázs Úr <urbalazs@gmail.com>, 2014-2016
+# Balázs Úr <urbalazs@gmail.com>, 2017
+# Daniel Vinnai <win.dani@hotmail.com>, 2017
 # Martin Gruner <martin.gruner@otrs.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: OTRS\n"
-"POT-Creation-Date: 2017-06-07 15:23+0200\n"
-"PO-Revision-Date: 2017-06-07 13:23+0000\n"
-"Last-Translator: Martin Gruner <martin.gruner@otrs.com>\n"
+"POT-Creation-Date: 2017-09-24 20:56-0500\n"
+"PO-Revision-Date: 2017-09-22 17:04+0000\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/otrs/OTRS/language/hu/)\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -1372,7 +1374,8 @@ msgstr ""
 #: en/content/how-it-works/database-mechanism.xml:81
 #: en/content/how-it-works/database-mechanism.xml:89
 #: en/content/how-it-works/database-mechanism.xml:97
-#: en/content/how-it-works/loader.xml:93 en/content/how-it-works/loader.xml:110
+#: en/content/how-it-works/loader.xml:93
+#: en/content/how-it-works/loader.xml:110
 #: en/content/how-it-works/loader.xml:156
 #: en/content/how-it-works/loader.xml:185
 #: en/content/how-it-works/loader.xml:215
@@ -1443,6 +1446,14 @@ msgstr ""
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:95
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:147
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:169
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:201
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:490
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:504
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:525
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:553
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:573
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:603
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:624
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:83
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:114
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:139
@@ -3413,6 +3424,8 @@ msgid ""
 "It's always preferable to write code so that it is very readable and self-"
 "explaining, for example with precise variable and function names."
 msgstr ""
+"Mindig vonzóbb a kódot úgy írni, hogy nagyon olvasható és önmagát magyarázó "
+"legyen, például pontos változónevekkel és függvénynevekkel."
 
 #. type: Content of: <section><section><section><variablelist><varlistentry><term>
 #: en/content/contributing/code-style-guide/perl.xml:663
@@ -5795,6 +5808,8 @@ msgid ""
 "Microsoft SQL Server (only for external database connections, not as OTRS "
 "database)"
 msgstr ""
+"Microsoft SQL Server (csak külső adatbázis-kapcsolatokhoz, nem OTRS "
+"adatbázisként)"
 
 #. type: Content of: <section><title>
 #: en/content/how-it-works/loader.xml:5
@@ -7079,6 +7094,39 @@ msgid ""
 "    </ConfigItem>\n"
 "</otrs_config>\n"
 msgstr ""
+"<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n"
+"<otrs_config version=\"1.0\" init=\"Changes\">\n"
+"    <ConfigItem Name=\"AgentLogo\" Required=\"0\" Valid=\"1\">\n"
+"        <Description Translatable=\"1\">\n"
+"          Az ügyintézői felület fejlécében megjelenített logó. A képre mutató\n"
+"          URL-nek a felszín képkönyvtárától relatív URL-nek kell lennie.\n"
+"        </Description>\n"
+"        <Group>Framework</Group>\n"
+"        <SubGroup>Frontend::Agent</SubGroup>\n"
+"        <Setting>\n"
+"            <Hash>\n"
+"                <Item Key=\"URL\">skins/Agent/custom/img/logo.png</Item>\n"
+"                <Item Key=\"StyleTop\">13px</Item>\n"
+"                <Item Key=\"StyleRight\">75px</Item>\n"
+"                <Item Key=\"StyleHeight\">67px</Item>\n"
+"                <Item Key=\"StyleWidth\">244px</Item>\n"
+"            </Hash>\n"
+"        </Setting>\n"
+"    </ConfigItem>\n"
+"    <ConfigItem Name=\"Loader::Agent::Skin###100-custom\" Required=\"0\" Valid=\"1\">\n"
+"        <Description Translatable=\"1\">Egyéni felszín a fejlesztői kézikönyvhöz.</Description>\n"
+"        <Group>Framework</Group>\n"
+"        <SubGroup>Frontend::Agent</SubGroup>\n"
+"        <Setting>\n"
+"            <Hash>\n"
+"                <Item Key=\"InternalName\">custom</Item>\n"
+"                <Item Key=\"VisibleName\">Egyéni</Item>\n"
+"                <Item Key=\"Description\">Egyéni felszín a fejlesztői kézikönyvhöz.</Item>\n"
+"                <Item Key=\"HomePage\">www.azencegem.hu</Item>\n"
+"            </Hash>\n"
+"        </Setting>\n"
+"    </ConfigItem>\n"
+"</otrs_config>\n"
 
 #. type: Content of: <section><section><para>
 #: en/content/how-it-works/skins.xml:214
@@ -8575,7 +8623,7 @@ msgstr "Egyéb alapfüggvények"
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers.xml:55
 msgid "Daemon And Scheduler"
-msgstr ""
+msgstr "Démon és ütemező"
 
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers.xml:61
@@ -12215,11 +12263,29 @@ msgstr ""
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:37
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid ""
+#| "# --\n"
+#| "# Kernel/GenericInterface/Operation/Test/Test.pm - GenericInterface test operation backend\n"
+#| "# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
+#| "# --\n"
+#| "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
+#| "# the enclosed file COPYING for license information (AGPL). If you\n"
+#| "# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
+#| "# --\n"
+#| "\n"
+#| "package Kernel::GenericInterface::Operation::Test::Test;\n"
+#| "\n"
+#| "use strict;\n"
+#| "use warnings;\n"
+#| "\n"
+#| "use Kernel::System::VariableCheck qw(IsHashRefWithData);\n"
+#| "\n"
+#| "our $ObjectManagerDisabled = 1;\n"
 msgid ""
 "# --\n"
 "# Kernel/GenericInterface/Operation/Test/Test.pm - GenericInterface test operation backend\n"
-"# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/\n"
+"# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/\n"
 "# --\n"
 "# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
 "# the enclosed file COPYING for license information (AGPL). If you\n"
@@ -12456,6 +12522,530 @@ msgstr ""
 "        </Hash>\n"
 "    </Setting>\n"
 "</ConfigItem>\n"
+
+#. type: Content of: <section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:186
+#, fuzzy
+#| msgid "Unit Tests"
+msgid "Unit Test Example"
+msgstr "Egységtesztek"
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:188
+msgid ""
+"Unit Test for Generic Interface operations does not differs from other unit "
+"tests but it is needed to consider testing locally, but also simulating a "
+"remote connection. It is a good practice to test both separately since "
+"results could be slightly different."
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:194
+msgid ""
+"To learn more about unit tests, please take a look to the <link linkend="
+"\"unit-tests\">Unit Test Chapter</link>."
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:198
+#, fuzzy
+#| msgid "The following is the Drivers inheritance tree:"
+msgid "The following is just the starting point for a unit test:"
+msgstr "A következő az illesztőprogramok öröklődési fája:"
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:201
+#, no-wrap
+msgid ""
+"# --\n"
+"# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/\n"
+"# --\n"
+"# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
+"# the enclosed file COPYING for license information (AGPL). If you\n"
+"# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
+"# --\n"
+"\n"
+"## no critic (Modules::RequireExplicitPackage)\n"
+"use strict;\n"
+"use warnings;\n"
+"use utf8;\n"
+"\n"
+"use vars (qw($Self));\n"
+"\n"
+"use Kernel::GenericInterface::Debugger;\n"
+"use Kernel::GenericInterface::Operation::Test::Test;\n"
+"\n"
+"use Kernel::System::VariableCheck qw(:all);\n"
+"\n"
+"# Skip SSL certificate verification (RestoreDatabase must not be used in this test).\n"
+"$Kernel::OM->ObjectParamAdd(\n"
+"    'Kernel::System::UnitTest::Helper' => {\n"
+"        SkipSSLVerify => 1,\n"
+"    },\n"
+");\n"
+"my $Helper = $Kernel::OM->Get('Kernel::System::UnitTest::Helper');\n"
+"\n"
+"# get a random number\n"
+"my $RandomID = $Helper->GetRandomNumber();\n"
+"\n"
+"# create a new user for current test\n"
+"my $UserLogin = $Helper->TestUserCreate(\n"
+"    Groups => ['users'],\n"
+");\n"
+"my $Password = $UserLogin;\n"
+"\n"
+"my $UserID = $Kernel::OM->Get('Kernel::System::User')->UserLookup(\n"
+"    UserLogin => $UserLogin,\n"
+");\n"
+"\n"
+"# set web-service name\n"
+"my $WebserviceName = '-Test-' . $RandomID;\n"
+"\n"
+"# create web-service object\n"
+"my $WebserviceObject = $Kernel::OM->Get('Kernel::System::GenericInterface::Webservice');\n"
+"$Self->Is(\n"
+"    'Kernel::System::GenericInterface::Webservice',\n"
+"    ref $WebserviceObject,\n"
+"    \"Create web service object\",\n"
+");\n"
+"\n"
+"my $WebserviceID = $WebserviceObject->WebserviceAdd(\n"
+"    Name   => $WebserviceName,\n"
+"    Config => {\n"
+"        Debugger => {\n"
+"            DebugThreshold => 'debug',\n"
+"        },\n"
+"        Provider => {\n"
+"            Transport => {\n"
+"                Type => '',\n"
+"            },\n"
+"        },\n"
+"    },\n"
+"    ValidID => 1,\n"
+"    UserID  => 1,\n"
+");\n"
+"$Self->True(\n"
+"    $WebserviceID,\n"
+"    \"Added Web Service\",\n"
+");\n"
+"\n"
+"# get remote host with some precautions for certain unit test systems\n"
+"my $Host = $Helper->GetTestHTTPHostname();\n"
+"\n"
+"my $ConfigObject = $Kernel::OM->Get('Kernel::Config');\n"
+"\n"
+"# prepare web-service config\n"
+"my $RemoteSystem =\n"
+"    $ConfigObject->Get('HttpType')\n"
+"    . '://'\n"
+"    . $Host\n"
+"    . '/'\n"
+"    . $ConfigObject->Get('ScriptAlias')\n"
+"    . '/nph-genericinterface.pl/WebserviceID/'\n"
+"    . $WebserviceID;\n"
+"\n"
+"my $WebserviceConfig = {\n"
+"    Description =>\n"
+"        'Test for Ticket Connector using SOAP transport backend.',\n"
+"    Debugger => {\n"
+"        DebugThreshold => 'debug',\n"
+"        TestMode       => 1,\n"
+"    },\n"
+"    Provider => {\n"
+"        Transport => {\n"
+"            Type   => 'HTTP::SOAP',\n"
+"            Config => {\n"
+"                MaxLength => 10000000,\n"
+"                NameSpace => 'http://otrs.org/SoapTestInterface/',\n"
+"                Endpoint  => $RemoteSystem,\n"
+"            },\n"
+"        },\n"
+"        Operation => {\n"
+"            Test => {\n"
+"                Type => 'Test::Test',\n"
+"            },\n"
+"        },\n"
+"    },\n"
+"    Requester => {\n"
+"        Transport => {\n"
+"            Type   => 'HTTP::SOAP',\n"
+"            Config => {\n"
+"                NameSpace => 'http://otrs.org/SoapTestInterface/',\n"
+"                Encoding  => 'UTF-8',\n"
+"                Endpoint  => $RemoteSystem,\n"
+"            },\n"
+"        },\n"
+"        Invoker => {\n"
+"            Test => {\n"
+"                Type => 'Test::TestSimple'\n"
+"                ,    # requester needs to be Test::TestSimple in order to simulate a request to a remote system\n"
+"            },\n"
+"        },\n"
+"    },\n"
+"};\n"
+"\n"
+"# update web-service with real config\n"
+"# the update is needed because we are using\n"
+"# the WebserviceID for the Endpoint in config\n"
+"my $WebserviceUpdate = $WebserviceObject->WebserviceUpdate(\n"
+"    ID      => $WebserviceID,\n"
+"    Name    => $WebserviceName,\n"
+"    Config  => $WebserviceConfig,\n"
+"    ValidID => 1,\n"
+"    UserID  => $UserID,\n"
+");\n"
+"$Self->True(\n"
+"    $WebserviceUpdate,\n"
+"    \"Updated Web Service $WebserviceID - $WebserviceName\",\n"
+");\n"
+"\n"
+"# debugger object\n"
+"my $DebuggerObject = Kernel::GenericInterface::Debugger->new(\n"
+"    DebuggerConfig => {\n"
+"        DebugThreshold => 'debug',\n"
+"        TestMode       => 1,\n"
+"    },\n"
+"    WebserviceID      => $WebserviceID,\n"
+"    CommunicationType => 'Provider',\n"
+");\n"
+"$Self->Is(\n"
+"    ref $DebuggerObject,\n"
+"    'Kernel::GenericInterface::Debugger',\n"
+"    'DebuggerObject instantiate correctly',\n"
+");\n"
+"\n"
+"# define test cases\n"
+"my @Tests = (\n"
+"    {\n"
+"        Name           => 'Test case name',\n"
+"        SuccessRequest => 1,                  # 1 or 0\n"
+"        RequestData    => {\n"
+"\n"
+"            # ... add test data\n"
+"        },\n"
+"        ExpectedReturnLocalData => {\n"
+"            Data => {\n"
+"\n"
+"                # ... add expected local results\n"
+"            },\n"
+"            Success => 1,                     # 1 or 0\n"
+"        },\n"
+"        ExpectedReturnRemoteData => {\n"
+"            Data => {\n"
+"\n"
+"                # ... add expected remote results\n"
+"            },\n"
+"            Success => 1,                     # 1 or 0\n"
+"        },\n"
+"        Operation => 'Test',\n"
+"    },\n"
+"\n"
+"    # ... add more test cases\n"
+");\n"
+"\n"
+"TEST:\n"
+"for my $Test (@Tests) {\n"
+"\n"
+"    # create local object\n"
+"    my $LocalObject = \"Kernel::GenericInterface::Operation::Test::$Test->{Operation}\"->new(\n"
+"        DebuggerObject => $DebuggerObject,\n"
+"        WebserviceID   => $WebserviceID,\n"
+"    );\n"
+"\n"
+"    $Self->Is(\n"
+"        \"Kernel::GenericInterface::Operation::Test::$Test->{Operation}\",\n"
+"        ref $LocalObject,\n"
+"        \"$Test->{Name} - Create local object\",\n"
+"    );\n"
+"\n"
+"    my %Auth = (\n"
+"        UserLogin => $UserLogin,\n"
+"        Password  => $Password,\n"
+"    );\n"
+"    if ( IsHashRefWithData( $Test->{Auth} ) ) {\n"
+"        %Auth = %{ $Test->{Auth} };\n"
+"    }\n"
+"\n"
+"    # start requester with our web-service\n"
+"    my $LocalResult = $LocalObject->Run(\n"
+"        WebserviceID => $WebserviceID,\n"
+"        Invoker      => $Test->{Operation},\n"
+"        Data         => {\n"
+"            %Auth,\n"
+"            %{ $Test->{RequestData} },\n"
+"        },\n"
+"    );\n"
+"\n"
+"    # check result\n"
+"    $Self->Is(\n"
+"        'HASH',\n"
+"        ref $LocalResult,\n"
+"        \"$Test->{Name} - Local result structure is valid\",\n"
+"    );\n"
+"\n"
+"    # create requester object\n"
+"    my $RequesterObject = $Kernel::OM->Get('Kernel::GenericInterface::Requester');\n"
+"    $Self->Is(\n"
+"        'Kernel::GenericInterface::Requester',\n"
+"        ref $RequesterObject,\n"
+"        \"$Test->{Name} - Create requester object\",\n"
+"    );\n"
+"\n"
+"    # start requester with our web-service\n"
+"    my $RequesterResult = $RequesterObject->Run(\n"
+"        WebserviceID => $WebserviceID,\n"
+"        Invoker      => $Test->{Operation},\n"
+"        Data         => {\n"
+"            %Auth,\n"
+"            %{ $Test->{RequestData} },\n"
+"        },\n"
+"    );\n"
+"\n"
+"    # check result\n"
+"    $Self->Is(\n"
+"        'HASH',\n"
+"        ref $RequesterResult,\n"
+"        \"$Test->{Name} - Requester result structure is valid\",\n"
+"    );\n"
+"\n"
+"    $Self->Is(\n"
+"        $RequesterResult->{Success},\n"
+"        $Test->{SuccessRequest},\n"
+"        \"$Test->{Name} - Requester successful result\",\n"
+"    );\n"
+"\n"
+"    # ... add tests for the results\n"
+"}\n"
+"\n"
+"# delete web service\n"
+"my $WebserviceDelete = $WebserviceObject->WebserviceDelete(\n"
+"    ID     => $WebserviceID,\n"
+"    UserID => $UserID,\n"
+");\n"
+"$Self->True(\n"
+"    $WebserviceDelete,\n"
+"    \"Deleted Web Service $WebserviceID\",\n"
+");\n"
+"\n"
+"# also delete any other added data during the this test, since RestoreDatabase must not be used.\n"
+"\n"
+"1;\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:479
+#, fuzzy
+#| msgid "Dynamic Field Driver Extension Example"
+msgid "WSDL Extension Example"
+msgstr "Dinamikus mező illesztőprogram kiterjesztés példa"
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:481
+msgid ""
+"WSDL files contains the definitions of the web services and its operations "
+"for SOAP messages, in case we will extend <filename>development/webservices/"
+"GenericTickeConnectorSOAP.wsdl</filename> in some places:"
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:487
+msgid "Port Type:"
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:490
+#, no-wrap
+msgid ""
+"    <wsdl:portType name=\"GenericTicketConnector_PortType\">\n"
+"        <!-- ... -->\n"
+"        <wsdl:operation name=\"Test\">\n"
+"            <wsdl:input message=\"tns:TestRequest\"/>\n"
+"            <wsdl:output message=\"tns:TestResponse\"/>\n"
+"        </wsdl:operation>\n"
+"    <!-- ... -->\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:501
+msgid "Binding:"
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:504
+#, no-wrap
+msgid ""
+"    <wsdl:binding name=\"GenericTicketConnector_Binding\" type=\"tns:GenericTicketConnector_PortType\">\n"
+"        <soap:binding style=\"document\" transport=\"http://schemas.xmlsoap.org/soap/http\"/>\n"
+"        <!-- ... -->\n"
+"        <wsdl:operation name=\"Test\">\n"
+"            <soap:operation soapAction=\"http://www.otrs.org/TicketConnector/Test\"/>\n"
+"            <wsdl:input>\n"
+"                <soap:body use=\"literal\"/>\n"
+"            </wsdl:input>\n"
+"            <wsdl:output>\n"
+"                <soap:body use=\"literal\"/>\n"
+"            </wsdl:output>\n"
+"        </wsdl:operation>\n"
+"        <!-- ... -->\n"
+"    </wsdl:binding>\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:522
+msgid "Type:"
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:525
+#, no-wrap
+msgid ""
+"    <wsdl:types>\n"
+"        <xsd:schema targetNamespace=\"http://www.otrs.org/TicketConnector/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\n"
+"        <!-- ... -->\n"
+"            <xsd:element name=\"Test\">\n"
+"                <xsd:complexType>\n"
+"                    <xsd:sequence>\n"
+"                            <xsd:element minOccurs=\"0\" name=\"Param1\" type=\"xsd:string\"/>\n"
+"                            <xsd:element minOccurs=\"0\" name=\"Param2\" type=\"xsd:positiveInteger\"/>\n"
+"                    </xsd:sequence>\n"
+"                </xsd:complexType>\n"
+"            </xsd:element>\n"
+"            <xsd:element name=\"TestResponse\">\n"
+"                <xsd:complexType>\n"
+"                    <xsd:sequence>\n"
+"                        <xsd:element maxOccurs=\"unbounded\" minOccurs=\"1\" name=\"Attribute1\" type=\"xsd:string\"/>\n"
+"                    </xsd:sequence>\n"
+"                </xsd:complexType>\n"
+"            </xsd:element>\n"
+"        <!-- ... -->\n"
+"        </xsd:schema>\n"
+"    </wsdl:types>\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:550
+msgid "Message:"
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:553
+#, no-wrap
+msgid ""
+"    <!-- ... -->\n"
+"    <wsdl:message name=\"TestRequest\">\n"
+"        <wsdl:part element=\"tns:Test\" name=\"parameters\"/>\n"
+"    </wsdl:message>\n"
+"    <wsdl:message name=\"TestResponse\">\n"
+"        <wsdl:part element=\"tns:TestResponse\" name=\"parameters\"/>\n"
+"    </wsdl:message>\n"
+"    <!-- ... -->\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:566
+#, fuzzy
+#| msgid "Dynamic Field Driver Extension Example"
+msgid "WADL Extension Example"
+msgstr "Dinamikus mező illesztőprogram kiterjesztés példa"
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:568
+msgid ""
+"WADL files contains the definitions of the web services and its operations "
+"for REST interface, add a new resource to <filename>development/webservices/"
+"GenericTickeConnectorREST.wadl</filename>."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:573
+#, no-wrap
+msgid ""
+"  <resources base=\"http://localhost/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorREST\">\n"
+"    <!-- ... -->\n"
+"    <resource path=\"Test\" id=\"Test\">\n"
+"      <doc xml:lang=\"en\" title=\"Test\"/>\n"
+"        <param name=\"Param1\" type=\"xs:string\" required=\"false\" default=\"\" style=\"query\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"/>\n"
+"        <param name=\"Param2\" type=\"xs:string\" required=\"false\" default=\"\" style=\"query\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"/>\n"
+"        <method name=\"GET\" id=\"GET_Test\">\n"
+"          <doc xml:lang=\"en\" title=\"GET_Test\"/>\n"
+"          <request/>\n"
+"          <response status=\"200\">\n"
+"            <representation mediaType=\"application/json; charset=UTF-8\"/>\n"
+"          </response>\n"
+"        </method>\n"
+"      </resource>\n"
+"    </resource>\n"
+"    <!-- ... -->\n"
+"  </resources>\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:595
+#, fuzzy
+#| msgid "Dynamic Field Driver Extension Example"
+msgid "Web Service SOAP Extension Example"
+msgstr "Dinamikus mező illesztőprogram kiterjesztés példa"
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:597
+msgid ""
+"Web services can be imported into OTRS by a YAML with with a predefined "
+"structure in this case we will extend <filename>development/webservices/"
+"GenericTickeConnectorSOAP.yml</filename> for a SOAP web service."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:603
+#, no-wrap
+msgid ""
+"Provider:\n"
+"  Operation:\n"
+"    # ...\n"
+"    Test:\n"
+"      Description: This is only a test\n"
+"      MappingInbound: {}\n"
+"      MappingOutbound: {}\n"
+"      Type: Test::Test\n"
+msgstr ""
+
+#. type: Content of: <section><section><section><title>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:616
+#, fuzzy
+#| msgid "Dynamic Field Driver Extension Example"
+msgid "Web Service REST Extension Example"
+msgstr "Dinamikus mező illesztőprogram kiterjesztés példa"
+
+#. type: Content of: <section><section><section><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:618
+msgid ""
+"Web services can be imported into OTRS by a YAML with with a predefined "
+"structure in this case we will extend <filename>development/webservices/"
+"GenericTickeConnectorREST.yml</filename> for a REST web service."
+msgstr ""
+
+#. type: CDATA
+#: en/content/how-to-extend-otrs/otrs-module-layers/gi-operation.xml:624
+#, no-wrap
+msgid ""
+"Provider:\n"
+"  Operation:\n"
+"    # ...\n"
+"    Test:\n"
+"      Description: This is only a test\n"
+"      MappingInbound: {}\n"
+"      MappingOutbound: {}\n"
+"      Type: Test::Test\n"
+"  # ...\n"
+"  Transport:\n"
+"    Config:\n"
+"      # ...\n"
+"      RouteOperationMapping:\n"
+"        # ..\n"
+"        Test:\n"
+"          RequestMethod:\n"
+"          - GET\n"
+"          Route: /Test\n"
+msgstr ""
 
 #. type: Content of: <section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/gi-transport.xml:5
@@ -17284,84 +17874,345 @@ msgstr "A jegyesemények az OTRS 2.0 óta lettek elérhetők az OTRS-ben."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:63
-msgid ""
-"Ticket events for OTRS 2.0: TicketCreate, TicketDelete, TicketTitleUpdate, "
-"TicketUnlockTimeoutUpdate, TicketEscalationStartUpdate, MoveTicket, "
-"SetCustomerData, TicketFreeTextSet, TicketFreeTimeSet, TicketPendingTimeSet, "
-"LockSet, StateSet, OwnerSet, TicketResponsibleUpdate, PrioritySet, "
-"HistoryAdd, HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate, "
-"ArticleFreeTextSet, ArticleUpdate, ArticleSend, ArticleBounce, "
-"SendAgentNotification, SendCustomerNotification, SendAutoResponse, "
-"ArticleFlagSet."
-msgstr ""
-"Jegyesemények az OTRS 2.0-nál: TicketCreate, TicketDelete, "
-"TicketTitleUpdate, TicketUnlockTimeoutUpdate, TicketEscalationStartUpdate, "
-"MoveTicket, SetCustomerData, TicketFreeTextSet, TicketFreeTimeSet, "
-"TicketPendingTimeSet, LockSet, StateSet, OwnerSet, TicketResponsibleUpdate, "
-"PrioritySet, HistoryAdd, HistoryDelete, TicketAccountTime, TicketMerge, "
-"ArticleCreate, ArticleFreeTextSet, ArticleUpdate, ArticleSend, "
-"ArticleBounce, SendAgentNotification, SendCustomerNotification, "
-"SendAutoResponse, ArticleFlagSet."
+#, fuzzy
+#| msgid "Ticket events have been available in OTRS since OTRS 2.0."
+msgid "Ticket events available in OTRS 5.0:"
+msgstr "A jegyesemények az OTRS 2.0 óta lettek elérhetők az OTRS-ben."
 
-#. type: Content of: <section><section><para>
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:67
+msgid "TicketCreate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:68
+#, fuzzy
+#| msgid "TicketMenuGeneric"
+msgid "TicketDelete"
+msgstr "TicketMenuGeneric"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:69
+#, fuzzy
+#| msgid "TicketMenuTicketWatcher"
+msgid "TicketTitleUpdate"
+msgstr "TicketMenuTicketWatcher"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:70
+msgid "TicketUnlockTimeoutUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:71
+#, fuzzy
+#| msgid "TicketMenuTicketWatcher"
+msgid "TicketQueueUpdate"
+msgstr "TicketMenuTicketWatcher"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:72
+msgid "TicketTypeUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:73
+#, fuzzy
+#| msgid "TicketMenuTicketWatcher"
+msgid "TicketServiceUpdate"
+msgstr "TicketMenuTicketWatcher"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:74
+msgid "TicketSLAUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:75
+msgid "TicketCustomerUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:76
-msgid ""
-"Ticket events for OTRS 2.1 and higher: TicketCreate, TicketDelete, "
-"TicketTitleUpdate, TicketUnlockTimeoutUpdate, TicketEscalationStartUpdate, "
-"TicketQueueUpdate (MoveTicket), TicketCustomerUpdate (SetCustomerData), "
-"TicketFreeTextUpdate (TicketFreeTextSet), TicketFreeTimeUpdate "
-"(TicketFreeTimeSet), TicketPendingTimeUpdate (TicketPendingTimeSet), "
-"TicketLockUpdate (LockSet), TicketStateUpdate (StateSet), TicketOwnerUpdate "
-"(OwnerSet), TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet), "
-"TicketSubscribe, TicketUnsubscribe, HistoryAdd, HistoryDelete, "
-"TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate "
-"(ArticleFreeTextSet), ArticleUpdate, ArticleSend, ArticleBounce, "
-"ArticleAgentNotification (SendAgentNotification), "
-"ArticleCustomerNotification (SendCustomerNotification), ArticleAutoResponse "
-"(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
+#, fuzzy
+#| msgid "TicketMenuTicketWatcher"
+msgid "TicketPendingTimeUpdate"
+msgstr "TicketMenuTicketWatcher"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:77
+#, fuzzy
+#| msgid "TicketMenuLock"
+msgid "TicketLockUpdate"
+msgstr "TicketMenuLock"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:78
+msgid "TicketArchiveFlagUpdate"
 msgstr ""
-"Jegyesemények az OTRS 2.1 és újabb verzióknál: TicketCreate, TicketDelete, "
-"TicketTitleUpdate, TicketUnlockTimeoutUpdate, TicketEscalationStartUpdate, "
-"TicketQueueUpdate (MoveTicket), TicketCustomerUpdate (SetCustomerData), "
-"TicketFreeTextUpdate (TicketFreeTextSet), TicketFreeTimeUpdate "
-"(TicketFreeTimeSet), TicketPendingTimeUpdate (TicketPendingTimeSet), "
-"TicketLockUpdate (LockSet), TicketStateUpdate (StateSet), TicketOwnerUpdate "
-"(OwnerSet), TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet), "
-"TicketSubscribe, TicketUnsubscribe, HistoryAdd, HistoryDelete, "
-"TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate "
-"(ArticleFreeTextSet), ArticleUpdate, ArticleSend, ArticleBounce, "
-"ArticleAgentNotification (SendAgentNotification), "
-"ArticleCustomerNotification (SendCustomerNotification), ArticleAutoResponse "
-"(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:79
+msgid "TicketStateUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:80
+msgid "TicketOwnerUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:81
+#, fuzzy
+#| msgid "TicketMenuResponsible"
+msgid "TicketResponsibleUpdate"
+msgstr "TicketMenuResponsible"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:82
+msgid "TicketPriorityUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:83
+msgid "HistoryAdd"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:84
+msgid "HistoryDelete"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:85
+msgid "TicketAccountTime"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:86
+#, fuzzy
+#| msgid "TicketMenuGeneric"
+msgid "TicketMerge"
+msgstr "TicketMenuGeneric"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:87
+#, fuzzy
+#| msgid "TicketMenuResponsible"
+msgid "TicketSubscribe"
+msgstr "TicketMenuResponsible"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:88
+#, fuzzy
+#| msgid "TicketMenuResponsible"
+msgid "TicketUnsubscribe"
+msgstr "TicketMenuResponsible"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:89
+msgid "TicketFlagSet"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:90
+msgid "TicketFlagDelete"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:91
+msgid "TicketSlaveLinkAdd"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:92
+msgid "TicketSlaveLinkDelete"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:93
+#, fuzzy
+#| msgid "Ticket PostMaster Module"
+msgid "TicketMasterLinkDelete"
+msgstr "Jegy levelezési modul"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:94
+msgid "EscalationResponseTimeNotifyBefore"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:95
+msgid "EscalationUpdateTimeNotifyBefore"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:96
+msgid "EscalationSolutionTimeNotifyBefore"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:97
+msgid "EscalationResponseTimeStart"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:98
+msgid "EscalationUpdateTimeStart"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:99
+msgid "EscalationSolutionTimeStart"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:100
+msgid "EscalationResponseTimeStop"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:101
+msgid "EscalationUpdateTimeStop"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:102
+msgid "EscalationSolutionTimeStop"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:103
+#, fuzzy
+#| msgid "NotificationUIDCheck"
+msgid "NotificationNewTicket"
+msgstr "NotificationUIDCheck"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:104
+#, fuzzy
+#| msgid "Notification Module"
+msgid "NotificationFollowUp"
+msgstr "Értesítési modul"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:105
+#, fuzzy
+#| msgid "Notification Module"
+msgid "NotificationLockTimeout"
+msgstr "Értesítési modul"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:106
+#, fuzzy
+#| msgid "Notification Module"
+msgid "NotificationOwnerUpdate"
+msgstr "Értesítési modul"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:107
+#, fuzzy
+#| msgid "Notification Module"
+msgid "NotificationResponsibleUpdate"
+msgstr "Értesítési modul"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:108
+#, fuzzy
+#| msgid "Notification Module"
+msgid "NotificationAddNote"
+msgstr "Értesítési modul"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:109
+#, fuzzy
+#| msgid "Notification Module"
+msgid "NotificationMove"
+msgstr "Értesítési modul"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:110
+#, fuzzy
+#| msgid "NotificationAgentOnline"
+msgid "NotificationPendingReminder"
+msgstr "NotificationAgentOnline"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:111
+#, fuzzy
+#| msgid "NotificationAgentTicketEscalation"
+msgid "NotificationEscalation"
+msgstr "NotificationAgentTicketEscalation"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:112
+#, fuzzy
+#| msgid "NotificationAgentTicketEscalation"
+msgid "NotificationEscalationNotifyBefore"
+msgstr "NotificationAgentTicketEscalation"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:113
+#, fuzzy
+#| msgid "NotificationCharsetCheck"
+msgid "NotificationServiceUpdate"
+msgstr "NotificationCharsetCheck"
 
 #. type: Content of: <section><section><para>
-#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:92
-msgid ""
-"Ticket events for OTRS 2.4: TicketCreate, TicketDelete, TicketTitleUpdate, "
-"TicketUnlockTimeoutUpdate, TicketQueueUpdate(MoveTicket), TicketTypeUpdate, "
-"TicketServiceUpdate, TicketSLAUpdate, TicketCustomerUpdate "
-"(SetCustomerData), TicketFreeTextUpdate, TicketFreeTimeUpdate, "
-"TicketPendingTimeUpdate (TicketPendingTimeSet), TicketLockUpdate (LockSet), "
-"TicketStateUpdate (StateSet), TicketOwnerUpdate (OwnerSet), "
-"TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet), HistoryAdd, "
-"HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate, "
-"ArticleFreeTextUpdate (ArticleFreeTextSet), ArticleUpdate, ArticleSend, "
-"ArticleBounce, ArticleAgentNotification (SendAgentNotification), "
-"ArticleCustomerNotification (SendCustomerNotification), "
-"ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:117
+#, fuzzy
+#| msgid "Ticket events have been available in OTRS since OTRS 2.0."
+msgid "Article events available in OTRS 5.0:"
+msgstr "A jegyesemények az OTRS 2.0 óta lettek elérhetők az OTRS-ben."
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:121
+msgid "ArticleCreate"
 msgstr ""
-"Jegyesemények az OTRS 2.4-nél: TicketCreate, TicketDelete, "
-"TicketTitleUpdate, TicketUnlockTimeoutUpdate, TicketQueueUpdate(MoveTicket), "
-"TicketTypeUpdate, TicketServiceUpdate, TicketSLAUpdate, TicketCustomerUpdate "
-"(SetCustomerData), TicketFreeTextUpdate, TicketFreeTimeUpdate, "
-"TicketPendingTimeUpdate (TicketPendingTimeSet), TicketLockUpdate (LockSet), "
-"TicketStateUpdate (StateSet), TicketOwnerUpdate (OwnerSet), "
-"TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet), HistoryAdd, "
-"HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate, "
-"ArticleFreeTextUpdate (ArticleFreeTextSet), ArticleUpdate, ArticleSend, "
-"ArticleBounce, ArticleAgentNotification (SendAgentNotification), "
-"ArticleCustomerNotification (SendCustomerNotification), "
-"ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:122
+msgid "ArticleUpdate"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:123
+msgid "ArticleSend"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:124
+msgid "ArticleBounce"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:125
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:130
+msgid "ArticleAgentNotification"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:126
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:131
+msgid "ArticleCustomerNotification"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:127
+#, fuzzy
+#| msgid "TicketMenuResponsible"
+msgid "ArticleAutoResponse"
+msgstr "TicketMenuResponsible"
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:128
+msgid "ArticleFlagSet"
+msgstr ""
+
+#. type: Content of: <section><section><para><itemizedlist><listitem><para>
+#: en/content/how-to-extend-otrs/otrs-module-layers/ticketevent.xml:129
+msgid "ArticleFlagDelete"
+msgstr ""
 
 #. type: Content of: <section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/ticket-menu.xml:6
@@ -17804,7 +18655,7 @@ msgstr "A jegyszám előállítók az OTRS 1.1 óta lettek elérhetők az OTRS-b
 #. type: Content of: <section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:5
 msgid "OTRS Daemon"
-msgstr ""
+msgstr "OTRS démon"
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:7
@@ -17813,11 +18664,14 @@ msgid ""
 "actions asynchronously and detached of the web server process, but sharing "
 "the same database."
 msgstr ""
+"Az OTRS démon egy elkülönített folyamat, amely segít az OTRS-nek bizonyos "
+"műveleteket aszinkron módon és a webszolgáltatás folyamattól leválasztva "
+"végrehajtani, de ugyanazt az adatbázist megosztva."
 
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:11
 msgid "OTRS Daemon Modules"
-msgstr ""
+msgstr "OTRS démonmodulok"
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:13
@@ -17826,6 +18680,8 @@ msgid ""
 "call (Daemonize) all the registered daemon modules in the System "
 "Configuration."
 msgstr ""
+"A <filename>bin/otrs.Daemon.pl</filename> OTRS démon fő célja, hogy meghívja "
+"(démonizálja) a rendszerbeállításokban lévő összes regisztrált démonmodult."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:17
@@ -17838,6 +18694,14 @@ msgid ""
 "spawned again from time to time, freeing system resources and re-reading the "
 "configuration."
 msgstr ""
+"Minden egyes démonmodulnak meg kell valósítania egy közös API-t annak "
+"érdekében, hogy az OTRS démon helyesen tudja meghívni, és félig állandó "
+"folyamat legyen a rendszeren. Az állandó folyamat megnövelheti a méretét és "
+"memóriahasználatát az idő múlásával, és normális esetben nem válaszolnak a "
+"beállításokban lévő változásokra. Ezért kell a démonmoduloknak "
+"megvalósítaniuk egy eldobási mechanizmust, hogy leállíthatók és újra "
+"meghívhatók legyenek időről időre, felszabadítva a rendszer erőforrásait és "
+"újraolvasva a beállításokat."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:25
@@ -17848,6 +18712,11 @@ msgid ""
 "Scheduler Daemon that is split into several daemon modules including some "
 "daemon modules for task management and task execution."
 msgstr ""
+"Egy démonmodul lehet mindenre jó megoldás bizonyos feladat végrehajtásánál, "
+"de lehet olyan eset is, amikor egy megoldás különböző démonmodulokat igényel "
+"az összetettsége miatt. Pontosan ez az eset az OTRS ütemező démonjával, "
+"amely fel van osztva számos démonmodulra, beleértve a feladatkezeléshez és a "
+"feladatvégrehajtáshoz szükséges néhány démonmodult."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:31
@@ -17859,11 +18728,17 @@ msgid ""
 "should be capable to deal with it out of the box or by adding a new "
 "scheduler task worker module."
 msgstr ""
+"Nem szükséges mindig új démonmodult létrehozni bizonyos feladatok "
+"végrehajtásához. Általában az OTRS ütemező démon elboldogul ezek jelentős "
+"részével – akár ha egy olyan OTRS függvényről van szó, amelyet rendszeresen "
+"végre kell hajtani (CRON-szerűen), vagy ha egy OTRS esemény aktiválta azt – "
+"az OTRS ütemezőnek képesnek kell lenni kezelnie mindenféle beállítás nélkül, "
+"vagy egy új ütemező feladatelvégző modul hozzáadásával."
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:38
 msgid "Creating A New Daemon Module"
-msgstr ""
+msgstr "Új démonmodul létrehozása"
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:40
@@ -17871,11 +18746,13 @@ msgid ""
 "All daemon modules requires to be registered in the System Configuration in "
 "order to be called by the main OTRS Daemon."
 msgstr ""
+"Az összes démonmodulnak regisztrálva kell lennie a rendszerbeállításokban "
+"azért, hogy a fő OTRS démon meg tudja hívni azokat."
 
 #. type: Content of: <section><section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:44
 msgid "Daemon Module Registration Code Example"
-msgstr ""
+msgstr "Démonmodul regisztrációs kódpélda"
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:46
@@ -17892,11 +18769,21 @@ msgid ""
 "    </Setting>\n"
 "</ConfigItem>\n"
 msgstr ""
+"<ConfigItem Name=\"DaemonModules###TestDaemon\" Required=\"1\" Valid=\"1\">\n"
+"    <Description Translatable=\"1\">The daemon registration for the scheduler generic agent task manager.</Description>\n"
+"    <Group>Daemon</Group>\n"
+"    <SubGroup>Core::Daemon::ModuleRegistration</SubGroup>\n"
+"    <Setting>\n"
+"        <Hash>\n"
+"            <Item Key=\"Module\">Kernel::System::Daemon::DaemonModules::TestDaemon</Item>\n"
+"        </Hash>\n"
+"    </Setting>\n"
+"</ConfigItem>\n"
 
 #. type: Content of: <section><section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:61
 msgid "Daemon Module Code Example"
-msgstr ""
+msgstr "Démonmodul kódpélda"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:63
@@ -17904,6 +18791,8 @@ msgid ""
 "The following code implements a daemon module that displays the system time "
 "every 2 seconds."
 msgstr ""
+"A következő kód egy olyan démonmodult valósít meg, amely megjeleníti a "
+"rendszeridőt 2 másodpercenként."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:67
@@ -17933,6 +18822,29 @@ msgid ""
 "    'Kernel::System::DB',\n"
 ");\n"
 msgstr ""
+"# --\n"
+"# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/\n"
+"# --\n"
+"# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
+"# the enclosed file COPYING for license information (AGPL). If you\n"
+"# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
+"# --\n"
+"\n"
+"package Kernel::System::Daemon::DaemonModules::TestDaemon;\n"
+"\n"
+"use strict;\n"
+"use warnings;\n"
+"use utf8;\n"
+"\n"
+"use Kernel::System::VariableCheck qw(:all);\n"
+"\n"
+"use parent qw(Kernel::System::Daemon::BaseDaemon);\n"
+"\n"
+"our @ObjectDependencies = (\n"
+"    'Kernel::Config',\n"
+"    'Kernel::System::Cache',\n"
+"    'Kernel::System::DB',\n"
+");\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:94
@@ -17941,6 +18853,9 @@ msgid ""
 "This is common header that can be found in most OTRS modules. The class/"
 "package name is declared via the package keyword."
 msgstr ""
+"Ez egy gyakori fejléc, amely megtalálható a legtöbb OTRS modulban. Az "
+"osztály/csomag neve a <literal>package</literal> kulcsszón keresztül van "
+"deklarálva."
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:98
@@ -17948,6 +18863,8 @@ msgid ""
 "In this case we are inheriting from <literal>BaseDaemon</literal> class, and "
 "the object manager dependencies are set."
 msgstr ""
+"Ebben az esetben a <literal>BaseDaemon</literal> osztályból származtatunk "
+"le, és az objektumkezelő függőségei be vannak állítva."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:102
@@ -17982,6 +18899,34 @@ msgid ""
 "    return $Self;\n"
 "}\n"
 msgstr ""
+"sub new {\n"
+"    my ( $Type, %Param ) = @_;\n"
+"\n"
+"    # Új kivonat lefoglalása az objektumhoz.\n"
+"    my $Self = {};\n"
+"    bless $Self, $Type;\n"
+"\n"
+"    # Objektumok lekérése a konstruktorban a teljesítmény megtartásáért.\n"
+"    $Self->{ConfigObject} = $Kernel::OM->Get('Kernel::Config');\n"
+"    $Self->{CacheObject}  = $Kernel::OM->Get('Kernel::System::Cache');\n"
+"    $Self->{DBObject}     = $Kernel::OM->Get('Kernel::System::DB');\n"
+"\n"
+"    # Letiltás a memóriagyorsítótárban, hogy fürtözhető legyen.\n"
+"    $Self->{CacheObject}->Configure(\n"
+"        CacheInMemory  => 0,\n"
+"        CacheInBackend => 1,\n"
+"    );\n"
+"\n"
+"    $Self->{SleepPost} = 2;          # 2 másodperc alvás minden hurok után\n"
+"    $Self->{Discard}   = 60 * 60;    # eldobás minden órában\n"
+"\n"
+"    $Self->{DiscardCount} = $Self->{Discard} / $Self->{SleepPost};\n"
+"\n"
+"    $Self->{Debug}      = $Param{Debug};\n"
+"    $Self->{DaemonName} = 'Daemon: TestDaemon';\n"
+"\n"
+"    return $Self;\n"
+"}\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:134
@@ -17991,6 +18936,10 @@ msgid ""
 "in-memory cache in daemon modules especially if OTRS runs in a cluster "
 "environment."
 msgstr ""
+"A <literal>new</literal> konstruktor hozza létre az osztály új példányát. "
+"Néhány felhasznált objektum is itt lesz létrehozva. Erősen ajánlott a "
+"memóriába történő gyorsítótárazás letiltása a démonmodulokban, különösen "
+"akkor, ha az OTRS fürtözött környezetben fut."
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:140
@@ -17999,6 +18948,9 @@ msgid ""
 "necessary to define a sleep time accordingly, otherwise it will be executed "
 "as soon as possible."
 msgstr ""
+"Azért, hogy ez a démonmodul minden második másodpercben végrehajtható "
+"legyen, egy alvási idő meghatározása szükséges annak megfelelően, egyébként "
+"azonnal végrehajtásra kerül, amint lehetséges."
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:145
@@ -18006,6 +18958,8 @@ msgid ""
 "Refreshing the daemon module from time to time is necessary in order to "
 "define when it should be discarded."
 msgstr ""
+"A démonmodul frissítése időről időre azért szükséges, hogy meghatározható "
+"legyen, mikor kell eldobni."
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:149
@@ -18014,6 +18968,10 @@ msgid ""
 "literal> and <literal>PostRun</literal>) if they return false, the main OTRS "
 "Daemon will discard the object and create a new one as soon as possible."
 msgstr ""
+"A következő függvényeknél (<literal>PreRun</literal>, <literal>Run</literal> "
+"és <literal>PostRun</literal>) ha azok hamis értékkel térnek vissza, akkor a "
+"fő OTRS démon el fogja dobni az objektumot, és egy újat hoz létre, amint "
+"lehetséges."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:154
@@ -18030,6 +18988,16 @@ msgid ""
 "    return;\n"
 "}\n"
 msgstr ""
+"sub PreRun {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    # Annak ellenőrzése, hogy az adatbázis elérhető-e.\n"
+"    return 1 if $Self->{DBObject}->Ping();\n"
+"\n"
+"    sleep 10;\n"
+"\n"
+"    return;\n"
+"}\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:168
@@ -18040,6 +19008,11 @@ msgid ""
 "recommended), otherwise it sleeps for 10 seconds. This is needed in order to "
 "wait for DB connection to be reestablished."
 msgstr ""
+"A <literal>PreRun</literal> metódus a fő démonmodul metódusa előtt kerül "
+"végrehajtásra, és a célja néhány teszt elvégzése a valódi műfelet előtt. "
+"Ebben az esetben az adatbázis ellenőrzése készen van (mindig javasolt), "
+"egyébként 10 másodpercet alszik. Ez azért szükséges, hogy megvárja az "
+"adatbázis-kapcsolat ismételt felépítését."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:174
@@ -18053,6 +19026,13 @@ msgid ""
 "    return 1;\n"
 "}\n"
 msgstr ""
+"sub Run {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    print \"Jelenlegi idő: \" . localtime . \"\\n\";\n"
+"\n"
+"    return 1;\n"
+"}\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:185
@@ -18060,6 +19040,8 @@ msgid ""
 "The <literal>Run</literal> method is where the main daemon module code "
 "resides, in this case it only prints the current time."
 msgstr ""
+"A <literal>Run</literal> metódus az, ahol a fő démonmodul kódja található. "
+"Ebben az esetben csak az aktuális időt írja ki."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:189
@@ -18079,6 +19061,19 @@ msgid ""
 "    return 1;\n"
 "}\n"
 msgstr ""
+"sub PostRun {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"    sleep $Self->{SleepPost};\n"
+"    $Self->{DiscardCount}--;\n"
+"\n"
+"    if ( $Self->{Debug} ) {\n"
+"        print \"  $Self->{DaemonName} eldobásainak száma: $Self->{DiscardCount}\\n\";\n"
+"    }\n"
+"\n"
+"    return if $Self->{DiscardCount} <= 0;\n"
+"\n"
+"    return 1;\n"
+"}\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:206
@@ -18088,6 +19083,10 @@ msgid ""
 "the safe discarding of the object. Other operations like verification or "
 "cleanup can be done here."
 msgstr ""
+"A <literal>PostRun</literal> metódus használható az alvások végrehajtásához "
+"(annak megakadályozásához, hogy a démonmodul túl gyakran legyen "
+"végrehajtva), valamint az objektum biztonságos eldobásának kezeléséhez is. "
+"Egyéb műveletek is elvégezhetők itt, mint például ellenőrzés vagy tisztítás."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:211
@@ -18128,6 +19127,40 @@ msgid ""
 "    return \\%Summary;\n"
 "}\n"
 msgstr ""
+"sub Summary {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    my %Summary = (\n"
+"        Header => 'Tesztdémon összegzés:',\n"
+"        Column => [\n"
+"            {\n"
+"                Name        => 'SomeColumn',\n"
+"                DisplayName => 'Valamilyen oszlop',\n"
+"                Size        => 15,\n"
+"            },\n"
+"            {\n"
+"                Name        => 'AnotherColumn',\n"
+"                DisplayName => 'Egy másik oszlop',\n"
+"                Size        => 15,\n"
+"            },\n"
+"            # ...\n"
+"        ],\n"
+"        Data => [\n"
+"            {\n"
+"                SomeColumn    => '1. valamilyen adat',\n"
+"                AnotherColumn => '1. másik adat',\n"
+"            },\n"
+"            {\n"
+"                SomeColumn    => '2. valamilyen adat',\n"
+"                AnotherColumn => '2. másik adat',\n"
+"            },\n"
+"            # ...\n"
+"        ],\n"
+"        NoDataMesssage => '',\n"
+"    );\n"
+"\n"
+"    return \\%Summary;\n"
+"}\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:249
@@ -18140,24 +19173,32 @@ msgid ""
 "used to display useful information of what the daemon module is currently "
 "doing, or what has been done so far. This method is optional."
 msgstr ""
+"A <literal>Summary</literal> metódust a <literal>Maint::Daemon::Summary</"
+"literal> konzolparancs hívja meg, és <literal>Header</literal>, "
+"<literal>Column</literal>, <literal>Data</literal> és "
+"<literal>NoDataMessages</literal> kulcsokat kell visszaadnia. A "
+"<literal>Column</literal> és a <literal>Data</literal> kulcsoknak tömböknek "
+"vagy kivonatoknak kell lenniük. Arra használható, hogy hasznos információkat "
+"jelenítsen meg arról, amit a démonmodul éppen csinál, vagy ami eddig "
+"történt. Ez a metódus elhagyható."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:257
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:165
 #, no-wrap
 msgid "1;\n"
-msgstr ""
+msgstr "1;\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/daemon-modules.xml:262
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:170
 msgid "End of file."
-msgstr ""
+msgstr "Fájl vége."
 
 #. type: Content of: <section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:5
 msgid "OTRS Scheduler"
-msgstr ""
+msgstr "OTRS ütemező"
 
 #. type: Content of: <section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:7
@@ -18166,11 +19207,14 @@ msgid ""
 "runs together in order to perform all needed OTRS tasks asynchronously from "
 "the web server process."
 msgstr ""
+"Az OTRS ütemező a démonmodulok és a feladatelvégzők együttese, amelyek "
+"együtt futnak azért, hogy az összes szükséges OTRS feladatot aszinkron módon "
+"végrehajtsák a webkiszolgáló folyamatából."
 
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:11
 msgid "OTRS Scheduler Task Managers"
-msgstr ""
+msgstr "OTRS ütemező feladatkezelők"
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:13
@@ -18179,6 +19223,9 @@ msgid ""
 "the OTRS SysConfig and determines the correct time to create a task to be "
 "executed."
 msgstr ""
+"A <literal>SchedulerCronTaskManager</literal> kiolvassa a regisztrált cron-"
+"feladatokat az OTRS rendszerbeállításaiból, és meghatározza a helyes időt a "
+"végrehajtandó feladat létrehozásához."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:17
@@ -18188,6 +19235,11 @@ msgid ""
 "in time. For example, when a Generic Interface Invoker can not reach the "
 "remote server, it can self schedule to be run again 5 minutes later."
 msgstr ""
+"A <literal>SchedulerFutureTaskManager</literal> ellenőrzi azokat a "
+"feladatokat, amelyek úgy vannak beállítva, hogy csak egy alkalommal fussanak "
+"a jövőben, és beállítja, hogy a feladat időben kerüljön végrehajtásra. "
+"Például amikor egy általános felület meghívónak nem sikerül elérnie a távoli "
+"kiszolgálót, akkor ütemezni tudja magát, hogy 5 perccel később újra fusson."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:23
@@ -18196,6 +19248,9 @@ msgid ""
 "<literal>GenericAgent</literal> tasks that are set to be run on regular time "
 "basis and sets their execution accordingly."
 msgstr ""
+"A <literal>SchedulerGenericAgentTaskManager</literal> folyamatosan olvassa a "
+"<literal>GenericAgent</literal> feladatot, amely rendszeres időközönkénti "
+"futáshoz van beállítva, és annak megfelelően állítja be azok végrehajtását."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:28
@@ -18206,11 +19261,17 @@ msgid ""
 "object to register a task, and as soon as it is registered, it will be "
 "executed in the next free slot by the <literal>SchedulerTaskWorker</literal>."
 msgstr ""
+"Amikor ezek a feladatkezelők nem elegendőek, akkor egy új démonmodul hozható "
+"létre. Egy feladat regisztrálásához a <literal>Run()</literal> metódusuk egy "
+"bizonyos pontján meg kell hívni a <literal>TaskAdd()</literal> függvényt a "
+"<literal>chedulerDB</literal> objektumból, és amint regisztrálva lett, akkor "
+"a <literal>SchedulerTaskWorker</literal> végrehajtja a következő szabad "
+"időszeletben."
 
 #. type: Content of: <section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:35
 msgid "OTRS Scheduler Task Workers"
-msgstr ""
+msgstr "OTRS ütemező feladatelvégzők"
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:37
@@ -18219,6 +19280,9 @@ msgid ""
 "previous tasks managers plus the ones that come directly from the code by "
 "using the Asynchronous Executor."
 msgstr ""
+"A <literal>SchedulerTaskWorker</literal> az aszinkron végrehajtó "
+"használatával végrehajtja az előző feladatkezelő által tervezett összes "
+"feladatot, és még azokat is, amelyek közvetlenül a kódból jönnek."
 
 #. type: Content of: <section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:41
@@ -18228,11 +19292,16 @@ msgid ""
 "worker module is determined by the task type. If a new task type is added, "
 "it will require a new task worker."
 msgstr ""
+"Annak érdekében, hogy az összes feladatot végrehajtsa, a "
+"<literal>SchedulerTaskWorker</literal> meghív egy háttérprogram-modult "
+"(feladatelvégzőt) az adott feladat végrehajtásához. Az elvégző modult a "
+"feladat típusa határozza meg. Ha új feladattípus kerül hozzáadásra, akkor az "
+"új feladatelvégzőt is igényel."
 
 #. type: Content of: <section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:47
 msgid "Creating A New Scheduler Task Worker"
-msgstr ""
+msgstr "Új ütemező feladatelvégző létrehozása"
 
 #. type: Content of: <section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:49
@@ -18241,11 +19310,15 @@ msgid ""
 "SchedulerTaskWorker</filename> could potentially be task workers and they do "
 "not require any registration in the system configuration."
 msgstr ""
+"A <filename>Kernel/System/Daemon/DaemonModules/SchedulerTaskWorker</"
+"filename> mappa alatt elhelyezett összes fájl lehet potenciális "
+"feladatelvégző, és azok nem igényelnek semmilyen regisztrációt a "
+"rendszerbeállításokban."
 
 #. type: Content of: <section><section><section><section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:55
 msgid "Scheduler Task Worker Code Example"
-msgstr ""
+msgstr "Ütemező feladatelvégző kódpélda"
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:57
@@ -18270,6 +19343,24 @@ msgid ""
 "    'Kernel::System::Log',\n"
 ");\n"
 msgstr ""
+"# --\n"
+"# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/\n"
+"# --\n"
+"# This software comes with ABSOLUTELY NO WARRANTY. For details, see\n"
+"# the enclosed file COPYING for license information (AGPL). If you\n"
+"# did not receive this file, see http://www.gnu.org/licenses/agpl.txt.\n"
+"# --\n"
+"\n"
+"package Kernel::System::Daemon::DaemonModules::SchedulerTaskWorker::TestWorker;\n"
+"\n"
+"use strict;\n"
+"use warnings;\n"
+"\n"
+"use parent qw(Kernel::System::Daemon::DaemonModules::BaseTaskWorker);\n"
+"\n"
+"our @ObjectDependencies = (\n"
+"    'Kernel::System::Log',\n"
+");\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:83
@@ -18277,6 +19368,8 @@ msgid ""
 "In this case we are inheriting from <literal>BaseTaskWorker</literal> class, "
 "and the object manager dependencies are set."
 msgstr ""
+"Ebben az esetben a <literal>BaseTaskWorker</literal> osztályból "
+"származtatunk le, és az objektumkezelő függőségei be vannak állítva."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:87
@@ -18294,12 +19387,24 @@ msgid ""
 "    return $Self;\n"
 "}\n"
 msgstr ""
+"sub new {\n"
+"    my ( $Type, %Param ) = @_;\n"
+"\n"
+"    my $Self = {};\n"
+"    bless( $Self, $Type );\n"
+"\n"
+"    $Self->{Debug}      = $Param{Debug};\n"
+"    $Self->{WorkerName} = 'Worker: Test';\n"
+"\n"
+"    return $Self;\n"
+"}\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:102
 msgid ""
 "The constructor <literal>new</literal> creates a new instance of the class."
 msgstr ""
+"A <literal>new</literal> konstruktor hozza létre az osztály új példányát."
 
 #. type: CDATA
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:105
@@ -18353,6 +19458,53 @@ msgid ""
 "    return $Success;\n"
 "}\n"
 msgstr ""
+"sub Run {\n"
+"    my ( $Self, %Param ) = @_;\n"
+"\n"
+"    # Feladatparaméterek ellenőrzése.\n"
+"    my $CheckResult = $Self->_CheckTaskParams(\n"
+"        %Param,\n"
+"        NeededDataAttributes => [ 'NeededAtrribute1', 'NeededAtrribute2' ],\n"
+"        DataParamsRef        => 'HASH', # vagy 'ARRAT'\n"
+"    );\n"
+"\n"
+"    # Végrehajtás leállítása, ha hiba található a paraméterekben.\n"
+"    return if !$CheckResult;\n"
+"\n"
+"    my $Success;\n"
+"    my $ErrorMessage;\n"
+"\n"
+"    if ( $Self->{Debug} ) {\n"
+"        print \"    $Self->{WorkerName} végrehajtja a feladatot: $Param{TaskName}\\n\";\n"
+"    }\n"
+"\n"
+"    do {\n"
+"\n"
+"        # A szabványos hiba lokalizálása.\n"
+"        local *STDERR;\n"
+"\n"
+"        # A szabványos hiba átirányítása egy változóba.\n"
+"        open STDERR, \">>\", \\$ErrorMessage;\n"
+"\n"
+"        $Success = $Kernel::OM->Get('Kernel::System::MyPackage')->Run(\n"
+"            Param1 => 'someparam',\n"
+"        );\n"
+"    };\n"
+"\n"
+"    if ( !$Success ) {\n"
+"\n"
+"        $ErrorMessage ||= \"$Param{TaskName} végrehajtása sikertelen egy hibaüzenettel!\";\n"
+"\n"
+"        $Self->_HandleError(\n"
+"            TaskName     => $Param{TaskName},\n"
+"            TaskType     => 'Test',\n"
+"            LogMessage   => \"Hiba történt a(z) $Param{TaskName} végrehajtásakor: $ErrorMessage\",\n"
+"            ErrorMessage => \"$ErrorMessage\",\n"
+"        );\n"
+"    }\n"
+"\n"
+"    return $Success;\n"
+"}\n"
 
 #. type: Content of: <section><section><section><section><para>
 #: en/content/how-to-extend-otrs/otrs-module-layers/daemon/scheduler-task-worker-modules.xml:156
@@ -18366,6 +19518,14 @@ msgid ""
 "error messages as email to the recipient specified in the System "
 "Configuration."
 msgstr ""
+"A <literal>Run</literal> a fő metódus. Egy <literal>_CheckTaskParams()</"
+"literal> hívás az alaposztályból megspórol néhány kódsort. A feladat "
+"végrehajtása a szabványos hibakimenet megszerzése közben nagyon jó "
+"gyakorlat, mivel az OTRS ütemező normális esetben felügyelet nélkül fut, és "
+"az összes hiba egy változóba történő mentése lehetővé fogja tenni a későbbi "
+"feldolgozást. A <literal>_HandleError()</literal> közös felületet biztosít a "
+"hibaüzenetek e-mailben történő küldéséhez a rendszerbeállításokban megadott "
+"címzetteknek."
 
 #. type: Content of: <section><title>
 #: en/content/how-to-extend-otrs/otrs-module-layers/dynamic-fields/dynamic-fields-extend-field-backend.xml:5
@@ -26069,3 +27229,84 @@ msgstr ""
 "com/OTRS/otrs/commit/454dfac6d4eb85652a267e5e65514e386d3cf275\">ezt a "
 "véglegesítést</ulink> azon változtatásokkal kapcsolatos további "
 "információkról, amelyek az OTRS-ben történtek."
+
+#~ msgid ""
+#~ "Ticket events for OTRS 2.0: TicketCreate, TicketDelete, "
+#~ "TicketTitleUpdate, TicketUnlockTimeoutUpdate, "
+#~ "TicketEscalationStartUpdate, MoveTicket, SetCustomerData, "
+#~ "TicketFreeTextSet, TicketFreeTimeSet, TicketPendingTimeSet, LockSet, "
+#~ "StateSet, OwnerSet, TicketResponsibleUpdate, PrioritySet, HistoryAdd, "
+#~ "HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate, "
+#~ "ArticleFreeTextSet, ArticleUpdate, ArticleSend, ArticleBounce, "
+#~ "SendAgentNotification, SendCustomerNotification, SendAutoResponse, "
+#~ "ArticleFlagSet."
+#~ msgstr ""
+#~ "Jegyesemények az OTRS 2.0-nál: TicketCreate, TicketDelete, "
+#~ "TicketTitleUpdate, TicketUnlockTimeoutUpdate, "
+#~ "TicketEscalationStartUpdate, MoveTicket, SetCustomerData, "
+#~ "TicketFreeTextSet, TicketFreeTimeSet, TicketPendingTimeSet, LockSet, "
+#~ "StateSet, OwnerSet, TicketResponsibleUpdate, PrioritySet, HistoryAdd, "
+#~ "HistoryDelete, TicketAccountTime, TicketMerge, ArticleCreate, "
+#~ "ArticleFreeTextSet, ArticleUpdate, ArticleSend, ArticleBounce, "
+#~ "SendAgentNotification, SendCustomerNotification, SendAutoResponse, "
+#~ "ArticleFlagSet."
+
+#~ msgid ""
+#~ "Ticket events for OTRS 2.1 and higher: TicketCreate, TicketDelete, "
+#~ "TicketTitleUpdate, TicketUnlockTimeoutUpdate, "
+#~ "TicketEscalationStartUpdate, TicketQueueUpdate (MoveTicket), "
+#~ "TicketCustomerUpdate (SetCustomerData), TicketFreeTextUpdate "
+#~ "(TicketFreeTextSet), TicketFreeTimeUpdate (TicketFreeTimeSet), "
+#~ "TicketPendingTimeUpdate (TicketPendingTimeSet), TicketLockUpdate "
+#~ "(LockSet), TicketStateUpdate (StateSet), TicketOwnerUpdate (OwnerSet), "
+#~ "TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet), "
+#~ "TicketSubscribe, TicketUnsubscribe, HistoryAdd, HistoryDelete, "
+#~ "TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate "
+#~ "(ArticleFreeTextSet), ArticleUpdate, ArticleSend, ArticleBounce, "
+#~ "ArticleAgentNotification (SendAgentNotification), "
+#~ "ArticleCustomerNotification (SendCustomerNotification), "
+#~ "ArticleAutoResponse (SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
+#~ msgstr ""
+#~ "Jegyesemények az OTRS 2.1 és újabb verzióknál: TicketCreate, "
+#~ "TicketDelete, TicketTitleUpdate, TicketUnlockTimeoutUpdate, "
+#~ "TicketEscalationStartUpdate, TicketQueueUpdate (MoveTicket), "
+#~ "TicketCustomerUpdate (SetCustomerData), TicketFreeTextUpdate "
+#~ "(TicketFreeTextSet), TicketFreeTimeUpdate (TicketFreeTimeSet), "
+#~ "TicketPendingTimeUpdate (TicketPendingTimeSet), TicketLockUpdate "
+#~ "(LockSet), TicketStateUpdate (StateSet), TicketOwnerUpdate (OwnerSet), "
+#~ "TicketResponsibleUpdate, TicketPriorityUpdate (PrioritySet), "
+#~ "TicketSubscribe, TicketUnsubscribe, HistoryAdd, HistoryDelete, "
+#~ "TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate "
+#~ "(ArticleFreeTextSet), ArticleUpdate, ArticleSend, ArticleBounce, "
+#~ "ArticleAgentNotification (SendAgentNotification), "
+#~ "ArticleCustomerNotification (SendCustomerNotification), "
+#~ "ArticleAutoResponse (SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
+
+#~ msgid ""
+#~ "Ticket events for OTRS 2.4: TicketCreate, TicketDelete, "
+#~ "TicketTitleUpdate, TicketUnlockTimeoutUpdate, "
+#~ "TicketQueueUpdate(MoveTicket), TicketTypeUpdate, TicketServiceUpdate, "
+#~ "TicketSLAUpdate, TicketCustomerUpdate (SetCustomerData), "
+#~ "TicketFreeTextUpdate, TicketFreeTimeUpdate, TicketPendingTimeUpdate "
+#~ "(TicketPendingTimeSet), TicketLockUpdate (LockSet), TicketStateUpdate "
+#~ "(StateSet), TicketOwnerUpdate (OwnerSet), TicketResponsibleUpdate, "
+#~ "TicketPriorityUpdate (PrioritySet), HistoryAdd, HistoryDelete, "
+#~ "TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate "
+#~ "(ArticleFreeTextSet), ArticleUpdate, ArticleSend, ArticleBounce, "
+#~ "ArticleAgentNotification (SendAgentNotification), "
+#~ "ArticleCustomerNotification (SendCustomerNotification), "
+#~ "ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
+#~ msgstr ""
+#~ "Jegyesemények az OTRS 2.4-nél: TicketCreate, TicketDelete, "
+#~ "TicketTitleUpdate, TicketUnlockTimeoutUpdate, "
+#~ "TicketQueueUpdate(MoveTicket), TicketTypeUpdate, TicketServiceUpdate, "
+#~ "TicketSLAUpdate, TicketCustomerUpdate (SetCustomerData), "
+#~ "TicketFreeTextUpdate, TicketFreeTimeUpdate, TicketPendingTimeUpdate "
+#~ "(TicketPendingTimeSet), TicketLockUpdate (LockSet), TicketStateUpdate "
+#~ "(StateSet), TicketOwnerUpdate (OwnerSet), TicketResponsibleUpdate, "
+#~ "TicketPriorityUpdate (PrioritySet), HistoryAdd, HistoryDelete, "
+#~ "TicketAccountTime, TicketMerge, ArticleCreate, ArticleFreeTextUpdate "
+#~ "(ArticleFreeTextSet), ArticleUpdate, ArticleSend, ArticleBounce, "
+#~ "ArticleAgentNotification (SendAgentNotification), "
+#~ "ArticleCustomerNotification (SendCustomerNotification), "
+#~ "ArticleAutoResponse(SendAutoResponse), ArticleFlagSet, ArticleFlagDelete."
