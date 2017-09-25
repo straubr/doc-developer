@@ -23,7 +23,7 @@
         <programlisting linenumbering="numbered"><![CDATA[
 # --
 # Kernel/System/CustomerUser/Preferences/Custom.pm - some customer user functions
-# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # Id: Custom.pm,v 1.20 2009/10/07 20:41:50 martin Exp $
 # --

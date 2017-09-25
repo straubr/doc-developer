@@ -7,9 +7,11 @@
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/config-mechanism.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/database-mechanism.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/log-mechanism.xml" />
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/date-time.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/skins.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/loader.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/templates.xml" />
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/themes.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="how-it-works/translations.xml" />
 
 </chapter>

@@ -97,8 +97,8 @@ forrásfájlok UTF-8 karakterkódolással vannak elmentve.
             <para>
                 <programlisting format="linespecific"><![CDATA[
 # --
-# (fájlnév) - egy rövid leírás, hogy mi ez
-# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# (file name) - a short description what it does
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -115,8 +115,8 @@ van.
                 <programlisting format="linespecific"><![CDATA[
 #!/usr/bin/perl
 # --
-# (fájlnév) - egy rövid leírás, hogy mi ez
-# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# (file name) - a short description what it does
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU AFFERO General Public License as published by
@@ -336,12 +336,11 @@ függvények helyett, mint például a <literal>time()</literal>,
         <section id="regular-expressions">
             <title>Reguláris kifejezések</title>
             <para>
-                A reguláris kifejezéseknél mindig kapcsos zárójelekkel használjuk az
-<literal>m//</literal> operátort elválasztóként. Használjuk az
-<literal>x</literal>, <literal>m</literal> és <literal>s</literal>
-módosítókat is. Az <literal>x</literal> módosítók lehetővé teszik a
-reguláris kifejezések megjegyzéssel történő ellátását, és szóközök
-használatát a logikai csoportok „csoportosításához”.
+                For regular expressions <emphasis>in the source code</emphasis>, we always
+use the <literal>m//</literal> operator with curly braces as delimiters. We
+also use the modifiers <literal>x</literal>, <literal>m</literal> and
+<literal>s</literal>.  The <literal>x</literal> modifiers allows you to
+comment your regex and use spaces to "group" logical groups.
             </para>
             <para>
                 <programlisting format="linespecific"><![CDATA[
@@ -377,6 +376,22 @@ $Text =~ m{
     Regex
 }xms;
     ]]></programlisting>
+            </para>
+            <para>
+                An exception to the convention above applies to all cases where regular
+expressions are not written statically in the code but instead are
+<emphasis>supplied by users</emphasis> in one form or another (for example
+via SysConfig or in a PostMaster filter configuration). Any evaluation of
+such a regular expression has to be done without any modifiers
+(e.g. <literal>$Variable =~ m{$Regex}</literal>) in order to match the
+expectation of (mostly inexperienced) users and also to be backwards
+compatible.
+            </para>
+            <para>
+                If modifiers are strictly necessary for user supplied regular expressions,
+it is always possible to use embedded modifiers (e.g. <literal>(?:(?i)SmAlL
+oR lArGe)</literal>). For details, please see <ulink
+url="http://perldoc.perl.org/perlretut.html#Embedding-comments-and-modifiers-in-a-regular-expression">perlretut</ulink>.
             </para>
         </section>
 
@@ -657,6 +672,111 @@ modulokban (<filename>Kernel/Modules</filename>).</para>
         <section id="perldoc">
             <title>Perldoc</title>
 
+            <section id="documenting-backend-files">
+                <title>Documenting backend modules</title>
+
+                <variablelist>
+
+                    <varlistentry>
+                        <term>'NAME' section</term>
+                        <listitem>
+                            <para>
+                                This section should include the module name, ' - ' as separator and a brief
+description of the module purpose.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 NAME
+
+Kernel::System::MyModule - Functions to read from and write to files
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'SYNOPSIS' section</term>
+                        <listitem>
+                            <para>
+                                This section should give a short usage example of commonly used module
+functions.
+                            </para>
+                            <para>
+                                Usage of this section is optional.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 SYNOPSIS
+
+my $Object = $Kernel::OM->Get('Kernel::System::MyModule');
+
+Read data
+
+    my $FileContent = $Object->Read(
+        File => '/tmp/testfile',
+    );
+
+Write data
+
+    $Object->Write(
+        Content => 'my file content',
+        File    => '/tmp/testfile',
+    );
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'DESCRIPTION' section</term>
+                        <listitem>
+                            <para>
+                                This section should give more in-depth information about the module if
+deemed necessary (instead of having a long 'NAME' section).
+                            </para>
+                            <para>
+                                Usage of this section is optional.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 DESCRIPTION
+
+This module does not only handle files.
+
+It is also able to:
+- brew coffee
+- turn lead into gold
+- bring world peace
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'PUBLIC INTERFACE' section</term>
+                        <listitem>
+                            <para>
+                                This section marks the begin of all functions that are part of the API and
+therefore meant to be used by other modules.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 PUBLIC INTERFACE
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                        <term>'PRIVATE FUNCTIONS' section</term>
+                        <listitem>
+                            <para>
+                                This section marks the begin of private functions.
+                            </para>
+                            <para>
+                                Functions below are not part of the API, to be used only within the module
+and therefore not considered stable.
+                            </para>
+                            <para>
+                                It is advisable to use this section whenever one or more private functions
+exist.
+                            </para>
+                            <programlisting format="linespecific"><![CDATA[
+=head1 PRIVATE FUNCTIONS
+                            ]]></programlisting>
+                        </listitem>
+                    </varlistentry>
+                </variablelist>
+            </section>
+
             <section id="documenting-subroutines">
                 <title>Szubrutinok dokumentálása</title>
 
@@ -668,7 +788,7 @@ sorrendben kell lenniük. Egy minta dokumentáció így néz ki:
                 </para>
                 <para>
                     <programlisting format="linespecific"><![CDATA[
-=item LastTimeObjectChanged()
+=head2 LastTimeObjectChanged()
 
 calculates the last time the object was changed. It returns a hash reference with
     information about the object and the time.
@@ -696,7 +816,7 @@ visszatérési értékekhez.
         </section>
 
         <section id="code-style-guide-perl-code-comments">
-            <title>Code Comments</title>
+            <title>Kódmagyarázatok</title>
 
             <para>
                 Általánosságban meg kell próbálni olvashatóan és önmagát magyarázóan írni a
@@ -708,89 +828,94 @@ különleges lehet vagy szokatlanul bonyolult a kóddal kapcsolatban.
             </para>
 
             <para>
-                Please adhere to the following guidelines:
+                Ragaszkodjon a következő irányelvekhez:
             </para>
 
             <variablelist>
 
                 <varlistentry>
-                    <term>Make the code so readable that comments are not needed, if possible.</term>
+                    <term>Tegye a kódot annyira olvashatóvá, hogy ne legyen szükség magyarázatra, ha
+ez lehetséges.</term>
                     <listitem>
                         <para>
-                            It's always preferrable to write code so that it is very readable and
-self-explaining, for example with precise variable and function names.
+                            Mindig vonzóbb a kódot úgy írni, hogy nagyon olvasható és önmagát magyarázó
+legyen, például pontos változónevekkel és függvénynevekkel.
                         </para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term>Don't say what the code says (DRY).</term>
+                    <term>Ne mondja el, amit a kód is elmond (száraz).</term>
                     <listitem>
                         <para>
-                            Don't repeat (obvious) code in the comments.
+                            Ne ismételjen (nyilvánvaló) kódot a magyarázatokban.
                         </para>
                         <programlisting format="linespecific"><![CDATA[
-# WRONG:
+# HIBÁS:
 
-# get config object
+# beállítási objektum lekérése
 my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
                         ]]></programlisting>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term>Document <emphasis>why</emphasis> the code is there, not how it works.</term>
+                    <term>Azt dokumentálja, hogy a kód <emphasis>miért</emphasis> van ott, és ne azt,
+hogy hogyan működik.</term>
                     <listitem>
                         <para>
-                            Usually, code comments should explain the <emphasis>purpose</emphasis> of
-code, not how it works in detail. There might be exceptions for specially
-complicated code, but in this case also a refactoring to make it more
-readable could be commendable.
+                            Általában a kódmagyarázatoknak a kód <emphasis>célját</emphasis> kellene
+elmagyarázniuk, és nem azt, hogy részletesen hogyan működik. Lehetnek
+kivételek különösen bonyolult kódnál, de ebben az esetben egy átszerkesztés
+lenne dicséretes, hogy olvashatóbb legyen.
                         </para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term>Document pitfalls.</term>
+                    <term>Dokumentálja a buktatókat.</term>
                     <listitem>
                         <para>
-                            Everything that is unclear, tricky or that puzzled you during development
-should be documented.
+                            Mindent dokumentálni kell, ami nem világos, furfangos vagy amit összerakott
+a fejlesztés során.
                         </para>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term>Use full-line sentence-style comments to document algorithm paragraphs.</term>
+                    <term>Használjon teljes soros mondatszerű magyarázatokat az algoritmus
+bekezdéseinek dokumentálásához.</term>
                     <listitem>
                         <para>
-                            Always use full sentences (uppercase first letter and final
-period). Subsequent lines of a sentence should be indented.
+                            Mindig teljes mondatokat használjon (első betűt nagybetűvel írva és
+központozással). Egy mondat következő sorait be kell húzni.
                         </para>
                         <programlisting format="linespecific"><![CDATA[
-# Check if object name is provided.
+# Annak ellenőrzése, hogy meg lett-e adva objektumnév.
 if ( !$_[1] ) {
     $_[0]->_DieWithError(
-        Error => "Error: Missing parameter (object name)",
+        Error => "Hiba: hiányzó paraméter (objektumnév)",
     );
 }
 
-# Record the object we are about to retrieve to potentially build better error messages.
-# Needs to be a statement-modifying 'if', otherwise 'local' is local
-#   to the scope of the 'if'-block.
+# Az objektum rögzítése, amelyet lekérni készülünk, hogy potenciálisan jobb
+#   hibaüzenetet készíthessünk.
+# Utasításmódosító „if”-nek kell lennie, különben a „local” helyi lesz az
+#   „if”-blokk hatóköréhez képest.
 local $CurrentObject = $_[1] if !$CurrentObject;
                         ]]></programlisting>
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term>Use short end-of-line comments to add detail information.</term>
+                    <term>Használjon rövid sorvégi magyarázatokat a részletes információk
+hozzáadásához.</term>
                     <listitem>
                         <para>
-                            These can either be a complete sentence (capital first letter and period) or
-just a phrase (lowercase first letter and no period).
+                            Ez lehet vagy teljes mondat (nagy kezdőbetű és központozás), vagy csak egy
+kifejezés (kis kezdőbetű és nincs központozás).
                         </para>
                         <programlisting format="linespecific"><![CDATA[
-$BuildMode = oct $Param{Mode};   # *from* octal, not *to* octal
+$BuildMode = oct $Param{Mode};   # oktális *típusról*, nem oktális *típusra*
 
-# or
+# vagy
 
-$BuildMode = oct $Param{Mode};   # Convert *from* octal, not *to* octal.
+$BuildMode = oct $Param{Mode};   # Átalakítás oktális *típusról*, nem oktális *típusra*.
 
                         ]]></programlisting>
                     </listitem>

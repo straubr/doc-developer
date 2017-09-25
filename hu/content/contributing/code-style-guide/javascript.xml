@@ -74,10 +74,10 @@ Perlben.</para></listitem>
     </section>
 
     <section id="code-style-guide-javascript-code-comments">
-        <title>Code Comments</title>
+        <title>Kódmagyarázatok</title>
         <para>
-            The <link linkend="code-style-guide-perl-code-comments">commenting
-guidelines for Perl code</link> also apply to JavaScript.
+            A <link linkend="code-style-guide-perl-code-comments">Perl-kód magyarázási
+irányelvei</link> a JavaScriptre is vonatkoznak.
         </para>
         <para>
             <itemizedlist>
@@ -99,24 +99,19 @@ kódban.
         <para>
             <itemizedlist>
                 <listitem><para>
-                    Mindig a <literal>$.bind()</literal> függvényt használja a jQuery rövidített
-nevű eseménymetódusai helyett a jobb olvashatóságért (hibás:
-<literal>$SomeObject.click(...)</literal>, helyes:
-<literal>$SomeObject.bind('click', ...</literal>).
+                    Always use <literal>$.on()</literal> instead of the event-shorthand methods
+of jQuery for better readability (wrong:
+<literal>$SomeObject.click(...)</literal>, right:
+<literal>$SomeObject.on('click', ...</literal>).
                 </para></listitem>
                 <listitem><para>
-                    Ne használja a <literal>$.live()</literal> függvényt! Súlyos
-teljesítményproblémáink voltak a <literal>$.live()</literal> függvénnyel az
-egéreseményekkel összefüggésben. Ne használja, amíg nem ellenőrizhető, hogy
-a <literal>$.live()</literal> problémák nélkül működik a többi
-eseménytípussal.
+                    If you <literal>$.on()</literal> events, make sure to
+<literal>$.off()</literal> them beforehand, to make sure that events will
+not be bound twice, should the code be executed another time.
                 </para></listitem>
                 <listitem><para>
-                    Ha eseményeket köt a <literal>$.bind()</literal> függvénnyel, akkor
-győződjön meg arról, hogy korábban leválasztotta azokat az
-<literal>$.unbind()</literal> használatával annak biztosításához, hogy az
-események ne legyenek kétszer kötve, ne kelljen a kódot még egy alkalommal
-végrehajtani.
+                    Make sure to use <literal>$.on()</literal> with namespacing, such as
+<literal>$.on('click.&lt;Name&gt;')</literal>.
                 </para></listitem>
             </itemizedlist>
         </para>

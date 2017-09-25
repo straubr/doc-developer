@@ -10,5 +10,6 @@ programnyelvekhez.
     </para>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="code-style-guide/perl.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="code-style-guide/javascript.xml" />
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="code-style-guide/html.xml" />
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="code-style-guide/css.xml" />
 </section>

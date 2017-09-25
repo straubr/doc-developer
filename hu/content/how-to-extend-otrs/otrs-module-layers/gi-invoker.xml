@@ -43,8 +43,8 @@ szubrutin elmagyarázásra kerül.
             <para>
                 <programlisting><![CDATA[
 # --
-# Kernel/GenericInterface/Invoker/Test.pm - Általános felület tesztadat meghívó háttérprogram
-# Copyright (C) 2001-2016 OTRS AG, http://otrs.com/
+# Kernel/GenericInterface/Invoker/Test.pm - GenericInterface test data Invoker backend
+# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -58,7 +58,7 @@ use warnings;
 
 use Kernel::System::VariableCheck qw(IsString IsStringWithData);
 
-# A „Used once” figyelmeztetés megelőzése a Kernel::OM osztálynál
+# prevent 'Used once' warning for Kernel::OM
 use Kernel::System::ObjectManager;
 
 our $ObjectManagerDisabled = 1;

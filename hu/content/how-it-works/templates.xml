@@ -263,8 +263,7 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
             <section id="localize-tag">
                 <title><literal>[% Localize() %]</literal></title>
                 <para>
-                    Egy honosított dátumot vagy időbélyeget szúr be (a jelenlegi ügyintéző
-lehetséges időzóna eltérését tartalmazva).
+                    Outputs data according to the current language/locale.
                 </para>
                 <para>
                     Különböző kulturális területeken különböző egyezményt használnak a dátum és
@@ -293,24 +292,40 @@ formátumban kell lenniük. Ha időzóna-eltolás van meghatározva a jelenlegi
 előállítása előtt.
                 </para>
                 <para>
-                    Három különböző lehetséges kimeneti formátum létezik:
-<literal>TimeLong</literal> (teljes dátum és idő),
-<literal>TimeShort</literal> (nincsenek másodpercek) és
-<literal>Date</literal> (nincs idő).
+                    There are different possible date/time output formats:
+<literal>TimeLong</literal> (full date/time), <literal>TimeShort</literal>
+(no seconds), <literal>Date</literal> (no time) and
+<literal>RelativeTime</literal> (a speaking text like "a day ago").
                 </para>
                 <para>
                     <programlisting><![CDATA[
 [% Data.CreateTime ǀ Localize("TimeLong") %]
-# Eredmény a US English területi beállításnál:
+# Result for US English locale:
 06/09/2010 15:45:41
 
 [% Data.CreateTime ǀ Localize("TimeShort") %]
-# Eredmény a US English területi beállításnál:
+# Result for US English locale:
 06/09/2010 15:45
 
-[% Data.CreateTime ǀ Localize("TimeShort") %]
-# Eredmény a US English területi beállításnál:
+[% Data.CreateTime ǀ Localize("Date") %]
+# Result for US English locale:
 06/09/2010
+
+[% Data.CreateTime ǀ Localize("RelativeTime") %]
+# Result for US English locale:
+a day ago
+                    ]]></programlisting>
+                </para>
+                <para>
+                    Also the output of human readable file sizes is available as an option
+<literal>Localize('Filesize')</literal> (just pass the raw file size in
+bytes).
+                </para>
+                <para>
+                    <programlisting><![CDATA[
+[% Data.Filesize ǀ Localize("Filesize") %]
+# Result for US English locale:
+23 MB
                     ]]></programlisting>
                 </para>
             </section>
