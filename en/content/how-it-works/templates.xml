@@ -276,8 +276,7 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
                 </para>
                 <para>
                     There are different possible date/time output formats: <literal>TimeLong</literal> (full date/time),
-                    <literal>TimeShort</literal> (no seconds), <literal>Date</literal> (no time) and
-                    <literal>RelativeTime</literal> (a speaking text like "a day ago").
+                    <literal>TimeShort</literal> (no seconds) and <literal>Date</literal> (no time).
                 </para>
                 <para>
                     <programlisting><![CDATA[
@@ -292,10 +291,6 @@ var Text = [% Translate("Change %s settings", Data.Type) | JSON %];
 [% Data.CreateTime ǀ Localize("Date") %]
 # Result for US English locale:
 06/09/2010
-
-[% Data.CreateTime ǀ Localize("RelativeTime") %]
-# Result for US English locale:
-a day ago
                     ]]></programlisting>
                 </para>
                 <para>
