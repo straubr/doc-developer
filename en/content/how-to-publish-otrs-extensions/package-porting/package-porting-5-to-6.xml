@@ -1247,9 +1247,9 @@ my $LinkList = $LinkObject->LinkList(
     <section id="package-porting-5-to-6-agentticketzoom-widget-handling">
         <title>Widget Handling in Ticket Zoom Screen</title>
         <para>
-            The widgets in the ticket zoom screen have been improved to work in a more generic way. With OTRS 6 it is
+            The widgets in the ticket zoom screen have been improved to work in a more generic way. With OTRS 6, it is
             now possible to add new widgets for the AgentTicketZoom screen via the SysConfig. It is possible to
-            configure own module, the location (e.g. Sidebar) and the content will be loaded in an asynchronous way.
+            configure the used module, the location of the widget (e.g. Sidebar) and if the content should be loaded synchronously (default) or via AJAX.
         </para>
         <para>
             Here is an example configuration for the default widgets:
@@ -1279,11 +1279,13 @@ my $LinkList = $LinkObject->LinkList(
 </Setting>
             ]]></programlisting>
         </para>
-        <para>
-            With this change the template blocks in the widget code have been removed, so you should check if you use
-            the old widget blocks in some output filters via
-            <literal>Frontend::Template::GenerateBlockHooks</literal> functionality, and implement it in the new
-            fashion.
-        </para>
+        <note>
+            <para>
+                With this change, the template blocks in the widget code have been removed, so you should check if you use
+                the old widget blocks in some output filters via
+                <literal>Frontend::Template::GenerateBlockHooks</literal> functionality, and implement it in the new
+                fashion.
+            </para>
+        </note>
     </section>
 </section>
