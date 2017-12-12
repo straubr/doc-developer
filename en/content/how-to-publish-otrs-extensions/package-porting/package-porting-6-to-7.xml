@@ -10,7 +10,8 @@
     <section id="no-sessions-without-cookies">
         <title>Sessions always require cookies</title>
         <para>
-            Starting from OTRS 7, sessions always require cookies to be enabled. Therefore, the
+            Starting from OTRS 7, <ulink url="https://github.com/OTRS/otrs/commit/831aba1cfe6893d0633af6f18584216e89198072">
+            sessions always require cookies to be enabled</ulink>. Therefore, the
             <literal>SessionIDCookie</literal> value was removed from <literal>LayoutObject</literal>,
             Templates and JavaScript. It is no longer necessary to append session variables to URLs or
             HTTP request payloads.
