@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN" "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+
+<section id="package-porting-6-to-7">
+    <title>From OTRS 6 to 7</title>
+    <para>
+        This section lists changes that you need to examine when porting your package from OTRS 6 to 7.
+    </para>
+
+    <section id="no-sessions-without-cookies">
+        <title>Sessions always require cookies</title>
+        <para>
+            Starting from OTRS 7, sessions always require cookies to be enabled. Therefore, the
+            <literal>SessionIDCookie</literal> value was removed from <literal>LayoutObject</literal>,
+            Templates and JavaScript. It is no longer necessary to append session variables to URLs or
+            HTTP request payloads.
+        </para>
+    </section>
+</section>
