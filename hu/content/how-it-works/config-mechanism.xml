@@ -46,7 +46,7 @@ user)
                 </listitem>
             </varlistentry>
             <varlistentry>
-                <term><literal>ZZZACL.pm</literal></term>
+                <term><literal>ZZZProcessManagement.pm</literal></term>
                 <listitem>
                     <para>
                         Perl cache of ProcessManagement configuration from database
