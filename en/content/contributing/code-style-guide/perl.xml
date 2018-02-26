@@ -314,8 +314,8 @@ my $Var = 1 if $Something == 'Yes';
         <section id="regular-expressions">
             <title>Regular Expressions</title>
             <para>
-                For regular expressions <emphasis>in the source code</emphasis>, we always use the <literal>m//</literal> operator with curly braces as delimiters. We also use the modifiers <literal>x</literal>, <literal>m</literal> and <literal>s</literal>.
-                The <literal>x</literal> modifiers allows you to comment your regex and use spaces to "group" logical groups.
+                For regular expressions <emphasis>in the source code</emphasis>, we always use the <literal>m//</literal> operator with curly braces as delimiters. We also use the modifiers <literal>x</literal>, <literal>m</literal> and <literal>s</literal> by default.
+                The <literal>x</literal> modifier allows you to comment your regex and use spaces to visually separate logical groups.
             </para>
             <para>
                 <programlisting format="linespecific"><![CDATA[
@@ -352,6 +352,109 @@ $Text =~ m{
             </para>
             <para>
                 If modifiers are strictly necessary for user supplied regular expressions, it is always possible to use embedded modifiers (e.g. <literal>(?:(?i)SmAlL oR lArGe)</literal>). For details, please see <ulink url="http://perldoc.perl.org/perlretut.html#Embedding-comments-and-modifiers-in-a-regular-expression">perlretut</ulink>.
+            </para>
+            <para>
+                Usage of the <literal>r</literal> modifier is encouraged, e.g. if you need to extract part of a string into another variable.
+                This modifier keeps the matched variable intact and instead provides the substitution result as a return value.
+            </para>
+            <para>
+                Example: Use this...
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
+my $NewText = $Text =~ s{
+    \A
+    Prefix
+    (
+        Text
+    )
+}
+{NewPrefix$1Postfix}xmsr;
+    ]]></programlisting>
+            </para>
+            <para>
+                instead of this...
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
+my $NewText = $Text;
+$NewText =~ s{
+    \A
+    Prefix
+    (
+        Text
+    )
+}
+{NewPrefix$1Postfix}xms;
+    ]]></programlisting>
+            </para>
+            <para>
+                If you want to match for start and end of a <emphasis>string</emphasis>, you should generally use <literal>\A</literal> and <literal>\z</literal> instead of the more generic <literal>^</literal> and <literal>$</literal> unless you really need to match start or end of <emphasis>lines</emphasis> within a multiline string.
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
+$Text =~ m{
+    \A      # beginning of the string
+    Content # some string
+    \z      # end of the string
+}xms;
+
+$MultilineText =~ m{
+    \A                      # beginning of the string
+    .*
+    (?: \n Content $ )+      # one or more lines containing the same string
+    .*
+    \z                      # end of the string
+}xms;
+    ]]></programlisting>
+            </para>
+            <para>
+                Usage of named capture groups is also encouraged, particularly for multi-matches.
+                Named capture groups are easier to read/understand, prevent mix-ups when matching more than one capture group and allow extension without accidentally introducing bugs.
+            </para>
+            <para>
+                Example: Use this...
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
+$Contact =~ s{
+    \A
+    [ ]*
+    (?'TrimmedContact'
+        (?'FirstName' \w+ )
+        [ ]+
+        (?'LastName' \w+ )
+    )
+    [ ]+
+    (?'Email' [^ ]+ )
+    [ ]*
+    \z
+}
+{$+{TrimmedContact}}xms;
+my $FormattedContact = "$+{LastName}, $+{FirstName} ($+{Email})";
+    ]]></programlisting>
+            </para>
+            <para>
+                instead of this...
+            </para>
+            <para>
+            <programlisting format="linespecific"><![CDATA[
+$Contact =~ s{
+    \A
+    [ ]*
+    (
+        ( \w+ )
+        [ ]+
+        ( \w+ )
+    )
+    [ ]+
+    ( [^ ]+ )
+    [ ]*
+    \z
+}
+{$1}xms;
+my $FormattedContact = "$3, $2 ($4)";
+    ]]></programlisting>
             </para>
         </section>
 
