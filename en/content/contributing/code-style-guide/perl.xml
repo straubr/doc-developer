@@ -94,8 +94,7 @@ chomp $Variable;
             <para>
                 <programlisting format="linespecific"><![CDATA[
 # --
-# (file name) - a short description what it does
-# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2018 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -111,8 +110,7 @@ chomp $Variable;
                 <programlisting format="linespecific"><![CDATA[
 #!/usr/bin/perl
 # --
-# (file name) - a short description what it does
-# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2018 OTRS AG, http://otrs.com/
 # --
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU AFFERO General Public License as published by
@@ -268,7 +266,7 @@ if( !$ItemId ) {
                 </para>
                 <para>
                     <programlisting format="linespecific"><![CDATA[
-for my $Needed (1..10) {
+for my $Needed ( 1 .. 10 ) {
     next if $Needed == 5;
     last  if $Needed == 9;
 }
@@ -307,7 +305,7 @@ my $Var = 1 if $Something == 'Yes';
                         <para>Don't use <literal>require</literal>, use <literal>Main::Require()</literal> instead.</para>
                     </listitem>
                     <listitem>
-                        <para>Use the functions of the <literal>TimeObject</literal> instead of the builtin functions like <literal>time()</literal>, <literal>localtime()</literal>, etc.</para>
+                        <para>Use the functions of the <literal>DateTimeObject</literal> instead of the builtin functions like <literal>time()</literal>, <literal>localtime()</literal>, etc.</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -365,7 +363,7 @@ $Text =~ m{
             </para>
             <para>
                 Names should be as descriptive as possible.
-                A reader should be able to say what is meant by a name without digging too deep into the code. E.g. use <literal>$ConfigItemID</literal> instead of <literal>$ID</literal>. Examples: <literal>@TicktIDs</literal>, <literal>$Output</literal>, <literal>StateSet()</literal>, etc.
+                A reader should be able to say what is meant by a name without digging too deep into the code. E.g. use <literal>$ConfigItemID</literal> instead of <literal>$ID</literal>. Examples: <literal>@TicketIDs</literal>, <literal>$Output</literal>, <literal>StateSet()</literal>, etc.
             </para>
         </section>
 
@@ -381,7 +379,7 @@ $Text =~ m{
                 </para>
                 <para>
                     <programlisting format="linespecific"><![CDATA[
-my ($Minute, $Hour, $Year);
+my ( $Minute, $Hour, $Year );
 ]]>
                     </programlisting>
                 </para>
@@ -415,7 +413,7 @@ my $Variable;
                 <para>
                     <programlisting format="linespecific"><![CDATA[
 my $SqlStatement = '';
-for my $Part ( @Parts ) {
+for my $Part (@Parts) {
     $SqlStatement .= $Part;
 }
                     ]]>
@@ -555,7 +553,7 @@ use strict;
 use warnings;
 
 use Kernel::System::User;
-use Kernel::System::Time;
+use Kernel::System::DateTime;
                     ]]>
                     </programlisting>
                 </para>
@@ -567,7 +565,7 @@ use Kernel::System::Time;
 package Kernel::System::ITSMConfigItem::History;
 
 use Kernel::System::User;
-use Kernel::System::Time;
+use Kernel::System::DateTime;
 
 use strict;
 use warnings;
@@ -716,7 +714,7 @@ It is also able to:
                     <programlisting format="linespecific"><![CDATA[
 =head2 LastTimeObjectChanged()
 
-calculates the last time the object was changed. It returns a hash reference with
+Calculates the last time the object was changed. It returns a hash reference with
     information about the object and the time.
 
     my $Info = $Object->LastTimeObjectChanged(
@@ -765,7 +763,7 @@ This returns something like:
                     </listitem>
                 </varlistentry>
                 <varlistentry>
-                    <term>Don't say what the code says (DRY).</term>
+                    <term>Don't say what the code says (DRY -> Don't repeat yourself).</term>
                     <listitem>
                         <para>
                             Don't repeat (obvious) code in the comments.
