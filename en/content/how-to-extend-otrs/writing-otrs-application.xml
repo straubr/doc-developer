@@ -24,6 +24,7 @@ Kernel/Modules
 Kernel/Output/HTML/Templates/Standard
 Kernel/Config
 Kernel/Config/Files
+Kernel/Config/Files/XML/
 Kernel/Language
             ]]></screen>
         </para>
@@ -33,7 +34,7 @@ Kernel/Language
         <title>Default Config File</title>
         <para>
             The creation of a module registration facilitates the display of the new module in OTRS.
-            Therefore we create a file <filename>/Kernel/Config/Files/HelloWorld.xml</filename>.
+            Therefore we create a file <filename>/Kernel/Config/Files/XML/HelloWorld.xml</filename>.
             In this file, we create a new config element.
             The impact of the various settings is described in the chapter 'Config Mechanism'.
         </para>
