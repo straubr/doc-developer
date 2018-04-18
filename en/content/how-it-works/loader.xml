@@ -154,23 +154,22 @@
             </para>
             <para>
                 <programlisting><![CDATA[
-<ConfigItem Name="Loader::Agent::CommonJS###000-Framework" Required="1" Valid="1">
+<Setting Name="Loader::Agent::CommonJS###000-Framework" Required="1" Valid="1">
     <Description Translatable="1">List of JS files to always be loaded for the agent interface.</Description>
-    <Group>Framework</Group>
-    <SubGroup>Core::Web</SubGroup>
-    <Setting>
+    <Navigation>Frontend::Base::Loader</Navigation>
+    <Value>
         <Array>
-            <Item>thirdparty/json/json2.js</Item>
-            <Item>thirdparty/jquery-1.4.4/jquery.js</Item>
+            <Item>thirdparty/jquery-3.2.1/jquery.js</Item>
+            <Item>thirdparty/jquery-browser-detection/jquery-browser-detection.js</Item>
 
             ...
 
-            <Item>Core.App.js</Item>
-            <Item>Core.Agent.js</Item>
-            <Item>Core.Agent.Search.js</Item>
+            <Item>Core.Agent.Header.js</Item>
+            <Item>Core.UI.Notification.js</Item>
+            <Item>Core.Agent.Responsive.js</Item>
         </Array>
-    </Setting>
-</ConfigItem>
+    </Value>
+</Setting>
                 ]]></programlisting>
             </para>
             <para>
@@ -183,16 +182,15 @@
             </para>
             <para>
                 <programlisting><![CDATA[
-<ConfigItem Name="Loader::Agent::CommonJS###100-CustomPackage" Required="0" Valid="1">
-    <Description Translatable="1">List of JS files to always be loaded for the agent interface for package "CustomPackage".</Description>
-    <Group>Framework</Group>
-    <SubGroup>Core::Web</SubGroup>
-    <Setting>
+<Setting Name="Loader::Agent::CommonJS###000-Framework" Required="1" Valid="1">
+    <Description Translatable="1">List of JS files to always be loaded for the agent interface.</Description>
+    <Navigation>Frontend::Base::Loader</Navigation>
+    <Value>
         <Array>
-            <Item>CustomPackage.App.js</Item>
+            <Item>thirdparty/jquery-3.2.1/jquery.js</Item>
         </Array>
-    </Setting>
-</ConfigItem>
+    </Value>
+</Setting>
                 ]]></programlisting>
             </para>
             <para>
@@ -213,73 +211,45 @@
             </para>
             <para>
                 <programlisting><![CDATA[
-<ConfigItem Name="Frontend::Module###AgentDashboard" Required="0" Valid="1">
-    <Description Translatable="1">Frontend module registration for the agent interface.</Description>
-    <Group>Framework</Group>
-    <SubGroup>Frontend::Agent::ModuleRegistration</SubGroup>
-    <Setting>
-        <FrontendModuleReg>
-            <Description>Agent Dashboard</Description>
-            <Title></Title>
-            <NavBarName>Dashboard</NavBarName>
-            <NavBar>
-                <Description Translatable="1"></Description>
-                <Name Translatable="1">Dashboard</Name>
-                <Link>Action=AgentDashboard</Link>
-                <NavBar>Dashboard</NavBar>
-                <Type>Menu</Type>
-                <Description Translatable="1"></Description>
-                <Block>ItemArea</Block>
-                <AccessKey>d</AccessKey>
-                <Prio>50</Prio>
-            </NavBar>
-            <Loader>
-                <JavaScript>thirdparty/flot/excanvas.js</JavaScript>
-                <JavaScript>thirdparty/flot/jquery.flot.js</JavaScript>
-                <JavaScript>Core.UI.Chart.js</JavaScript>
-                <JavaScript>Core.UI.DnD.js</JavaScript>
-                <JavaScript>Core.Agent.Dashboard.js</JavaScript>
-            </Loader>
-        </FrontendModuleReg>
-    </Setting>
-</ConfigItem>
+<Setting Name="Loader::Module::AgentDashboard###001-Framework" Required="0" Valid="1">
+    <Description Translatable="1">Loader module registration for the agent interface.</Description>
+    <Navigation>Frontend::Agent::ModuleRegistration::Loader</Navigation>
+    <Value>
+        <Hash>
+            <Item Key="CSS">
+                <Array>
+                    <Item>Core.Agent.Dashboard.css</Item>
+
+                    ...
+
+                </Array>
+            </Item>
+            <Item Key="JavaScript">
+                <Array>
+                    <Item>thirdparty/momentjs-2.18.1/moment.min.js</Item>
+                    <Item>thirdparty/fullcalendar-3.4.0/fullcalendar.min.js</Item>
+                    <Item>thirdparty/d3-3.5.6/d3.min.js</Item>
+                    <Item>thirdparty/nvd3-1.7.1/nvd3.min.js</Item>
+                    <Item>thirdparty/nvd3-1.7.1/models/OTRSLineChart.js</Item>
+                    <Item>thirdparty/nvd3-1.7.1/models/OTRSMultiBarChart.js</Item>
+                    <Item>thirdparty/nvd3-1.7.1/models/OTRSStackedAreaChart.js</Item>
+                    <Item>thirdparty/canvg-1.4/rgbcolor.js</Item>
+                </Array>
+            </Item>
+        </Hash>
+    </Value>
+</Setting>
                 ]]></programlisting>
             </para>
             <para>
-                It is possible to put a <literal>&lt;Loader&gt;</literal> tag
+                It is possible to put a <literal>&lt;Item Key="JavaScript"&gt;</literal> tag
                 in the frontend module registrations which may contain
-                <literal>&lt;JavaScript&gt;</literal> tags, one for each file
-                that is supposed to be loaded for this application module.
+                <literal>&lt;Array&gt;</literal> and one tag <literal>&lt;Item&gt;</literal>
+                for each JavaScript file that is supposed to be loaded for this application module.
             </para>
             <para>
                 Now you have all information you need to configure the way the Loader
                 handles JavaScript code.
-            </para>
-            <para>
-                There is one special case: for <literal>ToolbarModule</literal>s, you can also add custom
-                JavaScript files. Just add a <literal>JavaScript</literal> attribute to
-                the configuration like this:
-            </para>
-            <para>
-                <programlisting><![CDATA[
-<ConfigItem Name="Frontend::ToolBarModule###410-Ticket::AgentTicketEmail" Required="0" Valid="1">
-    <Description Translatable="1">Toolbar Item for a shortcut.</Description>
-    <Group>Ticket</Group>
-    <SubGroup>Frontend::Agent::ToolBarModule</SubGroup>
-    <Setting>
-        <Hash>
-            <Item Key="Module">Kernel::Output::HTML::ToolBarLink</Item>
-            <Item Key="Name">New email ticket</Item>
-            <Item Key="Priority">1009999</Item>
-            <Item Key="Link">Action=AgentTicketEmail</Item>
-            <Item Key="Action">AgentTicketEmail</Item>
-            <Item Key="AccessKey">l</Item>
-            <Item Key="CssClass">EmailTicket</Item>
-            <Item Key="JavaScript">OTRS.Agent.CustomToolbarModule.js</Item>
-        </Hash>
-    </Setting>
-</ConfigItem>
-                ]]></programlisting>
             </para>
         </section>
     </section>
@@ -291,132 +261,12 @@
             in the previous <link linkend="loader-javascript">section</link>, and extending
             the settings works in the same way too.
         </para>
-
         <section>
             <title>Common CSS</title>
             <para>
                 The way common CSS is handled is very similar to the way
                 <link linkend="loader-common-javascript">common JavaScript</link>
-                is loaded. Here, the configuration settings are called
-                <literal>Loader::Agent::CommonCSS</literal> and
-                <literal>Loader::Customer::CommonCSS</literal>, respectively.
-            </para>
-            <para>
-                However, as we already noted above, Internet Explorer 7 and 8
-                (and for the customer interface also 6) need special treatment.
-                That's why there are special configuration settings for them, to
-                specify common CSS which should only be loaded in these browsers.
-                The respective settings are
-                <literal>Loader::Agent::CommonCSS::IE7</literal>,
-                <literal>Loader::Agent::CommonCSS::IE8</literal>,
-                <literal>Loader::Customer::CommonCSS::IE6</literal>,
-                <literal>Loader::Customer::CommonCSS::IE7</literal> and
-                <literal>Loader::Customer::CommonCSS::IE8</literal>.
-            </para>
-            <para>
-                An example:
-            </para>
-            <para>
-                <programlisting><![CDATA[
-<ConfigItem Name="Loader::Agent::CommonCSS::IE8###000-Framework" Required="1" Valid="1">
-    <Description Translatable="1">List of IE8-specific CSS files to always be loaded for the agent interface.</Description>
-    <Group>Framework</Group>
-    <SubGroup>Core::Web</SubGroup>
-    <Setting>
-        <Array>
-            <Item>Core.OverviewSmall.IE8.css</Item>
-        </Array>
-    </Setting>
-</ConfigItem>
-                ]]></programlisting>
-            </para>
-            <para>
-                This is the list of common CSS files for the agent interface which
-                should only be loaded in Internet Explorer 8.
-            </para>
-        </section>
-
-        <section>
-            <title>Module-Specific CSS</title>
-            <para>
-                Module-specific CSS is handled very similar to the way
-                <link linkend="loader-module-javascript">module-specific JavaScript</link>
-                is handled. It is also configured in the frontend module registrations. Example:
-            </para>
-            <para>
-                <programlisting><![CDATA[
-<ConfigItem Name="Frontend::Module###Admin" Required="0" Valid="1">
-    <Description Translatable="1">Frontend module registration for the agent interface.</Description>
-    <Group>Framework</Group>
-    <SubGroup>Frontend::Admin::ModuleRegistration</SubGroup>
-    <Setting>
-        <FrontendModuleReg>
-            <Group>admin</Group>
-            <Description>Admin-Area</Description>
-            <Title></Title>
-            <NavBarName>Admin</NavBarName>
-            <NavBar>
-                <Type>Menu</Type>
-                <Description Translatable="1"></Description>
-                <Block>ItemArea</Block>
-                <Name Translatable="1">Admin</Name>
-                <Link>Action=Admin</Link>
-                <NavBar>Admin</NavBar>
-                <AccessKey>a</AccessKey>
-                <Prio>10000</Prio>
-            </NavBar>
-            <NavBarModule>
-                <Module>Kernel::Output::HTML::NavBarModuleAdmin</Module>
-            </NavBarModule>
-            <Loader>
-                <CSS>Core.Agent.Admin.css</CSS>
-                <CSS_IE7>Core.Agent.AdminIE7.css</CSS_IE7>
-                <JavaScript>Core.Agent.Admin.SysConfig.js</JavaScript>
-            </Loader>
-        </FrontendModuleReg>
-    </Setting>
-</ConfigItem>
-                ]]></programlisting>
-            </para>
-            <para>
-                Here we have a module (the admin overview page of the agent interface)
-                which has special JavaScript, normal CSS
-                (tagname <literal>&lt;CSS&gt;</literal>) and special CSS for
-                Internet Explorer 7 (tagname <literal>&lt;CSS_IE7&gt;</literal>).
-                All of these need to be loaded in addition to the common JavaScript
-                and CSS defined for the agent interface.
-            </para>
-            <para>
-                It is also possible to specify module-specific CSS for Internet Explorer 8
-                (tagname <literal>&lt;CSS_IE8&gt;</literal>) and, in the case of the customer interface,
-                for Internet Explorer 6 (tagname <literal>&lt;CSS_IE6&gt;</literal>).
-            </para>
-            <para>
-                There is one special case: for <literal>ToolbarModule</literal>s, you can also add custom
-                CSS files. Just add a <literal>CSS</literal>, <literal>CSS_IE7</literal> or
-                <literal>CSS_IE8</literal> attribute to the configuration like this:
-            </para>
-            <para>
-                <programlisting><![CDATA[
-<ConfigItem Name="Frontend::ToolBarModule###410-Ticket::AgentTicketEmail" Required="0" Valid="1">
-    <Description Translatable="1">Toolbar Item for a shortcut.</Description>
-    <Group>Ticket</Group>
-    <SubGroup>Frontend::Agent::ToolBarModule</SubGroup>
-    <Setting>
-        <Hash>
-            <Item Key="Module">Kernel::Output::HTML::ToolBarLink</Item>
-            <Item Key="Name">New email ticket</Item>
-            <Item Key="Priority">1009999</Item>
-            <Item Key="Link">Action=AgentTicketEmail</Item>
-            <Item Key="Action">AgentTicketEmail</Item>
-            <Item Key="AccessKey">l</Item>
-            <Item Key="CssClass">EmailTicket</Item>
-            <Item Key="CSS">OTRS.Agent.CustomToolbarModule.css</Item>
-            <Item Key="CSS_IE7">OTRS.Agent.CustomToolbarModule.IE7.css</Item>
-        </Hash>
-    </Setting>
-</ConfigItem>
-                ]]></programlisting>
+                is loaded.
             </para>
         </section>
     </section>
