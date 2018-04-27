@@ -172,7 +172,7 @@ for my $Test (@Tests) {
             Hogy képes legyen lefuttatni az egységteszteket, arra van szüksége, hogy az
 összes választható Perl-modul telepítve legyen, kivéve azokat, amelyek az Ön
 által használt adatbázis háttérprogramoktól eltérőkhöz valók. Futtassa a
-<filename>bin/otrs.CheckModules.pl</filename> parancsfájlt a modultelepítés
+<filename>bin/otrs.CheckEnvironment.pl</filename> parancsfájlt a modultelepítés
 ellenőrzéséhez.
         </para>
         <para>

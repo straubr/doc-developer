@@ -163,8 +163,8 @@ for my $Test (@Tests) {
     <section>
         <title>Prerequisites for testing</title>
         <para>
-            To be able to run the unit tests, you need to have all optional Perl modules installed, except those for
-            different database backends than what you are using. Run <filename>bin/otrs.CheckModules.pl</filename> to
+            To be able to run the unit tests, you need to have all optional environment dependencies (Perl modules and other modules) installed, except those for
+            different database backends than what you are using. Run <filename>bin/otrs.CheckEnvironment.pl</filename> to
             verify your module installation.
         </para>
         <para>
