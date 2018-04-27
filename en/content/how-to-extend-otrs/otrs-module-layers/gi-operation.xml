@@ -37,7 +37,7 @@
                 <programlisting><![CDATA[
 # --
 # Kernel/GenericInterface/Operation/Test/Test.pm - GenericInterface test operation backend
-# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2018 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -200,7 +200,7 @@ did not receive this file, see L<http://www.gnu.org/licenses/agpl.txt>.
             <para>
                 <programlisting linenumbering="numbered"><![CDATA[
 # --
-# Copyright (C) 2001-2017 OTRS AG, http://otrs.com/
+# Copyright (C) 2001-2018 OTRS AG, http://otrs.com/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
